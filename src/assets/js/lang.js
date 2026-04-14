@@ -194,7 +194,19 @@ const i18n = {
 <p class="p">ИП Подгорбунских Алексей Сергеевич</p>
 <p class="p">ИНН: 526019549488</p>
 <p class="p">ОГРНИП: 325527500070020</p>
-<p class="p">Email: <a href="mailto:contact@labkeeper.io" class="policy-article__link">contact@labkeeper.io</a></p>`
+<p class="p">Email: <a href="mailto:contact@labkeeper.io" class="policy-article__link">contact@labkeeper.io</a></p>`,
+
+        // Блок Примеры проектов
+        "ex-title": "Примеры проектов",
+        "ex-c1-title": "Измерение интенсивности радиационного фона",
+        "ex-c1-text": "Применение методов обработки экспериментальных данных для изучения статистических закономерностей при измерении интенсивности радиационного фона.",
+        "ex-c2-title": "Статистическая обработка результатов многократных измерений",
+        "ex-c2-text": "Применение методов обработки экспериментальных данных при измерении сопротивлений",
+        "ex-c3-title": "Изучение линейной временной модальной логики",
+        "ex-c3-text": "В работе мы рассмотрим ключевые понятия и определения в этой области логики, а также основные формулировки аксиом и правил вывода для линейной временной модальной логики.",
+        "ex-c4-title": "Определение систематических и случайных погрешностей",
+        "ex-c4-text": "при измерении удельного сопротивления нихромовой проволоки",
+        "ex-btn": "Создать свой проект <span class=\"button__arrow\">→</span>"
     },
     en: {
         "nav-advantages": "Benefits",
@@ -398,7 +410,19 @@ const i18n = {
 <p class="p">IE Podgorbunsky Alexey Sergeevich</p>
 <p class="p">TIN: 526019549488</p>
 <p class="p">OGRNIP: 325527500070020</p>
-<p class="p">Email: <a href="mailto:contact@labkeeper.io" class="policy-article__link">contact@labkeeper.io</a></p>`
+<p class="p">Email: <a href="mailto:contact@labkeeper.io" class="policy-article__link">contact@labkeeper.io</a></p>`,
+
+        // Examples block
+        "ex-title": "Project Examples",
+        "ex-c1-title": "Radiation background intensity measurement",
+        "ex-c1-text": "Application of experimental data processing methods for studying statistical patterns in measuring radiation background intensity.",
+        "ex-c2-title": "Statistical processing of multiple measurement results",
+        "ex-c2-text": "Application of experimental data processing methods in resistance measurement",
+        "ex-c3-title": "Study of linear temporal modal logic",
+        "ex-c3-text": "In this work, we consider key concepts and definitions in this field of logic, as well as the main formulations of axioms and inference rules for linear temporal modal logic.",
+        "ex-c4-title": "Determination of systematic and random errors",
+        "ex-c4-text": "when measuring the specific resistance of nichrome wire",
+        "ex-btn": "Create your project <span class=\"button__arrow\">→</span>"
     }
 };
 
