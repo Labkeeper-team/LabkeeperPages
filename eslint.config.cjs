@@ -11,7 +11,8 @@ module.exports = [
         localStorage: "readonly",
         IntersectionObserver: "readonly",
         console: "readonly",
-        setTimeout: "readonly"
+        setTimeout: "readonly",
+        requestAnimationFrame: "readonly"
       }
     },
     rules: {
