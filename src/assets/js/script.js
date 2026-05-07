@@ -317,4 +317,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // --- 7. Автоскролл к примерам для URL /examples ---
+  if (/^\/examples\/?$/.test(window.location.pathname)) {
+    const examplesSection = document.getElementById('examples');
+    if (examplesSection) {
+      requestAnimationFrame(() => {
+        examplesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+  }
 });
