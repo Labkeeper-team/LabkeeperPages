@@ -9,6 +9,7 @@ module.exports = [
         document: "readonly",
         navigator: "readonly",
         localStorage: "readonly",
+        fetch: "readonly",
         IntersectionObserver: "readonly",
         console: "readonly",
         setTimeout: "readonly",

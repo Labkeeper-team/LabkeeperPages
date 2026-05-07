@@ -118,14 +118,11 @@
                 </div>
             </nav>
 
-            <!--
-            TODO: https://github.com/Labkeeper-team/TypeThree/issues/391
             <div class="header__right">
-                <a href="login.html" class="button button--outline header__login" data-i18n="btn-login">
-                    Войти <span class="button__arrow">→</span>
-                </a>
+                <a href="/project/default?open=login" class="button button--outline header__login">Login <span class="button__arrow">→</span></a>
+                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects" style="display: none;"></a>
+                <a href="/project/default" class="button button--primary header__editor" data-i18n="btn-editor"></a>
             </div>
-            -->
         </div>
     </header>
 
@@ -343,6 +340,10 @@
     </footer>
 
     <!-- Скрипты -->
+    <script>
+        window.__LABKEEPER_API_VERSION = "IO_LABKEEPER_FRONTEND_API_VERSION";
+    </script>
+    <script src="assets/js/auth.js" defer></script>
     <script src="assets/js/script.js" defer></script>
     <script src="assets/js/lang.js" defer></script>
 </body>
