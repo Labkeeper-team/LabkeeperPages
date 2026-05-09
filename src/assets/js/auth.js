@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return response.json();
     })
     .then(data => {
-      if (data && data.is_authenticated !== false) {
+      if (data && data.isAuthenticated !== false) {
         setDisplay(loginButtons, 'none');
         setDisplay(projectsButtons, '');
       } else {
