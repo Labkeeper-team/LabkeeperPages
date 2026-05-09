@@ -566,6 +566,10 @@ h2,
 /* hero.scss (РіР»Р°РІРЅС‹Р№ СЌРєСЂР°РЅ) */
 .hero {
   padding: 160px 0 120px;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
   background-color: #ffffff;
   overflow: hidden;
 }
@@ -581,6 +585,7 @@ h2,
   align-items: center;
   justify-content: space-between;
   gap: 40px;
+  width: 100%;
 }
 
 @media (max-width: 1023px) {
@@ -663,7 +668,7 @@ h2,
 .features {
   background-color: var(--c-bg-dark);
   color: var(--c-text-white);
-  padding: 70px 0;
+  padding: 0;
   position: relative;
   z-index: 10;
   overflow: hidden;
@@ -677,6 +682,10 @@ h2,
 
 .feature-block {
   position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
   padding: 66px 0;
   z-index: 12;
 }
@@ -876,7 +885,12 @@ h2,
 
 /* advantages.scss (РїСЂРµРёРјСѓС‰РµСЃС‚РІР°) */
 .advantages {
-  margin-top: -130px;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  padding: 80px 0;
   background-color: #ffffff;
   text-align: center;
   position: relative;
@@ -963,11 +977,14 @@ h2,
 
 /* audience.scss (РґР»СЏ РєРѕРіРѕ) */
 .audience {
-  padding-top: 80px;
-  padding-bottom: 140px;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
   background-color: #ffffff;
   border-top: 1px solid var(--c-border);
-  margin-top: 130px;
+  margin-top: 0;
 }
 
 @media (max-width: 1023px) {
