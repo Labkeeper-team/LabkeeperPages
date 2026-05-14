@@ -278,6 +278,12 @@
     display: flex;
     align-items: center;
 
+    .header__editor {
+      @include mobile {
+        display: none;
+      }
+    }
+
     .button {
       height: 30px;
       padding: 0 31px 4px; // это сдвигает контент вверх на 2px.
