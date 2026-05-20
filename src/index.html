@@ -41,30 +41,22 @@
         name="twitter:description"
         content="Compose documents, formulas, and plots, convert to PDF. Editor and calculations in one place."
     />
-    <script>
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a);
+        })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
         (function () {
-            const metrikaId = "IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY";
-            if (!metrikaId || metrikaId === "IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY") return;
-
-            window.__LABKEEPER_YM_KEY = Number(metrikaId);
-            (function (m, e, t, r, i, k, a) {
-                m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
-                m[i].l = 1 * new Date();
-                for (let j = 0; j < document.scripts.length; j += 1) {
-                    if (document.scripts[j].src === r) return;
-                }
-                k = e.createElement(t);
-                a = e.getElementsByTagName(t)[0];
-                k.async = 1;
-                k.src = r;
-                a.parentNode.insertBefore(k, a);
-            })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-            window.ym(window.__LABKEEPER_YM_KEY, "init", {
+            ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", {
+                webvisor: true,
                 clickmap: true,
-                trackLinks: true,
+                referrer: document.referrer,
+                url: location.href,
                 accurateTrackBounce: true,
-                webvisor: true
+                trackLinks: true
             });
         })();
     </script>
@@ -146,6 +138,11 @@
 </head>
 
 <body class="page">
+    <noscript>
+        <div>
+            <img src="https://mc.yandex.ru/watch/IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY" style="position:absolute; left:-9999px;" alt="">
+        </div>
+    </noscript>
     <!-- Прелоадер -->
     <div class="preloader js-preloader">
         <div class="preloader__logo">
