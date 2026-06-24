@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 
 <head>
@@ -100,10 +100,8 @@
                     <li class="header__nav-item"><a href="/#audience" class="header__nav-link"
                             data-i18n="nav-audience"></a></li>
                     <!-- TODO billing -->
-                    <!--
-                    <li class="header__nav-item"><a href="tokens.html" class="header__nav-link"
+                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link"
                             data-i18n="nav-tokens"></a></li>
-                    -->
                     <li class="header__nav-item"><a href="/#examples" class="header__nav-link"
                             data-i18n="nav-examples"></a></li>
                     <li class="header__nav-item"><a href="/about" class="header__nav-link header__nav-link--active"
@@ -170,8 +168,6 @@
             </div>
         </section>
 
-        <!-- TODO billing -->
-        <!--
         <section class="about-docs">
             <div class="about-docs__container">
                 <h2 class="about-docs__title h2" data-i18n="docs-title"></h2>
@@ -179,122 +175,57 @@
                 <div class="about-docs__table">
                     <div class="about-docs__row">
                         <div class="about-docs__label" data-i18n="docs-label-name"></div>
-                        <div class="about-docs__value">ИП Иванов Иван Иванович
-                            <button class="about-docs__copy" aria-label="Скопировать"><svg width="16" height="16"
-                                    viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M12.6667 0.666656H4.66665C3.93332 0.666656 3.33332 1.26666 3.33332 1.99999V4.66666H1.99999C1.26666 4.66666 0.666656 5.26666 0.666656 5.99999V14C0.666656 14.7333 1.26666 15.3333 1.99999 15.3333H9.99999C10.7333 15.3333 11.3333 14.7333 11.3333 14V11.3333H12.6667C13.4 11.3333 14 10.7333 14 9.99999V1.99999C14 1.26666 13.4 0.666656 12.6667 0.666656ZM9.99999 14H1.99999V5.99999H9.99999V14ZM4.66665 4.66666H11.3333V9.99999H12.6667V1.99999H4.66665V4.66666Z"
-                                        fill="#4469E0" />
-                                </svg></button>
-                        </div>
-                    </div>
-                    <div class="about-docs__row">
-                        <div class="about-docs__label" data-i18n="docs-label-address"></div>
-                        <div class="about-docs__value">Россия, 141195, Московская область, г.Фрязино, ул. Барские Пруды,
-                            дом 1А
-                            <button class="about-docs__copy" aria-label="Скопировать"><svg width="16" height="16"
-                                    viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M12.6667 0.666656H4.66665C3.93332 0.666656 3.33332 1.26666 3.33332 1.99999V4.66666H1.99999C1.26666 4.66666 0.666656 5.26666 0.666656 5.99999V14C0.666656 14.7333 1.26666 15.3333 1.99999 15.3333H9.99999C10.7333 15.3333 11.3333 14.7333 11.3333 14V11.3333H12.6667C13.4 11.3333 14 10.7333 14 9.99999V1.99999C14 1.26666 13.4 0.666656 12.6667 0.666656ZM9.99999 14H1.99999V5.99999H9.99999V14ZM4.66665 4.66666H11.3333V9.99999H12.6667V1.99999H4.66665V4.66666Z"
-                                        fill="#4469E0" />
-                                </svg></button>
-                        </div>
+                        <div class="about-docs__value">ИП Трофименко Анастасия Алексеевна</div>
                     </div>
                     <div class="about-docs__row">
                         <div class="about-docs__label">ИНН</div>
-                        <div class="about-docs__value">5052014518
-                            <button class="about-docs__copy" aria-label="Скопировать"><svg width="16" height="16"
-                                    viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M12.6667 0.666656H4.66665C3.93332 0.666656 3.33332 1.26666 3.33332 1.99999V4.66666H1.99999C1.26666 4.66666 0.666656 5.26666 0.666656 5.99999V14C0.666656 14.7333 1.26666 15.3333 1.99999 15.3333H9.99999C10.7333 15.3333 11.3333 14.7333 11.3333 14V11.3333H12.6667C13.4 11.3333 14 10.7333 14 9.99999V1.99999C14 1.26666 13.4 0.666656 12.6667 0.666656ZM9.99999 14H1.99999V5.99999H9.99999V14ZM4.66665 4.66666H11.3333V9.99999H12.6667V1.99999H4.66665V4.66666Z"
-                                        fill="#4469E0" />
-                                </svg></button>
-                        </div>
+                        <div class="about-docs__value">502910548283</div>
                     </div>
                     <div class="about-docs__row">
-                        <div class="about-docs__label">КПП</div>
-                        <div class="about-docs__value">505001001
-                            <button class="about-docs__copy" aria-label="Скопировать"><svg width="16" height="16"
-                                    viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M12.6667 0.666656H4.66665C3.93332 0.666656 3.33332 1.26666 3.33332 1.99999V4.66666H1.99999C1.26666 4.66666 0.666656 5.26666 0.666656 5.99999V14C0.666656 14.7333 1.26666 15.3333 1.99999 15.3333H9.99999C10.7333 15.3333 11.3333 14.7333 11.3333 14V11.3333H12.6667C13.4 11.3333 14 10.7333 14 9.99999V1.99999C14 1.26666 13.4 0.666656 12.6667 0.666656ZM9.99999 14H1.99999V5.99999H9.99999V14ZM4.66665 4.66666H11.3333V9.99999H12.6667V1.99999H4.66665V4.66666Z"
-                                        fill="#4469E0" />
-                                </svg></button>
-                        </div>
+                        <div class="about-docs__label">ОГРНИП</div>
+                        <div class="about-docs__value">326508100352548</div>
+                    </div>
+                    <div class="about-docs__row">
+                        <div class="about-docs__label" data-i18n="docs-label-address"></div>
+                        <div class="about-docs__value">Адрес из ЕГРИП: не указан</div>
                     </div>
                     <div class="about-docs__row">
                         <div class="about-docs__label" data-i18n="docs-label-bank"></div>
-                        <div class="about-docs__value">р/с 40702810740480125396 в ПАО "Сбербанк России", г.Москва к/с
-                            30101810400000000225 БИК 044525225
-                            <button class="about-docs__copy" aria-label="Скопировать"><svg width="16" height="16"
-                                    viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M12.6667 0.666656H4.66665C3.93332 0.666656 3.33332 1.26666 3.33332 1.99999V4.66666H1.99999C1.26666 4.66666 0.666656 5.26666 0.666656 5.99999V14C0.666656 14.7333 1.26666 15.3333 1.99999 15.3333H9.99999C10.7333 15.3333 11.3333 14.7333 11.3333 14V11.3333H12.6667C13.4 11.3333 14 10.7333 14 9.99999V1.99999C14 1.26666 13.4 0.666656 12.6667 0.666656ZM9.99999 14H1.99999V5.99999H9.99999V14ZM4.66665 4.66666H11.3333V9.99999H12.6667V1.99999H4.66665V4.66666Z"
-                                        fill="#4469E0" />
-                                </svg></button>
-                        </div>
+                        <div class="about-docs__value">Банковские реквизиты: не указаны</div>
                     </div>
                     <div class="about-docs__row">
-                        <div class="about-docs__label">ОГРН</div>
-                        <div class="about-docs__value">1045010550243
-                            <button class="about-docs__copy" aria-label="Скопировать"><svg width="16" height="16"
-                                    viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M12.6667 0.666656H4.66665C3.93332 0.666656 3.33332 1.26666 3.33332 1.99999V4.66666H1.99999C1.26666 4.66666 0.666656 5.26666 0.666656 5.99999V14C0.666656 14.7333 1.26666 15.3333 1.99999 15.3333H9.99999C10.7333 15.3333 11.3333 14.7333 11.3333 14V11.3333H12.6667C13.4 11.3333 14 10.7333 14 9.99999V1.99999C14 1.26666 13.4 0.666656 12.6667 0.666656ZM9.99999 14H1.99999V5.99999H9.99999V14ZM4.66665 4.66666H11.3333V9.99999H12.6667V1.99999H4.66665V4.66666Z"
-                                        fill="#4469E0" />
-                                </svg></button>
-                        </div>
+                        <div class="about-docs__label">Email</div>
+                        <div class="about-docs__value">contact@labkeeper.io</div>
                     </div>
                     <div class="about-docs__row">
-                        <div class="about-docs__label">ОКПО</div>
-                        <div class="about-docs__value">70423280
-                            <button class="about-docs__copy" aria-label="Скопировать"><svg width="16" height="16"
-                                    viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M12.6667 0.666656H4.66665C3.93332 0.666656 3.33332 1.26666 3.33332 1.99999V4.66666H1.99999C1.26666 4.66666 0.666656 5.26666 0.666656 5.99999V14C0.666656 14.7333 1.26666 15.3333 1.99999 15.3333H9.99999C10.7333 15.3333 11.3333 14.7333 11.3333 14V11.3333H12.6667C13.4 11.3333 14 10.7333 14 9.99999V1.99999C14 1.26666 13.4 0.666656 12.6667 0.666656ZM9.99999 14H1.99999V5.99999H9.99999V14ZM4.66665 4.66666H11.3333V9.99999H12.6667V1.99999H4.66665V4.66666Z"
-                                        fill="#4469E0" />
-                                </svg></button>
-                        </div>
-                    </div>
-                    <div class="about-docs__row">
-                        <div class="about-docs__label">ОКВЭД</div>
-                        <div class="about-docs__value">46.69.5
-                            <button class="about-docs__copy" aria-label="Скопировать"><svg width="16" height="16"
-                                    viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M12.6667 0.666656H4.66665C3.93332 0.666656 3.33332 1.26666 3.33332 1.99999V4.66666H1.99999C1.26666 4.66666 0.666656 5.26666 0.666656 5.99999V14C0.666656 14.7333 1.26666 15.3333 1.99999 15.3333H9.99999C10.7333 15.3333 11.3333 14.7333 11.3333 14V11.3333H12.6667C13.4 11.3333 14 10.7333 14 9.99999V1.99999C14 1.26666 13.4 0.666656 12.6667 0.666656ZM9.99999 14H1.99999V5.99999H9.99999V14ZM4.66665 4.66666H11.3333V9.99999H12.6667V1.99999H4.66665V4.66666Z"
-                                        fill="#4469E0" />
-                                </svg></button>
-                        </div>
+                        <div class="about-docs__label">Телефон</div>
+                        <div class="about-docs__value">+7 (963) 768-55-90</div>
                     </div>
                     <div class="about-docs__row">
                         <div class="about-docs__label" data-i18n="docs-label-director"></div>
-                        <div class="about-docs__value">Бляблин Илья Владимирович, генеральный директор, действует на
-                            основании устава
-                            <button class="about-docs__copy" aria-label="Скопировать"><svg width="16" height="16"
-                                    viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M12.6667 0.666656H4.66665C3.93332 0.666656 3.33332 1.26666 3.33332 1.99999V4.66666H1.99999C1.26666 4.66666 0.666656 5.26666 0.666656 5.99999V14C0.666656 14.7333 1.26666 15.3333 1.99999 15.3333H9.99999C10.7333 15.3333 11.3333 14.7333 11.3333 14V11.3333H12.6667C13.4 11.3333 14 10.7333 14 9.99999V1.99999C14 1.26666 13.4 0.666656 12.6667 0.666656ZM9.99999 14H1.99999V5.99999H9.99999V14ZM4.66665 4.66666H11.3333V9.99999H12.6667V1.99999H4.66665V4.66666Z"
-                                        fill="#4469E0" />
-                                </svg></button>
-                        </div>
+                        <div class="about-docs__value">Трофименко Анастасия Алексеевна</div>
                     </div>
                 </div>
 
                 <div class="about-docs__links">
                     <a href="privacy/soglashenie.html" class="button button--outline about-docs__link"
-                        target="_blank"><span data-i18n="docs-link-consent"></span> <img src="img/target.svg" alt="external link" class="button__external-icon"
+                        target="_blank"><span data-i18n="docs-link-consent"></span> <img src="assets/img/target.svg" alt="external link" class="button__external-icon"
                             width="16" height="16"></a>
                     <a href="privacy/oferta.html" class="button button--outline about-docs__link" target="_blank"><span
-                            data-i18n="docs-link-oferta"></span> <img src="img/target.svg"
+                            data-i18n="docs-link-oferta"></span> <img src="assets/img/target.svg"
                             alt="external link" class="button__external-icon" width="16" height="16"></a>
                     <a href="privacy.html" class="button button--outline about-docs__link" target="_blank"><span
-                            data-i18n="docs-link-privacy"></span> <img src="img/target.svg"
+                            data-i18n="docs-link-privacy"></span> <img src="assets/img/target.svg"
+                            alt="external link" class="button__external-icon" width="16" height="16"></a>
+                    <a href="privacy/service-consent.html" class="button button--outline about-docs__link" target="_blank"><span
+                            >Согласие на использование сервиса Яндекс.Метрика</span> <img src="assets/img/target.svg"
+                            alt="external link" class="button__external-icon" width="16" height="16"></a>
+                    <a href="privacy/ads-consent.html" class="button button--outline about-docs__link" target="_blank"><span
+                            >Согласие на получение рекламных рассылок</span> <img src="assets/img/target.svg"
                             alt="external link" class="button__external-icon" width="16" height="16"></a>
                 </div>
             </div>
         </section>
-        -->
     </main>
 
     <!-- Подвал -->
@@ -305,7 +236,7 @@
                     <a href="/#features" class="footer__link" data-i18n="nav-advantages"></a>
                     <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
                     <!-- TODO billing -->
-                    <!-- <a href="tokens.html" class="footer__link" data-i18n="nav-tokens"></a> -->
+                    <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
                     <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank"
                         class="footer__link footer__link--external">
                         <span data-i18n="nav-wiki"></span>
@@ -330,8 +261,7 @@
             </div>
             <div class="footer__bottom">
                 <div class="footer__copyright">© 2024—2026</div>
-                <!-- TODO -->
-                <!-- <a href="privacy.html" class="footer__policy" data-i18n="footer-policy"></a> -->
+                <a href="privacy.html" class="footer__policy" data-i18n="footer-policy"></a>
             </div>
         </div>
     </footer>
