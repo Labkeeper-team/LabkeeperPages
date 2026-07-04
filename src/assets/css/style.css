@@ -399,11 +399,13 @@ h2,
   height: 100%;
   display: flex;
   align-items: center;
+  max-width: 200px;
 }
 
 @media (max-width: 1023px) {
   .header__nav-item {
     height: auto;
+      max-width: none;
   }
 }
 
@@ -2313,7 +2315,7 @@ h2,
 }
 
 .policy-nav__list {
-  gap: 40px;
+  gap: 28px;
   flex-wrap: wrap;
 }
 
