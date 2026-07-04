@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
-    <title>Labkeeper — О нас</title>
+    <title>Labkeeper — Документы</title>
     <meta name="description"
         content="О команде и миссии Labkeeper: единая среда для документов, расчетов и научных публикаций. / About Labkeeper team and mission: a unified environment for documents, calculations, and scientific writing." />
     <link rel="canonical" href="https://labkeeper.io/about" />
@@ -94,10 +94,10 @@
                             data-i18n="nav-audience"></a></li>
                     <li class="header__nav-item"><a href="index.html#examples" class="header__nav-link"
                             data-i18n="nav-examples"></a></li>
-                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link"
-                            data-i18n="nav-tokens"></a></li>
-                    <li class="header__nav-item"><a href="/about" class="header__nav-link header__nav-link--active"
-                            data-i18n="nav-about"></a></li>
+                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a>
+                    </li>
+                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a>
+                    </li>
                 </ul>
                 <div class="header__mobile-contact">
                     <span class="header__mobile-contact-label" data-i18n="footer-contact"></span>
@@ -115,117 +115,76 @@
         </div>
     </header>
 
-    <main class="main page-about">
-        <!-- Блок 1: Hero и Миссия -->
-        <section class="about-hero">
-            <div class="about-hero__container">
-                <!-- Описание -->
-                <div class="about-hero__row">
-                    <div class="about-hero__content">
-                        <h1 class="about-hero__title h1" data-i18n="about-title"></h1>
-                        <p class="about-hero__text" data-i18n="about-text-1"></p>
-                        <p class="about-hero__text" data-i18n="about-text-2"></p>
-                    </div>
-                    <img src="assets/img/logo.svg" alt="Labkeeper decorative pattern" class="about-hero__logo"
-                        loading="lazy">
-                </div>
+    <main class="main page-policy">
 
-                <!-- Миссия -->
-                <div class="about-hero__row about-hero__row--reverse">
-                    <div class="about-hero__content">
-                        <h2 class="about-hero__subtitle h1" data-i18n="about-mission"></h2>
-                        <p class="about-hero__text" data-i18n="about-mission-text"></p>
-                    </div>
-                    <img src="assets/img/logo.svg" alt="Labkeeper decorative pattern"
-                        class="about-hero__logo about-hero__logo--small" loading="lazy">
-                </div>
+        <!-- Навигация по документам -->
+        <div class="policy-nav">
+            <div class="policy-nav__container">
+                <ul class="header__nav-list2 policy-nav__list">
+                    <li class="header__nav-item">
+                        <a href="privacy.html" class="header__nav-link" data-i18n="policy-nav-privacy">Политика
+                            конфиденциальности</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="soglas.html" class="header__nav-link" data-i18n="policy-nav-consent">Согласие об
+                            обработке персональных данных</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="oferta.html" class="header__nav-link">Публичная
+                            оферта</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="sogl_yam.html" class="header__nav-link">Согласие на
+                            использование сервиса ЯМ</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="sogl_adv.html" class="header__nav-link header__nav-link--active">Согласие на получение
+                            рекламных
+                            рассылок</a>
+                    </li>
+                </ul>
             </div>
-        </section>
+        </div>
 
-        <!-- Блок 2: Для кого (клонировано с мода) -->
-        <section class="audience audience--about" id="audience">
-            <div class="audience__container">
-                <h2 class="audience__title h1" data-i18n="aud-title"></h2>
-                <div class="audience__cards">
-                    <div class="audience-card">
-                        <h3 class="audience-card__title" data-i18n="aud-c1-title"></h3>
-                        <p class="audience-card__text" data-i18n="aud-c1-text"></p>
-                    </div>
-                    <div class="audience-card">
-                        <h3 class="audience-card__title" data-i18n="aud-c2-title"></h3>
-                        <p class="audience-card__text" data-i18n="aud-c2-text"></p>
-                    </div>
-                    <div class="audience-card">
-                        <h3 class="audience-card__title" data-i18n="aud-c3-title"></h3>
-                        <p class="audience-card__text" data-i18n="aud-c3-text"></p>
-                    </div>
+        <!-- Контент документа -->
+        <div class="policy-article">
+            <div class="policy-article__container">
+
+                <h1 class="policy-article__title" data-i18n="policy-title-privacy">Cогласие на получение рекламных
+                    рассылок</h1>
+
+                <div class="policy-article__section">
+                    Я, субъект персональных данных (далее – ПДн), свободно, своей волей и в своем интересе даю Оператору
+                    отдельное согласие на получение рекламных рассылок, а также на обработку моих ПДн для указанных ниже
+                    целей.
+
+                    <br>
+                    Основание и способ выражения согласия Настоящее согласие считается предоставленным только после
+                    моего активного действия – проставления отдельной, специально выделенной отметки (чекбокса) на Сайте
+                    https://labkeeper.io/. Данное согласие не является обязательным условием для регистрации и
+                    использования основных функций Сервиса.
+                    Цели обработки: Информирование о новостях Оператора, обновлениях функционала Сайта, специальных
+                    предложениях, акциях и иных событиях, связанных с деятельностью Оператора.
+                    Перечень обрабатываемых ПДн имя (для персонализации сообщений);
+                    адрес электронной почты (e-mail);
+                    Каналы коммуникации: Рассылки будут осуществляться автоматизированным способом на адрес моей
+                    электронной почты;
+                    Срок действия согласия: Настоящее согласие действует до момента его отзыва мной.
+                    Отозвать согласие я могу: нажав на ссылку «Отписаться» в конце любого полученного электронного
+                    письма;
+                    направив письменное заявление на электронный адрес Оператора contact@labkeeper.io с пометкой «Отказ
+                    от рассылки».
+                    После отзыва согласия Оператор прекратит рассылку в течение 3 (трех) рабочих дней, а мои ПДн будут
+                    удалены в срок, не превышающий 30 (тридцати) календарных дней.
+                    Политика обработки ПДн: Я подтверждаю, что ознакомлен(а) с Политикой обработки персональных данных
+                    Оператора, расположенной по ссылке https://labkeeper.io/privacy
+
                 </div>
+
+
             </div>
-        </section>
+        </div>
 
-
-        <section class="about-docs">
-            <div class="about-docs__container">
-                <h2 class="about-docs__title h2" data-i18n="docs-title"></h2>
-
-                <div class="about-docs__table">
-                    <div class="about-docs__row">
-                        <div class="about-docs__label" data-i18n="docs-label-name"></div>
-                        <div class="about-docs__value">ИП ТРОФИМЕНКО АНАСТАСИЯ АЛЕКСЕЕВНА
-                            <button class="about-docs__copy" aria-label="Скопировать"><svg width="16" height="16"
-                                    viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M12.6667 0.666656H4.66665C3.93332 0.666656 3.33332 1.26666 3.33332 1.99999V4.66666H1.99999C1.26666 4.66666 0.666656 5.26666 0.666656 5.99999V14C0.666656 14.7333 1.26666 15.3333 1.99999 15.3333H9.99999C10.7333 15.3333 11.3333 14.7333 11.3333 14V11.3333H12.6667C13.4 11.3333 14 10.7333 14 9.99999V1.99999C14 1.26666 13.4 0.666656 12.6667 0.666656ZM9.99999 14H1.99999V5.99999H9.99999V14ZM4.66665 4.66666H11.3333V9.99999H12.6667V1.99999H4.66665V4.66666Z"
-                                        fill="#4469E0" />
-                                </svg></button>
-                        </div>
-                    </div>
-                    <div class="about-docs__row">
-                        <div class="about-docs__label">ИНН</div>
-                        <div class="about-docs__value">502910548283
-                            <button class="about-docs__copy" aria-label="Скопировать"><svg width="16" height="16"
-                                    viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M12.6667 0.666656H4.66665C3.93332 0.666656 3.33332 1.26666 3.33332 1.99999V4.66666H1.99999C1.26666 4.66666 0.666656 5.26666 0.666656 5.99999V14C0.666656 14.7333 1.26666 15.3333 1.99999 15.3333H9.99999C10.7333 15.3333 11.3333 14.7333 11.3333 14V11.3333H12.6667C13.4 11.3333 14 10.7333 14 9.99999V1.99999C14 1.26666 13.4 0.666656 12.6667 0.666656ZM9.99999 14H1.99999V5.99999H9.99999V14ZM4.66665 4.66666H11.3333V9.99999H12.6667V1.99999H4.66665V4.66666Z"
-                                        fill="#4469E0" />
-                                </svg></button>
-                        </div>
-                    </div>
-                    <div class="about-docs__row">
-                        <div class="about-docs__label">ОГРН</div>
-                        <div class="about-docs__value">326508100352548
-                            <button class="about-docs__copy" aria-label="Скопировать"><svg width="16" height="16"
-                                    viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M12.6667 0.666656H4.66665C3.93332 0.666656 3.33332 1.26666 3.33332 1.99999V4.66666H1.99999C1.26666 4.66666 0.666656 5.26666 0.666656 5.99999V14C0.666656 14.7333 1.26666 15.3333 1.99999 15.3333H9.99999C10.7333 15.3333 11.3333 14.7333 11.3333 14V11.3333H12.6667C13.4 11.3333 14 10.7333 14 9.99999V1.99999C14 1.26666 13.4 0.666656 12.6667 0.666656ZM9.99999 14H1.99999V5.99999H9.99999V14ZM4.66665 4.66666H11.3333V9.99999H12.6667V1.99999H4.66665V4.66666Z"
-                                        fill="#4469E0" />
-                                </svg></button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="about-docs__links">
-                    <a href="soglas.html" class="button button--outline about-docs__link"
-                        target="_blank"><span data-i18n="docs-link-consent"></span> <img src="assets/img/target.svg"
-                            alt="external link" class="button__external-icon" width="16" height="16"></a>
-                    <a href="oferta.html" class="button button--outline about-docs__link" target="_blank"><span
-                            data-i18n="docs-link-oferta"></span> <img src="assets/img/target.svg" alt="external link"
-                            class="button__external-icon" width="16" height="16"></a>
-                    <a href="privacy.html" class="button button--outline about-docs__link" target="_blank"><span
-                            data-i18n="docs-link-privacy"></span> <img src="assets/img/target.svg" alt="external link"
-                            class="button__external-icon" width="16" height="16"></a>
-                    <a href="sogl_yam.html" class="button button--outline about-docs__link" target="_blank"><span
-                            data-i18n="docs-link-yam"></span> <img src="assets/img/target.svg" alt="external link"
-                            class="button__external-icon" width="16" height="16"></a>
-                    <a href="sogl_adv.html" class="button button--outline about-docs__link" target="_blank"><span
-                            data-i18n="docs-link-adv"></span> <img src="assets/img/target.svg" alt="external link"
-                            class="button__external-icon" width="16" height="16"></a>
-                    <a href="/" class="button button--outline about-docs__link"><span
-                            data-i18n="docs-link-cookies"></span>
-                    </a>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Подвал -->
@@ -264,6 +223,7 @@
             </div>
         </div>
     </footer>
+
 
     <!-- Cookie Banner -->
     <div id="cookie-banner" class="cookie-banner hidden">
