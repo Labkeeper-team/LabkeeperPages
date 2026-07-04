@@ -105,6 +105,9 @@ const i18n = {
                 "docs-link-consent": "Согласие об обработке персональных данных",
                 "docs-link-oferta": "Публичная оферта",
                 "docs-link-privacy": "Политика конфиденциальности",
+                "docs-link-yam": "Согласие на использование сервиса ЯМ",
+                "docs-link-adv": "Согласие на получение рекламных рассылок",
+                "docs-link-cookies": "Настройки cookies",
 
                 // Попап оплаты
                 "payment-back": "Вернуться к выбору",
@@ -322,6 +325,9 @@ const i18n = {
                 "docs-link-consent": "Consent to Personal Data Processing",
                 "docs-link-oferta": "Public Offer",
                 "docs-link-privacy": "Privacy Policy",
+                "docs-link-yam": "Consent to use the YM service",
+                "docs-link-cookies": "Cookie Settings",
+                "docs-link-adv": "Consent to receive promotional newsletters",
 
                 // Payment popup
                 "payment-back": "Back to selection",
