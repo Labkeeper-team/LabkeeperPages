@@ -2337,13 +2337,12 @@ h2,
 
   .policy-nav__list {
     gap: 0;
-    flex-wrap: nowrap;
-    width: max-content;
+    flex-wrap: wrap;
   }
 
   .policy-nav__list .header__nav-link {
     white-space: nowrap;
-    padding: 0 16px;
+    padding: 0;
     height: 52px;
   }
 }
