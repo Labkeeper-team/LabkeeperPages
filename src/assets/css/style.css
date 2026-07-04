@@ -2337,7 +2337,8 @@ h2,
 
   .policy-nav__list {
     gap: 0;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   .policy-nav__list .header__nav-link {
