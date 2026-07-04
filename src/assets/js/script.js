@@ -327,4 +327,46 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
+
+  // Cookies
+  const cookieBanner = document.getElementById('cookie-banner');
+  const acceptBtn = document.getElementById('cookie-accept');
+  const declineBtn = document.getElementById('cookie-decline');
+
+  // Находим кнопку вызова куки (ищем span, а затем берем его родительскую ссылку <a>)
+  const openCookieSpan = document.querySelector('[data-i18n="docs-link-cookies"]');
+  const openCookieBtn = openCookieSpan ? openCookieSpan.closest('a') : null;
+
+  // Проверяем, делал ли пользователь выбор ранее
+  const cookieConsent = localStorage.getItem('labkeeper_cookie_consent');
+
+  // Если выбора нет — показываем плашку
+  if (!cookieConsent) {
+    // Небольшая задержка для плавной анимации после загрузки (по желанию)
+    setTimeout(() => {
+      cookieBanner.classList.remove('hidden');
+    }, 500);
+  }
+
+  // Функция обработки выбора
+  function handleConsent(choice) {
+    localStorage.setItem('labkeeper_cookie_consent', choice);
+    cookieBanner.classList.add('hidden');
+
+    // Здесь можно добавить логику инициализации Яндекс Метрики
+    // если пользователь выбрал 'accepted', и блокировку если 'declined'
+  }
+
+  // Обработчики кнопок внутри плашки
+  acceptBtn.addEventListener('click', () => handleConsent('accepted'));
+  declineBtn.addEventListener('click', () => handleConsent('declined'));
+
+  // Обработчик кнопки "Настройки Cookies" на странице
+  if (openCookieBtn) {
+    openCookieBtn.addEventListener('click', function (e) {
+      e.preventDefault(); // Останавливаем переход по href="privacy.html"
+      cookieBanner.classList.remove('hidden');
+    });
+  }
+
 });
