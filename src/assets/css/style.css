@@ -366,7 +366,7 @@ h2,
   display: flex;
   align-items: center;
   height: 100%;
-  gap: 22px;
+  gap: 14px;
 }
 
 .header__nav-list2 {
@@ -1292,7 +1292,7 @@ h2,
   color: var(--c-text-main);
 }
 
-/* popup.scss (РІСЃРїР»С‹РІР°СЋС‰РµРµ РѕРєРЅРѕ) */
+/* popup.scss */
 .popup {
   position: fixed;
   top: 0;
@@ -1373,6 +1373,67 @@ h2,
     top: 16px;
     right: 16px;
   }
+}
+
+
+/* Cookies */
+
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.05);
+    z-index: 9999;
+    padding: 20px 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.cookie-banner.hidden {
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cookie-banner__container {
+    max-width: 1200px; /* или используйте переменную контейнера вашего сайта */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .cookie-banner__container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.cookie-banner__text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333333;
+    flex: 1;
+}
+
+.cookie-banner__link {
+    color: #4469E0; /* Синий цвет акцентов с вашего сайта */
+    text-decoration: underline;
+}
+
+.cookie-banner__link:hover {
+    text-decoration: none;
+}
+
+.cookie-banner__actions {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
 }
 
 /* tokens.scss (Токены) */
