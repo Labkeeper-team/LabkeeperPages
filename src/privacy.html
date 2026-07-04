@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
+    <title>Labkeeper — Документы</title>
+    <meta name="description"
+        content="О команде и миссии Labkeeper: единая среда для документов, расчетов и научных публикаций. / About Labkeeper team and mission: a unified environment for documents, calculations, and scientific writing." />
+    <link rel="canonical" href="https://labkeeper.io/about" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://labkeeper.io/about" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:site_name" content="Labkeeper" />
+    <meta property="og:title" content="Labkeeper — О нас / Labkeeper — About" />
+    <meta property="og:description"
+        content="Узнайте о миссии Labkeeper и о том, для кого создана платформа. / Learn about Labkeeper's mission and who the platform is built for." />
+    <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:title" content="Labkeeper — О нас / Labkeeper — About" />
+    <meta name="twitter:description"
+        content="Узнайте о миссии Labkeeper и о том, для кого создана платформа. / Learn about Labkeeper's mission and who the platform is built for." />
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a);
+        })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        (function () {
+            ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", {
+                webvisor: true,
+                clickmap: true,
+                referrer: document.referrer,
+                url: location.href,
+                accurateTrackBounce: true,
+                trackLinks: true
+            });
+        })();
+    </script>
+
+    <!-- Preconnect & Async Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="page">
+    <noscript>
+        <div>
+            <img src="https://mc.yandex.ru/watch/IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY"
+                style="position:absolute; left:-9999px;" alt="">
+        </div>
+    </noscript>
+    <header class="header js-header">
+        <div class="header__container">
+            <div class="header__left">
+                <!-- Кнопка мобильного меню -->
+                <button class="header__burger js-burger-btn" aria-label="Открыть меню">
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                </button>
+                <a href="/" class="header__logo">
+                    <img src="assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36"
+                        height="36">
+                    <span class="header__logo-text">Labkeeper</span>
+                </a>
+                <div class="header__lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+            </div>
+
+            <nav class="header__nav js-nav">
+                <div class="header__mobile-lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="/#features" class="header__nav-link"
+                            data-i18n="nav-advantages"></a></li>
+                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link"
+                            data-i18n="nav-features"></a></li>
+                    <li class="header__nav-item"><a href="/#audience" class="header__nav-link"
+                            data-i18n="nav-audience"></a></li>
+                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link"
+                            data-i18n="nav-examples"></a></li>
+                    <li class="header__nav-item"><a href="tokens.html" class="header__nav-link"
+                            data-i18n="nav-tokens"></a></li>
+                    <li class="header__nav-item"><a href="/about" class="header__nav-link header__nav-link--active"
+                            data-i18n="nav-about"></a></li>
+                </ul>
+                <div class="header__mobile-contact">
+                    <span class="header__mobile-contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:contact@labkeeper.io" class="header__mobile-contact-link">contact@labkeeper.io</a>
+                </div>
+            </nav>
+
+            <div class="header__right">
+                <a href="/project/default?open=login" class="button button--outline header__login"
+                    data-i18n="btn-login"></a>
+                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects"
+                    style="display: none;"></a>
+                <a href="/project/default" class="button button--primary header__editor" data-i18n="btn-editor"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main page-policy">
+
+        <!-- Навигация по документам -->
+        <div class="policy-nav">
+            <div class="policy-nav__container">
+                <ul class="header__nav-list2 policy-nav__list">
+                    <li class="header__nav-item">
+                        <a href="privacy.html" class="header__nav-link header__nav-link--active"
+                            data-i18n="policy-nav-privacy">Политика конфиденциальности</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="privacy/soglashenie.html" class="header__nav-link"
+                            data-i18n="policy-nav-consent">Согласие об обработке персональных данных</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="privacy/oferta.html" class="header__nav-link" data-i18n="policy-nav-oferta">Публичная
+                            оферта</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Контент документа -->
+        <div class="policy-article">
+            <div class="policy-article__container">
+
+                <h1 class="policy-article__title" data-i18n="policy-title-privacy">Политика в отношении обработки
+                    персональных данных</h1>
+
+                <div class="policy-article__section" data-i18n="privacy-s1">
+                    <h2 class="policy-article__section-title">1. Общие положения</h2>
+                    <p class="p">Настоящая политика обработки персональных данных составлена в соответствии с
+                        требованиями Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет
+                        порядок обработки персональных данных и меры по обеспечению безопасности персональных данных,
+                        предпринимаемые ИП Подгорбунских Алексеем Сергеевичем (далее – Оператор).</p>
+                    <p class="p">1.1. Оператор ставит своей важнейшей целью и условием осуществления своей деятельности
+                        соблюдение прав и свобод человека и гражданина при обработке его персональных данных, в том
+                        числе защиты прав на неприкосновенность частной жизни, личную и семейную тайну.</p>
+                    <p class="p">1.2. Настоящая политика Оператора в отношении обработки персональных данных (далее –
+                        Политика) применяется ко всей информации, которую Оператор может получить о посетителях
+                        веб-сайта <a href="https://labkulture.design"
+                            class="policy-article__link">https://labkulture.design</a>.</p>
+                </div>
+
+                <div class="policy-article__section" data-i18n="privacy-s2">
+                    <h2 class="policy-article__section-title">2. Основные понятия, используемые в Политике</h2>
+                    <p class="p">2.1. Автоматизированная обработка персональных данных – обработка персональных данных с
+                        помощью средств вычислительной техники.</p>
+                    <p class="p">2.2. Блокирование персональных данных – временное прекращение обработки персональных
+                        данных (за исключением случаев, если обработка необходима для уточнения персональных данных).
+                    </p>
+                    <p class="p">2.3. Веб-сайт – совокупность графических и информационных материалов, а также программ
+                        для ЭВМ и баз данных, обеспечивающих их доступность в сети интернет по сетевому адресу <a
+                            href="https://labkulture.design" class="policy-article__link">https://labkulture.design</a>.
+                    </p>
+                    <p class="p">2.4. Информационная система персональных данных — совокупность содержащихся в базах
+                        данных персональных данных и обеспечивающих их обработку информационных технологий и технических
+                        средств.</p>
+                    <p class="p">2.5. Обезличивание персональных данных — действия, в результате которых невозможно
+                        определить без использования дополнительной информации принадлежность персональных данных
+                        конкретному Пользователю или иному субъекту персональных данных.</p>
+                    <p class="p">2.6. Обработка персональных данных – любое действие (операция) или совокупность
+                        действий (операций), совершаемых с использованием средств автоматизации или без использования
+                        таких средств с персональными данными, включая сбор, запись, систематизацию, накопление,
+                        хранение, уточнение (обновление, изменение), извлечение, использование, передачу
+                        (распространение, предоставление, доступ), обезличивание, блокирование, удаление, уничтожение
+                        персональных данных.</p>
+                    <p class="p">2.7. Оператор – государственный орган, муниципальный орган, юридическое или физическое
+                        лицо, самостоятельно или совместно с другими лицами организующие и (или) осуществляющие
+                        обработку персональных данных, а также определяющие цели обработки персональных данных, состав
+                        персональных данных, подлежащих обработке, действия (операции), совершаемые с персональными
+                        данными.</p>
+                    <p class="p">2.8. Персональные данные – любая информация, относящаяся прямо или косвенно к
+                        определённому или определяемому Пользователю веб-сайта <a href="https://labkulture.design"
+                            class="policy-article__link">https://labkulture.design</a>.</p>
+                    <p class="p">2.9. Пользователь – любой посетитель веб-сайта <a href="https://labkulture.design"
+                            class="policy-article__link">https://labkulture.design</a>.</p>
+                    <p class="p">2.10. Предоставление персональных данных – действия, направленные на раскрытие
+                        персональных данных определённому лицу или определённому кругу лиц.</p>
+                    <p class="p">2.11. Распространение персональных данных – любые действия, направленные на раскрытие
+                        персональных данных неопределённому кругу лиц (передача персональных данных) или на ознакомление
+                        с персональными данными неограниченного круга лиц, в том числе обнародование персональных данных
+                        в средствах массовой информации, размещение в информационно-телекоммуникационных сетях или
+                        предоставление доступа к персональным данным каким-либо иным способом.</p>
+                    <p class="p">2.12. Трансграничная передача персональных данных – передача персональных данных на
+                        территорию иностранного государства органу власти иностранного государства, иностранному
+                        физическому или иностранному юридическому лицу.</p>
+                    <p class="p">2.13. Уничтожение персональных данных – любые действия, в результате которых
+                        персональные данные уничтожаются безвозвратно с невозможностью дальнейшего восстановления
+                        содержания персональных данных в информационной системе персональных данных и (или) результате
+                        которых уничтожаются материальные носители персональных данных.</p>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <nav class="footer__nav">
+                    <a href="/#features" class="footer__link" data-i18n="nav-advantages"></a>
+                    <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
+                    <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
+                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank"
+                        class="footer__link footer__link--external">
+                        <span data-i18n="nav-wiki"></span>
+                        <img src="assets/img/target.svg" alt="target icon" class="footer__link-icon"
+                            style="margin-left: 4px; vertical-align: middle;" width="16" height="16" loading="lazy">
+                    </a>
+                    <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
+                    <a href="/about" class="footer__link" data-i18n="nav-about"></a>
+                </nav>
+                <a href="/" class="footer__logo-link">
+                    <img src="assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40"
+                        loading="lazy">
+                </a>
+                <div class="footer__contact">
+                    <span class="footer__contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:contact@labkeeper.io" class="footer__contact-link">contact@labkeeper.io</a>
+                </div>
+            </div>
+            <div class="footer__middle">
+                <img src="assets/img/img-for-footer.svg" alt="Labkeeper" class="footer__huge-logo" aria-hidden="true"
+                    loading="lazy">
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__copyright">© 2024—2026</div>
+                <a href="privacy.html" class="footer__policy" data-i18n="footer-policy"></a>
+            </div>
+        </div>
+    </footer>
+
+    
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner hidden">
+        <div class="cookie-banner__container">
+            <p class="cookie-banner__text">
+                Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Обязательные cookie работают
+                всегда. Аналитические cookie (сервис Яндекс.Метрика от ООО «Яндекс», Россия) требуют вашего согласия.
+                Подробнее — в <a href="privacy.html" class="cookie-banner__link" target="_blank">Политике обработки
+                    персональных данных</a> и <a href="privacy.html" class="cookie-banner__link"
+                    target="_blank">Согласии на использование сервиса Яндекс.Метрика</a>.
+            </p>
+            <div class="cookie-banner__actions">
+                <button id="cookie-accept" class="button button--primary">Принять</button>
+                <button id="cookie-decline" class="button button--outline">Отказаться</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Скрипты -->
+    <script>
+        window.__LABKEEPER_API_VERSION = "IO_LABKEEPER_FRONTEND_API_VERSION";
+    </script>
+    <script src="assets/js/auth.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/lang.js" defer></script>
+</body>
+
+</html>
