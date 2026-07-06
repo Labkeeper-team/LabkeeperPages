@@ -2506,6 +2506,105 @@ h2,
   white-space: nowrap;
 }
 
+.policy-article__consent-heading {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.policy-article__consent-appendix {
+  font-style: italic;
+  margin-bottom: 24px;
+  line-height: 1.45;
+}
+
+.policy-article__consent-operator {
+  text-align: right;
+  margin-bottom: 32px;
+  line-height: 1.45;
+}
+
+.policy-article__consent-operator .p {
+  margin-bottom: 0;
+}
+
+.policy-article__consent-intro {
+  margin-bottom: 16px;
+}
+
+.policy-article__consent-grid {
+  margin-top: 8px;
+  border: 1px solid #dbe3f5;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.policy-article__consent-row {
+  display: grid;
+  grid-template-columns: 28% 1fr;
+  gap: 0;
+  align-items: stretch;
+  border-bottom: 1px solid #dbe3f5;
+}
+
+.policy-article__consent-row:last-child {
+  border-bottom: none;
+}
+
+.policy-article__consent-label-col {
+  padding: 12px 14px;
+  line-height: 1.45;
+  font-weight: 700;
+  background-color: var(--c-bg-card);
+  border-right: 1px solid #dbe3f5;
+}
+
+.policy-article__consent-content-col {
+  padding: 12px 14px;
+}
+
+.policy-article__consent-content-col .p {
+  margin-bottom: 8px;
+}
+
+.policy-article__consent-content-col .p:last-child {
+  margin-bottom: 0;
+}
+
+.policy-article__consent-content-col ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.policy-article__consent-content-col li {
+  margin-bottom: 4px;
+  line-height: 1.45;
+}
+
+.policy-article__consent-content-col li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .policy-article__consent-row {
+    grid-template-columns: 1fr;
+  }
+
+  .policy-article__consent-label-col {
+    border-right: none;
+    border-bottom: 1px solid #dbe3f5;
+    padding-bottom: 8px;
+  }
+
+  .policy-article__consent-content-col {
+    padding-top: 8px;
+  }
+}
+
+.policy-article__section > .p:first-child,
+.policy-article__section > .policy-article__consent-heading:first-child {
+  margin-top: 0;
+}
+
 .examples {
   background-color: var(--c-bg-dark);
   color: var(--c-text-white);
