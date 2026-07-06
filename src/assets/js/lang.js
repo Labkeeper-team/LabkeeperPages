@@ -1,4 +1,4 @@
-const i18n = {
+﻿const i18n = {
         ru: {
                 "nav-advantages": "Преимущества",
                 "nav-features": "Возможности",
@@ -105,6 +105,9 @@ const i18n = {
                 "docs-link-consent": "Согласие об обработке персональных данных",
                 "docs-link-oferta": "Публичная оферта",
                 "docs-link-privacy": "Политика конфиденциальности",
+                "docs-link-yam": "Согласие на использование сервиса ЯМ",
+                "docs-link-adv": "Согласие на получение рекламных рассылок",
+                "docs-link-cookies": "Настройки cookies",
 
                 // Попап оплаты
                 "payment-back": "Вернуться к выбору",
@@ -156,7 +159,7 @@ const i18n = {
 <p class="p">Обработка персональных данных Субъекта персональных данных осуществляется исключительно в целях регистрации Субъекта персональных данных в базе данных Оператора с последующим направлением Субъекту персональных данных почтовых сообщений и смс-уведомлений (в том числе рекламного содержания) от Оператора, его аффилированных лиц и / или субподрядчиков информационного характера сообщений, а также проверки, исследования и анализа подобных данных, позволяющих поддерживать и улучшать сервисы и разделы сайта.</p>`,
                 "soglas-s3": `<h2 class="policy-article__section-title">Срок действия согласия</h2>
 <p class="p">Настоящее согласие действует с момента его подписания и в течение всего периода пользования мной сайтом и сервисами Оператора.</p>
-<p class="p">Согласие может быть мною отозвано путём направления Оператору письменного заявления по адресу электронной почты: <a href="mailto:contact@labkeeper.io" class="policy-article__link">contact@labkeeper.io</a>.</p>
+<p class="p">Согласие может быть мною отозвано путём направления Оператору письменного заявления по адресу электронной почты: <a href="mailto:labkeeper.io@gmail.com" class="policy-article__link">labkeeper.io@gmail.com</a>.</p>
 <p class="p">В случае отзыва мною согласия на обработку персональных данных Оператор вправе продолжить обработку персональных данных без моего согласия при наличии оснований, указанных в пунктах 2 — 11 части 1 статьи 6, части 2 статьи 10 и части 2 статьи 11 Федерального закона №152-ФЗ «О персональных данных» от 27.07.2006 г.</p>`,
 
                 "oferta-s0": `<p class="p">Настоящий документ является официальным предложением (офертой) ИП Подгорбунских Алексея Сергеевича, именуемого в дальнейшем «Исполнитель», заключить Договор об оказании услуг по предоставлению доступа к программному обеспечению Labkeeper на условиях настоящей Оферты.</p>
@@ -197,7 +200,7 @@ const i18n = {
 <p class="p">ИП Подгорбунских Алексей Сергеевич</p>
 <p class="p">ИНН: 526019549488</p>
 <p class="p">ОГРНИП: 325527500070020</p>
-<p class="p">Email: <a href="mailto:contact@labkeeper.io" class="policy-article__link">contact@labkeeper.io</a></p>`,
+<p class="p">Email: <a href="mailto:labkeeper.io@gmail.com" class="policy-article__link">labkeeper.io@gmail.com</a></p>`,
 
                 // Блок Примеры проектов
                 "ex-title": "Примеры проектов",
@@ -322,6 +325,9 @@ const i18n = {
                 "docs-link-consent": "Consent to Personal Data Processing",
                 "docs-link-oferta": "Public Offer",
                 "docs-link-privacy": "Privacy Policy",
+                "docs-link-yam": "Consent to use the YM service",
+                "docs-link-cookies": "Cookie Settings",
+                "docs-link-adv": "Consent to receive promotional newsletters",
 
                 // Payment popup
                 "payment-back": "Back to selection",
@@ -374,7 +380,7 @@ const i18n = {
 <p class="p">Processing of the Data Subject's personal data is carried out exclusively for the purpose of registering the Data Subject in the Operator's database, with subsequent sending of email and SMS notifications (including promotional content) from the Operator, its affiliates and/or subcontractors, as well as verification, research, and analysis of such data to support and improve the services and sections of the website.</p>`,
                 "soglas-s3": `<h2 class="policy-article__section-title">Term of Consent</h2>
 <p class="p">This consent is valid from the moment of its signing and for the entire period of my use of the Operator's website and services.</p>
-<p class="p">I may withdraw my consent by sending a written request to the Operator's email address: <a href="mailto:contact@labkeeper.io" class="policy-article__link">contact@labkeeper.io</a>.</p>
+<p class="p">I may withdraw my consent by sending a written request to the Operator's email address: <a href="mailto:labkeeper.io@gmail.com" class="policy-article__link">labkeeper.io@gmail.com</a>.</p>
 <p class="p">In the event of withdrawal of consent to the processing of personal data, the Operator is entitled to continue processing personal data without my consent if there are grounds specified in clauses 2–11 of Part 1, Article 6, Part 2, Article 10, and Part 2, Article 11 of Federal Law No. 152-FZ "On Personal Data" of 27.07.2006.</p>`,
 
                 // Oferta sections
@@ -416,7 +422,7 @@ const i18n = {
 <p class="p">IE Podgorbunsky Alexey Sergeevich</p>
 <p class="p">TIN: 526019549488</p>
 <p class="p">OGRNIP: 325527500070020</p>
-<p class="p">Email: <a href="mailto:contact@labkeeper.io" class="policy-article__link">contact@labkeeper.io</a></p>`,
+<p class="p">Email: <a href="mailto:labkeeper.io@gmail.com" class="policy-article__link">labkeeper.io@gmail.com</a></p>`,
 
                 // Examples block
                 "ex-title": "Project Examples",
