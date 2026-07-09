@@ -353,8 +353,9 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('labkeeper_cookie_consent', choice);
     cookieBanner.classList.add('hidden');
 
-    // Здесь можно добавить логику инициализации Яндекс Метрики
-    // если пользователь выбрал 'accepted', и блокировку если 'declined'
+    if (choice === 'accepted' && typeof window.initLabkeeperYandexMetrika === 'function') {
+      window.initLabkeeperYandexMetrika();
+    }
   }
 
   // Обработчики кнопок внутри плашки
