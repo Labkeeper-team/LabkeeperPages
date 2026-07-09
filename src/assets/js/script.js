@@ -364,7 +364,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Обработчик кнопки "Настройки Cookies" на странице
   if (openCookieBtn) {
     openCookieBtn.addEventListener('click', function (e) {
-      e.preventDefault(); // Останавливаем переход по href="privacy.html"
+      e.preventDefault(); // Останавливаем переход по href="privacy"
       cookieBanner.classList.remove('hidden');
     });
   }

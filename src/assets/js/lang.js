@@ -1,4 +1,4 @@
-﻿const i18n = {
+const i18n = {
         ru: {
                 "nav-advantages": "Преимущества",
                 "nav-features": "Возможности",
@@ -114,9 +114,9 @@
                 "payment-buying": "Вы покупаете",
                 "payment-tokens-for": "токенов за",
                 "payment-subtitle": "Оплата производится через безопасный платёжный шлюз ЮKassa",
-                "payment-check1": "Нажимая кнопку «Перейти к оплате», Вы принимаете <a href=\"privacy/oferta.html\" target=\"_blank\">Публичную оферту</a>",
-                "payment-check2": "Нажимая «Перейти к оплате», Вы даёте согласие на <a href=\"privacy/soglashenie.html\" target=\"_blank\">обработку персональных данных</a>",
-                "payment-check3": "Нажимая «Перейти к оплате», Вы соглашаетесь с <a href=\"privacy.html\" target=\"_blank\">Политикой конфиденциальности</a>",
+                "payment-check1": "Нажимая кнопку «Перейти к оплате», Вы принимаете <a href=\"oferta\" target=\"_blank\">Публичную оферту</a>",
+                "payment-check2": "Нажимая «Перейти к оплате», Вы даёте согласие на <a href=\"soglas\" target=\"_blank\">обработку персональных данных</a>",
+                "payment-check3": "Нажимая «Перейти к оплате», Вы соглашаетесь с <a href=\"privacy\" target=\"_blank\">Политикой конфиденциальности</a>",
                 "payment-submit": "Перейти к оплате",
                 "payment-error": "Примите Публичную оферту и согласие на обработку персональных данных",
 
@@ -334,9 +334,9 @@
                 "payment-buying": "You are buying",
                 "payment-tokens-for": "tokens for",
                 "payment-subtitle": "Payment is processed via the secure YooKassa payment gateway",
-                "payment-check1": "By clicking \"Proceed to Payment\", you accept the <a href=\"privacy/oferta.html\" target=\"_blank\">Public Offer</a>",
-                "payment-check2": "By clicking \"Proceed to Payment\", you consent to <a href=\"privacy/soglashenie.html\" target=\"_blank\">personal data processing</a>",
-                "payment-check3": "By clicking \"Proceed to Payment\", you agree to the <a href=\"privacy.html\" target=\"_blank\">Privacy Policy</a>",
+                "payment-check1": "By clicking \"Proceed to Payment\", you accept the <a href=\"oferta\" target=\"_blank\">Public Offer</a>",
+                "payment-check2": "By clicking \"Proceed to Payment\", you consent to <a href=\"soglas\" target=\"_blank\">personal data processing</a>",
+                "payment-check3": "By clicking \"Proceed to Payment\", you agree to the <a href=\"privacy\" target=\"_blank\">Privacy Policy</a>",
                 "payment-submit": "Proceed to Payment",
                 "payment-error": "Please accept the Public Offer and consent to personal data processing",
 
