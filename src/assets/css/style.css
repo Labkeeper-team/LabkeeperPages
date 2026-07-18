@@ -2690,6 +2690,7 @@ h2, .h2 {
   display: flex;
   justify-content: center;
   margin-top: 60px;
+  padding-right: 20px;
 }
 
 .examples__bg {
@@ -2818,7 +2819,6 @@ h2, .h2 {
     padding: 0;
   }
   .examples__swiper {
-    padding-left: 16px;
     padding-right: 16px;
     box-sizing: border-box;
     overflow: visible;
