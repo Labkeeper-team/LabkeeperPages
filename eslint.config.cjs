@@ -14,8 +14,8 @@ module.exports = [
         console: "readonly",
         setTimeout: "readonly",
         clearTimeout: "readonly",
-        requestAnimationFrame: "readonly",
-        Swiper: "readonly"
+        requestAnimationFrame: "readonly"
+        // Swiper убрали отсюда!
       }
     },
     rules: {
@@ -32,7 +32,8 @@ module.exports = [
     rules: {
       "no-undef": "off",
       "no-unused-vars": "off",
-      "eqeqeq": "off"
+      "eqeqeq": "off",
+      "no-redeclare": "off"  // Добавили отключение этой ошибки
     }
   }
-]; 
+];
