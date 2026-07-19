@@ -1,6 +1,6 @@
 /* global Swiper */
 document.addEventListener('DOMContentLoaded', () => {
-    const API_URL = 'https://labkeeper.io/api/v4/public/preview';
+    const API_URL = '/api/v4/public/preview';
     const container = document.getElementById('projects-container');
     const categoryLinks = document.querySelectorAll('#project-categories .header__nav-link');
     
