@@ -1,3 +1,4 @@
+/* global Swiper */
 document.addEventListener('DOMContentLoaded', () => {
     const API_URL = 'https://labkeeper.io/api/v4/public/preview';
     const container = document.getElementById('projects-container');
