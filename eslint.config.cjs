@@ -13,7 +13,9 @@ module.exports = [
         IntersectionObserver: "readonly",
         console: "readonly",
         setTimeout: "readonly",
+        clearTimeout: "readonly",
         requestAnimationFrame: "readonly"
+        // Swiper убрали отсюда!
       }
     },
     rules: {
@@ -22,6 +24,16 @@ module.exports = [
       "no-redeclare": "error",
       "no-unreachable": "error",
       eqeqeq: ["error", "always"]
+    }
+  },
+  // Игнорируем минифицированные библиотеки
+  {
+    files: ["src/assets/js/swiper-bundle.min.js"],
+    rules: {
+      "no-undef": "off",
+      "no-unused-vars": "off",
+      "eqeqeq": "off",
+      "no-redeclare": "off"  // Добавили отключение этой ошибки
     }
   }
 ];
