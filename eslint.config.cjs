@@ -13,7 +13,9 @@ module.exports = [
         IntersectionObserver: "readonly",
         console: "readonly",
         setTimeout: "readonly",
-        requestAnimationFrame: "readonly"
+        clearTimeout: "readonly",
+        requestAnimationFrame: "readonly",
+        Swiper: "readonly"
       }
     },
     rules: {
@@ -22,6 +24,15 @@ module.exports = [
       "no-redeclare": "error",
       "no-unreachable": "error",
       eqeqeq: ["error", "always"]
+    }
+  },
+  // Игнорируем минифицированные библиотеки
+  {
+    files: ["src/assets/js/swiper-bundle.min.js"],
+    rules: {
+      "no-undef": "off",
+      "no-unused-vars": "off",
+      "eqeqeq": "off"
     }
   }
 ];
