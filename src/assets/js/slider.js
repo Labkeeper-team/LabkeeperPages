@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const cardHtml = `
                 <div class="swiper-slide">
-                    <a href="https://labkeeper.io/project/${project.id}" class="example-card" target="_blank">
+                    <a href="https://labkeeper.io/project/${project.id}" class="example-card">
                         <div class="example-card__visual">
                             <img src="${imgSrc}" alt="${projectName}" class="${imgClass}" loading="lazy">
                             <img src="assets/img/target.svg" alt="open" class="example-card__external-icon" width="16" height="16">
