@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
+    <title>Система уравнений с фигурной скобкой в LaTeX (cases, aligned) — Labkeeper</title>
+    <meta name="description" content="Как написать систему уравнений в LaTeX: cases, aligned, dcases с фигурной скобкой онлайн. Кусочно-заданные функции, нумерация строк и выравнивание." />
+    <link rel="canonical" href="https://labkeeper.io/blog/latex-systems-equations" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://labkeeper.io/blog/latex-systems-equations" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Labkeeper" />
+    <meta property="og:title" content="Как вставить формулу с системой уравнений и фигурной скобкой (cases / aligned) — Labkeeper" />
+    <meta property="og:description" content="Система уравнений с фигурной скобкой LaTeX онлайн: подробные примеры с cases, aligned, кусочно-заданными функциями и нумерацией строк." />
+    <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:title" content="Система уравнений с фигурной скобкой в LaTeX (cases, aligned) — Labkeeper" />
+    <meta name="twitter:description" content="Как написать систему уравнений в LaTeX cases: система уравнений с фигурной скобкой онлайн." />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Как вставить формулу с системой уравнений и фигурной скобкой (cases / aligned)","description":"Руководство по набору систем уравнений, систем неравенств и кусочных функций с большой фигурной скобкой в LaTeX.","author":{"@type":"Organization","name":"Labkeeper","url":"https://labkeeper.io"},"publisher":{"@type":"Organization","name":"Labkeeper","logo":{"@type":"ImageObject","url":"https://labkeeper.io/assets/img/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://labkeeper.io/blog/latex-systems-equations"},"datePublished":"2026-08-20","dateModified":"2026-08-20","inLanguage":"ru"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://labkeeper.io/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://labkeeper.io/blog"},{"@type":"ListItem","position":3,"name":"Система уравнений в LaTeX","item":"https://labkeeper.io/blog/latex-systems-equations"}]}</script>
+    <script type="text/javascript">
+        (function () {
+            function hasAcceptedCookieConsent() { try { return localStorage.getItem('labkeeper_cookie_consent') === 'accepted'; } catch (e) { return false; } }
+            window.initLabkeeperYandexMetrika = function () {
+                if (window.__labkeeperYandexMetrikaInitialized || !hasAcceptedCookieConsent() || typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined') { return; }
+                (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date(); for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } } k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", { webvisor: true, clickmap: true, referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+                window.__labkeeperYandexMetrikaInitialized = true;
+            };
+            window.initLabkeeperYandexMetrika();
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="page blog__article">
+    <header class="header js-header">
+        <div class="header__container">
+            <div class="header__left">
+                <button class="header__burger js-burger-btn" aria-label="Открыть меню">
+                    <span class="header__burger-line"></span><span class="header__burger-line"></span><span class="header__burger-line"></span>
+                </button>
+                <a href="/" class="header__logo">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36" height="36">
+                    <span class="header__logo-text">Labkeeper</span>
+                </a>
+                <div class="header__lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+            </div>
+            <nav class="header__nav js-nav">
+                <div class="header__mobile-lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link" data-i18n="nav-examples"></a></li>
+                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link" data-i18n="nav-features"></a></li>
+                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a></li>
+                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a></li>
+                </ul>
+                <div class="header__mobile-contact">
+                    <span class="header__mobile-contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com" class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </nav>
+            <div class="header__right">
+                <a href="/project/default?open=login" class="button button--outline header__login" data-i18n="btn-login"></a>
+                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects" style="display: none;"></a>
+                <a href="/project/default" class="button button--primary header__editor" data-i18n="btn-editor"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main page-article">
+        <div class="article-breadcrumbs">
+            <div class="article-breadcrumbs__container">
+                <nav class="article-breadcrumbs__nav" aria-label="Breadcrumb">
+                    <ol class="article-breadcrumbs__list">
+                        <li class="article-breadcrumbs__item"><a href="/" class="article-breadcrumbs__link">Главная</a></li>
+                        <li class="article-breadcrumbs__item"><a href="/blog" class="article-breadcrumbs__link">Блог</a></li>
+                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active"><span>Система уравнений в LaTeX</span></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="article-layout">
+            <article class="article-content">
+                <div class="article-content__container">
+                    <h1 class="article-content__title h1">Как вставить формулу с&nbsp;системой уравнений и&nbsp;фигурной скобкой (cases / aligned)</h1>
+
+                    <div class="article-content__tags">
+                        <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
+                    </div>
+
+                    <p class="article-content__meta">Обновлено: 20 августа 2026 · Время чтения: ~7 мин</p>
+
+                    <nav class="article-toc" aria-label="Содержание статьи">
+                        <h3 class="article-toc__title">Содержание</h3>
+                        <ol class="article-toc__list">
+                            <li><a href="#intro" class="article-toc__link">Обзор подходов к набору систем уравнений</a></li>
+                            <li><a href="#cases" class="article-toc__link">Окружение cases для кусочных функций</a></li>
+                            <li><a href="#aligned" class="article-toc__link">Связка \left\{ и aligned для систем уравнений</a></li>
+                            <li><a href="#mathtools" class="article-toc__link">Пакет mathtools: окружения dcases и rcases</a></li>
+                            <li><a href="#subequations" class="article-toc__link">Нумерация отдельных уравнений системы (subequations)</a></li>
+                            <li><a href="#tips" class="article-toc__link">Практические советы</a></li>
+                        </ol>
+                    </nav>
+
+                    <section class="article-section" id="intro">
+                        <h2 class="article-section__title">Обзор подходов к набору систем уравнений</h2>
+                        <p>Набор систем алгебраических и дифференциальных уравнений — одна из самых частых задач в точных науках. В зависимости от цели (кусочно-заданная функция, система уравнений с выравниванием по знаку «=» или независимая нумерация строк) в LaTeX используются разные конструкции.</p>
+                        <p>Ниже детально разобрано, <strong>как написать систему уравнений в LaTeX cases</strong> и получить идеальную <strong>систему уравнений с фигурной скобкой LaTeX онлайн</strong>.</p>
+                    </section>
+
+                    <section class="article-section" id="cases">
+                        <h2 class="article-section__title">Окружение cases для кусочных функций</h2>
+                        <p>Для математических выражений с условиями (например, модуль числа или функция знака) используется окружение <code>cases</code> из пакета <code>amsmath</code>:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
+                            <pre><code>\begin{equation}
+|x| = \begin{cases}
+    x,  & \text{если } x \ge 0, \\
+    -x, & \text{если } x &lt; 0.
+\end{cases}
+\end{equation}</code></pre>
+                        </div>
+                        <p>Символ <code>&</code> отделяет формулу от текстового пояснения, а две косые черты <code>\\</code> выполняют перенос на новую строку.</p>
+                    </section>
+
+                    <section class="article-section" id="aligned">
+                        <h2 class="article-section__title">Связка \left\{ и aligned для систем уравнений</h2>
+                        <p>Когда требуется решить систему уравнений с выравниванием по знакам равно или плюс/минус, лучше использовать связку <code>\left\{ \begin{aligned} ... \end{aligned} \right.</code>:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
+                            <pre><code>\begin{equation}
+\left\{
+\begin{aligned}
+    2x + 3y - z &= 7 \\
+    x - 2y + 4z &= -3 \\
+    -3x + y + 2z &= 4
+\end{aligned}
+\right.
+\end{equation}</code></pre>
+                        </div>
+                        <div class="article-note">
+                            <strong>💡 Совет:</strong> Обратите внимание на <code>\right.</code> в конце — точка указывает LaTeX, что закрывающая скобка отсутствует.
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="mathtools">
+                        <h2 class="article-section__title">Пакет mathtools: окружения dcases и rcases</h2>
+                        <p>В стандартном <code>cases</code> дроби внутри строк отображаются в компактном текстовом размере (как <code>\tfrac</code>). Пакет <code>mathtools</code> решает эту проблему окружением <code>dcases</code> (display cases):</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
+                            <pre><code>\usepackage{mathtools}
+
+% Дроби в полный размер (dcases):
+\begin{equation}
+f(x) = \begin{dcases}
+    \frac{\sin x}{x}, & x \neq 0, \\
+    1,                & x = 0.
+\end{dcases}
+\end{equation}
+
+% Фигурная скобка справа (rcases):
+\begin{equation}
+\begin{rcases}
+    a + b = 10 \\
+    a - b = 2
+\end{rcases} \implies a = 6, \ b = 4
+\end{equation}</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="subequations">
+                        <h2 class="article-section__title">Нумерация отдельных уравнений системы (subequations)</h2>
+                        <p>Если каждому уравнению системы нужен свой буквенный индекс (например, (1a), (1b)), оберните код в <code>subequations</code> и окружение <code>align</code>:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
+                            <pre><code>\begin{subequations} \label{eq:maxwell}
+\left\{
+\begin{align}
+    \nabla \cdot \mathbf{E} &= \frac{\rho}{\varepsilon_0} \label{eq:maxwell_gauss} \\
+    \nabla \cdot \mathbf{B} &= 0 \label{eq:maxwell_mag} \\
+    \nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \label{eq:maxwell_faraday} \\
+    \nabla \times \mathbf{B} &= \mu_0 \mathbf{J} + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t} \label{eq:maxwell_ampere}
+\end{align}
+\right.
+\end{subequations}</code></pre>
+                        </div>
+                        <p>Теперь на уравнение Фарадея можно сослаться через <code>\eqref{eq:maxwell_faraday}</code>, а на всю систему — через <code>\eqref{eq:maxwell}</code>.</p>
+                    </section>
+
+                    <section class="article-section" id="tips">
+                        <h2 class="article-section__title">Практические советы</h2>
+                        <div class="article-tips">
+                            <div class="article-tip">
+                                <div class="article-tip__number">1</div>
+                                <div class="article-tip__content">
+                                    <h3>Текст внутри условий</h3>
+                                    <p>Всегда используйте <code>\text{ при }</code> или <code>\quad\text{if }</code> для разделения формулы и текстового условия, чтобы сохранить естественные интервалы шрифта.</p>
+                                </div>
+                            </div>
+                            <div class="article-tip">
+                                <div class="article-tip__number">2</div>
+                                <div class="article-tip__content">
+                                    <h3>Квадратная скобка вместо фигурной</h3>
+                                    <p>Для совокупностей уравнений (условие «или») замените <code>\left\{</code> на <code>\left[</code>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </article>
+
+            <aside class="article-sidebar">
+                <div class="article-sidebar__sticky">
+                    <div class="article-sidebar__media">
+                        <img src="../assets/img/img-for-firstScreen.webp" alt="Онлайн-редактор LaTeX Labkeeper" width="220" height="135" loading="lazy" class="article-sidebar__img">
+                    </div>
+                    <p class="article-sidebar__title">Набирайте сложные системы уравнений и&nbsp;матрицы в&nbsp;онлайн-редакторе Labkeeper с&nbsp;поддержкой amsmath и&nbsp;mathtools.</p>
+                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn">
+                        Перейти в редактор
+                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </aside>
+        </div>
+
+        <section class="features" id="features">
+            <div class="features__intro">
+                <p class="features__intro-label">Попробуйте прямо сейчас</p>
+                <h2 class="features__intro-title">Математическая верстка без границ</h2>
+                <p class="features__intro-text">Онлайн-редактор LaTeX Labkeeper позволяет мгновенно писать формулы, системы уравнений и генерировать идеальный PDF.</p>
+            </div>
+            <div class="feature-block feature-block--img-left feature-block--dark">
+                <div class="feature-block__container">
+                    <div class="feature-block__visual">
+                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor screenshot" class="feature-block__image js-popup-trigger" data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
+                    </div>
+                    <div class="feature-block__content">
+                        <ul class="feature-list">
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b1">Полновесная компиляция:</strong>
+                                <span data-i18n="feat-latex-t1">Получайте PDF профессионального качества с помощью
+                                    встроенного LaTeX-компилятора.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b2">60 секунд на выполнение:</strong>
+                                <span data-i18n="feat-latex-t2">Работайте со сложными документами без ограничений —
+                                    лимит времени компиляции в разы выше, чем в аналогичных сервисах.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b3">Умная конвертация:</strong>
+                                <span data-i18n="feat-latex-t3">Любые вычислительные формулы автоматически
+                                    преобразовываются в красивый LaTeX</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b4">Гибридный синтаксис:</strong>
+                                <span data-i18n="feat-latex-t4">Используйте легковесные вставки Markdown прямо в сложном
+                                    LaTeX-коде для ускорения работы.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="features__footer">
+                <a href="/project/default?open=latex" class="button button--outline-light features__intro-btn">Открыть редактор <span class="button__arrow">→</span></a>
+            </div>
+            <div class="feature__bg"><img src="../assets/img/bg.svg" alt="bg" loading="lazy"></div>
+        </section>
+    </main>
+
+    <section class="audience">
+        <div class="audience__container">
+            <h2 class="audience__title h1">Материалы по&nbsp;теме LaTeX</h2>
+            <div class="audience__slider-wrapper">
+                <button class="audience__arrow audience__arrow--prev" aria-label="Previous slide"></button>
+                <button class="audience__arrow audience__arrow--next" aria-label="Next slide"></button>
+                <div class="swiper audience__swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a href="/blog/latex-formulas" class="audience-card"><p class="audience-card__title">Формулы и amsmath</p><p class="audience-card__text">Выравнивание align, дроби frac/dfrac, матрицы и скобки.</p></a></div>
+                        <div class="swiper-slide"><a href="/blog/latex-amsthm" class="audience-card"><p class="audience-card__title">Теоремы и доказательства amsthm</p><p class="audience-card__text">Оформление лемм, теорем и математических определений.</p></a></div>
+                        <div class="swiper-slide"><a href="/blog/latex-siunitx" class="audience-card"><p class="audience-card__title">Размерности величин siunitx</p><p class="audience-card__text">Набор физических единиц и выравнивание чисел в таблицах.</p></a></div>
+                        <div class="swiper-slide"><a href="/blog/latex-chemfig" class="audience-card"><p class="audience-card__title">Химические формулы chemfig</p><p class="audience-card__text">Редактор химических формул, циклические молекулы и реакции.</p></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="audience__action">
+                <a href="/blog" class="button button--outline audience__btn">Все статьи <span class="button__arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <nav class="footer__nav">
+                    <a href="/#features" class="footer__link" data-i18n="nav-advantages"></a>
+                    <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
+                    <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
+                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank" class="footer__link footer__link--external"><span data-i18n="nav-wiki"></span><img src="../assets/img/target.svg" alt="target icon" class="footer__link-icon" style="margin-left:4px;vertical-align:middle;" width="16" height="16" loading="lazy"></a>
+                    <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
+                    <a href="/about" class="footer__link" data-i18n="nav-about"></a>
+                    <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
+                </nav>
+                <a href="/" class="footer__logo-link"><img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40" loading="lazy"></a>
+                <div class="footer__contact">
+                    <span class="footer__contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com" class="footer__contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </div>
+            <div class="footer__middle"><img src="../assets/img/img-for-footer.svg" alt="Labkeeper" class="footer__huge-logo" aria-hidden="true" loading="lazy"></div>
+            <div class="footer__bottom">
+                <div class="footer__copyright">© 2024—2026</div>
+                <a href="/privacy" class="footer__policy" data-i18n="footer-policy"></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-banner" class="cookie-banner hidden">
+        <div class="cookie-banner__container">
+            <p class="cookie-banner__text">Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных данных</a>.</p>
+            <div class="cookie-banner__actions">
+                <button id="cookie-accept" class="button button--primary">Принять</button>
+                <button id="cookie-decline" class="button button--outline">Отказаться</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="scroll-top js-scroll-top" aria-label="Наверх" title="Наверх"></button>
+    <script>window.__LABKEEPER_API_VERSION = "IO_LABKEEPER_FRONTEND_API_VERSION";</script>
+    <script src="../assets/js/auth.js" defer></script>
+    <script src="../assets/js/script.js" defer></script>
+    <script src="../assets/js/lang.js" defer></script>
+    <script src="../assets/js/slider.js" defer></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+</body>
+</html>
