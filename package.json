@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "npm run lint:js && npm run lint:html",
     "lint:js": "eslint \"src/assets/js/**/*.js\"",
-    "lint:html": "htmlhint \"src/*.html\""
+    "lint:html": "htmlhint \"src/*.html\"",
+    "sitemap": "node src/assets/js/generate-sitemap.js"
   },
   "keywords": [],
   "author": "",
