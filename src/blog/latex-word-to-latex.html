@@ -1,25 +1,33 @@
 <!DOCTYPE html>
+<!-- Пачка 1 -->
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Как перенести документ из Word в LaTeX с сохранением формул — Labkeeper</title>
-    <meta name="description" content="Пошаговый гайд: перенос формул из Word в LaTeX онлайн, импорт docx в LaTeX без потери формул, использование Pandoc, встроенного редактора уравнений и Labkeeper." />
+    <meta name="description"
+        content="Пошаговый гайд: перенос формул из Word в LaTeX онлайн, импорт docx в LaTeX без потери формул, использование Pandoc, встроенного редактора уравнений и Labkeeper." />
     <link rel="canonical" href="https://labkeeper.io/blog/latex-word-to-latex" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://labkeeper.io/blog/latex-word-to-latex" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Labkeeper" />
     <meta property="og:title" content="Как перенести документ из Word в LaTeX с сохранением формул — Labkeeper" />
-    <meta property="og:description" content="Перенос формул из Word в LaTeX онлайн: конвертация DOCX в TEX, сохранение таблиц, графиков и перекрестных ссылок без потери данных." />
+    <meta property="og:description"
+        content="Перенос формул из Word в LaTeX онлайн: конвертация DOCX в TEX, сохранение таблиц, графиков и перекрестных ссылок без потери данных." />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:title" content="Как перенести документ из Word в LaTeX с сохранением формул — Labkeeper" />
-    <meta name="twitter:description" content="Импорт docx в LaTeX без потери формул: онлайн-инструменты, Pandoc и умные алгоритмы конвертации." />
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Как перенести документ из Word в LaTeX с сохранением формул","description":"Пошаговое руководство по переносу текстовых документов и формул из Microsoft Word (.docx) в LaTeX без ошибок.","author":{"@type":"Organization","name":"Labkeeper","url":"https://labkeeper.io"},"publisher":{"@type":"Organization","name":"Labkeeper","logo":{"@type":"ImageObject","url":"https://labkeeper.io/assets/img/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://labkeeper.io/blog/latex-word-to-latex"},"datePublished":"2026-08-20","dateModified":"2026-08-20","inLanguage":"ru"}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://labkeeper.io/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://labkeeper.io/blog"},{"@type":"ListItem","position":3,"name":"Перенос из Word в LaTeX","item":"https://labkeeper.io/blog/latex-word-to-latex"}]}</script>
+    <meta name="twitter:description"
+        content="Импорт docx в LaTeX без потери формул: онлайн-инструменты, Pandoc и умные алгоритмы конвертации." />
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Как перенести документ из Word в LaTeX с сохранением формул","description":"Пошаговое руководство по переносу текстовых документов и формул из Microsoft Word (.docx) в LaTeX без ошибок.","author":{"@type":"Organization","name":"Labkeeper","url":"https://labkeeper.io"},"publisher":{"@type":"Organization","name":"Labkeeper","logo":{"@type":"ImageObject","url":"https://labkeeper.io/assets/img/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://labkeeper.io/blog/latex-word-to-latex"},"datePublished":"2026-08-20","dateModified":"2026-08-20","inLanguage":"ru"}</script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://labkeeper.io/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://labkeeper.io/blog"},{"@type":"ListItem","position":3,"name":"Перенос из Word в LaTeX","item":"https://labkeeper.io/blog/latex-word-to-latex"}]}</script>
     <script type="text/javascript">
         (function () {
             function hasAcceptedCookieConsent() { try { return localStorage.getItem('labkeeper_cookie_consent') === 'accepted'; } catch (e) { return false; } }
@@ -39,15 +47,18 @@
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body class="page blog__article">
     <header class="header js-header">
         <div class="header__container">
             <div class="header__left">
                 <button class="header__burger js-burger-btn" aria-label="Открыть меню">
-                    <span class="header__burger-line"></span><span class="header__burger-line"></span><span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span><span class="header__burger-line"></span><span
+                        class="header__burger-line"></span>
                 </button>
                 <a href="/" class="header__logo">
-                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36" height="36">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36"
+                        height="36">
                     <span class="header__logo-text">Labkeeper</span>
                 </a>
                 <div class="header__lang js-lang-switcher">
@@ -61,19 +72,26 @@
                     <button class="header__lang-btn" data-lang="en">En</button>
                 </div>
                 <ul class="header__nav-list">
-                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link" data-i18n="nav-examples"></a></li>
-                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link" data-i18n="nav-features"></a></li>
-                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a></li>
-                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a></li>
+                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link"
+                            data-i18n="nav-examples"></a></li>
+                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link"
+                            data-i18n="nav-features"></a></li>
+                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a>
+                    </li>
+                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a>
+                    </li>
                 </ul>
                 <div class="header__mobile-contact">
                     <span class="header__mobile-contact-label" data-i18n="footer-contact"></span>
-                    <a href="mailto:labkeeper.io@gmail.com" class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
+                    <a href="mailto:labkeeper.io@gmail.com"
+                        class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
                 </div>
             </nav>
             <div class="header__right">
-                <a href="/project/default?open=login" class="button button--outline header__login" data-i18n="btn-login"></a>
-                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects" style="display: none;"></a>
+                <a href="/project/default?open=login" class="button button--outline header__login"
+                    data-i18n="btn-login"></a>
+                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects"
+                    style="display: none;"></a>
                 <a href="/project/default" class="button button--primary header__editor" data-i18n="btn-editor"></a>
             </div>
         </div>
@@ -84,9 +102,12 @@
             <div class="article-breadcrumbs__container">
                 <nav class="article-breadcrumbs__nav" aria-label="Breadcrumb">
                     <ol class="article-breadcrumbs__list">
-                        <li class="article-breadcrumbs__item"><a href="/" class="article-breadcrumbs__link">Главная</a></li>
-                        <li class="article-breadcrumbs__item"><a href="/blog" class="article-breadcrumbs__link">Блог</a></li>
-                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active"><span>Перенос из Word в LaTeX</span></li>
+                        <li class="article-breadcrumbs__item"><a href="/" class="article-breadcrumbs__link">Главная</a>
+                        </li>
+                        <li class="article-breadcrumbs__item"><a href="/blog" class="article-breadcrumbs__link">Блог</a>
+                        </li>
+                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active"><span>Перенос из Word в
+                                LaTeX</span></li>
                     </ol>
                 </nav>
             </div>
@@ -95,7 +116,8 @@
         <div class="article-layout">
             <article class="article-content">
                 <div class="article-content__container">
-                    <h1 class="article-content__title h1">Как перенести документ из&nbsp;Word в&nbsp;LaTeX с&nbsp;сохранением формул</h1>
+                    <h1 class="article-content__title h1">Как перенести документ из&nbsp;Word в&nbsp;LaTeX
+                        с&nbsp;сохранением формул</h1>
 
                     <div class="article-content__tags">
                         <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
@@ -107,47 +129,67 @@
                         <h3 class="article-toc__title">Содержание</h3>
                         <ol class="article-toc__list">
                             <li><a href="#intro" class="article-toc__link">Зачем переходить из Word в LaTeX</a></li>
-                            <li><a href="#word-builtin" class="article-toc__link">Копирование формул напрямую из MS Word в LaTeX</a></li>
-                            <li><a href="#pandoc" class="article-toc__link">Автоматическая конвертация всего файла через Pandoc</a></li>
-                            <li><a href="#tables-images" class="article-toc__link">Перенос таблиц и изображений без потерь</a></li>
-                            <li><a href="#cleanup" class="article-toc__link">Постобработка и очистка полученного TeX-кода</a></li>
+                            <li><a href="#word-builtin" class="article-toc__link">Копирование формул напрямую из MS Word
+                                    в LaTeX</a></li>
+                            <li><a href="#pandoc" class="article-toc__link">Автоматическая конвертация всего файла через
+                                    Pandoc</a></li>
+                            <li><a href="#tables-images" class="article-toc__link">Перенос таблиц и изображений без
+                                    потерь</a></li>
+                            <li><a href="#cleanup" class="article-toc__link">Постобработка и очистка полученного
+                                    TeX-кода</a></li>
                             <li><a href="#tips" class="article-toc__link">Лайфхаки и онлайн-редактор Labkeeper</a></li>
                         </ol>
                     </nav>
 
                     <section class="article-section" id="intro">
                         <h2 class="article-section__title">Зачем переходить из Word в LaTeX</h2>
-                        <p>Написание дипломов, диссертаций или статей в Microsoft Word часто сопровождается сбоями нумерации, разъезжающимися таблицами и искажением формул при открытии на других компьютерах. Переход на LaTeX решает эти проблемы, гарантируя безупречную типографику.</p>
-                        <p>Однако ручной <strong>перенос формул из Word в LaTeX онлайн</strong> может занять дни, если не знать правильных инструментов конвертации и <strong>импорта docx в LaTeX без потери формул</strong>.</p>
+                        <p>Написание <a href="/blog/latex-diploma-gost">дипломов по ГОСТ</a>, <a
+                                href="/blog/latex-dissertation">диссертаций ВАК</a> или <a
+                                href="/blog/latex-scopus-wos">статей для Scopus и WoS</a> в Microsoft Word часто
+                            сопровождается сбоями нумерации, разъезжающимися таблицами и искажением формул при открытии
+                            на других компьютерах. Переход на LaTeX решает эти проблемы, гарантируя безупречную
+                            типографику.</p>
+                        <p>Однако ручной <strong>перенос формул из Word в LaTeX онлайн</strong> может занять дни, если
+                            не знать правильных инструментов конвертации и <strong>импорта docx в LaTeX без потери
+                                формул</strong>.</p>
                     </section>
 
                     <section class="article-section" id="word-builtin">
                         <h2 class="article-section__title">Копирование формул напрямую из MS Word в LaTeX</h2>
-                        <p>Современные версии Word (начиная с Office 2016 / 365) имеют встроенный редактор уравнений с поддержкой синтаксиса LaTeX:</p>
+                        <p>Современные версии Word (начиная с Office 2016 / 365) имеют встроенный редактор уравнений с
+                            поддержкой синтаксиса LaTeX:</p>
                         <ol>
                             <li>Выделите формулу в Word или нажмите <code>Alt + =</code>.</li>
-                            <li>В верхней панели во вкладке «Уравнение» (Equation) переключите режим с «Профессиональный» на <strong>«LaTeX»</strong>.</li>
-                            <li>Скопируйте текст формулы (<code>Ctrl + C</code>) — в буфер обмена попадет чистый TeX-код: например, <code>\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}</code>.</li>
+                            <li>В верхней панели во вкладке «Уравнение» (Equation) переключите режим с
+                                «Профессиональный» на <strong>«LaTeX»</strong>.</li>
+                            <li>Скопируйте текст формулы (<code>Ctrl + C</code>) — в буфер обмена попадет чистый
+                                TeX-код: например, <code>\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}</code>.</li>
                         </ol>
                         <div class="article-note">
-                            <strong>💡 Совет:</strong> Если формула создана в старом плагине MathType, выберите в меню MathType пункт <em>Convert Equations → TeX/LaTeX</em>, чтобы экспортировать весь документ пакетно.
+                            <strong>💡 Совет:</strong> Если формула создана в старом плагине MathType, выберите в меню
+                            MathType пункт <em>Convert Equations → TeX/LaTeX</em>, чтобы экспортировать весь документ
+                            пакетно.
                         </div>
                     </section>
 
                     <section class="article-section" id="pandoc">
                         <h2 class="article-section__title">Автоматическая конвертация всего файла через Pandoc</h2>
-                        <p>Утилита <code>Pandoc</code> — самый надежный конвертер документов DOCX в файл <code>.tex</code> с сохранением структуры глав, формул и списков:</p>
+                        <p>Утилита <code>Pandoc</code> — самый надежный конвертер документов DOCX в файл
+                            <code>.tex</code> с сохранением структуры глав, формул и списков:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">Bash</span></div>
                             <pre><code># Конвертация docx в tex с извлечением картинок в папку media:
 pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.tex</code></pre>
                         </div>
-                        <p>Ключ <code>--extract-media</code> автоматически сохраняет все графики и схемы в векторном или растровом формате с генерацией команд <code>\includegraphics{}</code>.</p>
+                        <p>Ключ <code>--extract-media</code> автоматически сохраняет все графики и схемы в векторном или
+                            растровом формате с генерацией команд <code>\includegraphics{}</code>.</p>
                     </section>
 
                     <section class="article-section" id="tables-images">
                         <h2 class="article-section__title">Перенос таблиц и изображений без потерь</h2>
-                        <p>Таблицы из Word часто конвертируются с фиксированной шириной ячеек. Для приведения их к красивому виду рекомендуется заменить стандартные <code>\hline</code> на пакет <code>booktabs</code>:</p>
+                        <p>Таблицы из Word часто конвертируются с фиксированной шириной ячеек. Для приведения их к
+                            красивому виду рекомендуется заменить стандартные <code>\hline</code> на пакет
+                            <code>booktabs</code>:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>% Добавьте в преамбулу
@@ -173,9 +215,15 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
                         <h2 class="article-section__title">Постобработка и очистка полученного TeX-кода</h2>
                         <p>После автоматической конвертации выполните быструю проверку следующих элементов:</p>
                         <ul>
-                            <li><strong>Неразрывные пробелы:</strong> замените жесткие пробелы Word на тильду <code>~</code> перед инициалами и единицами величин.</li>
-                            <li><strong>Кавычки:</strong> замените кавычки-лапки <code>""</code> на русские «ёлочки» <code>&lt;&lt;...&gt;&gt;</code> или <code>\guillemotleft...\guillemotright</code>.</li>
-                            <li><strong>Окружения формул:</strong> замените повторяющиеся <code>$$...$$</code> на структурированные <code>\begin{equation}</code> или <code>align</code>.</li>
+                            <li><strong>Неразрывные пробелы:</strong> замените жесткие пробелы Word на тильду
+                                <code>~</code> перед инициалами и единицами величин.</li>
+                            <li><strong>Кавычки:</strong> замените кавычки-лапки <code>""</code> на русские «ёлочки»
+                                <code>&lt;&lt;...&gt;&gt;</code> или <code>\guillemotleft...\guillemotright</code>.</li>
+                            <li><strong>Окружения формул:</strong> замените повторяющиеся <code>$$...$$</code> на
+                                структурированные <code>\begin{equation}</code> или <code>align</code> (детальный
+                                синтаксис формул смотрите в <a href="/blog/latex-formulas">гайде по amsmath</a>, а для
+                                фигурных скобок условий — в <a href="/blog/latex-systems-equations">статье по системам
+                                    уравнений</a>).</li>
                         </ul>
                     </section>
 
@@ -186,14 +234,18 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
                                 <div class="article-tip__number">1</div>
                                 <div class="article-tip__content">
                                     <h3>Вставка из буфера обмена в Labkeeper</h3>
-                                    <p>В онлайн-редакторе Labkeeper поддерживается гибридный синтаксис: вы можете вставлять фрагменты Markdown и формулы прямо в код проекта.</p>
+                                    <p>В онлайн-редакторе Labkeeper поддерживается гибридный синтаксис: вы можете
+                                        вставлять фрагменты Markdown и формулы прямо в код проекта.</p>
                                 </div>
                             </div>
                             <div class="article-tip">
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
-                                    <h3>Перенос библиографии</h3>
-                                    <p>Если в Word использовались ссылки через Mendeley или Zotero, экспортируйте библиотеку в <code>.bib</code>-файл и подключите через <code>biblatex-gost</code>.</p>
+                                    <h3>Перенос библиографии по ГОСТ</h3>
+                                    <p>Если в Word использовались ссылки через Mendeley или Zotero, экспортируйте
+                                        библиотеку в <code>.bib</code>-файл и настройте вывод по стандарту ГОСТ 7.0.5
+                                        (пошаговая инструкция в <a href="/blog/latex-gost-bibliography">статье по
+                                            biblatex-gost</a>).</p>
                                 </div>
                             </div>
                         </div>
@@ -204,13 +256,18 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
             <aside class="article-sidebar">
                 <div class="article-sidebar__sticky">
                     <div class="article-sidebar__media">
-                        <img src="../assets/img/img-for-firstScreen.webp" alt="Онлайн-редактор LaTeX Labkeeper" width="220" height="135" loading="lazy" class="article-sidebar__img">
+                        <img src="../assets/img/img-for-firstScreen.webp" alt="Онлайн-редактор LaTeX Labkeeper"
+                            width="220" height="135" loading="lazy" class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Импортируйте формулы и&nbsp;тексты в&nbsp;онлайн-редактор Labkeeper — удобная среда без&nbsp;необходимости локальной установки.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn">
+                    <p class="article-sidebar__title">Импортируйте формулы и&nbsp;тексты в&nbsp;онлайн-редактор
+                        Labkeeper — удобная среда без&nbsp;необходимости локальной установки.</p>
+                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
+                        id="sidebar-cta-btn">
                         Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </a>
                 </div>
@@ -220,13 +277,15 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
         <section class="features" id="features">
             <div class="features__intro">
                 <p class="features__intro-label">Попробуйте прямо сейчас</p>
-                <h2 class="features__intro-title">Компилируйте документы без&nbsp;боли Word</h2>
-                <p class="features__intro-text">Labkeeper — современный онлайн-редактор LaTeX с&nbsp;высокой скоростью компиляции и&nbsp;поддержкой всех ГОСТ-пакетов.</p>
+                <h2 class="features__intro-title">Работайте с&nbsp;LaTeX документами в&nbsp;Labkeeper</h2>
+                <p class="features__intro-text">Онлайн-редактор LaTeX для&nbsp;быстрого старта: переносите тексты и&nbsp;формулы, компилируйте в&nbsp;PDF и&nbsp;используйте AI-помощника без&nbsp;установки программ.</p>
             </div>
             <div class="feature-block feature-block--img-left feature-block--dark">
                 <div class="feature-block__container">
                     <div class="feature-block__visual">
-                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor screenshot" class="feature-block__image js-popup-trigger" data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
+                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor screenshot"
+                            class="feature-block__image js-popup-trigger"
+                            data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
                     </div>
                     <div class="feature-block__content">
                         <ul class="feature-list">
@@ -255,7 +314,8 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
                 </div>
             </div>
             <div class="features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light features__intro-btn">Открыть редактор <span class="button__arrow">→</span></a>
+                <a href="/project/default?open=latex" class="button button--outline-light features__intro-btn">Открыть
+                    редактор <span class="button__arrow">→</span></a>
             </div>
             <div class="feature__bg"><img src="../assets/img/bg.svg" alt="bg" loading="lazy"></div>
         </section>
@@ -271,119 +331,7 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
 
                 <div class="swiper audience__swiper">
                     <div class="swiper-wrapper">
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-gost-bibliography" class="audience-card">
-                                <p class="audience-card__title">Список литературы по&nbsp;ГОСТ 7.0.5</p>
-                                <p class="audience-card__text">Оформление списка источников и цитирований по ГОСТ 7.0.5 с пакетом biblatex-gost.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-diploma-gost" class="audience-card">
-                                <p class="audience-card__title">Диплом и&nbsp;курсовая по&nbsp;ГОСТ в&nbsp;LaTeX</p>
-                                <p class="audience-card__text">Пошаговый онлайн-гайд по настройке шаблона дипломной работы по ГОСТ 7.32.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-titlepage" class="audience-card">
-                                <p class="audience-card__title">Титульный лист по&nbsp;ГОСТ в&nbsp;LaTeX</p>
-                                <p class="audience-card__text">Как создать титульный лист по российским стандартам в онлайн LaTeX.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-dissertation" class="audience-card">
-                                <p class="audience-card__title">Автореферат и&nbsp;диссертация ВАК в&nbsp;LaTeX</p>
-                                <p class="audience-card__text">Структура, рамки и ссылки для автореферата и кандидатской диссертации в онлайн LaTeX.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-lab-reports" class="audience-card">
-                                <p class="audience-card__title">Оформление лабораторных работ</p>
-                                <p class="audience-card__text">Таблицы, расчет погрешностей и формулы для отчетов по физике и химии.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-chemfig" class="audience-card">
-                                <p class="audience-card__title">Химические формулы и&nbsp;пакет chemfig</p>
-                                <p class="audience-card__text">Редактор химических формул: циклические молекулы, кольца и механизмы реакций.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-fancyhdr" class="audience-card">
-                                <p class="audience-card__title">Колонтитулы и&nbsp;нумерация (fancyhdr)</p>
-                                <p class="audience-card__text">Настройка красивых колонтитулов и нумерации страниц в стиле научных журналов.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-siunitx" class="audience-card">
-                                <p class="audience-card__title">Физические величины и&nbsp;siunitx</p>
-                                <p class="audience-card__text">Размерности величин, погрешности и выравнивание чисел в таблицах по ГОСТ 8.417.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-word-to-latex" class="audience-card">
-                                <p class="audience-card__title">Перенос документа из&nbsp;Word в&nbsp;LaTeX</p>
-                                <p class="audience-card__text">Перенос формул из Word в LaTeX онлайн и импорт docx без потери таблиц.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-scopus-wos" class="audience-card">
-                                <p class="audience-card__title">Шаблон статьи Scopus/WoS</p>
-                                <p class="audience-card__text">Подготовка публикации в международные научные журналы Elsevier, Springer и IEEE.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-list-of-figures-tables" class="audience-card">
-                                <p class="audience-card__title">Список иллюстраций и&nbsp;таблиц по&nbsp;ГОСТ</p>
-                                <p class="audience-card__text">Автоматическая генерация List of Figures и List of Tables с пакетом tocloft.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-systems-equations" class="audience-card">
-                                <p class="audience-card__title">Системы уравнений и&nbsp;фигурная скобка</p>
-                                <p class="audience-card__text">Окружения cases, aligned, dcases и нумерация отдельных строк subequations.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-cv-resume" class="audience-card">
-                                <p class="audience-card__title">Академическое резюме (CV) для грантов</p>
-                                <p class="audience-card__text">Верстка CV для аспирантуры, грантов и зарубежных стажировок с пакетом moderncv.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-amsthm" class="audience-card">
-                                <p class="audience-card__title">Теоремы, доказательства и&nbsp;леммы (amsthm)</p>
-                                <p class="audience-card__text">Оформление математических утверждений, стили definition, plain и символы Q.E.D.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-eskd" class="audience-card">
-                                <p class="audience-card__title">Рамки и&nbsp;штампы по&nbsp;ЕСКД/СПДС</p>
-                                <p class="audience-card__text">Оформление расчетно-пояснительных записок, рамки и штампы по ГОСТ 2.104 (пакет eskdx).</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-formulas" class="audience-card">
-                                <p class="audience-card__title">Формулы и&nbsp;пакет amsmath</p>
-                                <p class="audience-card__text">Выравнивание align, дроби frac/dfrac, матрицы и скобки с примерами кода.</p>
-                            </a>
-                        </div>
-
+                        <!-- Динамическая генерация случайных статей через slider.js -->
                     </div>
                 </div>
             </div>
@@ -402,18 +350,23 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
                     <a href="/#features" class="footer__link" data-i18n="nav-advantages"></a>
                     <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
                     <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
-                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank" class="footer__link footer__link--external"><span data-i18n="nav-wiki"></span><img src="../assets/img/target.svg" alt="target icon" class="footer__link-icon" style="margin-left:4px;vertical-align:middle;" width="16" height="16" loading="lazy"></a>
+                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank"
+                        class="footer__link footer__link--external"><span data-i18n="nav-wiki"></span><img
+                            src="../assets/img/target.svg" alt="target icon" class="footer__link-icon"
+                            style="margin-left:4px;vertical-align:middle;" width="16" height="16" loading="lazy"></a>
                     <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
                     <a href="/about" class="footer__link" data-i18n="nav-about"></a>
                     <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
                 </nav>
-                <a href="/" class="footer__logo-link"><img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40" loading="lazy"></a>
+                <a href="/" class="footer__logo-link"><img src="../assets/img/logo.svg" alt="Labkeeper Logo"
+                        class="footer__logo" width="40" height="40" loading="lazy"></a>
                 <div class="footer__contact">
                     <span class="footer__contact-label" data-i18n="footer-contact"></span>
                     <a href="mailto:labkeeper.io@gmail.com" class="footer__contact-link">labkeeper.io@gmail.com</a>
                 </div>
             </div>
-            <div class="footer__middle"><img src="../assets/img/img-for-footer.svg" alt="Labkeeper" class="footer__huge-logo" aria-hidden="true" loading="lazy"></div>
+            <div class="footer__middle"><img src="../assets/img/img-for-footer.svg" alt="Labkeeper"
+                    class="footer__huge-logo" aria-hidden="true" loading="lazy"></div>
             <div class="footer__bottom">
                 <div class="footer__copyright">© 2024—2026</div>
                 <a href="/privacy" class="footer__policy" data-i18n="footer-policy"></a>
@@ -423,7 +376,9 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
 
     <div id="cookie-banner" class="cookie-banner hidden">
         <div class="cookie-banner__container">
-            <p class="cookie-banner__text">Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных данных</a>.</p>
+            <p class="cookie-banner__text">Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта.
+                Подробнее — в <a href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки
+                    персональных данных</a>.</p>
             <div class="cookie-banner__actions">
                 <button id="cookie-accept" class="button button--primary">Принять</button>
                 <button id="cookie-decline" class="button button--outline">Отказаться</button>
@@ -439,4 +394,5 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
 </body>
+
 </html>

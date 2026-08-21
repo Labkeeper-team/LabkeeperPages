@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Пачка 1 -->
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -119,7 +120,7 @@
 
                     <section class="article-section" id="intro">
                         <h2 class="article-section__title">Зачем нужен перечень иллюстраций и таблиц</h2>
-                        <p>В объемных дипломных проектах, диссертациях и научно-технических отчетах (ГОСТ 7.32-2017) требуется наличие перечня графического материала: «Список иллюстраций» (List of Figures, LoF) и «Список таблиц» (List of Tables, LoT). При ручном составлении любые изменения нумерации приводят к ошибкам.</p>
+                        <p>В объемных <a href="/blog/latex-diploma-gost">дипломных проектах</a>, <a href="/blog/latex-dissertation">диссертациях ВАК</a> и научно-технических отчетах (ГОСТ 7.32-2017) требуется наличие перечня графического материала: «Список иллюстраций» (List of Figures, LoF) и «Список таблиц» (List of Tables, LoT). При ручном составлении любые изменения нумерации приводят к ошибкам.</p>
                         <p>В LaTeX <strong>список таблиц и рисунков в latex онлайн</strong> создается автоматически на основе подписей <code>\caption{}</code>, а <strong>оформление перечня иллюстраций latex гост</strong> легко настраивается пакетом <code>tocloft</code>.</p>
                     </section>
 
@@ -173,7 +174,7 @@
 
                     <section class="article-section" id="tocbibind">
                         <h2 class="article-section__title">Включение списков в общее оглавление (tocbibind)</h2>
-                        <p>Чтобы списки иллюстраций, таблиц и список литературы отображались в основном оглавлении, подключите пакет <code>tocbibind</code>:</p>
+                        <p>Чтобы списки иллюстраций, таблиц и <a href="/blog/latex-gost-bibliography">список литературы по ГОСТ 7.0.5</a> отображались в основном оглавлении, подключите пакет <code>tocbibind</code>:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>\usepackage[nottoc]{tocbibind}
@@ -193,7 +194,7 @@
     \label{fig:setup}
 \end{figure}</code></pre>
                         </div>
-                        <p>В перечень иллюстраций попадет только лаконичная фраза «Схема экспериментальной установки».</p>
+                        <p>В перечень иллюстраций попадет только лаконичная фраза «Схема экспериментальной установки». Для форматирования самих числовых таблиц рекомендуем использовать <a href="/blog/latex-siunitx">выравнивание по разрядам в siunitx</a>.</p>
                     </section>
 
                     <section class="article-section" id="tips">
@@ -209,8 +210,8 @@
                             <div class="article-tip">
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
-                                    <h3>Поглавная нумерация</h3>
-                                    <p>В дипломах часто требуют нумерацию «Рисунок 1.2». В классе <code>report</code> или <code>book</code> это работает автоматически при использовании <code>\chapter{}</code>.</p>
+                                    <h3>Оформление по ЕСКД</h3>
+                                    <p>Для инженерных расчетно-пояснительных записок, требующих сквозных рамок и штампов, ознакомьтесь с <a href="/blog/latex-eskd">руководством по ЕСКД и СПДС</a>.</p>
                                 </div>
                             </div>
                         </div>
@@ -237,8 +238,8 @@
         <section class="features" id="features">
             <div class="features__intro">
                 <p class="features__intro-label">Попробуйте прямо сейчас</p>
-                <h2 class="features__intro-title">Автоматизируйте верстку дипломных работ</h2>
-                <p class="features__intro-text">Онлайн-редактор LaTeX Labkeeper автоматически соберет оглавление, перечни таблиц и библиографию по всем нормам ГОСТ.</p>
+                <h2 class="features__intro-title">Оформляйте перечни иллюстраций и&nbsp;таблиц в&nbsp;Labkeeper</h2>
+                <p class="features__intro-text">Онлайн-редактор LaTeX с&nbsp;поддержкой пакета tocloft и&nbsp;автоматической сборкой списков по&nbsp;ГОСТ без&nbsp;локальной настройки окружения.</p>
             </div>
             <div class="feature-block feature-block--img-left feature-block--dark">
                 <div class="feature-block__container">
@@ -288,119 +289,7 @@
 
                 <div class="swiper audience__swiper">
                     <div class="swiper-wrapper">
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-gost-bibliography" class="audience-card">
-                                <p class="audience-card__title">Список литературы по&nbsp;ГОСТ 7.0.5</p>
-                                <p class="audience-card__text">Оформление списка источников и цитирований по ГОСТ 7.0.5 с пакетом biblatex-gost.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-diploma-gost" class="audience-card">
-                                <p class="audience-card__title">Диплом и&nbsp;курсовая по&nbsp;ГОСТ в&nbsp;LaTeX</p>
-                                <p class="audience-card__text">Пошаговый онлайн-гайд по настройке шаблона дипломной работы по ГОСТ 7.32.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-titlepage" class="audience-card">
-                                <p class="audience-card__title">Титульный лист по&nbsp;ГОСТ в&nbsp;LaTeX</p>
-                                <p class="audience-card__text">Как создать титульный лист по российским стандартам в онлайн LaTeX.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-dissertation" class="audience-card">
-                                <p class="audience-card__title">Автореферат и&nbsp;диссертация ВАК в&nbsp;LaTeX</p>
-                                <p class="audience-card__text">Структура, рамки и ссылки для автореферата и кандидатской диссертации в онлайн LaTeX.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-lab-reports" class="audience-card">
-                                <p class="audience-card__title">Оформление лабораторных работ</p>
-                                <p class="audience-card__text">Таблицы, расчет погрешностей и формулы для отчетов по физике и химии.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-chemfig" class="audience-card">
-                                <p class="audience-card__title">Химические формулы и&nbsp;пакет chemfig</p>
-                                <p class="audience-card__text">Редактор химических формул: циклические молекулы, кольца и механизмы реакций.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-fancyhdr" class="audience-card">
-                                <p class="audience-card__title">Колонтитулы и&nbsp;нумерация (fancyhdr)</p>
-                                <p class="audience-card__text">Настройка красивых колонтитулов и нумерации страниц в стиле научных журналов.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-siunitx" class="audience-card">
-                                <p class="audience-card__title">Физические величины и&nbsp;siunitx</p>
-                                <p class="audience-card__text">Размерности величин, погрешности и выравнивание чисел в таблицах по ГОСТ 8.417.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-word-to-latex" class="audience-card">
-                                <p class="audience-card__title">Перенос документа из&nbsp;Word в&nbsp;LaTeX</p>
-                                <p class="audience-card__text">Перенос формул из Word в LaTeX онлайн и импорт docx без потери таблиц.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-scopus-wos" class="audience-card">
-                                <p class="audience-card__title">Шаблон статьи Scopus/WoS</p>
-                                <p class="audience-card__text">Подготовка публикации в международные научные журналы Elsevier, Springer и IEEE.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-list-of-figures-tables" class="audience-card">
-                                <p class="audience-card__title">Список иллюстраций и&nbsp;таблиц по&nbsp;ГОСТ</p>
-                                <p class="audience-card__text">Автоматическая генерация List of Figures и List of Tables с пакетом tocloft.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-systems-equations" class="audience-card">
-                                <p class="audience-card__title">Системы уравнений и&nbsp;фигурная скобка</p>
-                                <p class="audience-card__text">Окружения cases, aligned, dcases и нумерация отдельных строк subequations.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-cv-resume" class="audience-card">
-                                <p class="audience-card__title">Академическое резюме (CV) для грантов</p>
-                                <p class="audience-card__text">Верстка CV для аспирантуры, грантов и зарубежных стажировок с пакетом moderncv.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-amsthm" class="audience-card">
-                                <p class="audience-card__title">Теоремы, доказательства и&nbsp;леммы (amsthm)</p>
-                                <p class="audience-card__text">Оформление математических утверждений, стили definition, plain и символы Q.E.D.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-eskd" class="audience-card">
-                                <p class="audience-card__title">Рамки и&nbsp;штампы по&nbsp;ЕСКД/СПДС</p>
-                                <p class="audience-card__text">Оформление расчетно-пояснительных записок, рамки и штампы по ГОСТ 2.104 (пакет eskdx).</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-formulas" class="audience-card">
-                                <p class="audience-card__title">Формулы и&nbsp;пакет amsmath</p>
-                                <p class="audience-card__text">Выравнивание align, дроби frac/dfrac, матрицы и скобки с примерами кода.</p>
-                            </a>
-                        </div>
-
+                        <!-- Динамическая генерация случайных статей через slider.js -->
                     </div>
                 </div>
             </div>

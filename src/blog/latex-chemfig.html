@@ -1,25 +1,33 @@
 <!DOCTYPE html>
+<!-- Пачка 1 -->
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Интеграция химических формул и реакций в LaTeX, пакет chemfig — Labkeeper</title>
-    <meta name="description" content="Полное руководство по пакету chemfig в LaTeX онлайн: редактор химических формул, рисование циклических молекул, бензольных колец, механизмов реакций и полимеров с примерами кода." />
+    <meta name="description"
+        content="Полное руководство по пакету chemfig в LaTeX онлайн: редактор химических формул, рисование циклических молекул, бензольных колец, механизмов реакций и полимеров с примерами кода." />
     <link rel="canonical" href="https://labkeeper.io/blog/latex-chemfig" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://labkeeper.io/blog/latex-chemfig" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Labkeeper" />
     <meta property="og:title" content="Интеграция химических формул и реакций в LaTeX, пакет chemfig — Labkeeper" />
-    <meta property="og:description" content="Узнайте, как верстать химические формулы и реакции в онлайн LaTeX: пакет chemfig онлайн примеры, схемы молекул, связи и механизмы реакций." />
+    <meta property="og:description"
+        content="Узнайте, как верстать химические формулы и реакции в онлайн LaTeX: пакет chemfig онлайн примеры, схемы молекул, связи и механизмы реакций." />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:title" content="Интеграция химических формул и реакций в LaTeX, пакет chemfig — Labkeeper" />
-    <meta name="twitter:description" content="Пакет chemfig в онлайн LaTeX: примеры химических реакций и структурных формул." />
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Интеграция химических формул и реакций в LaTeX, пакет chemfig","description":"Руководство по созданию структурных формул, механизмов реакций и циклических молекул в LaTeX с помощью пакета chemfig.","author":{"@type":"Organization","name":"Labkeeper","url":"https://labkeeper.io"},"publisher":{"@type":"Organization","name":"Labkeeper","logo":{"@type":"ImageObject","url":"https://labkeeper.io/assets/img/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://labkeeper.io/blog/latex-chemfig"},"datePublished":"2026-08-20","dateModified":"2026-08-20","inLanguage":"ru"}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://labkeeper.io/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://labkeeper.io/blog"},{"@type":"ListItem","position":3,"name":"Химические формулы в LaTeX (chemfig)","item":"https://labkeeper.io/blog/latex-chemfig"}]}</script>
+    <meta name="twitter:description"
+        content="Пакет chemfig в онлайн LaTeX: примеры химических реакций и структурных формул." />
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Интеграция химических формул и реакций в LaTeX, пакет chemfig","description":"Руководство по созданию структурных формул, механизмов реакций и циклических молекул в LaTeX с помощью пакета chemfig.","author":{"@type":"Organization","name":"Labkeeper","url":"https://labkeeper.io"},"publisher":{"@type":"Organization","name":"Labkeeper","logo":{"@type":"ImageObject","url":"https://labkeeper.io/assets/img/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://labkeeper.io/blog/latex-chemfig"},"datePublished":"2026-08-20","dateModified":"2026-08-20","inLanguage":"ru"}</script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://labkeeper.io/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://labkeeper.io/blog"},{"@type":"ListItem","position":3,"name":"Химические формулы в LaTeX (chemfig)","item":"https://labkeeper.io/blog/latex-chemfig"}]}</script>
     <script type="text/javascript">
         (function () {
             function hasAcceptedCookieConsent() { try { return localStorage.getItem('labkeeper_cookie_consent') === 'accepted'; } catch (e) { return false; } }
@@ -39,15 +47,18 @@
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body class="page blog__article">
     <header class="header js-header">
         <div class="header__container">
             <div class="header__left">
                 <button class="header__burger js-burger-btn" aria-label="Открыть меню">
-                    <span class="header__burger-line"></span><span class="header__burger-line"></span><span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span><span class="header__burger-line"></span><span
+                        class="header__burger-line"></span>
                 </button>
                 <a href="/" class="header__logo">
-                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36" height="36">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36"
+                        height="36">
                     <span class="header__logo-text">Labkeeper</span>
                 </a>
                 <div class="header__lang js-lang-switcher">
@@ -61,19 +72,26 @@
                     <button class="header__lang-btn" data-lang="en">En</button>
                 </div>
                 <ul class="header__nav-list">
-                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link" data-i18n="nav-examples"></a></li>
-                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link" data-i18n="nav-features"></a></li>
-                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a></li>
-                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a></li>
+                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link"
+                            data-i18n="nav-examples"></a></li>
+                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link"
+                            data-i18n="nav-features"></a></li>
+                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a>
+                    </li>
+                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a>
+                    </li>
                 </ul>
                 <div class="header__mobile-contact">
                     <span class="header__mobile-contact-label" data-i18n="footer-contact"></span>
-                    <a href="mailto:labkeeper.io@gmail.com" class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
+                    <a href="mailto:labkeeper.io@gmail.com"
+                        class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
                 </div>
             </nav>
             <div class="header__right">
-                <a href="/project/default?open=login" class="button button--outline header__login" data-i18n="btn-login"></a>
-                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects" style="display: none;"></a>
+                <a href="/project/default?open=login" class="button button--outline header__login"
+                    data-i18n="btn-login"></a>
+                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects"
+                    style="display: none;"></a>
                 <a href="/project/default" class="button button--primary header__editor" data-i18n="btn-editor"></a>
             </div>
         </div>
@@ -84,9 +102,12 @@
             <div class="article-breadcrumbs__container">
                 <nav class="article-breadcrumbs__nav" aria-label="Breadcrumb">
                     <ol class="article-breadcrumbs__list">
-                        <li class="article-breadcrumbs__item"><a href="/" class="article-breadcrumbs__link">Главная</a></li>
-                        <li class="article-breadcrumbs__item"><a href="/blog" class="article-breadcrumbs__link">Блог</a></li>
-                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active"><span>Химические формулы и chemfig в LaTeX</span></li>
+                        <li class="article-breadcrumbs__item"><a href="/" class="article-breadcrumbs__link">Главная</a>
+                        </li>
+                        <li class="article-breadcrumbs__item"><a href="/blog" class="article-breadcrumbs__link">Блог</a>
+                        </li>
+                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active"><span>Химические формулы
+                                и chemfig в LaTeX</span></li>
                     </ol>
                 </nav>
             </div>
@@ -95,7 +116,8 @@
         <div class="article-layout">
             <article class="article-content">
                 <div class="article-content__container">
-                    <h1 class="article-content__title h1">Интеграция химических формул и&nbsp;реакций в&nbsp;LaTeX, пакет chemfig</h1>
+                    <h1 class="article-content__title h1">Интеграция химических формул и&nbsp;реакций в&nbsp;LaTeX,
+                        пакет chemfig</h1>
 
                     <div class="article-content__tags">
                         <a href="/blog#labs" class="article-tag">Лабораторные работы</a>
@@ -107,20 +129,32 @@
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
                         <ol class="article-toc__list">
-                            <li><a href="#intro" class="article-toc__link">Зачем нужен chemfig и как его подключить</a></li>
+                            <li><a href="#intro" class="article-toc__link">Зачем нужен chemfig и как его подключить</a>
+                            </li>
                             <li><a href="#basics" class="article-toc__link">Базовый синтаксис связей и углов</a></li>
-                            <li><a href="#branches" class="article-toc__link">Разветвленные цепи и функциональные группы</a></li>
-                            <li><a href="#rings" class="article-toc__link">Циклические молекулы и бензольное кольцо</a></li>
-                            <li><a href="#reactions" class="article-toc__link">Схемы химических реакций и стрелки</a></li>
-                            <li><a href="#electrons" class="article-toc__link">Электронные пары и механизмы реакций</a></li>
-                            <li><a href="#tips" class="article-toc__link">Практические советы и интеграция в онлайн-редактор</a></li>
+                            <li><a href="#branches" class="article-toc__link">Разветвленные цепи и функциональные
+                                    группы</a></li>
+                            <li><a href="#rings" class="article-toc__link">Циклические молекулы и бензольное кольцо</a>
+                            </li>
+                            <li><a href="#reactions" class="article-toc__link">Схемы химических реакций и стрелки</a>
+                            </li>
+                            <li><a href="#electrons" class="article-toc__link">Электронные пары и механизмы реакций</a>
+                            </li>
+                            <li><a href="#tips" class="article-toc__link">Практические советы и интеграция в
+                                    онлайн-редактор</a></li>
                         </ol>
                     </nav>
 
                     <section class="article-section" id="intro">
                         <h2 class="article-section__title">Зачем нужен chemfig и как его подключить</h2>
-                        <p>Набор химических структур в научных статьях, дипломах и отчетах по лабораторным работам часто вызывает сложности. Пакет <code>chemfig</code> — это мощный инструмент на базе графического движка TikZ, позволяющий создавать векторные структурные формулы органических и неорганических веществ прямо в коде документа.</p>
-                        <p>Используя <strong>редактор химических формул latex онлайн</strong> в Labkeeper, вам не нужно вручную экспортировать растровые изображения из внешних программ вроде ChemDraw — векторная графика компилируется мгновенно с идеальным качеством печати.</p>
+                        <p>Набор химических структур в научных статьях, дипломах и <a
+                                href="/blog/latex-lab-reports">отчетах по лабораторным работам</a> часто вызывает
+                            сложности. Пакет <code>chemfig</code> — это мощный инструмент на базе графического движка
+                            TikZ, позволяющий создавать векторные структурные формулы органических и неорганических
+                            веществ прямо в коде документа.</p>
+                        <p>Используя <strong>редактор химических формул latex онлайн</strong> в Labkeeper, вам не нужно
+                            вручную экспортировать растровые изображения из внешних программ вроде ChemDraw — векторная
+                            графика компилируется мгновенно с идеальным качеством печати.</p>
                         <p>Для подключения пакета добавьте в преамбулу:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
@@ -132,22 +166,48 @@
 
                     <section class="article-section" id="basics">
                         <h2 class="article-section__title">Базовый синтаксис связей и углов</h2>
-                        <p>Формула создается командой <code>\chemfig{...}</code>. Связи между атомами обозначаются специальными символами:</p>
+                        <p>Формула создается командой <code>\chemfig{...}</code>. Связи между атомами обозначаются
+                            специальными символами:</p>
                         <div class="article-table-wrapper">
                             <table class="article-table">
                                 <thead>
-                                    <tr><th>Тип связи</th><th>Символ в chemfig</th><th>Описание</th></tr>
+                                    <tr>
+                                        <th>Тип связи</th>
+                                        <th>Символ в chemfig</th>
+                                        <th>Описание</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                    <tr><td>Одинарная</td><td><code>-</code></td><td>Стандартная ковалентная связь</td></tr>
-                                    <tr><td>Двойная</td><td><code>=</code></td><td>Двойная связь</td></tr>
-                                    <tr><td>Тройная</td><td><code>~</code></td><td>Тройная связь</td></tr>
-                                    <tr><td>Клиновидная (вперед)</td><td><code>&gt;</code></td><td>Стереохимическая связь над плоскостью</td></tr>
-                                    <tr><td>Штриховая (назад)</td><td><code>&lt;</code></td><td>Стереохимическая связь за плоскостью</td></tr>
+                                    <tr>
+                                        <td>Одинарная</td>
+                                        <td><code>-</code></td>
+                                        <td>Стандартная ковалентная связь</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Двойная</td>
+                                        <td><code>=</code></td>
+                                        <td>Двойная связь</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Тройная</td>
+                                        <td><code>~</code></td>
+                                        <td>Тройная связь</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Клиновидная (вперед)</td>
+                                        <td><code>&gt;</code></td>
+                                        <td>Стереохимическая связь над плоскостью</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Штриховая (назад)</td>
+                                        <td><code>&lt;</code></td>
+                                        <td>Стереохимическая связь за плоскостью</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <p>Направление связи задается абсолютным или относительным углом с помощью двоеточия <code>[:угол]</code> (в градусах от 0 до 360 против часовой стрелки):</p>
+                        <p>Направление связи задается абсолютным или относительным углом с помощью двоеточия
+                            <code>[:угол]</code> (в градусах от 0 до 360 против часовой стрелки):</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>% Молекула воды H2O с углом связей:
@@ -160,7 +220,8 @@
 
                     <section class="article-section" id="branches">
                         <h2 class="article-section__title">Разветвленные цепи и функциональные группы</h2>
-                        <p>Для создания ответвлений используются круглые скобки <code>(...)</code>. Внутри скобок описывается боковая цепочка с указанием направления связи:</p>
+                        <p>Для создания ответвлений используются круглые скобки <code>(...)</code>. Внутри скобок
+                            описывается боковая цепочка с указанием направления связи:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>% Изобутан с боковой метильной группой:
@@ -170,13 +231,17 @@
 \chemfig{H_2N-CH(-[:90]CH_3)-C(=[:45]O)-[:-45]OH}</code></pre>
                         </div>
                         <div class="article-note">
-                            <strong>💡 Совет:</strong> Для симметричных молекул рекомендуется использовать углы <code>[:30]</code>, <code>[:-30]</code>, <code>[:90]</code>, <code>[:-90]</code>, что дает классическую зигзагообразную углеродную цепочку.
+                            <strong>💡 Совет:</strong> Для симметричных молекул рекомендуется использовать углы
+                            <code>[:30]</code>, <code>[:-30]</code>, <code>[:90]</code>, <code>[:-90]</code>, что дает
+                            классическую зигзагообразную углеродную цепочку.
                         </div>
                     </section>
 
                     <section class="article-section" id="rings">
                         <h2 class="article-section__title">Циклические молекулы и бензольное кольцо</h2>
-                        <p>Для циклов используется синтаксис <code>*N(...)</code>, где N — число вершин многоугольника. Для бензола применяется встроенная конструкция <code>*6(=-=-=-)</code> или кольцо внутри шестиугольника:</p>
+                        <p>Для циклов используется синтаксис <code>*N(...)</code>, где N — число вершин многоугольника.
+                            Для бензола применяется встроенная конструкция <code>*6(=-=-=-)</code> или кольцо внутри
+                            шестиугольника:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>% Бензол с чередующимися двойными связями:
@@ -192,7 +257,9 @@
 
                     <section class="article-section" id="reactions">
                         <h2 class="article-section__title">Схемы химических реакций и стрелки</h2>
-                        <p>В пакете chemfig схемы реакций составляются с помощью макроса <code>\schemestart ... \schemestop</code> и стрелок <code>\arrow{-&gt;[над][под]}</code>:</p>
+                        <p>В пакете chemfig схемы реакций составляются с помощью макроса
+                            <code>\schemestart ... \schemestop</code> и стрелок <code>\arrow{-&gt;[над][под]}</code>:
+                        </p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>\schemestart
@@ -201,12 +268,19 @@
 \chemfig{CO_2} \+ \chemfig{2 H_2O}
 \schemestop</code></pre>
                         </div>
-                        <p>Поддерживаются различные виды стрелок: равновесные <code>\arrow{&lt;=&gt;}</code>, обратимые с разной скоростью <code>\arrow{&lt;-&gt;&gt;}</code>, а также вертикальные и разветвленные переходы.</p>
+                        <p>Поддерживаются различные виды стрелок: равновесные <code>\arrow{&lt;=&gt;}</code>, обратимые
+                            с разной скоростью <code>\arrow{&lt;-&gt;&gt;}</code>, а также вертикальные и разветвленные
+                            переходы. Для описания кинетики и термодинамических уравнений реакций используйте <a
+                                href="/blog/latex-formulas">выравнивание формул в amsmath</a>, а для набора молярных
+                            концентраций и температурных условий — <a href="/blog/latex-siunitx">пакет размерностей
+                                siunitx</a>.</p>
                     </section>
 
                     <section class="article-section" id="electrons">
                         <h2 class="article-section__title">Электронные пары и механизмы реакций</h2>
-                        <p>Для органической химии критически важно отображение неподеленных электронных пар и перемещения электронов. Команда <code>\lewis</code> и модуль <code>\chemmove</code> позволяют рисовать изогнутые стрелки атаки нуклеофила:</p>
+                        <p>Для органической химии критически важно отображение неподеленных электронных пар и
+                            перемещения электронов. Команда <code>\lewis</code> и модуль <code>\chemmove</code>
+                            позволяют рисовать изогнутые стрелки атаки нуклеофила:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>% Обозначение свободных электронных пар:
@@ -226,21 +300,27 @@
                                 <div class="article-tip__number">1</div>
                                 <div class="article-tip__content">
                                     <h3>Совместное использование с mhchem</h3>
-                                    <p>Для простых брутто-формул (например, <code>\ce{H2SO4}</code> или <code>\ce{Fe^{3+}}</code>) быстрее использовать пакет <code>mhchem</code>, а <code>chemfig</code> применять для пространственных структур.</p>
+                                    <p>Для простых брутто-формул (например, <code>\ce{H2SO4}</code> или
+                                        <code>\ce{Fe^{3+}}</code>) быстрее использовать пакет <code>mhchem</code>, а
+                                        <code>chemfig</code> применять для пространственных структур.</p>
                                 </div>
                             </div>
                             <div class="article-tip">
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
-                                    <h3>Выравнивание формул по базовой линии</h3>
-                                    <p>Используйте <code>\chemfig[baseline=(a.base)]{...}</code>, чтобы формулы аккуратно вписывались в строку текста или таблицу лабораторного отчета.</p>
+                                    <h3>Подготовка статей для международных журналов</h3>
+                                    <p>При оформлении химических публикаций для журналов издательств Elsevier, Springer
+                                        или Wiley используйте <a href="/blog/latex-scopus-wos">шаблон статьи для Scopus
+                                            и Web of Science</a>.</p>
                                 </div>
                             </div>
                             <div class="article-tip">
                                 <div class="article-tip__number">3</div>
                                 <div class="article-tip__content">
                                     <h3>Масштабирование сложных молекул</h3>
-                                    <p>Если макромолекула не помещается в колонку, отрегулируйте параметр <code>atom sep=1.5em</code> или оберните структуру в блок <code>\scalebox{0.8}{\chemfig{...}}</code>.</p>
+                                    <p>Если макромолекула не помещается в колонку, отрегулируйте параметр
+                                        <code>atom sep=1.5em</code> или оберните структуру в блок
+                                        <code>\scalebox{0.8}{\chemfig{...}}</code>.</p>
                                 </div>
                             </div>
                         </div>
@@ -251,13 +331,18 @@
             <aside class="article-sidebar">
                 <div class="article-sidebar__sticky">
                     <div class="article-sidebar__media">
-                        <img src="../assets/img/img-for-firstScreen.webp" alt="Онлайн-редактор LaTeX Labkeeper" width="220" height="135" loading="lazy" class="article-sidebar__img">
+                        <img src="../assets/img/img-for-firstScreen.webp" alt="Онлайн-редактор LaTeX Labkeeper"
+                            width="220" height="135" loading="lazy" class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Редактируйте химические формулы и&nbsp;структуры в&nbsp;Labkeeper — компиляция chemfig и&nbsp;mhchem в&nbsp;PDF без&nbsp;установки софта.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn">
+                    <p class="article-sidebar__title">Редактируйте химические формулы и&nbsp;структуры в&nbsp;Labkeeper
+                        — компиляция chemfig и&nbsp;mhchem в&nbsp;PDF без&nbsp;установки софта.</p>
+                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
+                        id="sidebar-cta-btn">
                         Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </a>
                 </div>
@@ -267,13 +352,15 @@
         <section class="features" id="features">
             <div class="features__intro">
                 <p class="features__intro-label">Попробуйте прямо сейчас</p>
-                <h2 class="features__intro-title">Верстайте химические отчеты в&nbsp;Labkeeper</h2>
-                <p class="features__intro-text">Онлайн-редактор LaTeX с&nbsp;поддержкой chemfig, amsmath и&nbsp;мгновенной компиляцией в&nbsp;PDF.</p>
+                <h2 class="features__intro-title">Набирайте химические формулы в&nbsp;Labkeeper</h2>
+                <p class="features__intro-text">Онлайн-редактор LaTeX с&nbsp;поддержкой пакета chemfig и&nbsp;быстрой компиляцией структурных формул и&nbsp;реакций в&nbsp;PDF.</p>
             </div>
             <div class="feature-block feature-block--img-left feature-block--dark">
                 <div class="feature-block__container">
                     <div class="feature-block__visual">
-                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor screenshot" class="feature-block__image js-popup-trigger" data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
+                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor screenshot"
+                            class="feature-block__image js-popup-trigger"
+                            data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
                     </div>
                     <div class="feature-block__content">
                         <ul class="feature-list">
@@ -302,7 +389,8 @@
                 </div>
             </div>
             <div class="features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light features__intro-btn">Открыть редактор <span class="button__arrow">→</span></a>
+                <a href="/project/default?open=latex" class="button button--outline-light features__intro-btn">Открыть
+                    редактор <span class="button__arrow">→</span></a>
             </div>
             <div class="feature__bg"><img src="../assets/img/bg.svg" alt="bg" loading="lazy"></div>
         </section>
@@ -318,119 +406,7 @@
 
                 <div class="swiper audience__swiper">
                     <div class="swiper-wrapper">
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-gost-bibliography" class="audience-card">
-                                <p class="audience-card__title">Список литературы по&nbsp;ГОСТ 7.0.5</p>
-                                <p class="audience-card__text">Оформление списка источников и цитирований по ГОСТ 7.0.5 с пакетом biblatex-gost.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-diploma-gost" class="audience-card">
-                                <p class="audience-card__title">Диплом и&nbsp;курсовая по&nbsp;ГОСТ в&nbsp;LaTeX</p>
-                                <p class="audience-card__text">Пошаговый онлайн-гайд по настройке шаблона дипломной работы по ГОСТ 7.32.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-titlepage" class="audience-card">
-                                <p class="audience-card__title">Титульный лист по&nbsp;ГОСТ в&nbsp;LaTeX</p>
-                                <p class="audience-card__text">Как создать титульный лист по российским стандартам в онлайн LaTeX.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-dissertation" class="audience-card">
-                                <p class="audience-card__title">Автореферат и&nbsp;диссертация ВАК в&nbsp;LaTeX</p>
-                                <p class="audience-card__text">Структура, рамки и ссылки для автореферата и кандидатской диссертации в онлайн LaTeX.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-lab-reports" class="audience-card">
-                                <p class="audience-card__title">Оформление лабораторных работ</p>
-                                <p class="audience-card__text">Таблицы, расчет погрешностей и формулы для отчетов по физике и химии.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-chemfig" class="audience-card">
-                                <p class="audience-card__title">Химические формулы и&nbsp;пакет chemfig</p>
-                                <p class="audience-card__text">Редактор химических формул: циклические молекулы, кольца и механизмы реакций.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-fancyhdr" class="audience-card">
-                                <p class="audience-card__title">Колонтитулы и&nbsp;нумерация (fancyhdr)</p>
-                                <p class="audience-card__text">Настройка красивых колонтитулов и нумерации страниц в стиле научных журналов.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-siunitx" class="audience-card">
-                                <p class="audience-card__title">Физические величины и&nbsp;siunitx</p>
-                                <p class="audience-card__text">Размерности величин, погрешности и выравнивание чисел в таблицах по ГОСТ 8.417.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-word-to-latex" class="audience-card">
-                                <p class="audience-card__title">Перенос документа из&nbsp;Word в&nbsp;LaTeX</p>
-                                <p class="audience-card__text">Перенос формул из Word в LaTeX онлайн и импорт docx без потери таблиц.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-scopus-wos" class="audience-card">
-                                <p class="audience-card__title">Шаблон статьи Scopus/WoS</p>
-                                <p class="audience-card__text">Подготовка публикации в международные научные журналы Elsevier, Springer и IEEE.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-list-of-figures-tables" class="audience-card">
-                                <p class="audience-card__title">Список иллюстраций и&nbsp;таблиц по&nbsp;ГОСТ</p>
-                                <p class="audience-card__text">Автоматическая генерация List of Figures и List of Tables с пакетом tocloft.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-systems-equations" class="audience-card">
-                                <p class="audience-card__title">Системы уравнений и&nbsp;фигурная скобка</p>
-                                <p class="audience-card__text">Окружения cases, aligned, dcases и нумерация отдельных строк subequations.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-cv-resume" class="audience-card">
-                                <p class="audience-card__title">Академическое резюме (CV) для грантов</p>
-                                <p class="audience-card__text">Верстка CV для аспирантуры, грантов и зарубежных стажировок с пакетом moderncv.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-amsthm" class="audience-card">
-                                <p class="audience-card__title">Теоремы, доказательства и&nbsp;леммы (amsthm)</p>
-                                <p class="audience-card__text">Оформление математических утверждений, стили definition, plain и символы Q.E.D.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-eskd" class="audience-card">
-                                <p class="audience-card__title">Рамки и&nbsp;штампы по&nbsp;ЕСКД/СПДС</p>
-                                <p class="audience-card__text">Оформление расчетно-пояснительных записок, рамки и штампы по ГОСТ 2.104 (пакет eskdx).</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-formulas" class="audience-card">
-                                <p class="audience-card__title">Формулы и&nbsp;пакет amsmath</p>
-                                <p class="audience-card__text">Выравнивание align, дроби frac/dfrac, матрицы и скобки с примерами кода.</p>
-                            </a>
-                        </div>
-
+                        <!-- Динамическая генерация случайных статей через slider.js -->
                     </div>
                 </div>
             </div>
@@ -449,18 +425,23 @@
                     <a href="/#features" class="footer__link" data-i18n="nav-advantages"></a>
                     <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
                     <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
-                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank" class="footer__link footer__link--external"><span data-i18n="nav-wiki"></span><img src="../assets/img/target.svg" alt="target icon" class="footer__link-icon" style="margin-left:4px;vertical-align:middle;" width="16" height="16" loading="lazy"></a>
+                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank"
+                        class="footer__link footer__link--external"><span data-i18n="nav-wiki"></span><img
+                            src="../assets/img/target.svg" alt="target icon" class="footer__link-icon"
+                            style="margin-left:4px;vertical-align:middle;" width="16" height="16" loading="lazy"></a>
                     <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
                     <a href="/about" class="footer__link" data-i18n="nav-about"></a>
                     <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
                 </nav>
-                <a href="/" class="footer__logo-link"><img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40" loading="lazy"></a>
+                <a href="/" class="footer__logo-link"><img src="../assets/img/logo.svg" alt="Labkeeper Logo"
+                        class="footer__logo" width="40" height="40" loading="lazy"></a>
                 <div class="footer__contact">
                     <span class="footer__contact-label" data-i18n="footer-contact"></span>
                     <a href="mailto:labkeeper.io@gmail.com" class="footer__contact-link">labkeeper.io@gmail.com</a>
                 </div>
             </div>
-            <div class="footer__middle"><img src="../assets/img/img-for-footer.svg" alt="Labkeeper" class="footer__huge-logo" aria-hidden="true" loading="lazy"></div>
+            <div class="footer__middle"><img src="../assets/img/img-for-footer.svg" alt="Labkeeper"
+                    class="footer__huge-logo" aria-hidden="true" loading="lazy"></div>
             <div class="footer__bottom">
                 <div class="footer__copyright">© 2024—2026</div>
                 <a href="/privacy" class="footer__policy" data-i18n="footer-policy"></a>
@@ -470,7 +451,9 @@
 
     <div id="cookie-banner" class="cookie-banner hidden">
         <div class="cookie-banner__container">
-            <p class="cookie-banner__text">Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных данных</a>.</p>
+            <p class="cookie-banner__text">Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта.
+                Подробнее — в <a href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки
+                    персональных данных</a>.</p>
             <div class="cookie-banner__actions">
                 <button id="cookie-accept" class="button button--primary">Принять</button>
                 <button id="cookie-decline" class="button button--outline">Отказаться</button>
@@ -486,4 +469,5 @@
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
 </body>
+
 </html>

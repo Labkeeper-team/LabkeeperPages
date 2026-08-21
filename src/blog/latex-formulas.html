@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Пачка 1 -->
 <html lang="ru">
 
 <head>
@@ -329,7 +330,9 @@
                         <p>Символ <code>&amp;</code> задаёт точку выравнивания, а две косые черты <code>\\</code>
                             выполняют перенос на новую строку.</p>
 
-                        <p>Для системы уравнений без нумерации строк используйте <code>align*</code>:</p>
+                        <p>Для системы уравнений без нумерации строк используйте <code>align*</code> (а для систем с
+                            общей фигурной скобкой и кусочных функций ознакомьтесь с <a
+                                href="/blog/latex-systems-equations">гадом по системам уравнений в LaTeX</a>):</p>
                         <div class="article-code">
                             <div class="article-code__header">
                                 <span class="article-code__lang">LaTeX</span>
@@ -410,7 +413,8 @@
                     <section class="article-section" id="matrices">
                         <h2 class="article-section__title">Матрицы</h2>
                         <p>Пакет <code>amsmath</code> предоставляет несколько окружений для матриц, отличающихся типом
-                            скобок:</p>
+                            скобок (при оформлении математических доказательств с матрицами используйте также <a
+                                href="/blog/latex-amsthm">пакет теорем amsthm</a>):</p>
 
                         <div class="article-code">
                             <div class="article-code__header">
@@ -447,15 +451,19 @@
                             <div class="article-tip">
                                 <div class="article-tip__number">1</div>
                                 <div class="article-tip__content">
-                                    <h3>Используйте \text{} для текста внутри формул</h3>
-                                    <p>Без этой команды LaTeX интерпретирует буквы как переменные и набирает их курсивом.</p>
+                                    <h3>Импорт формул из текстовых процессоров</h3>
+                                    <p>Если вы переносите рукопись из Word, изучите пошаговый алгоритм в статье по <a
+                                            href="/blog/latex-word-to-latex">конвертации документов из Word в LaTeX</a>.
+                                    </p>
                                 </div>
                             </div>
                             <div class="article-tip">
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
-                                    <h3>Нумерация и ссылки на формулы</h3>
-                                    <p>Используйте <code>\label</code> и <code>\eqref</code> для перекрёстных ссылок на формулы.</p>
+                                    <h3>Размерности и физические величины</h3>
+                                    <p>Для набора чисел с единицами измерения по ГОСТ используйте <a
+                                            href="/blog/latex-siunitx">пакет siunitx</a>, а не обычный математический
+                                        режим.</p>
                                 </div>
                             </div>
                         </div>
@@ -467,8 +475,9 @@
             <aside class="article-sidebar">
                 <div class="article-sidebar__sticky">
                     <div class="article-sidebar__media">
-                        <img src="../assets/img/img-for-firstScreen.webp" alt="Интерфейс онлайн-редактора LaTeX Labkeeper"
-                            width="220" height="135" loading="lazy" class="article-sidebar__img">
+                        <img src="../assets/img/img-for-firstScreen.webp"
+                            alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
+                            class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Онлайн-редактор LaTeX с&nbsp;компиляцией в&nbsp;PDF,
                         AI-ассистентом и&nbsp;поддержкой amsmath — без установки, сразу в&nbsp;браузере.</p>
@@ -489,9 +498,8 @@
         <section class="features" id="features">
             <div class="features__intro">
                 <p class="features__intro-label">Попробуйте прямо сейчас</p>
-                <h2 class="features__intro-title">Набирайте формулы в&nbsp;Labkeeper</h2>
-                <p class="features__intro-text">Онлайн-редактор LaTeX с&nbsp;компиляцией в&nbsp;PDF, AI-ассистентом
-                    и&nbsp;поддержкой amsmath — без установки, сразу в&nbsp;браузере.</p>
+                <h2 class="features__intro-title">Набирайте сложные формулы в&nbsp;Labkeeper</h2>
+                <p class="features__intro-text">Онлайн-редактор LaTeX с&nbsp;компиляцией в&nbsp;PDF, поддержкой пакетов amsmath и&nbsp;AI-ассистентом — без&nbsp;установки программ, сразу в&nbsp;браузере.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -551,119 +559,7 @@
 
                 <div class="swiper audience__swiper">
                     <div class="swiper-wrapper">
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-gost-bibliography" class="audience-card">
-                                <p class="audience-card__title">Список литературы по&nbsp;ГОСТ 7.0.5</p>
-                                <p class="audience-card__text">Оформление списка источников и цитирований по ГОСТ 7.0.5 с пакетом biblatex-gost.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-diploma-gost" class="audience-card">
-                                <p class="audience-card__title">Диплом и&nbsp;курсовая по&nbsp;ГОСТ в&nbsp;LaTeX</p>
-                                <p class="audience-card__text">Пошаговый онлайн-гайд по настройке шаблона дипломной работы по ГОСТ 7.32.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-titlepage" class="audience-card">
-                                <p class="audience-card__title">Титульный лист по&nbsp;ГОСТ в&nbsp;LaTeX</p>
-                                <p class="audience-card__text">Как создать титульный лист по российским стандартам в онлайн LaTeX.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-dissertation" class="audience-card">
-                                <p class="audience-card__title">Автореферат и&nbsp;диссертация ВАК в&nbsp;LaTeX</p>
-                                <p class="audience-card__text">Структура, рамки и ссылки для автореферата и кандидатской диссертации в онлайн LaTeX.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-lab-reports" class="audience-card">
-                                <p class="audience-card__title">Оформление лабораторных работ</p>
-                                <p class="audience-card__text">Таблицы, расчет погрешностей и формулы для отчетов по физике и химии.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-chemfig" class="audience-card">
-                                <p class="audience-card__title">Химические формулы и&nbsp;пакет chemfig</p>
-                                <p class="audience-card__text">Редактор химических формул: циклические молекулы, кольца и механизмы реакций.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-fancyhdr" class="audience-card">
-                                <p class="audience-card__title">Колонтитулы и&nbsp;нумерация (fancyhdr)</p>
-                                <p class="audience-card__text">Настройка красивых колонтитулов и нумерации страниц в стиле научных журналов.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-siunitx" class="audience-card">
-                                <p class="audience-card__title">Физические величины и&nbsp;siunitx</p>
-                                <p class="audience-card__text">Размерности величин, погрешности и выравнивание чисел в таблицах по ГОСТ 8.417.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-word-to-latex" class="audience-card">
-                                <p class="audience-card__title">Перенос документа из&nbsp;Word в&nbsp;LaTeX</p>
-                                <p class="audience-card__text">Перенос формул из Word в LaTeX онлайн и импорт docx без потери таблиц.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-scopus-wos" class="audience-card">
-                                <p class="audience-card__title">Шаблон статьи Scopus/WoS</p>
-                                <p class="audience-card__text">Подготовка публикации в международные научные журналы Elsevier, Springer и IEEE.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-list-of-figures-tables" class="audience-card">
-                                <p class="audience-card__title">Список иллюстраций и&nbsp;таблиц по&nbsp;ГОСТ</p>
-                                <p class="audience-card__text">Автоматическая генерация List of Figures и List of Tables с пакетом tocloft.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-systems-equations" class="audience-card">
-                                <p class="audience-card__title">Системы уравнений и&nbsp;фигурная скобка</p>
-                                <p class="audience-card__text">Окружения cases, aligned, dcases и нумерация отдельных строк subequations.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-cv-resume" class="audience-card">
-                                <p class="audience-card__title">Академическое резюме (CV) для грантов</p>
-                                <p class="audience-card__text">Верстка CV для аспирантуры, грантов и зарубежных стажировок с пакетом moderncv.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-amsthm" class="audience-card">
-                                <p class="audience-card__title">Теоремы, доказательства и&nbsp;леммы (amsthm)</p>
-                                <p class="audience-card__text">Оформление математических утверждений, стили definition, plain и символы Q.E.D.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-eskd" class="audience-card">
-                                <p class="audience-card__title">Рамки и&nbsp;штампы по&nbsp;ЕСКД/СПДС</p>
-                                <p class="audience-card__text">Оформление расчетно-пояснительных записок, рамки и штампы по ГОСТ 2.104 (пакет eskdx).</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-formulas" class="audience-card">
-                                <p class="audience-card__title">Формулы и&nbsp;пакет amsmath</p>
-                                <p class="audience-card__text">Выравнивание align, дроби frac/dfrac, матрицы и скобки с примерами кода.</p>
-                            </a>
-                        </div>
-
+                        <!-- Динамическая генерация случайных статей через slider.js -->
                     </div>
                 </div>
             </div>
@@ -715,7 +611,9 @@
     <div id="cookie-banner" class="cookie-banner hidden">
         <div class="cookie-banner__container">
             <p class="cookie-banner__text">
-                Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных данных</a>.
+                Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a
+                    href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных
+                    данных</a>.
             </p>
             <div class="cookie-banner__actions">
                 <button id="cookie-accept" class="button button--primary">Принять</button>

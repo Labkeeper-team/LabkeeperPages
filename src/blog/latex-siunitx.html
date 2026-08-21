@@ -1,25 +1,34 @@
 <!DOCTYPE html>
+<!-- Пачка 1 -->
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Верстка формул для физических величин с размерностями (siunitx) — Labkeeper</title>
-    <meta name="description" content="Как правильно писать физические единицы в LaTeX: размерности величин siunitx LaTeX онлайн, оформление погрешностей, диапазонов и таблиц по ГОСТ 8.417." />
+    <meta name="description"
+        content="Как правильно писать физические единицы в LaTeX: размерности величин siunitx LaTeX онлайн, оформление погрешностей, диапазонов и таблиц по ГОСТ 8.417." />
     <link rel="canonical" href="https://labkeeper.io/blog/latex-siunitx" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://labkeeper.io/blog/latex-siunitx" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Labkeeper" />
-    <meta property="og:title" content="Верстка формул для физических величин с размерностями, пакет siunitx — Labkeeper" />
-    <meta property="og:description" content="Размерности величин siunitx LaTeX онлайн: набор физических единиц СИ, неразрывные пробелы, погрешности и выравнивание чисел в таблицах." />
+    <meta property="og:title"
+        content="Верстка формул для физических величин с размерностями, пакет siunitx — Labkeeper" />
+    <meta property="og:description"
+        content="Размерности величин siunitx LaTeX онлайн: набор физических единиц СИ, неразрывные пробелы, погрешности и выравнивание чисел в таблицах." />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:title" content="Верстка формул для физических величин с размерностями (siunitx) — Labkeeper" />
-    <meta name="twitter:description" content="Размерности величин siunitx LaTeX онлайн: как правильно писать физические единицы в LaTeX." />
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Верстка формул для физических величин с размерностями, пакет siunitx","description":"Полное руководство по использованию пакета siunitx в LaTeX для оформления физических величин, единиц измерения СИ и погрешностей.","author":{"@type":"Organization","name":"Labkeeper","url":"https://labkeeper.io"},"publisher":{"@type":"Organization","name":"Labkeeper","logo":{"@type":"ImageObject","url":"https://labkeeper.io/assets/img/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://labkeeper.io/blog/latex-siunitx"},"datePublished":"2026-08-20","dateModified":"2026-08-20","inLanguage":"ru"}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://labkeeper.io/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://labkeeper.io/blog"},{"@type":"ListItem","position":3,"name":"Физические величины и siunitx","item":"https://labkeeper.io/blog/latex-siunitx"}]}</script>
+    <meta name="twitter:description"
+        content="Размерности величин siunitx LaTeX онлайн: как правильно писать физические единицы в LaTeX." />
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Верстка формул для физических величин с размерностями, пакет siunitx","description":"Полное руководство по использованию пакета siunitx в LaTeX для оформления физических величин, единиц измерения СИ и погрешностей.","author":{"@type":"Organization","name":"Labkeeper","url":"https://labkeeper.io"},"publisher":{"@type":"Organization","name":"Labkeeper","logo":{"@type":"ImageObject","url":"https://labkeeper.io/assets/img/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://labkeeper.io/blog/latex-siunitx"},"datePublished":"2026-08-20","dateModified":"2026-08-20","inLanguage":"ru"}</script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://labkeeper.io/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://labkeeper.io/blog"},{"@type":"ListItem","position":3,"name":"Физические величины и siunitx","item":"https://labkeeper.io/blog/latex-siunitx"}]}</script>
     <script type="text/javascript">
         (function () {
             function hasAcceptedCookieConsent() { try { return localStorage.getItem('labkeeper_cookie_consent') === 'accepted'; } catch (e) { return false; } }
@@ -39,15 +48,18 @@
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body class="page blog__article">
     <header class="header js-header">
         <div class="header__container">
             <div class="header__left">
                 <button class="header__burger js-burger-btn" aria-label="Открыть меню">
-                    <span class="header__burger-line"></span><span class="header__burger-line"></span><span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span><span class="header__burger-line"></span><span
+                        class="header__burger-line"></span>
                 </button>
                 <a href="/" class="header__logo">
-                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36" height="36">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36"
+                        height="36">
                     <span class="header__logo-text">Labkeeper</span>
                 </a>
                 <div class="header__lang js-lang-switcher">
@@ -61,19 +73,26 @@
                     <button class="header__lang-btn" data-lang="en">En</button>
                 </div>
                 <ul class="header__nav-list">
-                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link" data-i18n="nav-examples"></a></li>
-                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link" data-i18n="nav-features"></a></li>
-                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a></li>
-                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a></li>
+                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link"
+                            data-i18n="nav-examples"></a></li>
+                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link"
+                            data-i18n="nav-features"></a></li>
+                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a>
+                    </li>
+                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a>
+                    </li>
                 </ul>
                 <div class="header__mobile-contact">
                     <span class="header__mobile-contact-label" data-i18n="footer-contact"></span>
-                    <a href="mailto:labkeeper.io@gmail.com" class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
+                    <a href="mailto:labkeeper.io@gmail.com"
+                        class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
                 </div>
             </nav>
             <div class="header__right">
-                <a href="/project/default?open=login" class="button button--outline header__login" data-i18n="btn-login"></a>
-                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects" style="display: none;"></a>
+                <a href="/project/default?open=login" class="button button--outline header__login"
+                    data-i18n="btn-login"></a>
+                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects"
+                    style="display: none;"></a>
                 <a href="/project/default" class="button button--primary header__editor" data-i18n="btn-editor"></a>
             </div>
         </div>
@@ -84,9 +103,12 @@
             <div class="article-breadcrumbs__container">
                 <nav class="article-breadcrumbs__nav" aria-label="Breadcrumb">
                     <ol class="article-breadcrumbs__list">
-                        <li class="article-breadcrumbs__item"><a href="/" class="article-breadcrumbs__link">Главная</a></li>
-                        <li class="article-breadcrumbs__item"><a href="/blog" class="article-breadcrumbs__link">Блог</a></li>
-                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active"><span>Физические единицы и siunitx в LaTeX</span></li>
+                        <li class="article-breadcrumbs__item"><a href="/" class="article-breadcrumbs__link">Главная</a>
+                        </li>
+                        <li class="article-breadcrumbs__item"><a href="/blog" class="article-breadcrumbs__link">Блог</a>
+                        </li>
+                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active"><span>Физические единицы
+                                и siunitx в LaTeX</span></li>
                     </ol>
                 </nav>
             </div>
@@ -95,7 +117,8 @@
         <div class="article-layout">
             <article class="article-content">
                 <div class="article-content__container">
-                    <h1 class="article-content__title h1">Верстка формул для физических величин с&nbsp;размерностями, пакет siunitx</h1>
+                    <h1 class="article-content__title h1">Верстка формул для физических величин с&nbsp;размерностями,
+                        пакет siunitx</h1>
 
                     <div class="article-content__tags">
                         <a href="/blog#labs" class="article-tag">Лабораторные работы</a>
@@ -107,19 +130,30 @@
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
                         <ol class="article-toc__list">
-                            <li><a href="#intro" class="article-toc__link">Проблема ручного набора единиц измерения</a></li>
-                            <li><a href="#setup" class="article-toc__link">Подключение siunitx и настройка русской локализации</a></li>
+                            <li><a href="#intro" class="article-toc__link">Проблема ручного набора единиц измерения</a>
+                            </li>
+                            <li><a href="#setup" class="article-toc__link">Подключение siunitx и настройка русской
+                                    локализации</a></li>
                             <li><a href="#commands" class="article-toc__link">Команды \qty, \unit, \num и \ang</a></li>
-                            <li><a href="#uncertainty" class="article-toc__link">Погрешности измерений и диапазоны чисел</a></li>
-                            <li><a href="#tables" class="article-toc__link">Таблицы с выравниванием чисел (колонка S)</a></li>
+                            <li><a href="#uncertainty" class="article-toc__link">Погрешности измерений и диапазоны
+                                    чисел</a></li>
+                            <li><a href="#tables" class="article-toc__link">Таблицы с выравниванием чисел (колонка
+                                    S)</a></li>
                             <li><a href="#tips" class="article-toc__link">Практические советы по ГОСТ 8.417</a></li>
                         </ol>
                     </nav>
 
                     <section class="article-section" id="intro">
                         <h2 class="article-section__title">Проблема ручного набора единиц измерения</h2>
-                        <p>В математическом режиме LaTeX буквы по умолчанию отображаются курсивом: если написать <code>$v = 100 km/h$</code>, переменные «k», «m», «h» будут наклонены, а пробел между числом и размерностью нарушится. Согласно международной системе СИ и ГОСТ 8.417-2002, <strong>размерности величин должны набираться прямым шрифтом</strong> с обязательным тонким неразрывным пробелом после числа.</p>
-                        <p>Чтобы понять, <strong>как правильно писать физические единицы в LaTeX</strong>, был создан пакет <code>siunitx</code> — признанный золотой стандарт научной типографики.</p>
+                        <p>В математическом режиме LaTeX буквы по умолчанию отображаются курсивом: если написать
+                            <code>$v = 100 km/h$</code>, переменные «k», «m», «h» будут наклонены, а пробел между числом
+                            и размерностью нарушится. Согласно международной системе СИ и ГОСТ 8.417-2002,
+                            <strong>размерности величин должны набираться прямым шрифтом</strong> с обязательным тонким
+                            неразрывным пробелом после числа.</p>
+                        <p>Чтобы понять, <strong>как правильно писать физические единицы в LaTeX</strong> при подготовке
+                            <a href="/blog/latex-lab-reports">отчетов по лабораторным работам</a> и <a
+                                href="/blog/latex-diploma-gost">дипломных проектов по ГОСТ</a>, был создан пакет
+                            <code>siunitx</code> — признанный золотой стандарт научной типографики.</p>
                     </section>
 
                     <section class="article-section" id="setup">
@@ -145,13 +179,33 @@
                         <div class="article-table-wrapper">
                             <table class="article-table">
                                 <thead>
-                                    <tr><th>Команда</th><th>Пример синтаксиса</th><th>Результат отображения</th></tr>
+                                    <tr>
+                                        <th>Команда</th>
+                                        <th>Пример синтаксиса</th>
+                                        <th>Результат отображения</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                    <tr><td><code>\qty{число}{единица}</code></td><td><code>\qty{9.81}{\meter\per\second\squared}</code></td><td>9,81 м/с² (число с размерностью)</td></tr>
-                                    <tr><td><code>\unit{единица}</code></td><td><code>\unit{\kilo\gram\per\cubic\meter}</code></td><td>кг/м³ (только единица)</td></tr>
-                                    <tr><td><code>\num{число}</code></td><td><code>\num{1.23e-4}</code></td><td>1,23 · 10⁻⁴ (форматированное число)</td></tr>
-                                    <tr><td><code>\ang{градусы;минуты;секунды}</code></td><td><code>\ang{45;30;15}</code></td><td>45° 30′ 15″ (угловые величины)</td></tr>
+                                    <tr>
+                                        <td><code>\qty{число}{единица}</code></td>
+                                        <td><code>\qty{9.81}{\meter\per\second\squared}</code></td>
+                                        <td>9,81 м/с² (число с размерностью)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>\unit{единица}</code></td>
+                                        <td><code>\unit{\kilo\gram\per\cubic\meter}</code></td>
+                                        <td>кг/м³ (только единица)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>\num{число}</code></td>
+                                        <td><code>\num{1.23e-4}</code></td>
+                                        <td>1,23 · 10⁻⁴ (форматированное число)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>\ang{градусы;минуты;секунды}</code></td>
+                                        <td><code>\ang{45;30;15}</code></td>
+                                        <td>45° 30′ 15″ (угловые величины)</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -161,11 +215,14 @@
 Напряжение в сети: \qty{220}{\volt}, частота: \qty{50}{\hertz}.
 Плотность воды: \qty{1000}{\kilo\gram\per\cubic\meter}.</code></pre>
                         </div>
+                        <p>Для интеграции размерностей в сложные аналитические выкладки и дроби обратитесь к нашему <a
+                                href="/blog/latex-formulas">руководству по математическим формулам amsmath</a>.</p>
                     </section>
 
                     <section class="article-section" id="uncertainty">
                         <h2 class="article-section__title">Погрешности измерений и диапазоны чисел</h2>
-                        <p>Для отчетов по физическим и химическим лабораторным работам важно корректно оформлять абсолютную погрешность:</p>
+                        <p>Для отчетов по физическим и химическим лабораторным работам важно корректно оформлять
+                            абсолютную погрешность:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>% Значение с абсолютной погрешностью: (12,45 ± 0,05) м/с
@@ -181,7 +238,9 @@
 
                     <section class="article-section" id="tables">
                         <h2 class="article-section__title">Таблицы с выравниванием чисел (колонка S)</h2>
-                        <p>Пакет <code>siunitx</code> предоставляет специальный тип колонки <code>S</code> для таблиц. Числа автоматически выравниваются по десятичной запятой, что делает экспериментальные данные легко читаемыми:</p>
+                        <p>Пакет <code>siunitx</code> предоставляет специальный тип колонки <code>S</code> для таблиц.
+                            Числа автоматически выравниваются по десятичной запятой, что делает экспериментальные данные
+                            легко читаемыми:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>\begin{table}[ht]
@@ -197,8 +256,13 @@
 \end{tabular}
 \end{table}</code></pre>
                         </div>
+                        <p>Если в вашем документе накапливается много экспериментальных таблиц и графиков,
+                            автоматизируйте их перечень с помощью нашего <a
+                                href="/blog/latex-list-of-figures-tables">гайда по спискам иллюстраций и таблиц</a>.</p>
                         <div class="article-note">
-                            <strong>💡 Совет:</strong> Заголовки столбцов над колонками <code>S</code> обязательно оборачивайте в фигурные скобки <code>{...}</code>, чтобы LaTeX не пытался парсить их как числа.
+                            <strong>💡 Совет:</strong> Заголовки столбцов над колонками <code>S</code> обязательно
+                            оборачивайте в фигурные скобки <code>{...}</code>, чтобы LaTeX не пытался парсить их как
+                            числа.
                         </div>
                     </section>
 
@@ -209,14 +273,17 @@
                                 <div class="article-tip__number">1</div>
                                 <div class="article-tip__content">
                                     <h3>Единицы в знаменателе</h3>
-                                    <p>Используйте опцию <code>per-mode = fraction</code> для дроби или <code>per-mode = symbol</code> для косой черты (например, <code>\siunitx[per-mode=symbol]{\meter\per\second}</code>).</p>
+                                    <p>Используйте опцию <code>per-mode = fraction</code> для дроби или
+                                        <code>per-mode = symbol</code> для косой черты (например,
+                                        <code>\siunitx[per-mode=symbol]{\meter\per\second}</code>).</p>
                                 </div>
                             </div>
                             <div class="article-tip">
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
                                     <h3>Проценты и промилле</h3>
-                                    <p>Команда <code>\qty{15}{\percent}</code> гарантирует правильный неразрывный полупробел перед знаком процента по стандарту ГОСТ.</p>
+                                    <p>Команда <code>\qty{15}{\percent}</code> гарантирует правильный неразрывный
+                                        полупробел перед знаком процента по стандарту ГОСТ.</p>
                                 </div>
                             </div>
                         </div>
@@ -227,13 +294,18 @@
             <aside class="article-sidebar">
                 <div class="article-sidebar__sticky">
                     <div class="article-sidebar__media">
-                        <img src="../assets/img/img-for-firstScreen.webp" alt="Онлайн-редактор LaTeX Labkeeper" width="220" height="135" loading="lazy" class="article-sidebar__img">
+                        <img src="../assets/img/img-for-firstScreen.webp" alt="Онлайн-редактор LaTeX Labkeeper"
+                            width="220" height="135" loading="lazy" class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Набирайте расчеты и&nbsp;физические величины в&nbsp;Labkeeper с&nbsp;полной поддержкой siunitx и&nbsp;ГОСТ 8.417.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn">
+                    <p class="article-sidebar__title">Набирайте расчеты и&nbsp;физические величины в&nbsp;Labkeeper
+                        с&nbsp;полной поддержкой siunitx и&nbsp;ГОСТ 8.417.</p>
+                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
+                        id="sidebar-cta-btn">
                         Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </a>
                 </div>
@@ -243,13 +315,15 @@
         <section class="features" id="features">
             <div class="features__intro">
                 <p class="features__intro-label">Попробуйте прямо сейчас</p>
-                <h2 class="features__intro-title">Профессиональная верстка физических расчетов</h2>
-                <p class="features__intro-text">Онлайн-редактор LaTeX с&nbsp;мгновенной поддержкой siunitx, amsmath и&nbsp;автокомпиляцией формул.</p>
+                <h2 class="features__intro-title">Набирайте физические величины в&nbsp;Labkeeper</h2>
+                <p class="features__intro-text">Онлайн-редактор LaTeX с&nbsp;полной поддержкой пакета siunitx: правильное оформление размерностей, погрешностей и&nbsp;чисел в&nbsp;таблицах.</p>
             </div>
             <div class="feature-block feature-block--img-left feature-block--dark">
                 <div class="feature-block__container">
                     <div class="feature-block__visual">
-                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor screenshot" class="feature-block__image js-popup-trigger" data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
+                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor screenshot"
+                            class="feature-block__image js-popup-trigger"
+                            data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
                     </div>
                     <div class="feature-block__content">
                         <ul class="feature-list">
@@ -278,7 +352,8 @@
                 </div>
             </div>
             <div class="features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light features__intro-btn">Открыть редактор <span class="button__arrow">→</span></a>
+                <a href="/project/default?open=latex" class="button button--outline-light features__intro-btn">Открыть
+                    редактор <span class="button__arrow">→</span></a>
             </div>
             <div class="feature__bg"><img src="../assets/img/bg.svg" alt="bg" loading="lazy"></div>
         </section>
@@ -294,119 +369,7 @@
 
                 <div class="swiper audience__swiper">
                     <div class="swiper-wrapper">
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-gost-bibliography" class="audience-card">
-                                <p class="audience-card__title">Список литературы по&nbsp;ГОСТ 7.0.5</p>
-                                <p class="audience-card__text">Оформление списка источников и цитирований по ГОСТ 7.0.5 с пакетом biblatex-gost.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-diploma-gost" class="audience-card">
-                                <p class="audience-card__title">Диплом и&nbsp;курсовая по&nbsp;ГОСТ в&nbsp;LaTeX</p>
-                                <p class="audience-card__text">Пошаговый онлайн-гайд по настройке шаблона дипломной работы по ГОСТ 7.32.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-titlepage" class="audience-card">
-                                <p class="audience-card__title">Титульный лист по&nbsp;ГОСТ в&nbsp;LaTeX</p>
-                                <p class="audience-card__text">Как создать титульный лист по российским стандартам в онлайн LaTeX.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-dissertation" class="audience-card">
-                                <p class="audience-card__title">Автореферат и&nbsp;диссертация ВАК в&nbsp;LaTeX</p>
-                                <p class="audience-card__text">Структура, рамки и ссылки для автореферата и кандидатской диссертации в онлайн LaTeX.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-lab-reports" class="audience-card">
-                                <p class="audience-card__title">Оформление лабораторных работ</p>
-                                <p class="audience-card__text">Таблицы, расчет погрешностей и формулы для отчетов по физике и химии.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-chemfig" class="audience-card">
-                                <p class="audience-card__title">Химические формулы и&nbsp;пакет chemfig</p>
-                                <p class="audience-card__text">Редактор химических формул: циклические молекулы, кольца и механизмы реакций.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-fancyhdr" class="audience-card">
-                                <p class="audience-card__title">Колонтитулы и&nbsp;нумерация (fancyhdr)</p>
-                                <p class="audience-card__text">Настройка красивых колонтитулов и нумерации страниц в стиле научных журналов.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-siunitx" class="audience-card">
-                                <p class="audience-card__title">Физические величины и&nbsp;siunitx</p>
-                                <p class="audience-card__text">Размерности величин, погрешности и выравнивание чисел в таблицах по ГОСТ 8.417.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-word-to-latex" class="audience-card">
-                                <p class="audience-card__title">Перенос документа из&nbsp;Word в&nbsp;LaTeX</p>
-                                <p class="audience-card__text">Перенос формул из Word в LaTeX онлайн и импорт docx без потери таблиц.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-scopus-wos" class="audience-card">
-                                <p class="audience-card__title">Шаблон статьи Scopus/WoS</p>
-                                <p class="audience-card__text">Подготовка публикации в международные научные журналы Elsevier, Springer и IEEE.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-list-of-figures-tables" class="audience-card">
-                                <p class="audience-card__title">Список иллюстраций и&nbsp;таблиц по&nbsp;ГОСТ</p>
-                                <p class="audience-card__text">Автоматическая генерация List of Figures и List of Tables с пакетом tocloft.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-systems-equations" class="audience-card">
-                                <p class="audience-card__title">Системы уравнений и&nbsp;фигурная скобка</p>
-                                <p class="audience-card__text">Окружения cases, aligned, dcases и нумерация отдельных строк subequations.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-cv-resume" class="audience-card">
-                                <p class="audience-card__title">Академическое резюме (CV) для грантов</p>
-                                <p class="audience-card__text">Верстка CV для аспирантуры, грантов и зарубежных стажировок с пакетом moderncv.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-amsthm" class="audience-card">
-                                <p class="audience-card__title">Теоремы, доказательства и&nbsp;леммы (amsthm)</p>
-                                <p class="audience-card__text">Оформление математических утверждений, стили definition, plain и символы Q.E.D.</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-eskd" class="audience-card">
-                                <p class="audience-card__title">Рамки и&nbsp;штампы по&nbsp;ЕСКД/СПДС</p>
-                                <p class="audience-card__text">Оформление расчетно-пояснительных записок, рамки и штампы по ГОСТ 2.104 (пакет eskdx).</p>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="/blog/latex-formulas" class="audience-card">
-                                <p class="audience-card__title">Формулы и&nbsp;пакет amsmath</p>
-                                <p class="audience-card__text">Выравнивание align, дроби frac/dfrac, матрицы и скобки с примерами кода.</p>
-                            </a>
-                        </div>
-
+                        <!-- Динамическая генерация случайных статей через slider.js -->
                     </div>
                 </div>
             </div>
@@ -425,18 +388,23 @@
                     <a href="/#features" class="footer__link" data-i18n="nav-advantages"></a>
                     <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
                     <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
-                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank" class="footer__link footer__link--external"><span data-i18n="nav-wiki"></span><img src="../assets/img/target.svg" alt="target icon" class="footer__link-icon" style="margin-left:4px;vertical-align:middle;" width="16" height="16" loading="lazy"></a>
+                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank"
+                        class="footer__link footer__link--external"><span data-i18n="nav-wiki"></span><img
+                            src="../assets/img/target.svg" alt="target icon" class="footer__link-icon"
+                            style="margin-left:4px;vertical-align:middle;" width="16" height="16" loading="lazy"></a>
                     <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
                     <a href="/about" class="footer__link" data-i18n="nav-about"></a>
                     <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
                 </nav>
-                <a href="/" class="footer__logo-link"><img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40" loading="lazy"></a>
+                <a href="/" class="footer__logo-link"><img src="../assets/img/logo.svg" alt="Labkeeper Logo"
+                        class="footer__logo" width="40" height="40" loading="lazy"></a>
                 <div class="footer__contact">
                     <span class="footer__contact-label" data-i18n="footer-contact"></span>
                     <a href="mailto:labkeeper.io@gmail.com" class="footer__contact-link">labkeeper.io@gmail.com</a>
                 </div>
             </div>
-            <div class="footer__middle"><img src="../assets/img/img-for-footer.svg" alt="Labkeeper" class="footer__huge-logo" aria-hidden="true" loading="lazy"></div>
+            <div class="footer__middle"><img src="../assets/img/img-for-footer.svg" alt="Labkeeper"
+                    class="footer__huge-logo" aria-hidden="true" loading="lazy"></div>
             <div class="footer__bottom">
                 <div class="footer__copyright">© 2024—2026</div>
                 <a href="/privacy" class="footer__policy" data-i18n="footer-policy"></a>
@@ -446,7 +414,9 @@
 
     <div id="cookie-banner" class="cookie-banner hidden">
         <div class="cookie-banner__container">
-            <p class="cookie-banner__text">Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных данных</a>.</p>
+            <p class="cookie-banner__text">Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта.
+                Подробнее — в <a href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки
+                    персональных данных</a>.</p>
             <div class="cookie-banner__actions">
                 <button id="cookie-accept" class="button button--primary">Принять</button>
                 <button id="cookie-decline" class="button button--outline">Отказаться</button>
@@ -462,4 +432,5 @@
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
 </body>
+
 </html>
