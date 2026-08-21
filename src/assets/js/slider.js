@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (projectsContainer) {
         const API_URL = '/api/v4/public/preview';
         const categoryLinks = document.querySelectorAll('#project-categories .header__nav-link');
-        
-        let allProjects = []; 
+
+        let allProjects = [];
         let swiperInstance = null;
-        
+
         // 1. Определяем язык по умолчанию из шапки сайта (или из тега html)
         const activeLangBtn = document.querySelector('.js-lang-switcher .header__lang-btn--active');
         let currentLang = activeLangBtn ? activeLangBtn.getAttribute('data-lang') : (document.documentElement.lang || 'ru');
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             swiperInstance = new Swiper('.examples__swiper', {
                 // На мобильных включаем авто-расчет ширины слайдов, чтобы управлять ими через CSS
-                slidesPerView: 'auto', 
+                slidesPerView: 'auto',
                 spaceBetween: 16, // Отступ между карточками на мобильных устройствах
                 loop: false, // Отключили зацикливание для корректной работы неактивного состояния стрелок
                 grabCursor: true,
@@ -41,10 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 breakpoints: {
                     // Начиная с десктопной ширины возвращаем строгую сетку на 4 карточки
-                    1024: { 
-                        slidesPerView: 4, 
+                    1024: {
+                        slidesPerView: 4,
                         spaceBetween: 30, // Расстояние между карточками на ПК
-                        allowTouchMove: true 
+                        allowTouchMove: true
                     }
                 }
             });
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             projects.forEach((project) => {
                 const projectName = project.name?.[currentLang] || project.name?.['ru'] || project.name?.['en'] || 'Untitled';
-                
+
                 const hasLogo = project.logoUrl ? true : false;
                 const imgSrc = hasLogo ? project.logoUrl : 'assets/img/logo.svg';
                 const imgClass = hasLogo ? 'example-card__image' : 'example-card__image example-card__image--placeholder';
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 const response = await fetch(API_URL);
                 if (!response.ok) throw new Error(`Status: ${response.status}`);
-                
+
                 const data = await response.json();
                 allProjects = data.projects || [];
                 renderProjects(allProjects);
@@ -348,8 +348,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const transform = style.transform || style.webkitTransform;
                 if (!transform || transform === 'none') return 0;
                 try {
-                    const matrix = new DOMMatrixReadOnly(transform);
+                    const matrix = new window.DOMMatrixReadOnly(transform);
                     return matrix.m41;
+                    // eslint-disable-next-line no-unused-vars
                 } catch (e) {
                     const values = transform.match(/matrix.*\((.+)\)/);
                     if (values && values[1]) {
