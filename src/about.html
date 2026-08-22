@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 
 <head>
@@ -6,24 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
-    <title>Labkeeper — О нас</title>
+    <title>О нас — онлайн-редактор Labkeeper</title>
     <meta name="description"
-        content="О команде и миссии Labkeeper: единая среда для документов, расчетов и научных публикаций. / About Labkeeper team and mission: a unified environment for documents, calculations, and scientific writing." />
+        content="О команде и миссии сервиса Labkeeper: единая онлайн-среда для верстки документов LaTeX и Markdown, точных математических вычислений и научных публикаций." />
     <link rel="canonical" href="https://labkeeper.io/about" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://labkeeper.io/about" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:locale:alternate" content="en_US" />
     <meta property="og:site_name" content="Labkeeper" />
-    <meta property="og:title" content="Labkeeper — О нас / Labkeeper — About" />
+    <meta property="og:title" content="О нас — онлайн-редактор Labkeeper" />
     <meta property="og:description"
-        content="Узнайте о миссии Labkeeper и о том, для кого создана платформа. / Learn about Labkeeper's mission and who the platform is built for." />
+        content="Узнайте о миссии Labkeeper и возможностях единой платформы для расчетов и подготовки научных документов." />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
-    <meta name="twitter:title" content="Labkeeper — О нас / Labkeeper — About" />
+    <meta name="twitter:title" content="О нас — онлайн-редактор Labkeeper" />
     <meta name="twitter:description"
-        content="Узнайте о миссии Labkeeper и о том, для кого создана платформа. / Learn about Labkeeper's mission and who the platform is built for." />
+        content="Узнайте о миссии Labkeeper и возможностях единой платформы для расчетов и подготовки научных документов." />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "О нас — Labkeeper",
+        "description": "О команде и миссии сервиса Labkeeper: единая онлайн-среда для верстки документов LaTeX и Markdown, точных математических вычислений и научных публикаций.",
+        "url": "https://labkeeper.io/about",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "url": "https://labkeeper.io",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://labkeeper.io/assets/img/logo.svg"
+            }
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://labkeeper.io/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "О нас",
+                "item": "https://labkeeper.io/about"
+            }
+        ]
+    }
+    </script>
     <script type="text/javascript">
         (function () {
             function hasAcceptedCookieConsent() {
@@ -252,23 +291,98 @@
                 </div>
 
                 <div class="about-docs__links">
-                    <a href="soglas" class="button button--outline about-docs__link"><span
+                    <a href="soglas" class="button button--outline about-docs__link" target="_blank"><span
                             data-i18n="docs-link-consent"></span> <img src="assets/img/target.svg" alt="external link"
                             class="button__external-icon" width="16" height="16"></a>
-                    <a href="oferta" class="button button--outline about-docs__link"><span
+                    <a href="oferta" class="button button--outline about-docs__link" target="_blank"><span
                             data-i18n="docs-link-oferta"></span> <img src="assets/img/target.svg" alt="external link"
                             class="button__external-icon" width="16" height="16"></a>
-                    <a href="privacy" class="button button--outline about-docs__link"><span
+                    <a href="privacy" class="button button--outline about-docs__link" target="_blank"><span
                             data-i18n="docs-link-privacy"></span> <img src="assets/img/target.svg" alt="external link"
                             class="button__external-icon" width="16" height="16"></a>
-                    <a href="sogl_yam" class="button button--outline about-docs__link"><span
+                    <a href="sogl_yam" class="button button--outline about-docs__link" target="_blank"><span
                             data-i18n="docs-link-yam"></span> <img src="assets/img/target.svg" alt="external link"
                             class="button__external-icon" width="16" height="16"></a>
-                    <a href="sogl_adv" class="button button--outline about-docs__link"><span
+                    <a href="sogl_adv" class="button button--outline about-docs__link" target="_blank"><span
                             data-i18n="docs-link-adv"></span> <img src="assets/img/target.svg" alt="external link"
                             class="button__external-icon" width="16" height="16"></a>
                     <a href="/" class="button button--outline about-docs__link"><span
                             data-i18n="docs-link-cookies"></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок: Бегущая строка статей блога -->
+        <section class="blog-ticker" id="blog-ticker" aria-label="База знаний, гайды и шаблоны">
+            <div class="blog-ticker__container">
+                <h2 class="blog-ticker__heading">База знаний, гайды и шаблоны</h2>
+            </div>
+            <div class="blog-ticker__viewport">
+                <div class="blog-ticker__track js-blog-ticker-track">
+                    <a href="/blog/latex-gost-bibliography" class="blog-ticker__item">
+                        <span class="blog-ticker__text">Список литературы по&nbsp;ГОСТ 7.0.5</span>
+                        <span class="blog-ticker__arrow">→</span>
+                    </a>
+                    <a href="/blog/latex-diploma-gost" class="blog-ticker__item">
+                        <span class="blog-ticker__text">Диплом и&nbsp;курсовая по&nbsp;ГОСТ в&nbsp;LaTeX</span>
+                        <span class="blog-ticker__arrow">→</span>
+                    </a>
+                    <a href="/blog/latex-titlepage" class="blog-ticker__item">
+                        <span class="blog-ticker__text">Титульный лист по&nbsp;ГОСТ в&nbsp;LaTeX</span>
+                        <span class="blog-ticker__arrow">→</span>
+                    </a>
+                    <a href="/blog/latex-dissertation" class="blog-ticker__item">
+                        <span class="blog-ticker__text">Автореферат и&nbsp;диссертация ВАК в&nbsp;LaTeX</span>
+                        <span class="blog-ticker__arrow">→</span>
+                    </a>
+                    <a href="/blog/latex-lab-reports" class="blog-ticker__item">
+                        <span class="blog-ticker__text">Оформление лабораторных работ</span>
+                        <span class="blog-ticker__arrow">→</span>
+                    </a>
+                    <a href="/blog/latex-chemfig" class="blog-ticker__item">
+                        <span class="blog-ticker__text">Химические формулы и&nbsp;реакции (chemfig)</span>
+                        <span class="blog-ticker__arrow">→</span>
+                    </a>
+                    <a href="/blog/latex-fancyhdr" class="blog-ticker__item">
+                        <span class="blog-ticker__text">Колонтитулы и&nbsp;нумерация (fancyhdr)</span>
+                        <span class="blog-ticker__arrow">→</span>
+                    </a>
+                    <a href="/blog/latex-siunitx" class="blog-ticker__item">
+                        <span class="blog-ticker__text">Физические величины и&nbsp;единицы (siunitx)</span>
+                        <span class="blog-ticker__arrow">→</span>
+                    </a>
+                    <a href="/blog/latex-word-to-latex" class="blog-ticker__item">
+                        <span class="blog-ticker__text">Перенос документов из&nbsp;Word в&nbsp;LaTeX</span>
+                        <span class="blog-ticker__arrow">→</span>
+                    </a>
+                    <a href="/blog/latex-scopus-wos" class="blog-ticker__item">
+                        <span class="blog-ticker__text">Шаблон статьи Scopus / Web of Science</span>
+                        <span class="blog-ticker__arrow">→</span>
+                    </a>
+                    <a href="/blog/latex-list-of-figures-tables" class="blog-ticker__item">
+                        <span class="blog-ticker__text">Список иллюстраций и&nbsp;таблиц по&nbsp;ГОСТ</span>
+                        <span class="blog-ticker__arrow">→</span>
+                    </a>
+                    <a href="/blog/latex-systems-equations" class="blog-ticker__item">
+                        <span class="blog-ticker__text">Системы уравнений и&nbsp;фигурные скобки</span>
+                        <span class="blog-ticker__arrow">→</span>
+                    </a>
+                    <a href="/blog/latex-cv-resume" class="blog-ticker__item">
+                        <span class="blog-ticker__text">Академическое резюме (CV) в&nbsp;LaTeX</span>
+                        <span class="blog-ticker__arrow">→</span>
+                    </a>
+                    <a href="/blog/latex-amsthm" class="blog-ticker__item">
+                        <span class="blog-ticker__text">Теоремы, леммы и&nbsp;доказательства (amsthm)</span>
+                        <span class="blog-ticker__arrow">→</span>
+                    </a>
+                    <a href="/blog/latex-eskd" class="blog-ticker__item">
+                        <span class="blog-ticker__text">Рамки и&nbsp;штампы по&nbsp;ЕСКД/СПДС (eskdx)</span>
+                        <span class="blog-ticker__arrow">→</span>
+                    </a>
+                    <a href="/blog/latex-formulas" class="blog-ticker__item">
+                        <span class="blog-ticker__text">Формулы и&nbsp;уравнения (пакет amsmath)</span>
+                        <span class="blog-ticker__arrow">→</span>
                     </a>
                 </div>
             </div>
@@ -283,13 +397,15 @@
                     <a href="/#features" class="footer__link" data-i18n="nav-advantages"></a>
                     <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
                     <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
-                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" class="footer__link footer__link--external">
+                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank"
+                        class="footer__link footer__link--external">
                         <span data-i18n="nav-wiki"></span>
                         <img src="assets/img/target.svg" alt="target icon" class="footer__link-icon"
                             style="margin-left: 4px; vertical-align: middle;" width="16" height="16" loading="lazy">
                     </a>
                     <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
                     <a href="/about" class="footer__link" data-i18n="nav-about"></a>
+                    <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
                 </nav>
                 <a href="/" class="footer__logo-link">
                     <img src="assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40"
@@ -317,8 +433,8 @@
             <p class="cookie-banner__text">
                 Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Обязательные cookie работают
                 всегда. Аналитические cookie (сервис Яндекс.Метрика от ООО «Яндекс», Россия) требуют вашего согласия.
-                Подробнее — в <a href="privacy" class="cookie-banner__link">Политике обработки
-                    персональных данных</a> и <a href="sogl_yam" class="cookie-banner__link">Согласии на
+                Подробнее — в <a href="privacy" class="cookie-banner__link" target="_blank">Политике обработки
+                    персональных данных</a> и <a href="sogl_yam" class="cookie-banner__link" target="_blank">Согласии на
                     использование сервиса Яндекс.Метрика</a>.
             </p>
             <div class="cookie-banner__actions">
@@ -335,6 +451,7 @@
     <script src="assets/js/auth.js" defer></script>
     <script src="assets/js/script.js" defer></script>
     <script src="assets/js/lang.js" defer></script>
+    <script src="assets/js/slider.js" defer></script>
 </body>
 
 </html>
