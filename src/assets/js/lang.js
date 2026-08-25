@@ -5,6 +5,7 @@ const i18n = {
                 "nav-audience": "Для кого",
                 "nav-tokens": "Токены",
                 "nav-about": "О нас",
+                "nav-blog": "Блог",
                 "nav-examples": "Примеры проектов",
                 "nav-wiki": "Wiki проекта",
                 "btn-login": "Авторизоваться <span class=\"button__arrow\">→</span>",
@@ -46,7 +47,9 @@ const i18n = {
                 "feat-gpt-t2": "Нейросеть сама внедрит нужные изменения в документ на основе вашего текстового запроса.",
                 "feat-gpt-b3": "Нулевой порог вхождения:",
                 "feat-gpt-t3": "Не обязательно знать LaTeX или Markdown. Просто опишите желаемый результат своими словами, и ассистент выполнит задачу за вас.",
-                "feat-gpt-btn": "Перейти к ассистенту <span class=\"button__arrow\">→</span>",
+                "feat-gpt-b4": "Встроенная генерация медиа:",
+                "feat-gpt-t4": "Создавайте уникальные изображения прямо в редакторе — достаточно просто описать текстом, что должно быть на картинке.",
+                "feat-gpt-btn": "Перейти к генерациям <span class=\"button__arrow\">→</span>",
 
                 // Преимущества
                 "adv-title": "Labkeeper это:",
@@ -55,7 +58,8 @@ const i18n = {
                 "adv-item-3": "Поддержка вычислений высокой точности",
                 "adv-item-4": "Поддержка вычисления погрешностей",
                 "adv-item-5": "Запросы к GPT",
-                "adv-item-6": "Автоматическая отрисовка вычислений в красивом формате",
+                "adv-item-6": "Генерация изображений через GPT",
+                "adv-item-7": "Автоматическая отрисовка вычислений в красивом формате",
                 "adv-btn": "Смотреть wiki проекта",
 
                 // Для кого
@@ -89,8 +93,9 @@ const i18n = {
                 // Tokens info section
                 "info-title": "На что расходуются токены",
                 "info-item-1": "<strong>Работа с AI-ассистентом (GPT):</strong> <br class=\"mobile-br\"><b>2 токена = 1 текстовый запрос.</b> <span class=\"tokens-info__item-desc\">Попросите нейросеть написать структуру документа, сгенерировать сложную математическую формулу или перевести текст.</span>",
-                "info-item-2": "<strong>Серверная компиляция (LaTeX):</strong> <br class=\"mobile-br\"><b>1 токен = 1 секунда работы.</b> <span class=\"tokens-info__item-desc\">Собирайте самые тяжелые PDF-документы прямо в браузере без зависаний благодаря мощным серверам Labkeeper.</span>",
-                "info-item-3": "<strong>Гибридный синтаксис:</strong> <br class=\"mobile-br\"><span class=\"tokens-info__item-desc\">Используйте легковесные вставки Markdown прямо в сложном LaTeX-коде для ускорения набора формул и текста.</span>",
+                "info-item-2": "<strong>Генерация изображений:</strong> <br class=\"mobile-br\"><b>10 токенов = 1 картинка.</b> <span class=\"tokens-info__item-desc\">Создавайте уникальные иллюстрации и графики для ваших документов прямо в редакторе по текстовому описанию.</span>",
+                "info-item-3": "<strong>Серверная компиляция (LaTeX):</strong> <br class=\"mobile-br\"><b>1 токен = 1 секунда работы.</b> <span class=\"tokens-info__item-desc\">Собирайте самые тяжелые PDF-документы прямо в браузере без зависаний благодаря мощным серверам Labkeeper.</span>",
+                "info-item-4": "<strong>Гибридный синтаксис:</strong> <br class=\"mobile-br\"><span class=\"tokens-info__item-desc\">Используйте легковесные вставки Markdown прямо в сложном LaTeX-коде для ускорения набора формул и текста.</span>",
 
                 // О нас — реквизиты
                 "docs-title": "Реквизиты и документы",
@@ -114,9 +119,9 @@ const i18n = {
                 "payment-buying": "Вы покупаете",
                 "payment-tokens-for": "токенов за",
                 "payment-subtitle": "Оплата производится через безопасный платёжный шлюз ЮKassa",
-                "payment-check1": "Нажимая кнопку «Перейти к оплате», Вы принимаете <a href=\"oferta\">Публичную оферту</a>",
-                "payment-check2": "Нажимая «Перейти к оплате», Вы даёте согласие на <a href=\"soglas\">обработку персональных данных</a>",
-                "payment-check3": "Нажимая «Перейти к оплате», Вы соглашаетесь с <a href=\"privacy\">Политикой конфиденциальности</a>",
+                "payment-check1": "Нажимая кнопку «Перейти к оплате», Вы принимаете <a href=\"oferta\" target=\"_blank\">Публичную оферту</a>",
+                "payment-check2": "Нажимая «Перейти к оплате», Вы даёте согласие на <a href=\"soglas\" target=\"_blank\">обработку персональных данных</a>",
+                "payment-check3": "Нажимая «Перейти к оплате», Вы соглашаетесь с <a href=\"privacy\" target=\"_blank\">Политикой конфиденциальности</a>",
                 "payment-submit": "Перейти к оплате",
                 "payment-error": "Примите Публичную оферту и согласие на обработку персональных данных",
 
@@ -220,6 +225,7 @@ const i18n = {
                 "nav-audience": "Who it's for",
                 "nav-tokens": "Tokens",
                 "nav-about": "About Us",
+                "nav-blog": "Blog",
                 "nav-examples": "Examples",
                 "nav-wiki": "Project Wiki",
                 "btn-login": "Login <span class=\"button__arrow\">→</span>",
@@ -261,7 +267,9 @@ const i18n = {
                 "feat-gpt-t2": "The neural network applies the required changes to the document based on your text request.",
                 "feat-gpt-b3": "Zero Learning Curve:",
                 "feat-gpt-t3": "You don't have to know LaTeX or Markdown. Just describe the desired result in your own words, and the assistant will complete the task for you.",
-                "feat-gpt-btn": "Go to the assistant <span class=\"button__arrow\">→</span>",
+                "feat-gpt-b4": "Built-in media generation:",
+                "feat-gpt-t4": "Create unique images right in the editor — simply describe in text what should be in the picture.",
+                "feat-gpt-btn": "Go to generations <span class=\"button__arrow\">→</span>",
 
                 // Преимущества
                 "adv-title": "Labkeeper is:",
@@ -270,7 +278,8 @@ const i18n = {
                 "adv-item-3": "High-precision calculation support",
                 "adv-item-4": "Support for error calculations",
                 "adv-item-5": "Requests to GPT",
-                "adv-item-6": "Automatic rendering of calculations in a beautiful format",
+                "adv-item-6": "Image generation via GPT",
+                "adv-item-7": "Automatic rendering of calculations in a beautiful format",
                 "adv-btn": "View project wiki",
 
                 // Для кого
@@ -302,8 +311,9 @@ const i18n = {
                 // Tokens info section
                 "info-title": "What tokens are spent on",
                 "info-item-1": "<strong>AI Assistant (GPT):</strong> <br class=\"mobile-br\"><b>2 tokens = 1 text request.</b> <span class=\"tokens-info__item-desc\">Ask the AI to write a document outline, generate a complex math formula, or translate text.</span>",
-                "info-item-2": "<strong>Server-side compilation (LaTeX):</strong> <br class=\"mobile-br\"><b>1 token = 1 second of runtime.</b> <span class=\"tokens-info__item-desc\">Compile even the heaviest PDF documents right in the browser without freezes, thanks to Labkeeper's powerful servers.</span>",
-                "info-item-3": "<strong>Hybrid syntax:</strong> <br class=\"mobile-br\"><span class=\"tokens-info__item-desc\">Use lightweight Markdown inclusions right within complex LaTeX code to speed up formula and text entry.</span>",
+                "info-item-2": "<strong>Image generation:</strong> <br class=\"mobile-br\"><b>10 tokens = 1 image.</b> <span class=\"tokens-info__item-desc\">Create unique illustrations and charts for your documents right in the editor from a text description.</span>",
+                "info-item-3": "<strong>Server-side compilation (LaTeX):</strong> <br class=\"mobile-br\"><b>1 token = 1 second of runtime.</b> <span class=\"tokens-info__item-desc\">Compile even the heaviest PDF documents right in the browser without freezes, thanks to Labkeeper's powerful servers.</span>",
+                "info-item-4": "<strong>Hybrid syntax:</strong> <br class=\"mobile-br\"><span class=\"tokens-info__item-desc\">Use lightweight Markdown inclusions right within complex LaTeX code to speed up formula and text entry.</span>",
 
                 // About page hero
                 "about-title": "Built for science, engineering, and <span class=\"text-blue\">precise calculations</span>",
@@ -334,9 +344,9 @@ const i18n = {
                 "payment-buying": "You are buying",
                 "payment-tokens-for": "tokens for",
                 "payment-subtitle": "Payment is processed via the secure YooKassa payment gateway",
-                "payment-check1": "By clicking \"Proceed to Payment\", you accept the <a href=\"oferta\">Public Offer</a>",
-                "payment-check2": "By clicking \"Proceed to Payment\", you consent to <a href=\"soglas\">personal data processing</a>",
-                "payment-check3": "By clicking \"Proceed to Payment\", you agree to the <a href=\"privacy\">Privacy Policy</a>",
+                "payment-check1": "By clicking \"Proceed to Payment\", you accept the <a href=\"oferta\" target=\"_blank\">Public Offer</a>",
+                "payment-check2": "By clicking \"Proceed to Payment\", you consent to <a href=\"soglas\" target=\"_blank\">personal data processing</a>",
+                "payment-check3": "By clicking \"Proceed to Payment\", you agree to the <a href=\"privacy\" target=\"_blank\">Privacy Policy</a>",
                 "payment-submit": "Proceed to Payment",
                 "payment-error": "Please accept the Public Offer and consent to personal data processing",
 

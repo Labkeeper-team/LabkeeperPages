@@ -290,9 +290,63 @@ document.addEventListener('DOMContentLoaded', () => {
                     spaceBetween: 24,
                     allowTouchMove: true
                 }
+
+                const cardHtml = `
+                    <div class="swiper-slide">
+                        <a href="https://labkeeper.io/project/${project.id}" class="example-card" target="_blank">
+                            <div class="example-card__visual">
+                                <img src="${imgSrc}" alt="${projectName}" class="${imgClass}" loading="lazy">
+                                <img src="assets/img/target.svg" alt="open" class="example-card__external-icon" width="16" height="16">
+                            </div>
+                            <div class="example-card__content">
+                                <h3 class="example-card__title">${projectName}</h3>
+                                <p class="example-card__text">${categoryText}</p>
+                            </div>
+                        </a>
+                    </div>
+                `;
+                projectsContainer.insertAdjacentHTML('beforeend', cardHtml);
+            });
+
+            initSwiper();
+        }
+
+        // 6. Обновление отображения при фильтрации или смене языка
+        function updateSliderDisplay() {
+            const selectedCategory = getActiveCategory();
+            if (selectedCategory === 'all') {
+                renderProjects(allProjects);
+            } else {
+                const filtered = allProjects.filter(project => project.category === selectedCategory);
+                renderProjects(filtered);
             }
+        }
+
+        // 7. Основная функция получения данных от бэкенда
+        async function fetchProjects() {
+            try {
+                const response = await fetch(API_URL);
+                if (!response.ok) throw new Error(`Status: ${response.status}`);
+
+                const data = await response.json();
+                allProjects = data.projects || [];
+                renderProjects(allProjects);
+            } catch (error) {
+                console.warn('Локальный тест (или ошибка CORS). Используются резервные данные:', error);
+                allProjects = backupData.projects;
+                renderProjects(allProjects);
+            }
+        }
+
+        // 8. Обработка кликов по табам-категориям
+        categoryLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                categoryLinks.forEach(l => l.classList.remove('header__nav-link--active'));
+                link.classList.add('header__nav-link--active');
+                updateSliderDisplay();
+            });
         });
-    }
 
     // =========================================================================
     // 4. Бегущая строка блога (если присутствует в DOM)
@@ -325,6 +379,8 @@ document.addEventListener('DOMContentLoaded', () => {
             blogTickerTrack.innerHTML = trackHtml;
             totalCount = latestArticles.length * repeatCount;
         }
+    ];
+    window.ALL_BLOG_ARTICLES = ALL_BLOG_ARTICLES;
 
         const duration = Math.max(35, Math.round(totalCount * 2.2));
         blogTickerTrack.style.animationDuration = `${duration}s`;
@@ -353,6 +409,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     return 0;
                 }
             }
+            return arr;
+        }
+
+        // Выбираем до 30 случайных статей
+        const randomArticles = shuffle(eligibleArticles).slice(0, 30);
 
             function applyAnimationAtPosition(currentX) {
                 const halfWidth = blogTickerTrack.scrollWidth / 2;
