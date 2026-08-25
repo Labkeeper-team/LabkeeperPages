@@ -349,7 +349,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 try {
                     const matrix = new window.DOMMatrixReadOnly(transform);
                     return matrix.m41;
-                } catch (e) {
+                } catch (err) {
                     const values = transform.match(/matrix.*\((.+)\)/);
                     if (values && values[1]) {
                         const parts = values[1].split(', ');
@@ -508,8 +508,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         tabButtons.forEach((btn, index) => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
+            btn.addEventListener('click', () => {
                 setActiveTab(index);
             });
         });
