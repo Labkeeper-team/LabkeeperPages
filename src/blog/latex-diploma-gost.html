@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<!-- Пачка 1 -->
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
+    <title>Оформление курсовой и диплома по ГОСТ в LaTeX: пошаговый онлайн-гайд — Labkeeper</title>
+    <meta name="description"
+        content="Как оформить курсовую работу и дипломную работу в LaTeX по ГОСТ: шаблон диплома LaTeX ГОСТ скачать онлайн, настройка полей, шрифтов, заголовков и приложений." />
+    <link rel="canonical" href="https://labkeeper.io/blog/latex-diploma-gost" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://labkeeper.io/blog/latex-diploma-gost" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Labkeeper" />
+    <meta property="og:title"
+        content="Оформление курсовой и диплома по ГОСТ в LaTeX: пошаговый онлайн-гайд — Labkeeper" />
+    <meta property="og:description"
+        content="Шаблон диплома LaTeX ГОСТ онлайн: настройка полей, шрифтов и заголовков по ГОСТ 7.32. Пошаговый гайд для курсовых и дипломных работ." />
+    <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:title"
+        content="Оформление курсовой и диплома по ГОСТ в LaTeX: пошаговый онлайн-гайд — Labkeeper" />
+    <meta name="twitter:description"
+        content="Шаблон диплома LaTeX ГОСТ онлайн: настройка полей, шрифтов, заголовков по ГОСТ 7.32." />
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Оформление курсовой и диплома по ГОСТ в LaTeX: пошаговый онлайн-гайд","description":"Шаблон диплома LaTeX ГОСТ онлайн: настройка полей, шрифтов и заголовков по ГОСТ 7.32. Пошаговый гайд для курсовых и дипломных работ.","author":{"@type":"Organization","name":"Labkeeper","url":"https://labkeeper.io"},"publisher":{"@type":"Organization","name":"Labkeeper","logo":{"@type":"ImageObject","url":"https://labkeeper.io/assets/img/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://labkeeper.io/blog/latex-diploma-gost"},"datePublished":"2026-08-20","dateModified":"2026-08-20","inLanguage":"ru"}</script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://labkeeper.io/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://labkeeper.io/blog"},{"@type":"ListItem","position":3,"name":"Оформление диплома по ГОСТ в LaTeX","item":"https://labkeeper.io/blog/latex-diploma-gost"}]}</script>
+    <script type="text/javascript">
+        (function () {
+            function hasAcceptedCookieConsent() { try { return localStorage.getItem('labkeeper_cookie_consent') === 'accepted'; } catch (e) { return false; } }
+            window.initLabkeeperYandexMetrika = function () {
+                if (window.__labkeeperYandexMetrikaInitialized || !hasAcceptedCookieConsent() || typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined') { return; }
+                (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date(); for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } } k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", { webvisor: true, clickmap: true, referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+                window.__labkeeperYandexMetrikaInitialized = true;
+            };
+            window.initLabkeeperYandexMetrika();
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body class="page blog__article">
+    <header class="header js-header">
+        <div class="header__container">
+            <div class="header__left">
+                <button class="header__burger js-burger-btn" aria-label="Открыть меню">
+                    <span class="header__burger-line"></span><span class="header__burger-line"></span><span
+                        class="header__burger-line"></span>
+                </button>
+                <a href="/" class="header__logo">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36"
+                        height="36">
+                    <span class="header__logo-text">Labkeeper</span>
+                </a>
+                <div class="header__lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+            </div>
+            <nav class="header__nav js-nav">
+                <div class="header__mobile-lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link"
+                            data-i18n="nav-examples"></a></li>
+                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link"
+                            data-i18n="nav-features"></a></li>
+                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a>
+                    </li>
+                    <li class="header__nav-item"><a href="/blog" class="header__nav-link" data-i18n="nav-blog"></a></li>
+
+                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a>
+                    </li>
+                </ul>
+                <div class="header__mobile-contact">
+                    <span class="header__mobile-contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com"
+                        class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </nav>
+            <div class="header__right">
+                <a href="/project/default?open=login" class="button button--outline header__login"
+                    data-i18n="btn-login"></a>
+                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects"
+                    style="display: none;"></a>
+                <a href="/project/default" class="button button--primary header__editor" data-i18n="btn-editor"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main page-article">
+        <div class="article-breadcrumbs">
+            <div class="article-breadcrumbs__container">
+                <nav class="article-breadcrumbs__nav" aria-label="Breadcrumb">
+                    <ol class="article-breadcrumbs__list">
+                        <li class="article-breadcrumbs__item"><a href="/" class="article-breadcrumbs__link">Главная</a>
+                        </li>
+                        <li class="article-breadcrumbs__item"><a href="/blog" class="article-breadcrumbs__link">Блог</a>
+                        </li>
+                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active"><span>Оформление диплома
+                                по ГОСТ в LaTeX</span></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="article-layout">
+            <article class="article-content">
+                <div class="article-content__container">
+                    <h1 class="article-content__title h1">Оформление курсовой и&nbsp;диплома по&nbsp;ГОСТ в&nbsp;LaTeX:
+                        пошаговый онлайн-гайд</h1>
+
+                    <div class="article-content__tags">
+                        <a href="/blog#diploma" class="article-tag">Дипломные работы</a>
+                        <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
+                    </div>
+
+                    <p class="article-content__meta">Обновлено: 20 августа 2026 · Время чтения: ~12 мин</p>
+
+                    <nav class="article-toc" aria-label="Содержание статьи">
+                        <h3 class="article-toc__title">Содержание</h3>
+                        <ol class="article-toc__list">
+                            <li><a href="#intro" class="article-toc__link">ГОСТ 7.32 и требования к оформлению</a></li>
+                            <li><a href="#class" class="article-toc__link">Выбор класса документа и базовая
+                                    настройка</a></li>
+                            <li><a href="#geometry" class="article-toc__link">Поля страницы по ГОСТ</a></li>
+                            <li><a href="#fonts" class="article-toc__link">Шрифт и межстрочный интервал</a></li>
+                            <li><a href="#headings" class="article-toc__link">Заголовки и разделы</a></li>
+                            <li><a href="#toc" class="article-toc__link">Оглавление и нумерация страниц</a></li>
+                            <li><a href="#appendix" class="article-toc__link">Приложения</a></li>
+                            <li><a href="#tips" class="article-toc__link">Практические советы</a></li>
+                        </ol>
+                    </nav>
+
+                    <section class="article-section" id="intro">
+                        <h2 class="article-section__title">ГОСТ 7.32 и требования к оформлению</h2>
+                        <p>ГОСТ 7.32-2017 «Отчёт о научно-исследовательской работе» — главный документ, которым
+                            руководствуются при оформлении дипломных работ и курсовых в российских вузах. Он задаёт
+                            требования к полям, шрифтам, заголовкам, нумерации и структуре (а для подготовки первой
+                            страницы рекомендуем наш <a href="/blog/latex-titlepage">гайд по верстке титульного листа по
+                                ГОСТ</a>).</p>
+                        <p>Ключевые требования ГОСТ 7.32:</p>
+                        <div class="article-table-wrapper">
+                            <table class="article-table">
+                                <thead>
+                                    <tr>
+                                        <th>Параметр</th>
+                                        <th>Требование ГОСТ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Шрифт</td>
+                                        <td>Times New Roman, 12 или 14 пт</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Межстрочный интервал</td>
+                                        <td>Полуторный (1.5)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Поля: левое</td>
+                                        <td>30 мм</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Поля: правое</td>
+                                        <td>10 мм</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Поля: верхнее и нижнее</td>
+                                        <td>20 мм</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Абзацный отступ</td>
+                                        <td>12,5 мм (~1,25 см)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Нумерация страниц</td>
+                                        <td>Арабские цифры, снизу по центру</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="class">
+                        <h2 class="article-section__title">Выбор класса документа и базовая настройка</h2>
+                        <p>Для оформления курсовой работы в LaTeX используйте класс <code>report</code> или
+                            <code>article</code>. Класс <code>report</code> предпочтительнее для дипломных работ с
+                            главами:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
+                            <pre><code>\documentclass[14pt,a4paper]{report}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% Поля по ГОСТ
+\usepackage[
+    left=30mm,
+    right=10mm,
+    top=20mm,
+    bottom=20mm
+]{geometry}
+
+% Полуторный интервал
+\usepackage{setspace}
+\onehalfspacing
+
+% Абзацный отступ
+\setlength{\parindent}{1.25cm}
+
+% Без отступа между абзацами
+\setlength{\parskip}{0pt}</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="geometry">
+                        <h2 class="article-section__title">Поля страницы по ГОСТ</h2>
+                        <p>Пакет <code>geometry</code> — самый удобный способ задать поля. Параметры для ГОСТ 7.32:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
+                            <pre><code>\usepackage[
+    a4paper,
+    left=30mm,    % поле для переплёта
+    right=10mm,
+    top=20mm,
+    bottom=20mm,
+    headheight=14pt
+]{geometry}</code></pre>
+                        </div>
+                        <div class="article-note">
+                            <strong>💡 Совет:</strong> Требования конкретного вуза могут отличаться от ГОСТ. Уточните
+                            методичку кафедры — иногда нижнее поле задаётся 25 мм, а не 20 мм.
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="fonts">
+                        <h2 class="article-section__title">Шрифт и межстрочный интервал</h2>
+                        <p>ГОСТ требует Times New Roman. При работе в XeLaTeX или LuaLaTeX подключите системный шрифт
+                            напрямую:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX (XeLaTeX)</span>
+                            </div>
+                            <pre><code>\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Courier New}</code></pre>
+                        </div>
+                        <p>При работе с pdfLaTeX используйте пакет <code>pscyr</code> или <code>tempora</code> как
+                            замену Times:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX (pdfLaTeX)</span>
+                            </div>
+                            <pre><code>\usepackage{tempora}   % близкий аналог Times New Roman
+% или
+\usepackage{mathptmx}  % Times для текста и математики</code></pre>
+                        </div>
+                        <p>Межстрочный интервал 1.5 устанавливается через пакет <code>setspace</code>:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
+                            <pre><code>\usepackage{setspace}
+\onehalfspacing   % полуторный интервал
+
+% Или задать вручную:
+\renewcommand{\baselinestretch}{1.5}</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="headings">
+                        <h2 class="article-section__title">Заголовки и разделы</h2>
+                        <p>По ГОСТ 7.32 заголовки разделов пишутся прописными буквами, подразделов — строчными с
+                            заглавной. Для управления стилями заголовков используйте пакет <code>titlesec</code>:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
+                            <pre><code>\usepackage{titlesec}
+
+% Заголовки глав (ПРОПИСНЫЕ, по центру, полужирный)
+\titleformat{\chapter}
+    [block]
+    {\normalfont\Large\bfseries\centering}
+    {\thechapter}
+    {1em}
+    {\MakeUppercase}
+
+% Подразделы (строчные, отступ, полужирный)
+\titleformat{\section}
+    {\normalfont\large\bfseries}
+    {\thesection}
+    {1em}
+    {}
+
+% Отступы вокруг заголовков
+\titlespacing*{\chapter}{0pt}{0pt}{14pt}
+\titlespacing*{\section}{0pt}{12pt}{6pt}</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="toc">
+                        <h2 class="article-section__title">Оглавление и нумерация страниц</h2>
+                        <p>Оглавление формируется командой <code>\tableofcontents</code>. Для настройки нумерации снизу
+                            по центру подключите пакет <code>fancyhdr</code> (все тонкости колонтитулов мы разобрали в
+                            <a href="/blog/latex-fancyhdr">руководстве по пакету fancyhdr</a>):</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
+                            <pre><code>% Нумерация снизу по центру
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% Оглавление
+\tableofcontents
+\newpage
+
+% Глубина включения в оглавление
+\setcounter{tocdepth}{3}
+
+% Нумерация разделов до 3-го уровня
+\setcounter{secnumdepth}{3}</code></pre>
+                        </div>
+                        <p>Страница с оглавлением по ГОСТ не нумеруется (входит в общий счёт, но номер не печатается).
+                            Добавьте <code>\thispagestyle{empty}</code> после <code>\tableofcontents</code>.</p>
+                    </section>
+
+                    <section class="article-section" id="appendix">
+                        <h2 class="article-section__title">Приложения</h2>
+                        <p>Приложения нумеруются русскими заглавными буквами (А, Б, В...) или латинскими (A, B, C). Для
+                            автоматической нумерации переопределите счётчик <code>chapter</code>:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
+                            <pre><code>\appendix
+\renewcommand{\thechapter}{\Asbuk{chapter}}  % А, Б, В...
+\renewcommand{\chaptername}{Приложение}
+
+\chapter{Исходный код программы}
+% содержимое приложения А
+
+\chapter{Схема алгоритма}
+% содержимое приложения Б</code></pre>
+                        </div>
+                        <div class="article-note">
+                            <strong>💡 Совет:</strong> Команда <code>\Asbuk</code> доступна при подключённом пакете
+                            <code>babel</code> с опцией <code>russian</code>.
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="tips">
+                        <h2 class="article-section__title">Практические советы</h2>
+                        <div class="article-tips">
+                            <div class="article-tip">
+                                <div class="article-tip__number">1</div>
+                                <div class="article-tip__content">
+                                    <h3>Начните с готового шаблона</h3>
+                                    <p>В Labkeeper доступны готовые шаблоны для курсовых и дипломных работ по ГОСТ 7.32.
+                                        Откройте редактор, создайте новый проект и выберите шаблон «Дипломная работа
+                                        ГОСТ».</p>
+                                </div>
+                            </div>
+                            <div class="article-tip">
+                                <div class="article-tip__number">2</div>
+                                <div class="article-tip__content">
+                                    <h3>Разбивайте документ на файлы</h3>
+                                    <p>Используйте <code>\include{chapter1}</code> для вынесения каждой главы в
+                                        отдельный .tex-файл. Это ускоряет компиляцию и упрощает навигацию в большом
+                                        проекте.</p>
+                                </div>
+                            </div>
+                            <div class="article-tip">
+                                <div class="article-tip__number">3</div>
+                                <div class="article-tip__content">
+                                    <h3>Перекрёстные ссылки и библиография</h3>
+                                    <p>Используйте <code>\label</code> и <code>\ref</code> для ссылок на рисунки,
+                                        таблицы и формулы (правила набора математики смотрите в <a
+                                            href="/blog/latex-formulas">гайде по формулам в LaTeX</a>). Для
+                                        автоматического оформления списка литературы по ГОСТ 7.0.5 используйте связку с
+                                        BibLaTeX (подробно в <a href="/blog/latex-gost-bibliography">инструкции по
+                                            библиографии по ГОСТ</a>).</p>
+                                </div>
+                            </div>
+                            <div class="article-tip">
+                                <div class="article-tip__number">4</div>
+                                <div class="article-tip__content">
+                                    <h3>Список рисунков и таблиц</h3>
+                                    <p>Добавьте <code>\listoffigures</code> и <code>\listoftables</code> после
+                                        оглавления — ГОСТ требует эти списки для работ объёмом более 20 иллюстраций или
+                                        таблиц (настройку оформления по ГОСТ смотрите в <a
+                                            href="/blog/latex-list-of-figures-tables">статье о списках иллюстраций и
+                                            таблиц</a>).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </article>
+
+            <aside class="article-sidebar">
+                <div class="article-sidebar__sticky">
+                    <div class="article-sidebar__media">
+                        <img src="../assets/img/img-for-firstScreen.webp" alt="Онлайн-редактор LaTeX Labkeeper"
+                            width="220" height="135" loading="lazy" class="article-sidebar__img">
+                    </div>
+                    <p class="article-sidebar__title">Оформляйте дипломную и&nbsp;курсовую работу по&nbsp;ГОСТ
+                        в&nbsp;онлайн-редакторе Labkeeper.</p>
+                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
+                        id="sidebar-cta-btn">
+                        Перейти в редактор
+                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </aside>
+        </div>
+
+        <section class="features" id="features">
+            <div class="features__intro">
+                <p class="features__intro-label">Попробуйте прямо сейчас</p>
+                <h2 class="features__intro-title">Верстайте дипломные и&nbsp;курсовые в&nbsp;Labkeeper</h2>
+                <p class="features__intro-text">Онлайн-редактор LaTeX для&nbsp;студенческих работ: быстрая компиляция в&nbsp;PDF, поддержка ГОСТ-пакетов и&nbsp;AI-ассистент прямо в&nbsp;браузере.</p>
+            </div>
+            <div class="feature-block feature-block--img-left feature-block--dark">
+                <div class="feature-block__container">
+                    <div class="feature-block__visual">
+                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor screenshot"
+                            class="feature-block__image js-popup-trigger"
+                            data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
+                    </div>
+                    <div class="feature-block__content">
+                        <ul class="feature-list">
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b1">Полновесная компиляция:</strong>
+                                <span data-i18n="feat-latex-t1">Получайте PDF профессионального качества с помощью
+                                    встроенного LaTeX-компилятора.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b2">60 секунд на выполнение:</strong>
+                                <span data-i18n="feat-latex-t2">Работайте со сложными документами без ограничений —
+                                    лимит времени компиляции в разы выше, чем в аналогичных сервисах.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b3">Умная конвертация:</strong>
+                                <span data-i18n="feat-latex-t3">Любые вычислительные формулы автоматически
+                                    преобразовываются в красивый LaTeX</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b4">Гибридный синтаксис:</strong>
+                                <span data-i18n="feat-latex-t4">Используйте легковесные вставки Markdown прямо в сложном
+                                    LaTeX-коде для ускорения работы.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="features__footer">
+                <a href="/project/default?open=latex" class="button button--outline-light features__intro-btn">Открыть
+                    редактор <span class="button__arrow">→</span></a>
+            </div>
+            <div class="feature__bg"><img src="../assets/img/bg.svg" alt="bg" loading="lazy"></div>
+        </section>
+    </main>
+
+    <section class="audience">
+        <div class="audience__container">
+            <h2 class="audience__title h1">Другие статьи</h2>
+
+            <div class="audience__slider-wrapper">
+                <button class="audience__arrow audience__arrow--prev" aria-label="Previous slide"></button>
+                <button class="audience__arrow audience__arrow--next" aria-label="Next slide"></button>
+
+                <div class="swiper audience__swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Динамическая генерация случайных статей через slider.js -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="audience__action">
+                <a href="/blog" class="button button--outline audience__btn">Все статьи <span
+                        class="button__arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <nav class="footer__nav">
+                    <a href="/#features" class="footer__link" data-i18n="nav-advantages"></a>
+                    <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
+                    <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
+                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank"
+                        class="footer__link footer__link--external"><span data-i18n="nav-wiki"></span><img
+                            src="../assets/img/target.svg" alt="target icon" class="footer__link-icon"
+                            style="margin-left:4px;vertical-align:middle;" width="16" height="16" loading="lazy"></a>
+                    <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
+                    <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
+
+                    <a href="/about" class="footer__link" data-i18n="nav-about"></a>
+                </nav>
+                <a href="/" class="footer__logo-link"><img src="../assets/img/logo.svg" alt="Labkeeper Logo"
+                        class="footer__logo" width="40" height="40" loading="lazy"></a>
+                <div class="footer__contact">
+                    <span class="footer__contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com" class="footer__contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </div>
+            <div class="footer__middle"><img src="../assets/img/img-for-footer.svg" alt="Labkeeper"
+                    class="footer__huge-logo" aria-hidden="true" loading="lazy"></div>
+            <div class="footer__bottom">
+                <div class="footer__copyright">© 2024—2026</div>
+                <a href="/privacy" class="footer__policy" data-i18n="footer-policy"></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-banner" class="cookie-banner hidden">
+        <div class="cookie-banner__container">
+            <p class="cookie-banner__text">Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта.
+                Подробнее — в <a href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки
+                    персональных данных</a>.</p>
+            <div class="cookie-banner__actions">
+                <button id="cookie-accept" class="button button--primary">Принять</button>
+                <button id="cookie-decline" class="button button--outline">Отказаться</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="scroll-top js-scroll-top" aria-label="Наверх" title="Наверх"></button>
+    <script>window.__LABKEEPER_API_VERSION = "IO_LABKEEPER_FRONTEND_API_VERSION";</script>
+    <script src="../assets/js/auth.js" defer></script>
+    <script src="../assets/js/script.js" defer></script>
+    <script src="../assets/js/lang.js" defer></script>
+    <script src="../assets/js/slider.js" defer></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+</body>
+
+</html>
