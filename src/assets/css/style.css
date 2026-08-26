@@ -4301,6 +4301,7 @@ h2,
   overflow: hidden;
   background-color: var(--c-bg-dark);
   color: var(--c-text-white);
+  height: 880px;
 }
 
 .features .feature__bg {
@@ -4311,6 +4312,7 @@ h2,
 .features__container {
   position: relative;
   z-index: 2;
+  height: 620px;
 }
 
 .features__tabs-nav {
@@ -4495,7 +4497,10 @@ h2,
 .features__action {
   display: flex;
   justify-content: center;
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .features__btn {
@@ -4556,6 +4561,14 @@ h2,
   .features__bullet-item::before {
     left: 16px;
     top: 20px;
+  }
+
+  .features__container {
+    height: 706px;
+  }
+
+  .features__action {
+    bottom: -40px;
   }
 }
 
