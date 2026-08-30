@@ -5,7 +5,7 @@ const i18n = {
                 "nav-audience": "Для кого",
                 "nav-tokens": "Токены",
                 "nav-about": "О нас",
-                "nav-blog": "Блог",
+                "nav-blog": "База знаний",
                 "nav-examples": "Примеры проектов",
                 "nav-wiki": "Wiki проекта",
                 "btn-login": "Авторизоваться <span class=\"button__arrow\">→</span>",
@@ -50,6 +50,23 @@ const i18n = {
                 "feat-gpt-b4": "Встроенная генерация медиа:",
                 "feat-gpt-t4": "Создавайте уникальные изображения прямо в редакторе — достаточно просто описать текстом, что должно быть на картинке.",
                 "feat-gpt-btn": "Перейти к генерациям <span class=\"button__arrow\">→</span>",
+
+                // Блок преимуществ (табы)
+                "features-tab-0": "LaTeX",
+                "features-tab-1": "ИИ-агент",
+                "features-tab-2": "Вычисления",
+                "features-latex-1": "Автоматическая конвертация Markdown в LaTeX",
+                "features-latex-2": "Полновесный LaTeX компилятор",
+                "features-latex-3": "Возможность настраивать формат документа для Markdown так же гибко, как для LaTeX",
+                "features-latex-4": "Поддержка иерархии файлов в проекте",
+                "features-ai-1": "Отображение истории изменений ИИ с возможностью откатить или принять правки",
+                "features-ai-2": "ИИ обучен специально работать с LaTeX и специфическими вычислениями",
+                "features-ai-3": "ИИ-агент на базе DeepSeek",
+                "features-calc-1": "Встроенная поддержка высокоточных вычислений",
+                "features-calc-2": "Возможность вставлять данные прямо в LaTeX",
+                "features-calc-3": "Поддержка вычисления гауссовых погрешностей",
+                "features-calc-4": "Встроенные механизмы визуализации данных",
+                "features-btn": "Перейти к редактору <span class=\"button__arrow\">→</span>",
 
                 // Преимущества
                 "adv-title": "Labkeeper это:",
@@ -225,7 +242,7 @@ const i18n = {
                 "nav-audience": "Who it's for",
                 "nav-tokens": "Tokens",
                 "nav-about": "About Us",
-                "nav-blog": "Blog",
+                "nav-blog": "Knowledge Base",
                 "nav-examples": "Examples",
                 "nav-wiki": "Project Wiki",
                 "btn-login": "Login <span class=\"button__arrow\">→</span>",
@@ -271,7 +288,24 @@ const i18n = {
                 "feat-gpt-t4": "Create unique images right in the editor — simply describe in text what should be in the picture.",
                 "feat-gpt-btn": "Go to generations <span class=\"button__arrow\">→</span>",
 
-                // Преимущества
+                // Features tabs
+                "features-tab-0": "LaTeX",
+                "features-tab-1": "AI Agent",
+                "features-tab-2": "Calculations",
+                "features-latex-1": "Automatic Markdown to LaTeX conversion",
+                "features-latex-2": "Full-featured LaTeX compiler",
+                "features-latex-3": "Customize document formatting for Markdown just as flexibly as for LaTeX",
+                "features-latex-4": "Support for file hierarchy in projects",
+                "features-ai-1": "View AI change history with the ability to roll back or accept edits",
+                "features-ai-2": "AI specially trained to work with LaTeX and specific calculations",
+                "features-ai-3": "AI agent powered by DeepSeek",
+                "features-calc-1": "Built-in high-precision calculation support",
+                "features-calc-2": "Insert data directly into LaTeX",
+                "features-calc-3": "Support for Gaussian error propagation",
+                "features-calc-4": "Built-in data visualization tools",
+                "features-btn": "Go to the editor <span class=\"button__arrow\">→</span>",
+
+                // Advantages
                 "adv-title": "Labkeeper is:",
                 "adv-item-1": "A full-featured LaTeX compiler",
                 "adv-item-2": "Markdown editor",
