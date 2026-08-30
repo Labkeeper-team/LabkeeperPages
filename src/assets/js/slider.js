@@ -349,7 +349,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 try {
                     const matrix = new window.DOMMatrixReadOnly(transform);
                     return matrix.m41;
-                // eslint-disable-next-line no-unused-vars
+                    // eslint-disable-next-line no-unused-vars
                 } catch (err) {
                     const values = transform.match(/matrix.*\((.+)\)/);
                     if (values && values[1]) {
