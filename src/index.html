@@ -254,6 +254,11 @@
                         fetchpriority="high">
                 </div>
             </div>
+            <a href="#features" class="hero__scroll-arrow" aria-label="Scroll down">
+                <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 2L12 12L22 2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
         </section>
         <!-- Блок 2: Преимущества (Табы со слайдами) -->
         <section class="features" id="features">
@@ -265,15 +270,15 @@
                 <!-- Заголовки табов с прогресс-баром -->
                 <div class="features__tabs-nav" role="tablist">
                     <button class="features__tab-btn is-active" data-tab="0" role="tab" aria-selected="true">
-                        <span class="h1 features__tab-title">LaTeX</span>
+                        <span class="h1 features__tab-title" data-i18n="features-tab-0">LaTeX</span>
                         <span class="features__tab-line"><span class="features__tab-progress"></span></span>
                     </button>
                     <button class="features__tab-btn" data-tab="1" role="tab" aria-selected="false">
-                        <span class="h1 features__tab-title">ИИ-агент</span>
+                        <span class="h1 features__tab-title" data-i18n="features-tab-1">ИИ-агент</span>
                         <span class="features__tab-line"><span class="features__tab-progress"></span></span>
                     </button>
                     <button class="features__tab-btn" data-tab="2" role="tab" aria-selected="false">
-                        <span class="h1 features__tab-title">Вычисления</span>
+                        <span class="h1 features__tab-title" data-i18n="features-tab-2">Вычисления</span>
                         <span class="features__tab-line"><span class="features__tab-progress"></span></span>
                     </button>
                 </div>
@@ -291,11 +296,15 @@
                             </div>
                             <div class="features__slide-info">
                                 <ul class="features__bullet-list">
-                                    <li class="features__bullet-item">Автоматическая конвертация Markdown в LaTeX</li>
-                                    <li class="features__bullet-item">Полновесный LaTeX компилятор</li>
-                                    <li class="features__bullet-item">Возможность настраивать формат документа для
+                                    <li class="features__bullet-item" data-i18n="features-latex-1">Автоматическая
+                                        конвертация Markdown в LaTeX</li>
+                                    <li class="features__bullet-item" data-i18n="features-latex-2">Полновесный LaTeX
+                                        компилятор</li>
+                                    <li class="features__bullet-item" data-i18n="features-latex-3">Возможность
+                                        настраивать формат документа для
                                         Markdown так же гибко, как для LaTeX</li>
-                                    <li class="features__bullet-item">Поддержка иерархии файлов в проекте</li>
+                                    <li class="features__bullet-item" data-i18n="features-latex-4">Поддержка иерархии
+                                        файлов в проекте</li>
                                 </ul>
                             </div>
                         </div>
@@ -311,46 +320,49 @@
                             </div>
                             <div class="features__slide-info">
                                 <ul class="features__bullet-list">
-                                    <li class="features__bullet-item">Отображение истории изменений ИИ с возможностью
+                                    <li class="features__bullet-item" data-i18n="features-ai-1">Отображение истории
+                                        изменений ИИ с возможностью
                                         откатить или принять правки</li>
-                                    <li class="features__bullet-item">ИИ обучен специально работать с LaTeX и
+                                    <li class="features__bullet-item" data-i18n="features-ai-2">ИИ обучен специально
+                                        работать с LaTeX и
                                         специфическими вычислениями</li>
-                                    <li class="features__bullet-item">ИИ-агент на базе DeepSeek</li>
+                                    <li class="features__bullet-item" data-i18n="features-ai-3">ИИ-агент на базе
+                                        DeepSeek</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="feature-block__content">
-                        <h2 class="feature-block__title h1" data-i18n="feat-gpt-title"></h2>
-                        <ul class="feature-list">
-                            <li class="feature-list__item">
-                                <strong data-i18n="feat-gpt-b1"></strong>
-                                <span data-i18n="feat-gpt-t1"></span>
-                            </li>
-                            <li class="feature-list__item">
-                                <strong data-i18n="feat-gpt-b2"></strong>
-                                <span data-i18n="feat-gpt-t2"></span>
-                            </li>
-                            <li class="feature-list__item">
-                                <strong data-i18n="feat-gpt-b3"></strong>
-                                <span data-i18n="feat-gpt-t3"></span>
-                            </li>
-                            <li class="feature-list__item">
-                                <strong data-i18n="feat-gpt-b4"></strong>
-                                <span data-i18n="feat-gpt-t4"></span>
-                            </li>
-                        </ul>
-                        <a href="/project/default?open=ai" class="button button--outline-light feature-block__btn"
-                            data-i18n="feat-gpt-btn"></a>
+
+                    <!-- Таб 3: Вычисления -->
+                    <div class="features__slide" data-slide="2" role="tabpanel">
+                        <div class="features__slide-grid">
+                            <div class="features__slide-visual">
+                                <img src="assets/img/origin/markdown-editor.webp" alt="Вычисления screenshot"
+                                    class="features__slide-img js-popup-trigger"
+                                    data-origin="assets/img/origin/markdown-editor.webp" loading="lazy">
+                            </div>
+                            <div class="features__slide-info">
+                                <ul class="features__bullet-list">
+                                    <li class="features__bullet-item" data-i18n="features-calc-1">Встроенная поддержка
+                                        высокоточных вычислений</li>
+                                    <li class="features__bullet-item" data-i18n="features-calc-2">Возможность вставлять
+                                        данные прямо в LaTeX</li>
+                                    <li class="features__bullet-item" data-i18n="features-calc-3">Поддержка вычисления
+                                        гауссовых погрешностей</li>
+                                    <li class="features__bullet-item" data-i18n="features-calc-4">Встроенные механизмы
+                                        визуализации данных</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
 
                 <!-- Кнопка перехода к редактору -->
                 <div class="features__action">
-                    <a href="/project/default" class="button button--outline-light features__btn">
-                        <span>Перейти к редактору</span>
-                        <span class="button__arrow">→</span>
+                    <a href="/project/default" class="button button--outline-light features__btn"
+                        data-i18n="features-btn">
+                        Перейти к редактору <span class="button__arrow">→</span>
                     </a>
                 </div>
 
@@ -463,7 +475,7 @@
             </div>
             <div class="knowledge__container">
 
-                <h2 class="knowledge__title h1">База знаний</h2>
+                <h2 class="knowledge__title h1" data-i18n="knowledge-title">База знаний</h2>
 
                 <div class="examples__slider-wrapper knowledge__slider-wrapper">
                     <button class="examples__arrow examples__arrow--prev knowledge__arrow--prev"
@@ -762,7 +774,7 @@
                 </div>
 
                 <div class="knowledge__action">
-                    <a href="/blog" class="button button--primary knowledge__btn">
+                    <a href="/blog" class="button button--primary knowledge__btn" data-i18n="knowledge-btn">
                         <span>Все статьи</span>
                         <span class="button__arrow">→</span>
                     </a>
@@ -790,7 +802,6 @@
                     <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
 
                     <a href="/about" class="footer__link" data-i18n="nav-about"></a>
-                    <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
                 </nav>
                 <a href="/" class="footer__logo-link">
                     <img src="assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40"
