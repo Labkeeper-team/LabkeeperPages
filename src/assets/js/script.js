@@ -10,6 +10,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- 0.1 Стрелка скролла (Hero) ---
+  const scrollArrow = document.querySelector('.hero__scroll-arrow');
+  if (scrollArrow) {
+    scrollArrow.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(scrollArrow.getAttribute('href'));
+      const headerEl = document.querySelector('.header');
+      if (target) {
+        const headerHeight = headerEl ? headerEl.offsetHeight : 0;
+        const targetTop = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+        window.scrollTo({ top: targetTop, behavior: 'smooth' });
+      }
+    });
+  }
+
   // --- 1. Липкая шапка (Sticky Header) и Подсветка активного пункта меню ---
   const header = document.querySelector('.js-header');
   const sections = document.querySelectorAll('section[id]');
