@@ -265,15 +265,15 @@
                 <!-- Заголовки табов с прогресс-баром -->
                 <div class="features__tabs-nav" role="tablist">
                     <button class="features__tab-btn is-active" data-tab="0" role="tab" aria-selected="true">
-                        <span class="h1 features__tab-title">LaTeX</span>
+                        <span class="h1 features__tab-title" data-i18n="features-tab-0">LaTeX</span>
                         <span class="features__tab-line"><span class="features__tab-progress"></span></span>
                     </button>
                     <button class="features__tab-btn" data-tab="1" role="tab" aria-selected="false">
-                        <span class="h1 features__tab-title">ИИ-агент</span>
+                        <span class="h1 features__tab-title" data-i18n="features-tab-1">ИИ-агент</span>
                         <span class="features__tab-line"><span class="features__tab-progress"></span></span>
                     </button>
                     <button class="features__tab-btn" data-tab="2" role="tab" aria-selected="false">
-                        <span class="h1 features__tab-title">Вычисления</span>
+                        <span class="h1 features__tab-title" data-i18n="features-tab-2">Вычисления</span>
                         <span class="features__tab-line"><span class="features__tab-progress"></span></span>
                     </button>
                 </div>
@@ -291,11 +291,11 @@
                             </div>
                             <div class="features__slide-info">
                                 <ul class="features__bullet-list">
-                                    <li class="features__bullet-item">Автоматическая конвертация Markdown в LaTeX</li>
-                                    <li class="features__bullet-item">Полновесный LaTeX компилятор</li>
-                                    <li class="features__bullet-item">Возможность настраивать формат документа для
+                                    <li class="features__bullet-item" data-i18n="features-latex-1">Автоматическая конвертация Markdown в LaTeX</li>
+                                    <li class="features__bullet-item" data-i18n="features-latex-2">Полновесный LaTeX компилятор</li>
+                                    <li class="features__bullet-item" data-i18n="features-latex-3">Возможность настраивать формат документа для
                                         Markdown так же гибко, как для LaTeX</li>
-                                    <li class="features__bullet-item">Поддержка иерархии файлов в проекте</li>
+                                    <li class="features__bullet-item" data-i18n="features-latex-4">Поддержка иерархии файлов в проекте</li>
                                 </ul>
                             </div>
                         </div>
@@ -311,11 +311,11 @@
                             </div>
                             <div class="features__slide-info">
                                 <ul class="features__bullet-list">
-                                    <li class="features__bullet-item">Отображение истории изменений ИИ с возможностью
+                                    <li class="features__bullet-item" data-i18n="features-ai-1">Отображение истории изменений ИИ с возможностью
                                         откатить или принять правки</li>
-                                    <li class="features__bullet-item">ИИ обучен специально работать с LaTeX и
+                                    <li class="features__bullet-item" data-i18n="features-ai-2">ИИ обучен специально работать с LaTeX и
                                         специфическими вычислениями</li>
-                                    <li class="features__bullet-item">ИИ-агент на базе DeepSeek</li>
+                                    <li class="features__bullet-item" data-i18n="features-ai-3">ИИ-агент на базе DeepSeek</li>
                                 </ul>
                             </div>
                         </div>
@@ -331,10 +331,10 @@
                             </div>
                             <div class="features__slide-info">
                                 <ul class="features__bullet-list">
-                                    <li class="features__bullet-item">Встроенная поддержка высокоточных вычислений</li>
-                                    <li class="features__bullet-item">Возможность вставлять данные прямо в LaTeX</li>
-                                    <li class="features__bullet-item">Поддержка вычисления гауссовых погрешностей</li>
-                                    <li class="features__bullet-item">Встроенные механизмы визуализации данных</li>
+                                    <li class="features__bullet-item" data-i18n="features-calc-1">Встроенная поддержка высокоточных вычислений</li>
+                                    <li class="features__bullet-item" data-i18n="features-calc-2">Возможность вставлять данные прямо в LaTeX</li>
+                                    <li class="features__bullet-item" data-i18n="features-calc-3">Поддержка вычисления гауссовых погрешностей</li>
+                                    <li class="features__bullet-item" data-i18n="features-calc-4">Встроенные механизмы визуализации данных</li>
                                 </ul>
                             </div>
                         </div>
@@ -344,9 +344,8 @@
 
                 <!-- Кнопка перехода к редактору -->
                 <div class="features__action">
-                    <a href="/project/default" class="button button--outline-light features__btn">
-                        <span>Перейти к редактору</span>
-                        <span class="button__arrow">→</span>
+                    <a href="/project/default" class="button button--outline-light features__btn" data-i18n="features-btn">
+                        Перейти к редактору <span class="button__arrow">→</span>
                     </a>
                 </div>
 
@@ -786,7 +785,6 @@
                     <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
 
                     <a href="/about" class="footer__link" data-i18n="nav-about"></a>
-                    <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
                 </nav>
                 <a href="/" class="footer__logo-link">
                     <img src="assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40"
