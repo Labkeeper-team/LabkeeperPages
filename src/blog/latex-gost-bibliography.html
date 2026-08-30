@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<!-- Пачка 1 -->
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
+    <title>Список литературы по ГОСТ 7.0.5 в LaTeX: оформление без ошибок — Labkeeper</title>
+    <meta name="description"
+        content="Как оформить библиографию по ГОСТ 7.0.5 в LaTeX онлайн: пакет biblatex-gost, .bib-файлы, числовые и именные ссылки. Пошаговый гайд с примерами кода для Labkeeper." />
+    <link rel="canonical" href="https://labkeeper.io/blog/latex-gost-bibliography" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://labkeeper.io/blog/latex-gost-bibliography" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Labkeeper" />
+    <meta property="og:title" content="Список литературы по ГОСТ 7.0.5 в LaTeX: оформление без ошибок — Labkeeper" />
+    <meta property="og:description"
+        content="Пошаговый гайд по оформлению библиографии ГОСТ 7.0.5 в LaTeX онлайн: пакет biblatex-gost, числовые ссылки, автоматическая нумерация." />
+    <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:title" content="Список литературы по ГОСТ 7.0.5 в LaTeX: оформление без ошибок — Labkeeper" />
+    <meta name="twitter:description" content="Пошаговый гайд по оформлению библиографии ГОСТ 7.0.5 в LaTeX онлайн." />
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Как быстро оформить список литературы по ГОСТ 7.0.5 в LaTeX без ошибок","description":"Пошаговый гайд по оформлению библиографии ГОСТ 7.0.5 в LaTeX: пакет biblatex-gost, числовые ссылки, автоматическая нумерация источников.","author":{"@type":"Organization","name":"Labkeeper","url":"https://labkeeper.io"},"publisher":{"@type":"Organization","name":"Labkeeper","logo":{"@type":"ImageObject","url":"https://labkeeper.io/assets/img/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://labkeeper.io/blog/latex-gost-bibliography"},"datePublished":"2026-08-20","dateModified":"2026-08-20","inLanguage":"ru"}</script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://labkeeper.io/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://labkeeper.io/blog"},{"@type":"ListItem","position":3,"name":"Список литературы по ГОСТ 7.0.5 в LaTeX","item":"https://labkeeper.io/blog/latex-gost-bibliography"}]}</script>
+    <script type="text/javascript">
+        (function () {
+            function hasAcceptedCookieConsent() { try { return localStorage.getItem('labkeeper_cookie_consent') === 'accepted'; } catch (e) { return false; } }
+            window.initLabkeeperYandexMetrika = function () {
+                if (window.__labkeeperYandexMetrikaInitialized || !hasAcceptedCookieConsent() || typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined') { return; }
+                (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date(); for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } } k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", { webvisor: true, clickmap: true, referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+                window.__labkeeperYandexMetrikaInitialized = true;
+            };
+            window.initLabkeeperYandexMetrika();
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body class="page blog__article">
+    <header class="header js-header">
+        <div class="header__container">
+            <div class="header__left">
+                <button class="header__burger js-burger-btn" aria-label="Открыть меню">
+                    <span class="header__burger-line"></span><span class="header__burger-line"></span><span
+                        class="header__burger-line"></span>
+                </button>
+                <a href="/" class="header__logo">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36"
+                        height="36">
+                    <span class="header__logo-text">Labkeeper</span>
+                </a>
+                <div class="header__lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+            </div>
+            <nav class="header__nav js-nav">
+                <div class="header__mobile-lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link"
+                            data-i18n="nav-examples"></a></li>
+                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link"
+                            data-i18n="nav-features"></a></li>
+                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a>
+                    </li>
+                    <li class="header__nav-item"><a href="/blog" class="header__nav-link" data-i18n="nav-blog"></a></li>
+
+                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a>
+                    </li>
+                </ul>
+                <div class="header__mobile-contact">
+                    <span class="header__mobile-contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com"
+                        class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </nav>
+            <div class="header__right">
+                <a href="/project/default?open=login" class="button button--outline header__login"
+                    data-i18n="btn-login"></a>
+                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects"
+                    style="display: none;"></a>
+                <a href="/project/default" class="button button--primary header__editor" data-i18n="btn-editor"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main page-article">
+        <div class="article-breadcrumbs">
+            <div class="article-breadcrumbs__container">
+                <nav class="article-breadcrumbs__nav" aria-label="Breadcrumb">
+                    <ol class="article-breadcrumbs__list">
+                        <li class="article-breadcrumbs__item"><a href="/" class="article-breadcrumbs__link">Главная</a>
+                        </li>
+                        <li class="article-breadcrumbs__item"><a href="/blog" class="article-breadcrumbs__link">Блог</a>
+                        </li>
+                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active"><span>Список литературы
+                                по ГОСТ 7.0.5 в LaTeX</span></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="article-layout">
+            <article class="article-content">
+                <div class="article-content__container">
+                    <h1 class="article-content__title h1">Как быстро оформить список литературы по&nbsp;ГОСТ&nbsp;7.0.5
+                        в&nbsp;LaTeX без&nbsp;ошибок</h1>
+
+                    <div class="article-content__tags">
+                        <a href="/blog#diploma" class="article-tag">Дипломные работы</a>
+                        <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
+                        <a href="/blog#articles" class="article-tag">Оформление научных статей</a>
+                    </div>
+
+                    <p class="article-content__meta">Обновлено: 20 августа 2026 · Время чтения: ~10 мин</p>
+
+                    <nav class="article-toc" aria-label="Содержание статьи">
+                        <h3 class="article-toc__title">Содержание</h3>
+                        <ol class="article-toc__list">
+                            <li><a href="#intro" class="article-toc__link">Что такое ГОСТ Р 7.0.5-2008 и зачем он
+                                    нужен</a></li>
+                            <li><a href="#package" class="article-toc__link">Пакет biblatex-gost: установка и
+                                    подключение</a></li>
+                            <li><a href="#bib-file" class="article-toc__link">Правила заполнения .bib-файла для ГОСТ</a>
+                            </li>
+                            <li><a href="#numeric" class="article-toc__link">Числовые ссылки в тексте</a></li>
+                            <li><a href="#authoryear" class="article-toc__link">Именные ссылки (автор, год)</a></li>
+                            <li><a href="#sorting" class="article-toc__link">Сортировка и язык</a></li>
+                            <li><a href="#tips" class="article-toc__link">Практические советы</a></li>
+                        </ol>
+                    </nav>
+
+                    <section class="article-section" id="intro">
+                        <h2 class="article-section__title">Что такое ГОСТ Р&nbsp;7.0.5-2008 и зачем он нужен</h2>
+                        <p>ГОСТ Р 7.0.5-2008 «Библиографическая ссылка» — российский стандарт, обязательный для <a
+                                href="/blog/latex-diploma-gost">дипломных и курсовых работ</a>, <a
+                                href="/blog/latex-dissertation">диссертаций ВАК</a> и научных статей, публикуемых в
+                            отечественных журналах. Он регламентирует порядок описания источников: порядок авторов,
+                            разделители, обозначения томов и страниц.</p>
+                        <p>В отличие от международных стилей (APA, IEEE), ГОСТ использует специфические разделители
+                            («–», «//», «.–»), требует указывать общее число страниц для книг и придерживается строгого
+                            алфавитного порядка: сначала кириллические источники, затем латинские.</p>
+                        <div class="article-note">
+                            <strong>💡 Совет:</strong> В онлайн-редакторе <strong>Labkeeper</strong> поддерживается
+                            пакет <code>biblatex-gost</code> и движок Biber — компиляция выполняется автоматически без
+                            дополнительных настроек.
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="package">
+                        <h2 class="article-section__title">Пакет biblatex-gost: установка и подключение</h2>
+                        <p>Для оформления библиографии по ГОСТ 7.0.5 в LaTeX онлайн используется связка
+                            <code>biblatex</code> + стиль <code>gost-numeric</code> из пакета
+                            <code>biblatex-gost</code>. Подключите в преамбуле:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
+                            <pre><code>\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage[
+    backend=biber,
+    style=gost-numeric,   % числовые ссылки [1], [2]
+    sorting=ntvy,         % по названию, году, тому, номеру
+    language=auto,
+    autolang=other
+]{biblatex}
+
+\addbibresource{references.bib}</code></pre>
+                        </div>
+                        <p>Для именного стиля (автор, год) замените <code>gost-numeric</code> на
+                            <code>gost-authoryear</code>.</p>
+                    </section>
+
+                    <section class="article-section" id="bib-file">
+                        <h2 class="article-section__title">Правила заполнения .bib-файла для ГОСТ</h2>
+                        <p>ГОСТ требует указывать полное имя автора на языке оригинала. Для русскоязычных источников
+                            используйте кириллицу, для иностранных — латиницу. Примеры корректных записей:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">BibTeX</span></div>
+                            <pre><code>@article{ivanov2023,
+    author   = {Иванов, Иван Иванович and Петров, Сергей Николаевич},
+    title    = {Методы оптимизации в задачах машинного обучения},
+    journal  = {Журнал вычислительной математики},
+    year     = {2023},
+    volume   = {63},
+    number   = {4},
+    pages    = {589--602},
+    language = {russian}
+}
+
+@book{smirnov2021,
+    author    = {Смирнов, Алексей Владимирович},
+    title     = {Введение в численные методы},
+    publisher = {Наука},
+    year      = {2021},
+    address   = {Москва},
+    pages     = {320},
+    language  = {russian}
+}
+
+@online{labkeeper2026,
+    author   = {{Labkeeper}},
+    title    = {Онлайн-редактор LaTeX},
+    url      = {https://labkeeper.io},
+    urldate  = {2026-08-20},
+    year     = {2026},
+    language = {russian}
+}</code></pre>
+                        </div>
+                        <div class="article-note">
+                            <strong>⚠️ Важно:</strong> Поле <code>language = {russian}</code> обязательно для
+                            корректного переключения разделителей в biblatex-gost. Без него разделители будут выводиться
+                            на латинице («and» вместо «и»).
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="numeric">
+                        <h2 class="article-section__title">Числовые ссылки в тексте</h2>
+                        <p>При стиле <code>gost-numeric</code> ссылки в тексте оформляются числами в квадратных скобках.
+                            Используйте команду <code>\cite</code>:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
+                            <pre><code>% Одна ссылка:
+По данным работы~\cite{ivanov2023} установлено, что...
+
+% Несколько ссылок:
+Ряд исследований~\cite{ivanov2023, smirnov2021} подтверждает...
+
+% Ссылка с указанием страниц:
+\cite[с.~45]{smirnov2021}
+
+% Вывод списка литературы:
+\printbibliography[title={Список использованных источников}]</code></pre>
+                        </div>
+                        <p>ГОСТ допускает как формат <strong>[1]</strong>, так и формат <strong>[1, с. 45]</strong> при
+                            указании конкретных страниц. Если помимо библиографии в документе требуется оформить
+                            перечень графического материала, изучите нашу статью по <a
+                                href="/blog/latex-list-of-figures-tables">генерации списков иллюстраций и таблиц по
+                                ГОСТ</a>.</p>
+                    </section>
+
+                    <section class="article-section" id="authoryear">
+                        <h2 class="article-section__title">Именные ссылки (автор, год)</h2>
+                        <p>Стиль <code>gost-authoryear</code> применяется реже — обычно в гуманитарных дисциплинах.
+                            Команды для цитирования:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
+                            <pre><code>% Ссылка в скобках: (Иванов, 2023)
+\parencite{ivanov2023}
+
+% Ссылка в тексте: Иванов (2023) показал, что...
+\textcite{ivanov2023}
+
+% Только год: 2023
+\citeyear{ivanov2023}</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="sorting">
+                        <h2 class="article-section__title">Сортировка и язык</h2>
+                        <p>ГОСТ Р 7.0.5 предписывает: сначала источники на русском языке, затем — иностранные. Для
+                            корректной сортировки укажите параметр <code>sorting=ntvy</code>:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
+                            <pre><code>\usepackage[
+    backend=biber,
+    style=gost-numeric,
+    sorting=ntvy,
+    language=auto,
+    autolang=other,
+    sortlocale=ru_RU   % гарантирует кириллицу перед латиницей
+]{biblatex}</code></pre>
+                        </div>
+                        <div class="article-table-wrapper">
+                            <table class="article-table">
+                                <thead>
+                                    <tr>
+                                        <th>Параметр sorting</th>
+                                        <th>Порядок сортировки</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>ntvy</code></td>
+                                        <td>Название → Том → Номер → Год</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>nyt</code></td>
+                                        <td>Название → Год → Том</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ynt</code></td>
+                                        <td>Год → Название → Том</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>none</code></td>
+                                        <td>Порядок цитирования в тексте</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="tips">
+                        <h2 class="article-section__title">Практические советы</h2>
+                        <div class="article-tips">
+                            <div class="article-tip">
+                                <div class="article-tip__number">1</div>
+                                <div class="article-tip__content">
+                                    <h3>Используйте Zotero для экспорта</h3>
+                                    <p>Менеджер источников Zotero умеет экспортировать библиотеку в формат
+                                        <code>.bib</code>. После экспорта вручную добавьте поля <code>language</code>
+                                        для русскоязычных источников.</p>
+                                </div>
+                            </div>
+                            <div class="article-tip">
+                                <div class="article-tip__number">2</div>
+                                <div class="article-tip__content">
+                                    <h3>Перенос источников из Word</h3>
+                                    <p>Если вы конвертируете готовую статью или диплом из текстового редактора,
+                                        ознакомьтесь с <a href="/blog/latex-word-to-latex">руководством по переносу
+                                            документов из Word в LaTeX</a>, чтобы не потерять ссылки и формулы.</p>
+                                </div>
+                            </div>
+                            <div class="article-tip">
+                                <div class="article-tip__number">3</div>
+                                <div class="article-tip__content">
+                                    <h3>Проверка ошибок biber</h3>
+                                    <p>Если список литературы не отображается, проверьте лог-файл на ошибки biber.
+                                        Частая причина — несовместимые версии <code>biblatex</code> и
+                                        <code>biber</code>. В Labkeeper версии всегда синхронизированы.</p>
+                                </div>
+                            </div>
+                            <div class="article-tip">
+                                <div class="article-tip__number">4</div>
+                                <div class="article-tip__content">
+                                    <h3>Разделение на подразделы</h3>
+                                    <p>Если нужно разделить список на «Нормативные акты» и «Научную литературу»,
+                                        используйте <code>\printbibliography[keyword=normative]</code> и задавайте поле
+                                        <code>keywords</code> в .bib-записях.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </article>
+
+            <aside class="article-sidebar">
+                <div class="article-sidebar__sticky">
+                    <div class="article-sidebar__media">
+                        <img src="../assets/img/img-for-firstScreen.webp" alt="Онлайн-редактор LaTeX Labkeeper"
+                            width="220" height="135" loading="lazy" class="article-sidebar__img">
+                    </div>
+                    <p class="article-sidebar__title">Оформляйте библиографию по&nbsp;ГОСТ в&nbsp;Labkeeper —
+                        онлайн-редактор с&nbsp;поддержкой biblatex-gost и&nbsp;Biber.</p>
+                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
+                        id="sidebar-cta-btn">
+                        Перейти в редактор
+                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </aside>
+        </div>
+
+        <section class="features" id="features">
+            <div class="features__intro">
+                <p class="features__intro-label">Попробуйте прямо сейчас</p>
+                <h2 class="features__intro-title">Оформляйте список литературы в&nbsp;Labkeeper</h2>
+                <p class="features__intro-text">Онлайн-редактор LaTeX с&nbsp;поддержкой biblatex-gost и&nbsp;быстрой компиляцией в&nbsp;PDF — собирайте библиографию по&nbsp;ГОСТ без&nbsp;установки программ на&nbsp;компьютер.</p>
+            </div>
+            <div class="feature-block feature-block--img-left feature-block--dark">
+                <div class="feature-block__container">
+                    <div class="feature-block__visual">
+                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor screenshot"
+                            class="feature-block__image js-popup-trigger"
+                            data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
+                    </div>
+                    <div class="feature-block__content">
+                        <ul class="feature-list">
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b1">Полновесная компиляция:</strong>
+                                <span data-i18n="feat-latex-t1">Получайте PDF профессионального качества с помощью
+                                    встроенного LaTeX-компилятора.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b2">60 секунд на выполнение:</strong>
+                                <span data-i18n="feat-latex-t2">Работайте со сложными документами без ограничений —
+                                    лимит времени компиляции в разы выше, чем в аналогичных сервисах.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b3">Умная конвертация:</strong>
+                                <span data-i18n="feat-latex-t3">Любые вычислительные формулы автоматически
+                                    преобразовываются в красивый LaTeX</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b4">Гибридный синтаксис:</strong>
+                                <span data-i18n="feat-latex-t4">Используйте легковесные вставки Markdown прямо в сложном
+                                    LaTeX-коде для ускорения работы.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="features__footer">
+                <a href="/project/default?open=latex" class="button button--outline-light features__intro-btn">Открыть
+                    редактор <span class="button__arrow">→</span></a>
+            </div>
+            <div class="feature__bg"><img src="../assets/img/bg.svg" alt="bg" loading="lazy"></div>
+        </section>
+    </main>
+
+    <section class="audience">
+        <div class="audience__container">
+            <h2 class="audience__title h1">Другие статьи</h2>
+
+            <div class="audience__slider-wrapper">
+                <button class="audience__arrow audience__arrow--prev" aria-label="Previous slide"></button>
+                <button class="audience__arrow audience__arrow--next" aria-label="Next slide"></button>
+
+                <div class="swiper audience__swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Динамическая генерация случайных статей через slider.js -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="audience__action">
+                <a href="/blog" class="button button--outline audience__btn">Все статьи <span
+                        class="button__arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <nav class="footer__nav">
+                    <a href="/#features" class="footer__link" data-i18n="nav-advantages"></a>
+                    <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
+                    <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
+                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank"
+                        class="footer__link footer__link--external"><span data-i18n="nav-wiki"></span><img
+                            src="../assets/img/target.svg" alt="target icon" class="footer__link-icon"
+                            style="margin-left:4px;vertical-align:middle;" width="16" height="16" loading="lazy"></a>
+                    <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
+                    <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
+
+                    <a href="/about" class="footer__link" data-i18n="nav-about"></a>
+                </nav>
+                <a href="/" class="footer__logo-link"><img src="../assets/img/logo.svg" alt="Labkeeper Logo"
+                        class="footer__logo" width="40" height="40" loading="lazy"></a>
+                <div class="footer__contact">
+                    <span class="footer__contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com" class="footer__contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </div>
+            <div class="footer__middle"><img src="../assets/img/img-for-footer.svg" alt="Labkeeper"
+                    class="footer__huge-logo" aria-hidden="true" loading="lazy"></div>
+            <div class="footer__bottom">
+                <div class="footer__copyright">© 2024—2026</div>
+                <a href="/privacy" class="footer__policy" data-i18n="footer-policy"></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-banner" class="cookie-banner hidden">
+        <div class="cookie-banner__container">
+            <p class="cookie-banner__text">Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта.
+                Подробнее — в <a href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки
+                    персональных данных</a>.</p>
+            <div class="cookie-banner__actions">
+                <button id="cookie-accept" class="button button--primary">Принять</button>
+                <button id="cookie-decline" class="button button--outline">Отказаться</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="scroll-top js-scroll-top" aria-label="Наверх" title="Наверх"></button>
+    <script>window.__LABKEEPER_API_VERSION = "IO_LABKEEPER_FRONTEND_API_VERSION";</script>
+    <script src="../assets/js/auth.js" defer></script>
+    <script src="../assets/js/script.js" defer></script>
+    <script src="../assets/js/lang.js" defer></script>
+    <script src="../assets/js/slider.js" defer></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+</body>
+
+</html>

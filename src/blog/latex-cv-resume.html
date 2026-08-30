@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!-- Пачка 1 -->
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
+    <title>Верстка академического резюме (CV) в LaTeX для грантов и аспирантуры — Labkeeper</title>
+    <meta name="description" content="Шаблон академического резюме LaTeX онлайн: создать CV для аспирантуры в LaTeX с пакетом moderncv. Структура разделов, список публикаций, гранты и контакты." />
+    <link rel="canonical" href="https://labkeeper.io/blog/latex-cv-resume" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://labkeeper.io/blog/latex-cv-resume" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Labkeeper" />
+    <meta property="og:title" content="Верстка академического резюме (CV) для грантов и аспирантуры в онлайн LaTeX — Labkeeper" />
+    <meta property="og:description" content="Создайте профессиональное академическое резюме (CV) в онлайн LaTeX: готовый шаблон moderncv для поступления в аспирантуру и подачи на гранты." />
+    <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:title" content="Верстка академического резюме (CV) в LaTeX — Labkeeper" />
+    <meta name="twitter:description" content="Шаблон академического резюме LaTeX онлайн: создать CV для аспирантуры в LaTeX." />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Верстка академического резюме (CV) для грантов и аспирантуры в онлайн LaTeX","description":"Полное руководство по созданию академического CV в LaTeX для аспирантуры, грантов и стипендий с пакетом moderncv.","author":{"@type":"Organization","name":"Labkeeper","url":"https://labkeeper.io"},"publisher":{"@type":"Organization","name":"Labkeeper","logo":{"@type":"ImageObject","url":"https://labkeeper.io/assets/img/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://labkeeper.io/blog/latex-cv-resume"},"datePublished":"2026-08-20","dateModified":"2026-08-20","inLanguage":"ru"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://labkeeper.io/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://labkeeper.io/blog"},{"@type":"ListItem","position":3,"name":"Академическое резюме в LaTeX","item":"https://labkeeper.io/blog/latex-cv-resume"}]}</script>
+    <script type="text/javascript">
+        (function () {
+            function hasAcceptedCookieConsent() { try { return localStorage.getItem('labkeeper_cookie_consent') === 'accepted'; } catch (e) { return false; } }
+            window.initLabkeeperYandexMetrika = function () {
+                if (window.__labkeeperYandexMetrikaInitialized || !hasAcceptedCookieConsent() || typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined') { return; }
+                (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date(); for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } } k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", { webvisor: true, clickmap: true, referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+                window.__labkeeperYandexMetrikaInitialized = true;
+            };
+            window.initLabkeeperYandexMetrika();
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="page blog__article">
+    <header class="header js-header">
+        <div class="header__container">
+            <div class="header__left">
+                <button class="header__burger js-burger-btn" aria-label="Открыть меню">
+                    <span class="header__burger-line"></span><span class="header__burger-line"></span><span class="header__burger-line"></span>
+                </button>
+                <a href="/" class="header__logo">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36" height="36">
+                    <span class="header__logo-text">Labkeeper</span>
+                </a>
+                <div class="header__lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+            </div>
+            <nav class="header__nav js-nav">
+                <div class="header__mobile-lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link" data-i18n="nav-examples"></a></li>
+                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link" data-i18n="nav-features"></a></li>
+                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a></li>
+                    <li class="header__nav-item"><a href="/blog" class="header__nav-link" data-i18n="nav-blog"></a></li>
+
+                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a></li>
+                </ul>
+                <div class="header__mobile-contact">
+                    <span class="header__mobile-contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com" class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </nav>
+            <div class="header__right">
+                <a href="/project/default?open=login" class="button button--outline header__login" data-i18n="btn-login"></a>
+                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects" style="display: none;"></a>
+                <a href="/project/default" class="button button--primary header__editor" data-i18n="btn-editor"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main page-article">
+        <div class="article-breadcrumbs">
+            <div class="article-breadcrumbs__container">
+                <nav class="article-breadcrumbs__nav" aria-label="Breadcrumb">
+                    <ol class="article-breadcrumbs__list">
+                        <li class="article-breadcrumbs__item"><a href="/" class="article-breadcrumbs__link">Главная</a></li>
+                        <li class="article-breadcrumbs__item"><a href="/blog" class="article-breadcrumbs__link">Блог</a></li>
+                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active"><span>Академическое резюме в LaTeX</span></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="article-layout">
+            <article class="article-content">
+                <div class="article-content__container">
+                    <h1 class="article-content__title h1">Верстка академического резюме (CV) для грантов и&nbsp;аспирантуры в&nbsp;онлайн LaTeX</h1>
+
+                    <div class="article-content__tags">
+                        <a href="/blog#cv" class="article-tag">Оформление резюме / CV</a>
+                        <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
+                    </div>
+
+                    <p class="article-content__meta">Обновлено: 20 августа 2026 · Время чтения: ~8 мин</p>
+
+                    <nav class="article-toc" aria-label="Содержание статьи">
+                        <h3 class="article-toc__title">Содержание</h3>
+                        <ol class="article-toc__list">
+                            <li><a href="#intro" class="article-toc__link">Чем академическое CV отличается от обычного резюме</a></li>
+                            <li><a href="#moderncv" class="article-toc__link">Класс moderncv: стили и цветовые темы</a></li>
+                            <li><a href="#template" class="article-toc__link">Готовый шаблон академического резюме</a></li>
+                            <li><a href="#sections" class="article-toc__link">Структура разделов: публикации, гранты, награды</a></li>
+                            <li><a href="#publications" class="article-toc__link">Интеграция списка статей через BibTeX</a></li>
+                            <li><a href="#tips" class="article-toc__link">Советы для подачи в зарубежные университеты</a></li>
+                        </ol>
+                    </nav>
+
+                    <section class="article-section" id="intro">
+                        <h2 class="article-section__title">Чем академическое CV отличается от обычного резюме</h2>
+                        <p>В отличие от стандартного одностраничного бизнес-резюме (Resume), академическое <strong>Curriculum Vitae (CV)</strong> не ограничено по объему и ориентировано на научные достижения: публикации в журналах (<a href="/blog/latex-scopus-wos">статьи Scopus и WoS</a>), участие в научных конференциях, подготовку <a href="/blog/latex-dissertation">кандидатской диссертации ВАК</a>, опыт преподавания, выигранные гранты и патенты.</p>
+                        <p>Использование <strong>шаблона академического резюме latex онлайн</strong> подчеркивает вашу техническую грамотность и обеспечивает безупречный внешний вид документа при подаче заявки в аспирантуру или на гранты (РНФ, Erasmus, Fulbright).</p>
+                    </section>
+
+                    <section class="article-section" id="moderncv">
+                        <h2 class="article-section__title">Класс moderncv: стили и цветовые темы</h2>
+                        <p>Наиболее популярным инструментом является класс <code>moderncv</code>. Он предлагает несколько вариантов визуального стиля (<code>classic</code>, <code>casual</code>, <code>banking</code>, <code>fancy</code>) и гибкую цветовую палитру (<code>blue</code>, <code>green</code>, <code>orange</code>, <code>burgundy</code>):</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
+                            <pre><code>\documentclass[11pt,a4paper,sans]{moderncv}
+
+% Выбор стиля и цвета
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+
+\usepackage[scale=0.8]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="template">
+                        <h2 class="article-section__title">Готовый шаблон: создать CV для аспирантуры в LaTeX</h2>
+                        <p>Ниже приведен готовый образец академического резюме:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
+                            <pre><code>\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[scale=0.82]{geometry}
+
+% Персональные данные
+\name{Иван}{Иванов}
+\title{Аспирант по специальности «Информатика и вычислительная техника»}
+\address{Москва, Россия}
+\phone[mobile]{+7~(999)~000-00-00}
+\email{ivanov@example.com}
+\social[linkedin]{ivan-ivanov}
+\social[github]{ivan-ivanov}
+\homepage{labkeeper.io}
+
+\begin{document}
+\makecvtitle
+
+\section{Образование}
+\cventry{2024--2026}{Магистр прикладной математики}{МГУ им. М.В. Ломоносова}{Москва}{\textit{Диплом с отличием}}{Тема ВКР: Алгоритмы оптимизации графовых нейросетей.}
+\cventry{2020--2024}{Бакалавр информатики}{МФТИ}{Москва}{}{Средний балл: 4.9 / 5.0.}
+
+\section{Научные интересы}
+\cvitem{}{Машинное обучение, параллельные вычисления, высокопроизводительный LaTeX.}
+
+\section{Гранты и стипендии}
+\cventry{2025}{Грант Президента РФ для молодых ученых}{}{}{}{Финансирование фундаментального проекта по машинному обучению.}
+\cventry{2024}{Стипендия Правительства РФ}{}{}{}{За высокие академические и публикационные результаты.}
+
+\section{Опыт исследований и работы}
+\cventry{2024--наст.вр.}{Младший научный сотрудник}{Институт проблем управления РАН}{Москва}{}{Разработка масштабируемых пайплайнов обработки телеметрии на C++ и Python.}
+
+\section{Навыки}
+\cvitem{Языки программирования}{Python, C++, Rust, SQL}
+\cvitem{Научные инструменты}{LaTeX, Git, Linux, Docker, PyTorch}
+\cvitem{Языки}{Русский (родной), Английский (C1, IELTS 7.5)}
+
+\end{document}</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="sections">
+                        <h2 class="article-section__title">Структура разделов: публикации, гранты, награды</h2>
+                        <p>В классе <code>moderncv</code> используются базовые команды форматирования:</p>
+                        <ul>
+                            <li><code>\cventry{годы}{позиция}{организация}{город}{оценка}{описание}</code> — для структурированных записей с датами.</li>
+                            <li><code>\cvitem{категория}{значение}</code> — для перечисления списков навыков и интересов.</li>
+                            <li><code>\cvitemwithcomment{язык}{уровень}{сертификат}</code> — для языковых компетенций.</li>
+                        </ul>
+                    </section>
+
+                    <section class="article-section" id="publications">
+                        <h2 class="article-section__title">Интеграция списка статей через BibTeX</h2>
+                        <p>Для автоматического вывода публикаций в CV используйте пакет <code>bibentry</code> или <code>multibib</code>, разделяя статьи в журналах и доклады на конференциях (для корректной русификации записей по ГОСТ обратитесь к <a href="/blog/latex-gost-bibliography">нашей статье по biblatex-gost</a>):</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
+                            <pre><code>\usepackage{bibentry}
+\nobibliography*
+
+\section{Публикации}
+\begin{enumerate}
+    \item \bibentry{ivanov2025journal}
+    \item \bibentry{ivanov2024conference}
+\end{enumerate}</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="tips">
+                        <h2 class="article-section__title">Советы для подачи в зарубежные университеты</h2>
+                        <div class="article-tips">
+                            <div class="article-tip">
+                                <div class="article-tip__number">1</div>
+                                <div class="article-tip__content">
+                                    <h3>Единый PDF без фото</h3>
+                                    <p>В американских и европейских университетах принято отправлять CV без личной фотографии для предотвращения предвзятости (unconscious bias).</p>
+                                </div>
+                            </div>
+                            <div class="article-tip">
+                                <div class="article-tip__number">2</div>
+                                <div class="article-tip__content">
+                                    <h3>Колонтитулы и оформление приложений</h3>
+                                    <p>Если к резюме прикладывается расширенное портфолио работ или научный отчет, оформите его в едином стиле с помощью <a href="/blog/latex-diploma-gost">ГОСТ-шаблона</a> и настройте красивые <a href="/blog/latex-fancyhdr">колонтитулы fancyhdr</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </article>
+
+            <aside class="article-sidebar">
+                <div class="article-sidebar__sticky">
+                    <div class="article-sidebar__media">
+                        <img src="../assets/img/img-for-firstScreen.webp" alt="Онлайн-редактор LaTeX Labkeeper" width="220" height="135" loading="lazy" class="article-sidebar__img">
+                    </div>
+                    <p class="article-sidebar__title">Создавайте стильное CV в&nbsp;Labkeeper — готовые шаблоны moderncv с&nbsp;экспортом в&nbsp;PDF за секунды.</p>
+                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn">
+                        Перейти в редактор
+                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </aside>
+        </div>
+
+        <section class="features" id="features">
+            <div class="features__intro">
+                <p class="features__intro-label">Попробуйте прямо сейчас</p>
+                <h2 class="features__intro-title">Создавайте академические резюме в&nbsp;Labkeeper</h2>
+                <p class="features__intro-text">Онлайн-редактор LaTeX с&nbsp;поддержкой moderncv: верстайте аккуратные CV для&nbsp;грантов и&nbsp;аспирантуры без&nbsp;установки программ на&nbsp;ПК.</p>
+            </div>
+            <div class="feature-block feature-block--img-left feature-block--dark">
+                <div class="feature-block__container">
+                    <div class="feature-block__visual">
+                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor screenshot" class="feature-block__image js-popup-trigger" data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
+                    </div>
+                    <div class="feature-block__content">
+                        <ul class="feature-list">
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b1">Полновесная компиляция:</strong>
+                                <span data-i18n="feat-latex-t1">Получайте PDF профессионального качества с помощью
+                                    встроенного LaTeX-компилятора.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b2">60 секунд на выполнение:</strong>
+                                <span data-i18n="feat-latex-t2">Работайте со сложными документами без ограничений —
+                                    лимит времени компиляции в разы выше, чем в аналогичных сервисах.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b3">Умная конвертация:</strong>
+                                <span data-i18n="feat-latex-t3">Любые вычислительные формулы автоматически
+                                    преобразовываются в красивый LaTeX</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b4">Гибридный синтаксис:</strong>
+                                <span data-i18n="feat-latex-t4">Используйте легковесные вставки Markdown прямо в сложном
+                                    LaTeX-коде для ускорения работы.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="features__footer">
+                <a href="/project/default?open=latex" class="button button--outline-light features__intro-btn">Открыть редактор <span class="button__arrow">→</span></a>
+            </div>
+            <div class="feature__bg"><img src="../assets/img/bg.svg" alt="bg" loading="lazy"></div>
+        </section>
+    </main>
+
+    <section class="audience">
+        <div class="audience__container">
+            <h2 class="audience__title h1">Другие статьи</h2>
+
+            <div class="audience__slider-wrapper">
+                <button class="audience__arrow audience__arrow--prev" aria-label="Previous slide"></button>
+                <button class="audience__arrow audience__arrow--next" aria-label="Next slide"></button>
+
+                <div class="swiper audience__swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Динамическая генерация случайных статей через slider.js -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="audience__action">
+                <a href="/blog" class="button button--outline audience__btn">Все статьи <span
+                        class="button__arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <nav class="footer__nav">
+                    <a href="/#features" class="footer__link" data-i18n="nav-advantages"></a>
+                    <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
+                    <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
+                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank" class="footer__link footer__link--external"><span data-i18n="nav-wiki"></span><img src="../assets/img/target.svg" alt="target icon" class="footer__link-icon" style="margin-left:4px;vertical-align:middle;" width="16" height="16" loading="lazy"></a>
+                    <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
+                    <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
+
+                    <a href="/about" class="footer__link" data-i18n="nav-about"></a>
+                </nav>
+                <a href="/" class="footer__logo-link"><img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40" loading="lazy"></a>
+                <div class="footer__contact">
+                    <span class="footer__contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com" class="footer__contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </div>
+            <div class="footer__middle"><img src="../assets/img/img-for-footer.svg" alt="Labkeeper" class="footer__huge-logo" aria-hidden="true" loading="lazy"></div>
+            <div class="footer__bottom">
+                <div class="footer__copyright">© 2024—2026</div>
+                <a href="/privacy" class="footer__policy" data-i18n="footer-policy"></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-banner" class="cookie-banner hidden">
+        <div class="cookie-banner__container">
+            <p class="cookie-banner__text">Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных данных</a>.</p>
+            <div class="cookie-banner__actions">
+                <button id="cookie-accept" class="button button--primary">Принять</button>
+                <button id="cookie-decline" class="button button--outline">Отказаться</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="scroll-top js-scroll-top" aria-label="Наверх" title="Наверх"></button>
+    <script>window.__LABKEEPER_API_VERSION = "IO_LABKEEPER_FRONTEND_API_VERSION";</script>
+    <script src="../assets/js/auth.js" defer></script>
+    <script src="../assets/js/script.js" defer></script>
+    <script src="../assets/js/lang.js" defer></script>
+    <script src="../assets/js/slider.js" defer></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+</body>
+</html>

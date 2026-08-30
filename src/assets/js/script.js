@@ -79,28 +79,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- 3. Плавная прокрутка ---
-  const scrollLinks = document.querySelectorAll('.js-scroll-link');
+  // --- 3. Плавная прокрутка (якорные ссылки и оглавление статей) ---
+  const scrollLinks = document.querySelectorAll('.js-scroll-link, .article-toc__link');
   scrollLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-      e.preventDefault();
       const targetId = link.getAttribute('href');
-      const targetEl = document.querySelector(targetId);
-      if (targetEl) {
-        // Отступ для фиксированной шапки
-        const headerOffset = 80;
-        const elementPosition = targetEl.getBoundingClientRect().top;
-        let offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      if (targetId && targetId.startsWith('#')) {
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          // Отступ для фиксированной шапки
+          const headerOffset = 90;
+          const elementPosition = targetEl.getBoundingClientRect().top;
+          let offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-        // 150px additional scroll offset for #advantages section
-        if (targetId === '#advantages') {
-          offsetPosition += 150;
+          // 150px additional scroll offset for #advantages section
+          if (targetId === '#advantages') {
+            offsetPosition += 150;
+          }
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+
+          // Обновляем хэш в URL без резкого прыжка
+          if (window.history.pushState) {
+            window.history.pushState(null, '', targetId);
+          }
         }
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
       }
     });
   });
@@ -129,6 +136,26 @@ document.addEventListener('DOMContentLoaded', () => {
           window.location.hash = '';
         }
       }
+    });
+  }
+
+  // --- 3.2. Кнопка «Наверх» (Scroll to top) ---
+  const scrollTopBtn = document.querySelector('.js-scroll-top');
+  if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.add('scroll-top--visible');
+      } else {
+        scrollTopBtn.classList.remove('scroll-top--visible');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
   }
 

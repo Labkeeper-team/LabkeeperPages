@@ -26,6 +26,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 // Global text settings
 body {
   font-family: var(--font-main);
@@ -176,6 +180,91 @@ h2, .h2 {
   
   &:hover &__external-icon {
     transform: translate(2px, -2px);
+  }
+}
+
+// Scroll to Top Button
+.scroll-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  background-color: #ffffff;
+  border: 1px solid var(--c-border, #E5E7EB);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  // Наконечник стрелки
+  &::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    width: 9px;
+    height: 9px;
+    border-top: 2px solid #374151;
+    border-right: 2px solid #374151;
+    transform: rotate(-45deg);
+    transition: border-color 0.3s ease;
+  }
+
+  // Стержень (хвостик) стрелки
+  &::after {
+    content: '';
+    position: absolute;
+    top: 17px;
+    width: 2px;
+    height: 14px;
+    background-color: #374151;
+    border-radius: 1px;
+    transition: background-color 0.3s ease;
+  }
+
+  &:hover {
+    background-color: #f3f4f6;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+
+    &::before {
+      border-color: var(--c-primary);
+    }
+
+    &::after {
+      background-color: var(--c-primary);
+    }
+  }
+
+  @include mobile {
+    bottom: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+
+    &::before {
+      top: 14px;
+      width: 8px;
+      height: 8px;
+    }
+
+    &::after {
+      top: 15px;
+      height: 12px;
+    }
   }
 }
 
