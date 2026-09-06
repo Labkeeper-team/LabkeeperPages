@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!-- Пачка 1 -->
 <html lang="ru">
 <head>
@@ -7,7 +7,9 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Подготовка статьи для публикации в журнале Scopus/WoS: шаблон LaTeX — Labkeeper</title>
     <meta name="description" content="Шаблон статьи Scopus LaTeX онлайн: подготовка публикации WoS в LaTeX, настройка классов IEEEtran, elsarticle, авторов, аффилиаций, аннотации и библиографии." />
-    <link rel="canonical" href="https://labkeeper.io/blog/latex-scopus-wos" />
+        <!-- SEO Ключи: шаблон статьи scopus latex онлайн, подготовка публикации wos в latex -->
+    <meta name="keywords" content="шаблон статьи scopus latex онлайн, подготовка публикации wos в latex" />
+<link rel="canonical" href="https://labkeeper.io/blog/latex-scopus-wos" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://labkeeper.io/blog/latex-scopus-wos" />
     <meta property="og:locale" content="ru_RU" />
@@ -266,11 +268,11 @@ Ivan Ivanov \orcidlink{0000-0002-1825-0097}</code></pre>
             </aside>
         </div>
 
-        <section class="features" id="features">
-            <div class="features__intro">
-                <p class="features__intro-label">Попробуйте прямо сейчас</p>
-                <h2 class="features__intro-title">Готовьте научные статьи в&nbsp;Labkeeper</h2>
-                <p class="features__intro-text">Онлайн-редактор LaTeX для&nbsp;исследователей: компиляция шаблонов международных журналов, поддержка формул и&nbsp;AI-ассистент прямо в&nbsp;браузере.</p>
+        <section class="cta-features" id="cta-features">
+            <div class="cta-features__intro">
+                <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
+                <h2 class="cta-features__intro-title">Готовьте научные статьи в&nbsp;Labkeeper</h2>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX для&nbsp;исследователей: компиляция шаблонов международных журналов, поддержка формул и&nbsp;AI-ассистент прямо в&nbsp;браузере.</p>
             </div>
             <div class="feature-block feature-block--img-left feature-block--dark">
                 <div class="feature-block__container">
@@ -303,8 +305,8 @@ Ivan Ivanov \orcidlink{0000-0002-1825-0097}</code></pre>
                     </div>
                 </div>
             </div>
-            <div class="features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light features__intro-btn">Открыть редактор <span class="button__arrow">→</span></a>
+            <div class="cta-features__footer">
+                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">Открыть редактор <span class="button__arrow">→</span></a>
             </div>
             <div class="feature__bg"><img src="../assets/img/bg.svg" alt="bg" loading="lazy"></div>
         </section>
@@ -359,6 +361,17 @@ Ivan Ivanov \orcidlink{0000-0002-1825-0097}</code></pre>
         </div>
     </footer>
 
+
+    <!-- Попап -->
+    <div class="popup js-popup" id="image-popup" aria-hidden="true">
+        <div class="popup__overlay js-popup-close"></div>
+        <div class="popup__content">
+            <button class="popup__close js-popup-close" aria-label="Закрыть">
+                <img src="../assets/img/close.svg" alt="Close" width="24" height="24">
+            </button>
+            <img src="" alt="Enlarged screenshot" class="popup__image js-popup-img" loading="lazy">
+        </div>
+    </div>
     <div id="cookie-banner" class="cookie-banner hidden">
         <div class="cookie-banner__container">
             <p class="cookie-banner__text">Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных данных</a>.</p>

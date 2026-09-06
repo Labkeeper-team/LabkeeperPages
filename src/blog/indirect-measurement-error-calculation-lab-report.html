@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<!-- Пачка 2 -->
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
+    <title>Косвенные измерения погрешности шаблон: расчет погрешностей в отчете — Labkeeper</title>
+    <meta name="description" content="Как оформить расчет погрешностей косвенных измерений в отчете по лабораторной работе. Готовый шаблон по ГОСТ, формулы частных производных и примеры в Labkeeper." />
+    <!-- SEO Ключи: косвенные измерения погрешности шаблон, как оформлять расчет погрешностей в отчете -->
+    <meta name="keywords" content="косвенные измерения погрешности шаблон, как оформлять расчет погрешностей в отчете" />
+    <link rel="canonical" href="https://labkeeper.io/blog/indirect-measurement-error-calculation-lab-report" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://labkeeper.io/blog/indirect-measurement-error-calculation-lab-report" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Labkeeper" />
+    <meta property="og:title" content="Косвенные измерения погрешности шаблон: расчет погрешностей в отчете — Labkeeper" />
+    <meta property="og:description" content="Как оформить расчет погрешностей косвенных измерений в отчете по лабораторной работе. Готовый шаблон по ГОСТ, формулы частных производных и примеры в Labkeeper." />
+    <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:title" content="Косвенные измерения погрешности шаблон: расчет погрешностей в отчете — Labkeeper" />
+    <meta name="twitter:description" content="Как оформить расчет погрешностей косвенных измерений в отчете по лабораторной работе. Готовый шаблон по ГОСТ, формулы частных производных и примеры в Labkeeper." />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Оформление расчетов погрешностей косвенных измерений",
+        "description": "Как оформить расчет погрешностей косвенных измерений в отчете по лабораторной работе. Готовый шаблон по ГОСТ, формулы частных производных и примеры в Labkeeper.",
+        "author": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "url": "https://labkeeper.io"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://labkeeper.io/assets/img/logo.svg"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://labkeeper.io/blog/indirect-measurement-error-calculation-lab-report"
+        },
+        "datePublished": "2026-09-06",
+        "dateModified": "2026-09-06",
+        "inLanguage": "ru",
+        "articleSection": ["Лабораторные работы"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://labkeeper.io/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Блог",
+                "item": "https://labkeeper.io/blog"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Погрешности косвенных измерений",
+                "item": "https://labkeeper.io/blog/indirect-measurement-error-calculation-lab-report"
+            }
+        ]
+    }
+    </script>
+
+    <script type="text/javascript">
+        (function () {
+            function hasAcceptedCookieConsent() {
+                try {
+                    return localStorage.getItem('labkeeper_cookie_consent') === 'accepted';
+                } catch (e) {
+                    return false;
+                }
+            }
+
+            window.initLabkeeperYandexMetrika = function () {
+                if (
+                    window.__labkeeperYandexMetrikaInitialized ||
+                    !hasAcceptedCookieConsent() ||
+                    typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined'
+                ) {
+                    return;
+                }
+
+                (function (m, e, t, r, i, k, a) {
+                    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+                    m[i].l = 1 * new Date();
+                    for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+                    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a);
+                })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", {
+                    webvisor: true,
+                    clickmap: true,
+                    referrer: document.referrer,
+                    url: location.href,
+                    accurateTrackBounce: true,
+                    trackLinks: true
+                });
+
+                window.__labkeeperYandexMetrikaInitialized = true;
+            };
+
+            window.initLabkeeperYandexMetrika();
+        })();
+    </script>
+
+    <!-- Preconnect & Async Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body class="page blog__article">
+    <header class="header js-header">
+        <div class="header__container">
+            <div class="header__left">
+                <button class="header__burger js-burger-btn" aria-label="Открыть меню">
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                </button>
+                <a href="/" class="header__logo">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36"
+                        height="36">
+                    <span class="header__logo-text">Labkeeper</span>
+                </a>
+                <div class="header__lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+            </div>
+
+            <nav class="header__nav js-nav">
+                <div class="header__mobile-lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link"
+                            data-i18n="nav-examples"></a></li>
+                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link"
+                            data-i18n="nav-features"></a></li>
+                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a>
+                    </li>
+                    <li class="header__nav-item"><a href="/blog" class="header__nav-link" data-i18n="nav-blog"></a></li>
+
+                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a>
+                    </li>
+                </ul>
+                <div class="header__mobile-contact">
+                    <span class="header__mobile-contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com"
+                        class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </nav>
+
+            <div class="header__right">
+                <a href="/project/default?open=login" class="button button--outline header__login"
+                    data-i18n="btn-login"></a>
+                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects"
+                    style="display: none;"></a>
+                <a href="/project/default" class="button button--primary header__editor" data-i18n="btn-editor"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main page-article">
+
+        <div class="article-breadcrumbs">
+            <div class="article-breadcrumbs__container">
+                <nav class="article-breadcrumbs__nav" aria-label="Breadcrumb">
+                    <ol class="article-breadcrumbs__list">
+                        <li class="article-breadcrumbs__item">
+                            <a href="/" class="article-breadcrumbs__link">Главная</a>
+                        </li>
+                        <li class="article-breadcrumbs__item">
+                            <a href="/blog" class="article-breadcrumbs__link">Блог</a>
+                        </li>
+                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active">
+                            <span>Погрешности косвенных измерений</span>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="article-layout">
+
+            <article class="article-content">
+                <div class="article-content__container">
+
+                    <h1 class="article-content__title h1">Оформление расчетов погрешностей косвенных измерений</h1>
+
+                    <div class="article-content__tags">
+                        <a href="/blog#labs" class="article-tag">Лабораторные работы</a>
+                    </div>
+
+                    <p class="article-content__meta">Обновлено: 6 сентября 2026 · Время чтения: ~8 мин</p>
+
+                    <nav class="article-toc" aria-label="Содержание статьи">
+                        <h3 class="article-toc__title">Содержание</h3>
+                        <ol class="article-toc__list">
+                            <li><a href="#direct-vs-indirect" class="article-toc__link">Прямые и косвенные измерения: в чем разница</a></li>
+                            <li><a href="#math-theory" class="article-toc__link">Формула полного дифференциала и метод частных производных</a></li>
+                            <li><a href="#log-trick" class="article-toc__link">Лайфхак логарифмирования для формул-произведений</a></li>
+                            <li><a href="#step-by-step" class="article-toc__link">Косвенные измерения погрешности: шаблон расчета плотности цилиндра</a></li>
+                            <li><a href="#report-formatting" class="article-toc__link">Как оформлять расчет погрешностей в отчете: правила округления по ГОСТ</a></li>
+                        </ol>
+                    </nav>
+
+                    <section class="article-section" id="direct-vs-indirect">
+                        <h2 class="article-section__title">Прямые и косвенные измерения: в чем разница</h2>
+                        <p>В лабораторном практикуме большинство физических величин невозможно измерить одним прибором напрямую. При <strong>прямом измерении</strong> значение считывается со шкалы прибора (длина линейкой, время секундомером, масса весами). При <strong>косвенном измерении</strong> искомая величина $y$ вычисляется по известной математической зависимости из нескольких напрямую измеренных аргументов: $y = f(x_1, x_2, \dots, x_n)$.</p>
+                        <p>Поскольку каждый аргумент $x_i$ содержит свою погрешность $\Delta x_i$, итоговая погрешность результата накапливается по строгому закону переноса ошибок. Эти значения затем наглядно иллюстрируются на <a href="/blog/physics-lab-measurement-graphs-formatting-gost">графиках измерений с крестами погрешностей</a>.</p>
+                    </section>
+
+                    <section class="article-section" id="math-theory">
+                        <h2 class="article-section__title">Формула полного дифференциала и метод частных производных</h2>
+                        <p>Если независимые случайные погрешности аргументов малы, абсолютная погрешность косвенного измерения рассчитывается через <strong>квадратичную сумму частных производных</strong>:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">Формула погрешности</span></div>
+                            <pre><code>\Delta y = \sqrt{ \left( \frac{\partial f}{\partial x_1} \Delta x_1 \right)^2 + \left( \frac{\partial f}{\partial x_2} \Delta x_2 \right)^2 + \dots + \left( \frac{\partial f}{\partial x_n} \Delta x_n \right)^2 }</code></pre>
+                        </div>
+                        <p>Если погрешности не являются случайными, а представляют собой предельные приборные погрешности, используют линейную сумму модулей производных: $\Delta y = \sum_{i=1}^n \left| \frac{\partial f}{\partial x_i} \right| \Delta x_i$.</p>
+                    </section>
+
+                    <section class="article-section" id="log-trick">
+                        <h2 class="article-section__title">Лайфхак логарифмирования для формул-произведений</h2>
+                        <p>Если расчетная формула состоит только из произведений, дробей и степеней (например, $y = \frac{a^2 \cdot b}{\sqrt{c}}$), расчет через производные громоздок. Гораздо проще сначала найти <strong>относительную погрешность $\varepsilon_y$ через натуральный логарифм</strong>:</p>
+                        <ol>
+                            <li>Прологарифмировать выражение: $\ln y = 2\ln a + \ln b - \frac{1}{2}\ln c$;</li>
+                            <li>Взять дифференциал и заменить знаки минуса на плюсы: $\varepsilon_y = \frac{\Delta y}{y} = \sqrt{ (2\varepsilon_a)^2 + \varepsilon_b^2 + \left(\frac{1}{2}\varepsilon_c\right)^2 }$;</li>
+                            <li>Найти абсолютную погрешность умножением: $\Delta y = y \cdot \varepsilon_y$.</li>
+                        </ol>
+                    </section>
+
+                    <section class="article-section" id="step-by-step">
+                        <h2 class="article-section__title">Косвенные измерения погрешности: шаблон расчета плотности цилиндра</h2>
+                        <p>Рассмотрим эталонный образец, демонстрирующий <strong>косвенные измерения погрешности шаблон</strong> на примере вычисления плотности твердого тела:</p>
+                        <div class="article-quote">
+                            <p><strong>Пример расчета:</strong><br>
+                            Формула плотности цилиндра: $\rho = \frac{m}{V} = \frac{4m}{\pi d^2 h}$, где масса $m = (124.50 \pm 0.05)\text{ г}$, диаметр $d = (20.12 \pm 0.02)\text{ мм}$, высота $h = (50.34 \pm 0.05)\text{ мм}$.<br><br>
+                            1. Среднее значение плотности: $\rho = \frac{4 \cdot 0.1245}{3.1416 \cdot (0.02012)^2 \cdot 0.05034} = 7780.4\text{ кг/м}^3$.<br>
+                            2. Относительная погрешность:<br>
+                            $\varepsilon_\rho = \sqrt{\left(\frac{\Delta m}{m}\right)^2 + \left(2\frac{\Delta d}{d}\right)^2 + \left(\frac{\Delta h}{h}\right)^2} = \sqrt{(0.0004)^2 + (0.0020)^2 + (0.0010)^2} \approx 0.00227$ ($0.23\%$).<br>
+                            3. Абсолютная погрешность: $\Delta \rho = \rho \cdot \varepsilon_\rho = 7780.4 \cdot 0.00227 = 17.66\text{ кг/м}^3$.</p>
+                        </div>
+                        <p>Итоговую расчетную запись переносят в соответствующий раздел в нашем <a href="/blog/ideal-lab-report-template-gost-online">шаблоне отчета по лабораторной работе</a>.</p>
+                    </section>
+
+                    <section class="article-section" id="report-formatting">
+                        <h2 class="article-section__title">Как оформлять расчет погрешностей в отчете: правила округления по ГОСТ</h2>
+                        <p>Изучая, <strong>как оформлять расчет погрешностей в отчете</strong>, соблюдайте золотое правило округления ГОСТ 8.207-76:</p>
+                        <ul>
+                            <li>Погрешность $\Delta y$ округляется до <strong>одной значащей цифры</strong> (если первая цифра от 3 до 9) или до <strong>двух значащих цифр</strong> (если первая цифра 1 или 2). В нашем примере: $\Delta \rho = 17.66 \approx 18\text{ кг/м}^3$;</li>
+                            <li>Сам результат округляется до того же десятичного разряда, что и погрешность: $\rho = (7780 \pm 18)\text{ кг/м}^3$;</li>
+                            <li>Обязательно приводится относительная погрешность в процентах: $\varepsilon = 0.23\%$.</li>
+                        </ul>
+                    </section>
+
+                    <section class="article-section" id="tips">
+                        <h2 class="article-section__title">Практические советы</h2>
+                        <div class="article-tips">
+                            <div class="article-tip">
+                                <div class="article-tip__number">1</div>
+                                <div class="article-tip__content">
+                                    <h3>Сначала вычисляйте формулу в общем виде</h3>
+                                    <p>Преподаватели требуют сначала вывести символьную формулу погрешности через производные, и только затем подставлять численные значения измерений.</p>
+                                </div>
+                            </div>
+                            <div class="article-tip">
+                                <div class="article-tip__number">2</div>
+                                <div class="article-tip__content">
+                                    <h3>Оформление формул в Labkeeper</h3>
+                                    <p>В Labkeeper вы можете быстро набрать многоэтажные формулы погрешностей через окружение <code>align*</code> с автоматическим выравниванием по знаку равенства.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </article>
+
+            <aside class="article-sidebar">
+                <div class="article-sidebar__sticky">
+                    <div class="article-sidebar__media">
+                        <img src="../assets/img/img-for-firstScreen.webp"
+                            alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
+                            class="article-sidebar__img">
+                    </div>
+                    <p class="article-sidebar__title">В Labkeeper формулы дифференцирования и доверительных интервалов верстаются в аккуратные уравнения LaTeX с мгновенным PDF-рендером.</p>
+                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
+                        id="sidebar-cta-btn">
+                        Перейти в редактор
+                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+
+        <section class="cta-features" id="cta-features">
+            <div class="cta-features__intro">
+                <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
+                <h2 class="cta-features__intro-title">Оформляйте физические расчеты в&nbsp;Labkeeper</h2>
+                <p class="cta-features__intro-text">Онлайн-редактор для студентов технических вузов: формулы amsmath, таблицы измерений и шаблоны оформления по ГОСТ.</p>
+            </div>
+
+            <div class="feature-block feature-block--img-left feature-block--dark">
+                <div class="feature-block__container">
+                    <div class="feature-block__visual">
+                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor screenshot"
+                            class="feature-block__image js-popup-trigger"
+                            data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
+                    </div>
+                    <div class="feature-block__content">
+                        <ul class="feature-list">
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b1">Полновесная компиляция:</strong>
+                                <span data-i18n="feat-latex-t1">Получайте PDF профессионального качества с помощью
+                                    встроенного LaTeX-компилятора.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b2">60 секунд на выполнение:</strong>
+                                <span data-i18n="feat-latex-t2">Работайте со сложными документами без ограничений —
+                                    лимит времени компиляции в разы выше, чем в аналогичных сервисах.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b3">Умная конвертация:</strong>
+                                <span data-i18n="feat-latex-t3">Любые вычислительные формулы автоматически
+                                    преобразовываются в красивый LaTeX</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b4">Гибридный синтаксис:</strong>
+                                <span data-i18n="feat-latex-t4">Используйте легковесные вставки Markdown прямо в сложном
+                                    LaTeX-коде для ускорения работы.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-features__footer">
+                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
+                    Открыть редактор <span class="button__arrow">→</span>
+                </a>
+            </div>
+
+            <div class="feature__bg">
+                <img src="../assets/img/bg.svg" alt="bg" loading="lazy">
+            </div>
+        </section>
+
+    </main>
+
+    <section class="audience">
+        <div class="audience__container">
+            <h2 class="audience__title h1">Другие статьи</h2>
+
+            <div class="audience__slider-wrapper">
+                <button class="audience__arrow audience__arrow--prev" aria-label="Previous slide"></button>
+                <button class="audience__arrow audience__arrow--next" aria-label="Next slide"></button>
+
+                <div class="swiper audience__swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Динамическая генерация случайных статей через slider.js -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="audience__action">
+                <a href="/blog" class="button button--outline audience__btn">Все статьи <span
+                        class="button__arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <nav class="footer__nav">
+                    <a href="/#features" class="footer__link" data-i18n="nav-advantages"></a>
+                    <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
+                    <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
+                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank"
+                        class="footer__link footer__link--external">
+                        <span data-i18n="nav-wiki"></span>
+                        <img src="../assets/img/target.svg" alt="target icon" class="footer__link-icon"
+                            style="margin-left: 4px; vertical-align: middle;" width="16" height="16" loading="lazy">
+                    </a>
+                    <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
+                    <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
+
+                    <a href="/about" class="footer__link" data-i18n="nav-about"></a>
+                </nav>
+                <a href="/" class="footer__logo-link">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40"
+                        loading="lazy">
+                </a>
+                <div class="footer__contact">
+                    <span class="footer__contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com" class="footer__contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </div>
+            <div class="footer__middle">
+                <img src="../assets/img/img-for-footer.svg" alt="Labkeeper" class="footer__huge-logo" aria-hidden="true"
+                    loading="lazy">
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__copyright">© 2024—2026</div>
+                <a href="/privacy" class="footer__policy" data-i18n="footer-policy"></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Попап -->
+    <div class="popup js-popup" id="image-popup" aria-hidden="true">
+        <div class="popup__overlay js-popup-close"></div>
+        <div class="popup__content">
+            <button class="popup__close js-popup-close" aria-label="Закрыть">
+                <img src="../assets/img/close.svg" alt="Close" width="24" height="24">
+            </button>
+            <img src="" alt="Enlarged screenshot" class="popup__image js-popup-img" loading="lazy">
+        </div>
+    </div>
+
+    <div id="cookie-banner" class="cookie-banner hidden">
+        <div class="cookie-banner__container">
+            <p class="cookie-banner__text">
+                Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a
+                    href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных
+                    данных</a>.
+            </p>
+            <div class="cookie-banner__actions">
+                <button id="cookie-accept" class="button button--primary">Принять</button>
+                <button id="cookie-decline" class="button button--outline">Отказаться</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="scroll-top js-scroll-top" aria-label="Наверх" title="Наверх"></button>
+
+    <script>
+        window.__LABKEEPER_API_VERSION = "IO_LABKEEPER_FRONTEND_API_VERSION";
+    </script>
+    <script src="../assets/js/auth.js" defer></script>
+    <script src="../assets/js/script.js" defer></script>
+    <script src="../assets/js/lang.js" defer></script>
+    <script src="../assets/js/slider.js" defer></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+</body>
+
+</html>

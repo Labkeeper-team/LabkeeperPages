@@ -1,0 +1,1538 @@
+[
+  {
+    "slug": "latex-minipage-images-tables-side-by-side",
+    "batch": 2,
+    "title": "Расположение нескольких картинок и таблиц рядом (minipage)",
+    "pageTitle": "Две картинки рядом в LaTeX minipage: текст рядом с таблицей — Labkeeper",
+    "metaDescription": "Как расположить две картинки рядом в LaTeX через minipage, разместить текст рядом с таблицей, настроить subcaption и точные ширины в Labkeeper.",
+    "breadcrumbTitle": "Изображения и таблицы рядом (minipage)",
+    "h1": "Расположение нескольких картинок и&nbsp;таблиц рядом (minipage)",
+    "categories": [
+      "latex"
+    ],
+    "keywords": [
+      "две картинки рядом latex minipage",
+      "текст рядом с таблицей latex"
+    ],
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-05",
+    "readingTime": "7 мин",
+    "cardTitle": "Картинки и таблицы бок о бок в LaTeX: руководство по minipage",
+    "cardDescription": "Как разместить два рисунка в одну строку, поставить таблицу параллельно тексту или пояснению, настроить независимые подписи через окружение minipage.",
+    "sliderTitle": "Картинки и таблицы рядом (minipage)",
+    "sliderText": "Окружение minipage, две картинки в строку и текст рядом с таблицей.",
+    "sidebarText": "Верстайте сложные многоколоночные блоки и графики прямо в онлайн-редакторе Labkeeper.",
+    "ctaTitle": "Управляйте версткой графики в&nbsp;Labkeeper",
+    "ctaText": "Онлайн-редактор LaTeX с поддержкой многоколоночной верстки, пакета minipage и мгновенным PDF-рендерингом.",
+    "toc": [
+      {
+        "id": "intro",
+        "title": "Зачем нужно окружение minipage"
+      },
+      {
+        "id": "two-images",
+        "title": "Две картинки рядом latex minipage: пошаговый шаблон"
+      },
+      {
+        "id": "table-and-text",
+        "title": "Текст рядом с таблицей latex: компактная верстка"
+      },
+      {
+        "id": "subcaption-pkg",
+        "title": "Независимая нумерация подрисуночных подписей (subcaption)"
+      },
+      {
+        "id": "alignment-tips",
+        "title": "Вертикальное выравнивание блоков (t, c, b)"
+      }
+    ],
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Зачем нужно окружение minipage",
+        "html": "                        <p>В стандартном LaTeX каждый рисунок или таблица стремятся занять всю горизонтальную полосу страницы. Если иллюстрации узкие или вытянуты вертикально, на листе образуются огромные пустые поля, а объем документа неоправданно растет.</p>\n                        <p>Окружение <strong>minipage</strong> создает независимую «мини-страницу» фиксированной ширины. Несколько таких блоков, поставленных друг за другом без пустой строки, выстраиваются строго в одну горизонтальную линию.</p>"
+      },
+      {
+        "id": "two-images",
+        "title": "Две картинки рядом latex minipage: пошаговый шаблон",
+        "html": "                        <p>Классический способ расположить <strong>две картинки рядом latex minipage</strong> с общей или раздельными подписями (в отличие от <a href=\"/blog/latex-wrapfig-text-flow\">обтекания картинок текстом через wrapfig</a>):</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\begin{figure}[htbp]\n    \\centering\n    % Первый блок (48% ширины текста)\n    \\begin{minipage}[b]{0.48\\textwidth}\n        \\centering\n        \\includegraphics[width=\\textwidth]{chart1.pdf}\n        \\caption{Эксперимент до оптимизации}\n        \\label{fig:chart1}\n    \\end{minipage}\n    \\hfill % Резиновый горизонтальный пробел между блоками\n    % Второй блок (48% ширины текста)\n    \\begin{minipage}[b]{0.48\\textwidth}\n        \\centering\n        \\includegraphics[width=\\textwidth]{chart2.pdf}\n        \\caption{Эксперимент после оптимизации}\n        \\label{fig:chart2}\n    \\end{minipage}\n\\end{figure}</code></pre>\n                        </div>\n                        <p>Команда <code>\\hfill</code> автоматически распределяет оставшиеся 4% ширины в аккуратный равномерный зазор между двумя иллюстрациями.</p>"
+      },
+      {
+        "id": "table-and-text",
+        "title": "Текст рядом с таблицей latex: компактная верстка",
+        "html": "                        <p>В методических указаниях и научных отчетах часто требуется разместить <strong>текст рядом с таблицей latex</strong> — например, краткое пояснение к числовым коэффициентам:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\noindent\n\\begin{minipage}[c]{0.52\\textwidth}\n    \\begin{tabular}{|l|c|r|}\n        \\hline\n        \\textbf{Параметр} & \\textbf{Символ} & \\textbf{Значение} \\\\\n        \\hline\n        Коэффициент трения & $\\mu$ & 0.15 \\\\\n        Масса образца & $m$ & 2.45 кг \\\\\n        Ускорение & $a$ & 9.81 м/с$^2$ \\\\\n        \\hline\n    \\end{tabular}\n\\end{minipage}\n\\hfill\n\\begin{minipage}[c]{0.44\\textwidth}\n    \\small\n    Приведенные в таблице константы соответствуют стандартным атмосферным условиям ($T = 20~^\\circ\\text{C}$, $P = 101.3$~кПа). Расчет выполнен по формуле сухого трения.\n\\end{minipage}</code></pre>\n                        </div>"
+      },
+      {
+        "id": "subcaption-pkg",
+        "title": "Независимая нумерация подрисуночных подписей (subcaption)",
+        "html": "                        <p>Если две картинки являются частями одной общей иллюстрации, лучше подключить пакет <code>subcaption</code> и использовать окружения <code>subfigure</code>. Это дает стандартную нумерацию вида «Рисунок 1 — Схема установки: а — вид спереди; б — вид сверху», что отлично согласуется с правилами <a href=\"/blog/figure-double-numbering-chapters-gost\">двойной нумерации рисунков по главам по ГОСТ</a>.</p>"
+      },
+      {
+        "id": "alignment-tips",
+        "title": "Вертикальное выравнивание блоков (t, c, b)",
+        "html": "                        <p>Опциональный параметр выравнивания определяет, по какой линии центрируются соседние блоки minipage:</p>\n                        <ul>\n                            <li><code>[t]</code> (top) — выравнивание по первой строке текста или верхнему краю картинки;</li>\n                            <li><code>[c]</code> (center) — выравнивание по геометрическому центру (по умолчанию);</li>\n                            <li><code>[b]</code> (bottom) — выравнивание по нижней базовой линии (идеально для подрисуночных подписей).</li>\n                        </ul>"
+      }
+    ],
+    "tips": [
+      {
+        "title": "Опасность пустой строки в коде",
+        "html": "<p>Никогда не оставляйте пустую строку между закрывающим <code>\\end{minipage}</code> и следующим <code>\\begin{minipage}</code>, иначе LaTeX воспримет это как новый абзац и перенесет второй блок на следующую строку.</p>"
+      },
+      {
+        "title": "Сумма ширин менее 1.0\\textwidth",
+        "html": "<p>Суммарная ширина двух minipage плюс пробел не должна превышать <code>\\textwidth</code>, иначе возникнет ошибка переполнения <code>Overfull \\hbox</code>.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "latex-custom-rgb-hex-colors-xcolor",
+    "batch": 2,
+    "title": "Пользовательские цвета RGB и HEX для текста (пакет xcolor)",
+    "pageTitle": "Свой цвет HEX в LaTeX xcolor: цветной текст RGB онлайн — Labkeeper",
+    "metaDescription": "Как задать свой цвет HEX в LaTeX через xcolor: цветной текст RGB, палитры CMYK, HTML-коды, создание брендовых стилей в онлайн-редакторе Labkeeper.",
+    "breadcrumbTitle": "Пользовательские цвета RGB и HEX (xcolor)",
+    "h1": "Пользовательские цвета RGB и&nbsp;HEX для текста (пакет xcolor)",
+    "categories": [
+      "latex"
+    ],
+    "keywords": [
+      "свой цвет hex в latex xcolor",
+      "цветной текст rgb latex"
+    ],
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-05",
+    "readingTime": "6 мин",
+    "cardTitle": "Пользовательские цвета RGB и HEX в LaTeX: точная палитра через xcolor",
+    "cardDescription": "Как объявлять кастомные цвета по HTML-коду (#1A73E8) и модели RGB (0..255 или 0..1), красить текст, формулы, рамки и фоны без ограничений стандартной палитры.",
+    "sliderTitle": "Пользовательские цвета RGB и HEX в LaTeX",
+    "sliderText": "Объявление HEX и RGB оттенков, брендовые цвета и палитры xcolor.",
+    "sidebarText": "Создавайте брендовые презентации и отчеты с идеальной передачей цветов в веб-редакторе Labkeeper.",
+    "ctaTitle": "Настраивайте палитру документов в&nbsp;Labkeeper",
+    "ctaText": "Онлайн-редактор с полной поддержкой пакета xcolor, подсветкой синтаксиса и прецизионной передачей цветов в PDF.",
+    "toc": [
+      {
+        "id": "intro",
+        "title": "Почему стандартных 8 цветов недостаточно"
+      },
+      {
+        "id": "hex-define",
+        "title": "Свой цвет hex в latex xcolor: директива definecolor"
+      },
+      {
+        "id": "rgb-define",
+        "title": "Цветной текст rgb latex: модели дробного и целочисленного RGB"
+      },
+      {
+        "id": "usage-examples",
+        "title": "Применение кастомных цветов: текст, фон, рамки и ссылки"
+      },
+      {
+        "id": "cmyk-print",
+        "title": "Особенности подготовки к полиграфической печати (CMYK)"
+      }
+    ],
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Почему стандартных 8 цветов недостаточно",
+        "html": "                        <p>Базовый TeX предоставляет всего несколько примитивных цветов: red, green, blue, cyan, magenta, yellow, black, white. В реальных проектах — презентациях Beamer, корпоративных гайдах, дипломных плакатах — требуются точные оттенки из брендбуков или дизайн-макетов Figma.</p>\n                        <p>В дополнение к базовым функциям <a href=\"/blog/latex-xcolor-text-background\">работы с цветом текста и фона в xcolor</a>, расширенный пакет снимает любые колористические ограничения, позволяя объявлять собственные именованные оттенки в цветовых пространствах HTML-HEX, RGB (дробном и 255) и полиграфическом CMYK.</p>"
+      },
+      {
+        "id": "hex-define",
+        "title": "Свой цвет hex в latex xcolor: директива definecolor",
+        "html": "                        <p>Самый удобный способ для веб-разработчиков и дизайнеров задать <strong>свой цвет hex в latex xcolor</strong> — использовать модель <code>HTML</code> (шестнадцатеричный код без решетки):</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\usepackage{xcolor}\n\n% Задание цветов по HEX-коду:\n\\definecolor{BrandBlue}{HTML}{1A73E8}\n\\definecolor{DarkSlate}{HTML}{2D3748}\n\\definecolor{WarningAmber}{HTML}{D97706}\n\\definecolor{EmeraldGreen}{HTML}{059669}</code></pre>\n                        </div>\n                        <p>После объявления в преамбуле новые цвета используются стандартными командами: <code>\\textcolor{BrandBlue}{Фирменный текст}</code>.</p>"
+      },
+      {
+        "id": "rgb-define",
+        "title": "Цветной текст rgb latex: модели дробного и целочисленного RGB",
+        "html": "                        <p>Чтобы получить <strong>цветной текст rgb latex</strong>, в TeX предусмотрены две разновидности модели:</p>\n                        <ul>\n                            <li><strong>Дробный <code>rgb</code> (значения каналов от 0.0 до 1.0):</strong>\n                                <pre><code>\\definecolor{DeepPurple}{rgb}{0.45, 0.15, 0.72}</code></pre>\n                            </li>\n                            <li><strong>Целочисленный <code>RGB</code> (заглавные буквы, значения от 0 до 255):</strong>\n                                <pre><code>\\definecolor{BrightCoral}{RGB}{255, 112, 67}</code></pre>\n                                Этот формат совпадает с обычными значениями Photoshop и CSS <code>rgb(255, 112, 67)</code>.\n                            </li>\n                        </ul>"
+      },
+      {
+        "id": "usage-examples",
+        "title": "Применение кастомных цветов: текст, фон, рамки и ссылки",
+        "html": "                        <p>Примеры комплексного оформления документа объявленными оттенками (такие цветовые палитры часто применяют при <a href=\"/blog/latex-tcolorbox-theorems-callouts\">оформлении цветных блоков и теорем в tcolorbox</a>):</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>% Окраска фрагмента текста\n\\textcolor{DarkSlate}{Основной строгий текст} и \\textcolor{EmeraldGreen}{\\textbf{успешный статус}}.\n\n% Блок в рамке с кастомным фоном\n\\fcolorbox{BrandBlue}{BrandBlue!10}{Важное примечание на мягком голубом фоне.}\n\n% Цветные математические формулы\n\\begin{equation}\n    \\textcolor{BrandBlue}{E} = \\textcolor{WarningAmber}{m} \\cdot \\textcolor{EmeraldGreen}{c^2}\n\\end{equation}</code></pre>\n                        </div>"
+      },
+      {
+        "id": "cmyk-print",
+        "title": "Особенности подготовки к полиграфической печати (CMYK)",
+        "html": "                        <p>Если документ планируется отдавать в профессиональную типографию на офсетную печать, объявляйте цвета в четырехкрасочной модели: <code>\\definecolor{PrintCyan}{cmyk}{1.0, 0.0, 0.0, 0.0}</code>, чтобы избежать цветовых искажений при конвертации из экранного RGB.</p>"
+      }
+    ],
+    "tips": [
+      {
+        "title": "Плавное осветление цвета",
+        "html": "<p>Синтаксис <code>BrandBlue!30</code> создает цвет, состоящий на 30% из BrandBlue и на 70% из белого, что идеально для фона таблиц и плашек.</p>"
+      },
+      {
+        "title": "Интеграция с hyperref",
+        "html": "<p>Задайте кастомный цвет для всех веб-ссылок в преамбуле: <code>\\hypersetup{colorlinks=true, urlcolor=BrandBlue, linkcolor=DarkSlate}</code>.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "latex-multi-file-document-input-include",
+    "batch": 2,
+    "title": "Сборка большого документа из нескольких файлов (input и include)",
+    "pageTitle": "Разбить диплом на несколько файлов LaTeX: команда include и input — Labkeeper",
+    "metaDescription": "Как разбить диплом на несколько файлов в LaTeX: команда include и input, структура глав, выборочная компиляция includeonly в онлайн-редакторе Labkeeper.",
+    "breadcrumbTitle": "Сборка из нескольких файлов (input / include)",
+    "h1": "Сборка большого документа из&nbsp;нескольких файлов (input и&nbsp;include)",
+    "categories": [
+      "latex",
+      "diploma"
+    ],
+    "keywords": [
+      "разбить диплом на несколько файлов latex",
+      "команда include latex"
+    ],
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-05",
+    "readingTime": "7 мин",
+    "cardTitle": "Модульная структура проекта в LaTeX: команды include, input и includeonly",
+    "cardDescription": "Как грамотно организовать структуру диплома или диссертации: вынос глав, введения и приложений в отдельные файлы .tex, ускорение компиляции.",
+    "sliderTitle": "Сборка документа из файлов (include)",
+    "sliderText": "Модульная структура диплома, команды include, input и includeonly.",
+    "sidebarText": "Работайте с масштабными научными проектами и многостраничными главами в Labkeeper без зависаний.",
+    "ctaTitle": "Организуйте структуру ВКР в&nbsp;Labkeeper",
+    "ctaText": "Онлайн-редактор с поддержкой многофайловых проектов LaTeX, быстрым переключением глав и компиляцией в один клик.",
+    "toc": [
+      {
+        "id": "why-modular",
+        "title": "Зачем делить большой проект на отдельные файлы"
+      },
+      {
+        "id": "input-vs-include",
+        "title": "Разница между командами \\input и \\include"
+      },
+      {
+        "id": "diploma-structure",
+        "title": "Разбить диплом на несколько файлов latex: эталонная иерархия папок"
+      },
+      {
+        "id": "includeonly-speed",
+        "title": "Команда include latex и выборочная компиляция через includeonly"
+      },
+      {
+        "id": "subfiles-pkg",
+        "title": "Продвинутый подход: пакет subfiles для автономной компиляции глав"
+      }
+    ],
+    "sections": [
+      {
+        "id": "why-modular",
+        "title": "Зачем делить большой проект на отдельные файлы",
+        "html": "                        <p>Дипломная работа, магистерская диссертация или монография содержит от 60 до 200+ страниц, сотни формул, рисунков и таблиц. Вести такой объем в одном файле <code>main.tex</code> неудобно: поиск нужного абзаца превращается в бесконечный скроллинг, а случайная ошибка в одном месте ломает компиляцию всей работы.</p>\n                        <p>Модульная архитектура разбивает проект на логические части: введение, отдельные главы, заключение, список литературы и приложения лежат в изолированных файлах, собираемых главным корневым документом.</p>"
+      },
+      {
+        "id": "input-vs-include",
+        "title": "Разница между командами \\input и \\include",
+        "html": "                        <p>В LaTeX существует две директивы подключения внешних файлов, имеющие принципиальные различия (это особенно важно при <a href=\"/blog/diploma-appendices-listings-diagrams-gost\">выносе приложений и листингов в дипломной работе</a>):</p>\n                        <ul>\n                            <li><code>\\input{путь/к/файлу}</code> — буквально вставляет содержимое файла в текущее место документа «как есть». Не создает разрывов страниц. Идеально для преамбулы (<code>\\input{preamble.tex}</code>), таблиц или фрагментов текста внутри раздела.</li>\n                            <li><code>\\include{путь/к/файлу}</code> — вставляет файл, <strong>всегда предваряя и завершая его командой \\clearpage</strong> (начиная новую страницу). Создает собственный вспомогательный файл <code>.aux</code>, что позволяет использовать механизм выборочной компиляции. Идеально для крупных глав (<code>chapter</code>).</li>\n                        </ul>"
+      },
+      {
+        "id": "diploma-structure",
+        "title": "Разбить диплом на несколько файлов latex: эталонная иерархия папок",
+        "html": "                        <p>Вот проверенная академическая структура проекта (<strong>разбить диплом на несколько файлов latex</strong>), рекомендованная при <a href=\"/blog/latex-diploma-gost\">оформлении диплома по ГОСТ в LaTeX</a>:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">Структура файлов</span></div>\n                            <pre><code>my-diploma/\n├── main.tex             % Главный файл со сборкой\n├── preamble.tex         % Все пакеты и настройки ГОСТ\n├── biblio.bib           % База источников BibTeX\n├── chapters/            % Папка с главами работы\n│   ├── 00-intro.tex     % Введение\n│   ├── 01-analysis.tex  % Глава 1: Анализ предметной области\n│   ├── 02-design.tex    % Глава 2: Проектирование системы\n│   ├── 03-impl.tex      % Глава 3: Реализация и тестирование\n│   └── 04-concl.tex     % Заключение\n└── appendices/          % Приложения с кодом\n    └── app-a-code.tex</code></pre>\n                        </div>\n                        <p>В главном файле <code>main.tex</code> сборка выглядит компактно и наглядно:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">main.tex</span></div>\n                            <pre><code>\\documentclass[14pt,a4paper]{report}\n\\input{preamble} % Подключаем преамбулу\n\n\\begin{document}\n\\include{chapters/00-intro}\n\\include{chapters/01-analysis}\n\\include{chapters/02-design}\n\\include{chapters/03-impl}\n\\include{chapters/04-concl}\n\n\\bibliographystyle{gost-numeric}\n\\bibliography{biblio}\n\\end{document}</code></pre>\n                        </div>"
+      },
+      {
+        "id": "includeonly-speed",
+        "title": "Команда include latex и выборочная компиляция через includeonly",
+        "html": "                        <p>Когда вы работаете над конкретной главой, нет смысла каждый раз перекомпилировать весь стостраничный документ. <strong>Команда include latex</strong> поддерживает волшебную директиву <code>\\includeonly</code> в преамбуле:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>% Компилировать СТРОГО главу 2, сохраняя сквозные номера страниц и формул!\n\\includeonly{chapters/02-design}</code></pre>\n                        </div>\n                        <p>Благодаря отдельным <code>.aux</code> файлам LaTeX сохранит верные перекрестные ссылки на формулы из других глав, но сборка займет 1 секунду вместо 15.</p>"
+      },
+      {
+        "id": "subfiles-pkg",
+        "title": "Продвинутый подход: пакет subfiles для автономной компиляции глав",
+        "html": "                        <p>Пакет <code>subfiles</code> позволяет компилировать каждую главу <strong>как автономный независимый документ</strong> (нажатием кнопки сборки прямо внутри <code>02-design.tex</code>), так и в составе единого проекта <code>main.tex</code> без изменения кода.</p>"
+      }
+    ],
+    "tips": [
+      {
+        "title": "Не указывайте расширение .tex",
+        "html": "<p>При вызове <code>\\include{chapters/intro}</code> не дописывайте расширение <code>.tex</code>: LaTeX подставит его автоматически.</p>"
+      },
+      {
+        "title": "Запрет вложенных include",
+        "html": "<p>Внутри файла, подключенного через <code>\\include</code>, нельзя вызывать другой <code>\\include</code>. Для вложенных подфайлов используйте команду <code>\\input</code>.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "latex-tcolorbox-theorems-callouts",
+    "batch": 2,
+    "title": "Оформление теорем, лемм и определений в цветных рамках (tcolorbox)",
+    "pageTitle": "Красивые рамки для теорем LaTeX tcolorbox: цветной блок с текстом — Labkeeper",
+    "metaDescription": "Красивые рамки для теорем в LaTeX через tcolorbox: цветной блок с текстом онлайн, определения, формулы, иконки и скругленные углы в Labkeeper.",
+    "breadcrumbTitle": "Цветные рамки и блоки (tcolorbox)",
+    "h1": "Оформление теорем, лемм и&nbsp;определений в&nbsp;цветных рамках (tcolorbox)",
+    "categories": [
+      "latex"
+    ],
+    "keywords": [
+      "красивые рамки для теорем latex tcolorbox",
+      "цветной блок с текстом latex"
+    ],
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-05",
+    "readingTime": "8 мин",
+    "cardTitle": "Цветные блоки и рамки для теорем в LaTeX: руководство по пакету tcolorbox",
+    "cardDescription": "Как выделить важные правила, замечания, теоремы и примеры в современные цветные плашки со скругленными углами, тенями и заголовками.",
+    "sliderTitle": "Цветные рамки и теоремы (tcolorbox)",
+    "sliderText": "Современные плашки callouts, стилизация теорем, определения и тени.",
+    "sidebarText": "Создавайте учебники и конспекты университетского уровня с красивыми блоками tcolorbox в Labkeeper.",
+    "ctaTitle": "Выделяйте главное в&nbsp;Labkeeper",
+    "ctaText": "Онлайн-редактор LaTeX с поддержкой пакета tcolorbox, моментальной PDF-компиляцией и готовыми сниппетами блоков.",
+    "toc": [
+      {
+        "id": "intro",
+        "title": "Возможности современного пакета tcolorbox"
+      },
+      {
+        "id": "basic-box",
+        "title": "Цветной блок с текстом latex: базовое окружение"
+      },
+      {
+        "id": "theorems-setup",
+        "title": "Красивые рамки для теорем latex tcolorbox: счетчики и заголовки"
+      },
+      {
+        "id": "custom-callouts",
+        "title": "Создание блоков Замечание, Внимание и Пример (Callouts)"
+      },
+      {
+        "id": "pagebreak-boxes",
+        "title": "Перенос длинных рамок через разрывы страниц (breakable)"
+      }
+    ],
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Возможности современного пакета tcolorbox",
+        "html": "                        <p>Стандартное математическое окружение <code>amsthm</code> выводит теоремы обычным курсивом с тонкой вертикальной чертой или вовсе без нее (подробнее о базовой настройке читайте в статье об <a href=\"/blog/latex-amsthm\">оформлении теорем и определений в amsthm</a>). В современных учебных пособиях, конспектах и методичках для лучшей читаемости применяют стильные цветные плашки (callouts) с градиентами, скругленными углами и акцентными иконками.</p>\n                        <p>Пакет <strong>tcolorbox</strong> — это непревзойденный стандарт для создания презентабельных рамок любого уровня сложности на базе векторного движка TikZ.</p>"
+      },
+      {
+        "id": "basic-box",
+        "title": "Цветной блок с текстом latex: базовое окружение",
+        "html": "                        <p>Подключите пакет: <code>\\usepackage{tcolorbox}</code>. Чтобы создать аккуратный <strong>цветной блок с текстом latex</strong>, используется простое окружение (оттенки рамки и фона можно тонко настроить через <a href=\"/blog/latex-custom-rgb-hex-colors-xcolor\">пользовательские цвета RGB и HEX в xcolor</a>):</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\begin{tcolorbox}[\n    colback=blue!5!white,    % Фоновый цвет (светло-голубой)\n    colframe=blue!75!black,  % Цвет рамки\n    title=Ключевой вывод,   % Заголовок плашки\n    arc=3mm                  % Радиус скругления углов\n]\n    Энтропия изолированной термодинамической системы не может убывать в самопроизвольных процессах.\n\\end{tcolorbox}</code></pre>\n                        </div>"
+      },
+      {
+        "id": "theorems-setup",
+        "title": "Красивые рамки для теорем latex tcolorbox: счетчики и заголовки",
+        "html": "                        <p>Для создания полноценной математической типографики используют библиотеку <code>theorems</code>. Она формирует <strong>красивые рамки для теорем latex tcolorbox</strong> с автоматической нумерацией и связкой со списком теорем:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\usepackage[most]{tcolorbox}\n\n% Создаем окружение теоремы\n\\newtcbtheorem[number within=section]{mytheorem}{Теорема}%\n{colback=green!5,colframe=green!50!black,fonttitle=\\bfseries}{th}\n\n% Использование в тексте:\n\\begin{mytheorem}{Пифагора}{pythagoras}\n    В прямоугольном треугольнике квадрат длины гипотенузы равен сумме квадратов длин катетов:\n    \\[ c^2 = a^2 + b^2 \\]\n\\end{mytheorem}</code></pre>\n                        </div>\n                        <p>Команда <code>\\ref{th:pythagoras}</code> автоматически сошлется на номер этой теоремы в тексте (например, <em>«согласно Теореме 2.1»</em>).</p>"
+      },
+      {
+        "id": "custom-callouts",
+        "title": "Создание блоков Замечание, Внимание и Пример (Callouts)",
+        "html": "                        <p>Для создания блоков в стиле документации GitHub / Notion настраивают минималистичные стили с акцентной левой полосой:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\newtcolorbox{warningbox}{\n    colback=red!5!white,\n    colframe=red!75!black,\n    leftrule=5mm, % Толстая цветная полоса слева\n    rightrule=0.5mm, toprule=0.5mm, bottomrule=0.5mm,\n    arc=1mm,\n    title=\\textbf{Внимание!}\n}</code></pre>\n                        </div>"
+      },
+      {
+        "id": "pagebreak-boxes",
+        "title": "Перенос длинных рамок через разрывы страниц (breakable)",
+        "html": "                        <p>По умолчанию tcolorbox не разрывается страницей и целиком переносится на следующий лист, оставляя пустоту. Чтобы блок плавно перетекал через границу страниц, добавьте опцию <code>breakable</code> (требует библиотеки <code>\\tcbuselibrary{breakable}</code>):</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\begin{tcolorbox}[breakable, colback=gray!10, colframe=black]\n    ... очень длинный текст доказательства на 2 страницы ...\n\\end{tcolorbox}</code></pre>\n                        </div>"
+      }
+    ],
+    "tips": [
+      {
+        "title": "Подключение [most]",
+        "html": "<p>Всегда подключайте пакет как <code>\\usepackage[most]{tcolorbox}</code> — это активирует библиотеки theorems, breakable, skins и xparse в одном флаконе.</p>"
+      },
+      {
+        "title": "Тени и объем",
+        "html": "<p>Опция <code>drop shadow</code> или <code>fuzzy shadow</code> добавляет реалистичную мягкую тень под блоком для оформления презентаций.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "overleaf-alternatives-russia-online-latex",
+    "batch": 2,
+    "title": "Лучшие альтернативы Overleaf для работы с LaTeX в РФ",
+    "pageTitle": "Overleaf альтернативы в России: онлайн редактор LaTeX без блокировок — Labkeeper",
+    "metaDescription": "Лучшие Overleaf альтернативы в России: отечественный онлайн редактор LaTeX без блокировок Labkeeper, работа с ГОСТ, поддержка кириллицы и сравнение сервисов.",
+    "breadcrumbTitle": "Альтернативы Overleaf в РФ",
+    "h1": "Лучшие альтернативы Overleaf для работы с&nbsp;LaTeX в&nbsp;РФ",
+    "categories": [
+      "latex"
+    ],
+    "keywords": [
+      "overleaf альтернативы в россии",
+      "онлайн редактор latex без блокировок"
+    ],
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-05",
+    "readingTime": "7 мин",
+    "cardTitle": "Альтернативы Overleaf в России: подборка онлайн-редакторов LaTeX",
+    "cardDescription": "Обзор решений для верстки научных статей и дипломов в условиях ограничений: сравнение платформ, скорость компиляции, ГОСТ-шаблоны и возможности Labkeeper.",
+    "sliderTitle": "Альтернативы Overleaf в России",
+    "sliderText": "Онлайн-редакторы LaTeX без блокировок, поддержка ГОСТ и компиляция в РФ.",
+    "sidebarText": "Набирайте статьи и диссертации в российском облачном редакторе Labkeeper с поддержкой всех ГОСТов.",
+    "ctaTitle": "Переходите на надежный редактор в&nbsp;Labkeeper",
+    "ctaText": "Отечественная облачная платформа для научной верстки: мгновенная компиляция PDF, шаблоны ВАК/ГОСТ и AI-ассистент.",
+    "toc": [
+      {
+        "id": "context",
+        "title": "Почему российские исследователи ищут замену Overleaf"
+      },
+      {
+        "id": "overleaf-issues",
+        "title": "Overleaf альтернативы в россии: доступность, платежи и пинг"
+      },
+      {
+        "id": "labkeeper-features",
+        "title": "Онлайн редактор latex без блокировок: возможности Labkeeper"
+      },
+      {
+        "id": "desktop-alternatives",
+        "title": "Локальные редакторы: VS Code, TeXstudio и сложности их настройки"
+      },
+      {
+        "id": "comparison-table",
+        "title": "Сравнительная таблица платформ для научной работы"
+      }
+    ],
+    "sections": [
+      {
+        "id": "context",
+        "title": "Почему российские исследователи ищут замену Overleaf",
+        "html": "                        <p>Долгие годы британский сервис Overleaf оставался де-факто стандартом совместной верстки научных публикаций. Однако с 2022 года пользователи из РФ столкнулись с блокировками премиум-подписок, невозможностью оплаты российскими картами МИР, а также периодическими сбоями доступа к веб-интерфейсу.</p>\n                        <p>Кроме того, зарубежные сервисы не имеют предустановленных российских шрифтов по ГОСТ (PT Astra, ГОСТ-гарнитуры) и кириллических пакетов biblatex, что вынуждает авторов тратить часы на ручную загрузку шрифтовых файлов в каждый новый проект.</p>"
+      },
+      {
+        "id": "overleaf-issues",
+        "title": "Overleaf альтернативы в россии: доступность, платежи и пинг",
+        "html": "                        <p>При поиске надежной <strong>overleaf альтернативы в россии</strong> исследователи и кафедры оценивают ключевые факторы (включая предустановленные кириллические гарнитуры и быструю <a href=\"/blog/latex-sans-serif-fonts\">настройку шрифтов без засечек в LaTeX</a>):</p>\n                        <ul>\n                            <li><strong>Юридическая безопасность и стабильность доступа:</strong> гарантия того, что диссертация или годовой отчет не окажутся заблокированы за день до защиты.</li>\n                            <li><strong>Скорость компиляции:</strong> расположение вычислительных мощностей и серверов в РФ обеспечивает отклик в миллисекунды без сетевых задержек.</li>\n                            <li><strong>Оплата в рублях:</strong> доступность институциональных и индивидуальных тарифов через СБП и корпоративные безналичные счета.</li>\n                        </ul>"
+      },
+      {
+        "id": "labkeeper-features",
+        "title": "Онлайн редактор latex без блокировок: возможности Labkeeper",
+        "html": "                        <p><strong>Labkeeper</strong> создавался как современный <strong>онлайн редактор latex без блокировок</strong>, специально адаптированный под потребности студентов, аспирантов и ученых РФ (включая инструменты для быстрой <a href=\"/blog/latex-word-to-latex\">конвертации документов Word в LaTeX</a>):</p>\n                        <ul>\n                            <li><strong>Встроенная база ГОСТ:</strong> готовые, проверенные нормоконтролем шаблоны ВКР, магистерских диссертаций, авторефератов ВАК и отчетов по ГОСТ 7.32 из коробки.</li>\n                            <li><strong>Гибридный режим Markdown + LaTeX:</strong> возможность вести заметки в быстром Markdown и компилировать их в полиграфический PDF со сложными TeX-формулами.</li>\n                            <li><strong>Мгновенный отклик:</strong> оптимизированный компилятор TeX Live с предустановленной поддержкой кириллицы (шрифты T2A, пакеты babel, eskdx, biblatex-gost).</li>\n                            <li><strong>AI-помощник:</strong> встроенный интеллектуальный ассистент помогает исправлять ошибки синтаксиса и переводить статьи на академический английский язык.</li>\n                        </ul>"
+      },
+      {
+        "id": "desktop-alternatives",
+        "title": "Локальные редакторы: VS Code, TeXstudio и сложности их настройки",
+        "html": "                        <p>Автономный путь — установка дистрибутива TeX Live / MiKTeX на домашний компьютер в связке с TeXstudio или VS Code (плагин LaTeX Workshop). Главные минусы такого подхода: объем дистрибутива свыше 8 Гб, сложные конфликты версий Perl/Python для minted и отсутствие синхронизации между домашним ПК и рабочим ноутбуком.</p>"
+      },
+      {
+        "id": "comparison-table",
+        "title": "Сравнительная таблица платформ для научной работы",
+        "html": "                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">Сравнение платформ</span></div>\n                            <pre><code>Критерий            | Overleaf (Free)   | Локальный TeXstudio | Labkeeper\n--------------------|-------------------|---------------------|------------------\nДоступность в РФ    | Риски сбоев       | 100% офлайн         | 100% онлайн (РФ)\nШаблоны ГОСТ / ВАК  | Требуют доработки | Настраивать вручную | Встроены из коробки\nПоддержка Markdown  | Нет               | Нет                 | Нативная (KaTeX)\nСложность старта    | Низкая            | Высокая             | В 1 клик в браузере\nОплата картами РФ   | Недоступна        | Бесплатно           | Доступна (МИР, СБП)</code></pre>\n                        </div>"
+      }
+    ],
+    "tips": [
+      {
+        "title": "Экспорт проектов из Overleaf",
+        "html": "<p>Вы можете скачать ZIP-архив своего проекта из Overleaf и напрямую открыть его в Labkeeper — все пути к файлам и структура проекта полностью совместимы.</p>"
+      },
+      {
+        "title": "Облачное автосохранение",
+        "html": "<p>История правок в Labkeeper сохраняется на лету, защищая от потери текста при случайном закрытии вкладки или отключении электричества.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "markdown-multiline-formulas-matrices-mathjax",
+    "batch": 2,
+    "title": "Вставка формул с матрицами и дробями в Markdown (MathJax)",
+    "pageTitle": "Многострочные формулы в Markdown MathJax: написать матрицу онлайн — Labkeeper",
+    "metaDescription": "Многострочные формулы в Markdown через MathJax: как написать матрицу в Markdown, выравнивание по знаку равно align, фигурные скобки cases в Labkeeper.",
+    "breadcrumbTitle": "Многострочные формулы и матрицы (MathJax)",
+    "h1": "Вставка формул с&nbsp;матрицами и&nbsp;дробями в&nbsp;Markdown (MathJax)",
+    "categories": [
+      "markdown"
+    ],
+    "keywords": [
+      "многострочные формулы в markdown mathjax",
+      "написать матрицу в markdown"
+    ],
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-05",
+    "readingTime": "7 мин",
+    "cardTitle": "Матрицы и многострочные формулы в Markdown: гайд по MathJax",
+    "cardDescription": "Как оформлять сложные математические расчеты в Markdown: матрицы pmatrix и bmatrix, многоэтажные дроби, системы уравнений cases и выравнивание aligned.",
+    "sliderTitle": "Матрицы и длинные формулы в Markdown",
+    "sliderText": "Окружения pmatrix, bmatrix, выравнивание aligned и системы cases.",
+    "sidebarText": "Набирайте высшую математику и матрицы в чистом Markdown в веб-редакторе Labkeeper.",
+    "ctaTitle": "Ведите математические заметки в&nbsp;Labkeeper",
+    "ctaText": "Онлайн-редактор с мгновенным рендерингом многострочных формул MathJax/KaTeX и экспортом в аккуратный PDF.",
+    "toc": [
+      {
+        "id": "intro",
+        "title": "Возможности MathJax для расширенной математики"
+      },
+      {
+        "id": "multiline-align",
+        "title": "Многострочные формулы в markdown mathjax: окружение aligned"
+      },
+      {
+        "id": "matrices-guide",
+        "title": "Написать матрицу в markdown: pmatrix, bmatrix и определители"
+      },
+      {
+        "id": "nested-fractions",
+        "title": "Многоэтажные дроби и непрерывные вычисления"
+      },
+      {
+        "id": "systems-cases",
+        "title": "Кусочные функции и системы уравнений с фигурной скобкой (cases)"
+      }
+    ],
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Возможности MathJax для расширенной математики",
+        "html": "                        <p>Одиночные формулы вроде $y = kx + b$ легко помещаются в строку (подробнее см. руководство по <a href=\"/blog/markdown-mathjax-katex-latex-math\">формулам в Markdown с MathJax и KaTeX</a>). Однако в линейной алгебре, теории вероятностей и математическом анализе постоянно требуются матрицы произвольной размерности, длинные цепочки преобразований и разветвленные системы уравнений.</p>\n                        <p>Библиотеки MathJax и KaTeX полностью поддерживают продвинутые окружения пакета <code>amsmath</code> прямо внутри стандартных выключных блоков Markdown <code>$$ ... $$</code>.</p>"
+      },
+      {
+        "id": "multiline-align",
+        "title": "Многострочные формулы в markdown mathjax: окружение aligned",
+        "html": "                        <p>Когда выкладка не помещается в одну строку, используют <strong>многострочные формулы в markdown mathjax</strong> с выравниванием по знаку равенства через окружение <code>aligned</code> (что особенно полезно при соблюдении правил <a href=\"/blog/formula-numbering-lab-reports-gost\">нумерации формул в отчетах по ГОСТ</a>):</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">Markdown</span></div>\n                            <pre><code>$$\n\\begin{aligned}\n(x + y)^3 &= (x + y)(x + y)^2 \\\\\n          &= (x + y)(x^2 + 2xy + y^2) \\\\\n          &= x^3 + 2x^2y + xy^2 + x^2y + 2xy^2 + y^3 \\\\\n          &= x^3 + 3x^2y + 3xy^2 + y^3\n\\end{aligned}\n$$</code></pre>\n                        </div>\n                        <p>Символ амперсанда <code>&</code> задает точку вертикального выравнивания (обычно перед знаком равенства), а двойной обратный слэш <code>\\\\</code> разрывает строку.</p>"
+      },
+      {
+        "id": "matrices-guide",
+        "title": "Написать матрицу в markdown: pmatrix, bmatrix и определители",
+        "html": "                        <p>Быстро <strong>написать матрицу в markdown</strong> позволяют специализированные матричные окружения:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">Markdown</span></div>\n                            <pre><code>$$\n\\begin{pmatrix}\n1 & 0 & 0 \\\\\n0 & 1 & 0 \\\\\n0 & 0 & 1\n\\end{pmatrix}\n\\quad\n\\begin{bmatrix}\na_{11} & a_{12} \\\\\na_{21} & a_{22}\n\\end{bmatrix}\n\\quad\n\\begin{vmatrix}\n\\lambda - 1 & 2 \\\\\n3 & \\lambda - 4\n\\end{vmatrix}\n$$</code></pre>\n                        </div>\n                        <ul>\n                            <li><code>pmatrix</code> — матрица в круглых скобках;</li>\n                            <li><code>bmatrix</code> — матрица в квадратных скобках (наиболее частый выбор в РФ);</li>\n                            <li><code>vmatrix</code> — определитель (детерминант) с прямыми вертикальными линиями;</li>\n                            <li><code>Vmatrix</code> — норма матрицы (двойные вертикальные линии).</li>\n                        </ul>"
+      },
+      {
+        "id": "nested-fractions",
+        "title": "Многоэтажные дроби и непрерывные вычисления",
+        "html": "                        <p>Для верстки цепных дробей обычная команда <code>\\frac</code> делает вложенные шрифты слишком мелкими. Используйте команду <code>\\cfrac</code> (continued fraction):</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">Markdown</span></div>\n                            <pre><code>$$\nx = a_0 + \\cfrac{1}{a_1 + \\cfrac{1}{a_2 + \\cfrac{1}{a_3}}}\n$$</code></pre>\n                        </div>"
+      },
+      {
+        "id": "systems-cases",
+        "title": "Кусочные функции и системы уравнений с фигурной скобкой (cases)",
+        "html": "                        <p>Окружение <code>cases</code> автоматически создает большую фигурную скобку слева:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">Markdown</span></div>\n                            <pre><code>$$\nf(x) = \\begin{cases}\n    -x^2, & \\text{если } x < 0, \\\\\n    0,    & \\text{если } x = 0, \\\\\n    2x,   & \\text{если } x > 0.\n\\end{cases}\n$$</code></pre>\n                        </div>"
+      }
+    ],
+    "tips": [
+      {
+        "title": "Многоточия в матрицах",
+        "html": "<p>Для пропуска строк и столбцов в матрицах используйте: <code>\\cdots</code> (горизонтальное), <code>\\vdots</code> (вертикальное) и <code>\\ddots</code> (диагональное многоточие).</p>"
+      },
+      {
+        "title": "Кириллические комментарии в cases",
+        "html": "<p>Русский текст условий внутри формулы всегда оборачивайте в <code>\\text{...}</code>, иначе буквы слипнутся или вызовут ошибку рендера.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "markdown-image-size-width-height",
+    "batch": 2,
+    "title": "Настройка размера изображений в Markdown (ширина и высота)",
+    "pageTitle": "Изменить размер картинки в Markdown width: подгонка изображения — Labkeeper",
+    "metaDescription": "Как изменить размер картинки в Markdown: width, height, центрирование, подгонка изображения через HTML теги и стили в онлайн-редакторе Labkeeper.",
+    "breadcrumbTitle": "Размер изображений в Markdown",
+    "h1": "Настройка размера изображений в&nbsp;Markdown (ширина и&nbsp;высота)",
+    "categories": [
+      "markdown"
+    ],
+    "keywords": [
+      "изменить размер картинки markdown width",
+      "подгонка изображения md html"
+    ],
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-05",
+    "readingTime": "6 мин",
+    "cardTitle": "Управление размерами картинок в Markdown: ширина, высота и центрирование",
+    "cardDescription": "Как уменьшить гигантский скриншот в Markdown: атрибуты width/height, чистый HTML-тег img, центрирование по центру страницы и экспорт в PDF.",
+    "sliderTitle": "Размер изображений в Markdown",
+    "sliderText": "Настройка width и height, стили CSS, тег img и центрирование картинок.",
+    "sidebarText": "Контролируйте масштаб иллюстраций и аккуратность заметок в редакторе Labkeeper.",
+    "ctaTitle": "Оформляйте иллюстрированные заметки в&nbsp;Labkeeper",
+    "ctaText": "Онлайн-редактор Markdown с поддержкой ресайза изображений, вставкой скриншотов из буфера обмена и экспортом в PDF.",
+    "toc": [
+      {
+        "id": "problem",
+        "title": "Почему базовый синтаксис ![alt](url) не поддерживает размер"
+      },
+      {
+        "id": "html-tag",
+        "title": "Изменить размер картинки markdown width: использование тега img"
+      },
+      {
+        "id": "percentage-fitting",
+        "title": "Подгонка изображения md html: адаптивные проценты (width=\"50%\")"
+      },
+      {
+        "id": "centering-images",
+        "title": "Центрирование иллюстраций и подрисуночные подписи"
+      },
+      {
+        "id": "extended-syntax",
+        "title": "Расширенный синтаксис в Obsidian, Kramdown и Labkeeper"
+      }
+    ],
+    "sections": [
+      {
+        "id": "problem",
+        "title": "Почему базовый синтаксис ![alt](url) не поддерживает размер",
+        "html": "                        <p>Классический синтаксис Джона Грубера <code>![Описание](image.png)</code> намеренно минималистичен: в нем вообще нет параметров ширины или высоты. В результате при вставке скриншота высокого разрешения (Retina или 4K) картинка распахивается на всю ширину экрана или вовсе вылезает за границы печатной страницы PDF.</p>\n                        <p>К счастью, спецификация CommonMark разрешает бесшовную интеграцию HTML-тегов прямо в тело Markdown-документа.</p>"
+      },
+      {
+        "id": "html-tag",
+        "title": "Изменить размер картинки markdown width: использование тега img",
+        "html": "                        <p>Самый надежный и кроссплатформенный способ, <strong>как изменить размер картинки markdown width</strong> — заменить стандартную скобочную запись на тег <code>&lt;img&gt;</code>:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">Markdown</span></div>\n                            <pre><code><!-- Фиксированная ширина в пикселях -->\n<img src=\"screenshot.png\" alt=\"Панель настроек\" width=\"450\" />\n\n<!-- С ограничением по высоте -->\n<img src=\"logo.svg\" alt=\"Логотип проекта\" height=\"80\" /></code></pre>\n                        </div>\n                        <p>Браузер и PDF-генераторы автоматически сохраняют пропорции изображения: если вы указали только <code>width=\"450\"</code>, высота пересчитается пропорционально без сплющивания.</p>"
+      },
+      {
+        "id": "percentage-fitting",
+        "title": "Подгонка изображения md html: адаптивные проценты (width=\"50%\")",
+        "html": "                        <p>Для адаптивных документов и мобильного чтения идеальна <strong>подгонка изображения md html</strong> через относительные единицы измерения:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">Markdown</span></div>\n                            <pre><code><!-- Занимает ровно половину ширины полосы чтения -->\n<img src=\"chart.png\" alt=\"График\" style=\"width: 50%; max-width: 600px;\" /></code></pre>\n                        </div>\n                        <p>При таком подходе на смартфонах картинка красиво масштабируется, а на десктопе не растягивается до гигантских размытых размеров.</p>"
+      },
+      {
+        "id": "centering-images",
+        "title": "Центрирование иллюстраций и подрисуночные подписи",
+        "html": "                        <p>Чтобы выровнять уменьшенное изображение строго по центру страницы и добавить красивую подпись курсивом (по аналогии со стандартами <a href=\"/blog/software-screenshots-report-gost-caption\">оформления скриншотов программ в отчете ГОСТ</a>):</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">Markdown</span></div>\n                            <pre><code><p align=\"center\">\n  <img src=\"architecture.png\" width=\"60%\" alt=\"Архитектура сервиса\" /><br>\n  <em>Рисунок 1 — Структурная схема микросервисов</em>\n</p></code></pre>\n                        </div>"
+      },
+      {
+        "id": "extended-syntax",
+        "title": "Расширенный синтаксис в Obsidian, Kramdown и Labkeeper",
+        "html": "                        <p>В продвинутых редакторах поддерживается удобный компактный синтаксис пайпа: <code>![Скриншот|400](image.png)</code> или фигурных скобок атрибутов: <code>![Скриншот](image.png){width=400px}</code>, что делает документ идеально готовым к <a href=\"/blog/markdown-to-pdf-export\">экспорту Markdown в PDF</a>.</p>"
+      }
+    ],
+    "tips": [
+      {
+        "title": "Векторный формат SVG",
+        "html": "<p>Для схем, графиков и логотипов используйте формат <code>.svg</code>: при любом значении <code>width</code> он сохраняет идеальную векторную четкость без пикселей.</p>"
+      },
+      {
+        "title": "Пустые строки вокруг HTML",
+        "html": "<p>Всегда отделяйте теги <code>&lt;p align=\"center\"&gt;</code> и <code>&lt;img&gt;</code> пустыми строками от предшествующего и последующего Markdown-текста.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "software-screenshots-report-gost-caption",
+    "batch": 2,
+    "title": "Как правильно оформлять скриншоты программ в отчете ГОСТ",
+    "pageTitle": "Нумерация скриншотов в отчете ГОСТ: подпись под рисунком — Labkeeper",
+    "metaDescription": "Как оформлять скриншоты в отчете по ГОСТ 7.32: правильная нумерация скриншотов в отчете, подпись под рисунком, рамки, обрезка лишнего в Labkeeper.",
+    "breadcrumbTitle": "Скриншоты в отчетах по ГОСТ",
+    "h1": "Как правильно оформлять скриншоты программ в&nbsp;отчете ГОСТ",
+    "categories": [
+      "labs"
+    ],
+    "keywords": [
+      "нумерация скриншотов в отчете гост",
+      "подпись под рисунком со скриншотом"
+    ],
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-05",
+    "readingTime": "7 мин",
+    "cardTitle": "Скриншоты программ в студенческих отчетах и дипломах по ГОСТ 7.32",
+    "cardDescription": "Требования нормоконтроля к иллюстрациям интерфейсов: статус рисунка, читаемость шрифтов, кадрирование панели задач и правильные подрисуночные подписи.",
+    "sliderTitle": "Оформление скриншотов по ГОСТ",
+    "sliderText": "Нумерация скриншотов, подписи под рисунками, кадрирование окон по ГОСТ 7.32.",
+    "sidebarText": "Верстайте отчеты по IT-лабораторным с аккуратными иллюстрациями в онлайн-редакторе Labkeeper.",
+    "ctaTitle": "Сдавайте отчеты по программированию в&nbsp;Labkeeper",
+    "ctaText": "Онлайн-редактор с шаблонами отчетов по ГОСТ, автоматической нумерацией рисунков и быстрым рендерингом PDF.",
+    "toc": [
+      {
+        "id": "gost-status",
+        "title": "Статус скриншота в ГОСТ 7.32-2017: это всегда «Рисунок»"
+      },
+      {
+        "id": "numbering-rules",
+        "title": "Нумерация скриншотов в отчете гост: сквозная и по разделам"
+      },
+      {
+        "id": "caption-format",
+        "title": "Подпись под рисунком со скриншотом: точка, тире и кавычки"
+      },
+      {
+        "id": "screenshot-hygiene",
+        "title": "Культура скриншотов: что категорически запрещено показывать"
+      },
+      {
+        "id": "latex-figure-snippet",
+        "title": "Шаблон вставки скриншота в LaTeX с рамкой"
+      }
+    ],
+    "sections": [
+      {
+        "id": "gost-status",
+        "title": "Статус скриншота в ГОСТ 7.32-2017: это всегда «Рисунок»",
+        "html": "                        <p>В академических и инженерных стандартах РФ не существует терминов «скриншот», «снимок экрана» или «иллюстрация интерфейса». Любое графическое изображение — будь то фото осциллографа, окно веб-браузера или консоль Linux — именуется строго словом <strong>«Рисунок»</strong>.</p>\n                        <p>Нельзя писать <em>«Скриншот 1»</em> или <em>«Снимок экрана программы»</em>. Использование слова «Скриншот» в заголовке — грубейшая ошибка, приводящая к возврату диплома нормоконтролем.</p>"
+      },
+      {
+        "id": "numbering-rules",
+        "title": "Нумерация скриншотов в отчете гост: сквозная и по разделам",
+        "html": "                        <p>Каноническая <strong>нумерация скриншотов в отчете гост</strong> подчиняется общим правилам <a href=\"/blog/figure-double-numbering-chapters-gost\">двойной нумерации рисунков по главам по ГОСТ</a>:</p>\n                        <ul>\n                            <li><strong>В лабораторных отчетах:</strong> сквозная арабскими цифрами — <em>Рисунок 1</em>, <em>Рисунок 2</em>, <em>Рисунок 3</em>.</li>\n                            <li><strong>В дипломных записках и ВКР:</strong> по разделам — <em>Рисунок 2.1</em> (первый рисунок второй главы), <em>Рисунок 2.2</em>, <em>Рисунок 3.1</em>.</li>\n                            <li>На каждый скриншот в предшествующем тексте обязана присутствовать ссылка: <em>«Внешний вид окна аутентификации приведен на рисунке 2.3»</em>.</li>\n                        </ul>"
+      },
+      {
+        "id": "caption-format",
+        "title": "Подпись под рисунком со скриншотом: точка, тире и кавычки",
+        "html": "                        <p>Правильная <strong>подпись под рисунком со скриншотом</strong> центрируется под изображением и оформляется строго по ГОСТ:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">Эталон подписи</span></div>\n                            <pre><code>Рисунок 2.4 — Главное окно программного модуля расчета траектории</code></pre>\n                        </div>\n                        <p>Обратите внимание на детали:</p>\n                        <ul>\n                            <li>Слово «Рисунок» пишется полностью (не «Рис.»);</li>\n                            <li>После номера ставится длинное тире с пробелами <code> — </code>;</li>\n                            <li>Название пишется с заглавной буквы;</li>\n                            <li><strong>В конце подписи точка НЕ ставится</strong>.</li>\n                        </ul>"
+      },
+      {
+        "id": "screenshot-hygiene",
+        "title": "Культура скриншотов: что категорически запрещено показывать",
+        "html": "                        <p>Правила профессиональной подготовки изображений для отчетов (для программного кода не используйте скриншоты — применяйте <a href=\"/blog/programming-lab-report-code-listings-gost\">оформление листингов кода в лабораторных по ГОСТ</a>):</p>\n                        <ul>\n                            <li><strong>Обрезайте панель задач Windows/macOS:</strong> часы, значки Telegram, торренты и вкладки браузера на скриншоте выглядят крайне неряшливо. Захватывайте только рабочее окно программы (сочетание Alt + PrintScreen).</li>\n                            <li><strong>Используйте светлую тему оформления:</strong> скриншоты в черной теме IDE расходуют картридж принтера и превращаются на бумаге в нечитаемое черное пятно.</li>\n                            <li><strong>Масштаб шрифта:</strong> если текст в консоли или таблице не читается при масштабе 100% на листе А4, увеличьте шрифт в программе перед созданием снимка.</li>\n                        </ul>"
+      },
+      {
+        "id": "latex-figure-snippet",
+        "title": "Шаблон вставки скриншота в LaTeX с рамкой",
+        "html": "                        <p>Если фон скриншота белый, он может визуально сливаться с белым листом бумаги. Оберните его в тонкую рамку через команду <code>\\fbox</code>:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\begin{figure}[htbp]\n    \\centering\n    \\setlength{\\fboxsep}{1pt}\n    \\setlength{\\fboxrule}{0.5pt}\n    \\fbox{\\includegraphics[width=0.85\\textwidth]{gui-window.png}}\n    \\caption{Интерфейс модуля визуализации телеметрии}\n    \\label{fig:gui-telemetry}\n\\end{figure}</code></pre>\n                        </div>"
+      }
+    ],
+    "tips": [
+      {
+        "title": "Формат без сжатия PNG",
+        "html": "<p>Всегда сохраняйте скриншоты в формате PNG. Формат JPEG сжимает текст с артефактами и «мылом» вокруг букв.</p>"
+      },
+      {
+        "title": "Стрелки и акценты",
+        "html": "<p>Если нужно обратить внимание преподавателя на кнопку, используйте красную стрелку или аккуратную рамку толщиной 2–3 пикселя.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "formula-variable-explanation-where-gost",
+    "batch": 2,
+    "title": "Вывод формул с описанием переменных («где x — это...») по ГОСТ",
+    "pageTitle": "Как писать пояснения к формуле ГОСТ: оформление расшифровки формул — Labkeeper",
+    "metaDescription": "Как писать пояснения к формуле по ГОСТ 7.32: оформление расшифровки формул в отчете, слово где без двоеточия, тире и единицы измерения в Labkeeper.",
+    "breadcrumbTitle": "Пояснения к формулам по ГОСТ («где x — это»)",
+    "h1": "Вывод формул с&nbsp;описанием переменных («где x&nbsp;— это...») по&nbsp;ГОСТ",
+    "categories": [
+      "labs",
+      "diploma"
+    ],
+    "keywords": [
+      "как писать пояснения к формуле гост",
+      "оформление расшифровки формул в отчете"
+    ],
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-05",
+    "readingTime": "6 мин",
+    "cardTitle": "Пояснение переменных в формулах по ГОСТ 7.32: правила и шаблон LaTeX",
+    "cardDescription": "Как оформлять блок «где»: почему после слова «где» нельзя ставить двоеточие, порядок перечисления переменных, знаки препинания и единицы измерений.",
+    "sliderTitle": "Пояснения к формулам по ГОСТ («где...»)",
+    "sliderText": "Слово «где» без двоеточия, тире, единицы измерений и порядок переменных.",
+    "sidebarText": "Оформляйте математические выкладки по строгому академическому стандарту в Labkeeper.",
+    "ctaTitle": "Вёрстка строгих отчетов в&nbsp;Labkeeper",
+    "ctaText": "Онлайн-редактор с шаблонами пояснений к формулам по ГОСТ и проверкой математической типографики.",
+    "toc": [
+      {
+        "id": "rules",
+        "title": "Что требует ГОСТ 7.32-2017 к блоку пояснений"
+      },
+      {
+        "id": "how-to-write",
+        "title": "Как писать пояснения к формуле гост: классический синтаксис"
+      },
+      {
+        "id": "formatting-details",
+        "title": "Оформление расшифровки формул в отчете: знаки препинания и точки с запятой"
+      },
+      {
+        "id": "latex-snippets",
+        "title": "Готовые шаблоны в LaTeX (список description и таблица tabular)"
+      },
+      {
+        "id": "frequent-errors",
+        "title": "Топ-5 ошибок, на которых срезают на нормоконтроле"
+      }
+    ],
+    "sections": [
+      {
+        "id": "rules",
+        "title": "Что требует ГОСТ 7.32-2017 к блоку пояснений",
+        "html": "                        <p>В научно-технических отчетах и дипломных работах каждая введенная формула должна сопровождаться расшифровкой входящих в нее буквенных обозначений, если они не были пояснены ранее в тексте.</p>\n                        <blockquote>\n                            «Пояснение значений символов и числовых коэффициентов следует приводить непосредственно под формулой в той же последовательности, в которой они даны в формуле. Первая строка пояснения должна начинаться со слова «где» <strong>без двоеточия</strong> после него».\n                        </blockquote>"
+      },
+      {
+        "id": "how-to-write",
+        "title": "Как писать пояснения к формуле гост: классический синтаксис",
+        "html": "                        <p>Запомните главное правило того, <strong>как писать пояснения к формуле гост</strong> (наряду с требованиями к <a href=\"/blog/formula-numbering-lab-reports-gost\">нумерации формул в лабораторных отчетах</a>):</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">Эталонный образец</span></div>\n                            <pre><code>Расчет давления газа производится по формуле:\nP = (n * R * T) / V,                                                     (2.1)\nгде P — абсолютное давление газа, Па;\n    n — количество вещества, моль;\n    R — универсальная газовая постоянная, равная 8.314 Дж/(моль·К);\n    T — термодинамическая температура, К;\n    V — объем сосуда, м³.</code></pre>\n                        </div>\n                        <p>Слово «где» пишется строчными буквами с красной строки, после него двоеточие <strong>не ставится</strong>, а сами переменные идут строго в том порядке, в каком они появляются в числителе и знаменателе формулы слева направо.</p>"
+      },
+      {
+        "id": "formatting-details",
+        "title": "Оформление расшифровки формул в отчете: знаки препинания и точки с запятой",
+        "html": "                        <p>Правильное <strong>оформление расшифровки формул в отчете</strong> включает следующие микродетали:</p>\n                        <ul>\n                            <li>Между символом переменной и его словесным описанием ставится длинное тире <code> — </code>;</li>\n                            <li>В конце каждого пояснения ставится запятая перед единицей измерения, а в конце строки — точка с запятой <code>;</code>;</li>\n                            <li>В самом последнем пункте перечисления ставится точка <code>.</code>;</li>\n                            <li>Если переменная уже расшифровывалась выше по тексту, повторно вносить ее в блок «где» не требуется.</li>\n                        </ul>"
+      },
+      {
+        "id": "latex-snippets",
+        "title": "Готовые шаблоны в LaTeX (список description и таблица tabular)",
+        "html": "                        <p>В LaTeX для аккуратного выравнивания тире в столбик используют компактную таблицу <code>tabular</code> без рамок (а для набора размерностей рекомендуем использовать <a href=\"/blog/latex-siunitx\">пакет siunitx для физических величин</a>):</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\begin{equation}\n    F = G \\frac{m_1 m_2}{r^2},\n    \\label{eq:gravity}\n\\end{equation}\n\\noindent где~\\begin{tabular}[t]{@{}l@{ — }p{0.8\\textwidth}@{}}\n$F$   & сила гравитационного взаимодействия, Н;\\\\\n$G$   & гравитационная постоянная, $G \\approx 6{,}674 \\cdot 10^{-11}$~м$^3$/(кг$\\cdot$с$^2$);\\\\\n$m_1, m_2$ & массы взаимодействующих тел, кг;\\\\\n$r$   & расстояние между центрами масс тел, м.\n\\end{tabular}</code></pre>\n                        </div>\n                        <p>Конструкция <code>@{}l@{ — }p{...}</code> автоматически ставит длинное тире между колонками и обеспечивает аккуратный перенос длинного текста расшифровки.</p>"
+      },
+      {
+        "id": "frequent-errors",
+        "title": "Топ-5 ошибок, на которых срезают на нормоконтроле",
+        "html": "                        <p>Самые частые замечания проверяющих:</p>\n                        <ol>\n                            <li>Двоеточие после слова «где» (<em>«где:»</em> — грубая ошибка!);</li>\n                            <li>Слово «Где» с заглавной буквы (должно быть со строчной: «где»);</li>\n                            <li>Отсутствие запятой перед формулой (сама формула является частью предложения!);</li>\n                            <li>Перечисление переменных в случайном алфавитном порядке вместо порядка появления в уравнении;</li>\n                            <li>Пропуск размерностей (единиц измерения СИ).</li>\n                        </ol>"
+      }
+    ],
+    "tips": [
+      {
+        "title": "Неразрывный пробел перед тильдой",
+        "html": "<p>Всегда пишите <code>где~\\begin{tabular}...</code>, чтобы слово «где» не оторвалось от таблицы на другую страницу.</p>"
+      },
+      {
+        "title": "Единицы измерения по ГОСТ 8.417",
+        "html": "<p>Для набора размерностей используйте прямое начертание шрифта: <code>м/с</code> или <code>\\text{кг}</code>, а не математический курсив <em>kg</em>.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "lab-report-bibliography-gost-2008",
+    "batch": 2,
+    "title": "Оформление списка используемой литературы ГОСТ 2008 в лабораторной",
+    "pageTitle": "Список литературы ГОСТ 2008 онлайн: как оформить источники — Labkeeper",
+    "metaDescription": "Список литературы ГОСТ Р 7.0.5-2008 онлайн: как оформить источники в лабораторной работе, примеры библиографических ссылок, книг и статей в Labkeeper.",
+    "breadcrumbTitle": "Библиография по ГОСТ 2008 в лабораторной",
+    "h1": "Оформление списка используемой литературы ГОСТ 2008 в&nbsp;лабораторной",
+    "categories": [
+      "labs"
+    ],
+    "keywords": [
+      "список литературы гост 2008 онлайн",
+      "как оформить источники в лабораторной"
+    ],
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-05",
+    "readingTime": "7 мин",
+    "cardTitle": "Список литературы по ГОСТ Р 7.0.5-2008 в студенческих лабораторных работах",
+    "cardDescription": "Как быстро составить библиографический список по ГОСТ 2008: методички кафедры, ГОСТы, учебники, интернет-ссылки, примеры для отчетов физиков и программистов.",
+    "sliderTitle": "Список источников по ГОСТ 2008",
+    "sliderText": "Стандарт ГОСТ Р 7.0.5-2008, оформление методичек, книг и статей в отчетах.",
+    "sidebarText": "Формируйте список литературы по ГОСТ 2008 в один клик в онлайн-редакторе Labkeeper.",
+    "ctaTitle": "Оформляйте источники по ГОСТ в&nbsp;Labkeeper",
+    "ctaText": "Онлайн-редактор с шаблонами библиографических списков, поддержкой BibLaTeX и автоматической нумерацией.",
+    "toc": [
+      {
+        "id": "standard-difference",
+        "title": "Особенности ГОСТ Р 7.0.5-2008 по сравнению с ГОСТ 7.1"
+      },
+      {
+        "id": "how-to-format",
+        "title": "Как оформить источники в лабораторной: базовые правила"
+      },
+      {
+        "id": "examples-2008",
+        "title": "Список литературы гост 2008 онлайн: образцы записей"
+      },
+      {
+        "id": "citation-styles",
+        "title": "Оформление отсылок в тексте ([1], [1, c. 15])"
+      },
+      {
+        "id": "latex-ready",
+        "title": "Готовый шаблон списка thebibliography в LaTeX"
+      }
+    ],
+    "sections": [
+      {
+        "id": "standard-difference",
+        "title": "Особенности ГОСТ Р 7.0.5-2008 по сравнению с ГОСТ 7.1",
+        "html": "                        <p>В отличие от традиционного библиотечного формата (см. подробнее о <a href=\"/blog/lab-report-bibliography-gost-7-1\">списке литературы по ГОСТ 7.1 в отчетах</a>), национальный стандарт <strong>ГОСТ Р 7.0.5-2008</strong> («Библиографическая ссылка. Общие требования») разработан специально для научных статей, студенческих отчетов и диссертаций.</p>\n                        <p>Главное преимущество стандарта 2008 года — лаконичность: здесь не требуется обязательное указание знака «точка и тире» между областями описания, разрешено сокращать второстепенные сведения об ответственности и значительно проще описывать электронные ресурсы.</p>"
+      },
+      {
+        "id": "how-to-format",
+        "title": "Как оформить источники в лабораторной: базовые правила",
+        "html": "                        <p>Разберем практические шаги, <strong>как оформить источники в лабораторной</strong> на отлично:</p>\n                        <ol>\n                            <li><strong>Объем списка:</strong> для стандартного лабораторного отчета достаточно от 2 до 5 источников (методические указания к работе + базовый учебник физики/программирования + ГОСТ на используемую методику или <a href=\"/blog/electronic-resources-bibliography-gost-7-0-100\">электронные ресурсы по ГОСТ 7.0.100</a>).</li>\n                            <li><strong>Порядок следования:</strong> строго в порядке первого упоминания в тексте отчета.</li>\n                            <li><strong>Связь с текстом:</strong> каждый пункт списка обязан иметь минимум одну отсылку в квадратных скобках <code>[1]</code> внутри теоретической или расчетной части отчета.</li>\n                        </ol>"
+      },
+      {
+        "id": "examples-2008",
+        "title": "Список литературы гост 2008 онлайн: образцы записей",
+        "html": "                        <p>Эталонный <strong>список литературы гост 2008 онлайн</strong> для типичного отчета:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">Примеры по ГОСТ Р 7.0.5-2008</span></div>\n                            <pre><code>1. Методические указания к лабораторной работе № 3 «Изучение затухающих колебаний» / сост. В. И. Петров, А. С. Кузнецов. — СПб. : Изд-во Политехн. ун-та, 2024. — 16 с.\n\n2. Трофимова Т. И. Курс физики : учеб. пособие для вузов. — 11-е изд., стер. — М. : Академия, 2006. — 560 с.\n\n3. ГОСТ 8.207-76. Прямые измерения с многократными наблюдениями. Методы обработки результатов наблюдений. — М. : Изд-во стандартов, 1977. — 10 с.\n\n4. Python 3.12 Documentation [Электронный ресурс]. — URL: https://docs.python.org/3/ (дата обращения: 01.09.2026).</code></pre>\n                        </div>"
+      },
+      {
+        "id": "citation-styles",
+        "title": "Оформление отсылок в тексте ([1], [1, c. 15])",
+        "html": "                        <p>В тексте отчета ссылка заключается в квадратные скобки без слова «источник»:</p>\n                        <ul>\n                            <li><code>...в соответствии с теорией [2]...</code> — общая ссылка на учебник;</li>\n                            <li><code>...согласно формуле (3.14) в [1, с. 8]...</code> — точная ссылка с указанием страницы;</li>\n                            <li><code>...в работах [1, 3, 5]...</code> — группа независимых источников через запятую.</li>\n                        </ul>"
+      },
+      {
+        "id": "latex-ready",
+        "title": "Готовый шаблон списка thebibliography в LaTeX",
+        "html": "                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\begin{thebibliography}{9}\n    \\bibitem{metod}\n    Методические указания к~лабораторной работе №~3~: сост. В.~И.~Петров. --- СПб.~: СПбПУ, 2024. --- 16~с.\n\n    \\bibitem{trofimova}\n    Трофимова, Т.~И. Курс физики~: учеб. пособие. --- М.~: Академия, 2006. --- 560~с.\n\\end{thebibliography}</code></pre>\n                        </div>"
+      }
+    ],
+    "tips": [
+      {
+        "title": "Не ставьте пустой список",
+        "html": "<p>Преподаватели снижают балл, если в списке литературы указаны книги, на которые нет ни одной ссылки в тексте отчета.</p>"
+      },
+      {
+        "title": "Свежесть источников",
+        "html": "<p>Для лабораторных по IT-дисциплинам проверяйте, чтобы документация и книги были не старше 3–5 лет.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "master-thesis-title-page-gost",
+    "batch": 2,
+    "title": "Оформление титульного листа магистерской диссертации ГОСТ",
+    "pageTitle": "Титульный лист магистерской ВКР ГОСТ: шаблон титульника скачать — Labkeeper",
+    "metaDescription": "Титульный лист магистерской ВКР по ГОСТ 7.32: скачать готовый шаблон титульника диссертации магистра, реквизиты кафедры, шифр специальности в Labkeeper.",
+    "breadcrumbTitle": "Титульный лист магистерской ВКР по ГОСТ",
+    "h1": "Оформление титульного листа магистерской диссертации ГОСТ",
+    "categories": [
+      "diploma"
+    ],
+    "keywords": [
+      "титульный лист магистерской вкр гост",
+      "шаблон титульника диссертации скачать"
+    ],
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-05",
+    "readingTime": "7 мин",
+    "cardTitle": "Титульный лист магистерской диссертации: требования ГОСТ и шаблон LaTeX",
+    "cardDescription": "Как правильно оформить первую страницу магистерской ВКР: направление подготовки, код специальности 09.04.01, гриф допуска к защите, реквизиты научного руководителя.",
+    "sliderTitle": "Титульный лист магистерской ВКР",
+    "sliderText": "Стандарты оформления магистратуры, гриф допуска, коды направлений подготовки.",
+    "sidebarText": "Соберите титульный лист магистерской диссертации по строгим нормам вуза в Labkeeper.",
+    "ctaTitle": "Готовьте магистерскую ВКР в&nbsp;Labkeeper",
+    "ctaText": "Онлайн-редактор с шаблонами магистерских диссертаций ведущих университетов РФ и моментальным экспортом в PDF.",
+    "toc": [
+      {
+        "id": "requirements",
+        "title": "Отличия титульного листа магистратуры от бакалавриата"
+      },
+      {
+        "id": "structure",
+        "title": "Титульный лист магистерской вкр гост: обязательные блоки"
+      },
+      {
+        "id": "latex-template",
+        "title": "Шаблон титульника диссертации скачать: готовый код LaTeX"
+      },
+      {
+        "id": "signature-block",
+        "title": "Блок виз и подписей: научный руководитель, рецензент, зав. кафедрой"
+      },
+      {
+        "id": "check-list",
+        "title": "Чек-лист перед печатью чистовика"
+      }
+    ],
+    "sections": [
+      {
+        "id": "requirements",
+        "title": "Отличия титульного листа магистратуры от бакалавриата",
+        "html": "                        <p>В отличие от бакалаврской выпускной квалификационной работы, магистерская ВКР официально именуется <strong>«Магистерская диссертация»</strong>. К ней предъявляются повышенные академические требования (подобно строгим правилам при <a href=\"/blog/latex-dissertation\">подготовке кандидатской диссертации в LaTeX</a>):</p>\n                        <ul>\n                            <li>Обязательное указание кода и наименования направления подготовки (например, <em>09.04.01 «Информатика и вычислительная техника»</em>);</li>\n                            <li>Указание наименования магистерской программы (профиля): например, <em>«Интеллектуальные системы обработки информации»</em>;</li>\n                            <li>Наличие официального грифа «К защите допустить» с подписью заведующего выпускающей кафедрой;</li>\n                            <li>Указание ученой степени и звания научного руководителя (д-р техн. наук, профессор).</li>\n                        </ul>"
+      },
+      {
+        "id": "structure",
+        "title": "Титульный лист магистерской вкр гост: обязательные блоки",
+        "html": "                        <p>Канонический <strong>титульный лист магистерской вкр гост</strong> компонуется по четырем смысловым ярусам (в отличие от более простых <a href=\"/blog/essay-report-titlepage-format\">титульных листов студенческих рефератов и отчетов</a>):</p>\n                        <ol>\n                            <li><strong>Шапка:</strong> Минобрнауки РФ, полное наименование вуза, институт/факультет, кафедра.</li>\n                            <li><strong>Гриф допуска:</strong> в правом верхнем углу блок «К защите допустить / Зав. кафедрой / подпись, дата».</li>\n                            <li><strong>Центральный блок:</strong> крупным шрифтом МАГИСТЕРСКАЯ ДИССЕРТАЦИЯ, тема работы в кавычках, направление подготовки и магистерская программа.</li>\n                            <li><strong>Сведения об авторе и руководителях:</strong> ФИО магистранта, данные руководителя и внешнего рецензента.</li>\n                            <li><strong>Город и год:</strong> строго по центру внизу листа.</li>\n                        </ol>"
+      },
+      {
+        "id": "latex-template",
+        "title": "Шаблон титульника диссертации скачать: готовый код LaTeX",
+        "html": "                        <p>Ниже приведен эталонный код, где можно сразу <strong>шаблон титульника диссертации скачать</strong> и вставить в проект:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\begin{titlepage}\n\\thispagestyle{empty}\n\\begin{center}\n    {\\small МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ}\\\\[2mm]\n    {\\bfseries САНКТ-ПЕТЕРБУРГСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ}\\\\[3mm]\n    {\\small Институт информационных технологий и анализа данных}\\\\\n    {\\small Кафедра системного программирования}\n\\end{center}\n\n\\vspace{5mm}\n\\hfill\n\\begin{minipage}{0.42\\textwidth}\n    \\small\n    \\textbf{К ЗАЩИТЕ ДОПУСТИТЬ}\\\\\n    Зав. кафедрой, д.т.н., проф.\\\\\n    \\underline{\\hspace{2.5cm}} А.~В.~Смирнов\\\\\n    «\\underline{\\hspace{0.8cm}}» \\underline{\\hspace{2cm}} 2026 г.\n\\end{minipage}\n\n\\vfill\n\\begin{center}\n    {\\Large\\bfseries МАГИСТЕРСКАЯ ДИССЕРТАЦИЯ}\\\\[5mm]\n    {\\large на тему: «Методы распределенного машинного обучения в гетерогенных вычислительных средах»}\\\\[6mm]\n    {\\small Направление подготовки: 09.04.01 Информатика и вычислительная техника\\\\\n    Магистерская программа: Распределенные интеллектуальные системы}\n\\end{center}\n\n\\vfill\n\\hfill\n\\begin{minipage}{0.45\\textwidth}\n    \\small\n    \\textbf{Выполнил магистрант:}\\\\\n    Кузнецов Михаил Сергеевич\\\\\n    Группа: 22.М04-мм\\\\[3mm]\n    \\textbf{Научный руководитель:}\\\\\n    д-р физ.-мат. наук, профессор\\\\\n    Васильев Олег Игоревич\n\\end{minipage}\n\n\\vfill\n\\begin{center}\n    Санкт-Петербург\\\\\n    2026\n\\end{center}\n\\end{titlepage}</code></pre>\n                        </div>"
+      },
+      {
+        "id": "signature-block",
+        "title": "Блок виз и подписей: научный руководитель, рецензент, зав. кафедрой",
+        "html": "                        <p>В некоторых университетах на титульном листе диссертации также размещается графа нормоконтролера: <em>«Нормоконтроль пройден / подпись / дата»</em>. Обязательно сверьтесь с образцом в методичке вашей кафедры перед печатью.</p>"
+      },
+      {
+        "id": "check-list",
+        "title": "Чек-лист перед печатью чистовика",
+        "html": "                        <p>Перед сдачей диссертации убедитесь:</p>\n                        <ul>\n                            <li>Тема на титульном листе <strong>буква в букву</strong> совпадает с темой в приказе ректора о допуске к защите;</li>\n                            <li>Код специальности указан в формате ХХ.04.ХХ (для магистратуры цифра ступени всегда 04);</li>\n                            <li>На титульном листе нет видимого номера страницы (скрыт через <code>\\thispagestyle{empty}</code>).</li>\n                        </ul>"
+      }
+    ],
+    "tips": [
+      {
+        "title": "Точные поля титульного листа",
+        "html": "<p>По ГОСТ 7.32 левое поле равно 30 мм (под твердый переплет диссертации), правое — 15 мм, верхнее и нижнее — по 20 мм.</p>"
+      },
+      {
+        "title": "Цвет печати",
+        "html": "<p>Титульный лист печатается строго в монохромном режиме (черным цветом по белой плотной бумаге плотностью не менее 80 г/м²).</p>"
+      }
+    ]
+  },
+  {
+    "slug": "legal-regulatory-acts-bibliography-diploma-gost",
+    "batch": 2,
+    "title": "Как оформить список нормативно-правовых актов в ВКР",
+    "pageTitle": "Список нормативных актов в дипломе ГОСТ: оформление законов — Labkeeper",
+    "metaDescription": "Как составить список нормативных актов в дипломе по ГОСТ: оформление законов в списке литературы, Конституция, кодексы, приказы, правила иерархии в Labkeeper.",
+    "breadcrumbTitle": "Нормативно-правовые акты в списке по ГОСТ",
+    "h1": "Как оформить список нормативно-правовых актов в&nbsp;ВКР",
+    "categories": [
+      "diploma"
+    ],
+    "keywords": [
+      "список нормативных актов в дипломе гост",
+      "оформление законов в списке литературы"
+    ],
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-05",
+    "readingTime": "7 мин",
+    "cardTitle": "Нормативно-правовые акты в списке литературы по ГОСТ: иерархия и примеры",
+    "cardDescription": "Правила библиографического описания законов, кодексов, указов президента, ГОСТов и СП: строгая юридическая субординация и шаблоны оформления в ВКР.",
+    "sliderTitle": "Нормативные акты в списке по ГОСТ",
+    "sliderText": "Иерархия законов, Конституция, кодексы, ГОСТы и правила описания.",
+    "sidebarText": "Верстайте дипломные работы по праву, экономике и менеджменту со строгим нормоконтролем в Labkeeper.",
+    "ctaTitle": "Оформляйте списки законов в&nbsp;Labkeeper",
+    "ctaText": "Онлайн-редактор с шаблонами юридической библиографии и поддержкой сложных многоуровневых списков.",
+    "toc": [
+      {
+        "id": "legal-hierarchy",
+        "title": "Юридическая сила и порядок перечисления законов"
+      },
+      {
+        "id": "acts-in-diploma",
+        "title": "Список нормативных актов в дипломе гост: строгая иерархия"
+      },
+      {
+        "id": "laws-formatting",
+        "title": "Оформление законов в списке литературы: Конституция, ФЗ, приказы"
+      },
+      {
+        "id": "electronic-databases",
+        "title": "Ссылки на системы КонсультантПлюс и Гарант"
+      },
+      {
+        "id": "latex-subsections",
+        "title": "Как разделить список литературы на разделы в LaTeX"
+      }
+    ],
+    "sections": [
+      {
+        "id": "legal-hierarchy",
+        "title": "Юридическая сила и порядок перечисления законов",
+        "html": "                        <p>В дипломных работах по юриспруденции, государственному управлению, экономике и информационной безопасности список литературы традиционно открывается разделом нормативно-правовых актов (НПА), что тесно связано с <a href=\"/blog/footnotes-bottom-page-law-history-coursework-gost\">постраничными сносками в курсовых работах по праву</a>.</p>\n                        <p>Главное правило нормоконтроля: нормативные акты перечисляются <strong>не по алфавиту, а строго по их юридической силе</strong> от высших к низшим. Нарушение субординации (например, помещение ведомственного приказа выше Федерального закона) считается грубой ошибкой.</p>"
+      },
+      {
+        "id": "acts-in-diploma",
+        "title": "Список нормативных актов в дипломе гост: строгая иерархия",
+        "html": "                        <p>Канонический <strong>список нормативных актов в дипломе гост</strong> строится в следующей последовательности:</p>\n                        <ol>\n                            <li>Международные договоры и конвенции, ратифицированные РФ;</li>\n                            <li>Конституция Российской Федерации;</li>\n                            <li>Федеральные конституционные законы (ФКЗ);</li>\n                            <li>Кодексы РФ (в алфавитном порядке);</li>\n                            <li>Федеральные законы РФ (ФЗ) — в хронологическом порядке принятия;</li>\n                            <li>Указы и распоряжения Президента РФ;</li>\n                            <li>Постановления и распоряжения Правительства РФ;</li>\n                            <li>Акты министерств и ведомств (приказы Минцифры, Минобрнауки);</li>\n                            <li>Региональные законы и постановления субъектов РФ;</li>\n                            <li>Государственные стандарты (ГОСТ, СП, СНиП).</li>\n                        </ol>"
+      },
+      {
+        "id": "laws-formatting",
+        "title": "Оформление законов в списке литературы: Конституция, ФЗ, приказы",
+        "html": "                        <p>Ниже представлены проверенные образцы (<strong>оформление законов в списке литературы</strong> по актуальному ГОСТ Р 7.0.100-2018):</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">Примеры описания законов</span></div>\n                            <pre><code>1. Конституция Российской Федерации : принята всенародным голосованием 12 декабря 1993 г. : с изменениями, одобренными в ходе общероссийского голосования 01 июля 2020 г. — Москва, 2024.\n\n2. Гражданский кодекс Российской Федерации (часть первая) : Федеральный закон от 30 ноября 1994 г. № 51-ФЗ : в редакции от 24 июля 2023 г. // Собрание законодательства РФ. — 1994. — № 32. — Ст. 3301.\n\n3. Об информации, информационных технологиях и о защите информации : Федеральный закон от 27 июля 2006 г. № 149-ФЗ : в редакции от 12 декабря 2023 г. // Российская газета. — 2006. — 29 июля.</code></pre>\n                        </div>"
+      },
+      {
+        "id": "electronic-databases",
+        "title": "Ссылки на системы КонсультантПлюс и Гарант",
+        "html": "                        <p>Если закон взят из справочно-правовых систем, в конце описания указывают источник доступа (по общим правилам <a href=\"/blog/electronic-resources-bibliography-gost-7-0-100\">описания электронных ресурсов по ГОСТ 7.0.100</a>):</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">Ссылка на СПС</span></div>\n                            <pre><code>4. О персональных данных : Федеральный закон от 27 июля 2006 г. № 152-ФЗ // СПС «КонсультантПлюс» : [сайт]. — URL: https://www.consultant.ru/document/cons_doc_LAW_61801/ (дата обращения: 02.09.2026).</code></pre>\n                        </div>"
+      },
+      {
+        "id": "latex-subsections",
+        "title": "Как разделить список литературы на разделы в LaTeX",
+        "html": "                        <p>В LaTeX для создания структурированного списка с подзаголовками «1. Нормативные правовые акты» и «2. Научная литература» используют пакет <code>biblatex</code> с фильтрами по категориям <code>\\printbibliography[type=legislation, title={Нормативные акты}]</code>.</p>"
+      }
+    ],
+    "tips": [
+      {
+        "title": "Обязательное указание редакции",
+        "html": "<p>Всегда указывайте актуальную редакцию закона (<em>«в ред. от ДД.ММ.ГГГГ»</em>), чтобы нормоконтролер видел, что вы анализировали действующую версию документа.</p>"
+      },
+      {
+        "title": "Сквозная нумерация списка",
+        "html": "<p>Даже если список разбит на подразделы (НПА, монографии, сайты), нумерация пунктов [1], [2], [3]... должна оставаться единой сквозной от начала до конца.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "literature-review-structure-diploma-citation",
+    "batch": 2,
+    "title": "Разметка литературного обзора в курсовой и дипломной работе",
+    "pageTitle": "Структура литературного обзора диплом: ссылки в обзоре литературы — Labkeeper",
+    "metaDescription": "Структура литературного обзора в дипломе по ГОСТ: как написать аналитический обзор, оформление ссылок в обзоре литературы, синтез источников в Labkeeper.",
+    "breadcrumbTitle": "Литературный обзор в дипломе и ВКР",
+    "h1": "Разметка литературного обзора в&nbsp;курсовой и&nbsp;дипломной работе",
+    "categories": [
+      "diploma",
+      "articles"
+    ],
+    "keywords": [
+      "структура литературного обзора диплом",
+      "оформление ссылок в обзоре литературы"
+    ],
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-05",
+    "readingTime": "8 мин",
+    "cardTitle": "Литературный обзор в дипломной работе: композиция и техника цитирования",
+    "cardDescription": "Как превратить обзор источников из скучного реферата в убедительное научное обоснование темы: аналитическое сравнение методов, оформление ссылок и матрица синтеза.",
+    "sliderTitle": "Литературный обзор в дипломе и ВКР",
+    "sliderText": "Структура главы 1, аналитическое цитирование и выявление пробела в науке.",
+    "sidebarText": "Пишите глубокие аналитические обзоры литературы без плагиата в редакторе Labkeeper.",
+    "ctaTitle": "Создавайте сильные научные главы в&nbsp;Labkeeper",
+    "ctaText": "Онлайн-редактор с поддержкой BibTeX, автогенерацией перекрестных ссылок и проверкой академической стилистики.",
+    "toc": [
+      {
+        "id": "purpose",
+        "title": "Главная цель литературного обзора (Главы 1 ВКР)"
+      },
+      {
+        "id": "structure-rules",
+        "title": "Структура литературного обзора диплом: от общего к частному"
+      },
+      {
+        "id": "citation-formatting",
+        "title": "Оформление ссылок в обзоре литературы: синтез вместо пересказа"
+      },
+      {
+        "id": "comparison-matrices",
+        "title": "Сравнительные аналитические таблицы существующих решений"
+      },
+      {
+        "id": "conclusion-gap",
+        "title": "Формулирование «научного пробела» и постановка задач ВКР"
+      }
+    ],
+    "sections": [
+      {
+        "id": "purpose",
+        "title": "Главная цель литературного обзора (Главы 1 ВКР)",
+        "html": "                        <p>Первая глава дипломной или диссертационной работы («Аналитический обзор литературы» или «Анализ состояния предметной области») призвана доказать научную и практическую необходимость вашего исследования (аналогично тому, как формулируются <a href=\"/blog/scientific-article-annotation-abstract-keywords-vak\">аннотация и ключевые слова научной статьи ВАК</a>).</p>\n                        <p>Типичная ошибка студентов — превращать обзор в простое механическое перечисление: <em>«Иванов в [1] исследовал то-то, а Петров в [2] написал про это»</em>. Качественный обзор — это <strong>критический сравнительный анализ</strong> достоинств и недостатков существующих алгоритмов, методик или систем.</p>"
+      },
+      {
+        "id": "structure-rules",
+        "title": "Структура литературного обзора диплом: от общего к частному",
+        "html": "                        <p>Каноническая <strong>структура литературного обзора диплом</strong> строится по принципу сужающейся воронки (3 подраздела):</p>\n                        <ol>\n                            <li><strong>1.1. Современное состояние предметной области:</strong> глобальный контекст, отраслевые тренды, статистика и масштаб решаемой проблемы.</li>\n                            <li><strong>1.2. Анализ существующих подходов и аналогов:</strong> подробный разбор 3–5 альтернативных решений, используемых в индустрии или науке.</li>\n                            <li><strong>1.3. Выводы по первой главе и постановка задач:</strong> четкое резюме о том, каких возможностей не хватает существующим аналогам, и формулировка цели вашей дипломной работы.</li>\n                        </ol>"
+      },
+      {
+        "id": "citation-formatting",
+        "title": "Оформление ссылок в обзоре литературы: синтез вместо пересказа",
+        "html": "                        <p>Грамотное <strong>оформление ссылок в обзоре литературы</strong> использует группировку ученых по научным направлениям:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">Академический стиль цитирования</span></div>\n                            <pre><code>Вопросам оптимизации трафика в сенсорных сетях посвящены работы отечественных и зарубежных авторов. В частности, в исследованиях Смирнова А. В. [12] и Васильева К. М. [15] показано, что применение динамической кластеризации позволяет сократить энергопотребление на 20%. Однако алгоритмы [12, 15] обладают высокой вычислительной сложностью и неприменимы на маломощных микроконтроллерах STM32...</code></pre>\n                        </div>\n                        <p>Такой синтаксис демонстрирует глубокое владение материалом и подчеркивает ценность предлагаемой вами разработки, а автоматизировать подобные перекрестные отсылки помогает <a href=\"/blog/biblatex-biber-advanced-bibliography-management\">пакет biblatex и biber для управления библиографией</a>.</p>"
+      },
+      {
+        "id": "comparison-matrices",
+        "title": "Сравнительные аналитические таблицы существующих решений",
+        "html": "                        <p>Кульминация литературного обзора — сравнительная сводная таблица аналогов по ключевым критериям (производительность, стоимость, точность, поддержка ГОСТ). Наличие такой таблицы в первой главе гарантирует высокую оценку рецензента на защите.</p>"
+      },
+      {
+        "id": "conclusion-gap",
+        "title": "Формулирование «научного пробела» и постановка задач ВКР",
+        "html": "                        <p>В конце обзора формулируется вывод:</p>\n                        <blockquote>\n                            «Проведенный анализ показал, что существующие программные комплексы [1–6] не обеспечивают требуемую скорость обработки данных в реальном времени. Таким образом, разработка гибридного алгоритма сжатия является актуальной задачей».\n                        </blockquote>"
+      }
+    ],
+    "tips": [
+      {
+        "title": "Баланс свежести источников",
+        "html": "<p>Не менее 40–50% цитируемых научных статей должны быть опубликованы за последние 3–5 лет (Scopus, ВАК, РИНЦ).</p>"
+      },
+      {
+        "title": "Автоматические ссылки в LaTeX",
+        "html": "<p>Используйте <code>\\cite{smirnov2024, vasiliev2025}</code> — при перестановке абзацев номера в квадратных скобках обновятся автоматически.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "figure-double-numbering-chapters-gost",
+    "batch": 2,
+    "title": "Нумерация рисунков двойными цифрами (Рисунок 1.1) по ГОСТ",
+    "pageTitle": "Двойная нумерация рисунков ГОСТ ВКР: нумерация по главам диплом — Labkeeper",
+    "metaDescription": "Двойная нумерация рисунков по ГОСТ в ВКР: как настроить нумерацию Рисунок 1.1 по главам дипломной работы в LaTeX, счетчики chngcntr в Labkeeper.",
+    "breadcrumbTitle": "Двойная нумерация рисунков (Рисунок 1.1)",
+    "h1": "Нумерация рисунков двойными цифрами (Рисунок 1.1) по&nbsp;ГОСТ",
+    "categories": [
+      "diploma",
+      "labs"
+    ],
+    "keywords": [
+      "двойная нумерация рисунков гост вкр",
+      "нумерация по главам дипломная работа"
+    ],
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-05",
+    "readingTime": "6 мин",
+    "cardTitle": "Нумерация рисунков по главам в дипломе по ГОСТ 7.32",
+    "cardDescription": "Как включить двухуровневую нумерацию иллюстраций (Рисунок 2.1, Рисунок 2.2), автоматически сбрасывать счетчик картинок в новой главе и настроить подписи в LaTeX.",
+    "sliderTitle": "Двойная нумерация рисунков по ГОСТ",
+    "sliderText": "Нумерация по главам (Рисунок 1.1), сброс счетчиков и пакет caption.",
+    "sidebarText": "Контролируйте стандарты ГОСТ в оформлении графики диплома в онлайн-редакторе Labkeeper.",
+    "ctaTitle": "Верстайте диплом по ГОСТ в&nbsp;Labkeeper",
+    "ctaText": "Онлайн-редактор с шаблонами дипломных работ и автоматической привязкой рисунков к номерам глав.",
+    "toc": [
+      {
+        "id": "gost-rules",
+        "title": "Требования стандарта ГОСТ 7.32 к нумерации иллюстраций"
+      },
+      {
+        "id": "double-numbering",
+        "title": "Двойная нумерация рисунков гост вкр: первая и вторая цифры"
+      },
+      {
+        "id": "chapter-setup",
+        "title": "Нумерация по главам дипломная работа: настройка в LaTeX"
+      },
+      {
+        "id": "caption-pkg",
+        "title": "Кастомизация разделителя тире через пакет caption"
+      },
+      {
+        "id": "cross-references",
+        "title": "Точные ссылки на рисунки по главам в тексте"
+      }
+    ],
+    "sections": [
+      {
+        "id": "gost-rules",
+        "title": "Требования стандарта ГОСТ 7.32 к нумерации иллюстраций",
+        "html": "                        <p>В академических документах большого объема (дипломные проекты, магистерские и докторские диссертации, объемные отчеты о НИР) сквозная нумерация иллюстраций от 1 до 80 становится неудобной: при добавлении рисунка в начало приходится перенумеровывать все последующие ссылки.</p>\n                        <p>Стандарт ГОСТ 7.32-2017 прямо рекомендует использовать нумерацию в пределах раздела (главы): номер рисунка состоит из номера главы и порядкового номера иллюстрации внутри этой главы, разделенных точкой.</p>"
+      },
+      {
+        "id": "double-numbering",
+        "title": "Двойная нумерация рисунков гост вкр: первая и вторая цифры",
+        "html": "                        <p>Каноническая <strong>двойная нумерация рисунков гост вкр</strong> выглядит следующим образом (в том числе при <a href=\"/blog/software-screenshots-report-gost-caption\">оформлении скриншотов программ в отчете</a>):</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">Формат подписи</span></div>\n                            <pre><code>Рисунок 1.1 — Структурная схема распределенной сети\nРисунок 1.2 — График пропускной способности канала\n...\nРисунок 2.1 — Диаграмма классов программного комплекса</code></pre>\n                        </div>\n                        <p>Здесь <strong>«2»</strong> — номер второго раздела/главы, а <strong>«1»</strong> — первый рисунок этого раздела. При переходе к Главе 3 нумерация рисунков автоматически начинается заново: <em>Рисунок 3.1</em>.</p>"
+      },
+      {
+        "id": "chapter-setup",
+        "title": "Нумерация по главам дипломная работа: настройка в LaTeX",
+        "html": "                        <p>Чтобы активировалась <strong>нумерация по главам дипломная работа</strong> в документе класса <code>report</code> или <code>book</code>, достаточно стандартного механизма TeX:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>% В классах report и book нумерация по главам включена по умолчанию!\n% Но если вы используете класс article, добавьте в преамбулу:\n\\usepackage{chngcntr}\n\\counterwithin{figure}{section} % Привязка рисунков к разделам section</code></pre>\n                        </div>\n                        <p>Команда <code>\\counterwithin{figure}{section}</code> принудительно переключает формат счетчика на двухуровневый и сбрасывает его при каждом вызове <code>\\section</code> (точно такой же принцип применяется для <a href=\"/blog/formula-numbering-lab-reports-gost\">нумерации формул по разделам</a>).</p>"
+      },
+      {
+        "id": "caption-pkg",
+        "title": "Кастомизация разделителя тире через пакет caption",
+        "html": "                        <p>По умолчанию LaTeX ставит двоеточие: <em>Figure 1.1: Caption</em>. По российскому ГОСТу требуется длинное тире без двоеточия. Настройка через пакет <code>caption</code>:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\usepackage{caption}\n\\DeclareCaptionLabelSeparator{emdash}{\\ --- }\n\\captionsetup[figure]{\n    name=Рисунок,\n    labelsep=emdash,\n    justification=centering,\n    font=small\n}</code></pre>\n                        </div>"
+      },
+      {
+        "id": "cross-references",
+        "title": "Точные ссылки на рисунки по главам в тексте",
+        "html": "                        <p>В тексте отсылка делается через команду <code>\\ref{fig:...}</code>:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>Как показано на~рисунке~\\ref{fig:arch-diagram}, система состоит из трех узлов...</code></pre>\n                        </div>\n                        <p>В готовом PDF отобразится кликабельный номер: <em>«на рисунке 2.1»</em>.</p>"
+      }
+    ],
+    "tips": [
+      {
+        "title": "Склонение слова «рисунок»",
+        "html": "<p>В тексте слово пишется со строчной буквы в нужном падеже: <em>«на рисунке 1.2»</em>, <em>«согласно рисунку 2.3»</em>, а в подписи под картинкой — всегда с прописной в именительном падеже: <em>«Рисунок 1.2 — ...»</em>.</p>"
+      },
+      {
+        "title": "Рисунки в приложениях",
+        "html": "<p>В приложении А нумерация рисунков ведется с указанием буквы приложения: <em>Рисунок А.1</em>, <em>Рисунок А.2</em>.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "justified-text-spacing-hyphenation-latex-vs-word",
+    "batch": 2,
+    "title": "Выравнивание текста по ширине без огромных пробелов (LaTeX vs Word)",
+    "pageTitle": "Большие пробелы при выравнивании по ширине: переносы в дипломе — Labkeeper",
+    "metaDescription": "Большие пробелы при выравнивании по ширине: почему это происходит в Word и как решается в LaTeX, настройка переносов в дипломе онлайн в Labkeeper.",
+    "breadcrumbTitle": "Выравнивание по ширине без пробелов",
+    "h1": "Выравнивание текста по&nbsp;ширине без огромных пробелов (LaTeX vs Word)",
+    "categories": [
+      "diploma"
+    ],
+    "keywords": [
+      "большие пробелы при выравнивании по ширине",
+      "настройка переносов в дипломе онлайн"
+    ],
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-05",
+    "readingTime": "7 мин",
+    "cardTitle": "Устранение «дыр» и огромных пробелов при выравнивании текста по ширине",
+    "cardDescription": "Почему MS Word растягивает слова и создает «белые реки» в дипломе, как алгоритм Кнута-Пласса и пакет microtype в LaTeX создают идеальную полосу набора.",
+    "sliderTitle": "Выравнивание по ширине без пробелов",
+    "sliderText": "Алгоритм Кнута-Пласса, пакет microtype и устранение «дыр» в абзацах.",
+    "sidebarText": "Верстайте полиграфически безупречный текст без некрасивых пробелов в онлайн-редакторе Labkeeper.",
+    "ctaTitle": "Создавайте красивую типографику в&nbsp;Labkeeper",
+    "ctaText": "Онлайн-редактор с алгоритмической выключкой строк по ширине, поддержкой microtype и русскими переносами по ГОСТ.",
+    "toc": [
+      {
+        "id": "word-problem",
+        "title": "Почему в MS Word возникают «белые реки» и гигантские пробелы"
+      },
+      {
+        "id": "knuth-plass-algo",
+        "title": "Большие пробелы при выравнивании по ширине: решение алгоритмом Кнута-Пласса"
+      },
+      {
+        "id": "hyphenation-setup",
+        "title": "Настройка переносов в дипломе онлайн: кириллический babel"
+      },
+      {
+        "id": "microtype-magic",
+        "title": "Пакет microtype: микротипографика и оптическое выравнивание полей"
+      },
+      {
+        "id": "manual-tweaks",
+        "title": "Ручное устранение предупреждений Overfull / Underfull hbox"
+      }
+    ],
+    "sections": [
+      {
+        "id": "word-problem",
+        "title": "Почему в MS Word возникают «белые реки» и гигантские пробелы",
+        "html": "                        <p>Каждый студент, набиравший дипломную записку в Microsoft Word с выравниванием «по ширине», сталкивался с эффектом: длинное слово или формула не помещается в конец строки и целиком перескакивает на следующую, а оставшиеся 3–4 слова в строке растягиваются с огромными 3-сантиметровыми пробелами.</p>\n                        <p>В профессиональной полиграфии этот дефект называют <strong>«белыми реками»</strong> (rivers of white). Текст выглядит рваным, неряшливым и утомляет глаза при чтении.</p>"
+      },
+      {
+        "id": "knuth-plass-algo",
+        "title": "Большие пробелы при выравнивании по ширине: решение алгоритмом Кнута-Пласса",
+        "html": "                        <p>Причина того, почему возникают <strong>большие пробелы при выравнивании по ширине</strong> в Word, кроется в устаревшем алгоритме: Word форматирует текст построчно (жадно), не зная, что произойдет строкой ниже.</p>\n                        <p>Дональд Кнут создал для TeX революционный алгоритм динамического программирования (алгоритм Кнута-Пласса). LaTeX анализирует <strong>весь абзац целиком</strong>, минимизируя суммарный штраф (badness) за неравномерность пробелов. В результате ширина межсловных интервалов по всей полосе набора остается практически неотличимой.</p>"
+      },
+      {
+        "id": "hyphenation-setup",
+        "title": "Настройка переносов в дипломе онлайн: кириллический babel",
+        "html": "                        <p>Чтобы работала корректная <strong>настройка переносов в дипломе онлайн</strong> (и при необходимости использовался выборочный <a href=\"/blog/latex-prevent-hyphenation-linebreaks\">запрет переносов слов и неразрывные пробелы в LaTeX</a>), в преамбуле подключается модуль переносов русского языка:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[russian]{babel}\n\n% Снижение жесткости переносов (разрешает немного варьировать плотность)\n\\sloppy % Предотвращает вылет слов за границы полей страницы</code></pre>\n                        </div>"
+      },
+      {
+        "id": "microtype-magic",
+        "title": "Пакет microtype: микротипографика и оптическое выравнивание полей",
+        "html": "                        <p>Секретное оружие профессиональных верстальщиков — пакет <strong>microtype</strong>. Он выполняет микромасштабирование символов (на доли процента, незаметные глазу) и выносит мелкие знаки препинания (дефисы, точки, запятые) слегка за правое поле набора (hanging punctuation):</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\usepackage{microtype} % Включает оптическое выравнивание и сжатие глифов</code></pre>\n                        </div>\n                        <p>Подключение microtype сокращает количество дефисных переносов на 80% и полностью устраняет визуальные провалы плотности текста, идеально гармонируя со стандартным <a href=\"/blog/paragraph-indent-1-25-gost\">абзацным отступом 1.25 см по ГОСТ</a>.</p>"
+      },
+      {
+        "id": "manual-tweaks",
+        "title": "Ручное устранение предупреждений Overfull / Underfull hbox",
+        "html": "                        <p>Если в абзаце встретилось сложное химическое название или ссылка на URL, создающая предупреждение:</p>\n                        <ul>\n                            <li>Укажите TeX разрешенные места разрыва дефисом: <code>де\\-зокси\\-рибо\\-нук\\-ле\\-ин</code>;</li>\n                            <li>Перефразируйте предложение, поменяв местами пару слов в начале абзаца: алгоритм TeX мгновенно пересчитает раскладку и идеально сбалансирует строки.</li>\n                        </ul>"
+      }
+    ],
+    "tips": [
+      {
+        "title": "Команда \\emergencystretch",
+        "html": "<p>Добавьте <code>\\setlength{\\emergencystretch}{3em}</code> в преамбулу: это дает LaTeX право при необходимости слегка расширить пробелы в экстремально узких строках без ошибок компиляции.</p>"
+      },
+      {
+        "title": "Шрифт Times New Roman",
+        "html": "<p>Гарнитура <code>\\usepackage{pscyr}</code> или <code>\\usepackage{newtxtext}</code> обладает выверенными пропорциями знаков, оптимизированными под плотную выключку строк.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "table-continuation-multipage-gost-diploma",
+    "batch": 2,
+    "title": "Правильный перенос таблиц с надписью «Продолжение таблицы»",
+    "pageTitle": "Продолжение таблицы на следующем листе ГОСТ: перенос шапки диплом — Labkeeper",
+    "metaDescription": "Как оформить продолжение таблицы на следующем листе по ГОСТ в дипломе: перенос шапки таблицы, надпись Продолжение таблицы X, пакет longtable в Labkeeper.",
+    "breadcrumbTitle": "Перенос таблиц и надпись «Продолжение таблицы»",
+    "h1": "Правильный перенос таблиц с&nbsp;надписью «Продолжение таблицы»",
+    "categories": [
+      "diploma"
+    ],
+    "keywords": [
+      "продолжение таблицы на следующем листе гост",
+      "перенос шапки таблицы диплом"
+    ],
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-05",
+    "readingTime": "7 мин",
+    "cardTitle": "Перенос таблиц в дипломных работах: правила ГОСТ 7.32 и код LaTeX",
+    "cardDescription": "Как оформить разрыв многостраничной таблицы: правое выравнивание фразы «Продолжение таблицы 1», повторение номеров граф вместо текстовой шапки по стандарту.",
+    "sliderTitle": "Перенос таблиц по ГОСТ («Продолжение...»)",
+    "sliderText": "Фраза «Продолжение таблицы», повтор номеров колонок и пакет longtable.",
+    "sidebarText": "Верстайте спецификации и базы данных с автоматическим ГОСТ-переносом в Labkeeper.",
+    "ctaTitle": "Оформляйте большие таблицы в&nbsp;Labkeeper",
+    "ctaText": "Онлайн-редактор с шаблонами пакета longtable, соблюдением нормоконтроля ГОСТ 7.32 и мгновенной компиляцией в PDF.",
+    "toc": [
+      {
+        "id": "standard",
+        "title": "Что требует ГОСТ 7.32-2017 к переносу таблиц"
+      },
+      {
+        "id": "gost-continuation",
+        "title": "Продолжение таблицы на следующем листе гост: формулировка подписи"
+      },
+      {
+        "id": "header-columns",
+        "title": "Перенос шапки таблицы диплом: текстовая шапка или нумерация граф?"
+      },
+      {
+        "id": "longtable-code",
+        "title": "Готовый рабочий код шаблона таблицы в LaTeX"
+      },
+      {
+        "id": "common-pitfalls",
+        "title": "Типичные ошибки при ручной верстке в Word"
+      }
+    ],
+    "sections": [
+      {
+        "id": "standard",
+        "title": "Что требует ГОСТ 7.32-2017 к переносу таблиц",
+        "html": "                        <p>В дипломных проектах по экономике, логистике, IT и машиностроению таблицы с результатами тестирования, спецификациями оборудования или сметами часто не помещаются на одну страницу формата А4 (подробнее см. руководство по <a href=\"/blog/latex-list-of-figures-tables\">списку иллюстраций и таблиц в LaTeX</a>).</p>\n                        <p>Согласно <strong>ГОСТ 7.32-2017</strong> (пункт 6.5), при переносе таблицы на следующий лист нельзя просто обрывать сетку горизонтальной линией: требуется повторить шапку и разместить специальную указательную подпись.</p>"
+      },
+      {
+        "id": "gost-continuation",
+        "title": "Продолжение таблицы на следующем листе гост: формулировка подписи",
+        "html": "                        <p>Каноническое <strong>продолжение таблицы на следующем листе гост</strong> оформляется следующим образом:</p>\n                        <ul>\n                            <li>На первом листе над таблицей пишется полное название: <em>Таблица 2.3 — Паспортные данные электродвигателей серии АИР</em>.</li>\n                            <li>На втором и последующих листах над правым верхним углом таблицы курсивом или прямым шрифтом пишется: <em>Продолжение таблицы 2.3</em>.</li>\n                            <li>Если таблица переходит на третий и последующий листы, на самом последнем листе некоторые вузы требуют писать <em>Окончание таблицы 2.3</em> (хотя стандарт 7.32 допускает везде писать «Продолжение»).</li>\n                        </ul>"
+      },
+      {
+        "id": "header-columns",
+        "title": "Перенос шапки таблицы диплом: текстовая шапка или нумерация граф?",
+        "html": "                        <p>Грамотный <strong>перенос шапки таблицы диплом</strong> допускает два варианта:</p>\n                        <ol>\n                            <li><strong>Полный повтор текста шапки:</strong> дублируются названия столбцов («Наименование», «Количество», «Цена»). Удобно для читателя, но отнимает полезную высоту страницы.</li>\n                            <li><strong>Нумерация граф (рекомендуется ГОСТ для больших таблиц):</strong> под основной шапкой на первом листе вводится дополнительная строка с номерами столбцов (1, 2, 3, 4). На всех последующих листах печатается <strong>только строка с цифрами 1, 2, 3, 4</strong>, что экономит место и выглядит максимально профессионально.</li>\n                        </ol>"
+      },
+      {
+        "id": "longtable-code",
+        "title": "Готовый рабочий код шаблона таблицы в LaTeX",
+        "html": "                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\begin{longtable}{|c|p{7cm}|c|r|}\n    % 1. ШАПКА ПЕРВОЙ СТРАНИЦЫ\n    \\caption{Сравнительные характеристики модулей}\\label{tab:modules} \\\\\n    \\hline\n    \\textbf{№} & \\textbf{Наименование компонента} & \\textbf{Тип} & \\textbf{Цена, руб.} \\\\\n    \\hline\n    \\small 1 & \\small 2 & \\small 3 & \\small 4 \\\\ % Строка нумерации граф\n    \\hline\n    \\endfirsthead\n\n    % 2. ШАПКА ВСЕХ СЛЕДУЮЩИХ СТРАНИЦ (ПО ГОСТ)\n    \\multicolumn{4}{r}{\\textit{Продолжение таблицы \\ref{tab:modules}}} \\\\[1mm]\n    \\hline\n    \\small 1 & \\small 2 & \\small 3 & \\small 4 \\\\ % Только номера столбцов!\n    \\hline\n    \\endhead\n\n    % 3. ПОДВАЛ ПРОМЕЖУТОЧНЫХ СТРАНИЦ\n    \\hline\n    \\endfoot\n\n    % 4. ФИНАЛЬНЫЙ ПОДВАЛ\n    \\hline\n    \\endlastfoot\n\n    % СТРОКИ ДАННЫХ\n    1 & Микроконтроллер STM32F401RE & Cortex-M4 & 850 \\\\ \\hline\n    2 & Преобразователь интерфейсов FT232RL & USB-UART & 420 \\\\ \\hline\n    % ... много строк ...\n\\end{longtable}</code></pre>\n                        </div>"
+      },
+      {
+        "id": "common-pitfalls",
+        "title": "Типичные ошибки при ручной верстке в Word",
+        "html": "                        <p>В текстовых процессорах студенты часто создают разрыв страницы вручную и копируют кусок таблицы как отдельный объект. При малейшей правке текста выше по документу таблица съезжает, оставляя надпись «Продолжение таблицы» посередине листа. В LaTeX с пакетом <code>longtable</code> перенос управляется динамически и никогда не ломается (ознакомьтесь с подробным руководством по <a href=\"/blog/latex-longtable-multipage\">многостраничным таблицам longtable в LaTeX</a>).</p>"
+      }
+    ],
+    "tips": [
+      {
+        "title": "Разрыв таблицы вручную",
+        "html": "<p>Если нужно принудительно начать новую страницу внутри longtable перед смысловым блоком, используйте команду <code>\\pagebreak</code> прямо перед нужной строкой.</p>"
+      },
+      {
+        "title": "Шрифт внутри таблицы",
+        "html": "<p>По ГОСТ допускается уменьшать кегль шрифта внутри таблицы до 10–12 пт при основном тексте 14 пт (добавьте <code>\\small</code> перед tabular).</p>"
+      }
+    ]
+  },
+  {
+    "slug": "footnotes-bottom-page-law-history-coursework-gost",
+    "batch": 2,
+    "title": "Оформление сносок внизу страницы для курсовой по праву и истории",
+    "pageTitle": "Постраничные сноски в курсовой ГОСТ: сноски внизу страницы диплом — Labkeeper",
+    "metaDescription": "Как сделать постраничные сноски в курсовой по ГОСТ: оформление сносок внизу страницы в дипломе по праву и истории, команда footnote, цитирование в Labkeeper.",
+    "breadcrumbTitle": "Постраничные сноски по ГОСТ (право и история)",
+    "h1": "Оформление сносок внизу страницы для курсовой по&nbsp;праву и&nbsp;истории",
+    "categories": [
+      "diploma",
+      "articles"
+    ],
+    "keywords": [
+      "постраничные сноски в курсовой гост",
+      "оформление сносок внизу страницы диплом"
+    ],
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-05",
+    "readingTime": "7 мин",
+    "cardTitle": "Постраничные сноски (footnote) в курсовых по праву и истории по ГОСТ",
+    "cardDescription": "Специфика гуманитарного нормоконтроля: подстрочные сноски внизу каждой страницы, повторные цитаты «Там же», сброс нумерации на каждом листе и настройка в LaTeX.",
+    "sliderTitle": "Постраничные сноски по ГОСТ в курсовых",
+    "sliderText": "Подстрочные сноски внизу страницы, оборот «Там же» и команда footnote.",
+    "sidebarText": "Верстайте курсовые и дипломы по юриспруденции и истории со сносками по ГОСТ в Labkeeper.",
+    "ctaTitle": "Оформляйте гуманитарные исследования в&nbsp;Labkeeper",
+    "ctaText": "Онлайн-редактор с поддержкой подстрочных постраничных сносок по ГОСТ Р 7.0.5-2008 и моментальной PDF-генерацией.",
+    "toc": [
+      {
+        "id": "humanitarian-specifics",
+        "title": "Почему в праве и истории требуют именно постраничные сноски"
+      },
+      {
+        "id": "how-it-works",
+        "title": "Постраничные сноски в курсовой гост: базовые правила"
+      },
+      {
+        "id": "tam-zhe-rule",
+        "title": "Оформление сносок внизу страницы диплом: оборот «Там же» (Ibidem)"
+      },
+      {
+        "id": "latex-footnote-setup",
+        "title": "Команда footnote и сброс нумерации на каждой странице в LaTeX"
+      },
+      {
+        "id": "separator-line",
+        "title": "Требования к разделительной горизонтальной черте"
+      }
+    ],
+    "sections": [
+      {
+        "id": "humanitarian-specifics",
+        "title": "Почему в праве и истории требуют именно постраничные сноски",
+        "html": "                        <p>В точных и инженерных науках доминируют квадратные скобки со ссылкой на общий список литературы в конце отчета (<code>[14, c. 52]</code>). Однако в юриспруденции, истории, политологии и филологии стандартом являются <strong>подстрочные постраничные сноски</strong> (внизу каждого листа под чертой).</p>\n                        <p>Это связано с тем, что историк или юрист часто комментирует архивный документ, приводит выдержку из судебного решения или цитирует нормативный акт прямо по ходу чтения текста (см. также правила составления <a href=\"/blog/legal-regulatory-acts-bibliography-diploma-gost\">списка нормативно-правовых актов в дипломе</a>), не заставляя читателя листать 80 страниц до конца диплома.</p>"
+      },
+      {
+        "id": "how-it-works",
+        "title": "Постраничные сноски в курсовой гост: базовые правила",
+        "html": "                        <p>Грамотные <strong>постраничные сноски в курсовой гост</strong> оформляются по ГОСТ Р 7.0.5-2008 (если вы готовите черновики в разметке Markdown, обратите внимание на синтаксис <a href=\"/blog/markdown-footnotes\">сносок в тексте Markdown</a>):</p>\n                        <ul>\n                            <li><strong>Знак сноски:</strong> арабская цифра верхним индексом без скобки ($^1$, $^2$, $^3$);</li>\n                            <li><strong>Место знака:</strong> ставится непосредственно за словом или цитатой <strong>до знака препинания</strong> (например: <em>«по мнению ученых¹.»</em>); исключение составляет вопросительный и восклицательный знаки;</li>\n                            <li><strong>Шрифт сноски:</strong> на 2–3 пункта меньше основного текста (10 пт при основном тексте 14 пт);</li>\n                            <li><strong>Интервал:</strong> одинарный межстрочный внутри сноски при полуторном в основном документе.</li>\n                        </ul>"
+      },
+      {
+        "id": "tam-zhe-rule",
+        "title": "Оформление сносок внизу страницы диплом: оборот «Там же» (Ibidem)",
+        "html": "                        <p>Классическое <strong>оформление сносок внизу страницы диплом</strong> при повторном цитировании того же источника подряд на одной странице:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">Пример повторной сноски</span></div>\n                            <pre><code>¹ Смирнов А. В. Уголовный процесс : учебник. — М. : Кнорус, 2024. — С. 142.\n² Там же. — С. 145.\n³ Там же.</code></pre>\n                        </div>\n                        <p>Оборот «Там же» заменяет повтор длинного описания автора и названия книги. Для иностранных изданий используется латинский аналог <em>Ibid.</em> (Ibidem).</p>"
+      },
+      {
+        "id": "latex-footnote-setup",
+        "title": "Команда footnote и сброс нумерации на каждой странице в LaTeX",
+        "html": "                        <p>В LaTeX вставка подстрочной сноски выполняется командой <code>\\footnote{...}</code>. По умолчанию LaTeX ведет сквозную нумерацию сносок по всему документу (от 1 до 200). Для включения постраничной нумерации (на каждой новой странице счетчик начинается с 1) подключите пакет <strong>footmisc</strong>:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\usepackage[perpage,bottom]{footmisc}\n\n% perpage — сбрасывать счетчик сносок на 1 на каждой новой странице\n% bottom  — всегда прижимать сноски к нижнему краю листа</code></pre>\n                        </div>"
+      },
+      {
+        "id": "separator-line",
+        "title": "Требования к разделительной горизонтальной черте",
+        "html": "                        <p>По стандарту сноски отделяются от основного текста тонкой горизонтальной чертой длиной около 40–50 мм (примерно треть ширины полосы набора), прижатой к левому краю. В LaTeX эта черта генерируется автоматически макросом <code>\\footnoterule</code>.</p>"
+      }
+    ],
+    "tips": [
+      {
+        "title": "Сноски внутри таблиц",
+        "html": "<p>Внутри окружения <code>tabular</code> стандартная команда <code>\\footnote</code> не отображается. Используйте окружение <code>threeparttable</code> или связку <code>\\footnotemark</code> в ячейке и <code>\\footnotetext{...}</code> сразу под таблицей.</p>"
+      },
+      {
+        "title": "Неразрывный пробел перед сноской",
+        "html": "<p>Никогда не ставьте пробел перед знаком сноски: <code>слово\\footnote{...}</code>, иначе номер сноски может оторваться и перелететь в начало следующей строки.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "biblatex-biber-advanced-bibliography-management",
+    "batch": 2,
+    "title": "Пакет biblatex и biber: продвинутое управление библиографией",
+    "pageTitle": "Настройка biblatex biber онлайн: сортировка списка литературы — Labkeeper",
+    "metaDescription": "Продвинутая настройка biblatex и biber онлайн: сортировка списка литературы, русский ГОСТ стиль biblatex-gost, файлы .bib и команды cite в Labkeeper.",
+    "breadcrumbTitle": "Продвинутая библиография (biblatex / biber)",
+    "h1": "Пакет biblatex и&nbsp;biber: продвинутое управление библиографией",
+    "categories": [
+      "latex",
+      "articles"
+    ],
+    "keywords": [
+      "настройка biblatex biber онлайн",
+      "сортировка списка литературы biblatex"
+    ],
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-05",
+    "readingTime": "8 мин",
+    "cardTitle": "Современная библиография в LaTeX: связка biblatex + biber для ГОСТ",
+    "cardDescription": "Почему устаревший bibtex уступает связке biblatex/biber: полная поддержка UTF-8 кириллицы, ГОСТ Р 7.0.5-2008, гибкие правила сортировки и типы @online, @thesis.",
+    "sliderTitle": "Библиография biblatex и biber",
+    "sliderText": "Пакет biblatex, движок biber, стили biblatex-gost и сортировка источников.",
+    "sidebarText": "Управляйте научной библиографией мирового уровня без головной боли в Labkeeper.",
+    "ctaTitle": "Автоматизируйте библиографию в&nbsp;Labkeeper",
+    "ctaText": "Онлайн-редактор с поддержкой Biber, кириллических стилей biblatex-gost и мгновенной генерацией списков литературы.",
+    "toc": [
+      {
+        "id": "why-biblatex",
+        "title": "Почему связка biblatex + biber заменила классический BibTeX"
+      },
+      {
+        "id": "online-setup",
+        "title": "Настройка biblatex biber онлайн: преамбула с поддержкой ГОСТ"
+      },
+      {
+        "id": "sorting-options",
+        "title": "Сортировка списка литературы biblatex: по языку, алфавиту и цитированию"
+      },
+      {
+        "id": "modern-types",
+        "title": "Современные типы записей в .bib файле (@online, @software, @thesis)"
+      },
+      {
+        "id": "compilation-flow",
+        "title": "Цикл сборки: pdflatex -> biber -> pdflatex"
+      }
+    ],
+    "sections": [
+      {
+        "id": "why-biblatex",
+        "title": "Почему связка biblatex + biber заменила классический BibTeX",
+        "html": "                        <p>Хотя классический <a href=\"/blog/latex-gost-bibliography\">BibTeX по ГОСТ для списка литературы</a> до сих пор популярен, оригинальная утилита <code>bibtex</code> была создана еще в 1985 году, когда не существовало стандарта Юникод (UTF-8). Из-за этого классический BibTeX часто ломал сортировку русских фамилий («А» оказывалась после «Я») и требовал сложных кодировочных ухищрений.</p>\n                        <p>Современный тандем пакета <strong>biblatex</strong> и бэкенда <strong>biber</strong> полностью написан с поддержкой UTF-8, понимает правила русской грамматики и поддерживает официальный пакет адаптации <code>biblatex-gost</code>.</p>"
+      },
+      {
+        "id": "online-setup",
+        "title": "Настройка biblatex biber онлайн: преамбула с поддержкой ГОСТ",
+        "html": "                        <p>Идеальная <strong>настройка biblatex biber онлайн</strong> для российской диссертации или статьи:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\usepackage[\n    backend=biber,         % Современный движок Biber\n    style=gost-numeric,    % Числовые ссылки в квадратных скобках [1] по ГОСТ\n    sorting=none,          % Сортировка по мере цитирования в тексте\n    language=auto,\n    autolang=other,\n    defernumbers=true\n]{biblatex}\n\n\\addbibresource{references.bib} % Подключение базы данных .bib</code></pre>\n                        </div>\n                        <p>В конце документа список выводится одной командой: <code>\\printbibliography[title={Список использованных источников}]</code>.</p>"
+      },
+      {
+        "id": "sorting-options",
+        "title": "Сортировка списка литературы biblatex: по языку, алфавиту и цитированию",
+        "html": "                        <p>Гибкая <strong>сортировка списка литературы biblatex</strong> настраивается параметром <code>sorting</code>:</p>\n                        <ul>\n                            <li><code>sorting=none</code> — источники нумеруются строго в порядке первого упоминания в тексте (стандарт для естественнонаучных отчетов);</li>\n                            <li><code>sorting=nty</code> — алфавитный порядок: Name (автор) $\\to$ Title (название) $\\to$ Year (год);</li>\n                            <li><strong>Сортировка сначала русские, затем иностранные:</strong> пакет <code>biblatex-gost</code> автоматически группирует записи по полю <code>langid = {russian}</code> и помещает кириллические источники в начало алфавитного перечня.</li>\n                        </ul>"
+      },
+      {
+        "id": "modern-types",
+        "title": "Современные типы записей в .bib файле (@online, @software, @thesis)",
+        "html": "                        <p>В отличие от старого BibTeX, в biblatex доступны современные семантические типы данных, позволяющие точно описать <a href=\"/blog/electronic-resources-bibliography-gost-7-0-100\">электронные ресурсы по ГОСТ 7.0.100</a>:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">references.bib</span></div>\n                            <pre><code>% Веб-страница с датой обращения\n@online{react_docs,\n    author  = {{Meta Platforms Inc.}},\n    title   = {React: The library for web and native user interfaces},\n    url     = {https://react.dev/},\n    urldate = {2026-09-05},\n    langid  = {english}\n}\n\n% Диссертация или дипломная работа\n@thesis{ivanov_phd,\n    author      = {Иванов, И. И.},\n    title       = {Методы анализа графовых структур},\n    type        = {phdthesis},\n    institution = {МГУ им. М. В. Ломоносова},\n    year        = {2025},\n    langid      = {russian}\n}</code></pre>\n                        </div>"
+      },
+      {
+        "id": "compilation-flow",
+        "title": "Цикл сборки: pdflatex -> biber -> pdflatex",
+        "html": "                        <p>Для генерации списка запускается цепочка: <code>pdflatex main</code> $\\to$ <code>biber main</code> $\\to$ <code>pdflatex main</code>. В облачном редакторе <strong>Labkeeper</strong> этот цикл выполняется полностью автоматически в фоновом режиме за доли секунды.</p>"
+      }
+    ],
+    "tips": [
+      {
+        "title": "Удаление вспомогательных файлов при ошибках",
+        "html": "<p>Если вы кардинально изменили ключи в .bib файле, очистите кэш сборки (файлы <code>.bbl</code> и <code>.bcf</code>), чтобы Biber пересобрал индекс начисто.</p>"
+      },
+      {
+        "title": "Команда \\parencite",
+        "html": "<p>Для стилей гарвардского цитирования (Автор, Год) используйте <code>\\parencite{key}</code> для круглых скобок: <em>(Иванов, 2025)</em>.</p>"
+      }
+    ]
+  }
+]

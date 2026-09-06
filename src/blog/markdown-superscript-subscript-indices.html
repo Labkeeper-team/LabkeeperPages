@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<!-- Пачка 2 -->
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
+    <title>Индексы в Markdown sub sup: нижний индекс в Markdown онлайн — Labkeeper</title>
+    <meta name="description" content="Как писать надстрочные и подстрочные индексы в Markdown: HTML-теги sub и sup, математический синтаксис LaTeX, химические формулы и примеры в Labkeeper." />
+    <!-- SEO Ключи: индексы в markdown sub sup, нижний индекс в markdown -->
+    <meta name="keywords" content="индексы в markdown sub sup, нижний индекс в markdown" />
+    <link rel="canonical" href="https://labkeeper.io/blog/markdown-superscript-subscript-indices" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://labkeeper.io/blog/markdown-superscript-subscript-indices" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Labkeeper" />
+    <meta property="og:title" content="Индексы в Markdown sub sup: нижний индекс в Markdown онлайн — Labkeeper" />
+    <meta property="og:description" content="Как писать надстрочные и подстрочные индексы в Markdown: HTML-теги sub и sup, математический синтаксис LaTeX, химические формулы и примеры в Labkeeper." />
+    <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:title" content="Индексы в Markdown sub sup: нижний индекс в Markdown онлайн — Labkeeper" />
+    <meta name="twitter:description" content="Как писать надстрочные и подстрочные индексы в Markdown: HTML-теги sub и sup, математический синтаксис LaTeX, химические формулы и примеры в Labkeeper." />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Написание надстрочных и подстрочных индексов (sup / sub) в Markdown",
+        "description": "Как писать надстрочные и подстрочные индексы в Markdown: HTML-теги sub и sup, математический синтаксис LaTeX, химические формулы и примеры в Labkeeper.",
+        "author": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "url": "https://labkeeper.io"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://labkeeper.io/assets/img/logo.svg"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://labkeeper.io/blog/markdown-superscript-subscript-indices"
+        },
+        "datePublished": "2026-09-06",
+        "dateModified": "2026-09-06",
+        "inLanguage": "ru",
+        "articleSection": ["Работа с Markdown"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://labkeeper.io/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Блог",
+                "item": "https://labkeeper.io/blog"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Индексы sup и sub в Markdown",
+                "item": "https://labkeeper.io/blog/markdown-superscript-subscript-indices"
+            }
+        ]
+    }
+    </script>
+
+    <script type="text/javascript">
+        (function () {
+            function hasAcceptedCookieConsent() {
+                try {
+                    return localStorage.getItem('labkeeper_cookie_consent') === 'accepted';
+                } catch (e) {
+                    return false;
+                }
+            }
+
+            window.initLabkeeperYandexMetrika = function () {
+                if (
+                    window.__labkeeperYandexMetrikaInitialized ||
+                    !hasAcceptedCookieConsent() ||
+                    typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined'
+                ) {
+                    return;
+                }
+
+                (function (m, e, t, r, i, k, a) {
+                    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+                    m[i].l = 1 * new Date();
+                    for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+                    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a);
+                })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", {
+                    webvisor: true,
+                    clickmap: true,
+                    referrer: document.referrer,
+                    url: location.href,
+                    accurateTrackBounce: true,
+                    trackLinks: true
+                });
+
+                window.__labkeeperYandexMetrikaInitialized = true;
+            };
+
+            window.initLabkeeperYandexMetrika();
+        })();
+    </script>
+
+    <!-- Preconnect & Async Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body class="page blog__article">
+    <header class="header js-header">
+        <div class="header__container">
+            <div class="header__left">
+                <button class="header__burger js-burger-btn" aria-label="Открыть меню">
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                </button>
+                <a href="/" class="header__logo">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36"
+                        height="36">
+                    <span class="header__logo-text">Labkeeper</span>
+                </a>
+                <div class="header__lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+            </div>
+
+            <nav class="header__nav js-nav">
+                <div class="header__mobile-lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link"
+                            data-i18n="nav-examples"></a></li>
+                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link"
+                            data-i18n="nav-features"></a></li>
+                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a>
+                    </li>
+                    <li class="header__nav-item"><a href="/blog" class="header__nav-link" data-i18n="nav-blog"></a></li>
+
+                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a>
+                    </li>
+                </ul>
+                <div class="header__mobile-contact">
+                    <span class="header__mobile-contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com"
+                        class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </nav>
+
+            <div class="header__right">
+                <a href="/project/default?open=login" class="button button--outline header__login"
+                    data-i18n="btn-login"></a>
+                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects"
+                    style="display: none;"></a>
+                <a href="/project/default" class="button button--primary header__editor" data-i18n="btn-editor"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main page-article">
+
+        <div class="article-breadcrumbs">
+            <div class="article-breadcrumbs__container">
+                <nav class="article-breadcrumbs__nav" aria-label="Breadcrumb">
+                    <ol class="article-breadcrumbs__list">
+                        <li class="article-breadcrumbs__item">
+                            <a href="/" class="article-breadcrumbs__link">Главная</a>
+                        </li>
+                        <li class="article-breadcrumbs__item">
+                            <a href="/blog" class="article-breadcrumbs__link">Блог</a>
+                        </li>
+                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active">
+                            <span>Индексы sup и sub в Markdown</span>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="article-layout">
+
+            <article class="article-content">
+                <div class="article-content__container">
+
+                    <h1 class="article-content__title h1">Написание надстрочных и&nbsp;подстрочных индексов (sup / sub) в&nbsp;Markdown</h1>
+
+                    <div class="article-content__tags">
+                        <a href="/blog#markdown" class="article-tag">Работа с Markdown</a>
+                    </div>
+
+                    <p class="article-content__meta">Обновлено: 6 сентября 2026 · Время чтения: ~6 мин</p>
+
+                    <nav class="article-toc" aria-label="Содержание статьи">
+                        <h3 class="article-toc__title">Содержание</h3>
+                        <ol class="article-toc__list">
+                            <li><a href="#intro" class="article-toc__link">Зачем нужны индексы в текстовых документах</a></li>
+                            <li><a href="#html-tags" class="article-toc__link">Индексы в Markdown sub sup: использование базовых HTML-тегов</a></li>
+                            <li><a href="#subscript-math" class="article-toc__link">Нижний индекс в Markdown через математический блок KaTeX/MathJax</a></li>
+                            <li><a href="#flavors" class="article-toc__link">Расширения Pandoc и GitHub Flavored Markdown</a></li>
+                            <li><a href="#examples" class="article-toc__link">Практические примеры: химия, физика и сноски</a></li>
+                            <li><a href="#tips-faq" class="article-toc__link">Типичные ошибки верстки индексов</a></li>
+                        </ol>
+                    </nav>
+
+                    <section class="article-section" id="intro">
+                        <h2 class="article-section__title">Зачем нужны индексы в текстовых документах</h2>
+                        <p>При подготовке научно-технических заметок, отчетов по лабораторным работам и технической документации регулярно возникает необходимость вставить степень величины ($x^2$, $10^5$), обозначить химический элемент ($H_2O$, $CO_2$) или указать номер итерации в алгоритме ($a_{i+1}$). В чистой спецификации CommonMark нет встроенного символа для таких операций, однако существует несколько надёжных подходов.</p>
+                        <p>В этой статье мы подробно разберем, как органично внедрить <strong>индексы в markdown sub sup</strong> с помощью стандартных HTML-тегов, математических вставок KaTeX/MathJax и специальных расширений синтаксиса. А если вы готовите структурированные данные, рекомендуем также посмотреть наше руководство по созданию <a href="/blog/complex-markdown-tables-syntax-online-generator">сложных таблиц в Markdown</a>.</p>
+                    </section>
+
+                    <section class="article-section" id="html-tags">
+                        <h2 class="article-section__title">Индексы в Markdown sub sup: использование базовых HTML-тегов</h2>
+                        <p>Поскольку спецификация Markdown полностью поддерживает прозрачную вставку HTML-тегов, самый кроссплатформенный и универсальный способ проставить верхний или <strong>нижний индекс в markdown</strong> — использовать парные теги <code>&lt;sup&gt;</code> и <code>&lt;sub&gt;</code>.</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">Markdown</span></div>
+                            <pre><code>Верхний индекс (степень): x&lt;sup&gt;2&lt;/sup&gt; + y&lt;sup&gt;2&lt;/sup&gt; = z&lt;sup&gt;2&lt;/sup&gt;
+Нижний индекс (вещество): H&lt;sub&gt;2&lt;/sub&gt;SO&lt;sub&gt;4&lt;/sub&gt;
+Комбинированный индекс: A&lt;sub&gt;i&lt;/sub&gt;&lt;sup&gt;(k)&lt;/sup&gt;
+Текстовая сноска: Данные исследования&lt;sup&gt;[1]&lt;/sup&gt; подтверждены.</code></pre>
+                        </div>
+                        <p>Результат визуализации в браузере:</p>
+                        <ul>
+                            <li>Верхний индекс: x<sup>2</sup> + y<sup>2</sup> = z<sup>2</sup></li>
+                            <li>Нижний индекс: H<sub>2</sub>SO<sub>4</sub></li>
+                            <li>Комбинированный индекс: A<sub>i</sub><sup>(k)</sup></li>
+                            <li>Текстовая сноска: Данные исследования<sup>[1]</sup> подтверждены.</li>
+                        </ul>
+                        <p>Этот метод работает во всех современных движках: GitHub, GitLab, Obsidian, Notion, а также в веб-редакторе <a href="/blog/markdown-raw-html-integration">при интеграции чистого HTML внутрь Markdown</a>.</p>
+                    </section>
+
+                    <section class="article-section" id="subscript-math">
+                        <h2 class="article-section__title">Нижний индекс в Markdown через математический блок KaTeX/MathJax</h2>
+                        <p>Если индекс является частью математического выражения или физической формулы, предпочтительно использовать синтаксис LaTeX-математики, обрамленный знаками доллара <code>$...$</code>. Для нижнего индекса служит символ подчеркивания <code>_</code>, а для верхнего — крышка <code>^</code>.</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX Math в Markdown</span></div>
+                            <pre><code>В строке: Скорость тела равна $v_0 = 12\text{ м/с}$, а ускорение $a = 9.8\text{ м/с}^2$.
+Сложный индекс в фигурных скобках: $T_{max} = 300\text{ K}$, $x_{i,j}^{(n+1)}$.
+
+В отдельном блоке:
+$
+\sum_{i=1}^{n} x_i^2 = \sigma_{total}^2
+$</code></pre>
+                        </div>
+                        <p><strong>Важное правило:</strong> если в индексе содержится более одного символа (например, <code>max</code> или <code>i+1</code>), его обязательно нужно заключать в фигурные скобки: <code>$x_{max}$</code>, иначе нижним индексом станет только первый символ, а остальное останется обычным текстом (<code>$x_max$</code> превратится в $x_m$ax).</p>
+                    </section>
+
+                    <section class="article-section" id="flavors">
+                        <h2 class="article-section__title">Расширения Pandoc и GitHub Flavored Markdown</h2>
+                        <p>В академическом конвертере Pandoc и ряде специализированных редакторов поддерживается компактный сокращенный синтаксис:</p>
+                        <ul>
+                            <li>Тильды для нижнего индекса: <code>H~2~O</code> превращается в H<sub>2</sub>O;</li>
+                            <li>Крышки для верхнего индекса: <code>x^2^</code> превращается в x<sup>2</sup>.</li>
+                        </ul>
+                        <p>Однако помните, что на чистом GitHub или базовых парсерах CommonMark такой синтаксис не всегда активен по умолчанию. Поэтому связка <code>&lt;sup&gt;</code> / <code>&lt;sub&gt;</code> либо формульный блок <code>$...$</code> остаются наиболее надежным выбором. Подобная аккуратность особенно важна при <a href="/blog/modern-it-resume-markdown-cv-as-code">верстке резюме в Markdown</a>, где символы должны парситься корректно любыми сканерами.</p>
+                    </section>
+
+                    <section class="article-section" id="examples">
+                        <h2 class="article-section__title">Практические примеры: химия, физика и сноски</h2>
+                        <p>Сравним типовые сценарии оформления в таблице:</p>
+                        <div class="article-table-wrap">
+                            <table class="article-table">
+                                <thead>
+                                    <tr>
+                                        <th>Сфера</th>
+                                        <th>Синтаксис в исходнике</th>
+                                        <th>Отображаемый результат</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Химическая реакция</td>
+                                        <td><code>2H&lt;sub&gt;2&lt;/sub&gt; + O&lt;sub&gt;2&lt;/sub&gt; &amp;rarr; 2H&lt;sub&gt;2&lt;/sub&gt;O</code></td>
+                                        <td>2H<sub>2</sub> + O<sub>2</sub> &rarr; 2H<sub>2</sub>O</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Физические единицы</td>
+                                        <td><code>Плотность: 1000 кг/м&lt;sup&gt;3&lt;/sup&gt;</code></td>
+                                        <td>Плотность: 1000 кг/м<sup>3</sup></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Математическая последовательность</td>
+                                        <td><code>$a_1, a_2, \dots, a_n$</code></td>
+                                        <td>a<sub>1</sub>, a<sub>2</sub>, ..., a<sub>n</sub></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Энергия покоя</td>
+                                        <td><code>$E_0 = m_0 c^2$</code></td>
+                                        <td>E<sub>0</sub> = m<sub>0</sub>c<sup>2</sup></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="tips-faq">
+                        <h2 class="article-section__title">Типичные ошибки верстки индексов</h2>
+                        <p>Чтобы верстка выглядела аккуратно и не разрывала межстрочный интервал абзаца, обратите внимание на следующие нюансы:</p>
+                        <ul>
+                            <li><strong>Лишние пробелы внутри тегов:</strong> конструкция <code>&lt;sub&gt; 2 &lt;/sub&gt;</code> может вызвать нежелательные отступы вокруг цифры. Пишите слитно: <code>&lt;sub&gt;2&lt;/sub&gt;</code>.</li>
+                            <li><strong>Смещение высоты строки в браузере:</strong> в старых CSS-фреймворках теги <code>sup</code> и <code>sub</code> могут слегка увеличивать <code>line-height</code> строки. В редакторе Labkeeper стили нормализованы с помощью <code>vertical-align: baseline</code> и относительного позиционирования.</li>
+                            <li><strong>Кириллица в формулах:</strong> если вам нужен поясняющий русский индекс в формуле LaTeX, оборачивайте его в <code>\text{...}</code>: <code>$F_{\text{тр}} = \mu N$</code>.</li>
+                        </ul>
+                    </section>
+
+                    <section class="article-section" id="tips">
+                        <h2 class="article-section__title">Практические советы</h2>
+                        <div class="article-tips">
+                            <div class="article-tip">
+                                <div class="article-tip__number">1</div>
+                                <div class="article-tip__content">
+                                    <h3>Используйте LaTeX-блок для математики</h3>
+                                    <p>Для простых химических формул удобнее теги <code>&lt;sub&gt;</code>, а для математических уравнений со степенями и дробями всегда выбирайте KaTeX/LaTeX: так соблюдаются типографические правила набора символов курсивом.</p>
+                                </div>
+                            </div>
+                            <div class="article-tip">
+                                <div class="article-tip__number">2</div>
+                                <div class="article-tip__content">
+                                    <h3>Мгновенный экспорт в Labkeeper</h3>
+                                    <p>В Labkeeper вы можете комбинировать Markdown-текст, HTML-теги и математические формулы, сразу видя итоговую страницу в PDF без необходимости настраивать локальные компиляторы.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </article>
+
+            <aside class="article-sidebar">
+                <div class="article-sidebar__sticky">
+                    <div class="article-sidebar__media">
+                        <img src="../assets/img/img-for-firstScreen.webp"
+                            alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
+                            class="article-sidebar__img">
+                    </div>
+                    <p class="article-sidebar__title">Пишите научные заметки и отчеты в Labkeeper: мгновенный рендеринг формул KaTeX, таблиц и тегов разметки прямо в браузере.</p>
+                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
+                        id="sidebar-cta-btn">
+                        Перейти в редактор
+                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+
+        <section class="cta-features" id="cta-features">
+            <div class="cta-features__intro">
+                <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
+                <h2 class="cta-features__intro-title">Форматируйте формулы и&nbsp;индексы в&nbsp;Labkeeper</h2>
+                <p class="cta-features__intro-text">Современный гибридный редактор с поддержкой тегов sub/sup, математического синтаксиса LaTeX и мгновенным экспортом в чистый PDF.</p>
+            </div>
+
+            <div class="feature-block feature-block--img-left feature-block--dark">
+                <div class="feature-block__container">
+                    <div class="feature-block__visual">
+                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor screenshot"
+                            class="feature-block__image js-popup-trigger"
+                            data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
+                    </div>
+                    <div class="feature-block__content">
+                        <ul class="feature-list">
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b1">Полновесная компиляция:</strong>
+                                <span data-i18n="feat-latex-t1">Получайте PDF профессионального качества с помощью
+                                    встроенного LaTeX-компилятора.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b2">60 секунд на выполнение:</strong>
+                                <span data-i18n="feat-latex-t2">Работайте со сложными документами без ограничений —
+                                    лимит времени компиляции в разы выше, чем в аналогичных сервисах.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b3">Умная конвертация:</strong>
+                                <span data-i18n="feat-latex-t3">Любые вычислительные формулы автоматически
+                                    преобразовываются в красивый LaTeX</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b4">Гибридный синтаксис:</strong>
+                                <span data-i18n="feat-latex-t4">Используйте легковесные вставки Markdown прямо в сложном
+                                    LaTeX-коде для ускорения работы.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-features__footer">
+                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
+                    Открыть редактор <span class="button__arrow">→</span>
+                </a>
+            </div>
+
+            <div class="feature__bg">
+                <img src="../assets/img/bg.svg" alt="bg" loading="lazy">
+            </div>
+        </section>
+
+    </main>
+
+    <section class="audience">
+        <div class="audience__container">
+            <h2 class="audience__title h1">Другие статьи</h2>
+
+            <div class="audience__slider-wrapper">
+                <button class="audience__arrow audience__arrow--prev" aria-label="Previous slide"></button>
+                <button class="audience__arrow audience__arrow--next" aria-label="Next slide"></button>
+
+                <div class="swiper audience__swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Динамическая генерация случайных статей через slider.js -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="audience__action">
+                <a href="/blog" class="button button--outline audience__btn">Все статьи <span
+                        class="button__arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <nav class="footer__nav">
+                    <a href="/#features" class="footer__link" data-i18n="nav-advantages"></a>
+                    <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
+                    <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
+                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank"
+                        class="footer__link footer__link--external">
+                        <span data-i18n="nav-wiki"></span>
+                        <img src="../assets/img/target.svg" alt="target icon" class="footer__link-icon"
+                            style="margin-left: 4px; vertical-align: middle;" width="16" height="16" loading="lazy">
+                    </a>
+                    <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
+                    <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
+
+                    <a href="/about" class="footer__link" data-i18n="nav-about"></a>
+                </nav>
+                <a href="/" class="footer__logo-link">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40"
+                        loading="lazy">
+                </a>
+                <div class="footer__contact">
+                    <span class="footer__contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com" class="footer__contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </div>
+            <div class="footer__middle">
+                <img src="../assets/img/img-for-footer.svg" alt="Labkeeper" class="footer__huge-logo" aria-hidden="true"
+                    loading="lazy">
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__copyright">© 2024—2026</div>
+                <a href="/privacy" class="footer__policy" data-i18n="footer-policy"></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Попап -->
+    <div class="popup js-popup" id="image-popup" aria-hidden="true">
+        <div class="popup__overlay js-popup-close"></div>
+        <div class="popup__content">
+            <button class="popup__close js-popup-close" aria-label="Закрыть">
+                <img src="../assets/img/close.svg" alt="Close" width="24" height="24">
+            </button>
+            <img src="" alt="Enlarged screenshot" class="popup__image js-popup-img" loading="lazy">
+        </div>
+    </div>
+
+    <div id="cookie-banner" class="cookie-banner hidden">
+        <div class="cookie-banner__container">
+            <p class="cookie-banner__text">
+                Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a
+                    href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных
+                    данных</a>.
+            </p>
+            <div class="cookie-banner__actions">
+                <button id="cookie-accept" class="button button--primary">Принять</button>
+                <button id="cookie-decline" class="button button--outline">Отказаться</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="scroll-top js-scroll-top" aria-label="Наверх" title="Наверх"></button>
+
+    <script>
+        window.__LABKEEPER_API_VERSION = "IO_LABKEEPER_FRONTEND_API_VERSION";
+    </script>
+    <script src="../assets/js/auth.js" defer></script>
+    <script src="../assets/js/script.js" defer></script>
+    <script src="../assets/js/lang.js" defer></script>
+    <script src="../assets/js/slider.js" defer></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<!-- Пачка 2 -->
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
+    <title>Съезжает текст в Ворде при дипломе: альтернатива Word для диплома — Labkeeper</title>
+    <meta name="description" content="Почему постоянно съезжает текст в Word при верстке диплома и курсовой. Лучшая альтернатива Word для написания диплома: переход на Markdown и LaTeX в Labkeeper." />
+    <!-- SEO Ключи: съезжает текст в ворде при дипломе, альтернатива word для написания диплома -->
+    <meta name="keywords" content="съезжает текст в ворде при дипломе, альтернатива word для написания диплома" />
+    <link rel="canonical" href="https://labkeeper.io/blog/word-formatting-issues-diploma-lightweight-markup-alternative" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://labkeeper.io/blog/word-formatting-issues-diploma-lightweight-markup-alternative" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Labkeeper" />
+    <meta property="og:title" content="Съезжает текст в Ворде при дипломе: альтернатива Word для диплома — Labkeeper" />
+    <meta property="og:description" content="Почему постоянно съезжает текст в Word при верстке диплома и курсовой. Лучшая альтернатива Word для написания диплома: переход на Markdown и LaTeX в Labkeeper." />
+    <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:title" content="Съезжает текст в Ворде при дипломе: альтернатива Word для диплома — Labkeeper" />
+    <meta name="twitter:description" content="Почему постоянно съезжает текст в Word при верстке диплома и курсовой. Лучшая альтернатива Word для написания диплома: переход на Markdown и LaTeX в Labkeeper." />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Съезжает верстка в Word при написании диплома? Переходим на легковесную разметку",
+        "description": "Почему постоянно съезжает текст в Word при верстке диплома и курсовой. Лучшая альтернатива Word для написания диплома: переход на Markdown и LaTeX в Labkeeper.",
+        "author": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "url": "https://labkeeper.io"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://labkeeper.io/assets/img/logo.svg"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://labkeeper.io/blog/word-formatting-issues-diploma-lightweight-markup-alternative"
+        },
+        "datePublished": "2026-09-06",
+        "dateModified": "2026-09-06",
+        "inLanguage": "ru",
+        "articleSection": ["Дипломные работы"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://labkeeper.io/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Блог",
+                "item": "https://labkeeper.io/blog"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Альтернатива Word для диплома",
+                "item": "https://labkeeper.io/blog/word-formatting-issues-diploma-lightweight-markup-alternative"
+            }
+        ]
+    }
+    </script>
+
+    <script type="text/javascript">
+        (function () {
+            function hasAcceptedCookieConsent() {
+                try {
+                    return localStorage.getItem('labkeeper_cookie_consent') === 'accepted';
+                } catch (e) {
+                    return false;
+                }
+            }
+
+            window.initLabkeeperYandexMetrika = function () {
+                if (
+                    window.__labkeeperYandexMetrikaInitialized ||
+                    !hasAcceptedCookieConsent() ||
+                    typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined'
+                ) {
+                    return;
+                }
+
+                (function (m, e, t, r, i, k, a) {
+                    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+                    m[i].l = 1 * new Date();
+                    for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+                    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a);
+                })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", {
+                    webvisor: true,
+                    clickmap: true,
+                    referrer: document.referrer,
+                    url: location.href,
+                    accurateTrackBounce: true,
+                    trackLinks: true
+                });
+
+                window.__labkeeperYandexMetrikaInitialized = true;
+            };
+
+            window.initLabkeeperYandexMetrika();
+        })();
+    </script>
+
+    <!-- Preconnect & Async Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body class="page blog__article">
+    <header class="header js-header">
+        <div class="header__container">
+            <div class="header__left">
+                <button class="header__burger js-burger-btn" aria-label="Открыть меню">
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                </button>
+                <a href="/" class="header__logo">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36"
+                        height="36">
+                    <span class="header__logo-text">Labkeeper</span>
+                </a>
+                <div class="header__lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+            </div>
+
+            <nav class="header__nav js-nav">
+                <div class="header__mobile-lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link"
+                            data-i18n="nav-examples"></a></li>
+                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link"
+                            data-i18n="nav-features"></a></li>
+                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a>
+                    </li>
+                    <li class="header__nav-item"><a href="/blog" class="header__nav-link" data-i18n="nav-blog"></a></li>
+
+                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a>
+                    </li>
+                </ul>
+                <div class="header__mobile-contact">
+                    <span class="header__mobile-contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com"
+                        class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </nav>
+
+            <div class="header__right">
+                <a href="/project/default?open=login" class="button button--outline header__login"
+                    data-i18n="btn-login"></a>
+                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects"
+                    style="display: none;"></a>
+                <a href="/project/default" class="button button--primary header__editor" data-i18n="btn-editor"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main page-article">
+
+        <div class="article-breadcrumbs">
+            <div class="article-breadcrumbs__container">
+                <nav class="article-breadcrumbs__nav" aria-label="Breadcrumb">
+                    <ol class="article-breadcrumbs__list">
+                        <li class="article-breadcrumbs__item">
+                            <a href="/" class="article-breadcrumbs__link">Главная</a>
+                        </li>
+                        <li class="article-breadcrumbs__item">
+                            <a href="/blog" class="article-breadcrumbs__link">Блог</a>
+                        </li>
+                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active">
+                            <span>Альтернатива Word для диплома</span>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="article-layout">
+
+            <article class="article-content">
+                <div class="article-content__container">
+
+                    <h1 class="article-content__title h1">Съезжает верстка в&nbsp;Word при написании диплома? Переходим на&nbsp;легковесную разметку</h1>
+
+                    <div class="article-content__tags">
+                        <a href="/blog#diploma" class="article-tag">Дипломные работы</a>
+                    </div>
+
+                    <p class="article-content__meta">Обновлено: 6 сентября 2026 · Время чтения: ~8 мин</p>
+
+                    <nav class="article-toc" aria-label="Содержание статьи">
+                        <h3 class="article-toc__title">Содержание</h3>
+                        <ol class="article-toc__list">
+                            <li><a href="#word-pain" class="article-toc__link">Классический студенческий кошмар за ночь до защиты</a></li>
+                            <li><a href="#why-breaks" class="article-toc__link">Почему съезжает текст в Ворде при дипломе: архитектурные причины</a></li>
+                            <li><a href="#markup-alternative" class="article-toc__link">Альтернатива Word для написания диплома: подход «Текст как код»</a></li>
+                            <li><a href="#comparison-table" class="article-toc__link">Сравнение Microsoft Word, Markdown и LaTeX</a></li>
+                            <li><a href="#migration-steps" class="article-toc__link">Пошаговый переход на Labkeeper без потери наработок</a></li>
+                        </ol>
+                    </nav>
+
+                    <section class="article-section" id="word-pain">
+                        <h2 class="article-section__title">Классический студенческий кошмар за ночь до защиты</h2>
+                        <p>Знакомая ситуация: вы потратили полгода на написание дипломной работы, внесли последние правки в 80-страничный документ Microsoft Word, нажали «Сохранить» и открыли файл на флешке в вузовской типографии. И в этот момент происходит катастрофа: <strong>съезжает текст в ворде при дипломе</strong>, рисунок 14 улетает на три листа вперед, оставляя огромную белую дыру, формулы превращаются в битые растровые картинки, а нумерация страниц начинается заново с третьей главы.</p>
+                        <p>Причина не в вашей неопытности, а в самой концепции классических офисных WYSIWYG-редакторов («What You See Is What You Get»).</p>
+                    </section>
+
+                    <section class="article-section" id="why-breaks">
+                        <h2 class="article-section__title">Почему съезжает текст в Ворде при дипломе: архитектурные причины</h2>
+                        <p>Почему Word системно ломается на объемных научных документах:</p>
+                        <ul>
+                            <li><strong>Зависимость от установленного принтера:</strong> Word динамически пересчитывает переносы строк и страниц на основе драйвера текущего принтера по умолчанию. Открыли документ на другом ноутбуке — верстка необратимо «поплыла»;</li>
+                            <li><strong>Скрытый мусор форматирования:</strong> при копировании кусков текста из браузера или PDF тянутся невидимые стили, неразрывные пробелы и сбойные стили абзацев;</li>
+                            <li><strong>Непредсказуемая привязка объектов («Якоря»):</strong> плавающие изображения в Word привязаны к невидимому символу абзаца. Добавили одно слово в начале главы — и картинка перескакивает через две страницы;</li>
+                            <li><strong>Слабый математический движок:</strong> встроенный редактор формул часто конфликтует со шрифтами при конвертации в PDF на разных версиях Windows и macOS.</li>
+                        </ul>
+                    </section>
+
+                    <section class="article-section" id="markup-alternative">
+                        <h2 class="article-section__title">Альтернатива Word для написания диплома: подход «Текст как код»</h2>
+                        <p>Единственная надежная <strong>альтернатива word для написания диплома</strong> — переход на парадигму разделения контента и оформления (WYSIWYM — «What You See Is What You Mean»), реализованную в Markdown и LaTeX.</p>
+                        <p>Вы пишете чистый смысловой текст с понятной семантической разметкой (<code># Глава 1</code>, <code>$E=mc^2$</code>, <code>[Рисунок 1.2](fig.png)</code>), а специальный типографический компилятор рассчитывает идеальное взаимное расположение текста, таблиц и иллюстраций с точностью до типографского пункта. При этом вы автоматически получаете все преимущества <a href="/blog/latex-hyperref-pdf-bookmarks-navigation">интерактивной навигации и закладок в PDF</a>.</p>
+                    </section>
+
+                    <section class="article-section" id="comparison-table">
+                        <h2 class="article-section__title">Сравнение Microsoft Word, Markdown и LaTeX</h2>
+                        <div class="article-table-wrap">
+                            <table class="article-table">
+                                <thead>
+                                    <tr>
+                                        <th>Критерий</th>
+                                        <th>Microsoft Word</th>
+                                        <th>Легковесный Markdown</th>
+                                        <th>Академический LaTeX</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Стабильность верстки</td>
+                                        <td>Низкая (часто ломается)</td>
+                                        <td>Высокая (предсказуемый HTML/PDF)</td>
+                                        <td>Абсолютная (100% повторяемость)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Сложные математические формулы</td>
+                                        <td>Медленно, через мышь</td>
+                                        <td>Очень быстро (через синтаксис KaTeX)</td>
+                                        <td>Мировой эталон качества</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Контроль версий (Git)</td>
+                                        <td>Невозможен (бинарный docx)</td>
+                                        <td>Идеальный (чистый plain text)</td>
+                                        <td>Идеальный (чистый plain text)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Порог входа</td>
+                                        <td>Низкий</td>
+                                        <td>5 минут на изучение</td>
+                                        <td>Средний (требует шаблонов)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="migration-steps">
+                        <h2 class="article-section__title">Пошаговый переход на Labkeeper без потери наработок</h2>
+                        <p>Если часть работы уже написана в Word, не обязательно перепечатывать ее заново:</p>
+                        <ol>
+                            <li>Скопируйте текст глав в онлайн-редактор Labkeeper;</li>
+                            <li>Замените заголовки на решетки <code>##</code>;</li>
+                            <li>Формулы оберните в стандартные знаки доллара <code>$...$</code>;</li>
+                            <li>Нажмите кнопку «Экспорт в PDF» и получите монолитный, оттипографированный документ по ГОСТу, который никогда не съедет ни на одном принтере.</li>
+                        </ol>
+                        <p>А для форматирования просторных таблиц без слипающихся строк воспользуйтесь простым приемом по <a href="/blog/latex-arraystretch-table-row-height-spacing">настройке интервалов в таблицах через arraystretch</a>.</p>
+                    </section>
+
+                    <section class="article-section" id="tips">
+                        <h2 class="article-section__title">Практические советы</h2>
+                        <div class="article-tips">
+                            <div class="article-tip">
+                                <div class="article-tip__number">1</div>
+                                <div class="article-tip__content">
+                                    <h3>Используйте Git для диплома</h3>
+                                    <p>Храня текст работы в текстовом формате, вы можете делать коммиты после каждого написанного раздела и никогда не потеряете наработки при сбое жесткого диска.</p>
+                                </div>
+                            </div>
+                            <div class="article-tip">
+                                <div class="article-tip__number">2</div>
+                                <div class="article-tip__content">
+                                    <h3>Работайте в Labkeeper</h3>
+                                    <p>Labkeeper сочетает простоту Markdown для быстрого набора текста с безупречной типографикой LaTeX для вывода формул и таблиц по ГОСТ.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </article>
+
+            <aside class="article-sidebar">
+                <div class="article-sidebar__sticky">
+                    <div class="article-sidebar__media">
+                        <img src="../assets/img/img-for-firstScreen.webp"
+                            alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
+                            class="article-sidebar__img">
+                    </div>
+                    <p class="article-sidebar__title">Перейдите на современный редактор Labkeeper: разделение текста и оформления гарантирует идеальную верстку по ГОСТ без сбоев.</p>
+                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
+                        id="sidebar-cta-btn">
+                        Перейти в редактор
+                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+
+        <section class="cta-features" id="cta-features">
+            <div class="cta-features__intro">
+                <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
+                <h2 class="cta-features__intro-title">Забудьте о багах Word с&nbsp;Labkeeper</h2>
+                <p class="cta-features__intro-text">Онлайн-платформа для написания дипломов и статей: формулы, списки литературы и авто-нумерация без сюрпризов.</p>
+            </div>
+
+            <div class="feature-block feature-block--img-left feature-block--dark">
+                <div class="feature-block__container">
+                    <div class="feature-block__visual">
+                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor screenshot"
+                            class="feature-block__image js-popup-trigger"
+                            data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
+                    </div>
+                    <div class="feature-block__content">
+                        <ul class="feature-list">
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b1">Полновесная компиляция:</strong>
+                                <span data-i18n="feat-latex-t1">Получайте PDF профессионального качества с помощью
+                                    встроенного LaTeX-компилятора.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b2">60 секунд на выполнение:</strong>
+                                <span data-i18n="feat-latex-t2">Работайте со сложными документами без ограничений —
+                                    лимит времени компиляции в разы выше, чем в аналогичных сервисах.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b3">Умная конвертация:</strong>
+                                <span data-i18n="feat-latex-t3">Любые вычислительные формулы автоматически
+                                    преобразовываются в красивый LaTeX</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b4">Гибридный синтаксис:</strong>
+                                <span data-i18n="feat-latex-t4">Используйте легковесные вставки Markdown прямо в сложном
+                                    LaTeX-коде для ускорения работы.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-features__footer">
+                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
+                    Открыть редактор <span class="button__arrow">→</span>
+                </a>
+            </div>
+
+            <div class="feature__bg">
+                <img src="../assets/img/bg.svg" alt="bg" loading="lazy">
+            </div>
+        </section>
+
+    </main>
+
+    <section class="audience">
+        <div class="audience__container">
+            <h2 class="audience__title h1">Другие статьи</h2>
+
+            <div class="audience__slider-wrapper">
+                <button class="audience__arrow audience__arrow--prev" aria-label="Previous slide"></button>
+                <button class="audience__arrow audience__arrow--next" aria-label="Next slide"></button>
+
+                <div class="swiper audience__swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Динамическая генерация случайных статей через slider.js -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="audience__action">
+                <a href="/blog" class="button button--outline audience__btn">Все статьи <span
+                        class="button__arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <nav class="footer__nav">
+                    <a href="/#features" class="footer__link" data-i18n="nav-advantages"></a>
+                    <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
+                    <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
+                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank"
+                        class="footer__link footer__link--external">
+                        <span data-i18n="nav-wiki"></span>
+                        <img src="../assets/img/target.svg" alt="target icon" class="footer__link-icon"
+                            style="margin-left: 4px; vertical-align: middle;" width="16" height="16" loading="lazy">
+                    </a>
+                    <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
+                    <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
+
+                    <a href="/about" class="footer__link" data-i18n="nav-about"></a>
+                </nav>
+                <a href="/" class="footer__logo-link">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40"
+                        loading="lazy">
+                </a>
+                <div class="footer__contact">
+                    <span class="footer__contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com" class="footer__contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </div>
+            <div class="footer__middle">
+                <img src="../assets/img/img-for-footer.svg" alt="Labkeeper" class="footer__huge-logo" aria-hidden="true"
+                    loading="lazy">
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__copyright">© 2024—2026</div>
+                <a href="/privacy" class="footer__policy" data-i18n="footer-policy"></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Попап -->
+    <div class="popup js-popup" id="image-popup" aria-hidden="true">
+        <div class="popup__overlay js-popup-close"></div>
+        <div class="popup__content">
+            <button class="popup__close js-popup-close" aria-label="Закрыть">
+                <img src="../assets/img/close.svg" alt="Close" width="24" height="24">
+            </button>
+            <img src="" alt="Enlarged screenshot" class="popup__image js-popup-img" loading="lazy">
+        </div>
+    </div>
+
+    <div id="cookie-banner" class="cookie-banner hidden">
+        <div class="cookie-banner__container">
+            <p class="cookie-banner__text">
+                Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a
+                    href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных
+                    данных</a>.
+            </p>
+            <div class="cookie-banner__actions">
+                <button id="cookie-accept" class="button button--primary">Принять</button>
+                <button id="cookie-decline" class="button button--outline">Отказаться</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="scroll-top js-scroll-top" aria-label="Наверх" title="Наверх"></button>
+
+    <script>
+        window.__LABKEEPER_API_VERSION = "IO_LABKEEPER_FRONTEND_API_VERSION";
+    </script>
+    <script src="../assets/js/auth.js" defer></script>
+    <script src="../assets/js/script.js" defer></script>
+    <script src="../assets/js/lang.js" defer></script>
+    <script src="../assets/js/slider.js" defer></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+</body>
+
+</html>

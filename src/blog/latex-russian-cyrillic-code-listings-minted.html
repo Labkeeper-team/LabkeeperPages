@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<!-- Пачка 2 -->
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
+    <title>Русский язык в листингах кода LaTeX: ошибка кириллицы listings — Labkeeper</title>
+    <meta name="description" content="Как победить ошибку кириллицы в listings LaTeX и настроить русский язык в листингах кода minted. Готовые сниппеты преамбулы и кодировок UTF-8 в Labkeeper." />
+    <!-- SEO Ключи: русский язык в листингах кода latex, ошибка кириллицы в listings latex -->
+    <meta name="keywords" content="русский язык в листингах кода latex, ошибка кириллицы в listings latex" />
+    <link rel="canonical" href="https://labkeeper.io/blog/latex-russian-cyrillic-code-listings-minted" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://labkeeper.io/blog/latex-russian-cyrillic-code-listings-minted" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Labkeeper" />
+    <meta property="og:title" content="Русский язык в листингах кода LaTeX: ошибка кириллицы listings — Labkeeper" />
+    <meta property="og:description" content="Как победить ошибку кириллицы в listings LaTeX и настроить русский язык в листингах кода minted. Готовые сниппеты преамбулы и кодировок UTF-8 в Labkeeper." />
+    <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:title" content="Русский язык в листингах кода LaTeX: ошибка кириллицы listings — Labkeeper" />
+    <meta name="twitter:description" content="Как победить ошибку кириллицы в listings LaTeX и настроить русский язык в листингах кода minted. Готовые сниппеты преамбулы и кодировок UTF-8 в Labkeeper." />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Русский язык в листингах кода (minted/listings) без ошибок компиляции",
+        "description": "Как победить ошибку кириллицы в listings LaTeX и настроить русский язык в листингах кода minted. Готовые сниппеты преамбулы и кодировок UTF-8 в Labkeeper.",
+        "author": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "url": "https://labkeeper.io"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://labkeeper.io/assets/img/logo.svg"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://labkeeper.io/blog/latex-russian-cyrillic-code-listings-minted"
+        },
+        "datePublished": "2026-09-06",
+        "dateModified": "2026-09-06",
+        "inLanguage": "ru",
+        "articleSection": ["Работа с LaTeX"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://labkeeper.io/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Блог",
+                "item": "https://labkeeper.io/blog"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Русский язык в листингах LaTeX",
+                "item": "https://labkeeper.io/blog/latex-russian-cyrillic-code-listings-minted"
+            }
+        ]
+    }
+    </script>
+
+    <script type="text/javascript">
+        (function () {
+            function hasAcceptedCookieConsent() {
+                try {
+                    return localStorage.getItem('labkeeper_cookie_consent') === 'accepted';
+                } catch (e) {
+                    return false;
+                }
+            }
+
+            window.initLabkeeperYandexMetrika = function () {
+                if (
+                    window.__labkeeperYandexMetrikaInitialized ||
+                    !hasAcceptedCookieConsent() ||
+                    typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined'
+                ) {
+                    return;
+                }
+
+                (function (m, e, t, r, i, k, a) {
+                    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+                    m[i].l = 1 * new Date();
+                    for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+                    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a);
+                })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", {
+                    webvisor: true,
+                    clickmap: true,
+                    referrer: document.referrer,
+                    url: location.href,
+                    accurateTrackBounce: true,
+                    trackLinks: true
+                });
+
+                window.__labkeeperYandexMetrikaInitialized = true;
+            };
+
+            window.initLabkeeperYandexMetrika();
+        })();
+    </script>
+
+    <!-- Preconnect & Async Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body class="page blog__article">
+    <header class="header js-header">
+        <div class="header__container">
+            <div class="header__left">
+                <button class="header__burger js-burger-btn" aria-label="Открыть меню">
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                </button>
+                <a href="/" class="header__logo">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36"
+                        height="36">
+                    <span class="header__logo-text">Labkeeper</span>
+                </a>
+                <div class="header__lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+            </div>
+
+            <nav class="header__nav js-nav">
+                <div class="header__mobile-lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link"
+                            data-i18n="nav-examples"></a></li>
+                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link"
+                            data-i18n="nav-features"></a></li>
+                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a>
+                    </li>
+                    <li class="header__nav-item"><a href="/blog" class="header__nav-link" data-i18n="nav-blog"></a></li>
+
+                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a>
+                    </li>
+                </ul>
+                <div class="header__mobile-contact">
+                    <span class="header__mobile-contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com"
+                        class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </nav>
+
+            <div class="header__right">
+                <a href="/project/default?open=login" class="button button--outline header__login"
+                    data-i18n="btn-login"></a>
+                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects"
+                    style="display: none;"></a>
+                <a href="/project/default" class="button button--primary header__editor" data-i18n="btn-editor"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main page-article">
+
+        <div class="article-breadcrumbs">
+            <div class="article-breadcrumbs__container">
+                <nav class="article-breadcrumbs__nav" aria-label="Breadcrumb">
+                    <ol class="article-breadcrumbs__list">
+                        <li class="article-breadcrumbs__item">
+                            <a href="/" class="article-breadcrumbs__link">Главная</a>
+                        </li>
+                        <li class="article-breadcrumbs__item">
+                            <a href="/blog" class="article-breadcrumbs__link">Блог</a>
+                        </li>
+                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active">
+                            <span>Русский язык в листингах LaTeX</span>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="article-layout">
+
+            <article class="article-content">
+                <div class="article-content__container">
+
+                    <h1 class="article-content__title h1">Русский язык в&nbsp;листингах кода (minted/listings) без&nbsp;ошибок компиляции</h1>
+
+                    <div class="article-content__tags">
+                        <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
+                    </div>
+
+                    <p class="article-content__meta">Обновлено: 6 сентября 2026 · Время чтения: ~8 мин</p>
+
+                    <nav class="article-toc" aria-label="Содержание статьи">
+                        <h3 class="article-toc__title">Содержание</h3>
+                        <ol class="article-toc__list">
+                            <li><a href="#problem" class="article-toc__link">Почему возникает ошибка кириллицы в listings LaTeX</a></li>
+                            <li><a href="#listings-fix" class="article-toc__link">Русский язык в листингах кода LaTeX: правильная настройка listings</a></li>
+                            <li><a href="#extendedchars" class="article-toc__link">Символьная таблица literate для полного охвата русского алфавита</a></li>
+                            <li><a href="#minted-setup" class="article-toc__link">Подключение современного пакета minted с поддержкой UTF-8</a></li>
+                            <li><a href="#xelatex-lualatex" class="article-toc__link">Решение проблемы через современные движки XeLaTeX и LuaLaTeX</a></li>
+                            <li><a href="#faq" class="article-toc__link">Частые вопросы и рекомендации по ГОСТ</a></li>
+                        </ol>
+                    </nav>
+
+                    <section class="article-section" id="problem">
+                        <h2 class="article-section__title">Почему возникает ошибка кириллицы в listings LaTeX</h2>
+                        <p>Каждый студент или разработчик при подготовке дипломного проекта сталкивается с неприятным сбоем: при попытке скомпилировать исходный код с русскими комментариями или строковыми литералами компилятор выдает сообщение вида <code>! Package inputenc Error: Unicode character...</code> или превращает слова в нечитаемые кракозябры. Это классическая <strong>ошибка кириллицы в listings latex</strong>.</p>
+                        <p>Причина кроется в архитектуре классического движка <code>pdfLaTeX</code>: пакет <code>listings</code> обрабатывает текст побайтово как 8-битный поток ASCII, тогда как русские символы в кодировке UTF-8 состоят из двух байтов. В результате парсер кода разрывает двухбайтовую последовательность, что приводит к фатальной ошибке компиляции. Если в вашей работе код описывает сложные структуры, рекомендуем также ознакомиться с версткой <a href="/blog/latex-algorithm2e-pseudocode-algorithms">псевдокода алгоритмов в algorithm2e</a>.</p>
+                    </section>
+
+                    <section class="article-section" id="listings-fix">
+                        <h2 class="article-section__title">Русский язык в листингах кода LaTeX: правильная настройка listings</h2>
+                        <p>Чтобы корректно включить <strong>русский язык в листингах кода latex</strong> при использовании стандартного пакета <code>listings</code>, необходимо задать правильные параметры в преамбуле документа:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX Преамбула</span></div>
+                            <pre><code>\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+    inputencoding=utf8,
+    extendedchars=true,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    frame=single,
+    captionpos=b,
+    keepspaces=true,
+    showstringspaces=false
+}</code></pre>
+                        </div>
+                        <p>Если вы хотите экранировать русские фрагменты или формулы прямо внутри кода, добавьте директиву <code>escapeinside</code>:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX Исходник</span></div>
+                            <pre><code>\lstset{escapeinside={(*@}{@*)}}
+
+\begin{lstlisting}[language=Python]
+def calculate_sum(a, b):
+    # (*@\textbf{Вычисление суммы двух чисел}@*)
+    return a + b
+\end{lstlisting}</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="extendedchars">
+                        <h2 class="article-section__title">Символьная таблица literate для полного охвата русского алфавита</h2>
+                        <p>Наиболее надежный способ заставить <code>listings</code> в <code>pdfLaTeX</code> понимать русский текст без экранирования — передать маппинг кириллических букв через свойство <code>literate</code>:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX Конфигурация</span></div>
+                            <pre><code>\lstset{
+    literate=
+        {а}{{\cyra}}1 {б}{{\cyrb}}1 {в}{{\cyrv}}1 {г}{{\cyrg}}1
+        {д}{{\cyrd}}1 {е}{{\cyre}}1 {ж}{{\cyrzh}}1 {з}{{\cyrz}}1
+        {и}{{\cyri}}1 {й}{{\cyrishrt}}1 {к}{{\cyrk}}1 {л}{{\cyrl}}1
+        {м}{{\cyrm}}1 {н}{{\cyrn}}1 {о}{{\cyro}}1 {п}{{\cyrp}}1
+        {р}{{\cyrr}}1 {с}{{\cyrs}}1 {т}{{\cyrt}}1 {у}{{\cyru}}1
+        {ф}{{\cyrf}}1 {х}{{\cyrh}}1 {ц}{{\cyrc}}1 {ч}{{\cyrch}}1
+        {ш}{{\cyrsh}}1 {щ}{{\cyrshch}}1 {ъ}{{\cyrhrdsn}}1 {ы}{{\cyrery}}1
+        {ь}{{\cyrsftsn}}1 {э}{{\cyrerev}}1 {ю}{{\cyryu}}1 {я}{{\cyrya}}1
+        {А}{{\CYRA}}1 {Б}{{\CYRB}}1 {В}{{\CYRV}}1 {Г}{{\CYRG}}1
+        {Д}{{\CYRD}}1 {Е}{{\CYRE}}1 {Ж}{{\CYRZH}}1 {З}{{\CYRZ}}1
+        {И}{{\CYRI}}1 {Й}{{\CYRISHRT}}1 {К}{{\CYRK}}1 {Л}{{\CYRL}}1
+        {М}{{\CYRM}}1 {Н}{{\CYRN}}1 {О}{{\CYRO}}1 {П}{{\CYRP}}1
+        {Р}{{\CYRR}}1 {С}{{\CYRS}}1 {Т}{{\CYRT}}1 {У}{{\CYRU}}1
+        {Ф}{{\CYRF}}1 {Х}{{\CYRH}}1 {Ц}{{\CYRC}}1 {Ч}{{\CYRCH}}1
+        {Ш}{{\CYRSH}}1 {Щ}{{\CYRSHCH}}1 {Ъ}{{\CYRHRDSN}}1 {Ы}{{\CYRERY}}1
+        {Ь}{{\CYRSFTSN}}1 {Э}{{\CYREREV}}1 {Ю}{{\CYRYU}}1 {Я}{{\CYRYA}}1
+}</code></pre>
+                        </div>
+                        <p>После включения этой таблицы вы сможете свободно писать русские комментарии в любых языках программирования без малейших ошибок.</p>
+                    </section>
+
+                    <section class="article-section" id="minted-setup">
+                        <h2 class="article-section__title">Подключение современного пакета minted с поддержкой UTF-8</h2>
+                        <p>Более современная альтернатива <code>listings</code> — пакет <code>minted</code>. Он использует мощный лексер <strong>Pygments</strong>, нативно поддерживает Unicode и оформляет код так же красиво, как современные IDE:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX Minted</span></div>
+                            <pre><code>\usepackage{minted}
+\usemintedstyle{friendly}
+
+\begin{minted}[
+    frame=lines,
+    framesep=2mm,
+    linenos,
+    fontsize=\small
+]{python}
+# Функция расчета факториала на русском языке
+def factorial(n: int) -> int:
+    if n <= 1:
+        return 1
+    return n * factorial(n - 1)
+
+print("Результат вычисления:", factorial(5))
+\end{minted}</code></pre>
+                        </div>
+                        <p><em>Обратите внимание:</em> для локального запуска <code>minted</code> требуется установленный Python с библиотекой Pygments и флаг компиляции <code>-shell-escape</code>. В облачном редакторе Labkeeper всё настроено «из коробки» без необходимости конфигурировать окружение.</p>
+                    </section>
+
+                    <section class="article-section" id="xelatex-lualatex">
+                        <h2 class="article-section__title">Решение проблемы через современные движки XeLaTeX и LuaLaTeX</h2>
+                        <p>Если у вас есть возможность переключить компилятор с <code>pdfLaTeX</code> на <code>XeLaTeX</code> или <code>LuaLaTeX</code>, проблема с кодировками исчезает полностью. Благодаря пакету <code>fontspec</code> движок нативно работает с кодировкой UTF-8 и системными шрифтами OpenType/TrueType:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">XeLaTeX Преамбула</span></div>
+                            <pre><code>\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setmonofont{Courier New} % или Fira Code
+\usepackage{listings}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true
+}</code></pre>
+                        </div>
+                        <p>Для интерактивного перехода к нужным листингам из текста работы не забудьте ознакомиться с <a href="/blog/latex-hyperref-pdf-bookmarks-navigation">настройкой кликабельных ссылок hyperref</a>.</p>
+                    </section>
+
+                    <section class="article-section" id="faq">
+                        <h2 class="article-section__title">Частые вопросы и рекомендации по ГОСТ</h2>
+                        <p>Согласно ГОСТ 7.0.100 и рекомендациям к ВКР, листинги кода в дипломе должны соответствовать следующим правилам:</p>
+                        <ul>
+                            <li><strong>Шрифт моноширинный:</strong> используйте Courier New или PT Mono кеглем 10–12 pt;</li>
+                            <li><strong>Подпись к листингу:</strong> размещается снизу или сверху с единообразным выравниванием («Листинг 3.1 — Метод авторизации пользователя»);</li>
+                            <li><strong>Перенос строк:</strong> обязательно включите <code>breaklines=true</code>, чтобы длинные строки кода не вылезали за границы правого поля.</li>
+                        </ul>
+                    </section>
+
+                    <section class="article-section" id="tips">
+                        <h2 class="article-section__title">Практические советы</h2>
+                        <div class="article-tips">
+                            <div class="article-tip">
+                                <div class="article-tip__number">1</div>
+                                <div class="article-tip__content">
+                                    <h3>Компактные листинги в приложении</h3>
+                                    <p>Длинные портянки кода объемом более 1 страницы по ГОСТу выносят в «Приложения», оставляя в основном тексте только фрагменты ключевых алгоритмов на 15–30 строк.</p>
+                                </div>
+                            </div>
+                            <div class="article-tip">
+                                <div class="article-tip__number">2</div>
+                                <div class="article-tip__content">
+                                    <h3>Готовые стили в Labkeeper</h3>
+                                    <p>В шаблонах Labkeeper уже встроены настроенные стили для листингов с автоматической нумерацией строк и поддержкой кириллицы в комментариях.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </article>
+
+            <aside class="article-sidebar">
+                <div class="article-sidebar__sticky">
+                    <div class="article-sidebar__media">
+                        <img src="../assets/img/img-for-firstScreen.webp"
+                            alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
+                            class="article-sidebar__img">
+                    </div>
+                    <p class="article-sidebar__title">В Labkeeper листинги кода компилируются с поддержкой UTF-8 и подсветкой синтаксиса без ручной установки Python Pygments.</p>
+                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
+                        id="sidebar-cta-btn">
+                        Перейти в редактор
+                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+
+        <section class="cta-features" id="cta-features">
+            <div class="cta-features__intro">
+                <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
+                <h2 class="cta-features__intro-title">Компилируйте чистые листинги в&nbsp;Labkeeper</h2>
+                <p class="cta-features__intro-text">Онлайн-редактор с мгновенной подсветкой кода по ГОСТу, поддержкой кириллицы и экспортом в идеальный PDF.</p>
+            </div>
+
+            <div class="feature-block feature-block--img-left feature-block--dark">
+                <div class="feature-block__container">
+                    <div class="feature-block__visual">
+                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor screenshot"
+                            class="feature-block__image js-popup-trigger"
+                            data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
+                    </div>
+                    <div class="feature-block__content">
+                        <ul class="feature-list">
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b1">Полновесная компиляция:</strong>
+                                <span data-i18n="feat-latex-t1">Получайте PDF профессионального качества с помощью
+                                    встроенного LaTeX-компилятора.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b2">60 секунд на выполнение:</strong>
+                                <span data-i18n="feat-latex-t2">Работайте со сложными документами без ограничений —
+                                    лимит времени компиляции в разы выше, чем в аналогичных сервисах.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b3">Умная конвертация:</strong>
+                                <span data-i18n="feat-latex-t3">Любые вычислительные формулы автоматически
+                                    преобразовываются в красивый LaTeX</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b4">Гибридный синтаксис:</strong>
+                                <span data-i18n="feat-latex-t4">Используйте легковесные вставки Markdown прямо в сложном
+                                    LaTeX-коде для ускорения работы.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-features__footer">
+                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
+                    Открыть редактор <span class="button__arrow">→</span>
+                </a>
+            </div>
+
+            <div class="feature__bg">
+                <img src="../assets/img/bg.svg" alt="bg" loading="lazy">
+            </div>
+        </section>
+
+    </main>
+
+    <section class="audience">
+        <div class="audience__container">
+            <h2 class="audience__title h1">Другие статьи</h2>
+
+            <div class="audience__slider-wrapper">
+                <button class="audience__arrow audience__arrow--prev" aria-label="Previous slide"></button>
+                <button class="audience__arrow audience__arrow--next" aria-label="Next slide"></button>
+
+                <div class="swiper audience__swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Динамическая генерация случайных статей через slider.js -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="audience__action">
+                <a href="/blog" class="button button--outline audience__btn">Все статьи <span
+                        class="button__arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <nav class="footer__nav">
+                    <a href="/#features" class="footer__link" data-i18n="nav-advantages"></a>
+                    <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
+                    <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
+                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank"
+                        class="footer__link footer__link--external">
+                        <span data-i18n="nav-wiki"></span>
+                        <img src="../assets/img/target.svg" alt="target icon" class="footer__link-icon"
+                            style="margin-left: 4px; vertical-align: middle;" width="16" height="16" loading="lazy">
+                    </a>
+                    <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
+                    <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
+
+                    <a href="/about" class="footer__link" data-i18n="nav-about"></a>
+                </nav>
+                <a href="/" class="footer__logo-link">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40"
+                        loading="lazy">
+                </a>
+                <div class="footer__contact">
+                    <span class="footer__contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com" class="footer__contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </div>
+            <div class="footer__middle">
+                <img src="../assets/img/img-for-footer.svg" alt="Labkeeper" class="footer__huge-logo" aria-hidden="true"
+                    loading="lazy">
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__copyright">© 2024—2026</div>
+                <a href="/privacy" class="footer__policy" data-i18n="footer-policy"></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Попап -->
+    <div class="popup js-popup" id="image-popup" aria-hidden="true">
+        <div class="popup__overlay js-popup-close"></div>
+        <div class="popup__content">
+            <button class="popup__close js-popup-close" aria-label="Закрыть">
+                <img src="../assets/img/close.svg" alt="Close" width="24" height="24">
+            </button>
+            <img src="" alt="Enlarged screenshot" class="popup__image js-popup-img" loading="lazy">
+        </div>
+    </div>
+
+    <div id="cookie-banner" class="cookie-banner hidden">
+        <div class="cookie-banner__container">
+            <p class="cookie-banner__text">
+                Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a
+                    href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных
+                    данных</a>.
+            </p>
+            <div class="cookie-banner__actions">
+                <button id="cookie-accept" class="button button--primary">Принять</button>
+                <button id="cookie-decline" class="button button--outline">Отказаться</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="scroll-top js-scroll-top" aria-label="Наверх" title="Наверх"></button>
+
+    <script>
+        window.__LABKEEPER_API_VERSION = "IO_LABKEEPER_FRONTEND_API_VERSION";
+    </script>
+    <script src="../assets/js/auth.js" defer></script>
+    <script src="../assets/js/script.js" defer></script>
+    <script src="../assets/js/lang.js" defer></script>
+    <script src="../assets/js/slider.js" defer></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+</body>
+
+</html>

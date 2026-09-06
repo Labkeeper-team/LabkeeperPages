@@ -702,9 +702,12 @@ h2,
 }
 
 @keyframes hero-arrow-bounce {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateX(-50%) translateY(0);
   }
+
   50% {
     transform: translateX(-50%) translateY(8px);
   }
@@ -797,7 +800,8 @@ h2,
 }
 
 /* features.scss */
-.features {
+.features,
+.cta-features {
   background-color: var(--c-bg-dark);
   color: var(--c-text-white);
   padding: 0;
@@ -807,20 +811,22 @@ h2,
 }
 
 @media (max-width: 1023px) {
-  .features {
+
+  .features,
+  .cta-features {
     padding: 30px 0;
   }
 }
 
-/* -- Features Intro CTA Header -- */
-.features__intro {
+/* -- CTA Features Intro Header -- */
+.cta-features__intro {
   text-align: center;
   padding: 80px 20px 0;
   position: relative;
   z-index: 12;
 }
 
-.features__intro-label {
+.cta-features__intro-label {
   display: inline-block;
   font-size: 13px;
   font-weight: 600;
@@ -832,7 +838,7 @@ h2,
   margin-bottom: 24px;
 }
 
-.features__intro-title {
+.cta-features__intro-title {
   font-size: 52px;
   line-height: 50px;
   letter-spacing: -0.05em;
@@ -843,14 +849,14 @@ h2,
 }
 
 @media (max-width: 1023px) {
-  .features__intro-title {
+  .cta-features__intro-title {
     font-size: 36px;
     line-height: 1.2;
     margin-bottom: 12px;
   }
 }
 
-.features__intro-text {
+.cta-features__intro-text {
   font-size: 15px;
   line-height: 1.52;
   color: rgba(255, 255, 255, 0.5);
@@ -858,34 +864,34 @@ h2,
   margin: 0 auto 6px;
 }
 
-.features__intro-btn {
+.cta-features__intro-btn {
   font-size: 15px;
   height: 50px;
   padding: 0 36px;
 }
 
 @media (max-width: 1023px) {
-  .features__intro {
+  .cta-features__intro {
     padding: 50px 20px 0;
   }
 
-  .features__intro-title {
+  .cta-features__intro-title {
     font-size: 32px;
   }
 
-  .features__intro-text {
+  .cta-features__intro-text {
     font-size: 14px;
     margin-bottom: 28px;
   }
 
-  .features__intro-btn {
+  .cta-features__intro-btn {
     height: 44px;
     padding: 0 28px;
     font-size: 13px;
   }
 }
 
-.features__footer {
+.cta-features__footer {
   text-align: center;
   padding: 0 20px 80px;
   position: relative;
@@ -893,21 +899,21 @@ h2,
 }
 
 @media (max-width: 1023px) {
-  .features__footer {
+  .cta-features__footer {
     padding: 0 20px 30px;
   }
 }
 
 /* -- Blog article page: override bottom CTA button to primary blue -- */
-.blog__article .features__footer .features__intro-btn,
-.blog__page .features__footer .features__intro-btn {
+.blog__article .cta-features__footer .cta-features__intro-btn,
+.blog__page .cta-features__footer .cta-features__intro-btn {
   background-color: var(--c-primary);
   color: var(--c-text-white);
   border-color: var(--c-primary);
 }
 
-.blog__article .features__footer .features__intro-btn:hover,
-.blog__page .features__footer .features__intro-btn:hover {
+.blog__article .cta-features__footer .cta-features__intro-btn:hover,
+.blog__page .cta-features__footer .cta-features__intro-btn:hover {
   background-color: var(--c-primary-hover);
   border-color: var(--c-primary-hover);
 }
@@ -3452,8 +3458,8 @@ h2,
 
 /* -- Article Content -- */
 
-.blog__article .features__intro-btn,
-.blog__page .features__intro-btn {
+.blog__article .cta-features__intro-btn,
+.blog__page .cta-features__intro-btn {
   height: 80px;
   padding: 0 56px;
   font-size: 20px;
@@ -3465,8 +3471,8 @@ h2,
 
 @media (max-width: 1023px) {
 
-  .blog__article .features__intro-btn,
-  .blog__page .features__intro-btn {
+  .blog__article .cta-features__intro-btn,
+  .blog__page .cta-features__intro-btn {
     font-size: 16px;
     line-height: 18px;
     width: 100%;
@@ -3514,7 +3520,7 @@ h2,
 
 .blog__article .feature-list__item::before,
 .blog__page .feature-list__item::before {
-  top: 12px;
+  top: 10px;
   background-color: var(--c-text-white);
 }
 
@@ -4543,7 +4549,8 @@ h2,
 
 @media (max-width: 1023px) {
   .features {
-    padding: 50px 0 70px 0;
+    padding: 50px 0 96px 0;
+    height: auto;
   }
 
   .features__bullet-list {
@@ -4597,7 +4604,7 @@ h2,
   }
 
   .features__container {
-    height: 706px;
+    height: auto;
   }
 
   .features__action {

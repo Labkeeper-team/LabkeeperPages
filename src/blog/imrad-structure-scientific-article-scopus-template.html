@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<!-- Пачка 2 -->
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
+    <title>Структура IMRAD научной статьи шаблон: разделы Scopus IMRAD — Labkeeper</title>
+    <meta name="description" content="Полный разбор структуры IMRAD для научных статей Scopus и Web of Science: разделы статьи, готовый LaTeX-шаблон, требования рецензентов в Labkeeper." />
+    <!-- SEO Ключи: структура imrad научной статьи шаблон, разделы статьи scopus imrad -->
+    <meta name="keywords" content="структура imrad научной статьи шаблон, разделы статьи scopus imrad" />
+    <link rel="canonical" href="https://labkeeper.io/blog/imrad-structure-scientific-article-scopus-template" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://labkeeper.io/blog/imrad-structure-scientific-article-scopus-template" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Labkeeper" />
+    <meta property="og:title" content="Структура IMRAD научной статьи шаблон: разделы Scopus IMRAD — Labkeeper" />
+    <meta property="og:description" content="Полный разбор структуры IMRAD для научных статей Scopus и Web of Science: разделы статьи, готовый LaTeX-шаблон, требования рецензентов в Labkeeper." />
+    <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:title" content="Структура IMRAD научной статьи шаблон: разделы Scopus IMRAD — Labkeeper" />
+    <meta name="twitter:description" content="Полный разбор структуры IMRAD для научных статей Scopus и Web of Science: разделы статьи, готовый LaTeX-шаблон, требования рецензентов в Labkeeper." />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Международная структура IMRAD для научных публикаций",
+        "description": "Полный разбор структуры IMRAD для научных статей Scopus и Web of Science: разделы статьи, готовый LaTeX-шаблон, требования рецензентов в Labkeeper.",
+        "author": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "url": "https://labkeeper.io"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://labkeeper.io/assets/img/logo.svg"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://labkeeper.io/blog/imrad-structure-scientific-article-scopus-template"
+        },
+        "datePublished": "2026-09-06",
+        "dateModified": "2026-09-06",
+        "inLanguage": "ru",
+        "articleSection": ["Оформление научных статей"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://labkeeper.io/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Блог",
+                "item": "https://labkeeper.io/blog"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Структура IMRAD для Scopus",
+                "item": "https://labkeeper.io/blog/imrad-structure-scientific-article-scopus-template"
+            }
+        ]
+    }
+    </script>
+
+    <script type="text/javascript">
+        (function () {
+            function hasAcceptedCookieConsent() {
+                try {
+                    return localStorage.getItem('labkeeper_cookie_consent') === 'accepted';
+                } catch (e) {
+                    return false;
+                }
+            }
+
+            window.initLabkeeperYandexMetrika = function () {
+                if (
+                    window.__labkeeperYandexMetrikaInitialized ||
+                    !hasAcceptedCookieConsent() ||
+                    typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined'
+                ) {
+                    return;
+                }
+
+                (function (m, e, t, r, i, k, a) {
+                    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+                    m[i].l = 1 * new Date();
+                    for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+                    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a);
+                })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", {
+                    webvisor: true,
+                    clickmap: true,
+                    referrer: document.referrer,
+                    url: location.href,
+                    accurateTrackBounce: true,
+                    trackLinks: true
+                });
+
+                window.__labkeeperYandexMetrikaInitialized = true;
+            };
+
+            window.initLabkeeperYandexMetrika();
+        })();
+    </script>
+
+    <!-- Preconnect & Async Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body class="page blog__article">
+    <header class="header js-header">
+        <div class="header__container">
+            <div class="header__left">
+                <button class="header__burger js-burger-btn" aria-label="Открыть меню">
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                </button>
+                <a href="/" class="header__logo">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36"
+                        height="36">
+                    <span class="header__logo-text">Labkeeper</span>
+                </a>
+                <div class="header__lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+            </div>
+
+            <nav class="header__nav js-nav">
+                <div class="header__mobile-lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link"
+                            data-i18n="nav-examples"></a></li>
+                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link"
+                            data-i18n="nav-features"></a></li>
+                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a>
+                    </li>
+                    <li class="header__nav-item"><a href="/blog" class="header__nav-link" data-i18n="nav-blog"></a></li>
+
+                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a>
+                    </li>
+                </ul>
+                <div class="header__mobile-contact">
+                    <span class="header__mobile-contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com"
+                        class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </nav>
+
+            <div class="header__right">
+                <a href="/project/default?open=login" class="button button--outline header__login"
+                    data-i18n="btn-login"></a>
+                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects"
+                    style="display: none;"></a>
+                <a href="/project/default" class="button button--primary header__editor" data-i18n="btn-editor"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main page-article">
+
+        <div class="article-breadcrumbs">
+            <div class="article-breadcrumbs__container">
+                <nav class="article-breadcrumbs__nav" aria-label="Breadcrumb">
+                    <ol class="article-breadcrumbs__list">
+                        <li class="article-breadcrumbs__item">
+                            <a href="/" class="article-breadcrumbs__link">Главная</a>
+                        </li>
+                        <li class="article-breadcrumbs__item">
+                            <a href="/blog" class="article-breadcrumbs__link">Блог</a>
+                        </li>
+                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active">
+                            <span>Структура IMRAD для Scopus</span>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="article-layout">
+
+            <article class="article-content">
+                <div class="article-content__container">
+
+                    <h1 class="article-content__title h1">Международная структура IMRAD для научных публикаций</h1>
+
+                    <div class="article-content__tags">
+                        <a href="/blog#articles" class="article-tag">Оформление научных статей</a>
+                    </div>
+
+                    <p class="article-content__meta">Обновлено: 6 сентября 2026 · Время чтения: ~9 мин</p>
+
+                    <nav class="article-toc" aria-label="Содержание статьи">
+                        <h3 class="article-toc__title">Содержание</h3>
+                        <ol class="article-toc__list">
+                            <li><a href="#what-is-imrad" class="article-toc__link">Что такое формат IMRAD и почему он обязателен</a></li>
+                            <li><a href="#sections-breakdown" class="article-toc__link">Разделы статьи Scopus IMRAD: анатомия каждого блока</a></li>
+                            <li><a href="#imrad-template" class="article-toc__link">Структура IMRAD научной статьи: шаблон LaTeX для международных журналов</a></li>
+                            <li><a href="#results-vs-discussion" class="article-toc__link">Главная ошибка: как не перепутать Results и Discussion</a></li>
+                            <li><a href="#reviewer-checklist" class="article-toc__link">Чек-лист перед отправкой рукописи в редакцию</a></li>
+                        </ol>
+                    </nav>
+
+                    <section class="article-section" id="what-is-imrad">
+                        <h2 class="article-section__title">Что такое формат IMRAD и почему он обязателен</h2>
+                        <p><strong>IMRAD</strong> — это общепринятый международный академический стандарт структурирования оригинальных исследовательских статей (Original Research Papers). Аббревиатура расшифровывается по первым буквам ключевых разделов: <strong>I</strong>ntroduction (Введение), <strong>M</strong>ethods (Материалы и методы), <strong>R</strong>esults (Результаты), <strong>a</strong>nd <strong>D</strong>iscussion (Обсуждение).</p>
+                        <p>Практически все рейтинговые издания первого и второго квартилей (Q1/Q2), индексируемые в <strong>Scopus</strong> и <strong>Web of Science</strong> (Elsevier, Springer Nature, IEEE, Wiley, MDPI), требуют строгого соблюдения этой структуры. Отклонение от IMRAD — самая частая причина мгновенного отклонения (Desk Reject) еще до передачи статьи независимым рецензентам. При этом принципы IMRAD активно перенимаются и при <a href="/blog/rinc-vak-scientific-article-template-fonts-margins">подготовке статей для базы РИНЦ и журналов ВАК</a>.</p>
+                    </section>
+
+                    <section class="article-section" id="sections-breakdown">
+                        <h2 class="article-section__title">Разделы статьи Scopus IMRAD: анатомия каждого блока</h2>
+                        <p>Рассмотрим, за что отвечают обязательные <strong>разделы статьи scopus imrad</strong>:</p>
+                        <ul>
+                            <li><strong>Introduction (Введение):</strong> отвечает на вопрос <em>«Какая проблема изучается и почему она важна?»</em>. Включает обзор литературы за последние 3–5 лет, выявление исследовательского пробела (Research Gap), формулировку исследовательской гипотезы и целей работы;</li>
+                            <li><strong>Methods (Материалы и методы):</strong> отвечает на вопрос <em>«Как именно проводилось исследование?»</em>. Описывает оборудование, датасеты, математические формулы, алгоритмы и критерии воспроизводимости (любой ученый в мире должен иметь возможность повторить ваш эксперимент по этому описанию);</li>
+                            <li><strong>Results (Результаты):</strong> отвечает на вопрос <em>«Что конкретно было обнаружено?»</em>. Представляет собой сухое изложение фактов, графиков, таблиц и статистических метрик без субъективных авторских интерпретаций;</li>
+                            <li><strong>Discussion (Обсуждение):</strong> отвечает на вопрос <em>«Что эти результаты значат для науки?»</em>. Сопоставление данных с результатами других исследователей, обсуждение ограничений методики (Limitations), практическая ценность и перспективы дальнейших работ;</li>
+                            <li><strong>Conclusion (Заключение):</strong> итоговое резюме статьи в 2–3 абзацах.</li>
+                        </ul>
+                        <p>Перед введением обязательно размещается вводный реферат — обратите внимание на нюансы <a href="/blog/diploma-annotation-abstract-russian-english">составления двуязычной аннотации Abstract</a>.</p>
+                    </section>
+
+                    <section class="article-section" id="imrad-template">
+                        <h2 class="article-section__title">Структура IMRAD научной статьи: шаблон LaTeX для международных журналов</h2>
+                        <p>Эталонная <strong>структура imrad научной статьи шаблон</strong> в формате LaTeX:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX IMRAD Structure</span></div>
+                            <pre><code>\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{cite}
+
+\title{High-Efficiency Distributed Scheduling Algorithm for Edge Computing Networks}
+\author{A.~Ivanov$^{1}$, B.~Smith$^{2}$ \\
+\small $^{1}$Department of Computer Science, Technical University \\
+\small $^{2}$Institute of Advanced Computing}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Concise summary of context, proposed method, quantitative results, and significance (150--250 words).
+\end{abstract}
+
+\section{Introduction}
+% Research gap, motivation, objectives and paper organization.
+
+\section{Materials and Methods}
+% Theoretical model, algorithm formulation, simulation setup.
+
+\section{Results}
+% Experimental data, comparative performance plots, statistical metrics.
+
+\section{Discussion}
+% Interpretation of findings, comparisons with state-of-the-art, limitations.
+
+\section{Conclusion}
+% Concluding remarks and future directions.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\end{document}</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="results-vs-discussion">
+                        <h2 class="article-section__title">Главная ошибка: как не перепутать Results и Discussion</h2>
+                        <p>Самое частое замечание зарубежных рецензентов — смешивание результатов и обсуждения:</p>
+                        <div class="article-table-wrap">
+                            <table class="article-table">
+                                <thead>
+                                    <tr>
+                                        <th>Раздел</th>
+                                        <th>Что должно быть</th>
+                                        <th>Чего быть не должно</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Results</strong></td>
+                                        <td>Факты, числа, доверительные интервалы, графики: «Алгоритм снизил задержку на 22% по сравнению с Round-Robin»</td>
+                                        <td>Рассуждения, предположения, почему так вышло, цитаты из работ Иванова и Смита</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Discussion</strong></td>
+                                        <td>Анализ механизмов: «Такое улучшение объясняется локализацией кэша. Это согласуется с выводами [14], однако противоречит теории [18] из-за...»</td>
+                                        <td>Первичное введение новых таблиц или графиков, которых не было в Results</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="reviewer-checklist">
+                        <h2 class="article-section__title">Чек-лист перед отправкой рукописи в редакцию</h2>
+                        <ul>
+                            <li>Введение содержит не менее 15–20 актуальных ссылок на международные источники (Scopus/WoS) за последние 3 года;</li>
+                            <li>В методах четко указаны версии использованного ПО и параметры воспроизводимости;</li>
+                            <li>Все рисунки и таблицы упомянуты в основном тексте до их появления;</li>
+                            <li>В разделе Discussion честно описаны ограничения исследования (Study Limitations).</li>
+                        </ul>
+                    </section>
+
+                    <section class="article-section" id="tips">
+                        <h2 class="article-section__title">Практические советы</h2>
+                        <div class="article-tips">
+                            <div class="article-tip">
+                                <div class="article-tip__number">1</div>
+                                <div class="article-tip__content">
+                                    <h3>Оформление списка литературы через BibTeX</h3>
+                                    <p>Для статей Scopus всегда используйте BibTeX: он автоматически форматирует ссылки по требованиям журнала (IEEE, APA, Harvard, Springer) без ручного переписывания запятых.</p>
+                                </div>
+                            </div>
+                            <div class="article-tip">
+                                <div class="article-tip__number">2</div>
+                                <div class="article-tip__content">
+                                    <h3>Подготовка рукописей в Labkeeper</h3>
+                                    <p>В Labkeeper доступны официальные LaTeX-шаблоны ведущих издательств с предустановленными стилевыми файлами и мгновенным предпросмотром.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </article>
+
+            <aside class="article-sidebar">
+                <div class="article-sidebar__sticky">
+                    <div class="article-sidebar__media">
+                        <img src="../assets/img/img-for-firstScreen.webp"
+                            alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
+                            class="article-sidebar__img">
+                    </div>
+                    <p class="article-sidebar__title">В Labkeeper встроены проверенные академические шаблоны для журналов Elsevier, Springer и IEEE в формате LaTeX.</p>
+                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
+                        id="sidebar-cta-btn">
+                        Перейти в редактор
+                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+
+        <section class="cta-features" id="cta-features">
+            <div class="cta-features__intro">
+                <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
+                <h2 class="cta-features__intro-title">Пишите публикации Scopus в&nbsp;Labkeeper</h2>
+                <p class="cta-features__intro-text">Онлайн-редактор с поддержкой BibTeX, формульного аппарата amsmath, векторных графиков и мгновенным экспортом в PDF.</p>
+            </div>
+
+            <div class="feature-block feature-block--img-left feature-block--dark">
+                <div class="feature-block__container">
+                    <div class="feature-block__visual">
+                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor screenshot"
+                            class="feature-block__image js-popup-trigger"
+                            data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
+                    </div>
+                    <div class="feature-block__content">
+                        <ul class="feature-list">
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b1">Полновесная компиляция:</strong>
+                                <span data-i18n="feat-latex-t1">Получайте PDF профессионального качества с помощью
+                                    встроенного LaTeX-компилятора.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b2">60 секунд на выполнение:</strong>
+                                <span data-i18n="feat-latex-t2">Работайте со сложными документами без ограничений —
+                                    лимит времени компиляции в разы выше, чем в аналогичных сервисах.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b3">Умная конвертация:</strong>
+                                <span data-i18n="feat-latex-t3">Любые вычислительные формулы автоматически
+                                    преобразовываются в красивый LaTeX</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b4">Гибридный синтаксис:</strong>
+                                <span data-i18n="feat-latex-t4">Используйте легковесные вставки Markdown прямо в сложном
+                                    LaTeX-коде для ускорения работы.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-features__footer">
+                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
+                    Открыть редактор <span class="button__arrow">→</span>
+                </a>
+            </div>
+
+            <div class="feature__bg">
+                <img src="../assets/img/bg.svg" alt="bg" loading="lazy">
+            </div>
+        </section>
+
+    </main>
+
+    <section class="audience">
+        <div class="audience__container">
+            <h2 class="audience__title h1">Другие статьи</h2>
+
+            <div class="audience__slider-wrapper">
+                <button class="audience__arrow audience__arrow--prev" aria-label="Previous slide"></button>
+                <button class="audience__arrow audience__arrow--next" aria-label="Next slide"></button>
+
+                <div class="swiper audience__swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Динамическая генерация случайных статей через slider.js -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="audience__action">
+                <a href="/blog" class="button button--outline audience__btn">Все статьи <span
+                        class="button__arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <nav class="footer__nav">
+                    <a href="/#features" class="footer__link" data-i18n="nav-advantages"></a>
+                    <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
+                    <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
+                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank"
+                        class="footer__link footer__link--external">
+                        <span data-i18n="nav-wiki"></span>
+                        <img src="../assets/img/target.svg" alt="target icon" class="footer__link-icon"
+                            style="margin-left: 4px; vertical-align: middle;" width="16" height="16" loading="lazy">
+                    </a>
+                    <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
+                    <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
+
+                    <a href="/about" class="footer__link" data-i18n="nav-about"></a>
+                </nav>
+                <a href="/" class="footer__logo-link">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40"
+                        loading="lazy">
+                </a>
+                <div class="footer__contact">
+                    <span class="footer__contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com" class="footer__contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </div>
+            <div class="footer__middle">
+                <img src="../assets/img/img-for-footer.svg" alt="Labkeeper" class="footer__huge-logo" aria-hidden="true"
+                    loading="lazy">
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__copyright">© 2024—2026</div>
+                <a href="/privacy" class="footer__policy" data-i18n="footer-policy"></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Попап -->
+    <div class="popup js-popup" id="image-popup" aria-hidden="true">
+        <div class="popup__overlay js-popup-close"></div>
+        <div class="popup__content">
+            <button class="popup__close js-popup-close" aria-label="Закрыть">
+                <img src="../assets/img/close.svg" alt="Close" width="24" height="24">
+            </button>
+            <img src="" alt="Enlarged screenshot" class="popup__image js-popup-img" loading="lazy">
+        </div>
+    </div>
+
+    <div id="cookie-banner" class="cookie-banner hidden">
+        <div class="cookie-banner__container">
+            <p class="cookie-banner__text">
+                Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a
+                    href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных
+                    данных</a>.
+            </p>
+            <div class="cookie-banner__actions">
+                <button id="cookie-accept" class="button button--primary">Принять</button>
+                <button id="cookie-decline" class="button button--outline">Отказаться</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="scroll-top js-scroll-top" aria-label="Наверх" title="Наверх"></button>
+
+    <script>
+        window.__LABKEEPER_API_VERSION = "IO_LABKEEPER_FRONTEND_API_VERSION";
+    </script>
+    <script src="../assets/js/auth.js" defer></script>
+    <script src="../assets/js/script.js" defer></script>
+    <script src="../assets/js/lang.js" defer></script>
+    <script src="../assets/js/slider.js" defer></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+</body>
+
+</html>
