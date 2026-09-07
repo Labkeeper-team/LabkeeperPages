@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<!-- Пачка 2 -->
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
+    <title>Markdown шаблон резюме разработчика: создать CV в Markdown онлайн — Labkeeper</title>
+    <meta name="description" content="Современный Markdown шаблон резюме разработчика под концепцию CV-as-Code. Как создать CV в Markdown онлайн, настроить стили и экспортировать в ATS PDF в Labkeeper." />
+    <!-- SEO Ключи: markdown шаблон резюме разработчика, создать cv в markdown онлайн -->
+    <meta name="keywords" content="markdown шаблон резюме разработчика, создать cv в markdown онлайн" />
+    <link rel="canonical" href="https://labkeeper.io/blog/modern-it-resume-markdown-cv-as-code" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://labkeeper.io/blog/modern-it-resume-markdown-cv-as-code" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Labkeeper" />
+    <meta property="og:title" content="Markdown шаблон резюме разработчика: создать CV в Markdown онлайн — Labkeeper" />
+    <meta property="og:description" content="Современный Markdown шаблон резюме разработчика под концепцию CV-as-Code. Как создать CV в Markdown онлайн, настроить стили и экспортировать в ATS PDF в Labkeeper." />
+    <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:title" content="Markdown шаблон резюме разработчика: создать CV в Markdown онлайн — Labkeeper" />
+    <meta name="twitter:description" content="Современный Markdown шаблон резюме разработчика под концепцию CV-as-Code. Как создать CV в Markdown онлайн, настроить стили и экспортировать в ATS PDF в Labkeeper." />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Шаблон современного IT-резюме в Markdown: пишем CV как код",
+        "description": "Современный Markdown шаблон резюме разработчика под концепцию CV-as-Code. Как создать CV в Markdown онлайн, настроить стили и экспортировать в ATS PDF в Labkeeper.",
+        "author": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "url": "https://labkeeper.io"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://labkeeper.io/assets/img/logo.svg"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://labkeeper.io/blog/modern-it-resume-markdown-cv-as-code"
+        },
+        "datePublished": "2026-09-06",
+        "dateModified": "2026-09-06",
+        "inLanguage": "ru",
+        "articleSection": ["Оформление резюме / CV","Работа с Markdown"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://labkeeper.io/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Блог",
+                "item": "https://labkeeper.io/blog"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Резюме в Markdown (CV as Code)",
+                "item": "https://labkeeper.io/blog/modern-it-resume-markdown-cv-as-code"
+            }
+        ]
+    }
+    </script>
+
+    <script type="text/javascript">
+        (function () {
+            function hasAcceptedCookieConsent() {
+                try {
+                    return localStorage.getItem('labkeeper_cookie_consent') === 'accepted';
+                } catch (e) {
+                    return false;
+                }
+            }
+
+            window.initLabkeeperYandexMetrika = function () {
+                if (
+                    window.__labkeeperYandexMetrikaInitialized ||
+                    !hasAcceptedCookieConsent() ||
+                    typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined'
+                ) {
+                    return;
+                }
+
+                (function (m, e, t, r, i, k, a) {
+                    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+                    m[i].l = 1 * new Date();
+                    for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+                    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a);
+                })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", {
+                    webvisor: true,
+                    clickmap: true,
+                    referrer: document.referrer,
+                    url: location.href,
+                    accurateTrackBounce: true,
+                    trackLinks: true
+                });
+
+                window.__labkeeperYandexMetrikaInitialized = true;
+            };
+
+            window.initLabkeeperYandexMetrika();
+        })();
+    </script>
+
+    <!-- Preconnect & Async Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body class="page blog__article">
+    <header class="header js-header">
+        <div class="header__container">
+            <div class="header__left">
+                <button class="header__burger js-burger-btn" aria-label="Открыть меню">
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                </button>
+                <a href="/" class="header__logo">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36"
+                        height="36">
+                    <span class="header__logo-text">Labkeeper</span>
+                </a>
+                <div class="header__lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+            </div>
+
+            <nav class="header__nav js-nav">
+                <div class="header__mobile-lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link"
+                            data-i18n="nav-examples"></a></li>
+                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link"
+                            data-i18n="nav-features"></a></li>
+                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a>
+                    </li>
+                    <li class="header__nav-item"><a href="/blog" class="header__nav-link" data-i18n="nav-blog"></a></li>
+
+                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a>
+                    </li>
+                </ul>
+                <div class="header__mobile-contact">
+                    <span class="header__mobile-contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com"
+                        class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </nav>
+
+            <div class="header__right">
+                <a href="/project/default?open=login" class="button button--outline header__login"
+                    data-i18n="btn-login"></a>
+                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects"
+                    style="display: none;"></a>
+                <a href="/project/default" class="button button--primary header__editor" data-i18n="btn-editor"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main page-article">
+
+        <div class="article-breadcrumbs">
+            <div class="article-breadcrumbs__container">
+                <nav class="article-breadcrumbs__nav" aria-label="Breadcrumb">
+                    <ol class="article-breadcrumbs__list">
+                        <li class="article-breadcrumbs__item">
+                            <a href="/" class="article-breadcrumbs__link">Главная</a>
+                        </li>
+                        <li class="article-breadcrumbs__item">
+                            <a href="/blog" class="article-breadcrumbs__link">Блог</a>
+                        </li>
+                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active">
+                            <span>Резюме в Markdown (CV as Code)</span>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="article-layout">
+
+            <article class="article-content">
+                <div class="article-content__container">
+
+                    <h1 class="article-content__title h1">Шаблон современного IT-резюме в&nbsp;Markdown: пишем CV как&nbsp;код</h1>
+
+                    <div class="article-content__tags">
+                        <a href="/blog#cv" class="article-tag">Оформление резюме / CV</a>
+                        <a href="/blog#markdown" class="article-tag">Работа с Markdown</a>
+                    </div>
+
+                    <p class="article-content__meta">Обновлено: 6 сентября 2026 · Время чтения: ~8 мин</p>
+
+                    <nav class="article-toc" aria-label="Содержание статьи">
+                        <h3 class="article-toc__title">Содержание</h3>
+                        <ol class="article-toc__list">
+                            <li><a href="#concept" class="article-toc__link">Концепция «CV как код» (Resume as Code)</a></li>
+                            <li><a href="#benefits" class="article-toc__link">Почему Markdown превосходит Canva, Figma и Word</a></li>
+                            <li><a href="#markdown-template" class="article-toc__link">Markdown шаблон резюме разработчика: готовый образец</a></li>
+                            <li><a href="#online-creator" class="article-toc__link">Создать CV в Markdown онлайн: пошаговая настройка в Labkeeper</a></li>
+                            <li><a href="#git-automation" class="article-toc__link">Автоматизация версий через Git и GitHub Actions</a></li>
+                        </ol>
+                    </nav>
+
+                    <section class="article-section" id="concept">
+                        <h2 class="article-section__title">Концепция «CV как код» (Resume as Code)</h2>
+                        <p>В инженерном сообществе подход <strong>«Резюме как код» (CV as Code)</strong> стал признанным стандартом хорошего тона. Вместо того чтобы тратить часы на выравнивание плашек в графических редакторах Canva или мучиться с непредсказуемой сеткой Word, разработчик хранит резюме в виде чистого текстового файла с разметкой Markdown.</p>
+                        <p>Это дает колоссальные преимущества: полный контроль версий через Git, возможность вести разные ветки под разные типы вакансий (например, <code>backend-lead</code> и <code>devops-architect</code>) и быструю компиляцию в финальный документ. О том, как логично сгруппировать навыки, читайте в нашей статье о том, как <a href="/blog/frontend-backend-developer-resume-tech-stack-ats">структурировать стек технологий разработчика</a>.</p>
+                    </section>
+
+                    <section class="article-section" id="benefits">
+                        <h2 class="article-section__title">Почему Markdown превосходит Canva, Figma и Word</h2>
+                        <ul>
+                            <li><strong>100% совместимость с ATS:</strong> системы автоматического скрининга кандидатов обожают структурированный plain text без скрытых графических фреймов;</li>
+                            <li><strong>Скорость редактирования:</strong> добавить новый проект или скорректировать цифру метрики можно за 10 секунд прямо из терминала или веб-редактора;</li>
+                            <li><strong>Фокус на содержании, а не украшательстве:</strong> технический директор оценивает ваши архитектурные решения и стек, а не цветные иконки и полоски прогресса;</li>
+                            <li><strong>Легкая портативность:</strong> из одного <code>.md</code> файла можно мгновенно сгенерировать HTML-страницу, PDF для отклика или plain-text для формы на сайте.</li>
+                        </ul>
+                        <p>Кроме того, текстовая разметка позволяет легко придерживаться жесткого <a href="/blog/one-page-resume-cv-template-condensing-experience">одностраничного формата резюме One-Pager</a>, принятого в международных компаниях.</p>
+                    </section>
+
+                    <section class="article-section" id="markdown-template">
+                        <h2 class="article-section__title">Markdown шаблон резюме разработчика: готовый образец</h2>
+                        <p>Практический <strong>markdown шаблон резюме разработчика</strong> с разделением на ключевые секции:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">Markdown CV Template</span></div>
+                            <pre><code># Артем Кузнецов — Senior Fullstack Developer
+**Специализация:** TypeScript, React, Node.js, Cloud Native  
+**Контакты:** artem.dev@example.com | Telegram: @artem_kuznetsov | [GitHub](https://github.com) | [Portfolio](https://example.com)
+
+---
+
+## Краткое резюме
+Fullstack разработчик с 6+ годами опыта в проектировании и масштабировании веб-сервисов с высокой нагрузкой. Эксперт в оптимизации производительности фронтенда (Web Vitals), создании отказоустойчивых REST/GraphQL API и микросервисной архитектуре.
+
+## Технический стек
+- **Языки:** TypeScript, JavaScript, Python, SQL, HTML5/CSS3
+- **Фронтенд:** React, Next.js, Redux Toolkit, TanStack Query, Tailwind CSS
+- **Бэкенд:** Node.js (NestJS, Express), PostgreSQL, Redis, RabbitMQ
+- **Инфраструктура:** Docker, Kubernetes, CI/CD (GitHub Actions), AWS (S3, EC2), Nginx
+
+## Опыт работы
+
+### Lead Fullstack Engineer — Финтех Платформа *(2022 — настоящее время)*
+- Спроектировал клиентскую часть личного кабинета инвестора на Next.js, сократив время первой отрисовки (FCP) с 2.8 до 0.9 секунд.
+- Перевел монолитный сервис нотификаций на событийно-ориентированную архитектуру с RabbitMQ, обеспечив обработку до 15 000 сообщений/сек.
+- Руководил командой из 5 разработчиков: проводил архитектурные ревью, внедрил автотесты Jest/Playwright (покрытие выросло до 80%).
+
+### Middle Fullstack Developer — SaaS Маркетплейс *(2019 — 2022)*
+- Разработал гибкий конструктор форм на React, ускоривший онбординг партнеров на 45%.
+- Оптимизировал сложные аналитические запросы в PostgreSQL, снизив утилизацию CPU базы данных на 30%.
+
+## Образование
+**МФТИ (ФПМИ)** — Бакалавр прикладной математики и информатики *(2015 — 2019)*</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="online-creator">
+                        <h2 class="article-section__title">Создать CV в Markdown онлайн: пошаговая настройка в Labkeeper</h2>
+                        <p>Чтобы быстро <strong>создать cv в markdown онлайн</strong> без установки локальных утилит Pandoc и Node.js, воспользуйтесь онлайн-редактором Labkeeper:</p>
+                        <ol>
+                            <li>Откройте новый документ и выберите шаблон «IT Resume»;</li>
+                            <li>Вставьте ваши данные, ссылки и проекты;</li>
+                            <li>Редактор на лету скомпилирует разметку в элегантный одностраничный или двухстраничный PDF-документ со встроенными векторными шрифтами и кликабельными гиперссылками.</li>
+                        </ol>
+                    </section>
+
+                    <section class="article-section" id="git-automation">
+                        <h2 class="article-section__title">Автоматизация версий через Git и GitHub Actions</h2>
+                        <p>Продвинутый уровень: создайте приватный или публичный репозиторий <code>my-resume</code> на GitHub. Настройте GitHub Action, который при каждом пуше в ветку <code>main</code> компилирует ваш <code>resume.md</code> в свежий <code>resume.pdf</code> и публикует его в GitHub Releases.</p>
+                    </section>
+
+                    <section class="article-section" id="tips">
+                        <h2 class="article-section__title">Практические советы</h2>
+                        <div class="article-tips">
+                            <div class="article-tip">
+                                <div class="article-tip__number">1</div>
+                                <div class="article-tip__content">
+                                    <h3>Кликабельные ссылки в шапке</h3>
+                                    <p>Всегда делайте ссылки на почту, Telegram и GitHub кликабельными (<code>[github.com/nick](https://github.com/nick)</code>), чтобы рекрутер мог перейти в ваш профиль в один клик прямо из PDF-ридера.</p>
+                                </div>
+                            </div>
+                            <div class="article-tip">
+                                <div class="article-tip__number">2</div>
+                                <div class="article-tip__content">
+                                    <h3>Компиляция без смещения строк</h3>
+                                    <p>В Labkeeper PDF-генератор настроен на строгое сохранение геометрии текста, исключая появление некрасивых висячих строк на последней странице.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </article>
+
+            <aside class="article-sidebar">
+                <div class="article-sidebar__sticky">
+                    <div class="article-sidebar__media">
+                        <img src="../assets/img/img-for-firstScreen.webp"
+                            alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
+                            class="article-sidebar__img">
+                    </div>
+                    <p class="article-sidebar__title">Верстайте стильные IT-резюме в чистом Markdown в Labkeeper с моментальным экспортом в идеальный PDF.</p>
+                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
+                        id="sidebar-cta-btn">
+                        Перейти в редактор
+                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+
+        <section class="cta-features" id="cta-features">
+            <div class="cta-features__intro">
+                <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
+                <h2 class="cta-features__intro-title">Напишите CV как код в&nbsp;Labkeeper</h2>
+                <p class="cta-features__intro-text">Онлайн-редактор для инженеров: лаконичный Markdown, стильные темы оформления и чистый векторный экспорт в PDF.</p>
+            </div>
+
+            <div class="feature-block feature-block--img-left feature-block--dark">
+                <div class="feature-block__container">
+                    <div class="feature-block__visual">
+                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor screenshot"
+                            class="feature-block__image js-popup-trigger"
+                            data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
+                    </div>
+                    <div class="feature-block__content">
+                        <ul class="feature-list">
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b1">Полновесная компиляция:</strong>
+                                <span data-i18n="feat-latex-t1">Получайте PDF профессионального качества с помощью
+                                    встроенного LaTeX-компилятора.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b2">60 секунд на выполнение:</strong>
+                                <span data-i18n="feat-latex-t2">Работайте со сложными документами без ограничений —
+                                    лимит времени компиляции в разы выше, чем в аналогичных сервисах.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b3">Умная конвертация:</strong>
+                                <span data-i18n="feat-latex-t3">Любые вычислительные формулы автоматически
+                                    преобразовываются в красивый LaTeX</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b4">Гибридный синтаксис:</strong>
+                                <span data-i18n="feat-latex-t4">Используйте легковесные вставки Markdown прямо в сложном
+                                    LaTeX-коде для ускорения работы.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-features__footer">
+                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
+                    Открыть редактор <span class="button__arrow">→</span>
+                </a>
+            </div>
+
+            <div class="feature__bg">
+                <img src="../assets/img/bg.svg" alt="bg" loading="lazy">
+            </div>
+        </section>
+
+    </main>
+
+    <section class="audience">
+        <div class="audience__container">
+            <h2 class="audience__title h1">Другие статьи</h2>
+
+            <div class="audience__slider-wrapper">
+                <button class="audience__arrow audience__arrow--prev" aria-label="Previous slide"></button>
+                <button class="audience__arrow audience__arrow--next" aria-label="Next slide"></button>
+
+                <div class="swiper audience__swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Динамическая генерация случайных статей через slider.js -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="audience__action">
+                <a href="/blog" class="button button--outline audience__btn">Все статьи <span
+                        class="button__arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <nav class="footer__nav">
+                    <a href="/#features" class="footer__link" data-i18n="nav-advantages"></a>
+                    <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
+                    <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
+                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank"
+                        class="footer__link footer__link--external">
+                        <span data-i18n="nav-wiki"></span>
+                        <img src="../assets/img/target.svg" alt="target icon" class="footer__link-icon"
+                            style="margin-left: 4px; vertical-align: middle;" width="16" height="16" loading="lazy">
+                    </a>
+                    <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
+                    <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
+
+                    <a href="/about" class="footer__link" data-i18n="nav-about"></a>
+                </nav>
+                <a href="/" class="footer__logo-link">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40"
+                        loading="lazy">
+                </a>
+                <div class="footer__contact">
+                    <span class="footer__contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com" class="footer__contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </div>
+            <div class="footer__middle">
+                <img src="../assets/img/img-for-footer.svg" alt="Labkeeper" class="footer__huge-logo" aria-hidden="true"
+                    loading="lazy">
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__copyright">© 2024—2026</div>
+                <a href="/privacy" class="footer__policy" data-i18n="footer-policy"></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Попап -->
+    <div class="popup js-popup" id="image-popup" aria-hidden="true">
+        <div class="popup__overlay js-popup-close"></div>
+        <div class="popup__content">
+            <button class="popup__close js-popup-close" aria-label="Закрыть">
+                <img src="../assets/img/close.svg" alt="Close" width="24" height="24">
+            </button>
+            <img src="" alt="Enlarged screenshot" class="popup__image js-popup-img" loading="lazy">
+        </div>
+    </div>
+
+    <div id="cookie-banner" class="cookie-banner hidden">
+        <div class="cookie-banner__container">
+            <p class="cookie-banner__text">
+                Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a
+                    href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных
+                    данных</a>.
+            </p>
+            <div class="cookie-banner__actions">
+                <button id="cookie-accept" class="button button--primary">Принять</button>
+                <button id="cookie-decline" class="button button--outline">Отказаться</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="scroll-top js-scroll-top" aria-label="Наверх" title="Наверх"></button>
+
+    <script>
+        window.__LABKEEPER_API_VERSION = "IO_LABKEEPER_FRONTEND_API_VERSION";
+    </script>
+    <script src="../assets/js/auth.js" defer></script>
+    <script src="../assets/js/script.js" defer></script>
+    <script src="../assets/js/lang.js" defer></script>
+    <script src="../assets/js/slider.js" defer></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+</body>
+
+</html>

@@ -157,6 +157,406 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================================================
     const ALL_BLOG_ARTICLES = [
         {
+            url: '/blog/resume-language-skills-cefr-scale-a1-c2',
+            title: 'Языки в резюме (Шкала CEFR)',
+            text: 'Как грамотно указать уровни языков A1-C2 в резюме для зарубежных и РФ компаний.'
+        },
+        {
+            url: '/blog/indirect-measurement-error-calculation-lab-report',
+            title: 'Погрешности косвенных измерений',
+            text: 'Шаблон расчета погрешностей косвенных измерений с частными производными.'
+        },
+        {
+            url: '/blog/latex-pgfplotstable-import-excel-csv-tables',
+            title: 'Импорт Excel/CSV в LaTeX',
+            text: 'Прямое чтение CSV-таблиц из Excel с пакетом pgfplotstable в LaTeX.'
+        },
+        {
+            url: '/blog/latex-multicol-multi-column-layout-journal',
+            title: 'Многоколоночный текст (multicol)',
+            text: 'Как верстать текст в 2 и 3 колонки с балансировкой высоты в LaTeX.'
+        },
+        {
+            url: '/blog/latex-rotating-package-sidewaystable-rotate-90',
+            title: 'Вращение таблиц (rotating)',
+            text: 'Как повернуть широкую таблицу на 90 градусов с помощью sidewaystable.'
+        },
+        {
+            url: '/blog/latex-arraystretch-table-row-height-spacing',
+            title: 'Высота строк в таблицах (arraystretch)',
+            text: 'Как сделать таблицы просторными и читаемыми с помощью переопределения arraystretch.'
+        },
+        {
+            url: '/blog/latex-hyperref-pdf-bookmarks-navigation',
+            title: 'Закладки в PDF (hyperref)',
+            text: 'Интерактивная навигация по документу, дерево закладок и цветные ссылки.'
+        },
+        {
+            url: '/blog/latex-algorithm2e-pseudocode-algorithms',
+            title: 'Алгоритмы algorithm2e в LaTeX',
+            text: 'Красивый псевдокод с нумерацией строк, условиями и циклами в LaTeX.'
+        },
+        {
+            url: '/blog/rinc-vak-scientific-article-template-fonts-margins',
+            title: 'Публикации для базы РИНЦ/ВАК',
+            text: 'Шаблон научной статьи РИНЦ и ВАК: требования к шрифтам, УДК и ГОСТ.'
+        },
+        {
+            url: '/blog/modern-it-resume-markdown-cv-as-code',
+            title: 'IT-резюме в Markdown (CV as Code)',
+            text: 'Как писать резюме разработчика как код с контролем версий и ATS-версткой.'
+        },
+        {
+            url: '/blog/word-formatting-issues-diploma-lightweight-markup-alternative',
+            title: 'Word съезжает в дипломе: решение',
+            text: 'Почему ломается форматирование в Word и как спасает легкая разметка.'
+        },
+        {
+            url: '/blog/ideal-lab-report-template-gost-online',
+            title: 'Шаблон отчета по лабораторной ГОСТ',
+            text: 'Готовый шаблон лабораторной работы с формулами, таблицами и графиками по ГОСТ.'
+        },
+        {
+            url: '/blog/complex-markdown-tables-syntax-online-generator',
+            title: 'Сложные таблицы в Markdown',
+            text: 'Выравнивание, многострочные ячейки и создание таблиц в Markdown онлайн.'
+        },
+        {
+            url: '/blog/imrad-structure-scientific-article-scopus-template',
+            title: 'Структура IMRAD для Scopus',
+            text: 'Международный стандарт научной статьи: правила наполнения блоков и шаблон.'
+        },
+        {
+            url: '/blog/one-page-resume-cv-template-condensing-experience',
+            title: 'Одностраничное резюме (One-Pager)',
+            text: 'Как уместить 10 лет стажа на одной странице А4 по стандартам FAANG.'
+        },
+        {
+            url: '/blog/student-no-experience-resume-cv-template',
+            title: 'Резюме студента без опыта',
+            text: 'Что писать в CV при поиске первой работы и стажировки: курсовые, пет-проекты и стек.'
+        },
+        {
+            url: '/blog/frontend-backend-developer-resume-tech-stack-ats',
+            title: 'Резюме Frontend/Backend в Markdown',
+            text: 'Примеры оформления технологического стека и проектов в резюме под ATS.'
+        },
+        {
+            url: '/blog/how-to-write-it-cover-letter-structure-template',
+            title: 'Cover Letter для IT-вакансий',
+            text: 'Структура, убедительные метрики и англоязычный шаблон сопроводительного письма.'
+        },
+        {
+            url: '/blog/diploma-annotation-abstract-russian-english',
+            title: 'Аннотация к диплому (Abstract)',
+            text: 'Как грамотно составить аннотацию на русском и перевести Abstract для диплома.'
+        },
+        {
+            url: '/blog/supervisor-review-external-evaluation-diploma-templates',
+            title: 'Отзыв и рецензия на диплом',
+            text: 'Шаблоны отзыва научного руководителя и внешней рецензии на дипломную работу.'
+        },
+        {
+            url: '/blog/diploma-assignment-form-calendar-schedule-gost',
+            title: 'Бланк задания на ВКР',
+            text: 'Шаблоны задания и календарного графика диплома с правильным оформлением по ГОСТ.'
+        },
+        {
+            url: '/blog/how-to-write-lab-report-conclusion-examples',
+            title: 'Вывод к лабораторной работе',
+            text: 'Готовые шаблоны и фразы-клише для формулировки грамотного вывода по ГОСТ.'
+        },
+        {
+            url: '/blog/physics-lab-measurement-graphs-formatting-gost',
+            title: 'Графики измерений по физике',
+            text: 'Как грамотно разметить оси, нанести погрешности и провести прямую МНК.'
+        },
+        {
+            url: '/blog/latex-russian-cyrillic-code-listings-minted',
+            title: 'Русский язык в коде LaTeX',
+            text: 'Настройка пакетов listings и minted для поддержки русских комментариев без ошибок.'
+        },
+        {
+            url: '/blog/markdown-superscript-subscript-indices',
+            title: 'Индексы sup и sub в Markdown',
+            text: 'Как писать верхние и нижние индексы через теги sub/sup и формульный синтаксис.'
+        },
+        {
+            url: '/blog/biblatex-biber-advanced-bibliography-management',
+            title: 'Библиография biblatex и biber',
+            text: 'Пакет biblatex, движок biber, стили biblatex-gost и сортировка источников.'
+        },
+        {
+            url: '/blog/footnotes-bottom-page-law-history-coursework-gost',
+            title: 'Постраничные сноски по ГОСТ в курсовых',
+            text: 'Подстрочные сноски внизу страницы, оборот «Там же» и команда footnote.'
+        },
+        {
+            url: '/blog/table-continuation-multipage-gost-diploma',
+            title: 'Перенос таблиц по ГОСТ («Продолжение...»)',
+            text: 'Фраза «Продолжение таблицы», повтор номеров колонок и пакет longtable.'
+        },
+        {
+            url: '/blog/justified-text-spacing-hyphenation-latex-vs-word',
+            title: 'Выравнивание по ширине без пробелов',
+            text: 'Алгоритм Кнута-Пласса, пакет microtype и устранение «дыр» в абзацах.'
+        },
+        {
+            url: '/blog/figure-double-numbering-chapters-gost',
+            title: 'Двойная нумерация рисунков по ГОСТ',
+            text: 'Нумерация по главам (Рисунок 1.1), сброс счетчиков и пакет caption.'
+        },
+        {
+            url: '/blog/literature-review-structure-diploma-citation',
+            title: 'Литературный обзор в дипломе и ВКР',
+            text: 'Структура главы 1, аналитическое цитирование и выявление пробела в науке.'
+        },
+        {
+            url: '/blog/legal-regulatory-acts-bibliography-diploma-gost',
+            title: 'Нормативные акты в списке по ГОСТ',
+            text: 'Иерархия законов, Конституция, кодексы, ГОСТы и правила описания.'
+        },
+        {
+            url: '/blog/master-thesis-title-page-gost',
+            title: 'Титульный лист магистерской ВКР',
+            text: 'Стандарты оформления магистратуры, гриф допуска, коды направлений подготовки.'
+        },
+        {
+            url: '/blog/lab-report-bibliography-gost-2008',
+            title: 'Список источников по ГОСТ 2008',
+            text: 'Стандарт ГОСТ Р 7.0.5-2008, оформление методичек, книг и статей в отчетах.'
+        },
+        {
+            url: '/blog/formula-variable-explanation-where-gost',
+            title: 'Пояснения к формулам по ГОСТ («где...»)',
+            text: 'Слово «где» без двоеточия, тире, единицы измерений и порядок переменных.'
+        },
+        {
+            url: '/blog/software-screenshots-report-gost-caption',
+            title: 'Оформление скриншотов по ГОСТ',
+            text: 'Нумерация скриншотов, подписи под рисунками, кадрирование окон по ГОСТ 7.32.'
+        },
+        {
+            url: '/blog/markdown-image-size-width-height',
+            title: 'Размер изображений в Markdown',
+            text: 'Настройка width и height, стили CSS, тег img и центрирование картинок.'
+        },
+        {
+            url: '/blog/markdown-multiline-formulas-matrices-mathjax',
+            title: 'Матрицы и длинные формулы в Markdown',
+            text: 'Окружения pmatrix, bmatrix, выравнивание aligned и системы cases.'
+        },
+        {
+            url: '/blog/overleaf-alternatives-russia-online-latex',
+            title: 'Альтернативы Overleaf в России',
+            text: 'Онлайн-редакторы LaTeX без блокировок, поддержка ГОСТ и компиляция в РФ.'
+        },
+        {
+            url: '/blog/latex-tcolorbox-theorems-callouts',
+            title: 'Цветные рамки и теоремы (tcolorbox)',
+            text: 'Современные плашки callouts, стилизация теорем, определения и тени.'
+        },
+        {
+            url: '/blog/latex-multi-file-document-input-include',
+            title: 'Сборка документа из файлов (include)',
+            text: 'Модульная структура диплома, команды include, input и includeonly.'
+        },
+        {
+            url: '/blog/latex-custom-rgb-hex-colors-xcolor',
+            title: 'Пользовательские цвета RGB и HEX в LaTeX',
+            text: 'Объявление HEX и RGB оттенков, брендовые цвета и палитры xcolor.'
+        },
+        {
+            url: '/blog/latex-minipage-images-tables-side-by-side',
+            title: 'Картинки и таблицы рядом (minipage)',
+            text: 'Окружение minipage, две картинки в строку и текст рядом с таблицей.'
+        },
+        {
+            url: '/blog/essay-report-titlepage-format',
+            title: 'Титульный лист реферата и эссе',
+            text: 'Шапка министерства, реквизиты студента, канонический шаблон по ГОСТ.'
+        },
+        {
+            url: '/blog/diploma-appendices-listings-diagrams-gost',
+            title: 'Оформление приложений по ГОСТ',
+            text: 'Буквенная нумерация А, Б, В, вынос листингов кода и схем в приложения.'
+        },
+        {
+            url: '/blog/automatic-table-of-contents-diploma-gost',
+            title: 'Автоматическое оглавление по ГОСТ',
+            text: 'Команда tableofcontents, отточия, глубина tocdepth и пакет tocloft.'
+        },
+        {
+            url: '/blog/github-readme-template-badges-spoilers',
+            title: 'Оформление README.md на GitHub',
+            text: 'Бейджи Shields.io, спойлеры details, структура проекта и блок установки.'
+        },
+        {
+            url: '/blog/markdown-mathjax-katex-latex-math',
+            title: 'Формулы в Markdown (MathJax & KaTeX)',
+            text: 'Синтаксис долларов $$, ввод дробей, греческих символов и матриц.'
+        },
+        {
+            url: '/blog/electronic-resources-bibliography-gost-7-0-100',
+            title: 'Электронные ресурсы по ГОСТ 7.0.100',
+            text: 'Правила библиографии для веб-страниц, дата обращения и режим доступа.'
+        },
+        {
+            url: '/blog/scientific-article-annotation-abstract-keywords-vak',
+            title: 'Аннотация и ключевые слова по ГОСТ',
+            text: 'Структура Abstract, правила подбора ключевых слов ВАК и примеры формулировок.'
+        },
+        {
+            url: '/blog/it-english-cv-resume-template',
+            title: 'Шаблон IT-резюме на английском языке',
+            text: 'Одностраничный CV, оптимизация под ATS-роботов, разделы опыта и стека.'
+        },
+        {
+            url: '/blog/a4-frames-eskd-stamp-technical-diploma',
+            title: 'Рамки ЕСКД и штампы А4 для ВКР',
+            text: 'Формы 2 и 2а, поля 20-5-5-5 мм, графы штампа и автоматическое заполнение.'
+        },
+        {
+            url: '/blog/paragraph-indent-1-25-gost',
+            title: 'Абзацный отступ 1.25 см по ГОСТ',
+            text: 'Красная строка 1.25 см, пакет indentfirst и каноническое выравнивание по ширине.'
+        },
+        {
+            url: '/blog/diploma-page-numbering-second-page',
+            title: 'Нумерация страниц диплома по ГОСТ',
+            text: 'Скрытие номера на титульнике, нумерация со страницы 2 и колонтитулы ВКР.'
+        },
+        {
+            url: '/blog/lab-report-bibliography-gost-7-1',
+            title: 'Список литературы по ГОСТ 7.1',
+            text: 'Примеры библиографических записей книг, методичек и ГОСТ для отчетов.'
+        },
+        {
+            url: '/blog/student-confidence-intervals-error-calculation',
+            title: 'Погрешности и критерий Стьюдента',
+            text: 'Формулы СКО, таблица коэффициентов Стьюдента и оформление интервалов по ГОСТ.'
+        },
+        {
+            url: '/blog/formula-numbering-lab-reports-gost',
+            title: 'Нумерация формул по ГОСТ в отчетах',
+            text: 'Сквозная нумерация, привязка к разделам, макросы amsmath и eqref.'
+        },
+        {
+            url: '/blog/algorithm-flowcharts-gost-markdown-latex',
+            title: 'Блок-схемы по ГОСТ в отчетах',
+            text: 'Стандарт ГОСТ 19.701, отрисовка схем в TikZ и Mermaid, готовые шаблоны.'
+        },
+        {
+            url: '/blog/programming-lab-report-code-listings-gost',
+            title: 'Листинги кода по ГОСТ в отчетах',
+            text: 'Пакет listings, правила ГОСТ 7.32, моноширинные шрифты и шаблоны отчетов.'
+        },
+        {
+            url: '/blog/latex-tikz-automata-graphs',
+            title: 'Конечные автоматы и графы (TikZ)',
+            text: 'Библиотека automata, узлы состояний, дуги переходов и стильные петли.'
+        },
+        {
+            url: '/blog/latex-prevent-hyphenation-linebreaks',
+            title: 'Запрет переносов и тильда в LaTeX',
+            text: 'Неразрывные пробелы, запрет дефисных переносов и связывание формул.'
+        },
+        {
+            url: '/blog/latex-longtable-multipage',
+            title: 'Многостраничные таблицы (longtable)',
+            text: 'Автоматический перенос строк, повтор шапки таблицы и правила оформления ГОСТ.'
+        },
+        {
+            url: '/blog/latex-sans-serif-fonts',
+            title: 'Шрифты без засечек (Sans Serif) в LaTeX',
+            text: 'Глобальная смена шрифта на гротеск, пакеты helvet, cmbright и математика.'
+        },
+        {
+            url: '/blog/latex-forest-trees',
+            title: 'Деревья и графы в LaTeX (forest)',
+            text: 'Скобочная нотация, автоматическая упаковка узлов и синтаксические деревья.'
+        },
+        {
+            url: '/blog/latex-draftwatermark',
+            title: 'Водяные знаки в LaTeX (draftwatermark)',
+            text: 'Фоновые надписи «Черновик», конфиденциальные метки и настройка прозрачности.'
+        },
+        {
+            url: '/blog/latex-wrapfig-text-flow',
+            title: 'Обтекание текста картинкой в LaTeX',
+            text: 'Пакет wrapfig, позиционирование картинок справа и слева от абзаца.'
+        },
+        {
+            url: '/blog/latex-xcolor-text-background',
+            title: 'Цвет текста и таблиц в LaTeX',
+            text: 'Пакет xcolor, цветные таблицы, фон ячеек и градиенты в академических документах.'
+        },
+        {
+            url: '/blog/latex-pgfplots-function-graphs',
+            title: 'Точные графики с pgfplots в LaTeX',
+            text: 'Векторные математические функции, графики по точкам и полная кастомизация осей.'
+        },
+        {
+            url: '/blog/latex-line-spacing-1-5-setspace-gost',
+            title: 'Полуторный интервал 1.5 в&nbsp;LaTeX (setspace)',
+            text: 'Настройка полуторного интервала по ГОСТ без поломки таблиц и сносок.'
+        },
+        {
+            url: '/blog/latex-nested-lists-enumerate-itemize',
+            title: 'Многоуровневые списки в&nbsp;LaTeX',
+            text: 'Настройка вложенности, иерархических меток и маркеров по ГОСТ.'
+        },
+        {
+            url: '/blog/latex-geometry-margins-gost',
+            title: 'Поля страницы по&nbsp;ГОСТ в&nbsp;LaTeX (geometry)',
+            text: 'Точная настройка геометрии листа А4 под строгие нормоконтроли вузов.'
+        },
+        {
+            url: '/blog/latex-newcommand-macros',
+            title: 'Собственные макросы \newcommand в&nbsp;LaTeX',
+            text: 'Создание команд с аргументами, сокращение формул и ускорение набора.'
+        },
+        {
+            url: '/blog/markdown-spoilers-details-summary',
+            title: 'Спойлеры и&nbsp;скрытый текст в&nbsp;Markdown',
+            text: 'Оформление details и summary для компактных интерактивных конспектов.'
+        },
+        {
+            url: '/blog/markdown-table-merge-cells-rowspan-colspan',
+            title: 'Объединение ячеек таблиц в&nbsp;Markdown',
+            text: 'Синтаксис Colspan и Rowspan, составные шапки и таблицы сложных отчетов.'
+        },
+        {
+            url: '/blog/markdown-raw-html-integration',
+            title: 'Вставка чистого HTML в&nbsp;Markdown',
+            text: 'Кастомные стили, выравнивание текста, цветные блоки и мультимедиа.'
+        },
+        {
+            url: '/blog/markdown-to-pdf-export',
+            title: 'Конвертация Markdown в&nbsp;PDF онлайн',
+            text: 'Мгновенный экспорт .md в PDF с формулами, разметкой таблиц и полями А4.'
+        },
+        {
+            url: '/blog/markdown-strikethrough-underline-highlight',
+            title: 'Зачеркивание и&nbsp;подчеркивание в&nbsp;Markdown',
+            text: 'Синтаксис ~~зачеркивания~~, подчеркивание и текстовыделитель для заметок.'
+        },
+        {
+            url: '/blog/markdown-code-syntax-highlighting',
+            title: 'Подсветка синтаксиса кода в&nbsp;Markdown',
+            text: 'Оформление блоков кода, указатели языков и читаемые листинги для отчетов.'
+        },
+        {
+            url: '/blog/markdown-task-lists',
+            title: 'Списки задач и&nbsp;чек-листы в&nbsp;Markdown',
+            text: 'Синтаксис галочек [x], вложенные подзадачи и оформление чек-листов для отчетов.'
+        },
+        {
+            url: '/blog/markdown-footnotes',
+            title: 'Кликабельные сноски в&nbsp;Markdown',
+            text: 'Синтаксис footnote [^1], многострочные сноски внизу страницы и рендеринг в PDF.'
+        },
+        {
             url: '/blog/latex-gost-bibliography',
             title: 'Список литературы по&nbsp;ГОСТ 7.0.5',
             text: 'Оформление списка источников и цитирований по ГОСТ 7.0.5 с пакетом biblatex-gost.'

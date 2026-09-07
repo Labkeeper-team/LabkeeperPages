@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<!-- Пачка 2 -->
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
+    <title>Markdown чек лист синтаксис: список задач с галочками — Labkeeper</title>
+    <meta name="description" content="Изучаем Markdown чек лист синтаксис: как оформить список задач Markdown с галочками [x], вложенные подзадачи для отчетов и экспортировать в читаемый PDF в Labkeeper." />
+    <!-- SEO Ключи: markdown чек лист синтаксис, список задач markdown галочки -->
+    <meta name="keywords" content="markdown чек лист синтаксис, список задач markdown галочки" />
+    <link rel="canonical" href="https://labkeeper.io/blog/markdown-task-lists" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://labkeeper.io/blog/markdown-task-lists" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Labkeeper" />
+    <meta property="og:title" content="Markdown чек лист синтаксис: список задач с галочками — Labkeeper" />
+    <meta property="og:description" content="Изучаем Markdown чек лист синтаксис: как оформить список задач Markdown с галочками [x], вложенные подзадачи для отчетов и экспортировать в читаемый PDF в Labkeeper." />
+    <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:title" content="Markdown чек лист синтаксис: список задач с галочками — Labkeeper" />
+    <meta name="twitter:description" content="Изучаем Markdown чек лист синтаксис: как оформить список задач Markdown с галочками [x], вложенные подзадачи для отчетов и экспортировать в читаемый PDF в Labkeeper." />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Создание списков задач (Task lists) и чек-листов в Markdown",
+        "description": "Изучаем Markdown чек лист синтаксис: как оформить список задач Markdown с галочками [x], вложенные подзадачи для отчетов и экспортировать в читаемый PDF в Labkeeper.",
+        "author": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "url": "https://labkeeper.io"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://labkeeper.io/assets/img/logo.svg"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://labkeeper.io/blog/markdown-task-lists"
+        },
+        "datePublished": "2026-09-05",
+        "dateModified": "2026-09-05",
+        "inLanguage": "ru",
+        "articleSection": ["Работа с Markdown","Лабораторные работы"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://labkeeper.io/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Блог",
+                "item": "https://labkeeper.io/blog"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Чек-листы в Markdown",
+                "item": "https://labkeeper.io/blog/markdown-task-lists"
+            }
+        ]
+    }
+    </script>
+
+    <script type="text/javascript">
+        (function () {
+            function hasAcceptedCookieConsent() {
+                try {
+                    return localStorage.getItem('labkeeper_cookie_consent') === 'accepted';
+                } catch (e) {
+                    return false;
+                }
+            }
+
+            window.initLabkeeperYandexMetrika = function () {
+                if (
+                    window.__labkeeperYandexMetrikaInitialized ||
+                    !hasAcceptedCookieConsent() ||
+                    typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined'
+                ) {
+                    return;
+                }
+
+                (function (m, e, t, r, i, k, a) {
+                    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+                    m[i].l = 1 * new Date();
+                    for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+                    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a);
+                })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", {
+                    webvisor: true,
+                    clickmap: true,
+                    referrer: document.referrer,
+                    url: location.href,
+                    accurateTrackBounce: true,
+                    trackLinks: true
+                });
+
+                window.__labkeeperYandexMetrikaInitialized = true;
+            };
+
+            window.initLabkeeperYandexMetrika();
+        })();
+    </script>
+
+    <!-- Preconnect & Async Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body class="page blog__article">
+    <header class="header js-header">
+        <div class="header__container">
+            <div class="header__left">
+                <button class="header__burger js-burger-btn" aria-label="Открыть меню">
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                </button>
+                <a href="/" class="header__logo">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36"
+                        height="36">
+                    <span class="header__logo-text">Labkeeper</span>
+                </a>
+                <div class="header__lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+            </div>
+
+            <nav class="header__nav js-nav">
+                <div class="header__mobile-lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link"
+                            data-i18n="nav-examples"></a></li>
+                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link"
+                            data-i18n="nav-features"></a></li>
+                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a>
+                    </li>
+                    <li class="header__nav-item"><a href="/blog" class="header__nav-link" data-i18n="nav-blog"></a></li>
+
+                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a>
+                    </li>
+                </ul>
+                <div class="header__mobile-contact">
+                    <span class="header__mobile-contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com"
+                        class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </nav>
+
+            <div class="header__right">
+                <a href="/project/default?open=login" class="button button--outline header__login"
+                    data-i18n="btn-login"></a>
+                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects"
+                    style="display: none;"></a>
+                <a href="/project/default" class="button button--primary header__editor" data-i18n="btn-editor"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main page-article">
+
+        <div class="article-breadcrumbs">
+            <div class="article-breadcrumbs__container">
+                <nav class="article-breadcrumbs__nav" aria-label="Breadcrumb">
+                    <ol class="article-breadcrumbs__list">
+                        <li class="article-breadcrumbs__item">
+                            <a href="/" class="article-breadcrumbs__link">Главная</a>
+                        </li>
+                        <li class="article-breadcrumbs__item">
+                            <a href="/blog" class="article-breadcrumbs__link">Блог</a>
+                        </li>
+                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active">
+                            <span>Чек-листы в Markdown</span>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="article-layout">
+
+            <article class="article-content">
+                <div class="article-content__container">
+
+                    <h1 class="article-content__title h1">Создание списков задач (Task lists) и&nbsp;чек-листов в&nbsp;Markdown</h1>
+
+                    <div class="article-content__tags">
+                        <a href="/blog#markdown" class="article-tag">Работа с Markdown</a>
+                        <a href="/blog#labs" class="article-tag">Лабораторные работы</a>
+                    </div>
+
+                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~5 мин</p>
+
+                    <nav class="article-toc" aria-label="Содержание статьи">
+                        <h3 class="article-toc__title">Содержание</h3>
+                        <ol class="article-toc__list">
+                            <li><a href="#intro" class="article-toc__link">Что такое Task lists в Markdown</a></li>
+                            <li><a href="#syntax" class="article-toc__link">Markdown чек лист: синтаксис и базовые правила</a></li>
+                            <li><a href="#nested" class="article-toc__link">Вложенные списки задач и группировка</a></li>
+                            <li><a href="#formatting-inside" class="article-toc__link">Форматирование внутри чек-листов (код, формулы, ссылки)</a></li>
+                            <li><a href="#lab-example" class="article-toc__link">Список задач Markdown с галочками: пример для лабораторной работы</a></li>
+                            <li><a href="#pitfalls" class="article-toc__link">Типичные ошибки при оформлении</a></li>
+                        </ol>
+                    </nav>
+
+                    <section class="article-section" id="intro">
+                        <h2 class="article-section__title">Что такое Task lists в Markdown</h2>
+                        <p>Списки задач (<strong>Task lists</strong> или чек-листы) — это интерактивное расширение базового формата Markdown, утвержденное стандартом <strong>GitHub Flavored Markdown (GFM)</strong>. Они позволяют превращать стандартные маркеры списков в кликабельные чек-боксы. Такие списки особенно популярны в open-source разработке (рекомендуем наш готовый <a href="/blog/github-readme-template-badges-spoilers">шаблон README.md для GitHub</a>).</p>
+                        <p>В академической и исследовательской практике такие списки применяются повсеместно:</p>
+                        <ul>
+                            <li>Для пошагового контроля хода физического или химического эксперимента;</li>
+                            <li>Для отслеживания замечаний научного руководителя при подготовке диплома;</li>
+                            <li>Для перечня реактивов, приборов и калибровочных процедур.</li>
+                        </ul>
+                    </section>
+
+                    <section class="article-section" id="syntax">
+                        <h2 class="article-section__title">Markdown чек лист: синтаксис и базовые правила</h2>
+                        <p>Освоить <strong>Markdown чек лист синтаксис</strong> предельно просто. Чтобы элемент списка стал задачей с чек-боксом, после маркера списка (<code>-</code>, <code>*</code> или <code>+</code>) добавляется пробел, а затем квадратные скобки:</p>
+                        <ul>
+                            <li><code>- [ ] </code> — активная (невыполненная) задача с пустым квадратом;</li>
+                            <li><code>- [x] </code> (или <code>- [X] </code>) — завершенная задача с установленной отметкой.</li>
+                        </ul>
+                        <div class="article-code">
+                            <div class="article-code__header">
+                                <span class="article-code__lang">Markdown</span>
+                            </div>
+                            <pre><code>### План подготовки измерительного стенда
+
+- [x] Проверить контур заземления прибора
+- [x] Откалибровать термопару при температуре 20°C
+- [ ] Выполнить серию из 10 контрольных измерений
+- [ ] Зафиксировать результаты в электронном журнале</code></pre>
+                        </div>
+                        <p>В большинстве современных редакторов, включая <strong>Labkeeper</strong> и веб-интерфейс GitHub, такие чек-листы интерактивны: вы можете отмечать пункты кликом мыши прямо в режиме чтения документа.</p>
+                    </section>
+
+                    <section class="article-section" id="nested">
+                        <h2 class="article-section__title">Вложенные списки задач и группировка</h2>
+                        <p>Сложные исследовательские этапы легко разбивать на подзадачи. Для создания вложенного уровня добавьте перед дефисом <strong>отступ в 2 или 4 пробела</strong>:</p>
+                        <div class="article-code">
+                            <div class="article-code__header">
+                                <span class="article-code__lang">Markdown</span>
+                            </div>
+                            <pre><code>- [ ] Этап 1: Подготовка исследуемых образцов
+  - [x] Взвешивание навесок на аналитических весах
+  - [ ] Растворение в буферном растворе pH 7.4
+- [ ] Этап 2: Спектрофотометрия
+  - [ ] Прогрев спектрофотометра в течение 15 минут
+  - [ ] Измерение оптической плотности контрольной кюветы</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="formatting-inside">
+                        <h2 class="article-section__title">Форматирование внутри чек-листов (код, формулы, ссылки)</h2>
+                        <p>Внутри строк чек-листа сохраняются все возможности форматирования Markdown: ссылки, полужирный шрифт, теги инлайн-кода (детальный разбор оформления листингов смотрите в статье о <a href="/blog/markdown-code-syntax-highlighting">подсветке синтаксиса кода в Markdown</a>) и даже математические выражения LaTeX:</p>
+                        <div class="article-code">
+                            <div class="article-code__header">
+                                <span class="article-code__lang">Markdown</span>
+                            </div>
+                            <pre><code>- [x] Установить библиотеку `scipy` версии не ниже **1.10**
+- [x] Проверить критерий сходимости $R^2 \ge 0.98$
+- [ ] Скачать методические указания по [ссылке на кафедральный портал](https://labkeeper.io)</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="lab-example">
+                        <h2 class="article-section__title">Список задач Markdown с галочками: пример для лабораторной работы</h2>
+                        <p>Оформляя отчет по лабораторной работе, удобно добавить <strong>список задач Markdown с галочками</strong> в качестве контрольного листа допуска к выполнению эксперимента:</p>
+                        <div class="article-code">
+                            <div class="article-code__header">
+                                <span class="article-code__lang">Markdown</span>
+                            </div>
+                            <pre><code>## Контрольный лист допуска к эксперименту
+
+- [x] Вводный инструктаж по технике безопасности пройден
+- [x] Теоретический расчет погрешностей выполнен
+- [ ] Схема измерений собрана и одобрена преподавателем
+- [ ] Стартовое напряжение источника питания выставлено на $U = 12\text{ В}$
+- [ ] Показания амперметра внесены в чистовой протокол</code></pre>
+                        </div>
+                        <p>При экспорте отчета в PDF в редакторе <strong>Labkeeper</strong> все чек-боксы преобразуются в аккуратные типографические рамки с четкими векторными галочками, которые идеально смотрятся на распечатанном бланке отчета.</p>
+                    </section>
+
+                    <section class="article-section" id="pitfalls">
+                        <h2 class="article-section__title">Типичные ошибки при оформлении</h2>
+                        <ul>
+                            <li><strong>Отсутствие пробела между скобками:</strong> Конструкция <code>- []</code> не будет распознана. Внутри скобок обязательно должен быть ровно один пробел: <code>- [ ]</code>.</li>
+                            <li><strong>Слитное написание с дефисом:</strong> <code>-[ ]</code> или <code>- [ ]Текст</code> без пробелов приведет к поломке разметки списка.</li>
+                            <li><strong>Русская буква «х»:</strong> Отметка выполнения требует исключительно латинской буквы: <code>- [x]</code> или <code>- [X]</code>.</li>
+                        </ul>
+                    </section>
+
+                    <section class="article-section" id="tips">
+                        <h2 class="article-section__title">Практические советы</h2>
+                        <div class="article-tips">
+                            <div class="article-tip">
+                                <div class="article-tip__number">1</div>
+                                <div class="article-tip__content">
+                                    <h3>Зачеркивание для отмененных пунктов</h3>
+                                    <p>Если пункт плана был отменен, используйте двойную тильду: <code>- [x] ~~Предварительный прогрев реактора~~ (отменено регламентом)</code>.</p>
+                                </div>
+                            </div>
+                            <div class="article-tip">
+                                <div class="article-tip__number">2</div>
+                                <div class="article-tip__content">
+                                    <h3>Автоматический трекинг выполнения на GitHub</h3>
+                                    <p>Если файл сохраняется на GitHub или GitLab, чек-листы автоматически формируют процентный индикатор готовности задачи (например, <code>4 of 6 tasks</code>) в превью репозитория.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </article>
+
+            <aside class="article-sidebar">
+                <div class="article-sidebar__sticky">
+                    <div class="article-sidebar__media">
+                        <img src="../assets/img/img-for-firstScreen.webp"
+                            alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
+                            class="article-sidebar__img">
+                    </div>
+                    <p class="article-sidebar__title">Оформляйте протоколы лабораторных работ и планы исследований в онлайн-редакторе Labkeeper с поддержкой интерактивных чек-листов.</p>
+                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
+                        id="sidebar-cta-btn">
+                        Перейти в редактор
+                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+
+        <section class="cta-features" id="cta-features">
+            <div class="cta-features__intro">
+                <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
+                <h2 class="cta-features__intro-title">Контролируйте ход исследований в&nbsp;Labkeeper</h2>
+                <p class="cta-features__intro-text">Онлайн-редактор с поддержкой списков задач Task lists, вложенных подпунктов, формул и экспорта в чистый PDF для отчетов.</p>
+            </div>
+
+            <div class="feature-block feature-block--img-left feature-block--dark">
+                <div class="feature-block__container">
+                    <div class="feature-block__visual">
+                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor screenshot"
+                            class="feature-block__image js-popup-trigger"
+                            data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
+                    </div>
+                    <div class="feature-block__content">
+                        <ul class="feature-list">
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b1">Полновесная компиляция:</strong>
+                                <span data-i18n="feat-latex-t1">Получайте PDF профессионального качества с помощью
+                                    встроенного LaTeX-компилятора.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b2">60 секунд на выполнение:</strong>
+                                <span data-i18n="feat-latex-t2">Работайте со сложными документами без ограничений —
+                                    лимит времени компиляции в разы выше, чем в аналогичных сервисах.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b3">Умная конвертация:</strong>
+                                <span data-i18n="feat-latex-t3">Любые вычислительные формулы автоматически
+                                    преобразовываются в красивый LaTeX</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b4">Гибридный синтаксис:</strong>
+                                <span data-i18n="feat-latex-t4">Используйте легковесные вставки Markdown прямо в сложном
+                                    LaTeX-коде для ускорения работы.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-features__footer">
+                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
+                    Открыть редактор <span class="button__arrow">→</span>
+                </a>
+            </div>
+
+            <div class="feature__bg">
+                <img src="../assets/img/bg.svg" alt="bg" loading="lazy">
+            </div>
+        </section>
+
+    </main>
+
+    <section class="audience">
+        <div class="audience__container">
+            <h2 class="audience__title h1">Другие статьи</h2>
+
+            <div class="audience__slider-wrapper">
+                <button class="audience__arrow audience__arrow--prev" aria-label="Previous slide"></button>
+                <button class="audience__arrow audience__arrow--next" aria-label="Next slide"></button>
+
+                <div class="swiper audience__swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Динамическая генерация случайных статей через slider.js -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="audience__action">
+                <a href="/blog" class="button button--outline audience__btn">Все статьи <span
+                        class="button__arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <nav class="footer__nav">
+                    <a href="/#features" class="footer__link" data-i18n="nav-advantages"></a>
+                    <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
+                    <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
+                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank"
+                        class="footer__link footer__link--external">
+                        <span data-i18n="nav-wiki"></span>
+                        <img src="../assets/img/target.svg" alt="target icon" class="footer__link-icon"
+                            style="margin-left: 4px; vertical-align: middle;" width="16" height="16" loading="lazy">
+                    </a>
+                    <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
+                    <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
+
+                    <a href="/about" class="footer__link" data-i18n="nav-about"></a>
+                </nav>
+                <a href="/" class="footer__logo-link">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40"
+                        loading="lazy">
+                </a>
+                <div class="footer__contact">
+                    <span class="footer__contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com" class="footer__contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </div>
+            <div class="footer__middle">
+                <img src="../assets/img/img-for-footer.svg" alt="Labkeeper" class="footer__huge-logo" aria-hidden="true"
+                    loading="lazy">
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__copyright">© 2024—2026</div>
+                <a href="/privacy" class="footer__policy" data-i18n="footer-policy"></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Попап -->
+    <div class="popup js-popup" id="image-popup" aria-hidden="true">
+        <div class="popup__overlay js-popup-close"></div>
+        <div class="popup__content">
+            <button class="popup__close js-popup-close" aria-label="Закрыть">
+                <img src="../assets/img/close.svg" alt="Close" width="24" height="24">
+            </button>
+            <img src="" alt="Enlarged screenshot" class="popup__image js-popup-img" loading="lazy">
+        </div>
+    </div>
+
+    <div id="cookie-banner" class="cookie-banner hidden">
+        <div class="cookie-banner__container">
+            <p class="cookie-banner__text">
+                Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a
+                    href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных
+                    данных</a>.
+            </p>
+            <div class="cookie-banner__actions">
+                <button id="cookie-accept" class="button button--primary">Принять</button>
+                <button id="cookie-decline" class="button button--outline">Отказаться</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="scroll-top js-scroll-top" aria-label="Наверх" title="Наверх"></button>
+
+    <script>
+        window.__LABKEEPER_API_VERSION = "IO_LABKEEPER_FRONTEND_API_VERSION";
+    </script>
+    <script src="../assets/js/auth.js" defer></script>
+    <script src="../assets/js/script.js" defer></script>
+    <script src="../assets/js/lang.js" defer></script>
+    <script src="../assets/js/slider.js" defer></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+</body>
+
+</html>

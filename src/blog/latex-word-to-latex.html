@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!-- Пачка 1 -->
 <html lang="ru">
 
@@ -10,7 +10,9 @@
     <title>Как перенести документ из Word в LaTeX с сохранением формул — Labkeeper</title>
     <meta name="description"
         content="Пошаговый гайд: перенос формул из Word в LaTeX онлайн, импорт docx в LaTeX без потери формул, использование Pandoc, встроенного редактора уравнений и Labkeeper." />
-    <link rel="canonical" href="https://labkeeper.io/blog/latex-word-to-latex" />
+        <!-- SEO Ключи: перенос формул из word в latex онлайн, импорт docx в latex без потери формул -->
+    <meta name="keywords" content="перенос формул из word в latex онлайн, импорт docx в latex без потери формул" />
+<link rel="canonical" href="https://labkeeper.io/blog/latex-word-to-latex" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://labkeeper.io/blog/latex-word-to-latex" />
     <meta property="og:locale" content="ru_RU" />
@@ -276,11 +278,11 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
             </aside>
         </div>
 
-        <section class="features" id="features">
-            <div class="features__intro">
-                <p class="features__intro-label">Попробуйте прямо сейчас</p>
-                <h2 class="features__intro-title">Работайте с&nbsp;LaTeX документами в&nbsp;Labkeeper</h2>
-                <p class="features__intro-text">Онлайн-редактор LaTeX для&nbsp;быстрого старта: переносите тексты и&nbsp;формулы, компилируйте в&nbsp;PDF и&nbsp;используйте AI-помощника без&nbsp;установки программ.</p>
+        <section class="cta-features" id="cta-features">
+            <div class="cta-features__intro">
+                <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
+                <h2 class="cta-features__intro-title">Работайте с&nbsp;LaTeX документами в&nbsp;Labkeeper</h2>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX для&nbsp;быстрого старта: переносите тексты и&nbsp;формулы, компилируйте в&nbsp;PDF и&nbsp;используйте AI-помощника без&nbsp;установки программ.</p>
             </div>
             <div class="feature-block feature-block--img-left feature-block--dark">
                 <div class="feature-block__container">
@@ -315,8 +317,8 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
                     </div>
                 </div>
             </div>
-            <div class="features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light features__intro-btn">Открыть
+            <div class="cta-features__footer">
+                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">Открыть
                     редактор <span class="button__arrow">→</span></a>
             </div>
             <div class="feature__bg"><img src="../assets/img/bg.svg" alt="bg" loading="lazy"></div>
@@ -377,6 +379,17 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
         </div>
     </footer>
 
+
+    <!-- Попап -->
+    <div class="popup js-popup" id="image-popup" aria-hidden="true">
+        <div class="popup__overlay js-popup-close"></div>
+        <div class="popup__content">
+            <button class="popup__close js-popup-close" aria-label="Закрыть">
+                <img src="../assets/img/close.svg" alt="Close" width="24" height="24">
+            </button>
+            <img src="" alt="Enlarged screenshot" class="popup__image js-popup-img" loading="lazy">
+        </div>
+    </div>
     <div id="cookie-banner" class="cookie-banner hidden">
         <div class="cookie-banner__container">
             <p class="cookie-banner__text">Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта.

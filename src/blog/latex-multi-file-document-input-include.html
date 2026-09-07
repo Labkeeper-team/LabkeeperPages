@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<!-- Пачка 2 -->
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
+    <title>Разбить диплом на несколько файлов LaTeX: команда include и input — Labkeeper</title>
+    <meta name="description" content="Как разбить диплом на несколько файлов в LaTeX: команда include и input, структура глав, выборочная компиляция includeonly в онлайн-редакторе Labkeeper." />
+    <!-- SEO Ключи: разбить диплом на несколько файлов latex, команда include latex -->
+    <meta name="keywords" content="разбить диплом на несколько файлов latex, команда include latex" />
+    <link rel="canonical" href="https://labkeeper.io/blog/latex-multi-file-document-input-include" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://labkeeper.io/blog/latex-multi-file-document-input-include" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Labkeeper" />
+    <meta property="og:title" content="Разбить диплом на несколько файлов LaTeX: команда include и input — Labkeeper" />
+    <meta property="og:description" content="Как разбить диплом на несколько файлов в LaTeX: команда include и input, структура глав, выборочная компиляция includeonly в онлайн-редакторе Labkeeper." />
+    <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
+    <meta name="twitter:title" content="Разбить диплом на несколько файлов LaTeX: команда include и input — Labkeeper" />
+    <meta name="twitter:description" content="Как разбить диплом на несколько файлов в LaTeX: команда include и input, структура глав, выборочная компиляция includeonly в онлайн-редакторе Labkeeper." />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Сборка большого документа из нескольких файлов (input и include)",
+        "description": "Как разбить диплом на несколько файлов в LaTeX: команда include и input, структура глав, выборочная компиляция includeonly в онлайн-редакторе Labkeeper.",
+        "author": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "url": "https://labkeeper.io"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://labkeeper.io/assets/img/logo.svg"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://labkeeper.io/blog/latex-multi-file-document-input-include"
+        },
+        "datePublished": "2026-09-05",
+        "dateModified": "2026-09-05",
+        "inLanguage": "ru",
+        "articleSection": ["Работа с LaTeX","Дипломные работы"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://labkeeper.io/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Блог",
+                "item": "https://labkeeper.io/blog"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Сборка из нескольких файлов (input / include)",
+                "item": "https://labkeeper.io/blog/latex-multi-file-document-input-include"
+            }
+        ]
+    }
+    </script>
+
+    <script type="text/javascript">
+        (function () {
+            function hasAcceptedCookieConsent() {
+                try {
+                    return localStorage.getItem('labkeeper_cookie_consent') === 'accepted';
+                } catch (e) {
+                    return false;
+                }
+            }
+
+            window.initLabkeeperYandexMetrika = function () {
+                if (
+                    window.__labkeeperYandexMetrikaInitialized ||
+                    !hasAcceptedCookieConsent() ||
+                    typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined'
+                ) {
+                    return;
+                }
+
+                (function (m, e, t, r, i, k, a) {
+                    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+                    m[i].l = 1 * new Date();
+                    for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+                    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a);
+                })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", {
+                    webvisor: true,
+                    clickmap: true,
+                    referrer: document.referrer,
+                    url: location.href,
+                    accurateTrackBounce: true,
+                    trackLinks: true
+                });
+
+                window.__labkeeperYandexMetrikaInitialized = true;
+            };
+
+            window.initLabkeeperYandexMetrika();
+        })();
+    </script>
+
+    <!-- Preconnect & Async Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body class="page blog__article">
+    <header class="header js-header">
+        <div class="header__container">
+            <div class="header__left">
+                <button class="header__burger js-burger-btn" aria-label="Открыть меню">
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                </button>
+                <a href="/" class="header__logo">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36"
+                        height="36">
+                    <span class="header__logo-text">Labkeeper</span>
+                </a>
+                <div class="header__lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+            </div>
+
+            <nav class="header__nav js-nav">
+                <div class="header__mobile-lang js-lang-switcher">
+                    <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
+                    <button class="header__lang-btn" data-lang="en">En</button>
+                </div>
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link"
+                            data-i18n="nav-examples"></a></li>
+                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link"
+                            data-i18n="nav-features"></a></li>
+                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a>
+                    </li>
+                    <li class="header__nav-item"><a href="/blog" class="header__nav-link" data-i18n="nav-blog"></a></li>
+
+                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a>
+                    </li>
+                </ul>
+                <div class="header__mobile-contact">
+                    <span class="header__mobile-contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com"
+                        class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </nav>
+
+            <div class="header__right">
+                <a href="/project/default?open=login" class="button button--outline header__login"
+                    data-i18n="btn-login"></a>
+                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects"
+                    style="display: none;"></a>
+                <a href="/project/default" class="button button--primary header__editor" data-i18n="btn-editor"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main page-article">
+
+        <div class="article-breadcrumbs">
+            <div class="article-breadcrumbs__container">
+                <nav class="article-breadcrumbs__nav" aria-label="Breadcrumb">
+                    <ol class="article-breadcrumbs__list">
+                        <li class="article-breadcrumbs__item">
+                            <a href="/" class="article-breadcrumbs__link">Главная</a>
+                        </li>
+                        <li class="article-breadcrumbs__item">
+                            <a href="/blog" class="article-breadcrumbs__link">Блог</a>
+                        </li>
+                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active">
+                            <span>Сборка из нескольких файлов (input / include)</span>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="article-layout">
+
+            <article class="article-content">
+                <div class="article-content__container">
+
+                    <h1 class="article-content__title h1">Сборка большого документа из&nbsp;нескольких файлов (input и&nbsp;include)</h1>
+
+                    <div class="article-content__tags">
+                        <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
+                        <a href="/blog#diploma" class="article-tag">Дипломные работы</a>
+                    </div>
+
+                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~7 мин</p>
+
+                    <nav class="article-toc" aria-label="Содержание статьи">
+                        <h3 class="article-toc__title">Содержание</h3>
+                        <ol class="article-toc__list">
+                            <li><a href="#why-modular" class="article-toc__link">Зачем делить большой проект на отдельные файлы</a></li>
+                            <li><a href="#input-vs-include" class="article-toc__link">Разница между командами \input и \include</a></li>
+                            <li><a href="#diploma-structure" class="article-toc__link">Разбить диплом на несколько файлов latex: эталонная иерархия папок</a></li>
+                            <li><a href="#includeonly-speed" class="article-toc__link">Команда include latex и выборочная компиляция через includeonly</a></li>
+                            <li><a href="#subfiles-pkg" class="article-toc__link">Продвинутый подход: пакет subfiles для автономной компиляции глав</a></li>
+                        </ol>
+                    </nav>
+
+                    <section class="article-section" id="why-modular">
+                        <h2 class="article-section__title">Зачем делить большой проект на отдельные файлы</h2>
+                        <p>Дипломная работа, магистерская диссертация или монография содержит от 60 до 200+ страниц, сотни формул, рисунков и таблиц. Вести такой объем в одном файле <code>main.tex</code> неудобно: поиск нужного абзаца превращается в бесконечный скроллинг, а случайная ошибка в одном месте ломает компиляцию всей работы.</p>
+                        <p>Модульная архитектура разбивает проект на логические части: введение, отдельные главы, заключение, список литературы и приложения лежат в изолированных файлах, собираемых главным корневым документом.</p>
+                    </section>
+
+                    <section class="article-section" id="input-vs-include">
+                        <h2 class="article-section__title">Разница между командами \input и \include</h2>
+                        <p>В LaTeX существует две директивы подключения внешних файлов, имеющие принципиальные различия (это особенно важно при <a href="/blog/diploma-appendices-listings-diagrams-gost">выносе приложений и листингов в дипломной работе</a>):</p>
+                        <ul>
+                            <li><code>\input{путь/к/файлу}</code> — буквально вставляет содержимое файла в текущее место документа «как есть». Не создает разрывов страниц. Идеально для преамбулы (<code>\input{preamble.tex}</code>), таблиц или фрагментов текста внутри раздела.</li>
+                            <li><code>\include{путь/к/файлу}</code> — вставляет файл, <strong>всегда предваряя и завершая его командой \clearpage</strong> (начиная новую страницу). Создает собственный вспомогательный файл <code>.aux</code>, что позволяет использовать механизм выборочной компиляции. Идеально для крупных глав (<code>chapter</code>).</li>
+                        </ul>
+                    </section>
+
+                    <section class="article-section" id="diploma-structure">
+                        <h2 class="article-section__title">Разбить диплом на несколько файлов latex: эталонная иерархия папок</h2>
+                        <p>Вот проверенная академическая структура проекта (<strong>разбить диплом на несколько файлов latex</strong>), рекомендованная при <a href="/blog/latex-diploma-gost">оформлении диплома по ГОСТ в LaTeX</a>:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">Структура файлов</span></div>
+                            <pre><code>my-diploma/
+├── main.tex             % Главный файл со сборкой
+├── preamble.tex         % Все пакеты и настройки ГОСТ
+├── biblio.bib           % База источников BibTeX
+├── chapters/            % Папка с главами работы
+│   ├── 00-intro.tex     % Введение
+│   ├── 01-analysis.tex  % Глава 1: Анализ предметной области
+│   ├── 02-design.tex    % Глава 2: Проектирование системы
+│   ├── 03-impl.tex      % Глава 3: Реализация и тестирование
+│   └── 04-concl.tex     % Заключение
+└── appendices/          % Приложения с кодом
+    └── app-a-code.tex</code></pre>
+                        </div>
+                        <p>В главном файле <code>main.tex</code> сборка выглядит компактно и наглядно:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">main.tex</span></div>
+                            <pre><code>\documentclass[14pt,a4paper]{report}
+\input{preamble} % Подключаем преамбулу
+
+\begin{document}
+\include{chapters/00-intro}
+\include{chapters/01-analysis}
+\include{chapters/02-design}
+\include{chapters/03-impl}
+\include{chapters/04-concl}
+
+\bibliographystyle{gost-numeric}
+\bibliography{biblio}
+\end{document}</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="article-section" id="includeonly-speed">
+                        <h2 class="article-section__title">Команда include latex и выборочная компиляция через includeonly</h2>
+                        <p>Когда вы работаете над конкретной главой, нет смысла каждый раз перекомпилировать весь стостраничный документ. <strong>Команда include latex</strong> поддерживает волшебную директиву <code>\includeonly</code> в преамбуле:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
+                            <pre><code>% Компилировать СТРОГО главу 2, сохраняя сквозные номера страниц и формул!
+\includeonly{chapters/02-design}</code></pre>
+                        </div>
+                        <p>Благодаря отдельным <code>.aux</code> файлам LaTeX сохранит верные перекрестные ссылки на формулы из других глав, но сборка займет 1 секунду вместо 15.</p>
+                    </section>
+
+                    <section class="article-section" id="subfiles-pkg">
+                        <h2 class="article-section__title">Продвинутый подход: пакет subfiles для автономной компиляции глав</h2>
+                        <p>Пакет <code>subfiles</code> позволяет компилировать каждую главу <strong>как автономный независимый документ</strong> (нажатием кнопки сборки прямо внутри <code>02-design.tex</code>), так и в составе единого проекта <code>main.tex</code> без изменения кода.</p>
+                    </section>
+
+                    <section class="article-section" id="tips">
+                        <h2 class="article-section__title">Практические советы</h2>
+                        <div class="article-tips">
+                            <div class="article-tip">
+                                <div class="article-tip__number">1</div>
+                                <div class="article-tip__content">
+                                    <h3>Не указывайте расширение .tex</h3>
+                                    <p>При вызове <code>\include{chapters/intro}</code> не дописывайте расширение <code>.tex</code>: LaTeX подставит его автоматически.</p>
+                                </div>
+                            </div>
+                            <div class="article-tip">
+                                <div class="article-tip__number">2</div>
+                                <div class="article-tip__content">
+                                    <h3>Запрет вложенных include</h3>
+                                    <p>Внутри файла, подключенного через <code>\include</code>, нельзя вызывать другой <code>\include</code>. Для вложенных подфайлов используйте команду <code>\input</code>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </article>
+
+            <aside class="article-sidebar">
+                <div class="article-sidebar__sticky">
+                    <div class="article-sidebar__media">
+                        <img src="../assets/img/img-for-firstScreen.webp"
+                            alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
+                            class="article-sidebar__img">
+                    </div>
+                    <p class="article-sidebar__title">Работайте с масштабными научными проектами и многостраничными главами в Labkeeper без зависаний.</p>
+                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
+                        id="sidebar-cta-btn">
+                        Перейти в редактор
+                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+
+        <section class="cta-features" id="cta-features">
+            <div class="cta-features__intro">
+                <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
+                <h2 class="cta-features__intro-title">Организуйте структуру ВКР в&nbsp;Labkeeper</h2>
+                <p class="cta-features__intro-text">Онлайн-редактор с поддержкой многофайловых проектов LaTeX, быстрым переключением глав и компиляцией в один клик.</p>
+            </div>
+
+            <div class="feature-block feature-block--img-left feature-block--dark">
+                <div class="feature-block__container">
+                    <div class="feature-block__visual">
+                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor screenshot"
+                            class="feature-block__image js-popup-trigger"
+                            data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
+                    </div>
+                    <div class="feature-block__content">
+                        <ul class="feature-list">
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b1">Полновесная компиляция:</strong>
+                                <span data-i18n="feat-latex-t1">Получайте PDF профессионального качества с помощью
+                                    встроенного LaTeX-компилятора.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b2">60 секунд на выполнение:</strong>
+                                <span data-i18n="feat-latex-t2">Работайте со сложными документами без ограничений —
+                                    лимит времени компиляции в разы выше, чем в аналогичных сервисах.</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b3">Умная конвертация:</strong>
+                                <span data-i18n="feat-latex-t3">Любые вычислительные формулы автоматически
+                                    преобразовываются в красивый LaTeX</span>
+                            </li>
+                            <li class="feature-list__item">
+                                <strong data-i18n="feat-latex-b4">Гибридный синтаксис:</strong>
+                                <span data-i18n="feat-latex-t4">Используйте легковесные вставки Markdown прямо в сложном
+                                    LaTeX-коде для ускорения работы.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-features__footer">
+                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
+                    Открыть редактор <span class="button__arrow">→</span>
+                </a>
+            </div>
+
+            <div class="feature__bg">
+                <img src="../assets/img/bg.svg" alt="bg" loading="lazy">
+            </div>
+        </section>
+
+    </main>
+
+    <section class="audience">
+        <div class="audience__container">
+            <h2 class="audience__title h1">Другие статьи</h2>
+
+            <div class="audience__slider-wrapper">
+                <button class="audience__arrow audience__arrow--prev" aria-label="Previous slide"></button>
+                <button class="audience__arrow audience__arrow--next" aria-label="Next slide"></button>
+
+                <div class="swiper audience__swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Динамическая генерация случайных статей через slider.js -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="audience__action">
+                <a href="/blog" class="button button--outline audience__btn">Все статьи <span
+                        class="button__arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <nav class="footer__nav">
+                    <a href="/#features" class="footer__link" data-i18n="nav-advantages"></a>
+                    <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
+                    <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
+                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank"
+                        class="footer__link footer__link--external">
+                        <span data-i18n="nav-wiki"></span>
+                        <img src="../assets/img/target.svg" alt="target icon" class="footer__link-icon"
+                            style="margin-left: 4px; vertical-align: middle;" width="16" height="16" loading="lazy">
+                    </a>
+                    <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
+                    <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
+
+                    <a href="/about" class="footer__link" data-i18n="nav-about"></a>
+                </nav>
+                <a href="/" class="footer__logo-link">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40"
+                        loading="lazy">
+                </a>
+                <div class="footer__contact">
+                    <span class="footer__contact-label" data-i18n="footer-contact"></span>
+                    <a href="mailto:labkeeper.io@gmail.com" class="footer__contact-link">labkeeper.io@gmail.com</a>
+                </div>
+            </div>
+            <div class="footer__middle">
+                <img src="../assets/img/img-for-footer.svg" alt="Labkeeper" class="footer__huge-logo" aria-hidden="true"
+                    loading="lazy">
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__copyright">© 2024—2026</div>
+                <a href="/privacy" class="footer__policy" data-i18n="footer-policy"></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Попап -->
+    <div class="popup js-popup" id="image-popup" aria-hidden="true">
+        <div class="popup__overlay js-popup-close"></div>
+        <div class="popup__content">
+            <button class="popup__close js-popup-close" aria-label="Закрыть">
+                <img src="../assets/img/close.svg" alt="Close" width="24" height="24">
+            </button>
+            <img src="" alt="Enlarged screenshot" class="popup__image js-popup-img" loading="lazy">
+        </div>
+    </div>
+
+    <div id="cookie-banner" class="cookie-banner hidden">
+        <div class="cookie-banner__container">
+            <p class="cookie-banner__text">
+                Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a
+                    href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных
+                    данных</a>.
+            </p>
+            <div class="cookie-banner__actions">
+                <button id="cookie-accept" class="button button--primary">Принять</button>
+                <button id="cookie-decline" class="button button--outline">Отказаться</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="scroll-top js-scroll-top" aria-label="Наверх" title="Наверх"></button>
+
+    <script>
+        window.__LABKEEPER_API_VERSION = "IO_LABKEEPER_FRONTEND_API_VERSION";
+    </script>
+    <script src="../assets/js/auth.js" defer></script>
+    <script src="../assets/js/script.js" defer></script>
+    <script src="../assets/js/lang.js" defer></script>
+    <script src="../assets/js/slider.js" defer></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+</body>
+
+</html>
