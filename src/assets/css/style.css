@@ -2719,6 +2719,14 @@ h2,
   padding-left: 20px;
 }
 
+.policy-article__subsubsection-text {
+  padding-left: 36px;
+}
+
+.policy-article__section ul.policy-article__subsubsection-text {
+  padding-left: 56px;
+}
+
 .policy-article__link {
   color: var(--c-primary);
   text-decoration: underline;

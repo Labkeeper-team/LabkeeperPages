@@ -133,6 +133,7 @@ const i18n = {
                 "docs-link-privacy": "Политика конфиденциальности",
                 "docs-link-yam": "Согласие на использование сервиса ЯМ",
                 "docs-link-adv": "Согласие на получение рекламных рассылок",
+                "docs-link-ds": "Согласие на трансграничную передачу",
                 "docs-link-cookies": "Настройки cookies",
 
                 // Попап оплаты
@@ -150,6 +151,9 @@ const i18n = {
                 "policy-nav-privacy": "Политика конфиденциальности",
                 "policy-nav-consent": "Согласие об обработке персональных данных",
                 "policy-nav-oferta": "Публичная оферта",
+                "policy-nav-yam": "Согласие на использование сервиса ЯМ",
+                "policy-nav-adv": "Согласие на получение рекламных рассылок",
+                "policy-nav-ds": "Согласие на трансграничную передачу",
                 "policy-title-privacy": "Политика в отношении обработки персональных данных",
                 "policy-title-consent": "Согласие об обработке персональных данных",
                 "policy-title-oferta": "Публичная оферта",
@@ -380,6 +384,7 @@ const i18n = {
                 "docs-link-yam": "Consent to use the YM service",
                 "docs-link-cookies": "Cookie Settings",
                 "docs-link-adv": "Consent to receive promotional newsletters",
+                "docs-link-ds": "Consent to Cross-Border Data Transfer",
 
                 // Payment popup
                 "payment-back": "Back to selection",
@@ -396,6 +401,9 @@ const i18n = {
                 "policy-nav-privacy": "Privacy Policy",
                 "policy-nav-consent": "Consent to Personal Data Processing",
                 "policy-nav-oferta": "Public Offer",
+                "policy-nav-yam": "Consent to use the YM service",
+                "policy-nav-adv": "Consent to receive promotional newsletters",
+                "policy-nav-ds": "Consent to Cross-Border Data Transfer",
                 "policy-title-privacy": "Policy on Personal Data Processing",
                 "policy-title-consent": "Consent to Personal Data Processing",
                 "policy-title-oferta": "Public Offer",
