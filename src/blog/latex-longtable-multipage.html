@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Таблица на несколько страниц LaTeX longtable: перенос на следующий лист — Labkeeper</title>
     <meta name="description" content="Как сделать многостраничную таблицу в LaTeX через longtable: перенос таблицы на следующий лист онлайн, повтор шапки, ГОСТ-подписи и примеры." />
     <!-- SEO Ключи: таблица на несколько страниц latex longtable, перенос таблицы на следующий лист latex -->
@@ -489,9 +489,12 @@
 
     <script>
         window.__LABKEEPER_API_VERSION = "IO_LABKEEPER_FRONTEND_API_VERSION";
+        window.__LABKEEPER_OPENPANEL_CLIENT_ID = "IO_LABKEEPER_FRONTEND_OPENPANEL_CLIENT_ID";
+        window.__LABKEEPER_OPENPANEL_API_URL = "IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL";
     </script>
     <script src="../assets/js/auth.js" defer></script>
     <script src="../assets/js/script.js" defer></script>
+    <script src="../assets/js/openpanel.js" defer></script>
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
