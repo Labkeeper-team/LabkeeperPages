@@ -39,18 +39,6 @@ const i18n = {
                 "feat-md-t4": "Переключайтесь между Markdown и LaTeX режимами без потери структуры — ваши данные адаптируются под выбранный способ отображения.",
                 "feat-md-btn": "Перейти к редактору <span class=\"button__arrow\">→</span>",
 
-                // Блок GPT
-                "feat-gpt-title": "Запросы к GPT",
-                "feat-gpt-b1": "Глубокое понимание контекста:",
-                "feat-gpt-t1": "ИИ не просто отвечает на вопросы, а сканирует ваш текущий проект и опирается на официальную документацию платформы.",
-                "feat-gpt-b2": "Автоматическая работа с кодом:",
-                "feat-gpt-t2": "Нейросеть сама внедрит нужные изменения в документ на основе вашего текстового запроса.",
-                "feat-gpt-b3": "Нулевой порог вхождения:",
-                "feat-gpt-t3": "Не обязательно знать LaTeX или Markdown. Просто опишите желаемый результат своими словами, и ассистент выполнит задачу за вас.",
-                "feat-gpt-b4": "Встроенная генерация медиа:",
-                "feat-gpt-t4": "Создавайте уникальные изображения прямо в редакторе — достаточно просто описать текстом, что должно быть на картинке.",
-                "feat-gpt-btn": "Перейти к генерациям <span class=\"button__arrow\">→</span>",
-
                 // Блок преимуществ (табы)
                 "features-tab-0": "LaTeX",
                 "features-tab-1": "ИИ-агент",
@@ -74,19 +62,18 @@ const i18n = {
                 "adv-item-2": "Markdown-редактор",
                 "adv-item-3": "Поддержка вычислений высокой точности",
                 "adv-item-4": "Поддержка вычисления погрешностей",
-                "adv-item-5": "Запросы к GPT",
-                "adv-item-6": "Генерация изображений через GPT",
+                "adv-item-5": "Агент DeepSeek с принятием правок",
                 "adv-item-7": "Автоматическая отрисовка вычислений в красивом формате",
                 "adv-btn": "Смотреть wiki проекта",
 
                 // Для кого
                 "aud-title": "Для кого",
                 "aud-c1-title": "Студенты<br><span class=\"audience-card__subtitle\">(лабораторные и учебные проекты)</span>",
-                "aud-c1-text": "Вам важна скорость и простота. Labkeeper автоматически берет на себя рутину: от расчета погрешностей в физических экспериментах до быстрой генерации формул с помощью встроенного ИИ. Сосредоточьтесь на сути работы, а оформление оставьте нам.",
+                "aud-c1-text": "Вам важны скорость и понятный результат. Считайте погрешности, стройте графики и собирайте PDF в LaTeX или Markdown. Агент DeepSeek предлагает правки оформления — принимаете только нужные.",
                 "aud-c2-title": "Аспиранты<br><span class=\"audience-card__subtitle\">и авторы научных статей</span>",
-                "aud-c2-text": "Пишете публикацию в серьезный журнал? В вашем распоряжении полноценный LaTeX-компилятор с увеличенным до 60 секунд лимитом времени. А встроенный AI-помощник поможет моментально переписать черновик, структурировать данные и собрать сложную верстку без лишнего кода.",
+                "aud-c2-text": "Готовите статью или диссертацию? Соберите PDF в LaTeX, правьте Markdown и смотрите примеры оформления. Агент DeepSeek предлагает правки текста и верстки — принять их или откатить решаете вы.",
                 "aud-c3-title": "Научные сотрудники<br><span class=\"audience-card__subtitle\">и исследователи</span>",
-                "aud-c3-text": "Анализируете данные и проводите вычисления? Наш встроенный язык расчетов гарантирует высочайшую точность вычислений прямо в документе. Вам больше не нужно переносить цифры из сторонних программ — все расчеты и итоговая документация живут в едином доверенном пространстве.",
+                "aud-c3-text": "Считайте с высокой точностью, оценивайте погрешности и стройте графики прямо в документе. Цифры, LaTeX и итоговый PDF остаются в одном проекте.",
                 "aud-btn": "Больше о нас <span class=\"button__arrow\">→</span>",
 
                 "footer-contact": "Написать нам",
@@ -107,14 +94,9 @@ const i18n = {
                 "tokens-title": "<span class=\"text-blue\">Единый баланс</span><br>для всех<br>ваших задач",
                 "tokens-desc": "В Labkeeper действует прозрачная система токенов. Это универсальная внутренняя валюта, которая позволяет вам гибко распределять ресурсы платформы под текущие нужды проекта — будь то генерация контента с помощью ИИ или сложные серверные вычисления. Вы платите только за то, что реально используете.",
                 "tokens-subtitle-desktop": "Варианты пополнения:",
-                "tokens-price-1": "токенов за 100 ₽",
-                "tokens-price-2": "токенов за 500 ₽",
-                "tokens-price-3": "токенов за 3000 ₽",
 
                 // Tokens info section
                 "info-title": "На что расходуются токены",
-                "info-item-1": "<strong>Работа с AI-ассистентом (GPT):</strong> <br class=\"mobile-br\"><b>2 токена = 1 текстовый запрос.</b> <span class=\"tokens-info__item-desc\">Попросите нейросеть написать структуру документа, сгенерировать сложную математическую формулу или перевести текст.</span>",
-                "info-item-2": "<strong>Генерация изображений:</strong> <br class=\"mobile-br\"><b>10 токенов = 1 картинка.</b> <span class=\"tokens-info__item-desc\">Создавайте уникальные иллюстрации и графики для ваших документов прямо в редакторе по текстовому описанию.</span>",
                 "info-item-3": "<strong>Серверная компиляция (LaTeX):</strong> <br class=\"mobile-br\"><b>1 токен = 1 секунда работы.</b> <span class=\"tokens-info__item-desc\">Собирайте самые тяжелые PDF-документы прямо в браузере без зависаний благодаря мощным серверам Labkeeper.</span>",
                 "info-item-4": "<strong>Гибридный синтаксис:</strong> <br class=\"mobile-br\"><span class=\"tokens-info__item-desc\">Используйте легковесные вставки Markdown прямо в сложном LaTeX-коде для ускорения набора формул и текста.</span>",
 
@@ -284,18 +266,6 @@ const i18n = {
                 "feat-md-t4": "Switch between Markdown and LaTeX modes without losing structure — your data adapts to the selected display method.",
                 "feat-md-btn": "Go to the editor <span class=\"button__arrow\">→</span>",
 
-                // Блок GPT
-                "feat-gpt-title": "Requests to GPT",
-                "feat-gpt-b1": "Deep Context Awareness:",
-                "feat-gpt-t1": "The AI doesn't just answer questions; it scans your current project and relies on the platform's official documentation.",
-                "feat-gpt-b2": "Automatic document updates:",
-                "feat-gpt-t2": "The neural network applies the required changes to the document based on your text request.",
-                "feat-gpt-b3": "Zero Learning Curve:",
-                "feat-gpt-t3": "You don't have to know LaTeX or Markdown. Just describe the desired result in your own words, and the assistant will complete the task for you.",
-                "feat-gpt-b4": "Built-in media generation:",
-                "feat-gpt-t4": "Create unique images right in the editor — simply describe in text what should be in the picture.",
-                "feat-gpt-btn": "Go to generations <span class=\"button__arrow\">→</span>",
-
                 // Features tabs
                 "features-tab-0": "LaTeX",
                 "features-tab-1": "AI Agent",
@@ -319,19 +289,18 @@ const i18n = {
                 "adv-item-2": "Markdown editor",
                 "adv-item-3": "High-precision calculation support",
                 "adv-item-4": "Support for error calculations",
-                "adv-item-5": "Requests to GPT",
-                "adv-item-6": "Image generation via GPT",
+                "adv-item-5": "DeepSeek agent: you accept the edits",
                 "adv-item-7": "Automatic rendering of calculations in a beautiful format",
                 "adv-btn": "View project wiki",
 
                 // Для кого
                 "aud-title": "Who it's for",
                 "aud-c1-title": "Students<br><span class=\"audience-card__subtitle\">(labs and academic projects)</span>",
-                "aud-c1-text": "Speed and simplicity matter to you. Labkeeper automatically takes over routine tasks: from error calculations in physical experiments to fast formula generation with built-in AI. Focus on the substance of your work, and leave the formatting to us.",
+                "aud-c1-text": "You care about speed and a clear result. Calculate uncertainties, plot charts, and compile PDF in LaTeX or Markdown. The DeepSeek agent suggests formatting edits — you accept only the ones you want.",
                 "aud-c2-title": "PhD Candidates<br><span class=\"audience-card__subtitle\">and scientific authors</span>",
-                "aud-c2-text": "Writing a publication for a serious journal? You get a full LaTeX compiler with an increased time limit of up to 60 seconds. And the built-in AI assistant will instantly rewrite a draft, structure data, and assemble complex typesetting without extra code.",
+                "aud-c2-text": "Preparing a paper or a thesis? Compile PDF in LaTeX, edit Markdown, and look at formatting examples. The DeepSeek agent suggests text and layout edits — you choose what to accept or roll back.",
                 "aud-c3-title": "Researchers<br><span class=\"audience-card__subtitle\">and lab staff</span>",
-                "aud-c3-text": "Analyzing data and running calculations? Our built-in calculation language guarantees the highest precision directly in the document. You no longer need to transfer numbers from third-party software — all calculations and final documentation live in one trusted space.",
+                "aud-c3-text": "Calculate with high precision, estimate uncertainties, and plot charts right in the document. The numbers, LaTeX, and final PDF stay in one project.",
                 "aud-btn": "More about us <span class=\"button__arrow\">→</span>",
 
                 "footer-contact": "Contact us",
@@ -350,14 +319,9 @@ const i18n = {
                 "tokens-desc": "Labkeeper uses a transparent token system. It is a universal internal currency that allows you to flexibly allocate platform resources to your current project needs — whether it's AI-powered content generation or complex server-side calculations. You pay only for what you actually use.",
                 "tokens-subtitle-desktop": "Top-up options:",
                 "tokens-subtitle-mobile": "Choose a top-up option:",
-                "tokens-price-1": "tokens for ₽100",
-                "tokens-price-2": "tokens for ₽500",
-                "tokens-price-3": "tokens for ₽3,000",
 
                 // Tokens info section
                 "info-title": "What tokens are spent on",
-                "info-item-1": "<strong>AI Assistant (GPT):</strong> <br class=\"mobile-br\"><b>2 tokens = 1 text request.</b> <span class=\"tokens-info__item-desc\">Ask the AI to write a document outline, generate a complex math formula, or translate text.</span>",
-                "info-item-2": "<strong>Image generation:</strong> <br class=\"mobile-br\"><b>10 tokens = 1 image.</b> <span class=\"tokens-info__item-desc\">Create unique illustrations and charts for your documents right in the editor from a text description.</span>",
                 "info-item-3": "<strong>Server-side compilation (LaTeX):</strong> <br class=\"mobile-br\"><b>1 token = 1 second of runtime.</b> <span class=\"tokens-info__item-desc\">Compile even the heaviest PDF documents right in the browser without freezes, thanks to Labkeeper's powerful servers.</span>",
                 "info-item-4": "<strong>Hybrid syntax:</strong> <br class=\"mobile-br\"><span class=\"tokens-info__item-desc\">Use lightweight Markdown inclusions right within complex LaTeX code to speed up formula and text entry.</span>",
 
