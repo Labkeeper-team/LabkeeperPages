@@ -12,8 +12,9 @@ const i18n = {
                 "btn-projects": "Мои проекты <span class=\"button__arrow\">→</span>",
                 "btn-editor": "Редактор <span class=\"button__arrow\">→</span>",
                 "hero-title": "Ваши <span class=\"text-blue\">расчеты</span><br>и <span class=\"text-blue\">документы</span><br>в единой среде<br>с <span class=\"text-blue\">ИИ-агентом</span>",
-                "hero-text": "Верстайте <span class=\"text-blue\">LaTeX</span> и <span class=\"text-blue\">Markdown</span> документы, выполняйте расчеты, требующие высокой точности в Labkeeper с использованием встроенного языка для вычислений и автоматической отрисовкой формул в любых форматах. Встроенный <span class=\"text-blue\">ИИ-агент</span> обеспечит скорость и качество.",
-                "hero-btn": "Попробовать <span class=\"button__arrow\">→</span>",
+                "hero-text": "Верстайте <span class=\"text-blue\">LaTeX</span> и <span class=\"text-blue\">Markdown</span> документы, выполняйте расчеты, требующие высокой точности в Labkeeper с использованием встроенного языка для вычислений и автоматической отрисовкой формул в любых форматах. <span class=\"text-blue\">ИИ-агент</span> обеспечит скорость и качество.",
+                "hero-btn": "Попробовать редактор <span class=\"button__arrow\">→</span>",
+                "hero-btn-ai": "Попробовать с ИИ без написания <span class=\"hero-btn__tail\">кода <span class=\"button__arrow\">→</span></span>",
 
                 // Блок LaTeX
                 "feat-latex-title": "LaTeX editor",
@@ -239,8 +240,9 @@ const i18n = {
                 "btn-projects": "My projects <span class=\"button__arrow\">→</span>",
                 "btn-editor": "Editor <span class=\"button__arrow\">→</span>",
                 "hero-title": "Your <span class=\"text-blue\">calculations</span><br>and <span class=\"text-blue\">documents</span><br>in a unified environment<br>with an <span class=\"text-blue\">AI agent</span>",
-                "hero-text": "Create <span class=\"text-blue\">LaTeX</span> and <span class=\"text-blue\">Markdown</span> documents, run calculations requiring high precision in Labkeeper using the built-in language for computations, and get automatic formula rendering in any format. The built-in <span class=\"text-blue\">AI agent</span> will ensure speed and quality.",
-                "hero-btn": "Try it <span class=\"button__arrow\">→</span>",
+                "hero-text": "Create <span class=\"text-blue\">LaTeX</span> and <span class=\"text-blue\">Markdown</span> documents, run calculations requiring high precision in Labkeeper using the built-in language for computations, and get automatic formula rendering in any format. <span class=\"text-blue\">AI agent</span> will ensure speed and quality.",
+                "hero-btn": "Try the editor <span class=\"button__arrow\">→</span>",
+                "hero-btn-ai": "Try with AI without <span class=\"hero-btn__tail\">writing code <span class=\"button__arrow\">→</span></span>",
 
                 // Блок LaTeX
                 "feat-latex-title": "LaTeX editor",

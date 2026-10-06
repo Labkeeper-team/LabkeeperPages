@@ -858,54 +858,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabSlides = document.querySelectorAll('.features__slide');
 
     if (tabButtons.length > 0 && tabSlides.length > 0) {
-        const TAB_DURATION = 6000;
-        let currentTabIndex = 0;
-        let tabTimer = null;
-
         const setActiveTab = (index) => {
-            currentTabIndex = index;
-
             tabButtons.forEach((btn, i) => {
-                const isActive = (i === index);
+                const isActive = i === index;
                 btn.classList.toggle('is-active', isActive);
                 btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
-
-                const progress = btn.querySelector('.features__tab-progress');
-                if (progress) {
-                    progress.style.transition = 'none';
-                    progress.style.width = '0%';
-                    void progress.offsetWidth;
-
-                    if (isActive) {
-                        progress.style.transition = `width ${TAB_DURATION}ms linear`;
-                        progress.style.width = '100%';
-                    }
-                }
             });
 
             tabSlides.forEach((slide, i) => {
-                const isActive = (i === index);
-                slide.classList.toggle('is-active', isActive);
-
-                if (isActive) {
-                    const bullets = slide.querySelectorAll('.features__bullet-item');
-                    bullets.forEach((b) => {
-                        b.style.animation = 'none';
-                        void b.offsetWidth;
-                        b.style.animation = '';
-                    });
-                }
+                slide.classList.toggle('is-active', i === index);
             });
-
-            startTabAutoplay();
-        };
-
-        const startTabAutoplay = () => {
-            clearTimeout(tabTimer);
-            tabTimer = setTimeout(() => {
-                const nextIndex = (currentTabIndex + 1) % tabButtons.length;
-                setActiveTab(nextIndex);
-            }, TAB_DURATION);
         };
 
         tabButtons.forEach((btn, index) => {
