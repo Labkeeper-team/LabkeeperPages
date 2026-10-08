@@ -8,7 +8,7 @@ description: Create or update LabkeeperPages blog articles with readable math, r
 Read `scripts/blog-generator/HOW-TO-WRITE-ARTICLES.md` for content, SEO and batch conventions, and the editor-example section of `scripts/blog-generator/README.md` for the build contract.
 
 - Inspect existing slugs before adding a page. Preserve existing URLs, canonical metadata, navigation and publication dates when correcting an article.
-- Edit the article's JSON in `scripts/blog-generator/articles-data`. If a matching source exists in `data-builders`, update it as well. Older articles without JSON keep their HTML as the source; do not replace them with generic template content.
+- Edit the article's JSON directly in `scripts/blog-generator/articles-data`; it is the source of truth for JSON-backed articles. Older articles without JSON keep their HTML as the source; do not replace them with generic template content.
 - Add a dedicated entry keyed by the article slug to `scripts/blog-generator/editor-examples.js`. The example must demonstrate the article's subject, not repeat a generic greeting. Use one or more supported segment fields: `latex`, `markdown`, `compute`.
 - Keep examples short and self-contained. Include required LaTeX packages. Replace unavailable figures with a drawn diagram, and embed small data/bibliography files when needed. Do not require uploads, shell escape, secrets or third-party services. Explain any illustrative substitution in the article when it changes what the example demonstrates.
 - The complete encoded URL must fit the generator's 2000-character budget. Use `buildExampleUrl`; do not concatenate query strings or truncate code to make a link fit. Unicode and TeX special characters must round-trip unchanged.
