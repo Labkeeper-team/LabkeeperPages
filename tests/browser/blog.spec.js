@@ -1,6 +1,8 @@
 const { test, expect } = require('@playwright/test');
-const examples = require('../../scripts/blog-generator/editor-examples');
+const { loadArticles } = require('../../scripts/blog-generator/article-data');
 const { buildExampleUrl } = require('../../scripts/blog-generator/article-tools');
+
+const articles = loadArticles();
 
 async function setLanguage(page, language) {
     const burger = page.locator('.js-burger-btn');
@@ -28,7 +30,7 @@ async function expectExampleLabel(link, language) {
     })).toBe(true);
 }
 
-for (const [slug, example] of Object.entries(examples)) {
+for (const { slug, editorExample: example } of articles) {
     test(`${slug}: layout, math and localized example links`, async ({ page }) => {
         const errors = [];
         page.on('pageerror', error => errors.push(error.message));
@@ -79,9 +81,10 @@ test.describe('without JavaScript', () => {
     test.use({ javaScriptEnabled: false });
 
     test('example links work', async ({ page }) => {
+        const example = articles.find(article => article.slug === 'latex-formulas').editorExample;
         await page.goto('/blog/latex-formulas');
-        await expect(page.locator('[data-blog-example]').last()).toHaveAttribute('href', buildExampleUrl(examples['latex-formulas']));
+        await expect(page.locator('[data-blog-example]').last()).toHaveAttribute('href', buildExampleUrl(example));
         await page.locator('[data-blog-example]').last().click();
-        expect(new URL(page.url()).searchParams.get('latex')).toBe(examples['latex-formulas'].latex);
+        expect(new URL(page.url()).searchParams.get('latex')).toBe(example.latex);
     });
 });

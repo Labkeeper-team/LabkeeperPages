@@ -18,14 +18,13 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 const { buildExampleUrl, escapeHtml, prepareArticleHtml } = require('./article-tools');
-const examples = require('./editor-examples');
+const { loadArticles, validateArticle } = require('./article-data');
 const { vendorMath } = require('./vendor-math');
 
 // Пути
 const ROOT_DIR = path.resolve(__dirname, '..', '..');
 const SRC_DIR = path.join(ROOT_DIR, 'src');
 const TEMPLATE_PATH = path.join(__dirname, 'template.html');
-const DATA_DIR = path.join(__dirname, 'articles-data');
 const BLOG_DIR = path.join(SRC_DIR, 'blog');
 const BLOG_HTML_PATH = path.join(SRC_DIR, 'blog.html');
 const INDEX_HTML_PATH = path.join(SRC_DIR, 'index.html');
@@ -158,11 +157,10 @@ function getLatestArticleBatchNumber() {
 }
 
 // Генерация одного HTML-файла статьи
-function generateArticleHtml(article, template, example = examples[article.slug]) {
+function generateArticleHtml(article, template) {
+    validateArticle(article);
     const slug = article.slug;
-    if (typeof slug !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) {
-        throw new Error('Article slug must contain lowercase letters, numbers and hyphens');
-    }
+    const example = article.editorExample;
     const pageTitle = article.pageTitle || `${article.title} — Labkeeper`;
     const metaDescription = article.metaDescription || article.description;
     const breadcrumbTitle = article.breadcrumbTitle || article.shortTitle || article.title;
@@ -200,14 +198,18 @@ function generateArticleHtml(article, template, example = examples[article.slug]
         BATCH_COMMENT: batchComment,
         PAGE_TITLE: escapeHtml(pageTitle),
         META_DESCRIPTION: escapeHtml(metaDescription),
+        OG_TITLE: escapeHtml(article.ogTitle || pageTitle),
+        OG_DESCRIPTION: escapeHtml(article.ogDescription || metaDescription),
+        TWITTER_TITLE: escapeHtml(article.twitterTitle || pageTitle),
+        TWITTER_DESCRIPTION: escapeHtml(article.twitterDescription || metaDescription),
         KEYWORDS_META: keywordsMeta,
         SLUG: slug,
         JSON_HEADLINE: JSON.stringify(article.title).replace(/</g, '\\u003c'),
-        JSON_DESCRIPTION: JSON.stringify(metaDescription).replace(/</g, '\\u003c'),
+        JSON_DESCRIPTION: JSON.stringify(article.schemaDescription || metaDescription).replace(/</g, '\\u003c'),
         DATE_PUBLISHED: datePublished,
         DATE_MODIFIED: dateModified,
         JSON_ARTICLE_SECTION: articleSectionJson,
-        JSON_BREADCRUMB_TITLE: JSON.stringify(breadcrumbTitle).replace(/</g, '\\u003c'),
+        JSON_BREADCRUMB_TITLE: JSON.stringify(article.schemaBreadcrumbTitle || breadcrumbTitle).replace(/</g, '\\u003c'),
         BREADCRUMB_TITLE: breadcrumbTitle,
         H1: h1,
         TAGS_HTML: tagsHtml,
@@ -217,6 +219,7 @@ function generateArticleHtml(article, template, example = examples[article.slug]
         SECTIONS_HTML: sectionsHtml,
         TIPS_HTML: tipsHtml,
         SIDEBAR_TEXT: sidebarText,
+        SIDEBAR_IMAGE_ALT: escapeHtml(article.sidebarImageAlt || 'Интерфейс онлайн-редактора LaTeX Labkeeper'),
         CTA_TITLE: ctaTitle,
         CTA_TEXT: ctaText,
         EDITOR_EXAMPLE_URL: escapeHtml(buildExampleUrl(example, slug))
@@ -415,52 +418,17 @@ function main() {
     if (args.filter(arg => arg !== '--check').length > 1 || cliArg?.startsWith('--')) {
         throw new Error('Usage: node scripts/blog-generator/generate.js [articles.json] [--check]');
     }
-    let articleFiles = [];
-
-    if (cliArg) {
-        const customPath = path.resolve(process.cwd(), cliArg);
-        if (fs.existsSync(customPath)) {
-            articleFiles = [customPath];
-        } else {
-            console.error(`[ERROR] Файл не найден: ${customPath}`);
-            process.exit(1);
-        }
-    } else {
-        if (!fs.existsSync(DATA_DIR)) {
-            throw new Error(`Article data directory not found: ${DATA_DIR}`);
-        }
-        articleFiles = fs.readdirSync(DATA_DIR)
-            .filter(f => f.endsWith('.json'))
-            .map(f => path.join(DATA_DIR, f));
-    }
-
-    if (articleFiles.length === 0) {
-        throw new Error(`No article JSON files found in ${DATA_DIR}`);
-    }
-
     // Validate every page before writing any output. A broken example must not
     // leave half of the site regenerated or report a successful build.
+    const sourceArticles = loadArticles(cliArg ? [path.resolve(process.cwd(), cliArg)] : undefined);
     const pages = new Map();
-    const sourceArticles = [];
-    for (const filePath of articleFiles) {
-        const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-        for (const article of Array.isArray(data) ? data : [data]) {
-            if (pages.has(article.slug)) throw new Error(`Duplicate article: ${article.slug}`);
-            pages.set(article.slug, generateArticleHtml(article, template));
-            sourceArticles.push(article);
-        }
+    for (const article of sourceArticles) {
+        pages.set(article.slug, generateArticleHtml(article, template));
     }
-    if (!cliArg) {
-        // Legacy articles have no JSON source. Preserve their content and SEO.
+    if (!cliArg && fs.existsSync(BLOG_DIR)) {
         for (const file of fs.readdirSync(BLOG_DIR).filter(file => file.endsWith('.html'))) {
             const slug = file.slice(0, -5);
-            if (!pages.has(slug)) {
-                const html = fs.readFileSync(path.join(BLOG_DIR, file), 'utf8');
-                pages.set(slug, prepareArticleHtml(html, examples[slug], slug));
-            }
-        }
-        for (const slug of Object.keys(examples)) {
-            if (!pages.has(slug)) throw new Error(`Example without an article: ${slug}`);
+            if (!pages.has(slug)) throw new Error(`Article without a JSON source: ${slug}`);
         }
     }
     if (check) {

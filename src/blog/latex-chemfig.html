@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!-- Пачка 1 -->
 <html lang="ru">
 
@@ -8,43 +8,125 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Интеграция химических формул и реакций в LaTeX, пакет chemfig — Labkeeper</title>
-    <meta name="description"
-        content="Полное руководство по пакету chemfig в LaTeX онлайн: редактор химических формул, рисование циклических молекул, бензольных колец, механизмов реакций и полимеров с примерами кода." />
-        <!-- SEO Ключи: редактор химических формул latex онлайн, пакет chemfig онлайн примеры -->
+    <meta name="description" content="Полное руководство по пакету chemfig в LaTeX онлайн: редактор химических формул, рисование циклических молекул, бензольных колец, механизмов реакций и полимеров с примерами кода." />
+    <!-- SEO Ключи: редактор химических формул latex онлайн, пакет chemfig онлайн примеры -->
     <meta name="keywords" content="редактор химических формул latex онлайн, пакет chemfig онлайн примеры" />
-<link rel="canonical" href="https://labkeeper.io/blog/latex-chemfig" />
+    <link rel="canonical" href="https://labkeeper.io/blog/latex-chemfig" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://labkeeper.io/blog/latex-chemfig" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Labkeeper" />
     <meta property="og:title" content="Интеграция химических формул и реакций в LaTeX, пакет chemfig — Labkeeper" />
-    <meta property="og:description"
-        content="Узнайте, как верстать химические формулы и реакции в онлайн LaTeX: пакет chemfig онлайн примеры, схемы молекул, связи и механизмы реакций." />
+    <meta property="og:description" content="Узнайте, как верстать химические формулы и реакции в онлайн LaTeX: пакет chemfig онлайн примеры, схемы молекул, связи и механизмы реакций." />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:title" content="Интеграция химических формул и реакций в LaTeX, пакет chemfig — Labkeeper" />
-    <meta name="twitter:description"
-        content="Пакет chemfig в онлайн LaTeX: примеры химических реакций и структурных формул." />
-    <script
-        type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Интеграция химических формул и реакций в LaTeX, пакет chemfig","description":"Руководство по созданию структурных формул, механизмов реакций и циклических молекул в LaTeX с помощью пакета chemfig.","author":{"@type":"Organization","name":"Labkeeper","url":"https://labkeeper.io"},"publisher":{"@type":"Organization","name":"Labkeeper","logo":{"@type":"ImageObject","url":"https://labkeeper.io/assets/img/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://labkeeper.io/blog/latex-chemfig"},"datePublished":"2026-08-20","dateModified":"2026-08-20","inLanguage":"ru"}</script>
-    <script
-        type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://labkeeper.io/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://labkeeper.io/blog"},{"@type":"ListItem","position":3,"name":"Химические формулы в LaTeX (chemfig)","item":"https://labkeeper.io/blog/latex-chemfig"}]}</script>
+    <meta name="twitter:description" content="Пакет chemfig в онлайн LaTeX: примеры химических реакций и структурных формул." />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Интеграция химических формул и реакций в LaTeX, пакет chemfig",
+        "description": "Руководство по созданию структурных формул, механизмов реакций и циклических молекул в LaTeX с помощью пакета chemfig.",
+        "author": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "url": "https://labkeeper.io"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://labkeeper.io/assets/img/logo.svg"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://labkeeper.io/blog/latex-chemfig"
+        },
+        "datePublished": "2026-08-20",
+        "dateModified": "2026-08-20",
+        "inLanguage": "ru",
+        "articleSection": ["Лабораторные работы","Работа с LaTeX"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://labkeeper.io/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Блог",
+                "item": "https://labkeeper.io/blog"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Химические формулы в LaTeX (chemfig)",
+                "item": "https://labkeeper.io/blog/latex-chemfig"
+            }
+        ]
+    }
+    </script>
+
     <script type="text/javascript">
         (function () {
-            function hasAcceptedCookieConsent() { try { return localStorage.getItem('labkeeper_cookie_consent') === 'accepted'; } catch (e) { return false; } }
+            function hasAcceptedCookieConsent() {
+                try {
+                    return localStorage.getItem('labkeeper_cookie_consent') === 'accepted';
+                } catch (e) {
+                    return false;
+                }
+            }
+
             window.initLabkeeperYandexMetrika = function () {
-                if (window.__labkeeperYandexMetrikaInitialized || !hasAcceptedCookieConsent() || typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined') { return; }
-                (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date(); for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } } k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", { webvisor: true, clickmap: true, referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+                if (
+                    window.__labkeeperYandexMetrikaInitialized ||
+                    !hasAcceptedCookieConsent() ||
+                    typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined'
+                ) {
+                    return;
+                }
+
+                (function (m, e, t, r, i, k, a) {
+                    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+                    m[i].l = 1 * new Date();
+                    for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+                    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a);
+                })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", {
+                    webvisor: true,
+                    clickmap: true,
+                    referrer: document.referrer,
+                    url: location.href,
+                    accurateTrackBounce: true,
+                    trackLinks: true
+                });
+
                 window.__labkeeperYandexMetrikaInitialized = true;
             };
+
             window.initLabkeeperYandexMetrika();
         })();
     </script>
+
+    <!-- Preconnect & Async Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -56,8 +138,9 @@
         <div class="header__container">
             <div class="header__left">
                 <button class="header__burger js-burger-btn" aria-label="Открыть меню">
-                    <span class="header__burger-line"></span><span class="header__burger-line"></span><span
-                        class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
                 </button>
                 <a href="/" class="header__logo">
                     <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36"
@@ -69,6 +152,7 @@
                     <button class="header__lang-btn" data-lang="en">En</button>
                 </div>
             </div>
+
             <nav class="header__nav js-nav">
                 <div class="header__mobile-lang js-lang-switcher">
                     <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
@@ -92,6 +176,7 @@
                         class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
                 </div>
             </nav>
+
             <div class="header__right">
                 <a href="/project/default?open=login" class="button button--outline header__login"
                     data-i18n="btn-login"></a>
@@ -103,24 +188,31 @@
     </header>
 
     <main class="main page-article">
+
         <div class="article-breadcrumbs">
             <div class="article-breadcrumbs__container">
                 <nav class="article-breadcrumbs__nav" aria-label="Breadcrumb">
                     <ol class="article-breadcrumbs__list">
-                        <li class="article-breadcrumbs__item"><a href="/" class="article-breadcrumbs__link">Главная</a>
+                        <li class="article-breadcrumbs__item">
+                            <a href="/" class="article-breadcrumbs__link">Главная</a>
                         </li>
-                        <li class="article-breadcrumbs__item"><a href="/blog" class="article-breadcrumbs__link">Блог</a>
+                        <li class="article-breadcrumbs__item">
+                            <a href="/blog" class="article-breadcrumbs__link">Блог</a>
                         </li>
-                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active"><span>Химические формулы
-                                и chemfig в LaTeX</span></li>
+                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active">
+                            <span>Химические формулы
+                                и chemfig в LaTeX</span>
+                        </li>
                     </ol>
                 </nav>
             </div>
         </div>
 
         <div class="article-layout">
+
             <article class="article-content">
                 <div class="article-content__container">
+
                     <h1 class="article-content__title h1">Интеграция химических формул и&nbsp;реакций в&nbsp;LaTeX,
                         пакет chemfig</h1>
 
@@ -134,17 +226,13 @@
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
                         <ol class="article-toc__list">
-                            <li><a href="#intro" class="article-toc__link">Зачем нужен chemfig и как его подключить</a>
-                            </li>
+                            <li><a href="#intro" class="article-toc__link">Зачем нужен chemfig и как его подключить</a></li>
                             <li><a href="#basics" class="article-toc__link">Базовый синтаксис связей и углов</a></li>
                             <li><a href="#branches" class="article-toc__link">Разветвленные цепи и функциональные
                                     группы</a></li>
-                            <li><a href="#rings" class="article-toc__link">Циклические молекулы и бензольное кольцо</a>
-                            </li>
-                            <li><a href="#reactions" class="article-toc__link">Схемы химических реакций и стрелки</a>
-                            </li>
-                            <li><a href="#electrons" class="article-toc__link">Электронные пары и механизмы реакций</a>
-                            </li>
+                            <li><a href="#rings" class="article-toc__link">Циклические молекулы и бензольное кольцо</a></li>
+                            <li><a href="#reactions" class="article-toc__link">Схемы химических реакций и стрелки</a></li>
+                            <li><a href="#electrons" class="article-toc__link">Электронные пары и механизмы реакций</a></li>
                             <li><a href="#tips" class="article-toc__link">Практические советы и интеграция в
                                     онлайн-редактор</a></li>
                         </ol>
@@ -330,14 +418,18 @@
                             </div>
                         </div>
                     </section>
+
+
+
                 </div>
             </article>
 
             <aside class="article-sidebar">
                 <div class="article-sidebar__sticky">
                     <div class="article-sidebar__media">
-                        <img src="../assets/img/img-for-firstScreen.webp" alt="Онлайн-редактор LaTeX Labkeeper"
-                            width="220" height="135" loading="lazy" class="article-sidebar__img">
+                        <img src="../assets/img/img-for-firstScreen.webp"
+                            alt="Онлайн-редактор LaTeX Labkeeper" width="220" height="135" loading="lazy"
+                            class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Редактируйте химические формулы и&nbsp;структуры в&nbsp;Labkeeper
                         — компиляция chemfig и&nbsp;mhchem в&nbsp;PDF без&nbsp;установки софта.</p>
@@ -350,6 +442,7 @@
                     </a>
                 </div>
             </aside>
+
         </div>
 
         <section class="cta-features" id="cta-features">
@@ -358,6 +451,7 @@
                 <h2 class="cta-features__intro-title">Набирайте химические формулы в&nbsp;Labkeeper</h2>
                 <p class="cta-features__intro-text">Онлайн-редактор LaTeX с&nbsp;поддержкой пакета chemfig и&nbsp;быстрой компиляцией структурных формул и&nbsp;реакций в&nbsp;PDF.</p>
             </div>
+
             <div class="feature-block feature-block--img-left feature-block--dark">
                 <div class="feature-block__container">
                     <div class="feature-block__visual">
@@ -391,6 +485,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="cta-features__footer">
                 <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bchemfig%7D%0A%5Cbegin%7Bdocument%7D%0AEthanol%3A+%5Cchemfig%7BCH_3-CH_2-OH%7D%0A%5Cqquad+Benzene%3A+%5Cchemfig%7B*6%28%3D-%3D-%3D-%29%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
@@ -400,8 +495,12 @@
                     <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
-            <div class="feature__bg"><img src="../assets/img/bg.svg" alt="bg" loading="lazy"></div>
+
+            <div class="feature__bg">
+                <img src="../assets/img/bg.svg" alt="bg" loading="lazy">
+            </div>
         </section>
+
     </main>
 
     <section class="audience">
@@ -434,30 +533,35 @@
                     <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
                     <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
                     <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank"
-                        class="footer__link footer__link--external"><span data-i18n="nav-wiki"></span><img
-                            src="../assets/img/target.svg" alt="target icon" class="footer__link-icon"
-                            style="margin-left:4px;vertical-align:middle;" width="16" height="16" loading="lazy"></a>
+                        class="footer__link footer__link--external">
+                        <span data-i18n="nav-wiki"></span>
+                        <img src="../assets/img/target.svg" alt="target icon" class="footer__link-icon"
+                            style="margin-left: 4px; vertical-align: middle;" width="16" height="16" loading="lazy">
+                    </a>
                     <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
                     <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
 
                     <a href="/about" class="footer__link" data-i18n="nav-about"></a>
                 </nav>
-                <a href="/" class="footer__logo-link"><img src="../assets/img/logo.svg" alt="Labkeeper Logo"
-                        class="footer__logo" width="40" height="40" loading="lazy"></a>
+                <a href="/" class="footer__logo-link">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40"
+                        loading="lazy">
+                </a>
                 <div class="footer__contact">
                     <span class="footer__contact-label" data-i18n="footer-contact"></span>
                     <a href="mailto:labkeeper.io@gmail.com" class="footer__contact-link">labkeeper.io@gmail.com</a>
                 </div>
             </div>
-            <div class="footer__middle"><img src="../assets/img/img-for-footer.svg" alt="Labkeeper"
-                    class="footer__huge-logo" aria-hidden="true" loading="lazy"></div>
+            <div class="footer__middle">
+                <img src="../assets/img/img-for-footer.svg" alt="Labkeeper" class="footer__huge-logo" aria-hidden="true"
+                    loading="lazy">
+            </div>
             <div class="footer__bottom">
                 <div class="footer__copyright">© 2024—2026</div>
                 <a href="/privacy" class="footer__policy" data-i18n="footer-policy"></a>
             </div>
         </div>
     </footer>
-
 
     <!-- Попап -->
     <div class="popup js-popup" id="image-popup" aria-hidden="true">
@@ -469,11 +573,14 @@
             <img src="" alt="Enlarged screenshot" class="popup__image js-popup-img" loading="lazy">
         </div>
     </div>
+
     <div id="cookie-banner" class="cookie-banner hidden">
         <div class="cookie-banner__container">
-            <p class="cookie-banner__text">Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта.
-                Подробнее — в <a href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки
-                    персональных данных</a>.</p>
+            <p class="cookie-banner__text">
+                Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a
+                    href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных
+                    данных</a>.
+            </p>
             <div class="cookie-banner__actions">
                 <button id="cookie-accept" class="button button--primary">Принять</button>
                 <button id="cookie-decline" class="button button--outline">Отказаться</button>
@@ -482,6 +589,7 @@
     </div>
 
     <button class="scroll-top js-scroll-top" aria-label="Наверх" title="Наверх"></button>
+
     <script>
         window.__LABKEEPER_API_VERSION = "IO_LABKEEPER_FRONTEND_API_VERSION";
         window.__LABKEEPER_OPENPANEL_CLIENT_ID = "IO_LABKEEPER_FRONTEND_OPENPANEL_CLIENT_ID";
