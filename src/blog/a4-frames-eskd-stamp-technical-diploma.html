@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -232,6 +233,7 @@
 
                     <section class="article-section" id="eskd-standard">
                         <h2 class="article-section__title">Стандарт ГОСТ 2.104-2006: геометрия листа А4 и поля</h2>
+                        <p><strong>Пример в редакторе:</strong> показан альтернативный способ через TikZ: рамка с полями 20-5-5-5 мм и упрощенная основная надпись. Это учебный пример геометрии листа, не готовый нормативный бланк ЕСКД.</p>
                         <p>В инженерных, строительных, энергетических и машиностроительных институтах пояснительная записка ВКР оформляется не по текстовому ГОСТ 7.32, а по правилам Единой системы конструкторской документации (<strong>ЕСКД ГОСТ 2.104-2006</strong>, подробнее о стандартах читайте в обзоре <a href="/blog/latex-eskd">пакета ЕСКД в LaTeX</a>):</p>
                         <ul>
                             <li><strong>Поля чертежной рамки:</strong> левое поле — 20 мм (для подшивки в твердый переплет), верхнее, правое и нижнее — ровно по 5 мм.</li>
@@ -322,14 +324,9 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Верстайте технические пояснительные записки с рамками ЕСКД прямо в браузере в Labkeeper.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%5Bleft%3D23mm%2Cright%3D8mm%2Ctop%3D15mm%2Cbottom%3D55mm%5D%7Bgeometry%7D%0A%5Cusepackage%7Btikz%7D%0A%5CAddToHook%7Bshipout%2Fbackground%7D%7B%5Cbegin%7Btikzpicture%7D%5Bremember+picture%2Coverlay%2Cx%3D1mm%2Cy%3D1mm%5D%0A%5Cbegin%7Bscope%7D%5Bshift%3D%7B%28current+page.south+west%29%7D%5D%0A%5Cdraw+%2820%2C5%29+rectangle+%28205%2C292%29+%2820%2C45%29--%28205%2C45%29+%2820%2C20%29--%28205%2C20%29+%28185%2C5%29--%28185%2C45%29%3B%0A%5Cnode+at+%28100%2C32%29%7BMeasurement+device%3A+LK.001%7D%3B%0A%5Cnode+at+%28100%2C12%29%7BAuthor%3A+Ivanov%7D%3B%5Cnode+at+%28195%2C12%29%7B%5Cthepage%7D%3B%0A%5Cend%7Bscope%7D%5Cend%7Btikzpicture%7D%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7BTechnical+description%7DPower+supply%3A+12+V.%0A%5Csection%7BPurpose%7DLaboratory+measurement+device.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -378,8 +375,9 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%5Bleft%3D23mm%2Cright%3D8mm%2Ctop%3D15mm%2Cbottom%3D55mm%5D%7Bgeometry%7D%0A%5Cusepackage%7Btikz%7D%0A%5CAddToHook%7Bshipout%2Fbackground%7D%7B%5Cbegin%7Btikzpicture%7D%5Bremember+picture%2Coverlay%2Cx%3D1mm%2Cy%3D1mm%5D%0A%5Cbegin%7Bscope%7D%5Bshift%3D%7B%28current+page.south+west%29%7D%5D%0A%5Cdraw+%2820%2C5%29+rectangle+%28205%2C292%29+%2820%2C45%29--%28205%2C45%29+%2820%2C20%29--%28205%2C20%29+%28185%2C5%29--%28185%2C45%29%3B%0A%5Cnode+at+%28100%2C32%29%7BMeasurement+device%3A+LK.001%7D%3B%0A%5Cnode+at+%28100%2C12%29%7BAuthor%3A+Ivanov%7D%3B%5Cnode+at+%28195%2C12%29%7B%5Cthepage%7D%3B%0A%5Cend%7Bscope%7D%5Cend%7Btikzpicture%7D%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7BTechnical+description%7DPower+supply%3A+12+V.%0A%5Csection%7BPurpose%7DLaboratory+measurement+device.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -488,6 +486,9 @@
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

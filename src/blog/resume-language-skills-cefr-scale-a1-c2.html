@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -256,13 +257,13 @@
                             <div class="article-code__header"><span class="article-code__lang">Markdown Секция языков</span></div>
                             <pre><code>## Languages
 - **Russian:** Native
-- **English:** B2 — Upper-Intermediate (Fluent technical & conversational, daily international team standups)
+- **English:** B2 — Upper-Intermediate (Fluent technical &amp; conversational, daily international team standups)
 - **German:** A2 — Elementary (Basic comprehension, actively learning)</code></pre>
                         </div>
                         <p>Если вы оптимизируете свое <a href="/blog/frontend-backend-developer-resume-tech-stack-ats">резюме разработчика под ATS-фильтры</a>, то компактный маркированный список языков распознается поисковыми алгоритмами без малейших искажений.</p>
                         <p>Если в вашем резюме используется двухколоночная таблица навыков:</p>
                         <div class="article-table-wrap">
-                            <table class="article-table">
+                            <div class="article-table-wrapper" tabindex="0"><table class="article-table">
                                 <thead>
                                     <tr>
                                         <th>Язык</th>
@@ -287,7 +288,7 @@
                                         <td>Чтение специализированной литературы</td>
                                     </tr>
                                 </tbody>
-                            </table>
+                            </table></div>
                         </div>
                     </section>
 
@@ -338,14 +339,9 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">В Labkeeper вы найдете лаконичные блоки для перечисления языков и навыков с аккуратным экспортом в ATS-friendly PDF.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?example=1&amp;open=markdown&amp;markdown=%23+Languages%0A%0A%7C+Language+%7C+CEFR+%7C+Working+context+%7C%0A%7C%3A---------%7C%3A-----%7C%3A----------------%7C%0A%7C+English+%7C+C1+%7C+Technical+presentations+%7C%0A%7C+German+%7C+B1+%7C+Everyday+communication+%7C%0A%7C+Russian+%7C+Native+%7C+Professional+writing+%7C" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -394,8 +390,9 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?example=1&amp;open=markdown&amp;markdown=%23+Languages%0A%0A%7C+Language+%7C+CEFR+%7C+Working+context+%7C%0A%7C%3A---------%7C%3A-----%7C%3A----------------%7C%0A%7C+English+%7C+C1+%7C+Technical+presentations+%7C%0A%7C+German+%7C+B1+%7C+Everyday+communication+%7C%0A%7C+Russian+%7C+Native+%7C+Professional+writing+%7C" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -504,6 +501,9 @@
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

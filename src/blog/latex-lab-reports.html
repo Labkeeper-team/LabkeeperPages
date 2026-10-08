@@ -39,6 +39,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -161,13 +162,13 @@
     \label{tab:results}
     \begin{tabular}{c S[table-format=1.3] S[table-format=1.3] S[table-format=1.4]}
         \toprule
-        № опыта & {$T_1$, с} & {$T_2$, с} & {$\bar{T}$, с} \\
+        № опыта &amp; {$T_1$, с} &amp; {$T_2$, с} &amp; {$\bar{T}$, с} \\
         \midrule
-        1 & 1.234 & 1.241 & 1.2375 \\
-        2 & 1.228 & 1.235 & 1.2315 \\
-        3 & 1.240 & 1.238 & 1.2390 \\
+        1 &amp; 1.234 &amp; 1.241 &amp; 1.2375 \\
+        2 &amp; 1.228 &amp; 1.235 &amp; 1.2315 \\
+        3 &amp; 1.240 &amp; 1.238 &amp; 1.2390 \\
         \midrule
-        \multicolumn{3}{l}{Среднее} & 1.2360 \\
+        \multicolumn{3}{l}{Среднее} &amp; 1.2360 \\
         \bottomrule
     \end{tabular}
 \end{table}</code></pre>
@@ -185,8 +186,8 @@ $T = \SI{1.236 +- 0.003}{\second}$
 
 % Абсолютная и относительная погрешности:
 \begin{align*}
-    \Delta T &= \sqrt{\Delta T_\text{сист}^2 + \Delta T_\text{случ}^2} \\
-    \delta T &= \frac{\Delta T}{\bar{T}} \cdot 100\% = \SI{0.24}{\percent}
+    \Delta T &amp;= \sqrt{\Delta T_\text{сист}^2 + \Delta T_\text{случ}^2} \\
+    \delta T &amp;= \frac{\Delta T}{\bar{T}} \cdot 100\% = \SI{0.24}{\percent}
 \end{align*}
 
 % Запись результата с погрешностью:
@@ -308,12 +309,10 @@ $g = \SI{9.81 +- 0.04}{\meter\per\second\squared}$</code></pre>
                     </div>
                     <p class="article-sidebar__title">Оформляйте лабораторные работы в&nbsp;онлайн-редакторе Labkeeper.
                     </p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">Перейти в редактор <svg class="button__arrow" width="16" height="16"
-                            viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg></a>
+                    <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Csection*%7B%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%7D%0A%5Csection%7B%D0%A6%D0%B5%D0%BB%D1%8C%7D%D0%98%D0%B7%D0%BC%D0%B5%D1%80%D0%B8%D1%82%D1%8C+%D1%81%D0%BE%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5.%0A%5Csection%7B%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D1%8B%7D%5C%5BR%3D%5Cfrac%7BU%7D%7BI%7D%3D%5Cfrac%7B5%7D%7B0.1%7D%3D50%5C%2C%5COmega%5C%5D%0A%5Csection%7B%D0%92%D1%8B%D0%B2%D0%BE%D0%B4%7D%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%BE+%24R%3D50%5C%2C%5COmega%24.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
+                    </a>
                 </div>
             </aside>
         </div>
@@ -357,9 +356,10 @@ $g = \SI{9.81 +- 0.04}{\meter\per\second\squared}$</code></pre>
                     </div>
                 </div>
             </div>
-            <div class="cta-features__footer"><a href="/project/default?open=latex"
-                    class="button button--outline-light cta-features__intro-btn">Открыть редактор <span
-                        class="button__arrow">→</span></a></div>
+            <div class="cta-features__footer"><a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Csection*%7B%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%7D%0A%5Csection%7B%D0%A6%D0%B5%D0%BB%D1%8C%7D%D0%98%D0%B7%D0%BC%D0%B5%D1%80%D0%B8%D1%82%D1%8C+%D1%81%D0%BE%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5.%0A%5Csection%7B%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D1%8B%7D%5C%5BR%3D%5Cfrac%7BU%7D%7BI%7D%3D%5Cfrac%7B5%7D%7B0.1%7D%3D50%5C%2C%5COmega%5C%5D%0A%5Csection%7B%D0%92%D1%8B%D0%B2%D0%BE%D0%B4%7D%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%BE+%24R%3D50%5C%2C%5COmega%24.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                <span class="button__arrow" aria-hidden="true">→</span>
+            </a></div>
             <div class="feature__bg"><img src="../assets/img/bg.svg" alt="bg" loading="lazy"></div>
         </section>
     </main>
@@ -448,6 +448,9 @@ $g = \SI{9.81 +- 0.04}{\meter\per\second\squared}$</code></pre>
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -261,12 +262,12 @@
 \label{tab:db-comparison}
 \begin{tabular}{|l|c|c|c|c|c|c|}
 \hline
-СУБД & Модель данных & Макс. RPS & Задержка p99, мс & Масштабируемость & Лицензия & Поддержка SQL \\
+СУБД &amp; Модель данных &amp; Макс. RPS &amp; Задержка p99, мс &amp; Масштабируемость &amp; Лицензия &amp; Поддержка SQL \\
 \hline
-PostgreSQL & Реляционная & 12 000 & 8.5 & Вертикальная / шардинг & Open Source & Полная \\
-ClickHouse & Колоночная & 150 000 & 1.2 & Горизонтальная кластерная & Apache 2.0 & Диалект SQL \\
-MongoDB & Документная & 45 000 & 4.1 & Шардинг из коробки & SSPL & Нет (MQL) \\
-Redis & Key-Value & 850 000 & 0.3 & Redis Cluster & Redis Source & Нет \\
+PostgreSQL &amp; Реляционная &amp; 12 000 &amp; 8.5 &amp; Вертикальная / шардинг &amp; Open Source &amp; Полная \\
+ClickHouse &amp; Колоночная &amp; 150 000 &amp; 1.2 &amp; Горизонтальная кластерная &amp; Apache 2.0 &amp; Диалект SQL \\
+MongoDB &amp; Документная &amp; 45 000 &amp; 4.1 &amp; Шардинг из коробки &amp; SSPL &amp; Нет (MQL) \\
+Redis &amp; Key-Value &amp; 850 000 &amp; 0.3 &amp; Redis Cluster &amp; Redis Source &amp; Нет \\
 \hline
 \end{tabular}
 \end{sidewaystable}</code></pre>
@@ -293,10 +294,10 @@ Redis & Key-Value & 850 000 & 0.3 & Redis Cluster & Redis Source & Нет \\
 
 \begin{tabular}{|l|c|c|}
 \hline
-Студент & \rotatebox{90}{Теория вероятностей} & \rotatebox{90}{Дискретная математика} \\
+Студент &amp; \rotatebox{90}{Теория вероятностей} &amp; \rotatebox{90}{Дискретная математика} \\
 \hline
-Иванов & 5 & 4 \\
-Петров & 4 & 5 \\
+Иванов &amp; 5 &amp; 4 \\
+Петров &amp; 4 &amp; 5 \\
 \hline
 \end{tabular}</code></pre>
                         </div>
@@ -333,14 +334,9 @@ Redis & Key-Value & 850 000 & 0.3 & Redis Cluster & Redis Source & Нет \\
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">В Labkeeper широкие таблицы и схемы легко верстаются в альбомной ориентации с автоматическим экспортом в PDF.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Brotating%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Bsidewaystable%7D%5Ccentering%0A%5Cbegin%7Btabular%7D%7Blrrrr%7DSensor+%26+Trial+1+%26+Trial+2+%26+Trial+3+%26+Mean%5C%5C%0AA+%26+10+%26+11+%26+12+%26+11%5C%5CB+%26+20+%26+21+%26+22+%26+21%5Cend%7Btabular%7D%0A%5Ccaption%7BWide+results+table%7D%5Cend%7Bsidewaystable%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -389,8 +385,9 @@ Redis & Key-Value & 850 000 & 0.3 & Redis Cluster & Redis Source & Нет \\
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Brotating%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Bsidewaystable%7D%5Ccentering%0A%5Cbegin%7Btabular%7D%7Blrrrr%7DSensor+%26+Trial+1+%26+Trial+2+%26+Trial+3+%26+Mean%5C%5C%0AA+%26+10+%26+11+%26+12+%26+11%5C%5CB+%26+20+%26+21+%26+22+%26+21%5Cend%7Btabular%7D%0A%5Ccaption%7BWide+results+table%7D%5Cend%7Bsidewaystable%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -499,6 +496,9 @@ Redis & Key-Value & 850 000 & 0.3 & Redis Cluster & Redis Source & Нет \\
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

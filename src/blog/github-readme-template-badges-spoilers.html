@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -276,8 +277,8 @@ DATABASE_URL=postgresql://user:pass@localhost:5432/mydb
                         <p>Длинные дампы ошибок, простыни JSON-ответов API или примеры логов перегружают страницу. Разберем, <strong>как сделать спойлер в markdown</strong> с помощью стандартных HTML5 тегов <code>details</code> и <code>summary</code> (подробнее об этом читайте в статье о <a href="/blog/markdown-spoilers-details-summary">спойлерах details и summary в Markdown</a>):</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">Markdown</span></div>
-                            <pre><code><details>
-<summary>👉 Нажмите, чтобы развернуть полный пример ответа API (JSON)</summary>
+                            <pre><code>&lt;details&gt;
+&lt;summary&gt;👉 Нажмите, чтобы развернуть полный пример ответа API (JSON)&lt;/summary&gt;
 
 ```json
 {
@@ -290,7 +291,7 @@ DATABASE_URL=postgresql://user:pass@localhost:5432/mydb
 }
 ```
 
-</details></code></pre>
+&lt;/details&gt;</code></pre>
                         </div>
                         <p>Обязательно оставляйте пустую строку перед и после блока кода внутри <code>details</code>, чтобы Markdown-парсер GitHub корректно раскрасил синтаксис.</p>
                     </section>
@@ -341,14 +342,9 @@ DATABASE_URL=postgresql://user:pass@localhost:5432/mydb
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Создавайте читаемую техническую документацию и README в удобном редакторе Labkeeper.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?example=1&amp;open=markdown&amp;markdown=%23+Measurement+toolkit%0A%0AA+small+project+for+repeatable+calculations.%0A%0A%23%23+Usage%0A%0A++++npm+install%0A++++npm+test%0A%0A%23%23+Features%0A-+CSV+input%0A-+Reproducible+reports%0A%0A%3Cdetails%3E%0A%3Csummary%3EDevelopment+notes%3C%2Fsummary%3E%0A%0ARun+the+tests+before+submitting+a+change.%0A%0A%3C%2Fdetails%3E" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -397,8 +393,9 @@ DATABASE_URL=postgresql://user:pass@localhost:5432/mydb
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?example=1&amp;open=markdown&amp;markdown=%23+Measurement+toolkit%0A%0AA+small+project+for+repeatable+calculations.%0A%0A%23%23+Usage%0A%0A++++npm+install%0A++++npm+test%0A%0A%23%23+Features%0A-+CSV+input%0A-+Reproducible+reports%0A%0A%3Cdetails%3E%0A%3Csummary%3EDevelopment+notes%3C%2Fsummary%3E%0A%0ARun+the+tests+before+submitting+a+change.%0A%0A%3C%2Fdetails%3E" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -507,6 +504,9 @@ DATABASE_URL=postgresql://user:pass@localhost:5432/mydb
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

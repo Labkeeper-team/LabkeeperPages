@@ -49,6 +49,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -165,12 +166,12 @@
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>\begin{equation}
 |x| = \begin{cases}
-    x,  & \text{если } x \ge 0, \\
-    -x, & \text{если } x &lt; 0.
+    x,  &amp; \text{если } x \ge 0, \\
+    -x, &amp; \text{если } x &lt; 0.
 \end{cases}
 \end{equation}</code></pre>
                         </div>
-                        <p>Символ <code>&</code> отделяет формулу от текстового пояснения, а две косые черты
+                        <p>Символ <code>&amp;</code> отделяет формулу от текстового пояснения, а две косые черты
                             <code>\\</code> выполняют перенос на новую строку.</p>
                     </section>
 
@@ -184,9 +185,9 @@
                             <pre><code>\begin{equation}
 \left\{
 \begin{aligned}
-    2x + 3y - z &= 7 \\
-    x - 2y + 4z &= -3 \\
-    -3x + y + 2z &= 4
+    2x + 3y - z &amp;= 7 \\
+    x - 2y + 4z &amp;= -3 \\
+    -3x + y + 2z &amp;= 4
 \end{aligned}
 \right.
 \end{equation}</code></pre>
@@ -209,8 +210,8 @@
 % Дроби в полный размер (dcases):
 \begin{equation}
 f(x) = \begin{dcases}
-    \frac{\sin x}{x}, & x \neq 0, \\
-    1,                & x = 0.
+    \frac{\sin x}{x}, &amp; x \neq 0, \\
+    1,                &amp; x = 0.
 \end{dcases}
 \end{equation}
 
@@ -235,10 +236,10 @@ f(x) = \begin{dcases}
                             <pre><code>\begin{subequations} \label{eq:maxwell}
 \left\{
 \begin{align}
-    \nabla \cdot \mathbf{E} &= \frac{\rho}{\varepsilon_0} \label{eq:maxwell_gauss} \\
-    \nabla \cdot \mathbf{B} &= 0 \label{eq:maxwell_mag} \\
-    \nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \label{eq:maxwell_faraday} \\
-    \nabla \times \mathbf{B} &= \mu_0 \mathbf{J} + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t} \label{eq:maxwell_ampere}
+    \nabla \cdot \mathbf{E} &amp;= \frac{\rho}{\varepsilon_0} \label{eq:maxwell_gauss} \\
+    \nabla \cdot \mathbf{B} &amp;= 0 \label{eq:maxwell_mag} \\
+    \nabla \times \mathbf{E} &amp;= -\frac{\partial \mathbf{B}}{\partial t} \label{eq:maxwell_faraday} \\
+    \nabla \times \mathbf{B} &amp;= \mu_0 \mathbf{J} + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t} \label{eq:maxwell_ampere}
 \end{align}
 \right.
 \end{subequations}</code></pre>
@@ -282,14 +283,9 @@ f(x) = \begin{dcases}
                     </div>
                     <p class="article-sidebar__title">Набирайте сложные системы уравнений и&nbsp;матрицы
                         в&nbsp;онлайн-редакторе Labkeeper с&nbsp;поддержкой amsmath и&nbsp;mathtools.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5C%5B%5Cbegin%7Bcases%7D2x%2By%3D5%5C%5Cx-y%3D1%5Cend%7Bcases%7D%0A%5Cquad%5CLongrightarrow%5Cquad+x%3D2%2C%5C+y%3D1.%5C%5D%0A%5C%5B%5Cbegin%7Bpmatrix%7D2%261%5C%5C1%26-1%5Cend%7Bpmatrix%7D%0A%5Cbegin%7Bpmatrix%7Dx%5C%5Cy%5Cend%7Bpmatrix%7D%3D%5Cbegin%7Bpmatrix%7D5%5C%5C1%5Cend%7Bpmatrix%7D%5C%5D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -335,8 +331,10 @@ f(x) = \begin{dcases}
                 </div>
             </div>
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">Открыть
-                    редактор <span class="button__arrow">→</span></a>
+                <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5C%5B%5Cbegin%7Bcases%7D2x%2By%3D5%5C%5Cx-y%3D1%5Cend%7Bcases%7D%0A%5Cquad%5CLongrightarrow%5Cquad+x%3D2%2C%5C+y%3D1.%5C%5D%0A%5C%5B%5Cbegin%7Bpmatrix%7D2%261%5C%5C1%26-1%5Cend%7Bpmatrix%7D%0A%5Cbegin%7Bpmatrix%7Dx%5C%5Cy%5Cend%7Bpmatrix%7D%3D%5Cbegin%7Bpmatrix%7D5%5C%5C1%5Cend%7Bpmatrix%7D%5C%5D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
+                </a>
             </div>
             <div class="feature__bg"><img src="../assets/img/bg.svg" alt="bg" loading="lazy"></div>
         </section>
@@ -431,6 +429,9 @@ f(x) = \begin{dcases}
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

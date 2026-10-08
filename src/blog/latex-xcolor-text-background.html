@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -276,12 +277,12 @@
     \begin{tabular}{|l|c|r|}
         \hline
         \rowcolor{NavyBlue} % Заливка строки заголовка
-        \textcolor{white}{\textbf{Параметр}} & \textcolor{white}{\textbf{Значение}} & \textcolor{white}{\textbf{Статус}} \\
+        \textcolor{white}{\textbf{Параметр}} &amp; \textcolor{white}{\textbf{Значение}} &amp; \textcolor{white}{\textbf{Статус}} \\
         \hline
-        Напряжение & 220 В & В норме \\
-        Сила тока & 4.8 А & В норме \\
-        Температура & \cellcolor{red!25} 92 $^\circ$C & \textbf{Перегрев} \\
-        Сопротивление & 45.8 Ом & В норме \\
+        Напряжение &amp; 220 В &amp; В норме \\
+        Сила тока &amp; 4.8 А &amp; В норме \\
+        Температура &amp; \cellcolor{red!25} 92 $^\circ$C &amp; \textbf{Перегрев} \\
+        Сопротивление &amp; 45.8 Ом &amp; В норме \\
         \hline
     \end{tabular}
     \caption{Журнал телеметрии стенда}
@@ -348,14 +349,9 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Поддерживайте единый цветовой стиль научных документов и презентаций в веб-редакторе Labkeeper.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%5Btable%5D%7Bxcolor%7D%0A%5Cbegin%7Bdocument%7D%0A%5Ctextcolor%7Bblue%7D%7BBlue+text%7D%5Cpar%5Ccolorbox%7Byellow%2130%7D%7BHighlighted+text%7D%0A%5Cbegin%7Btabular%7D%7Bcc%7D%5Crowcolor%7Bblue%2115%7DItem+%26+Value%5C%5CA+%26+10%5C%5CB+%26+20%5Cend%7Btabular%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -404,8 +400,9 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%5Btable%5D%7Bxcolor%7D%0A%5Cbegin%7Bdocument%7D%0A%5Ctextcolor%7Bblue%7D%7BBlue+text%7D%5Cpar%5Ccolorbox%7Byellow%2130%7D%7BHighlighted+text%7D%0A%5Cbegin%7Btabular%7D%7Bcc%7D%5Crowcolor%7Bblue%2115%7DItem+%26+Value%5C%5CA+%26+10%5C%5CB+%26+20%5Cend%7Btabular%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -514,6 +511,9 @@
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

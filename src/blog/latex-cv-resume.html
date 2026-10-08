@@ -41,6 +41,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 <body class="page blog__article">
     <header class="header js-header">
@@ -244,11 +245,9 @@
                         <img src="../assets/img/img-for-firstScreen.webp" alt="Онлайн-редактор LaTeX Labkeeper" width="220" height="135" loading="lazy" class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Создавайте стильное CV в&nbsp;Labkeeper — готовые шаблоны moderncv с&nbsp;экспортом в&nbsp;PDF за секунды.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cpagestyle%7Bempty%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection*%7BAnna+Petrova%7D%0ASoftware+developer+%5Chfill+anna%40example.com%0A%5Csection*%7BExperience%7D%0A%5Ctextbf%7BBackend+developer%7D%2C+2023--2026%0A%5Cbegin%7Bitemize%7D%5Citem+Built+a+reporting+API.%5Citem+Reduced+response+time+by+30%5C%25.%5Cend%7Bitemize%7D%0A%5Csection*%7BSkills%7DPython%2C+PostgreSQL%2C+Docker.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -292,7 +291,10 @@
                 </div>
             </div>
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">Открыть редактор <span class="button__arrow">→</span></a>
+                <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cpagestyle%7Bempty%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection*%7BAnna+Petrova%7D%0ASoftware+developer+%5Chfill+anna%40example.com%0A%5Csection*%7BExperience%7D%0A%5Ctextbf%7BBackend+developer%7D%2C+2023--2026%0A%5Cbegin%7Bitemize%7D%5Citem+Built+a+reporting+API.%5Citem+Reduced+response+time+by+30%5C%25.%5Cend%7Bitemize%7D%0A%5Csection*%7BSkills%7DPython%2C+PostgreSQL%2C+Docker.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
+                </a>
             </div>
             <div class="feature__bg"><img src="../assets/img/bg.svg" alt="bg" loading="lazy"></div>
         </section>
@@ -380,5 +382,8 @@
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 </html>

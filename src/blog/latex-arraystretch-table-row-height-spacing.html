@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -259,11 +260,11 @@
 \label{tab:rlc}
 \begin{tabular}{|l|c|r|}
 \hline
-Параметр & Формула & Значение \\
+Параметр &amp; Формула &amp; Значение \\
 \hline
-Индуктивность & $L = \frac{\Phi}{I}$ & $2.5\text{ мГн}$ \\
-Емкость & $C = \frac{q}{U}$ & $100\text{ пФ}$ \\
-Резонансная частота & $\omega_0 = \frac{1}{\sqrt{LC}}$ & $2.0\text{ МГц}$ \\
+Индуктивность &amp; $L = \frac{\Phi}{I}$ &amp; $2.5\text{ мГн}$ \\
+Емкость &amp; $C = \frac{q}{U}$ &amp; $100\text{ пФ}$ \\
+Резонансная частота &amp; $\omega_0 = \frac{1}{\sqrt{LC}}$ &amp; $2.0\text{ МГц}$ \\
 \hline
 \end{tabular}
 \end{table}</code></pre>
@@ -288,7 +289,7 @@
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX Распорка strut</span></div>
                             <pre><code>\hline
-\rule{0pt}{3ex} Высокая ячейка шапки & Значение \\[1ex]
+\rule{0pt}{3ex} Высокая ячейка шапки &amp; Значение \\[1ex]
 \hline</code></pre>
                         </div>
                     </section>
@@ -324,14 +325,9 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">В Labkeeper таблицы компилируются с профессиональными типографическими отступами без слипания строк.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Crenewcommand%7B%5Carraystretch%7D%7B1.6%7D%0A%5Cbegin%7Btabular%7D%7B%7Cl%7Cr%7C%7D%5Chline+Item+%26+Value%5C%5C%5Chline%0AVoltage+%26+12%5C%5CCurrent+%26+2%5C%5CPower+%26+24%5C%5C%5Chline%5Cend%7Btabular%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -380,8 +376,9 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Crenewcommand%7B%5Carraystretch%7D%7B1.6%7D%0A%5Cbegin%7Btabular%7D%7B%7Cl%7Cr%7C%7D%5Chline+Item+%26+Value%5C%5C%5Chline%0AVoltage+%26+12%5C%5CCurrent+%26+2%5C%5CPower+%26+24%5C%5C%5Chline%5Cend%7Btabular%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -490,6 +487,9 @@
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

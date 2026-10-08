@@ -41,6 +41,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 <body class="page blog__article">
     <header class="header js-header">
@@ -258,11 +259,9 @@ Ivan Ivanov \orcidlink{0000-0002-1825-0097}</code></pre>
                         <img src="../assets/img/img-for-firstScreen.webp" alt="Онлайн-редактор LaTeX Labkeeper" width="220" height="135" loading="lazy" class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Готовьте публикации для Scopus и&nbsp;WoS в&nbsp;Labkeeper — компиляция с&nbsp;IEEEtran, elsarticle и&nbsp;BibTeX без&nbsp;ошибок.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Ctitle%7BA+Reproducible+Measurement+Method%7D%5Cauthor%7BAnna+Petrova%7D%5Cmaketitle%0A%5Cbegin%7Babstract%7DWe+compare+two+measurement+methods.%5Cend%7Babstract%7D%0A%5Csection%7BIntroduction%7DResearch+question.%0A%5Csection%7BMethods%7DThree+repeated+measurements.%0A%5Csection%7BResults%7DThe+average+was+5.2.%0A%5Csection%7BDiscussion%7DA+larger+sample+is+needed.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -306,7 +305,10 @@ Ivan Ivanov \orcidlink{0000-0002-1825-0097}</code></pre>
                 </div>
             </div>
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">Открыть редактор <span class="button__arrow">→</span></a>
+                <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Ctitle%7BA+Reproducible+Measurement+Method%7D%5Cauthor%7BAnna+Petrova%7D%5Cmaketitle%0A%5Cbegin%7Babstract%7DWe+compare+two+measurement+methods.%5Cend%7Babstract%7D%0A%5Csection%7BIntroduction%7DResearch+question.%0A%5Csection%7BMethods%7DThree+repeated+measurements.%0A%5Csection%7BResults%7DThe+average+was+5.2.%0A%5Csection%7BDiscussion%7DA+larger+sample+is+needed.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
+                </a>
             </div>
             <div class="feature__bg"><img src="../assets/img/bg.svg" alt="bg" loading="lazy"></div>
         </section>
@@ -394,5 +396,8 @@ Ivan Ivanov \orcidlink{0000-0002-1825-0097}</code></pre>
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 </html>

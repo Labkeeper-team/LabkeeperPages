@@ -5,16 +5,22 @@
   "main": "index.js",
   "scripts": {
     "lint": "npm run lint:js && npm run lint:html",
-    "lint:js": "eslint \"src/assets/js/**/*.js\"",
-    "lint:html": "htmlhint \"src/*.html\"",
+    "lint:js": "eslint \"src/assets/js/**/*.js\" scripts/blog-generator/generate.js scripts/blog-generator/article-tools.js scripts/blog-generator/editor-examples.js scripts/blog-generator/vendor-math.js \"tests/**/*.js\" playwright.config.js",
+    "lint:html": "htmlhint \"src/**/*.html\"",
     "sitemap": "node src/assets/js/generate-sitemap.js",
-    "blog:generate": "node scripts/blog-generator/generate.js"
+    "blog:generate": "node scripts/blog-generator/generate.js",
+    "blog:check": "node scripts/blog-generator/generate.js --check",
+    "test": "node --test tests/unit/*.test.js",
+    "test:blog": "playwright test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@playwright/test": "1.57.0",
     "eslint": "^9.39.4",
-    "htmlhint": "^1.9.2"
+    "htmlhint": "^1.9.2",
+    "katex": "0.19.0",
+    "parse5": "7.3.0"
   }
 }

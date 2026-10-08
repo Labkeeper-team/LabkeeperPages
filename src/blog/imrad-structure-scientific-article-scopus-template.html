@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -299,7 +300,7 @@ Concise summary of context, proposed method, quantitative results, and significa
                         <h2 class="article-section__title">Главная ошибка: как не перепутать Results и Discussion</h2>
                         <p>Самое частое замечание зарубежных рецензентов — смешивание результатов и обсуждения:</p>
                         <div class="article-table-wrap">
-                            <table class="article-table">
+                            <div class="article-table-wrapper" tabindex="0"><table class="article-table">
                                 <thead>
                                     <tr>
                                         <th>Раздел</th>
@@ -319,7 +320,7 @@ Concise summary of context, proposed method, quantitative results, and significa
                                         <td>Первичное введение новых таблиц или графиков, которых не было в Results</td>
                                     </tr>
                                 </tbody>
-                            </table>
+                            </table></div>
                         </div>
                     </section>
 
@@ -364,14 +365,9 @@ Concise summary of context, proposed method, quantitative results, and significa
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">В Labkeeper встроены проверенные академические шаблоны для журналов Elsevier, Springer и IEEE в формате LaTeX.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7BIntroduction%7DCan+calibration+reduce+sensor+bias%3F%0A%5Csection%7BMethods%7DWe+compared+two+sensors+over+20+trials.%0A%5Csection%7BResults%7DMean+error+decreased+from+4%5C%25+to+1%5C%25.%0A%5Csection%7BDiscussion%7DCalibration+improved+accuracy%3B+a+larger+sample+is+needed.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -420,8 +416,9 @@ Concise summary of context, proposed method, quantitative results, and significa
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7BIntroduction%7DCan+calibration+reduce+sensor+bias%3F%0A%5Csection%7BMethods%7DWe+compared+two+sensors+over+20+trials.%0A%5Csection%7BResults%7DMean+error+decreased+from+4%5C%25+to+1%5C%25.%0A%5Csection%7BDiscussion%7DCalibration+improved+accuracy%3B+a+larger+sample+is+needed.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -530,6 +527,9 @@ Concise summary of context, proposed method, quantitative results, and significa
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

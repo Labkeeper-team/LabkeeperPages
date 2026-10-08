@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -330,14 +331,9 @@ Fullstack разработчик с 6+ годами опыта в проекти
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Верстайте стильные IT-резюме в чистом Markdown в Labkeeper с моментальным экспортом в идеальный PDF.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?example=1&amp;open=markdown&amp;markdown=%23+Anna+Petrova%0AFullstack+Developer+%7C+anna%40example.com%0A%0A%23%23+Summary%0ABuilding+accessible+web+applications.%0A%0A%23%23+Stack%0ATypeScript%2C+React%2C+Node.js%2C+PostgreSQL.%0A%0A%23%23+Selected+project%0A**Report+builder%3A**+cut+report+preparation+time+by+40%25.%0A%0A%23%23+Education%0ABSc+Computer+Science%2C+2021." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -386,8 +382,9 @@ Fullstack разработчик с 6+ годами опыта в проекти
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?example=1&amp;open=markdown&amp;markdown=%23+Anna+Petrova%0AFullstack+Developer+%7C+anna%40example.com%0A%0A%23%23+Summary%0ABuilding+accessible+web+applications.%0A%0A%23%23+Stack%0ATypeScript%2C+React%2C+Node.js%2C+PostgreSQL.%0A%0A%23%23+Selected+project%0A**Report+builder%3A**+cut+report+preparation+time+by+40%25.%0A%0A%23%23+Education%0ABSc+Computer+Science%2C+2021." class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -496,6 +493,9 @@ Fullstack разработчик с 6+ годами опыта в проекти
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -245,14 +246,14 @@
     % 1. Шапка на САМОЙ ПЕРВОЙ странице
     \caption{Экспериментальные данные измерений}\label{tab:measurements} \\
     \hline
-    \textbf{№} & \textbf{Наименование образца} & \textbf{Масса, г} \\
+    \textbf{№} &amp; \textbf{Наименование образца} &amp; \textbf{Масса, г} \\
     \hline
     \endfirsthead
 
     % 2. Шапка на ВСЕХ ПОСЛЕДУЮЩИХ страницах (по ГОСТ)
     \multicolumn{3}{r}{\textit{Продолжение таблицы \ref{tab:measurements}}} \\
     \hline
-    \textbf{№} & \textbf{Наименование образца} & \textbf{Масса, г} \\
+    \textbf{№} &amp; \textbf{Наименование образца} &amp; \textbf{Масса, г} \\
     \hline
     \endhead
 
@@ -267,8 +268,8 @@
     \endlastfoot
 
     % ТЕЛО ТАБЛИЦЫ
-    1 & Образец кремниевой пластины марки А-1 & 14.52 \\ \hline
-    2 & Образец кремниевой пластины марки А-2 & 14.88 \\ \hline
+    1 &amp; Образец кремниевой пластины марки А-1 &amp; 14.52 \\ \hline
+    2 &amp; Образец кремниевой пластины марки А-2 &amp; 14.88 \\ \hline
     % ... сотни строк данных ...
 \end{longtable}</code></pre>
                         </div>
@@ -298,7 +299,7 @@
                     <section class="article-section" id="alignment">
                         <h2 class="article-section__title">Ширина колонок и переносы строк внутри ячеек</h2>
                         <p>Чтобы текст внутри ячеек автоматически переносился по словам, используйте колонки с фиксированной шириной <code>p{ширина}</code> (например, <code>p{6cm}</code>) вместо стандартных <code>l</code>, <code>c</code>, <code>r</code> (базовые приемы верстки описаны в руководстве по <a href="/blog/table-continuation-multipage-gost-diploma">переносу таблиц по ГОСТ</a>).</p>
-                        <p>Для центрирования текста в таких ячейках используйте пакет <code>array</code> с модификатором <code>>{\centering\arraybackslash}p{4cm}</code>.</p>
+                        <p>Для центрирования текста в таких ячейках используйте пакет <code>array</code> с модификатором <code>&gt;{\centering\arraybackslash}p{4cm}</code>.</p>
                     </section>
 
                     <section class="article-section" id="tips">
@@ -332,14 +333,9 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Верстайте большие массивы данных и спецификации в LaTeX без ручных разрывов страниц в Labkeeper.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Blongtable%7D%5Cusepackage%5Btextheight%3D55mm%5D%7Bgeometry%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Blongtable%7D%7Bcc%7DIndex+%26+Result%5C%5C%5Chline%5Cendfirsthead%0AIndex+%26+Result+%28continued%29%5C%5C%5Chline%5Cendhead%0A1+%26+10%5C%5C2+%26+20%5C%5C3+%26+30%5C%5C4+%26+40%5C%5C5+%26+50%5C%5C6+%26+60%5C%5C7+%26+70%5C%5C8+%26+80%5C%5C9+%26+90%5C%5C10+%26+100%5C%5C11+%26+110%5C%5C12+%26+120%5C%5C%0A%5Cend%7Blongtable%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -388,8 +384,9 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Blongtable%7D%5Cusepackage%5Btextheight%3D55mm%5D%7Bgeometry%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Blongtable%7D%7Bcc%7DIndex+%26+Result%5C%5C%5Chline%5Cendfirsthead%0AIndex+%26+Result+%28continued%29%5C%5C%5Chline%5Cendhead%0A1+%26+10%5C%5C2+%26+20%5C%5C3+%26+30%5C%5C4+%26+40%5C%5C5+%26+50%5C%5C6+%26+60%5C%5C7+%26+70%5C%5C8+%26+80%5C%5C9+%26+90%5C%5C10+%26+100%5C%5C11+%26+110%5C%5C12+%26+120%5C%5C%0A%5Cend%7Blongtable%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -498,6 +495,9 @@
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

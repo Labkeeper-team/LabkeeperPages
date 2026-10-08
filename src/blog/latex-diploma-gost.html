@@ -50,6 +50,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -418,14 +419,9 @@
                     </div>
                     <p class="article-sidebar__title">Оформляйте дипломную и&nbsp;курсовую работу по&nbsp;ГОСТ
                         в&nbsp;онлайн-редакторе Labkeeper.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%5Bleft%3D30mm%2Cright%3D15mm%2Ctop%3D20mm%2Cbottom%3D20mm%5D%7Bgeometry%7D%0A%5Cusepackage%7Bsetspace%7D%5Conehalfspacing%5Csetlength%7B%5Cparindent%7D%7B1.25cm%7D%0A%5Cbegin%7Bdocument%7D%0A%5Ctableofcontents%0A%5Cnewpage%5Csection%7B%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%7D%0A%D0%A6%D0%B5%D0%BB%D1%8C+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%3A+%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B8%D1%82%D1%8C+%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B+%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%D0%B0.%0A%5Csection%7B%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BA%D0%B0%7D%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5+%D1%8D%D0%BA%D1%81%D0%BF%D0%B5%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D1%82%D0%B0.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -471,8 +467,10 @@
                 </div>
             </div>
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">Открыть
-                    редактор <span class="button__arrow">→</span></a>
+                <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%5Bleft%3D30mm%2Cright%3D15mm%2Ctop%3D20mm%2Cbottom%3D20mm%5D%7Bgeometry%7D%0A%5Cusepackage%7Bsetspace%7D%5Conehalfspacing%5Csetlength%7B%5Cparindent%7D%7B1.25cm%7D%0A%5Cbegin%7Bdocument%7D%0A%5Ctableofcontents%0A%5Cnewpage%5Csection%7B%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%7D%0A%D0%A6%D0%B5%D0%BB%D1%8C+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%3A+%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B8%D1%82%D1%8C+%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B+%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%D0%B0.%0A%5Csection%7B%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BA%D0%B0%7D%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5+%D1%8D%D0%BA%D1%81%D0%BF%D0%B5%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D1%82%D0%B0.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
+                </a>
             </div>
             <div class="feature__bg"><img src="../assets/img/bg.svg" alt="bg" loading="lazy"></div>
         </section>
@@ -567,6 +565,9 @@
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -266,9 +267,9 @@
 Сложный индекс в фигурных скобках: $T_{max} = 300\text{ K}$, $x_{i,j}^{(n+1)}$.
 
 В отдельном блоке:
-$
+$$
 \sum_{i=1}^{n} x_i^2 = \sigma_{total}^2
-$</code></pre>
+$$</code></pre>
                         </div>
                         <p><strong>Важное правило:</strong> если в индексе содержится более одного символа (например, <code>max</code> или <code>i+1</code>), его обязательно нужно заключать в фигурные скобки: <code>$x_{max}$</code>, иначе нижним индексом станет только первый символ, а остальное останется обычным текстом (<code>$x_max$</code> превратится в $x_m$ax).</p>
                     </section>
@@ -287,7 +288,7 @@ $</code></pre>
                         <h2 class="article-section__title">Практические примеры: химия, физика и сноски</h2>
                         <p>Сравним типовые сценарии оформления в таблице:</p>
                         <div class="article-table-wrap">
-                            <table class="article-table">
+                            <div class="article-table-wrapper" tabindex="0"><table class="article-table">
                                 <thead>
                                     <tr>
                                         <th>Сфера</th>
@@ -317,7 +318,7 @@ $</code></pre>
                                         <td>E<sub>0</sub> = m<sub>0</sub>c<sup>2</sup></td>
                                     </tr>
                                 </tbody>
-                            </table>
+                            </table></div>
                         </div>
                     </section>
 
@@ -362,14 +363,9 @@ $</code></pre>
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Пишите научные заметки и отчеты в Labkeeper: мгновенный рендеринг формул KaTeX, таблиц и тегов разметки прямо в браузере.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?example=1&amp;open=markdown&amp;markdown=%23%23+%D0%98%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D1%8B%0A%0A%D0%9C%D0%BE%D0%BB%D0%B5%D0%BA%D1%83%D0%BB%D0%B0+%D0%B2%D0%BE%D0%B4%D1%8B%3A+%24H_2O%24.%0A%0A%D0%AD%D0%BD%D0%B5%D1%80%D0%B3%D0%B8%D1%8F%3A+%24E_0%3Dmc%5E2%24.%0A%0A%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C%3A+%24a_1%2Ca_2%2C%5Cldots%2Ca_n%24.%0A%0AHTML%3A+H%3Csub%3E2%3C%2Fsub%3EO+%D0%B8+x%3Csup%3E2%3C%2Fsup%3E." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -418,8 +414,9 @@ $</code></pre>
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?example=1&amp;open=markdown&amp;markdown=%23%23+%D0%98%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D1%8B%0A%0A%D0%9C%D0%BE%D0%BB%D0%B5%D0%BA%D1%83%D0%BB%D0%B0+%D0%B2%D0%BE%D0%B4%D1%8B%3A+%24H_2O%24.%0A%0A%D0%AD%D0%BD%D0%B5%D1%80%D0%B3%D0%B8%D1%8F%3A+%24E_0%3Dmc%5E2%24.%0A%0A%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C%3A+%24a_1%2Ca_2%2C%5Cldots%2Ca_n%24.%0A%0AHTML%3A+H%3Csub%3E2%3C%2Fsub%3EO+%D0%B8+x%3Csup%3E2%3C%2Fsup%3E." class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -528,6 +525,9 @@ $</code></pre>
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

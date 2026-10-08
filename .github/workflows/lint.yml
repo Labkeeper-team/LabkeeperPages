@@ -31,3 +31,12 @@ jobs:
 
       - name: Run linters
         run: npm run lint
+
+      - name: Check blog generation and examples
+        run: npm run blog:check && npm test
+
+      - name: Install browser for blog checks
+        run: npx playwright install --with-deps chromium
+
+      - name: Check desktop and mobile articles
+        run: npm run test:blog -- --project=Chromium --project=Android

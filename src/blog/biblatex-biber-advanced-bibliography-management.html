@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -227,12 +228,13 @@
                             <li><a href="#online-setup" class="article-toc__link">Настройка biblatex biber онлайн: преамбула с поддержкой ГОСТ</a></li>
                             <li><a href="#sorting-options" class="article-toc__link">Сортировка списка литературы biblatex: по языку, алфавиту и цитированию</a></li>
                             <li><a href="#modern-types" class="article-toc__link">Современные типы записей в .bib файле (@online, @software, @thesis)</a></li>
-                            <li><a href="#compilation-flow" class="article-toc__link">Цикл сборки: pdflatex -> biber -> pdflatex</a></li>
+                            <li><a href="#compilation-flow" class="article-toc__link">Цикл сборки: pdflatex → biber → pdflatex</a></li>
                         </ol>
                     </nav>
 
                     <section class="article-section" id="why-biblatex">
                         <h2 class="article-section__title">Почему связка biblatex + biber заменила классический BibTeX</h2>
+                        <p><strong>Пример в редакторе:</strong> короткая ссылка открывает самостоятельный документ с цитированием и списком через <code>thebibliography</code>, без отдельного файла и запуска Biber. Это иллюстрация связи ссылки с источником, а не демонстрация автоматической сортировки BibLaTeX. Полная настройка <code>.bib</code> и Biber приведена ниже.</p>
                         <p>Хотя классический <a href="/blog/latex-gost-bibliography">BibTeX по ГОСТ для списка литературы</a> до сих пор популярен, оригинальная утилита <code>bibtex</code> была создана еще в 1985 году, когда не существовало стандарта Юникод (UTF-8). Из-за этого классический BibTeX часто ломал сортировку русских фамилий («А» оказывалась после «Я») и требовал сложных кодировочных ухищрений.</p>
                         <p>Современный тандем пакета <strong>biblatex</strong> и бэкенда <strong>biber</strong> полностью написан с поддержкой UTF-8, понимает правила русской грамматики и поддерживает официальный пакет адаптации <code>biblatex-gost</code>.</p>
                     </section>
@@ -293,7 +295,7 @@
                     </section>
 
                     <section class="article-section" id="compilation-flow">
-                        <h2 class="article-section__title">Цикл сборки: pdflatex -> biber -> pdflatex</h2>
+                        <h2 class="article-section__title">Цикл сборки: pdflatex → biber → pdflatex</h2>
                         <p>Для генерации списка запускается цепочка: <code>pdflatex main</code> $\to$ <code>biber main</code> $\to$ <code>pdflatex main</code>. В облачном редакторе <strong>Labkeeper</strong> этот цикл выполняется полностью автоматически в фоновом режиме за доли секунды.</p>
                     </section>
 
@@ -328,14 +330,9 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Управляйте научной библиографией мирового уровня без головной боли в Labkeeper.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Csection*%7BCitations+and+bibliography%7D%0AA+reproducible+method%7E%5Ccite%7Bdemo%7D.%0A%5Cbegin%7Bthebibliography%7D%7B9%7D%0A%5Cbibitem%7Bdemo%7DAnna+Example.+%5Ctextit%7BMeasurement+Methods%7D.+Example+Press%2C+2024.%0A%5Cend%7Bthebibliography%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -384,8 +381,9 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Csection*%7BCitations+and+bibliography%7D%0AA+reproducible+method%7E%5Ccite%7Bdemo%7D.%0A%5Cbegin%7Bthebibliography%7D%7B9%7D%0A%5Cbibitem%7Bdemo%7DAnna+Example.+%5Ctextit%7BMeasurement+Methods%7D.+Example+Press%2C+2024.%0A%5Cend%7Bthebibliography%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -494,6 +492,9 @@
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Формулы в Markdown синтаксис: ввод математики MathJax онлайн — Labkeeper</title>
-    <meta name="description" content="Формулы в Markdown: синтаксис инлайн $...$ и блоков $, ввод математики MathJax и KaTeX онлайн, дроби, матрицы, интегралы в редакторе Labkeeper." />
+    <meta name="description" content="Формулы в Markdown: синтаксис инлайн $...$ и блоков $$, ввод математики MathJax и KaTeX онлайн, дроби, матрицы, интегралы в редакторе Labkeeper." />
     <!-- SEO Ключи: формулы в markdown синтаксис, ввод математики mathjax markdown онлайн -->
     <meta name="keywords" content="формулы в markdown синтаксис, ввод математики mathjax markdown онлайн" />
     <link rel="canonical" href="https://labkeeper.io/blog/markdown-mathjax-katex-latex-math" />
@@ -17,19 +17,19 @@
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Labkeeper" />
     <meta property="og:title" content="Формулы в Markdown синтаксис: ввод математики MathJax онлайн — Labkeeper" />
-    <meta property="og:description" content="Формулы в Markdown: синтаксис инлайн $...$ и блоков $, ввод математики MathJax и KaTeX онлайн, дроби, матрицы, интегралы в редакторе Labkeeper." />
+    <meta property="og:description" content="Формулы в Markdown: синтаксис инлайн $...$ и блоков $$, ввод математики MathJax и KaTeX онлайн, дроби, матрицы, интегралы в редакторе Labkeeper." />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:title" content="Формулы в Markdown синтаксис: ввод математики MathJax онлайн — Labkeeper" />
-    <meta name="twitter:description" content="Формулы в Markdown: синтаксис инлайн $...$ и блоков $, ввод математики MathJax и KaTeX онлайн, дроби, матрицы, интегралы в редакторе Labkeeper." />
+    <meta name="twitter:description" content="Формулы в Markdown: синтаксис инлайн $...$ и блоков $$, ввод математики MathJax и KaTeX онлайн, дроби, матрицы, интегралы в редакторе Labkeeper." />
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Как вставлять математические формулы в Markdown (MathJax / KaTeX)",
-        "description": "Формулы в Markdown: синтаксис инлайн $...$ и блоков $, ввод математики MathJax и KaTeX онлайн, дроби, матрицы, интегралы в редакторе Labkeeper.",
+        "description": "Формулы в Markdown: синтаксис инлайн $...$ и блоков $$, ввод математики MathJax и KaTeX онлайн, дроби, матрицы, интегралы в редакторе Labkeeper.",
         "author": {
             "@type": "Organization",
             "name": "Labkeeper",
@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -241,16 +242,16 @@
                         <p>Освоить базовые <strong>формулы в markdown синтаксис</strong> можно за две минуты благодаря символу доллара <code>$</code>:</p>
                         <ul>
                             <li><strong>Строчная (инлайн) формула:</strong> окружается одиночными долларами <code>$E = mc^2$</code> и встраивается прямо в середину предложения без разрыва строки.</li>
-                            <li><strong>Выключная (блочная) формула:</strong> окружается двойными долларами <code>$ ... $</code>, центрируется на странице и выделяется вертикальными отступами.</li>
+                            <li><strong>Выключная (блочная) формула:</strong> окружается двойными долларами <code>$$ ... $$</code>, центрируется на странице и выделяется вертикальными отступами.</li>
                         </ul>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">Markdown</span></div>
                             <pre><code>Второй закон Ньютона в дифференциальной форме $F = \frac{dp}{dt}$ связывает силу и импульс.
 
 Вычисление определенного интеграла функции:
-$
+$$
 \int_{0}^{\pi} \sin^2(x)\,dx = \frac{\pi}{2}
-$</code></pre>
+$$</code></pre>
                         </div>
                     </section>
 
@@ -268,16 +269,16 @@ $</code></pre>
 
                     <section class="article-section" id="matrices-systems">
                         <h2 class="article-section__title">Верстка матриц, векторов и систем уравнений</h2>
-                        <p>Внутри двойных долларов <code>$ ... $</code> поддерживаются классические окружения матриц (детальнее сложные системы разобраны в статье о <a href="/blog/markdown-multiline-formulas-matrices-mathjax">многострочных формулах и матрицах в MathJax</a>):</p>
+                        <p>Внутри двойных долларов <code>$$ ... $$</code> поддерживаются классические окружения матриц (детальнее сложные системы разобраны в статье о <a href="/blog/markdown-multiline-formulas-matrices-mathjax">многострочных формулах и матрицах в MathJax</a>):</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">Markdown (MathJax)</span></div>
-                            <pre><code>$
+                            <pre><code>$$
 A = \begin{pmatrix}
-a_{11} & a_{12} & a_{13} \\
-a_{21} & a_{22} & a_{23} \\
-a_{31} & a_{32} & a_{33}
+a_{11} &amp; a_{12} &amp; a_{13} \\
+a_{21} &amp; a_{22} &amp; a_{23} \\
+a_{31} &amp; a_{32} &amp; a_{33}
 \end{pmatrix}
-$</code></pre>
+$$</code></pre>
                         </div>
                         <p>Окружение <code>pmatrix</code> дает круглые скобки, <code>bmatrix</code> — квадратные скобки матрицы, а <code>vmatrix</code> — прямые линии определителя (детерминанта).</p>
                     </section>
@@ -298,7 +299,7 @@ $</code></pre>
                                 <div class="article-tip__number">1</div>
                                 <div class="article-tip__content">
                                     <h3>Текст внутри формул</h3>
-                                    <p>Для вставки обычных русских слов внутрь математической строки используйте макрос <code>\text{...}</code>: <code>$ v_{\text{ср}} = \frac{S}{t} $</code>.</p>
+                                    <p>Для вставки обычных русских слов внутрь математической строки используйте макрос <code>\text{...}</code>: <code>$$ v_{\text{ср}} = \frac{S}{t} $$</code>.</p>
                                 </div>
                             </div>
                             <div class="article-tip">
@@ -322,14 +323,9 @@ $</code></pre>
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Набирайте формулы LaTeX прямо внутри заметок Markdown в Labkeeper с мгновенным рендерингом.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?example=1&amp;open=markdown&amp;markdown=%23%23+%D0%A4%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D1%8B%0A%0A%D0%92+%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B5%3A+%24E%3Dmc%5E2%24.%0A%0A%24%24%0A%5Cint_0%5E1+x%5E2%5C%2Cdx%3D%5Cfrac13%0A%24%24%0A%0A%24%24%0Ax%3D%5Cfrac%7B-b%5Cpm%5Csqrt%7Bb%5E2-4ac%7D%7D%7B2a%7D%0A%24%24" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -378,8 +374,9 @@ $</code></pre>
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?example=1&amp;open=markdown&amp;markdown=%23%23+%D0%A4%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D1%8B%0A%0A%D0%92+%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B5%3A+%24E%3Dmc%5E2%24.%0A%0A%24%24%0A%5Cint_0%5E1+x%5E2%5C%2Cdx%3D%5Cfrac13%0A%24%24%0A%0A%24%24%0Ax%3D%5Cfrac%7B-b%5Cpm%5Csqrt%7Bb%5E2-4ac%7D%7D%7B2a%7D%0A%24%24" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -488,6 +485,9 @@ $</code></pre>
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>
