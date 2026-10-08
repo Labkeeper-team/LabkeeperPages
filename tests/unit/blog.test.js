@@ -14,7 +14,7 @@ test('example links round-trip all segment types without changing source text', 
     const example = { latex: String.raw`$x+y$ & 50% #1 \frac{a}{b}`, markdown: '# Пример\n<sup>2</sup> + $$', compute: 'a = 1\nb = a + 2' };
     const url = new URL(buildExampleUrl(example), 'https://labkeeper.io');
     assert.equal(url.pathname, '/project/default');
-    assert.equal(url.searchParams.get('example'), '1');
+    assert.equal(url.searchParams.has('example'), false);
     assert.equal(url.searchParams.get('open'), 'latex');
     for (const [type, value] of Object.entries(example)) assert.equal(url.searchParams.get(type), value);
 });
@@ -24,7 +24,7 @@ test('Markdown examples explicitly select Markdown mode', () => {
 });
 
 test('the URL budget includes percent encoding and the origin', () => {
-    const prefix = 'https://labkeeper.io/project/default?example=1&open=latex&latex=';
+    const prefix = 'https://labkeeper.io/project/default?open=latex&latex=';
     const text = 'a'.repeat(MAX_EXAMPLE_URL_LENGTH - prefix.length);
     assert.equal('https://labkeeper.io'.length + buildExampleUrl({ latex: text }).length, MAX_EXAMPLE_URL_LENGTH);
     assert.throws(() => buildExampleUrl({ latex: text + 'a' }), /limit/);
@@ -71,7 +71,21 @@ test('every article has a distinct, bounded example and no orphan examples exist
     assert.deepEqual(Object.keys(examples).sort(), [...slugs].sort());
     const links = slugs.map(slug => buildExampleUrl(examples[slug], slug));
     assert.equal(new Set(links).size, slugs.length);
+    for (const link of links) assert.equal(new URL(link, 'https://labkeeper.io').searchParams.has('example'), false);
 });
+
+for (const slug of ['student-confidence-intervals-error-calculation', 'indirect-measurement-error-calculation-lab-report']) {
+    test(slug + ': calculation example passes compute and result substitutions together', () => {
+        const example = examples[slug];
+        assert.ok(example.compute.trim());
+        assert.match(example.latex, /\$\{[a-z]+\}/);
+        assert.doesNotMatch(example.latex, /\\(?:documentclass|begin\{document\}|end\{document\})/);
+        const query = new URL(buildExampleUrl(example), 'https://labkeeper.io').searchParams;
+        assert.equal(query.get('compute'), example.compute);
+        assert.equal(query.get('latex'), example.latex);
+        assert.equal(query.get('open'), 'latex');
+    });
+}
 
 for (const slug of slugs) {
     test(`${slug}: generated links, metadata and code are valid`, () => {

@@ -297,6 +297,7 @@
 \end{equation}</code></pre>
                         </div>
                         <p>Для профессиональной типографики физических единиц и автоматического форматирования погрешностей также применяют <a href="/blog/latex-siunitx">пакет siunitx для LaTeX</a>.</p>
+                        <p>Кнопка «Просмотреть пример» открывает вычислительный сегмент с пятью измерениями и LaTeX-документ с подстановкой результатов. Редактор считает среднее, выборочное СКО и границы интервала. Коэффициент Стьюдента 2,776 выбран для двустороннего интервала 95% и пяти измерений; при другом размере выборки замените коэффициент и число n. Синтаксис подстановок описан в <a href="/wiki/concepts/segments.html">вики</a>.</p>
                     </section>
 
                     <section class="article-section" id="tips">
@@ -330,8 +331,11 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Оформляйте строгие математические расчеты лабораторных работ в онлайн-редакторе Labkeeper.</p>
-                    <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Csection*%7BConfidence+interval%7D%0A%24n%3D5%24%2C+%24%5Cbar%7Bx%7D%3D10.2%24%2C+%24s%3D0.4%24%2C+%24t_%7B0.975%2C4%7D%3D2.776%24.%0A%5C%5B%5CDelta+x%3Dt%5Cfrac%7Bs%7D%7B%5Csqrt+n%7D%3D2.776%5Cfrac%7B0.4%7D%7B%5Csqrt5%7D%5Capprox0.50%5C%5D%0A%5C%5Bx%3D10.2%5Cpm0.5%5Cquad%28P%3D0.95%29%5C%5D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
-                        <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                    <a href="/project/default?open=latex&amp;compute=x+%3D+%5B9.8%2C+9.8%2C+10.2%2C+10.6%2C+10.6%5D%0An+%3D+5%0Amean+%3D+sum%28x%29+%2F+n%0As+%3D+sqrt%28sum%28%28x+-+mean%29%5E2%29+%2F+%28n+-+1%29%29%0A%2F%2F+Two-sided+95%25+interval%2C+n+%3D+5%0At+%3D+2.776%0Adelta+%3D+t+*+s+%2F+sqrt%28n%29%0Alo+%3D+mean+-+delta%0Ahi+%3D+mean+%2B+delta&amp;latex=%5Csection*%7BConfidence+interval%7D%0A%24n%3D5%24%2C+%24P%3D0.95%24%2C+%24t_%7B0.975%2C4%7D%3D2.776%24.%0A%5C%5B%5CDelta+x%3Dt%5Cfrac%7Bs%7D%7B%5Csqrt+n%7D%5C%5D%0AMean%3A+%24%7Bmean%7D.+Standard+deviation%3A+%24%7Bs%7D.%0A%5Cpar+Confidence+half-width%3A+%24%7Bdelta%7D.%0A%5Cpar+Interval%3A+%5B%24%7Blo%7D%3B+%24%7Bhi%7D%5D." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span class="article-example__label">
+                            <span data-i18n="blog-example">Просмотреть пример</span>
+                            <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                        </span>
                         <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
@@ -381,8 +385,11 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Csection*%7BConfidence+interval%7D%0A%24n%3D5%24%2C+%24%5Cbar%7Bx%7D%3D10.2%24%2C+%24s%3D0.4%24%2C+%24t_%7B0.975%2C4%7D%3D2.776%24.%0A%5C%5B%5CDelta+x%3Dt%5Cfrac%7Bs%7D%7B%5Csqrt+n%7D%3D2.776%5Cfrac%7B0.4%7D%7B%5Csqrt5%7D%5Capprox0.50%5C%5D%0A%5C%5Bx%3D10.2%5Cpm0.5%5Cquad%28P%3D0.95%29%5C%5D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
-                    <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                <a href="/project/default?open=latex&amp;compute=x+%3D+%5B9.8%2C+9.8%2C+10.2%2C+10.6%2C+10.6%5D%0An+%3D+5%0Amean+%3D+sum%28x%29+%2F+n%0As+%3D+sqrt%28sum%28%28x+-+mean%29%5E2%29+%2F+%28n+-+1%29%29%0A%2F%2F+Two-sided+95%25+interval%2C+n+%3D+5%0At+%3D+2.776%0Adelta+%3D+t+*+s+%2F+sqrt%28n%29%0Alo+%3D+mean+-+delta%0Ahi+%3D+mean+%2B+delta&amp;latex=%5Csection*%7BConfidence+interval%7D%0A%24n%3D5%24%2C+%24P%3D0.95%24%2C+%24t_%7B0.975%2C4%7D%3D2.776%24.%0A%5C%5B%5CDelta+x%3Dt%5Cfrac%7Bs%7D%7B%5Csqrt+n%7D%5C%5D%0AMean%3A+%24%7Bmean%7D.+Standard+deviation%3A+%24%7Bs%7D.%0A%5Cpar+Confidence+half-width%3A+%24%7Bdelta%7D.%0A%5Cpar+Interval%3A+%5B%24%7Blo%7D%3B+%24%7Bhi%7D%5D." class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span class="article-example__label">
+                        <span data-i18n="blog-example">Просмотреть пример</span>
+                        <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                    </span>
                     <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>

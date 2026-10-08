@@ -263,20 +263,21 @@
                         <div class="article-quote">
                             <p><strong>Пример расчета:</strong><br>
                             Формула плотности цилиндра: $\rho = \frac{m}{V} = \frac{4m}{\pi d^2 h}$, где масса $m = (124.50 \pm 0.05)\text{ г}$, диаметр $d = (20.12 \pm 0.02)\text{ мм}$, высота $h = (50.34 \pm 0.05)\text{ мм}$.<br><br>
-                            1. Среднее значение плотности: $\rho = \frac{4 \cdot 0.1245}{3.1416 \cdot (0.02012)^2 \cdot 0.05034} = 7780.4\text{ кг/м}^3$.<br>
+                            1. Среднее значение плотности: $\rho = \frac{4 \cdot 0.1245}{\pi \cdot (0.02012)^2 \cdot 0.05034} \approx 7778.8\text{ кг/м}^3$.<br>
                             2. Относительная погрешность:<br>
-                            $\varepsilon_\rho = \sqrt{\left(\frac{\Delta m}{m}\right)^2 + \left(2\frac{\Delta d}{d}\right)^2 + \left(\frac{\Delta h}{h}\right)^2} = \sqrt{(0.0004)^2 + (0.0020)^2 + (0.0010)^2} \approx 0.00227$ ($0.23\%$).<br>
-                            3. Абсолютная погрешность: $\Delta \rho = \rho \cdot \varepsilon_\rho = 7780.4 \cdot 0.00227 = 17.66\text{ кг/м}^3$.</p>
+                            $$\varepsilon_\rho = \sqrt{\left(\frac{\Delta m}{m}\right)^2 + \left(2\frac{\Delta d}{d}\right)^2 + \left(\frac{\Delta h}{h}\right)^2} = \sqrt{(0.000402)^2 + (0.001988)^2 + (0.000993)^2} \approx 0.00226$$ ($0.23\%$).<br>
+                            3. Абсолютная погрешность: $\Delta \rho = \rho \cdot \varepsilon_\rho \approx 7778.8 \cdot 0.00226 \approx 17.6\text{ кг/м}^3$.</p>
                         </div>
                         <p>Итоговую расчетную запись переносят в соответствующий раздел в нашем <a href="/blog/ideal-lab-report-template-gost-online">шаблоне отчета по лабораторной работе</a>.</p>
+                        <p>В примере для редактора эти данные переведены в СИ и вынесены в вычислительный сегмент. Оператор <code>#</code> задает стандартную неопределенность исходных величин, а погрешность плотности вычисляется автоматически для независимых измерений. Измените исходные данные и запустите расчет: значения в LaTeX-документе обновятся через подстановки. Подробнее о синтаксисе: <a href="/wiki/language/syntax.html">вики вычислительного языка</a>.</p>
                     </section>
 
                     <section class="article-section" id="report-formatting">
                         <h2 class="article-section__title">Как оформлять расчет погрешностей в отчете: правила округления по ГОСТ</h2>
                         <p>Изучая, <strong>как оформлять расчет погрешностей в отчете</strong>, соблюдайте золотое правило округления ГОСТ 8.207-76:</p>
                         <ul>
-                            <li>Погрешность $\Delta y$ округляется до <strong>одной значащей цифры</strong> (если первая цифра от 3 до 9) или до <strong>двух значащих цифр</strong> (если первая цифра 1 или 2). В нашем примере: $\Delta \rho = 17.66 \approx 18\text{ кг/м}^3$;</li>
-                            <li>Сам результат округляется до того же десятичного разряда, что и погрешность: $\rho = (7780 \pm 18)\text{ кг/м}^3$;</li>
+                            <li>Погрешность $\Delta y$ округляется до <strong>одной значащей цифры</strong> (если первая цифра от 3 до 9) или до <strong>двух значащих цифр</strong> (если первая цифра 1 или 2). В нашем примере: $\Delta \rho \approx 17.6 \approx 18\text{ кг/м}^3$;</li>
+                            <li>Сам результат округляется до того же десятичного разряда, что и погрешность: $\rho = (7779 \pm 18)\text{ кг/м}^3$;</li>
                             <li>Обязательно приводится относительная погрешность в процентах: $\varepsilon = 0.23\%$.</li>
                         </ul>
                     </section>
@@ -312,8 +313,11 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">В Labkeeper формулы дифференцирования и доверительных интервалов верстаются в аккуратные уравнения LaTeX с мгновенным PDF-рендером.</p>
-                    <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Csection*%7BIndirect+measurement%7D%0A%24R%3DU%2FI%24%2C+%24U%3D5%5Cpm0.1%24+V%2C+%24I%3D0.1%5Cpm0.002%24+A.%0A%5C%5B%5CDelta+R%3DR%5Csqrt%7B%5Cleft%28%5Cfrac%7B%5CDelta+U%7D%7BU%7D%5Cright%29%5E2%2B%0A%5Cleft%28%5Cfrac%7B%5CDelta+I%7D%7BI%7D%5Cright%29%5E2%7D%5Capprox1.4%5C%2C%5COmega%5C%5D%0A%5C%5BR%3D%2850.0%5Cpm1.4%29%5C%2C%5COmega%5C%5D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
-                        <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                    <a href="/project/default?open=latex&amp;compute=%2F%2F+Mass+in+kg%2C+diameter+and+height+in+m%0Am+%3D+0.12450+%23+0.00005%0Ad+%3D+0.02012+%23+0.00002%0Ah+%3D+0.05034+%23+0.00005%0Arho+%3D+4+*+m+%2F+%283.141592653589793+*+d%5E2+*+h%29%0Adr+%3D+err%28rho%29&amp;latex=%5Csection*%7BCylinder+density%7D%0A%5C%5B%5Crho%3D%5Cfrac%7B4m%7D%7B%5Cpi+d%5E2h%7D%5C%5D%0A%24m%3D%280.12450%5Cpm0.00005%29%24+kg%2C%0A%24d%3D%280.02012%5Cpm0.00002%29%24+m%2C%0A%24h%3D%280.05034%5Cpm0.00005%29%24+m.%0A%5Cpar+Density%3A+%24%7Brho%7D+kg%2Fm%24%5E3%24.%0A%5Cpar+Absolute+uncertainty%3A+%24%7Bdr%7D+kg%2Fm%24%5E3%24." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span class="article-example__label">
+                            <span data-i18n="blog-example">Просмотреть пример</span>
+                            <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                        </span>
                         <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
@@ -363,8 +367,11 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?example=1&amp;open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Csection*%7BIndirect+measurement%7D%0A%24R%3DU%2FI%24%2C+%24U%3D5%5Cpm0.1%24+V%2C+%24I%3D0.1%5Cpm0.002%24+A.%0A%5C%5B%5CDelta+R%3DR%5Csqrt%7B%5Cleft%28%5Cfrac%7B%5CDelta+U%7D%7BU%7D%5Cright%29%5E2%2B%0A%5Cleft%28%5Cfrac%7B%5CDelta+I%7D%7BI%7D%5Cright%29%5E2%7D%5Capprox1.4%5C%2C%5COmega%5C%5D%0A%5C%5BR%3D%2850.0%5Cpm1.4%29%5C%2C%5COmega%5C%5D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
-                    <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                <a href="/project/default?open=latex&amp;compute=%2F%2F+Mass+in+kg%2C+diameter+and+height+in+m%0Am+%3D+0.12450+%23+0.00005%0Ad+%3D+0.02012+%23+0.00002%0Ah+%3D+0.05034+%23+0.00005%0Arho+%3D+4+*+m+%2F+%283.141592653589793+*+d%5E2+*+h%29%0Adr+%3D+err%28rho%29&amp;latex=%5Csection*%7BCylinder+density%7D%0A%5C%5B%5Crho%3D%5Cfrac%7B4m%7D%7B%5Cpi+d%5E2h%7D%5C%5D%0A%24m%3D%280.12450%5Cpm0.00005%29%24+kg%2C%0A%24d%3D%280.02012%5Cpm0.00002%29%24+m%2C%0A%24h%3D%280.05034%5Cpm0.00005%29%24+m.%0A%5Cpar+Density%3A+%24%7Brho%7D+kg%2Fm%24%5E3%24.%0A%5Cpar+Absolute+uncertainty%3A+%24%7Bdr%7D+kg%2Fm%24%5E3%24." class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span class="article-example__label">
+                        <span data-i18n="blog-example">Просмотреть пример</span>
+                        <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                    </span>
                     <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>

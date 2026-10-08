@@ -16,7 +16,8 @@ const i18n = {
                 "hero-btn": "Попробовать редактор <span class=\"button__arrow\">→</span>",
                 "hero-btn-ai": "Попробовать с ИИ без написания <span class=\"hero-btn__tail\">кода <span class=\"button__arrow\">→</span></span>",
 
-                "blog-example": "Просмотреть пример в редакторе",
+                "blog-example": "Просмотреть пример",
+                "blog-example-context": "в редакторе",
 
                 // Блок LaTeX
                 "feat-latex-title": "LaTeX editor",
@@ -230,7 +231,8 @@ const i18n = {
                 "ex-btn": "Создать свой проект <span class=\"button__arrow\">→</span>"
         },
         en: {
-                "blog-example": "View example in editor",
+                "blog-example": "View example",
+                "blog-example-context": "in editor",
                 "nav-advantages": "Benefits",
                 "nav-features": "Features",
                 "nav-audience": "Who it's for",

@@ -216,10 +216,10 @@ print(sum(values) / len(values))
     'formula-numbering-lab-reports-gost': latex(tex`\begin{equation}\label{eq:ohm}U=IR\end{equation}
 \begin{equation}P=UI=I^2R\end{equation}
 Resistance follows from equation~\eqref{eq:ohm}.`),
-    'student-confidence-intervals-error-calculation': latex(tex`\section*{Confidence interval}
-$n=5$, $\bar{x}=10.2$, $s=0.4$, $t_{0.975,4}=2.776$.
-\[\Delta x=t\frac{s}{\sqrt n}=2.776\frac{0.4}{\sqrt5}\approx0.50\]
-\[x=10.2\pm0.5\quad(P=0.95)\]`),
+    'student-confidence-intervals-error-calculation': {
+        compute: 'x = [9.8, 9.8, 10.2, 10.6, 10.6]\nn = 5\nmean = sum(x) / n\ns = sqrt(sum((x - mean)^2) / (n - 1))\n// Two-sided 95% interval, n = 5\nt = 2.776\ndelta = t * s / sqrt(n)\nlo = mean - delta\nhi = mean + delta',
+        latex: '\\section*{Confidence interval}\n$n=5$, $P=0.95$, $t_{0.975,4}=2.776$.\n\\[\\Delta x=t\\frac{s}{\\sqrt n}\\]\nMean: ${mean}. Standard deviation: ${s}.\n\\par Confidence half-width: ${delta}.\n\\par Interval: [${lo}; ${hi}].'
+    },
     'lab-report-bibliography-gost-7-1': latex(tex`\section*{Список литературы}
 \begin{enumerate}\item Иванов И. И. Физика: учебник. Москва, 2024. 200 с.
 \item Петров П. П. Практикум. Казань, 2023. 80 с.\end{enumerate}`),
@@ -364,11 +364,10 @@ Time,Value
 2,4.0
 3,5.5
 }`, tex`\usepackage{pgfplotstable}\pgfplotsset{compat=1.18}`),
-    'indirect-measurement-error-calculation-lab-report': latex(tex`\section*{Indirect measurement}
-$R=U/I$, $U=5\pm0.1$ V, $I=0.1\pm0.002$ A.
-\[\Delta R=R\sqrt{\left(\frac{\Delta U}{U}\right)^2+
-\left(\frac{\Delta I}{I}\right)^2}\approx1.4\,\Omega\]
-\[R=(50.0\pm1.4)\,\Omega\]`),
+    'indirect-measurement-error-calculation-lab-report': {
+        compute: '// Mass in kg, diameter and height in m\nm = 0.12450 # 0.00005\nd = 0.02012 # 0.00002\nh = 0.05034 # 0.00005\nrho = 4 * m / (3.141592653589793 * d^2 * h)\ndr = err(rho)',
+        latex: '\\section*{Cylinder density}\n\\[\\rho=\\frac{4m}{\\pi d^2h}\\]\n$m=(0.12450\\pm0.00005)$ kg,\n$d=(0.02012\\pm0.00002)$ m,\n$h=(0.05034\\pm0.00005)$ m.\n\\par Density: ${rho} kg/m$^3$.\n\\par Absolute uncertainty: ${dr} kg/m$^3$.'
+    },
     'resume-language-skills-cefr-scale-a1-c2': markdown('# Languages\n\n| Language | CEFR | Working context |\n|:---------|:-----|:----------------|\n| English | C1 | Technical presentations |\n| German | B1 | Everyday communication |\n| Russian | Native | Professional writing |'),
 
     'markdown-code-syntax-highlighting': markdown('## Python example\n\n```python\ndef mean(values):\n    return sum(values) / len(values)\n\nprint(mean([2, 4, 6]))\n```'),

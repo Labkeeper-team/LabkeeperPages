@@ -3377,7 +3377,7 @@ h2,
 .article-sidebar__sticky {
   background: linear-gradient(160deg, #0A0F1C 0%, #0F1B3D 100%);
   border-radius: 8px;
-  padding: 32px 28px;
+  padding: 32px 20px;
   border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
@@ -3745,12 +3745,54 @@ h2,
   overflow-wrap: normal;
 }
 
-.blog__article .cta-features__intro-btn {
+.blog__article [data-blog-example] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 600;
   white-space: normal;
-  text-align: center;
+  text-align: left;
   height: auto;
-  min-height: 48px;
+  min-height: 64px;
   max-width: 100%;
+}
+
+.article-example__label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.article-example__hint {
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+.blog__article [data-blog-example] .button__arrow {
+  flex-shrink: 0;
+  font-size: 20px;
+}
+
+.blog__article .cta-features__intro-btn[data-blog-example] {
+  width: 280px;
+  padding: 16px 22px;
+  font-size: 16px;
+}
+
+.blog__article .cta-features__intro-btn .article-example__hint {
+  font-size: 13px;
+}
+
+.blog__article [data-blog-example]:focus-visible {
+  outline: 3px solid var(--c-primary);
+  outline-offset: 4px;
 }
 
 @media (max-width: 1023px) {

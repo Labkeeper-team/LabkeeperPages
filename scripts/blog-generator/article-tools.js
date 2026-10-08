@@ -19,7 +19,6 @@ function buildExampleUrl(example, slug = 'article') {
         throw new Error(`${slug}: example keys must be compute, latex or markdown`);
     }
     const query = new URLSearchParams();
-    query.set('example', '1');
     query.set('open', example.latex || example.compute ? 'latex' : 'markdown');
     for (const type of EXAMPLE_TYPES) {
         if (!Object.hasOwn(example, type)) continue;
@@ -82,7 +81,10 @@ function prepareArticleHtml(source, example, slug) {
             const indent = html.slice(lineStart, location.startOffset).match(/^[\t ]*/)[0];
             edits.push({ start: location.startOffset, end: location.endOffset,
                 text: `<a href="${escapeHtml(url)}"${preserved} data-blog-example>\n` +
-                    `${indent}    <span data-i18n="blog-example">Просмотреть пример в редакторе</span>\n` +
+                    `${indent}    <span class="article-example__label">\n` +
+                    `${indent}        <span data-i18n="blog-example">Просмотреть пример</span>\n` +
+                    `${indent}        <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>\n` +
+                    `${indent}    </span>\n` +
                     `${indent}    <span class="button__arrow" aria-hidden="true">→</span>\n` +
                     `${indent}</a>` });
             ctaCount++;

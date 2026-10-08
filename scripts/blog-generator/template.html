@@ -242,7 +242,10 @@
                     <p class="article-sidebar__title">{{SIDEBAR_TEXT}}</p>
                     <a href="{{EDITOR_EXAMPLE_URL}}" class="button button--primary article-sidebar__btn"
                         id="sidebar-cta-btn">
-                        <span data-i18n="blog-example">Просмотреть пример в редакторе</span>
+                        <span class="article-example__label">
+                            <span data-i18n="blog-example">Просмотреть пример</span>
+                            <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                        </span>
                         <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
@@ -297,7 +300,11 @@
 
             <div class="cta-features__footer">
                 <a href="{{EDITOR_EXAMPLE_URL}}" class="button button--outline-light cta-features__intro-btn">
-                    <span data-i18n="blog-example">Просмотреть пример в редакторе</span> <span class="button__arrow">→</span>
+                    <span class="article-example__label">
+                        <span data-i18n="blog-example">Просмотреть пример</span>
+                        <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                    </span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
