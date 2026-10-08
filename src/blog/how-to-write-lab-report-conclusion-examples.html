@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -273,7 +274,7 @@
                     <section class="article-section" id="bad-examples">
                         <h2 class="article-section__title">Топ-5 грубых ошибок в выводах студентов</h2>
                         <div class="article-table-wrap">
-                            <table class="article-table">
+                            <div class="article-table-wrapper" tabindex="0"><table class="article-table">
                                 <thead>
                                     <tr>
                                         <th>Как пишут студенты (плохо)</th>
@@ -298,7 +299,7 @@
                                         <td>«Превышение погрешности обусловлено классом точности вольтметра 1.5 и дрейфом нуля»</td>
                                     </tr>
                                 </tbody>
-                            </table>
+                            </table></div>
                         </div>
                     </section>
 
@@ -333,14 +334,12 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">В Labkeeper вы найдете готовые шаблоны отчетов по лабораторным с оформленными разделами целей, расчетов и выводов.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?open=markdown&amp;markdown=%23+%D0%92%D1%8B%D0%B2%D0%BE%D0%B4%0A%0A%D0%98%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%BE+%D1%81%D0%BE%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5+%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B0%3A+**50+%C2%B1+2+%D0%9E%D0%BC**.%0A%0A%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82+%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D1%83%D0%B5%D1%82%D1%81%D1%8F+%D1%81+%D0%BD%D0%BE%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%D0%BE%D0%BC+51+%D0%9E%D0%BC+%D0%B2+%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B0%D1%85+%D0%BF%D0%BE%D0%B3%D1%80%D0%B5%D1%88%D0%BD%D0%BE%D1%81%D1%82%D0%B8.+%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9+%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA+%D0%BD%D0%B5%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8%3A+%D0%B8%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D0%B5+%D1%82%D0%BE%D0%BA%D0%B0." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span class="article-example__label">
+                            <span data-i18n="blog-example">Просмотреть пример</span>
+                            <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                        </span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -389,8 +388,12 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?open=markdown&amp;markdown=%23+%D0%92%D1%8B%D0%B2%D0%BE%D0%B4%0A%0A%D0%98%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%BE+%D1%81%D0%BE%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5+%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B0%3A+**50+%C2%B1+2+%D0%9E%D0%BC**.%0A%0A%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82+%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D1%83%D0%B5%D1%82%D1%81%D1%8F+%D1%81+%D0%BD%D0%BE%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%D0%BE%D0%BC+51+%D0%9E%D0%BC+%D0%B2+%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B0%D1%85+%D0%BF%D0%BE%D0%B3%D1%80%D0%B5%D1%88%D0%BD%D0%BE%D1%81%D1%82%D0%B8.+%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9+%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA+%D0%BD%D0%B5%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8%3A+%D0%B8%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D0%B5+%D1%82%D0%BE%D0%BA%D0%B0." class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span class="article-example__label">
+                        <span data-i18n="blog-example">Просмотреть пример</span>
+                        <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                    </span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -499,6 +502,9 @@
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

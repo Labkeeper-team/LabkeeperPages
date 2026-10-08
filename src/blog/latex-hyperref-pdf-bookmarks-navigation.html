@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -330,14 +331,12 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">В Labkeeper сгенерированные PDF автоматически содержат встроенные закладки и кликабельные ссылки для удобной навигации.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%5Bunicode%2Ccolorlinks%3Dtrue%2Clinkcolor%3Dblue%2Curlcolor%3Dblue%5D%7Bhyperref%7D%0A%5Cbegin%7Bdocument%7D%0A%5Ctableofcontents%0A%5Csection%7BIntroduction%7D%5Clabel%7Bintro%7D%0AVisit+%5Chref%7Bhttps%3A%2F%2Flabkeeper.io%7D%7BLabkeeper%7D.%0A%5Cnewpage%5Csection%7BResults%7DBack+to+Section%7E%5Cref%7Bintro%7D.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span class="article-example__label">
+                            <span data-i18n="blog-example">Просмотреть пример</span>
+                            <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                        </span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -386,8 +385,12 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%5Bunicode%2Ccolorlinks%3Dtrue%2Clinkcolor%3Dblue%2Curlcolor%3Dblue%5D%7Bhyperref%7D%0A%5Cbegin%7Bdocument%7D%0A%5Ctableofcontents%0A%5Csection%7BIntroduction%7D%5Clabel%7Bintro%7D%0AVisit+%5Chref%7Bhttps%3A%2F%2Flabkeeper.io%7D%7BLabkeeper%7D.%0A%5Cnewpage%5Csection%7BResults%7DBack+to+Section%7E%5Cref%7Bintro%7D.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span class="article-example__label">
+                        <span data-i18n="blog-example">Просмотреть пример</span>
+                        <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                    </span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -496,6 +499,9 @@
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!-- Пачка 1 -->
 <html lang="ru">
 
@@ -8,45 +8,129 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Список литературы по ГОСТ 7.0.5 в LaTeX: оформление без ошибок — Labkeeper</title>
-    <meta name="description"
-        content="Как оформить библиографию по ГОСТ 7.0.5 в LaTeX онлайн: пакет biblatex-gost, .bib-файлы, числовые и именные ссылки. Пошаговый гайд с примерами кода для Labkeeper." />
-        <!-- SEO Ключи: библиография гост 7 0 5 latex онлайн, оформление списка литературы latex гост -->
+    <meta name="description" content="Как оформить библиографию по ГОСТ 7.0.5 в LaTeX онлайн: пакет biblatex-gost, .bib-файлы, числовые и именные ссылки. Пошаговый гайд с примерами кода для Labkeeper." />
+    <!-- SEO Ключи: библиография гост 7 0 5 latex онлайн, оформление списка литературы latex гост -->
     <meta name="keywords" content="библиография гост 7 0 5 latex онлайн, оформление списка литературы latex гост" />
-<link rel="canonical" href="https://labkeeper.io/blog/latex-gost-bibliography" />
+    <link rel="canonical" href="https://labkeeper.io/blog/latex-gost-bibliography" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://labkeeper.io/blog/latex-gost-bibliography" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Labkeeper" />
     <meta property="og:title" content="Список литературы по ГОСТ 7.0.5 в LaTeX: оформление без ошибок — Labkeeper" />
-    <meta property="og:description"
-        content="Пошаговый гайд по оформлению библиографии ГОСТ 7.0.5 в LaTeX онлайн: пакет biblatex-gost, числовые ссылки, автоматическая нумерация." />
+    <meta property="og:description" content="Пошаговый гайд по оформлению библиографии ГОСТ 7.0.5 в LaTeX онлайн: пакет biblatex-gost, числовые ссылки, автоматическая нумерация." />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:title" content="Список литературы по ГОСТ 7.0.5 в LaTeX: оформление без ошибок — Labkeeper" />
     <meta name="twitter:description" content="Пошаговый гайд по оформлению библиографии ГОСТ 7.0.5 в LaTeX онлайн." />
-    <script
-        type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Как быстро оформить список литературы по ГОСТ 7.0.5 в LaTeX без ошибок","description":"Пошаговый гайд по оформлению библиографии ГОСТ 7.0.5 в LaTeX: пакет biblatex-gost, числовые ссылки, автоматическая нумерация источников.","author":{"@type":"Organization","name":"Labkeeper","url":"https://labkeeper.io"},"publisher":{"@type":"Organization","name":"Labkeeper","logo":{"@type":"ImageObject","url":"https://labkeeper.io/assets/img/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://labkeeper.io/blog/latex-gost-bibliography"},"datePublished":"2026-08-20","dateModified":"2026-08-20","inLanguage":"ru"}</script>
-    <script
-        type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://labkeeper.io/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://labkeeper.io/blog"},{"@type":"ListItem","position":3,"name":"Список литературы по ГОСТ 7.0.5 в LaTeX","item":"https://labkeeper.io/blog/latex-gost-bibliography"}]}</script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Как быстро оформить список литературы по ГОСТ 7.0.5 в LaTeX без ошибок",
+        "description": "Пошаговый гайд по оформлению библиографии ГОСТ 7.0.5 в LaTeX: пакет biblatex-gost, числовые ссылки, автоматическая нумерация источников.",
+        "author": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "url": "https://labkeeper.io"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://labkeeper.io/assets/img/logo.svg"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://labkeeper.io/blog/latex-gost-bibliography"
+        },
+        "datePublished": "2026-08-20",
+        "dateModified": "2026-08-20",
+        "inLanguage": "ru",
+        "articleSection": ["Дипломные работы","Работа с LaTeX","Оформление научных статей"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://labkeeper.io/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Блог",
+                "item": "https://labkeeper.io/blog"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Список литературы по ГОСТ 7.0.5 в LaTeX",
+                "item": "https://labkeeper.io/blog/latex-gost-bibliography"
+            }
+        ]
+    }
+    </script>
+
     <script type="text/javascript">
         (function () {
-            function hasAcceptedCookieConsent() { try { return localStorage.getItem('labkeeper_cookie_consent') === 'accepted'; } catch (e) { return false; } }
+            function hasAcceptedCookieConsent() {
+                try {
+                    return localStorage.getItem('labkeeper_cookie_consent') === 'accepted';
+                } catch (e) {
+                    return false;
+                }
+            }
+
             window.initLabkeeperYandexMetrika = function () {
-                if (window.__labkeeperYandexMetrikaInitialized || !hasAcceptedCookieConsent() || typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined') { return; }
-                (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date(); for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } } k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", { webvisor: true, clickmap: true, referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+                if (
+                    window.__labkeeperYandexMetrikaInitialized ||
+                    !hasAcceptedCookieConsent() ||
+                    typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined'
+                ) {
+                    return;
+                }
+
+                (function (m, e, t, r, i, k, a) {
+                    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+                    m[i].l = 1 * new Date();
+                    for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+                    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a);
+                })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", {
+                    webvisor: true,
+                    clickmap: true,
+                    referrer: document.referrer,
+                    url: location.href,
+                    accurateTrackBounce: true,
+                    trackLinks: true
+                });
+
                 window.__labkeeperYandexMetrikaInitialized = true;
             };
+
             window.initLabkeeperYandexMetrika();
         })();
     </script>
+
+    <!-- Preconnect & Async Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -54,8 +138,9 @@
         <div class="header__container">
             <div class="header__left">
                 <button class="header__burger js-burger-btn" aria-label="Открыть меню">
-                    <span class="header__burger-line"></span><span class="header__burger-line"></span><span
-                        class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
                 </button>
                 <a href="/" class="header__logo">
                     <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36"
@@ -67,6 +152,7 @@
                     <button class="header__lang-btn" data-lang="en">En</button>
                 </div>
             </div>
+
             <nav class="header__nav js-nav">
                 <div class="header__mobile-lang js-lang-switcher">
                     <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
@@ -90,6 +176,7 @@
                         class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
                 </div>
             </nav>
+
             <div class="header__right">
                 <a href="/project/default?open=login" class="button button--outline header__login"
                     data-i18n="btn-login"></a>
@@ -101,24 +188,31 @@
     </header>
 
     <main class="main page-article">
+
         <div class="article-breadcrumbs">
             <div class="article-breadcrumbs__container">
                 <nav class="article-breadcrumbs__nav" aria-label="Breadcrumb">
                     <ol class="article-breadcrumbs__list">
-                        <li class="article-breadcrumbs__item"><a href="/" class="article-breadcrumbs__link">Главная</a>
+                        <li class="article-breadcrumbs__item">
+                            <a href="/" class="article-breadcrumbs__link">Главная</a>
                         </li>
-                        <li class="article-breadcrumbs__item"><a href="/blog" class="article-breadcrumbs__link">Блог</a>
+                        <li class="article-breadcrumbs__item">
+                            <a href="/blog" class="article-breadcrumbs__link">Блог</a>
                         </li>
-                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active"><span>Список литературы
-                                по ГОСТ 7.0.5 в LaTeX</span></li>
+                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active">
+                            <span>Список литературы
+                                по ГОСТ 7.0.5 в LaTeX</span>
+                        </li>
                     </ol>
                 </nav>
             </div>
         </div>
 
         <div class="article-layout">
+
             <article class="article-content">
                 <div class="article-content__container">
+
                     <h1 class="article-content__title h1">Как быстро оформить список литературы по&nbsp;ГОСТ&nbsp;7.0.5
                         в&nbsp;LaTeX без&nbsp;ошибок</h1>
 
@@ -137,8 +231,7 @@
                                     нужен</a></li>
                             <li><a href="#package" class="article-toc__link">Пакет biblatex-gost: установка и
                                     подключение</a></li>
-                            <li><a href="#bib-file" class="article-toc__link">Правила заполнения .bib-файла для ГОСТ</a>
-                            </li>
+                            <li><a href="#bib-file" class="article-toc__link">Правила заполнения .bib-файла для ГОСТ</a></li>
                             <li><a href="#numeric" class="article-toc__link">Числовые ссылки в тексте</a></li>
                             <li><a href="#authoryear" class="article-toc__link">Именные ссылки (автор, год)</a></li>
                             <li><a href="#sorting" class="article-toc__link">Сортировка и язык</a></li>
@@ -359,28 +452,31 @@
                             </div>
                         </div>
                     </section>
+
+
+
                 </div>
             </article>
 
             <aside class="article-sidebar">
                 <div class="article-sidebar__sticky">
                     <div class="article-sidebar__media">
-                        <img src="../assets/img/img-for-firstScreen.webp" alt="Онлайн-редактор LaTeX Labkeeper"
-                            width="220" height="135" loading="lazy" class="article-sidebar__img">
+                        <img src="../assets/img/img-for-firstScreen.webp"
+                            alt="Онлайн-редактор LaTeX Labkeeper" width="220" height="135" loading="lazy"
+                            class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Оформляйте библиографию по&nbsp;ГОСТ в&nbsp;Labkeeper —
                         онлайн-редактор с&nbsp;поддержкой biblatex-gost и&nbsp;Biber.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%D0%9C%D0%B5%D1%82%D0%BE%D0%B4+%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD+%D0%B2+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5%7E%5Ccite%7Bbook%7D.%0A%5Cbegin%7Bthebibliography%7D%7B9%7D%0A%5Cbibitem%7Bbook%7D%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2+%D0%98.+%D0%98.+%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D1%8B+%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%D0%B0.+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C+2024.+120+%D1%81.%0A%5Cend%7Bthebibliography%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span class="article-example__label">
+                            <span data-i18n="blog-example">Просмотреть пример</span>
+                            <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                        </span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
+
         </div>
 
         <section class="cta-features" id="cta-features">
@@ -389,6 +485,7 @@
                 <h2 class="cta-features__intro-title">Оформляйте список литературы в&nbsp;Labkeeper</h2>
                 <p class="cta-features__intro-text">Онлайн-редактор LaTeX с&nbsp;поддержкой biblatex-gost и&nbsp;быстрой компиляцией в&nbsp;PDF — собирайте библиографию по&nbsp;ГОСТ без&nbsp;установки программ на&nbsp;компьютер.</p>
             </div>
+
             <div class="feature-block feature-block--img-left feature-block--dark">
                 <div class="feature-block__container">
                     <div class="feature-block__visual">
@@ -422,12 +519,22 @@
                     </div>
                 </div>
             </div>
+
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">Открыть
-                    редактор <span class="button__arrow">→</span></a>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%D0%9C%D0%B5%D1%82%D0%BE%D0%B4+%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD+%D0%B2+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5%7E%5Ccite%7Bbook%7D.%0A%5Cbegin%7Bthebibliography%7D%7B9%7D%0A%5Cbibitem%7Bbook%7D%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2+%D0%98.+%D0%98.+%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D1%8B+%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%D0%B0.+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C+2024.+120+%D1%81.%0A%5Cend%7Bthebibliography%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span class="article-example__label">
+                        <span data-i18n="blog-example">Просмотреть пример</span>
+                        <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                    </span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
+                </a>
             </div>
-            <div class="feature__bg"><img src="../assets/img/bg.svg" alt="bg" loading="lazy"></div>
+
+            <div class="feature__bg">
+                <img src="../assets/img/bg.svg" alt="bg" loading="lazy">
+            </div>
         </section>
+
     </main>
 
     <section class="audience">
@@ -460,30 +567,35 @@
                     <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
                     <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
                     <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank"
-                        class="footer__link footer__link--external"><span data-i18n="nav-wiki"></span><img
-                            src="../assets/img/target.svg" alt="target icon" class="footer__link-icon"
-                            style="margin-left:4px;vertical-align:middle;" width="16" height="16" loading="lazy"></a>
+                        class="footer__link footer__link--external">
+                        <span data-i18n="nav-wiki"></span>
+                        <img src="../assets/img/target.svg" alt="target icon" class="footer__link-icon"
+                            style="margin-left: 4px; vertical-align: middle;" width="16" height="16" loading="lazy">
+                    </a>
                     <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
                     <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
 
                     <a href="/about" class="footer__link" data-i18n="nav-about"></a>
                 </nav>
-                <a href="/" class="footer__logo-link"><img src="../assets/img/logo.svg" alt="Labkeeper Logo"
-                        class="footer__logo" width="40" height="40" loading="lazy"></a>
+                <a href="/" class="footer__logo-link">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40"
+                        loading="lazy">
+                </a>
                 <div class="footer__contact">
                     <span class="footer__contact-label" data-i18n="footer-contact"></span>
                     <a href="mailto:labkeeper.io@gmail.com" class="footer__contact-link">labkeeper.io@gmail.com</a>
                 </div>
             </div>
-            <div class="footer__middle"><img src="../assets/img/img-for-footer.svg" alt="Labkeeper"
-                    class="footer__huge-logo" aria-hidden="true" loading="lazy"></div>
+            <div class="footer__middle">
+                <img src="../assets/img/img-for-footer.svg" alt="Labkeeper" class="footer__huge-logo" aria-hidden="true"
+                    loading="lazy">
+            </div>
             <div class="footer__bottom">
                 <div class="footer__copyright">© 2024—2026</div>
                 <a href="/privacy" class="footer__policy" data-i18n="footer-policy"></a>
             </div>
         </div>
     </footer>
-
 
     <!-- Попап -->
     <div class="popup js-popup" id="image-popup" aria-hidden="true">
@@ -495,11 +607,14 @@
             <img src="" alt="Enlarged screenshot" class="popup__image js-popup-img" loading="lazy">
         </div>
     </div>
+
     <div id="cookie-banner" class="cookie-banner hidden">
         <div class="cookie-banner__container">
-            <p class="cookie-banner__text">Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта.
-                Подробнее — в <a href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки
-                    персональных данных</a>.</p>
+            <p class="cookie-banner__text">
+                Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a
+                    href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных
+                    данных</a>.
+            </p>
             <div class="cookie-banner__actions">
                 <button id="cookie-accept" class="button button--primary">Принять</button>
                 <button id="cookie-decline" class="button button--outline">Отказаться</button>
@@ -508,6 +623,7 @@
     </div>
 
     <button class="scroll-top js-scroll-top" aria-label="Наверх" title="Наверх"></button>
+
     <script>
         window.__LABKEEPER_API_VERSION = "IO_LABKEEPER_FRONTEND_API_VERSION";
         window.__LABKEEPER_OPENPANEL_CLIENT_ID = "IO_LABKEEPER_FRONTEND_OPENPANEL_CLIENT_ID";
@@ -519,6 +635,9 @@
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

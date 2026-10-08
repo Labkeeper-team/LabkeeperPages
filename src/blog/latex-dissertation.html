@@ -1,15 +1,17 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!-- Пачка 1 -->
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Верстка автореферата и диссертации ВАК в LaTeX: структура, рамки и ссылки — Labkeeper</title>
     <meta name="description" content="Как верстать автореферат и кандидатскую диссертацию ВАК в LaTeX онлайн: структура разделов, рамки по ГОСТ, перекрёстные ссылки и шаблон автореферата ВАК." />
-        <!-- SEO Ключи: шаблон автореферата вак latex, верстка кандидатской диссертации в latex онлайн -->
+    <!-- SEO Ключи: шаблон автореферата вак latex, верстка кандидатской диссертации в latex онлайн -->
     <meta name="keywords" content="шаблон автореферата вак latex, верстка кандидатской диссертации в latex онлайн" />
-<link rel="canonical" href="https://labkeeper.io/blog/latex-dissertation" />
+    <link rel="canonical" href="https://labkeeper.io/blog/latex-dissertation" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://labkeeper.io/blog/latex-dissertation" />
     <meta property="og:locale" content="ru_RU" />
@@ -21,36 +23,128 @@
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:title" content="Верстка автореферата и диссертации ВАК в LaTeX: структура, рамки и ссылки — Labkeeper" />
     <meta name="twitter:description" content="Шаблон автореферата ВАК LaTeX онлайн: структура, рамки, ссылки." />
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Верстка автореферата и диссертации ВАК в LaTeX: структура, рамки и ссылки","description":"Шаблон автореферата ВАК в LaTeX онлайн: структура разделов, оформление рамок, перекрёстные ссылки и требования ВАК.","author":{"@type":"Organization","name":"Labkeeper","url":"https://labkeeper.io"},"publisher":{"@type":"Organization","name":"Labkeeper","logo":{"@type":"ImageObject","url":"https://labkeeper.io/assets/img/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://labkeeper.io/blog/latex-dissertation"},"datePublished":"2026-08-20","dateModified":"2026-08-20","inLanguage":"ru"}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://labkeeper.io/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://labkeeper.io/blog"},{"@type":"ListItem","position":3,"name":"Верстка диссертации ВАК в LaTeX","item":"https://labkeeper.io/blog/latex-dissertation"}]}</script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Верстка автореферата и диссертации ВАК в LaTeX: структура, рамки и ссылки",
+        "description": "Шаблон автореферата ВАК в LaTeX онлайн: структура разделов, оформление рамок, перекрёстные ссылки и требования ВАК.",
+        "author": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "url": "https://labkeeper.io"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://labkeeper.io/assets/img/logo.svg"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://labkeeper.io/blog/latex-dissertation"
+        },
+        "datePublished": "2026-08-20",
+        "dateModified": "2026-08-20",
+        "inLanguage": "ru",
+        "articleSection": ["Оформление научных статей","Дипломные работы","Работа с LaTeX"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://labkeeper.io/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Блог",
+                "item": "https://labkeeper.io/blog"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Верстка диссертации ВАК в LaTeX",
+                "item": "https://labkeeper.io/blog/latex-dissertation"
+            }
+        ]
+    }
+    </script>
+
     <script type="text/javascript">
         (function () {
-            function hasAcceptedCookieConsent() { try { return localStorage.getItem('labkeeper_cookie_consent') === 'accepted'; } catch (e) { return false; } }
+            function hasAcceptedCookieConsent() {
+                try {
+                    return localStorage.getItem('labkeeper_cookie_consent') === 'accepted';
+                } catch (e) {
+                    return false;
+                }
+            }
+
             window.initLabkeeperYandexMetrika = function () {
-                if (window.__labkeeperYandexMetrikaInitialized || !hasAcceptedCookieConsent() || typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined') { return; }
-                (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date(); for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } } k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", { webvisor: true, clickmap: true, referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+                if (
+                    window.__labkeeperYandexMetrikaInitialized ||
+                    !hasAcceptedCookieConsent() ||
+                    typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined'
+                ) {
+                    return;
+                }
+
+                (function (m, e, t, r, i, k, a) {
+                    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+                    m[i].l = 1 * new Date();
+                    for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+                    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a);
+                })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", {
+                    webvisor: true,
+                    clickmap: true,
+                    referrer: document.referrer,
+                    url: location.href,
+                    accurateTrackBounce: true,
+                    trackLinks: true
+                });
+
                 window.__labkeeperYandexMetrikaInitialized = true;
             };
+
             window.initLabkeeperYandexMetrika();
         })();
     </script>
+
+    <!-- Preconnect & Async Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
+
 <body class="page blog__article">
     <header class="header js-header">
         <div class="header__container">
             <div class="header__left">
                 <button class="header__burger js-burger-btn" aria-label="Открыть меню">
-                    <span class="header__burger-line"></span><span class="header__burger-line"></span><span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
                 </button>
                 <a href="/" class="header__logo">
-                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36" height="36">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36"
+                        height="36">
                     <span class="header__logo-text">Labkeeper</span>
                 </a>
                 <div class="header__lang js-lang-switcher">
@@ -58,48 +152,66 @@
                     <button class="header__lang-btn" data-lang="en">En</button>
                 </div>
             </div>
+
             <nav class="header__nav js-nav">
                 <div class="header__mobile-lang js-lang-switcher">
                     <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
                     <button class="header__lang-btn" data-lang="en">En</button>
                 </div>
                 <ul class="header__nav-list">
-                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link" data-i18n="nav-examples"></a></li>
-                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link" data-i18n="nav-features"></a></li>
-                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a></li>
+                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link"
+                            data-i18n="nav-examples"></a></li>
+                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link"
+                            data-i18n="nav-features"></a></li>
+                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a>
+                    </li>
                     <li class="header__nav-item"><a href="/blog" class="header__nav-link" data-i18n="nav-blog"></a></li>
 
-                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a></li>
+                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a>
+                    </li>
                 </ul>
                 <div class="header__mobile-contact">
                     <span class="header__mobile-contact-label" data-i18n="footer-contact"></span>
-                    <a href="mailto:labkeeper.io@gmail.com" class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
+                    <a href="mailto:labkeeper.io@gmail.com"
+                        class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
                 </div>
             </nav>
+
             <div class="header__right">
-                <a href="/project/default?open=login" class="button button--outline header__login" data-i18n="btn-login"></a>
-                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects" style="display: none;"></a>
+                <a href="/project/default?open=login" class="button button--outline header__login"
+                    data-i18n="btn-login"></a>
+                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects"
+                    style="display: none;"></a>
                 <a href="/project/default" class="button button--primary header__editor" data-i18n="btn-editor"></a>
             </div>
         </div>
     </header>
 
     <main class="main page-article">
+
         <div class="article-breadcrumbs">
             <div class="article-breadcrumbs__container">
                 <nav class="article-breadcrumbs__nav" aria-label="Breadcrumb">
                     <ol class="article-breadcrumbs__list">
-                        <li class="article-breadcrumbs__item"><a href="/" class="article-breadcrumbs__link">Главная</a></li>
-                        <li class="article-breadcrumbs__item"><a href="/blog" class="article-breadcrumbs__link">Блог</a></li>
-                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active"><span>Верстка диссертации ВАК в LaTeX</span></li>
+                        <li class="article-breadcrumbs__item">
+                            <a href="/" class="article-breadcrumbs__link">Главная</a>
+                        </li>
+                        <li class="article-breadcrumbs__item">
+                            <a href="/blog" class="article-breadcrumbs__link">Блог</a>
+                        </li>
+                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active">
+                            <span>Верстка диссертации ВАК в LaTeX</span>
+                        </li>
                     </ol>
                 </nav>
             </div>
         </div>
 
         <div class="article-layout">
+
             <article class="article-content">
                 <div class="article-content__container">
+
                     <h1 class="article-content__title h1">Верстка автореферата и&nbsp;диссертации ВАК в&nbsp;LaTeX: структура, рамки и&nbsp;ссылки</h1>
 
                     <div class="article-content__tags">
@@ -308,23 +420,30 @@
                             </div>
                         </div>
                     </section>
+
+
+
                 </div>
             </article>
 
             <aside class="article-sidebar">
                 <div class="article-sidebar__sticky">
                     <div class="article-sidebar__media">
-                        <img src="../assets/img/img-for-firstScreen.webp" alt="Онлайн-редактор LaTeX Labkeeper" width="220" height="135" loading="lazy" class="article-sidebar__img">
+                        <img src="../assets/img/img-for-firstScreen.webp"
+                            alt="Онлайн-редактор LaTeX Labkeeper" width="220" height="135" loading="lazy"
+                            class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Верстайте диссертацию ВАК в&nbsp;онлайн-редакторе Labkeeper — без установки LaTeX и&nbsp;настройки окружения.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Breport%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Ctableofcontents%0A%5Cchapter%7B%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%7D%D0%A6%D0%B5%D0%BB%D1%8C+%D0%B8%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.%0A%5Cchapter%7B%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D1%8B%7D%5Csection%7B%D0%9C%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%7D%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5+%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8.%0A%5Cchapter%7B%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D1%8B%7D%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5+%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D1%8B.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span class="article-example__label">
+                            <span data-i18n="blog-example">Просмотреть пример</span>
+                            <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                        </span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
+
         </div>
 
         <section class="cta-features" id="cta-features">
@@ -333,10 +452,13 @@
                 <h2 class="cta-features__intro-title">Верстайте диссертации и&nbsp;авторефераты в&nbsp;Labkeeper</h2>
                 <p class="cta-features__intro-text">Онлайн-редактор LaTeX для&nbsp;объемных научных трудов: лимит компиляции до&nbsp;60&nbsp;секунд, поддержка сложных формул и&nbsp;мгновенный экспорт в&nbsp;PDF.</p>
             </div>
+
             <div class="feature-block feature-block--img-left feature-block--dark">
                 <div class="feature-block__container">
                     <div class="feature-block__visual">
-                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor" class="feature-block__image js-popup-trigger" data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
+                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor screenshot"
+                            class="feature-block__image js-popup-trigger"
+                            data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
                     </div>
                     <div class="feature-block__content">
                         <ul class="feature-list">
@@ -364,11 +486,22 @@
                     </div>
                 </div>
             </div>
+
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">Открыть редактор <span class="button__arrow">→</span></a>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Breport%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Ctableofcontents%0A%5Cchapter%7B%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%7D%D0%A6%D0%B5%D0%BB%D1%8C+%D0%B8%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.%0A%5Cchapter%7B%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D1%8B%7D%5Csection%7B%D0%9C%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%7D%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5+%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8.%0A%5Cchapter%7B%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D1%8B%7D%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5+%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D1%8B.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span class="article-example__label">
+                        <span data-i18n="blog-example">Просмотреть пример</span>
+                        <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                    </span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
+                </a>
             </div>
-            <div class="feature__bg"><img src="../assets/img/bg.svg" alt="bg" loading="lazy"></div>
+
+            <div class="feature__bg">
+                <img src="../assets/img/bg.svg" alt="bg" loading="lazy">
+            </div>
         </section>
+
     </main>
 
     <section class="audience">
@@ -400,26 +533,36 @@
                     <a href="/#features" class="footer__link" data-i18n="nav-advantages"></a>
                     <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
                     <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
-                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank" class="footer__link footer__link--external"><span data-i18n="nav-wiki"></span><img src="../assets/img/target.svg" alt="target icon" class="footer__link-icon" style="margin-left:4px;vertical-align:middle;" width="16" height="16" loading="lazy"></a>
+                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank"
+                        class="footer__link footer__link--external">
+                        <span data-i18n="nav-wiki"></span>
+                        <img src="../assets/img/target.svg" alt="target icon" class="footer__link-icon"
+                            style="margin-left: 4px; vertical-align: middle;" width="16" height="16" loading="lazy">
+                    </a>
                     <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
                     <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
 
                     <a href="/about" class="footer__link" data-i18n="nav-about"></a>
                 </nav>
-                <a href="/" class="footer__logo-link"><img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40" loading="lazy"></a>
+                <a href="/" class="footer__logo-link">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40"
+                        loading="lazy">
+                </a>
                 <div class="footer__contact">
                     <span class="footer__contact-label" data-i18n="footer-contact"></span>
                     <a href="mailto:labkeeper.io@gmail.com" class="footer__contact-link">labkeeper.io@gmail.com</a>
                 </div>
             </div>
-            <div class="footer__middle"><img src="../assets/img/img-for-footer.svg" alt="Labkeeper" class="footer__huge-logo" aria-hidden="true" loading="lazy"></div>
+            <div class="footer__middle">
+                <img src="../assets/img/img-for-footer.svg" alt="Labkeeper" class="footer__huge-logo" aria-hidden="true"
+                    loading="lazy">
+            </div>
             <div class="footer__bottom">
                 <div class="footer__copyright">© 2024—2026</div>
                 <a href="/privacy" class="footer__policy" data-i18n="footer-policy"></a>
             </div>
         </div>
     </footer>
-
 
     <!-- Попап -->
     <div class="popup js-popup" id="image-popup" aria-hidden="true">
@@ -431,9 +574,14 @@
             <img src="" alt="Enlarged screenshot" class="popup__image js-popup-img" loading="lazy">
         </div>
     </div>
+
     <div id="cookie-banner" class="cookie-banner hidden">
         <div class="cookie-banner__container">
-            <p class="cookie-banner__text">Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных данных</a>.</p>
+            <p class="cookie-banner__text">
+                Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a
+                    href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных
+                    данных</a>.
+            </p>
             <div class="cookie-banner__actions">
                 <button id="cookie-accept" class="button button--primary">Принять</button>
                 <button id="cookie-decline" class="button button--outline">Отказаться</button>
@@ -442,6 +590,7 @@
     </div>
 
     <button class="scroll-top js-scroll-top" aria-label="Наверх" title="Наверх"></button>
+
     <script>
         window.__LABKEEPER_API_VERSION = "IO_LABKEEPER_FRONTEND_API_VERSION";
         window.__LABKEEPER_OPENPANEL_CLIENT_ID = "IO_LABKEEPER_FRONTEND_OPENPANEL_CLIENT_ID";
@@ -453,5 +602,9 @@
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
+
 </html>

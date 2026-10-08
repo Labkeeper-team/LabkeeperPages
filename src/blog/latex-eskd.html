@@ -1,15 +1,17 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!-- Пачка 1 -->
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Оформление рамок и штампов по ЕСКД в LaTeX онлайн (пакет eskdx) — Labkeeper</title>
     <meta name="description" content="Рамка со штампом ЕСКД LaTeX онлайн: основная надпись ГОСТ LaTeX онлайн редактор, пакет eskdx, настройка форм 1, 2 и 2а, расчетно-пояснительные записки (РПЗ)." />
-        <!-- SEO Ключи: рамка со штампом ескд latex онлайн, основная надпись гост latex онлайн редактор -->
+    <!-- SEO Ключи: рамка со штампом ескд latex онлайн, основная надпись гост latex онлайн редактор -->
     <meta name="keywords" content="рамка со штампом ескд latex онлайн, основная надпись гост latex онлайн редактор" />
-<link rel="canonical" href="https://labkeeper.io/blog/latex-eskd" />
+    <link rel="canonical" href="https://labkeeper.io/blog/latex-eskd" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://labkeeper.io/blog/latex-eskd" />
     <meta property="og:locale" content="ru_RU" />
@@ -21,36 +23,128 @@
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:title" content="Оформление рамок и штампов по ЕСКД в LaTeX — Labkeeper" />
     <meta name="twitter:description" content="Рамка со штампом ЕСКД LaTeX онлайн: основная надпись ГОСТ LaTeX онлайн редактор." />
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Оформление рамок и штампов основной надписи по ЕСКД/СПДС в LaTeX онлайн","description":"Полный гайд по оформлению расчетно-пояснительных записок, рамок и штампов по ЕСКД/СПДС в LaTeX с пакетом eskdx.","author":{"@type":"Organization","name":"Labkeeper","url":"https://labkeeper.io"},"publisher":{"@type":"Organization","name":"Labkeeper","logo":{"@type":"ImageObject","url":"https://labkeeper.io/assets/img/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://labkeeper.io/blog/latex-eskd"},"datePublished":"2026-08-20","dateModified":"2026-08-20","inLanguage":"ru"}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://labkeeper.io/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://labkeeper.io/blog"},{"@type":"ListItem","position":3,"name":"Рамки и штампы по ЕСКД в LaTeX","item":"https://labkeeper.io/blog/latex-eskd"}]}</script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Оформление рамок и штампов основной надписи по ЕСКД/СПДС в LaTeX онлайн",
+        "description": "Полный гайд по оформлению расчетно-пояснительных записок, рамок и штампов по ЕСКД/СПДС в LaTeX с пакетом eskdx.",
+        "author": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "url": "https://labkeeper.io"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://labkeeper.io/assets/img/logo.svg"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://labkeeper.io/blog/latex-eskd"
+        },
+        "datePublished": "2026-08-20",
+        "dateModified": "2026-08-20",
+        "inLanguage": "ru",
+        "articleSection": ["Дипломные работы","Лабораторные работы","Работа с LaTeX"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://labkeeper.io/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Блог",
+                "item": "https://labkeeper.io/blog"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Рамки и штампы по ЕСКД в LaTeX",
+                "item": "https://labkeeper.io/blog/latex-eskd"
+            }
+        ]
+    }
+    </script>
+
     <script type="text/javascript">
         (function () {
-            function hasAcceptedCookieConsent() { try { return localStorage.getItem('labkeeper_cookie_consent') === 'accepted'; } catch (e) { return false; } }
+            function hasAcceptedCookieConsent() {
+                try {
+                    return localStorage.getItem('labkeeper_cookie_consent') === 'accepted';
+                } catch (e) {
+                    return false;
+                }
+            }
+
             window.initLabkeeperYandexMetrika = function () {
-                if (window.__labkeeperYandexMetrikaInitialized || !hasAcceptedCookieConsent() || typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined') { return; }
-                (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date(); for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } } k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", { webvisor: true, clickmap: true, referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+                if (
+                    window.__labkeeperYandexMetrikaInitialized ||
+                    !hasAcceptedCookieConsent() ||
+                    typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined'
+                ) {
+                    return;
+                }
+
+                (function (m, e, t, r, i, k, a) {
+                    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+                    m[i].l = 1 * new Date();
+                    for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+                    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a);
+                })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", {
+                    webvisor: true,
+                    clickmap: true,
+                    referrer: document.referrer,
+                    url: location.href,
+                    accurateTrackBounce: true,
+                    trackLinks: true
+                });
+
                 window.__labkeeperYandexMetrikaInitialized = true;
             };
+
             window.initLabkeeperYandexMetrika();
         })();
     </script>
+
+    <!-- Preconnect & Async Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
+
 <body class="page blog__article">
     <header class="header js-header">
         <div class="header__container">
             <div class="header__left">
                 <button class="header__burger js-burger-btn" aria-label="Открыть меню">
-                    <span class="header__burger-line"></span><span class="header__burger-line"></span><span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
                 </button>
                 <a href="/" class="header__logo">
-                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36" height="36">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36"
+                        height="36">
                     <span class="header__logo-text">Labkeeper</span>
                 </a>
                 <div class="header__lang js-lang-switcher">
@@ -58,48 +152,66 @@
                     <button class="header__lang-btn" data-lang="en">En</button>
                 </div>
             </div>
+
             <nav class="header__nav js-nav">
                 <div class="header__mobile-lang js-lang-switcher">
                     <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
                     <button class="header__lang-btn" data-lang="en">En</button>
                 </div>
                 <ul class="header__nav-list">
-                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link" data-i18n="nav-examples"></a></li>
-                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link" data-i18n="nav-features"></a></li>
-                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a></li>
+                    <li class="header__nav-item"><a href="/#examples" class="header__nav-link"
+                            data-i18n="nav-examples"></a></li>
+                    <li class="header__nav-item"><a href="/#advantages" class="header__nav-link"
+                            data-i18n="nav-features"></a></li>
+                    <li class="header__nav-item"><a href="/tokens" class="header__nav-link" data-i18n="nav-tokens"></a>
+                    </li>
                     <li class="header__nav-item"><a href="/blog" class="header__nav-link" data-i18n="nav-blog"></a></li>
 
-                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a></li>
+                    <li class="header__nav-item"><a href="/about" class="header__nav-link" data-i18n="nav-about"></a>
+                    </li>
                 </ul>
                 <div class="header__mobile-contact">
                     <span class="header__mobile-contact-label" data-i18n="footer-contact"></span>
-                    <a href="mailto:labkeeper.io@gmail.com" class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
+                    <a href="mailto:labkeeper.io@gmail.com"
+                        class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
                 </div>
             </nav>
+
             <div class="header__right">
-                <a href="/project/default?open=login" class="button button--outline header__login" data-i18n="btn-login"></a>
-                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects" style="display: none;"></a>
+                <a href="/project/default?open=login" class="button button--outline header__login"
+                    data-i18n="btn-login"></a>
+                <a href="/projects" class="button button--outline header__projects" data-i18n="btn-projects"
+                    style="display: none;"></a>
                 <a href="/project/default" class="button button--primary header__editor" data-i18n="btn-editor"></a>
             </div>
         </div>
     </header>
 
     <main class="main page-article">
+
         <div class="article-breadcrumbs">
             <div class="article-breadcrumbs__container">
                 <nav class="article-breadcrumbs__nav" aria-label="Breadcrumb">
                     <ol class="article-breadcrumbs__list">
-                        <li class="article-breadcrumbs__item"><a href="/" class="article-breadcrumbs__link">Главная</a></li>
-                        <li class="article-breadcrumbs__item"><a href="/blog" class="article-breadcrumbs__link">Блог</a></li>
-                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active"><span>Рамки и штампы по ЕСКД</span></li>
+                        <li class="article-breadcrumbs__item">
+                            <a href="/" class="article-breadcrumbs__link">Главная</a>
+                        </li>
+                        <li class="article-breadcrumbs__item">
+                            <a href="/blog" class="article-breadcrumbs__link">Блог</a>
+                        </li>
+                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active">
+                            <span>Рамки и штампы по ЕСКД</span>
+                        </li>
                     </ol>
                 </nav>
             </div>
         </div>
 
         <div class="article-layout">
+
             <article class="article-content">
                 <div class="article-content__container">
+
                     <h1 class="article-content__title h1">Оформление рамок и&nbsp;штампов основной надписи по&nbsp;ЕСКД/СПДС в&nbsp;LaTeX онлайн</h1>
 
                     <div class="article-content__tags">
@@ -124,6 +236,7 @@
 
                     <section class="article-section" id="intro">
                         <h2 class="article-section__title">Стандарты ЕСКД и ГОСТ 2.104-2006</h2>
+                        <p><strong>Пример в редакторе:</strong> кнопка открывает небольшой документ с рамкой на TikZ и упрощенной подписью. Он показывает размещение рамки без зависимости от версии <code>eskdx</code> и не заменяет полный нормативный бланк.</p>
                         <p>В инженерных, строительных и технических вузах курсовые и <a href="/blog/latex-diploma-gost">дипломные проекты по ГОСТ</a> требуют строгого соблюдения Единой системы конструкторской документации (ЕСКД) и СПДС. Каждая страница должна содержать рамку с отступами (20 мм слева, по 5 мм сверху, справа и снизу) и штамп основной надписи по ГОСТ 2.104-2006.</p>
                         <p>Настроить <strong>рамку со штампом ескд latex онлайн</strong> вручную сложно, однако специализированный пакет <code>eskdx</code> полностью автоматизирует этот процесс, превращая Labkeeper в удобный <strong>онлайн редактор основной надписи ГОСТ LaTeX</strong>.</p>
                     </section>
@@ -232,23 +345,30 @@
                             </div>
                         </div>
                     </section>
+
+
+
                 </div>
             </article>
 
             <aside class="article-sidebar">
                 <div class="article-sidebar__sticky">
                     <div class="article-sidebar__media">
-                        <img src="../assets/img/img-for-firstScreen.webp" alt="Онлайн-редактор LaTeX Labkeeper" width="220" height="135" loading="lazy" class="article-sidebar__img">
+                        <img src="../assets/img/img-for-firstScreen.webp"
+                            alt="Онлайн-редактор LaTeX Labkeeper" width="220" height="135" loading="lazy"
+                            class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Формируйте расчетно-пояснительные записки с&nbsp;рамками ЕСКД в&nbsp;Labkeeper без&nbsp;ручной разметки в&nbsp;Word или AutoCAD.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%5Bleft%3D23mm%2Cright%3D8mm%2Ctop%3D15mm%2Cbottom%3D15mm%5D%7Bgeometry%7D%0A%5Cusepackage%7Btikz%7D%0A%5CAddToHook%7Bshipout%2Fbackground%7D%7B%5Cbegin%7Btikzpicture%7D%5Bremember+picture%2Coverlay%5D%0A%5Cdraw%5Bline+width%3D.4mm%5D+%28%5Bxshift%3D20mm%2Cyshift%3D5mm%5Dcurrent+page.south+west%29%0Arectangle+%28%5Bxshift%3D-5mm%2Cyshift%3D-5mm%5Dcurrent+page.north+east%29%3B%0A%5Cend%7Btikzpicture%7D%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7B%D0%9D%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%7D%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5+%D0%B8%D0%B7%D0%B4%D0%B5%D0%BB%D0%B8%D1%8F.%0A%5Csection%7B%D0%A5%D0%B0%D1%80%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B8%7D%D0%9D%D0%B0%D0%BF%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5+%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F%3A+12+%D0%92.%0A%5Cvfill%5Cnoindent%5Cfbox%7B%5Cparbox%7B.9%5Clinewidth%7D%7BAB.001%5Chfill+%D0%9B%D0%B8%D1%81%D1%82+%5Cthepage%5C%5C%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA+%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F%7D%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span class="article-example__label">
+                            <span data-i18n="blog-example">Просмотреть пример</span>
+                            <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                        </span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
+
         </div>
 
         <section class="cta-features" id="cta-features">
@@ -257,10 +377,13 @@
                 <h2 class="cta-features__intro-title">Оформляйте пояснительные записки по&nbsp;ЕСКД в&nbsp;Labkeeper</h2>
                 <p class="cta-features__intro-text">Онлайн-редактор LaTeX с&nbsp;поддержкой пакета eskdx: штампы, рамки и&nbsp;расчетно-пояснительные записки по&nbsp;ГОСТ прямо в&nbsp;браузере.</p>
             </div>
+
             <div class="feature-block feature-block--img-left feature-block--dark">
                 <div class="feature-block__container">
                     <div class="feature-block__visual">
-                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor screenshot" class="feature-block__image js-popup-trigger" data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
+                        <img src="../assets/img/img-for-latex.webp" alt="LaTeX editor screenshot"
+                            class="feature-block__image js-popup-trigger"
+                            data-origin="../assets/img/origin/latex-editor.webp" loading="lazy">
                     </div>
                     <div class="feature-block__content">
                         <ul class="feature-list">
@@ -288,11 +411,22 @@
                     </div>
                 </div>
             </div>
+
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">Открыть редактор <span class="button__arrow">→</span></a>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%5Bleft%3D23mm%2Cright%3D8mm%2Ctop%3D15mm%2Cbottom%3D15mm%5D%7Bgeometry%7D%0A%5Cusepackage%7Btikz%7D%0A%5CAddToHook%7Bshipout%2Fbackground%7D%7B%5Cbegin%7Btikzpicture%7D%5Bremember+picture%2Coverlay%5D%0A%5Cdraw%5Bline+width%3D.4mm%5D+%28%5Bxshift%3D20mm%2Cyshift%3D5mm%5Dcurrent+page.south+west%29%0Arectangle+%28%5Bxshift%3D-5mm%2Cyshift%3D-5mm%5Dcurrent+page.north+east%29%3B%0A%5Cend%7Btikzpicture%7D%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7B%D0%9D%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%7D%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5+%D0%B8%D0%B7%D0%B4%D0%B5%D0%BB%D0%B8%D1%8F.%0A%5Csection%7B%D0%A5%D0%B0%D1%80%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B8%7D%D0%9D%D0%B0%D0%BF%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5+%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F%3A+12+%D0%92.%0A%5Cvfill%5Cnoindent%5Cfbox%7B%5Cparbox%7B.9%5Clinewidth%7D%7BAB.001%5Chfill+%D0%9B%D0%B8%D1%81%D1%82+%5Cthepage%5C%5C%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA+%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F%7D%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span class="article-example__label">
+                        <span data-i18n="blog-example">Просмотреть пример</span>
+                        <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                    </span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
+                </a>
             </div>
-            <div class="feature__bg"><img src="../assets/img/bg.svg" alt="bg" loading="lazy"></div>
+
+            <div class="feature__bg">
+                <img src="../assets/img/bg.svg" alt="bg" loading="lazy">
+            </div>
         </section>
+
     </main>
 
     <section class="audience">
@@ -324,26 +458,36 @@
                     <a href="/#features" class="footer__link" data-i18n="nav-advantages"></a>
                     <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
                     <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
-                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank" class="footer__link footer__link--external"><span data-i18n="nav-wiki"></span><img src="../assets/img/target.svg" alt="target icon" class="footer__link-icon" style="margin-left:4px;vertical-align:middle;" width="16" height="16" loading="lazy"></a>
+                    <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank"
+                        class="footer__link footer__link--external">
+                        <span data-i18n="nav-wiki"></span>
+                        <img src="../assets/img/target.svg" alt="target icon" class="footer__link-icon"
+                            style="margin-left: 4px; vertical-align: middle;" width="16" height="16" loading="lazy">
+                    </a>
                     <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
                     <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
 
                     <a href="/about" class="footer__link" data-i18n="nav-about"></a>
                 </nav>
-                <a href="/" class="footer__logo-link"><img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40" loading="lazy"></a>
+                <a href="/" class="footer__logo-link">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40"
+                        loading="lazy">
+                </a>
                 <div class="footer__contact">
                     <span class="footer__contact-label" data-i18n="footer-contact"></span>
                     <a href="mailto:labkeeper.io@gmail.com" class="footer__contact-link">labkeeper.io@gmail.com</a>
                 </div>
             </div>
-            <div class="footer__middle"><img src="../assets/img/img-for-footer.svg" alt="Labkeeper" class="footer__huge-logo" aria-hidden="true" loading="lazy"></div>
+            <div class="footer__middle">
+                <img src="../assets/img/img-for-footer.svg" alt="Labkeeper" class="footer__huge-logo" aria-hidden="true"
+                    loading="lazy">
+            </div>
             <div class="footer__bottom">
                 <div class="footer__copyright">© 2024—2026</div>
                 <a href="/privacy" class="footer__policy" data-i18n="footer-policy"></a>
             </div>
         </div>
     </footer>
-
 
     <!-- Попап -->
     <div class="popup js-popup" id="image-popup" aria-hidden="true">
@@ -355,9 +499,14 @@
             <img src="" alt="Enlarged screenshot" class="popup__image js-popup-img" loading="lazy">
         </div>
     </div>
+
     <div id="cookie-banner" class="cookie-banner hidden">
         <div class="cookie-banner__container">
-            <p class="cookie-banner__text">Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных данных</a>.</p>
+            <p class="cookie-banner__text">
+                Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a
+                    href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных
+                    данных</a>.
+            </p>
             <div class="cookie-banner__actions">
                 <button id="cookie-accept" class="button button--primary">Принять</button>
                 <button id="cookie-decline" class="button button--outline">Отказаться</button>
@@ -366,6 +515,7 @@
     </div>
 
     <button class="scroll-top js-scroll-top" aria-label="Наверх" title="Наверх"></button>
+
     <script>
         window.__LABKEEPER_API_VERSION = "IO_LABKEEPER_FRONTEND_API_VERSION";
         window.__LABKEEPER_OPENPANEL_CLIENT_ID = "IO_LABKEEPER_FRONTEND_OPENPANEL_CLIENT_ID";
@@ -377,5 +527,9 @@
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
+
 </html>

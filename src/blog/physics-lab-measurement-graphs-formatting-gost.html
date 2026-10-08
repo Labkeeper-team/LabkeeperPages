@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -338,14 +339,12 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">В Labkeeper вы можете строить идеальные графики pgfplots прямо в браузере с векторным качеством и подписями по ГОСТ.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bpgfplots%7D%5Cpgfplotsset%7Bcompat%3D1.18%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Btikzpicture%7D%5Cbegin%7Baxis%7D%5Bwidth%3D9cm%2Cxlabel%3D%7B%24U%24%2C+V%7D%2Cylabel%3D%7B%24I%24%2C+A%7D%2Cgrid%3Dmajor%5D%0A%5Caddplot%2B%5Bonly+marks%2Cerror+bars%2F.cd%2Cy+dir%3Dboth%2Cy+explicit%5D%0Acoordinates+%7B%281%2C.10%29%2B-%280%2C.01%29+%282%2C.21%29%2B-%280%2C.02%29+%283%2C.30%29%2B-%280%2C.02%29%7D%3B%0A%5Cend%7Baxis%7D%5Cend%7Btikzpicture%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span class="article-example__label">
+                            <span data-i18n="blog-example">Просмотреть пример</span>
+                            <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                        </span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -394,8 +393,12 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bpgfplots%7D%5Cpgfplotsset%7Bcompat%3D1.18%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Btikzpicture%7D%5Cbegin%7Baxis%7D%5Bwidth%3D9cm%2Cxlabel%3D%7B%24U%24%2C+V%7D%2Cylabel%3D%7B%24I%24%2C+A%7D%2Cgrid%3Dmajor%5D%0A%5Caddplot%2B%5Bonly+marks%2Cerror+bars%2F.cd%2Cy+dir%3Dboth%2Cy+explicit%5D%0Acoordinates+%7B%281%2C.10%29%2B-%280%2C.01%29+%282%2C.21%29%2B-%280%2C.02%29+%283%2C.30%29%2B-%280%2C.02%29%7D%3B%0A%5Cend%7Baxis%7D%5Cend%7Btikzpicture%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span class="article-example__label">
+                        <span data-i18n="blog-example">Просмотреть пример</span>
+                        <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                    </span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -504,6 +507,9 @@
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

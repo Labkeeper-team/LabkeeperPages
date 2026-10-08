@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -274,8 +275,8 @@ Telegram: @mikhail_dev | GitHub: github.com/mikhail-dev | Email: mikhail@example
 
 ## Навыки
 - **Языки:** Python 3.12, SQL, базовый C++
-- **Фреймворки & Библиотеки:** FastAPI, Django, SQLAlchemy, Alembic, Pydantic, Aiogram
-- **Базы данных & Инструменты:** PostgreSQL, Redis, Docker, Git, Linux (Ubuntu), Pytest
+- **Фреймворки &amp; Библиотеки:** FastAPI, Django, SQLAlchemy, Alembic, Pydantic, Aiogram
+- **Базы данных &amp; Инструменты:** PostgreSQL, Redis, Docker, Git, Linux (Ubuntu), Pytest
 
 ## Проекты
 
@@ -337,14 +338,12 @@ Telegram: @mikhail_dev | GitHub: github.com/mikhail-dev | Email: mikhail@example
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">В Labkeeper вы можете оформить свое первое резюме в лаконичном Markdown-стиле с безупречной версткой.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?open=markdown&amp;markdown=%23+Maria+Ivanova%0AJunior+Developer+%7C+maria%40example.com%0A%0A%23%23+Education%0ABSc+Computer+Science%2C+expected+2027.%0A%0A%23%23+Projects%0A**Study+planner%3A**+React+app+with+reminders+and+unit+tests.%0A%0A%23%23+Skills%0AJavaScript%2C+React%2C+Git.%0A%0A%23%23+Activities%0AUniversity+programming+club." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span class="article-example__label">
+                            <span data-i18n="blog-example">Просмотреть пример</span>
+                            <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                        </span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -393,8 +392,12 @@ Telegram: @mikhail_dev | GitHub: github.com/mikhail-dev | Email: mikhail@example
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?open=markdown&amp;markdown=%23+Maria+Ivanova%0AJunior+Developer+%7C+maria%40example.com%0A%0A%23%23+Education%0ABSc+Computer+Science%2C+expected+2027.%0A%0A%23%23+Projects%0A**Study+planner%3A**+React+app+with+reminders+and+unit+tests.%0A%0A%23%23+Skills%0AJavaScript%2C+React%2C+Git.%0A%0A%23%23+Activities%0AUniversity+programming+club." class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span class="article-example__label">
+                        <span data-i18n="blog-example">Просмотреть пример</span>
+                        <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                    </span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -503,6 +506,9 @@ Telegram: @mikhail_dev | GitHub: github.com/mikhail-dev | Email: mikhail@example
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

@@ -78,7 +78,10 @@
         "title": "Отказ от подсветки для простого текста",
         "html": "<p>Если вы хотите показать вывод консоли или лог без цветных маркеров, используйте идентификатор <code>text</code> или <code>plaintext</code>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "markdown": "## Python example\n\n```python\ndef mean(values):\n    return sum(values) / len(values)\n\nprint(mean([2, 4, 6]))\n```"
+    }
   },
   {
     "slug": "markdown-strikethrough-underline-highlight",
@@ -150,7 +153,10 @@
         "title": "Не путайте тильду со знаком подчеркивания",
         "html": "<p>Одиночные знаки подчеркивания <code>_текст_</code> в Markdown делают текст <em>курсивом</em>, а не подчеркнутым. Для подчеркивания всегда применяйте <code>&lt;u&gt;текст&lt;/u&gt;</code>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "markdown": "## Редактирование\n\n~~Устаревшее утверждение~~\n\n**Важный результат** и *пояснение*.\n\n<u>Подчеркнутый текст</u> и <mark>выделение</mark>."
+    }
   },
   {
     "slug": "markdown-to-pdf-export",
@@ -223,7 +229,10 @@
         "title": "Печать через браузер против нативного PDF",
         "html": "<p>Не используйте диалог «Печать в PDF» (Ctrl+P) в обычном браузере — он добавляет колонтитулы с URL и датой. Пользуйтесь кнопкой «Скачать PDF» в Labkeeper для получения чистого файла.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "markdown": "# Research notes\n\n## Goal\nMeasure average speed.\n\n$$v=\\frac{s}{t}=\\frac{100}{20}=5\\ \\text{m/s}$$\n\n## Results\n| Distance, m | Time, s |\n|---:|---:|\n| 100 | 20 |\n\nUse the editor's PDF export to save this document."
+    }
   },
   {
     "slug": "markdown-raw-html-integration",
@@ -295,7 +304,10 @@
         "title": "Не злоупотребляйте сложными стилями",
         "html": "<p>Используйте HTML точечно, только когда стандартных средств Markdown не хватает. Избыточный HTML лишает исходник его главного преимущества — легкости чтения.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "markdown": "# Markdown + HTML\n\nA normal **Markdown** paragraph.\n\n<table>\n<tr><th>Sensor</th><th>Value</th></tr>\n<tr><td>A</td><td>10.2</td></tr>\n</table>\n\n<details><summary>Notes</summary>Calibrated before measurement.</details>"
+    }
   },
   {
     "slug": "markdown-table-merge-cells-rowspan-colspan",
@@ -368,7 +380,10 @@
         "title": "Инструменты-генераторы таблиц",
         "html": "<p>Для быстрого построения сложных HTML-таблиц с объединением ячеек удобно использовать визуальные редакторы таблиц, вставляя готовый код напрямую в документ.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "markdown": "# Merged table cells\n\n<table>\n<tr><th rowspan=\"2\">Sensor</th><th colspan=\"2\">Measurement</th></tr>\n<tr><th>Value</th><th>Error</th></tr>\n<tr><td>A</td><td>10.2</td><td>0.2</td></tr>\n</table>"
+    }
   },
   {
     "slug": "markdown-spoilers-details-summary",
@@ -440,7 +455,10 @@
         "title": "Поведение при экспорте в PDF",
         "html": "<p>При экспорте документа в PDF спойлеры автоматически раскрываются, чтобы ценная информация не была потеряна на бумажном носителе.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "markdown": "# Experiment notes\n\n<details>\n<summary>Show measurement details</summary>\n\n- Temperature: 22 C\n- Trials: 5\n- Calibration: completed\n\n</details>\n\nThe summary remains visible when the details are collapsed."
+    }
   },
   {
     "slug": "latex-newcommand-macros",
@@ -522,7 +540,10 @@
         "title": "Имена команд только из букв",
         "html": "<p>Имя макроса в LaTeX может состоять только из латинских букв (без цифр и спецсимволов). Имя <code>\\vec1</code> вызовет ошибку, используйте <code>\\vecOne</code>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\newcommand{\\vect}[1]{\\mathbf{#1}}\\newcommand{\\norm}[1]{\\left\\lVert#1\\right\\rVert}\n\\begin{document}\n\\[\\vect{v}=(1,2,3),\\qquad \\norm{\\vect{v}}=\\sqrt{14}\\]\n\\end{document}"
+    }
   },
   {
     "slug": "latex-geometry-margins-gost",
@@ -595,7 +616,10 @@
         "title": "Контроль геометрии ключом showframe",
         "html": "<p>На этапе черновой верстки добавьте опцию <code>\\usepackage[showframe,...]{geometry}</code>, чтобы компилятор нарисовал рамки текстового блока и колонтитулов прямо в PDF для визуального контроля.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage[left=30mm,right=15mm,top=20mm,bottom=20mm,showframe]{geometry}\n\\begin{document}\n\\section*{Page margins}\nLeft: 30 mm. Right: 15 mm. Top and bottom: 20 mm.\n\\par The frame shows the text area.\n\\end{document}"
+    }
   },
   {
     "slug": "latex-nested-lists-enumerate-itemize",
@@ -667,7 +691,10 @@
         "title": "Сложная иерархическая нумерация 1.1, 1.2",
         "html": "<p>С пакетом enumitem создавайте нумерацию вида 1.1, 1.2 с помощью параметра <code>label*=\\arabic*.</code> на втором уровне вложенности.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\n\\begin{document}\n\\begin{enumerate}\n\\item Preparation\\begin{itemize}\\item Calibrate the sensor.\\item Record room temperature.\\end{itemize}\n\\item Measurement\\begin{enumerate}\\item Take five readings.\\item Calculate the mean.\\end{enumerate}\n\\end{enumerate}\n\\end{document}"
+    }
   },
   {
     "slug": "latex-line-spacing-1-5-setspace-gost",
@@ -740,6 +767,9 @@
         "title": "Размер шрифта 14pt для дипломов",
         "html": "<p>Если в документе используется шрифт 14pt (<code>\\documentclass[14pt]{extreport}</code>), команда <code>\\onehalfspacing</code> автоматически подстроится под увеличенный кегль.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage{setspace}\\onehalfspacing\n\\begin{document}\n\\section*{Line spacing}\nThis paragraph uses one-and-a-half line spacing. Add several lines of text to compare the distance between baselines.\n\\begin{singlespace}This paragraph uses single spacing. The change is local to this environment.\\end{singlespace}\n\\end{document}"
+    }
   }
 ]

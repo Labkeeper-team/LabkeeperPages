@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -284,9 +285,9 @@ iv.petrov@email.com | +7 (999) 000-00-00 | github.com/petrov-dev | linkedin.com/
 - Built asynchronous network mediation pipelines in Python/C++ processing 500M daily telemetry events.
 - Delivered carrier-grade reliability with 99.999% uptime compliance.
 
-## Skills & Technologies
-- **Languages & Frameworks:** Go, Python (FastAPI, AsyncIO), C++, SQL, Bash
-- **Data & Infra:** PostgreSQL, Redis, ClickHouse, Apache Kafka, Docker, Kubernetes, Terraform, Prometheus, Grafana
+## Skills &amp; Technologies
+- **Languages &amp; Frameworks:** Go, Python (FastAPI, AsyncIO), C++, SQL, Bash
+- **Data &amp; Infra:** PostgreSQL, Redis, ClickHouse, Apache Kafka, Docker, Kubernetes, Terraform, Prometheus, Grafana
 
 ## Education
 **Bauman Moscow State Technical University** — M.S. in Computer Science *(2013 — 2019)*</code></pre>
@@ -333,14 +334,12 @@ iv.petrov@email.com | +7 (999) 000-00-00 | github.com/petrov-dev | linkedin.com/
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">В Labkeeper вы можете точно регулировать отступы и размер шрифта, добиваясь идеальной посадки резюме на одну страницу.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%5Bmargin%3D18mm%5D%7Bgeometry%7D%5Cpagestyle%7Bempty%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection*%7BAlex+Ivanov+%7C+Software+Engineer%7D%0Aalex%40example.com%0A%5Csection*%7BSelected+experience%7D%0A%5Ctextbf%7BTeam+lead%2C+2022--2026%7D%3A+led+5+engineers%3B+delivery+time+reduced+by+25%5C%25.%0A%5Cpar%5Ctextbf%7BDeveloper%2C+2016--2022%7D%3A+built+reporting+services.%0A%5Csection*%7BSkills%7DPython%2C+SQL%2C+system+design.%0A%5Csection*%7BEducation%7DBSc+Computer+Science.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span class="article-example__label">
+                            <span data-i18n="blog-example">Просмотреть пример</span>
+                            <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                        </span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -389,8 +388,12 @@ iv.petrov@email.com | +7 (999) 000-00-00 | github.com/petrov-dev | linkedin.com/
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%5Bmargin%3D18mm%5D%7Bgeometry%7D%5Cpagestyle%7Bempty%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection*%7BAlex+Ivanov+%7C+Software+Engineer%7D%0Aalex%40example.com%0A%5Csection*%7BSelected+experience%7D%0A%5Ctextbf%7BTeam+lead%2C+2022--2026%7D%3A+led+5+engineers%3B+delivery+time+reduced+by+25%5C%25.%0A%5Cpar%5Ctextbf%7BDeveloper%2C+2016--2022%7D%3A+built+reporting+services.%0A%5Csection*%7BSkills%7DPython%2C+SQL%2C+system+design.%0A%5Csection*%7BEducation%7DBSc+Computer+Science.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span class="article-example__label">
+                        <span data-i18n="blog-example">Просмотреть пример</span>
+                        <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                    </span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -499,6 +502,9 @@ iv.petrov@email.com | +7 (999) 000-00-00 | github.com/petrov-dev | linkedin.com/
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

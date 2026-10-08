@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!-- Пачка 1 -->
 <html lang="ru">
 
@@ -8,25 +8,21 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Пакет amsmath в LaTeX: формулы, выравнивание align и дроби — Labkeeper</title>
-    <meta name="description"
-        content="Полное руководство по пакету amsmath в LaTeX с примерами: выравнивание формул по знаку равно (align), разница между frac, dfrac и tfrac, матрицы и скобки. Попробуйте в онлайн-редакторе Labkeeper!" />
+    <meta name="description" content="Полное руководство по пакету amsmath в LaTeX с примерами: выравнивание формул по знаку равно (align), разница между frac, dfrac и tfrac, матрицы и скобки. Попробуйте в онлайн-редакторе Labkeeper!" />
     <!-- SEO Ключи: формулы и уравнения в latex amsmath, выравнивание формул по знаку равно latex align -->
-    <meta name="keywords"
-        content="формулы и уравнения в latex amsmath, выравнивание формул по знаку равно latex align" />
+    <meta name="keywords" content="формулы и уравнения в latex amsmath, выравнивание формул по знаку равно latex align" />
     <link rel="canonical" href="https://labkeeper.io/blog/latex-formulas" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://labkeeper.io/blog/latex-formulas" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Labkeeper" />
     <meta property="og:title" content="Пакет amsmath в LaTeX: формулы, выравнивание align и дроби — Labkeeper" />
-    <meta property="og:description"
-        content="Полное руководство по пакету amsmath в LaTeX с примерами: выравнивание формул по знаку равно (align), разница между frac, dfrac и tfrac, матрицы и скобки. Попробуйте в онлайн-редакторе Labkeeper!" />
+    <meta property="og:description" content="Полное руководство по пакету amsmath в LaTeX с примерами: выравнивание формул по знаку равно (align), разница между frac, dfrac и tfrac, матрицы и скобки. Попробуйте в онлайн-редакторе Labkeeper!" />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:title" content="Пакет amsmath в LaTeX: формулы, выравнивание align и дроби — Labkeeper" />
-    <meta name="twitter:description"
-        content="Полное руководство по пакету amsmath в LaTeX с примерами: выравнивание формул по знаку равно (align), разница между frac, dfrac и tfrac, матрицы и скобки. Попробуйте в онлайн-редакторе Labkeeper!" />
+    <meta name="twitter:description" content="Полное руководство по пакету amsmath в LaTeX с примерами: выравнивание формул по знаку равно (align), разница между frac, dfrac и tfrac, матрицы и скобки. Попробуйте в онлайн-редакторе Labkeeper!" />
 
     <script type="application/ld+json">
     {
@@ -54,7 +50,7 @@
         "datePublished": "2026-08-15",
         "dateModified": "2026-08-20",
         "inLanguage": "ru",
-        "articleSection": ["Работа с LaTeX", "Оформление научных статей"]
+        "articleSection": ["Работа с LaTeX","Оформление научных статей"]
     }
     </script>
     <script type="application/ld+json">
@@ -134,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -328,8 +325,8 @@
                                 <span class="article-code__lang">LaTeX</span>
                             </div>
                             <pre><code>\begin{align}
-    f(x) &= x^2 + 2x + 1 \\
-         &= (x + 1)^2
+    f(x) &amp;= x^2 + 2x + 1 \\
+         &amp;= (x + 1)^2
 \end{align}</code></pre>
                         </div>
                         <p>Символ <code>&amp;</code> задаёт точку выравнивания, а две косые черты <code>\\</code>
@@ -343,8 +340,8 @@
                                 <span class="article-code__lang">LaTeX</span>
                             </div>
                             <pre><code>\begin{align*}
-    3x + 2y &= 7  \\
-     x - y  &= 1
+    3x + 2y &amp;= 7  \\
+     x - y  &amp;= 1
 \end{align*}</code></pre>
                         </div>
                         <p>Чтобы отключить номер у конкретной строки в окружении <code>align</code>, укажите команду
@@ -427,9 +424,9 @@
                             </div>
                             <pre><code>\begin{equation}
     A = \begin{pmatrix}
-        a_{11} & a_{12} & a_{13} \\
-        a_{21} & a_{22} & a_{23} \\
-        a_{31} & a_{32} & a_{33}
+        a_{11} &amp; a_{12} &amp; a_{13} \\
+        a_{21} &amp; a_{22} &amp; a_{23} \\
+        a_{31} &amp; a_{32} &amp; a_{33}
     \end{pmatrix}
 \end{equation}</code></pre>
                         </div>
@@ -474,6 +471,8 @@
                         </div>
                     </section>
 
+
+
                 </div>
             </article>
 
@@ -486,14 +485,12 @@
                     </div>
                     <p class="article-sidebar__title">Онлайн-редактор LaTeX с&nbsp;компиляцией в&nbsp;PDF,
                         AI-ассистентом и&nbsp;поддержкой amsmath — без установки, сразу в&nbsp;браузере.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5C%5BE%3Dmc%5E2%2C%5Cqquad+%5Cint_0%5E1+x%5E2%5C%2Cdx%3D%5Cfrac13%5C%5D%0A%5Cbegin%7Balign%7Da%5E2%2Bb%5E2%26%3Dc%5E2%5C%5Cx%26%3D%5Cfrac%7B-b%5Cpm%5Csqrt%7Bb%5E2-4ac%7D%7D%7B2a%7D%5Cend%7Balign%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span class="article-example__label">
+                            <span data-i18n="blog-example">Просмотреть пример</span>
+                            <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                        </span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -543,8 +540,12 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5C%5BE%3Dmc%5E2%2C%5Cqquad+%5Cint_0%5E1+x%5E2%5C%2Cdx%3D%5Cfrac13%5C%5D%0A%5Cbegin%7Balign%7Da%5E2%2Bb%5E2%26%3Dc%5E2%5C%5Cx%26%3D%5Cfrac%7B-b%5Cpm%5Csqrt%7Bb%5E2-4ac%7D%7D%7B2a%7D%5Cend%7Balign%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span class="article-example__label">
+                        <span data-i18n="blog-example">Просмотреть пример</span>
+                        <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                    </span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -615,7 +616,6 @@
         </div>
     </footer>
 
-
     <!-- Попап -->
     <div class="popup js-popup" id="image-popup" aria-hidden="true">
         <div class="popup__overlay js-popup-close"></div>
@@ -626,6 +626,7 @@
             <img src="" alt="Enlarged screenshot" class="popup__image js-popup-img" loading="lazy">
         </div>
     </div>
+
     <div id="cookie-banner" class="cookie-banner hidden">
         <div class="cookie-banner__container">
             <p class="cookie-banner__text">
@@ -653,6 +654,9 @@
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

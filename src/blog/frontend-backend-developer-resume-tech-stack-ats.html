@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -258,8 +259,8 @@
 
 ## Skills
 - **Core:** TypeScript, JavaScript (ES2024), HTML5, CSS3/SCSS
-- **Frameworks & Libraries:** React 19, Next.js, TanStack Query, Redux Toolkit, Tailwind CSS
-- **Testing & Tooling:** Vitest, Playwright, Jest, Webpack, Vite, Git, Docker
+- **Frameworks &amp; Libraries:** React 19, Next.js, TanStack Query, Redux Toolkit, Tailwind CSS
+- **Testing &amp; Tooling:** Vitest, Playwright, Jest, Webpack, Vite, Git, Docker
 - **Performance:** Web Vitals optimization, SSR/SSG, Code Splitting, Bundle size analysis
 
 ## Experience
@@ -288,7 +289,7 @@
 - **Languages:** Go (Golang), Python, Bash, SQL
 - **Frameworks:** Gin, Chi, FastAPI, Django
 - **Databases:** PostgreSQL, MySQL, Redis, MongoDB, Elasticsearch
-- **Cloud & DevOps:** Docker, Kubernetes, Helm, Terraform, Kafka, RabbitMQ, CI/CD
+- **Cloud &amp; DevOps:** Docker, Kubernetes, Helm, Terraform, Kafka, RabbitMQ, CI/CD
 
 ## Professional Experience
 
@@ -344,14 +345,12 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Создавайте резюме разработчика в Markdown в Labkeeper: чистый одноколоночный формат, проходящий любые парсеры и ATS.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?open=markdown&amp;markdown=%23+Alex+Ivanov%0ABackend+Developer%0A%0A%23%23+Technical+skills%0A-+Languages%3A+Python%2C+SQL%0A-+Backend%3A+FastAPI%2C+REST%0A-+Data%3A+PostgreSQL%2C+Redis%0A-+Delivery%3A+Docker%2C+CI%2FCD%0A%0A%23%23+Experience%0ABuilt+an+API+serving+20%2C000+daily+requests+and+reduced+p95+latency+from+400+to+180+ms." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span class="article-example__label">
+                            <span data-i18n="blog-example">Просмотреть пример</span>
+                            <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                        </span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -400,8 +399,12 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?open=markdown&amp;markdown=%23+Alex+Ivanov%0ABackend+Developer%0A%0A%23%23+Technical+skills%0A-+Languages%3A+Python%2C+SQL%0A-+Backend%3A+FastAPI%2C+REST%0A-+Data%3A+PostgreSQL%2C+Redis%0A-+Delivery%3A+Docker%2C+CI%2FCD%0A%0A%23%23+Experience%0ABuilt+an+API+serving+20%2C000+daily+requests+and+reduced+p95+latency+from+400+to+180+ms." class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span class="article-example__label">
+                        <span data-i18n="blog-example">Просмотреть пример</span>
+                        <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                    </span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -510,6 +513,9 @@
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

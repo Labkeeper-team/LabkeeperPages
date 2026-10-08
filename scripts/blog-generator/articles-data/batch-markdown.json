@@ -91,7 +91,10 @@
         "title": "Группировка определений в конце файла",
         "html": "<p>Чтобы исходный Markdown-текст оставался чистым и удобным для редактирования, храните все расшифровки <code>[^1]: ...</code> в самом конце смыслового подраздела или в подвале документа.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "markdown": "# Measurement notes\n\nThe value was corrected after calibration.[^calibration]\n\n[^calibration]: Calibration was performed at room temperature before the experiment."
+    }
   },
   {
     "slug": "markdown-task-lists",
@@ -186,6 +189,9 @@
         "title": "Автоматический трекинг выполнения на GitHub",
         "html": "<p>Если файл сохраняется на GitHub или GitLab, чек-листы автоматически формируют процентный индикатор готовности задачи (например, <code>4 of 6 tasks</code>) в превью репозитория.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "markdown": "# План эксперимента\n\n- [x] Подготовить приборы\n- [x] Проверить калибровку\n- [ ] Выполнить измерения\n- [ ] Оформить отчет"
+    }
   }
 ]

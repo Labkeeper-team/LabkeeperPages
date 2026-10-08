@@ -1,4 +1,3 @@
-/* eslint-disable */
 /**
  * Labkeeper Blog Generator
  * Скрипт автоматической генерации статей блога для Labkeeper.
@@ -18,12 +17,14 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+const { buildExampleUrl, escapeHtml, prepareArticleHtml } = require('./article-tools');
+const { loadArticles, validateArticle } = require('./article-data');
+const { vendorMath } = require('./vendor-math');
 
 // Пути
 const ROOT_DIR = path.resolve(__dirname, '..', '..');
 const SRC_DIR = path.join(ROOT_DIR, 'src');
 const TEMPLATE_PATH = path.join(__dirname, 'template.html');
-const DATA_DIR = path.join(__dirname, 'articles-data');
 const BLOG_DIR = path.join(SRC_DIR, 'blog');
 const BLOG_HTML_PATH = path.join(SRC_DIR, 'blog.html');
 const INDEX_HTML_PATH = path.join(SRC_DIR, 'index.html');
@@ -147,7 +148,7 @@ function getLatestArticleBatchNumber() {
                     latestDate = articleDate;
                     latestBatch = batchNum;
                 }
-            } catch (e) {
+            } catch {
                 // ignore
             }
         }
@@ -157,7 +158,9 @@ function getLatestArticleBatchNumber() {
 
 // Генерация одного HTML-файла статьи
 function generateArticleHtml(article, template) {
-    const slug = article.slug.trim();
+    validateArticle(article);
+    const slug = article.slug;
+    const example = article.editorExample;
     const pageTitle = article.pageTitle || `${article.title} — Labkeeper`;
     const metaDescription = article.metaDescription || article.description;
     const breadcrumbTitle = article.breadcrumbTitle || article.shortTitle || article.title;
@@ -185,37 +188,48 @@ function generateArticleHtml(article, template) {
         : (article.keywords ? [article.keywords] : []);
     const keywordsStr = keywordsList.join(', ');
     const keywordsMeta = keywordsStr
-        ? `    <!-- SEO Ключи: ${keywordsStr} -->\n    <meta name="keywords" content="${keywordsStr}" />`
+        ? `    <!-- SEO Ключи: ${escapeHtml(keywordsStr)} -->\n    <meta name="keywords" content="${escapeHtml(keywordsStr)}" />`
         : '';
 
     const batchNum = article.batch && article.batch !== 'auto' ? article.batch : getLatestArticleBatchNumber();
     const batchComment = article.batchComment || `Пачка ${batchNum}`;
 
-    let html = template;
-    html = html.replace(/\{\{BATCH_COMMENT\}\}/g, batchComment);
-    html = html.replace(/\{\{PAGE_TITLE\}\}/g, pageTitle);
-    html = html.replace(/\{\{META_DESCRIPTION\}\}/g, metaDescription);
-    html = html.replace(/\{\{KEYWORDS_META\}\}/g, keywordsMeta);
-    html = html.replace(/\{\{SLUG\}\}/g, slug);
-    html = html.replace(/\{\{JSON_HEADLINE\}\}/g, JSON.stringify(article.title));
-    html = html.replace(/\{\{JSON_DESCRIPTION\}\}/g, JSON.stringify(metaDescription));
-    html = html.replace(/\{\{DATE_PUBLISHED\}\}/g, datePublished);
-    html = html.replace(/\{\{DATE_MODIFIED\}\}/g, dateModified);
-    html = html.replace(/\{\{JSON_ARTICLE_SECTION\}\}/g, articleSectionJson);
-    html = html.replace(/\{\{JSON_BREADCRUMB_TITLE\}\}/g, JSON.stringify(breadcrumbTitle));
-    html = html.replace(/\{\{BREADCRUMB_TITLE\}\}/g, breadcrumbTitle);
-    html = html.replace(/\{\{H1\}\}/g, h1);
-    html = html.replace(/\{\{TAGS_HTML\}\}/g, tagsHtml);
-    html = html.replace(/\{\{DATE_DISPLAY\}\}/g, dateDisplay);
-    html = html.replace(/\{\{READING_TIME\}\}/g, readingTime);
-    html = html.replace(/\{\{TOC_HTML\}\}/g, tocHtml);
-    html = html.replace(/\{\{SECTIONS_HTML\}\}/g, sectionsHtml);
-    html = html.replace(/\{\{TIPS_HTML\}\}/g, tipsHtml);
-    html = html.replace(/\{\{SIDEBAR_TEXT\}\}/g, sidebarText);
-    html = html.replace(/\{\{CTA_TITLE\}\}/g, ctaTitle);
-    html = html.replace(/\{\{CTA_TEXT\}\}/g, ctaText);
-
-    return html;
+    const values = {
+        BATCH_COMMENT: batchComment,
+        PAGE_TITLE: escapeHtml(pageTitle),
+        META_DESCRIPTION: escapeHtml(metaDescription),
+        OG_TITLE: escapeHtml(article.ogTitle || pageTitle),
+        OG_DESCRIPTION: escapeHtml(article.ogDescription || metaDescription),
+        TWITTER_TITLE: escapeHtml(article.twitterTitle || pageTitle),
+        TWITTER_DESCRIPTION: escapeHtml(article.twitterDescription || metaDescription),
+        KEYWORDS_META: keywordsMeta,
+        SLUG: slug,
+        JSON_HEADLINE: JSON.stringify(article.title).replace(/</g, '\\u003c'),
+        JSON_DESCRIPTION: JSON.stringify(article.schemaDescription || metaDescription).replace(/</g, '\\u003c'),
+        DATE_PUBLISHED: datePublished,
+        DATE_MODIFIED: dateModified,
+        JSON_ARTICLE_SECTION: articleSectionJson,
+        JSON_BREADCRUMB_TITLE: JSON.stringify(article.schemaBreadcrumbTitle || breadcrumbTitle).replace(/</g, '\\u003c'),
+        BREADCRUMB_TITLE: breadcrumbTitle,
+        H1: h1,
+        TAGS_HTML: tagsHtml,
+        DATE_DISPLAY: dateDisplay,
+        READING_TIME: readingTime,
+        TOC_HTML: tocHtml,
+        SECTIONS_HTML: sectionsHtml,
+        TIPS_HTML: tipsHtml,
+        SIDEBAR_TEXT: sidebarText,
+        SIDEBAR_IMAGE_ALT: escapeHtml(article.sidebarImageAlt || 'Интерфейс онлайн-редактора LaTeX Labkeeper'),
+        CTA_TITLE: ctaTitle,
+        CTA_TEXT: ctaText,
+        EDITOR_EXAMPLE_URL: escapeHtml(buildExampleUrl(example, slug))
+    };
+    // A callback preserves $$, $&, backslashes and placeholder-like article text.
+    const html = template.replace(/\{\{([A-Z][A-Z0-9_]*)\}\}/g, (match, key) => {
+        if (!Object.hasOwn(values, key)) throw new Error(`Unknown template placeholder: ${key}`);
+        return values[key];
+    });
+    return prepareArticleHtml(html, example, slug);
 }
 
 // Безопасное экранирование непарных тегов в текстах карточек и заголовках
@@ -398,75 +412,61 @@ function main() {
     const template = loadTemplate();
 
     // Проверяем аргументы командной строки
-    const cliArg = process.argv[2];
-    let articleFiles = [];
-
-    if (cliArg) {
-        const customPath = path.resolve(process.cwd(), cliArg);
-        if (fs.existsSync(customPath)) {
-            articleFiles = [customPath];
-        } else {
-            console.error(`[ERROR] Файл не найден: ${customPath}`);
-            process.exit(1);
-        }
-    } else {
-        if (!fs.existsSync(DATA_DIR)) {
-            fs.mkdirSync(DATA_DIR, { recursive: true });
-        }
-        articleFiles = fs.readdirSync(DATA_DIR)
-            .filter(f => f.endsWith('.json'))
-            .map(f => path.join(DATA_DIR, f));
+    const args = process.argv.slice(2);
+    const check = args.includes('--check');
+    const cliArg = args.find(arg => arg !== '--check');
+    if (args.filter(arg => arg !== '--check').length > 1 || cliArg?.startsWith('--')) {
+        throw new Error('Usage: node scripts/blog-generator/generate.js [articles.json] [--check]');
     }
-
-    if (articleFiles.length === 0) {
-        console.log(`[INFO] Нет файлов для обработки в ${DATA_DIR}`);
-        console.log('Поместите JSON-файлы со статьями в scripts/blog-generator/articles-data/');
+    // Validate every page before writing any output. A broken example must not
+    // leave half of the site regenerated or report a successful build.
+    const sourceArticles = loadArticles(cliArg ? [path.resolve(process.cwd(), cliArg)] : undefined);
+    const pages = new Map();
+    for (const article of sourceArticles) {
+        pages.set(article.slug, generateArticleHtml(article, template));
+    }
+    if (!cliArg && fs.existsSync(BLOG_DIR)) {
+        for (const file of fs.readdirSync(BLOG_DIR).filter(file => file.endsWith('.html'))) {
+            const slug = file.slice(0, -5);
+            if (!pages.has(slug)) throw new Error(`Article without a JSON source: ${slug}`);
+        }
+    }
+    if (check) {
+        const stale = [...pages].filter(([slug, html]) => {
+            const file = path.join(BLOG_DIR, `${slug}.html`);
+            return !fs.existsSync(file) || fs.readFileSync(file, 'utf8') !== html;
+        }).map(([slug]) => slug);
+        if (stale.length) throw new Error(`Run npm run blog:generate. Outdated articles: ${stale.join(', ')}`);
+        console.log(`Checked ${pages.size} articles and editor examples.`);
         return;
     }
 
-    let createdCount = 0;
+    vendorMath();
+    fs.mkdirSync(BLOG_DIR, { recursive: true });
+    for (const [slug, html] of pages) {
+        const outPath = path.join(BLOG_DIR, `${slug}.html`);
+        if (!fs.existsSync(outPath) || fs.readFileSync(outPath, 'utf8') !== html) {
+            fs.writeFileSync(outPath, html, 'utf8');
+        }
+    }
+
+    const createdCount = pages.size;
     let updatedCards = 0;
     let updatedIndexCards = 0;
     let updatedSliders = 0;
 
-    articleFiles.forEach(filePath => {
-        try {
-            const raw = fs.readFileSync(filePath, 'utf8');
-            const data = JSON.parse(raw);
-            const articles = Array.isArray(data) ? data : [data];
-
-            articles.forEach(article => {
-                if (!article.slug) {
-                    console.warn(`[SKIP] Пропущена статья без slug в ${filePath}`);
-                    return;
-                }
-
-                const outPath = path.join(BLOG_DIR, `${article.slug}.html`);
-                const html = generateArticleHtml(article, template);
-                fs.writeFileSync(outPath, html, 'utf8');
-                console.log(`✅ [HTML] Сгенерирована: src/blog/${article.slug}.html`);
-                createdCount++;
-
-                const cardAdded = addCardToBlogHtml(article);
-                if (cardAdded) {
-                    console.log(`   └─ Карточка добавлена в каталог (src/blog.html)`);
-                    updatedCards++;
-                }
-
-                const indexCardAdded = addCardToIndexHtml(article);
-                if (indexCardAdded) {
-                    console.log(`   └─ Карточка добавлена в блок знаний на главной (src/index.html)`);
-                    updatedIndexCards++;
-                }
-
-                const sliderAdded = addToSliderJs(article);
-                if (sliderAdded) {
-                    console.log(`   └─ Добавлена в реестр slider.js`);
-                    updatedSliders++;
-                }
-            });
-        } catch (err) {
-            console.error(`[ERROR] Ошибка обработки ${filePath}:`, err.message);
+    sourceArticles.forEach(article => {
+        if (addCardToBlogHtml(article)) {
+            console.log('   └─ Карточка добавлена в каталог (src/blog.html)');
+            updatedCards++;
+        }
+        if (addCardToIndexHtml(article)) {
+            console.log('   └─ Карточка добавлена в блок знаний на главной (src/index.html)');
+            updatedIndexCards++;
+        }
+        if (addToSliderJs(article)) {
+            console.log('   └─ Добавлена в реестр slider.js');
+            updatedSliders++;
         }
     });
 
@@ -484,4 +484,12 @@ function main() {
     console.log('\n🎉 Генерация успешно завершена!');
 }
 
-main();
+if (require.main === module) {
+    try {
+        main();
+    } catch (error) {
+        console.error(`[ERROR] ${error.message}`);
+        process.exitCode = 1;
+    }
+}
+module.exports = { generateArticleHtml, loadTemplate };

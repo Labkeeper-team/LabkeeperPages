@@ -91,7 +91,10 @@
         "title": "Логарифмические шкалы",
         "html": "<p>Для амплитудно-частотных характеристик и графиков в логарифмическом масштабе замените окружение <code>axis</code> на <code>semilogyaxis</code> (лог по Y) или <code>loglogaxis</code> (лог по обеим осям).</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage{pgfplots}\\pgfplotsset{compat=1.18}\n\\begin{document}\n\\begin{tikzpicture}\\begin{axis}[width=9cm,xlabel=$x$,ylabel=$y$,grid=major]\n\\addplot[blue,domain=-2:2,samples=40]{x^2};\n\\end{axis}\\end{tikzpicture}\n\\end{document}"
+    }
   },
   {
     "slug": "latex-xcolor-text-background",
@@ -185,7 +188,10 @@
         "title": "Прозрачность и смешивание",
         "html": "<p>Синтаксис <code>blue!40!red</code> создает плавное смешивание 40% синего и 60% красного цвета без необходимости высчитывать RGB вручную.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage[table]{xcolor}\n\\begin{document}\n\\textcolor{blue}{Blue text}\\par\\colorbox{yellow!30}{Highlighted text}\n\\begin{tabular}{cc}\\rowcolor{blue!15}Item & Value\\\\A & 10\\\\B & 20\\end{tabular}\n\\end{document}"
+    }
   },
   {
     "slug": "latex-wrapfig-text-flow",
@@ -270,7 +276,10 @@
         "title": "Обтекание таблиц",
         "html": "<p>Пакет также предоставляет парное окружение <code>wraptable</code>, позволяющее точно так же оборачивать текстом небольшие компактные таблицы.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage{wrapfig}\n\\begin{document}\n\\begin{wrapfigure}{r}{.3\\textwidth}\\centering\n\\fbox{\\rule{0pt}{18mm}\\rule{25mm}{0pt}}\\caption{Diagram}\\end{wrapfigure}\nText flows around the illustration. A narrow figure can sit next to a paragraph without occupying the entire line. Continue editing this paragraph to see how the available line width changes below the image.\n\\end{document}"
+    }
   },
   {
     "slug": "latex-draftwatermark",
@@ -355,7 +364,10 @@
         "title": "Исключение конфликтов с hyperref",
         "html": "<p>Подключайте <code>draftwatermark</code> после пакета <code>xcolor</code>, но до <code>hyperref</code>, чтобы гарантировать корректный Z-индекс слоев в PDF.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage{draftwatermark}\\SetWatermarkText{DRAFT}\\SetWatermarkScale{.8}\n\\begin{document}\n\\section{Draft report}This page carries a background watermark.\n\\end{document}"
+    }
   },
   {
     "slug": "latex-forest-trees",
@@ -440,7 +452,10 @@
         "title": "Перенос строк внутри узла",
         "html": "<p>Для многострочного текста внутри плашки добавьте параметр <code>align=center</code>: <code>[Длинный текст\\\\вторая строка, align=center, draw]</code>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage{forest}\n\\begin{document}\n\\begin{forest}for tree={draw,rounded corners}\n[Document [Introduction] [Methods [Model] [Experiment]] [Results]]\n\\end{forest}\n\\end{document}"
+    }
   },
   {
     "slug": "latex-sans-serif-fonts",
@@ -525,7 +540,10 @@
         "title": "Подбор межстрочного интервала",
         "html": "<p>Шрифты без засечек визуально кажутся крупнее обычных. Рекомендуется слегка увеличить базовый интервал через <code>\\usepackage{setspace}\\setstretch{1.15}</code> для улучшения читаемости.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\renewcommand{\\familydefault}{\\sfdefault}\n\\begin{document}\n\\section{Sans serif document}\nBody text uses the same sans serif family as the headings.\n\\textbf{Bold} and \\textit{italic} remain available.\n\\end{document}"
+    }
   },
   {
     "slug": "latex-longtable-multipage",
@@ -610,7 +628,10 @@
         "title": "Принудительный разрыв страницы",
         "html": "<p>Если нужно разорвать longtable в строго определенном месте до заполнения листа, вставьте команду <code>\\pagebreak</code> прямо между строк данных.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage{longtable}\\usepackage[textheight=55mm]{geometry}\n\\begin{document}\n\\begin{longtable}{cc}Index & Result\\\\\\hline\\endfirsthead\nIndex & Result (continued)\\\\\\hline\\endhead\n1 & 10\\\\2 & 20\\\\3 & 30\\\\4 & 40\\\\5 & 50\\\\6 & 60\\\\7 & 70\\\\8 & 80\\\\9 & 90\\\\10 & 100\\\\11 & 110\\\\12 & 120\\\\\n\\end{longtable}\n\\end{document}"
+    }
   },
   {
     "slug": "latex-prevent-hyphenation-linebreaks",
@@ -695,7 +716,10 @@
         "title": "Перенос слов с уже имеющимся дефисом",
         "html": "<p>В русских составных словах (интернет-магазин) используйте специальный макрос пакета babel <code>интернет\"=магазин</code>, чтобы разрешить перенос как в месте дефиса, так и в словах вокруг него.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\n\\begin{document}\n\\begin{minipage}{5cm}\nKeep a name together: \\mbox{Anna Petrova}.\\par\nKeep a number with its unit: 25~mm.\\par\nPrevent a product name from breaking: \\mbox{LabkeeperEditor}.\n\\end{minipage}\n\\end{document}"
+    }
   },
   {
     "slug": "latex-tikz-automata-graphs",
@@ -780,7 +804,10 @@
         "title": "Толщина линий переходов",
         "html": "<p>Для полиграфической четкости используйте глобальный модификатор стрелок <code>-Latex[length=3mm, width=2mm]</code>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage{tikz}\\usetikzlibrary{automata,positioning}\n\\begin{document}\n\\begin{tikzpicture}[node distance=3cm,>=stealth]\n\\node[state,initial] (a) {$q_0$};\\node[state,accepting,right of=a] (b) {$q_1$};\n\\path[->] (a) edge[bend left] node[above]{1} (b) (b) edge[bend left] node[below]{0} (a);\n\\end{tikzpicture}\n\\end{document}"
+    }
   },
   {
     "slug": "programming-lab-report-code-listings-gost",
@@ -865,7 +892,10 @@
         "title": "Слово «Листинг» в заголовке",
         "html": "<p>Чтобы заменить английское слово «Listing» на русское по ГОСТ, добавьте строчку: <code>\\renewcommand{\\lstlistingname}{Листинг}</code>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage{listings}\\lstset{basicstyle=\\ttfamily\\small,numbers=left,frame=single,breaklines=true}\n\\begin{document}\n\\section{Implementation}\n\\begin{lstlisting}[language=Python,caption={Mean value}]\nvalues = [2, 4, 6]\nprint(sum(values) / len(values))\n\\end{lstlisting}\n\\end{document}"
+    }
   },
   {
     "slug": "algorithm-flowcharts-gost-markdown-latex",
@@ -950,7 +980,10 @@
         "title": "Подрисуночная подпись по ГОСТ",
         "html": "<p>Обязательно оборачивайте схему в окружение <code>figure</code> с подписью: <code>\\caption{Схема алгоритма вычисления корней уравнения}</code>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage{tikz}\\usetikzlibrary{positioning}\n\\begin{document}\n\\begin{tikzpicture}[node distance=12mm]\n\\node[draw,rounded corners] (start) {Start};\n\\node[draw,below=of start] (calc) {$s=a+b$};\n\\node[draw,rounded corners,below=of calc] (end) {End};\n\\draw[->] (start)--(calc);\\draw[->] (calc)--(end);\n\\end{tikzpicture}\n\\end{document}"
+    }
   },
   {
     "slug": "formula-numbering-lab-reports-gost",
@@ -1035,7 +1068,10 @@
         "title": "Нумерация групп формул (subequations)",
         "html": "<p>Для системы связанных уравнений используйте окружение <code>\\begin{subequations}</code>, которое присвоит уравнениям индексы (1a), (1b), (1c).</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\n\\begin{document}\n\\begin{equation}\\label{eq:ohm}U=IR\\end{equation}\n\\begin{equation}P=UI=I^2R\\end{equation}\nResistance follows from equation~\\eqref{eq:ohm}.\n\\end{document}"
+    }
   },
   {
     "slug": "student-confidence-intervals-error-calculation",
@@ -1108,7 +1144,7 @@
       {
         "id": "latex-example",
         "title": "Готовый код оформления расчета погрешностей в LaTeX",
-        "html": "                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>Итоговый результат измерения сопротивления резистора:\n\\begin{equation}\n    R = (124{,}3 \\pm 1{,}4)\\,\\text{Ом} \\quad (P = 0{,}95,\\; n = 5).\n\\end{equation}\nОтносительная погрешность эксперимента составила:\n\\begin{equation}\n    \\varepsilon = \\frac{\\Delta R}{\\bar{R}} \\cdot 100\\% = \\frac{1{,}4}{124{,}3} \\cdot 100\\% \\approx 1{,}13\\%.\n\\end{equation}</code></pre>\n                        </div>\n                        <p>Для профессиональной типографики физических единиц и автоматического форматирования погрешностей также применяют <a href=\"/blog/latex-siunitx\">пакет siunitx для LaTeX</a>.</p>"
+        "html": "                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>Итоговый результат измерения сопротивления резистора:\n\\begin{equation}\n    R = (124{,}3 \\pm 1{,}4)\\,\\text{Ом} \\quad (P = 0{,}95,\\; n = 5).\n\\end{equation}\nОтносительная погрешность эксперимента составила:\n\\begin{equation}\n    \\varepsilon = \\frac{\\Delta R}{\\bar{R}} \\cdot 100\\% = \\frac{1{,}4}{124{,}3} \\cdot 100\\% \\approx 1{,}13\\%.\n\\end{equation}</code></pre>\n                        </div>\n                        <p>Для профессиональной типографики физических единиц и автоматического форматирования погрешностей также применяют <a href=\"/blog/latex-siunitx\">пакет siunitx для LaTeX</a>.</p>\n                        <p>Кнопка «Просмотреть пример» открывает вычислительный сегмент с пятью измерениями и LaTeX-документ с подстановкой результатов. Редактор считает среднее, выборочное СКО и границы интервала. Коэффициент Стьюдента 2,776 выбран для двустороннего интервала 95% и пяти измерений; при другом размере выборки замените коэффициент и число n. Синтаксис подстановок описан в <a href=\"/wiki/concepts/segments.html\">вики</a>.</p>"
       }
     ],
     "tips": [
@@ -1120,7 +1156,11 @@
         "title": "Пакет siunitx для погрешностей",
         "html": "<p>Пакет <code>siunitx</code> позволяет записывать погрешность одной чистой командой: <code>\\num{124.3(14)}</code> или <code>\\qty{124.3 +- 1.4}{\\ohm}</code>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "compute": "x = [9.8, 9.8, 10.2, 10.6, 10.6]\nn = 5\nmean = sum(x) / n\ns = sqrt(sum((x - mean)^2) / (n - 1))\n// Two-sided 95% interval, n = 5\nt = 2.776\ndelta = t * s / sqrt(n)\nlo = mean - delta\nhi = mean + delta",
+      "latex": "\\section*{Confidence interval}\n$n=5$, $P=0.95$, $t_{0.975,4}=2.776$.\n\\[\\Delta x=t\\frac{s}{\\sqrt n}\\]\nMean: ${mean}. Standard deviation: ${s}.\n\\par Confidence half-width: ${delta}.\n\\par Interval: [${lo}; ${hi}]."
+    }
   },
   {
     "slug": "lab-report-bibliography-gost-7-1",
@@ -1205,7 +1245,10 @@
         "title": "Ссылка в тексте отчета",
         "html": "<p>В тексте отсылка оформляется квадратными скобками: <code>«Согласно методическим указаниям~\\cite{metodichka}, схема собирается...»</code>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\n\\begin{document}\n\\section*{Список литературы}\n\\begin{enumerate}\\item Иванов И. И. Физика: учебник. Москва, 2024. 200 с.\n\\item Петров П. П. Практикум. Казань, 2023. 80 с.\\end{enumerate}\n\\end{document}"
+    }
   },
   {
     "slug": "diploma-page-numbering-second-page",
@@ -1290,7 +1333,10 @@
         "title": "Сброс стиля первой страницы главы",
         "html": "<p>В классе <code>report</code> первая страница каждой новой главы по умолчанию переключается в стиль <code>plain</code>. Чтобы переопределить ее, используйте <code>\\fancypagestyle{plain}{\\fancyhf{}\\fancyfoot[C]{\\thepage}}</code>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\n\\begin{document}\n\\thispagestyle{empty}\\begin{center}\\Large Title page\\end{center}\n\\newpage\\section{Introduction}The title counts as page 1 but has no printed number.\n\\newpage\\section{Methods}Numbering continues.\n\\end{document}"
+    }
   },
   {
     "slug": "paragraph-indent-1-25-gost",
@@ -1375,7 +1421,10 @@
         "title": "Отступ в списках по ГОСТ",
         "html": "<p>Для выравнивания списков <code>enumerate</code> и <code>itemize</code> вровень с абзацным отступом 1.25 см используйте пакет <code>enumitem</code>: <code>\\setlist{leftmargin=1.25cm}</code>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage{indentfirst}\\setlength{\\parindent}{1.25cm}\n\\begin{document}\n\\section*{Абзацный отступ}\nПервый абзац начинается с отступа.\n\nВторой абзац имеет тот же отступ 1,25 см.\n\\end{document}"
+    }
   },
   {
     "slug": "a4-frames-eskd-stamp-technical-diploma",
@@ -1428,7 +1477,7 @@
       {
         "id": "eskd-standard",
         "title": "Стандарт ГОСТ 2.104-2006: геометрия листа А4 и поля",
-        "html": "                        <p>В инженерных, строительных, энергетических и машиностроительных институтах пояснительная записка ВКР оформляется не по текстовому ГОСТ 7.32, а по правилам Единой системы конструкторской документации (<strong>ЕСКД ГОСТ 2.104-2006</strong>, подробнее о стандартах читайте в обзоре <a href=\"/blog/latex-eskd\">пакета ЕСКД в LaTeX</a>):</p>\n                        <ul>\n                            <li><strong>Поля чертежной рамки:</strong> левое поле — 20 мм (для подшивки в твердый переплет), верхнее, правое и нижнее — ровно по 5 мм.</li>\n                            <li><strong>Первый лист содержания / введения:</strong> оформляется «большим штампом» высотой 40 мм (Форма 2) со всеми согласующими подписями.</li>\n                            <li><strong>Все последующие листы записки:</strong> оформляются «малым штампом» высотой 15 мм (Форма 2а) с указанием шифра документа и текущего номера листа.</li>\n                        </ul>"
+        "html": "                        <p><strong>Пример в редакторе:</strong> показан альтернативный способ через TikZ: рамка с полями 20-5-5-5 мм и упрощенная основная надпись. Это учебный пример геометрии листа, не готовый нормативный бланк ЕСКД.</p>\n                        <p>В инженерных, строительных, энергетических и машиностроительных институтах пояснительная записка ВКР оформляется не по текстовому ГОСТ 7.32, а по правилам Единой системы конструкторской документации (<strong>ЕСКД ГОСТ 2.104-2006</strong>, подробнее о стандартах читайте в обзоре <a href=\"/blog/latex-eskd\">пакета ЕСКД в LaTeX</a>):</p>\n                        <ul>\n                            <li><strong>Поля чертежной рамки:</strong> левое поле — 20 мм (для подшивки в твердый переплет), верхнее, правое и нижнее — ровно по 5 мм.</li>\n                            <li><strong>Первый лист содержания / введения:</strong> оформляется «большим штампом» высотой 40 мм (Форма 2) со всеми согласующими подписями.</li>\n                            <li><strong>Все последующие листы записки:</strong> оформляются «малым штампом» высотой 15 мм (Форма 2а) с указанием шифра документа и текущего номера листа.</li>\n                        </ul>"
       },
       {
         "id": "eskdx-class",
@@ -1460,7 +1509,10 @@
         "title": "Толщина основных и тонких линий",
         "html": "<p>В пакете eskdx соблюдены толщины линий ГОСТ: внешняя рамка и границы граф штампа имеют толщину 0.7 мм, а внутренние разделительные строки — 0.35 мм.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage[left=23mm,right=8mm,top=15mm,bottom=55mm]{geometry}\n\\usepackage{tikz}\n\\AddToHook{shipout/background}{\\begin{tikzpicture}[remember picture,overlay,x=1mm,y=1mm]\n\\begin{scope}[shift={(current page.south west)}]\n\\draw (20,5) rectangle (205,292) (20,45)--(205,45) (20,20)--(205,20) (185,5)--(185,45);\n\\node at (100,32){Measurement device: LK.001};\n\\node at (100,12){Author: Ivanov};\\node at (195,12){\\thepage};\n\\end{scope}\\end{tikzpicture}}\n\\begin{document}\n\\section{Technical description}Power supply: 12 V.\n\\section{Purpose}Laboratory measurement device.\n\\end{document}"
+    }
   },
   {
     "slug": "it-english-cv-resume-template",
@@ -1545,7 +1597,10 @@
         "title": "Экспорт без метаданных",
         "html": "<p>При экспорте убедитесь, что имя файла лаконично: <code>Name_Surname_Backend_CV.pdf</code>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "markdown": "# Anna Petrova\nBackend Engineer | anna@example.com\n\n## Summary\nPython developer building reliable APIs.\n\n## Experience\n- Cut API latency by 30%.\n- Added integration tests for billing.\n\n## Skills\nPython, PostgreSQL, Docker.\n\n## Education\nBSc Computer Science, 2022."
+    }
   },
   {
     "slug": "scientific-article-annotation-abstract-keywords-vak",
@@ -1630,7 +1685,10 @@
         "title": "Окружение abstract в LaTeX",
         "html": "<p>В LaTeX аннотация оформляется стандартным окружением: <code>\\begin{abstract} ... \\end{abstract}</code>, которое автоматически форматирует нужные отступы и кегль шрифта.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\n\\begin{document}\n\\title{Measurement accuracy}\\author{Anna Petrova}\\maketitle\n\\begin{abstract}We compare two sensors using repeated measurements. Calibration reduced the mean error from 4\\% to 1\\%. The method is suitable for laboratory work.\\end{abstract}\n\\noindent\\textbf{Keywords:} measurement, calibration, uncertainty.\n\\end{document}"
+    }
   },
   {
     "slug": "electronic-resources-bibliography-gost-7-0-100",
@@ -1715,7 +1773,10 @@
         "title": "Экранирование подчеркиваний в TeX",
         "html": "<p>При ручной верстке списка через <code>thebibliography</code> экранируйте знаки подчеркивания в URL: <code>https://example.com/api\\_v1</code> или оборачивайте адрес в команду <code>\\url{...}</code>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage{url}\n\\begin{document}\n\\begin{thebibliography}{9}\n\\bibitem{site}Labkeeper: онлайн-редактор. URL: \\url{https://labkeeper.io}\n(дата обращения: 08.10.2026).\n\\end{thebibliography}\n\\end{document}"
+    }
   },
   {
     "slug": "markdown-mathjax-katex-latex-math",
@@ -1800,7 +1861,10 @@
         "title": "Пробелы в формулах",
         "html": "<p>В математическом режиме пробелы клавиатуры игнорируются. Для создания отступов используйте тонкий пробел <code>\\,</code>, средний <code>\\;</code> или широкий <code>\\quad</code>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "markdown": "## Формулы\n\nВ строке: $E=mc^2$.\n\n$$\n\\int_0^1 x^2\\,dx=\\frac13\n$$\n\n$$\nx=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\n$$"
+    }
   },
   {
     "slug": "github-readme-template-badges-spoilers",
@@ -1885,7 +1949,10 @@
         "title": "Раздел лицензии",
         "html": "<p>Всегда добавляйте ссылку на файл LICENSE (MIT, Apache 2.0, GPL-3.0) в самом низу README: <code>## 📄 Лицензия\\nДанный проект распространяется под лицензией MIT. Подробнее см. [LICENSE](LICENSE).</code></p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "markdown": "# Measurement toolkit\n\nA small project for repeatable calculations.\n\n## Usage\n\n    npm install\n    npm test\n\n## Features\n- CSV input\n- Reproducible reports\n\n<details>\n<summary>Development notes</summary>\n\nRun the tests before submitting a change.\n\n</details>"
+    }
   },
   {
     "slug": "automatic-table-of-contents-diploma-gost",
@@ -1970,7 +2037,10 @@
         "title": "Запрет переноса заголовка на новую страницу",
         "html": "<p>Пакет <code>tocloft</code> гарантирует, что номера страниц никогда не оторвутся от отточия.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\n\\begin{document}\n\\tableofcontents\\newpage\n\\section{Introduction}Research goal.\n\\section{Methods}\\subsection{Equipment}Measurement setup.\n\\section{Results}Summary of observations.\n\\end{document}"
+    }
   },
   {
     "slug": "diploma-appendices-listings-diagrams-gost",
@@ -2055,7 +2125,10 @@
         "title": "Ссылки в основном тексте",
         "html": "<p>Каждое приложение обязательно должно упоминаться в основном тексте диплома: <em>«Полный текст разработанного модуля приведен в приложении~А»</em>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\n\\begin{document}\n\\section{Main text}The source code is in Appendix~\\ref{app:code}.\n\\appendix\\section{Program listing}\\label{app:code}\n\\begin{verbatim}\ndef square(x):\n    return x * x\n\\end{verbatim}\n\\end{document}"
+    }
   },
   {
     "slug": "essay-report-titlepage-format",
@@ -2140,6 +2213,9 @@
         "title": "Место для оценки и подписи",
         "html": "<p>В блоке преподавателя можно добавить графу для росписи: <code>Оценка: \\underline{\\hspace{2cm}} Подпись: \\underline{\\hspace{2.5cm}}</code>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\n\\begin{document}\n\\begin{titlepage}\\centering\nУниверситет\\par\\vfill\n{\\Large Реферат\\par}История измерений\\par\\vfill\nВыполнил: Иван Иванов\\par\\vfill 2026\n\\end{titlepage}\n\\end{document}"
+    }
   }
 ]

@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -296,6 +297,7 @@
 \end{equation}</code></pre>
                         </div>
                         <p>Для профессиональной типографики физических единиц и автоматического форматирования погрешностей также применяют <a href="/blog/latex-siunitx">пакет siunitx для LaTeX</a>.</p>
+                        <p>Кнопка «Просмотреть пример» открывает вычислительный сегмент с пятью измерениями и LaTeX-документ с подстановкой результатов. Редактор считает среднее, выборочное СКО и границы интервала. Коэффициент Стьюдента 2,776 выбран для двустороннего интервала 95% и пяти измерений; при другом размере выборки замените коэффициент и число n. Синтаксис подстановок описан в <a href="/wiki/concepts/segments.html">вики</a>.</p>
                     </section>
 
                     <section class="article-section" id="tips">
@@ -329,14 +331,12 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Оформляйте строгие математические расчеты лабораторных работ в онлайн-редакторе Labkeeper.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?open=latex&amp;compute=x+%3D+%5B9.8%2C+9.8%2C+10.2%2C+10.6%2C+10.6%5D%0An+%3D+5%0Amean+%3D+sum%28x%29+%2F+n%0As+%3D+sqrt%28sum%28%28x+-+mean%29%5E2%29+%2F+%28n+-+1%29%29%0A%2F%2F+Two-sided+95%25+interval%2C+n+%3D+5%0At+%3D+2.776%0Adelta+%3D+t+*+s+%2F+sqrt%28n%29%0Alo+%3D+mean+-+delta%0Ahi+%3D+mean+%2B+delta&amp;latex=%5Csection*%7BConfidence+interval%7D%0A%24n%3D5%24%2C+%24P%3D0.95%24%2C+%24t_%7B0.975%2C4%7D%3D2.776%24.%0A%5C%5B%5CDelta+x%3Dt%5Cfrac%7Bs%7D%7B%5Csqrt+n%7D%5C%5D%0AMean%3A+%24%7Bmean%7D.+Standard+deviation%3A+%24%7Bs%7D.%0A%5Cpar+Confidence+half-width%3A+%24%7Bdelta%7D.%0A%5Cpar+Interval%3A+%5B%24%7Blo%7D%3B+%24%7Bhi%7D%5D." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span class="article-example__label">
+                            <span data-i18n="blog-example">Просмотреть пример</span>
+                            <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                        </span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -385,8 +385,12 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?open=latex&amp;compute=x+%3D+%5B9.8%2C+9.8%2C+10.2%2C+10.6%2C+10.6%5D%0An+%3D+5%0Amean+%3D+sum%28x%29+%2F+n%0As+%3D+sqrt%28sum%28%28x+-+mean%29%5E2%29+%2F+%28n+-+1%29%29%0A%2F%2F+Two-sided+95%25+interval%2C+n+%3D+5%0At+%3D+2.776%0Adelta+%3D+t+*+s+%2F+sqrt%28n%29%0Alo+%3D+mean+-+delta%0Ahi+%3D+mean+%2B+delta&amp;latex=%5Csection*%7BConfidence+interval%7D%0A%24n%3D5%24%2C+%24P%3D0.95%24%2C+%24t_%7B0.975%2C4%7D%3D2.776%24.%0A%5C%5B%5CDelta+x%3Dt%5Cfrac%7Bs%7D%7B%5Csqrt+n%7D%5C%5D%0AMean%3A+%24%7Bmean%7D.+Standard+deviation%3A+%24%7Bs%7D.%0A%5Cpar+Confidence+half-width%3A+%24%7Bdelta%7D.%0A%5Cpar+Interval%3A+%5B%24%7Blo%7D%3B+%24%7Bhi%7D%5D." class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span class="article-example__label">
+                        <span data-i18n="blog-example">Просмотреть пример</span>
+                        <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                    </span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -495,6 +499,9 @@
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

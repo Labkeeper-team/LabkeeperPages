@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -314,8 +315,8 @@ def calculate_sum(a, b):
     fontsize=\small
 ]{python}
 # Функция расчета факториала на русском языке
-def factorial(n: int) -> int:
-    if n <= 1:
+def factorial(n: int) -&gt; int:
+    if n &lt;= 1:
         return 1
     return n * factorial(n - 1)
 
@@ -384,14 +385,12 @@ print("Результат вычисления:", factorial(5))
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">В Labkeeper листинги кода компилируются с поддержкой UTF-8 и подсветкой синтаксиса без ручной установки Python Pygments.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Blistings%7D%5Clstset%7Bbasicstyle%3D%5Cttfamily%2Cextendedchars%3Dtrue%2Cliterate%3D%7B%D0%9F%7D%7B%7B%5CCYRP%7D%7D1+%7B%D1%80%7D%7B%7B%5Ccyrr%7D%7D1+%7B%D0%B8%7D%7B%7B%5Ccyri%7D%7D1+%7B%D0%B2%7D%7B%7B%5Ccyrv%7D%7D1+%7B%D0%B5%7D%7B%7B%5Ccyre%7D%7D1+%7B%D1%82%7D%7B%7B%5Ccyrt%7D%7D1%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Blstlisting%7D%5Blanguage%3DPython%5D%0Aprint%28%22%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%22%29%0A%5Cend%7Blstlisting%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span class="article-example__label">
+                            <span data-i18n="blog-example">Просмотреть пример</span>
+                            <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                        </span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -440,8 +439,12 @@ print("Результат вычисления:", factorial(5))
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Blistings%7D%5Clstset%7Bbasicstyle%3D%5Cttfamily%2Cextendedchars%3Dtrue%2Cliterate%3D%7B%D0%9F%7D%7B%7B%5CCYRP%7D%7D1+%7B%D1%80%7D%7B%7B%5Ccyrr%7D%7D1+%7B%D0%B8%7D%7B%7B%5Ccyri%7D%7D1+%7B%D0%B2%7D%7B%7B%5Ccyrv%7D%7D1+%7B%D0%B5%7D%7B%7B%5Ccyre%7D%7D1+%7B%D1%82%7D%7B%7B%5Ccyrt%7D%7D1%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Blstlisting%7D%5Blanguage%3DPython%5D%0Aprint%28%22%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%22%29%0A%5Cend%7Blstlisting%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span class="article-example__label">
+                        <span data-i18n="blog-example">Просмотреть пример</span>
+                        <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                    </span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -550,6 +553,9 @@ print("Результат вычисления:", factorial(5))
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

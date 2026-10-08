@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -272,11 +273,11 @@
 \begin{minipage}[c]{0.52\textwidth}
     \begin{tabular}{|l|c|r|}
         \hline
-        \textbf{Параметр} & \textbf{Символ} & \textbf{Значение} \\
+        \textbf{Параметр} &amp; \textbf{Символ} &amp; \textbf{Значение} \\
         \hline
-        Коэффициент трения & $\mu$ & 0.15 \\
-        Масса образца & $m$ & 2.45 кг \\
-        Ускорение & $a$ & 9.81 м/с$^2$ \\
+        Коэффициент трения &amp; $\mu$ &amp; 0.15 \\
+        Масса образца &amp; $m$ &amp; 2.45 кг \\
+        Ускорение &amp; $a$ &amp; 9.81 м/с$^2$ \\
         \hline
     \end{tabular}
 \end{minipage}
@@ -334,14 +335,12 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Верстайте сложные многоколоночные блоки и графики прямо в онлайн-редакторе Labkeeper.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Cnoindent%0A%5Cbegin%7Bminipage%7D%7B.46%5Ctextwidth%7D%5Ccentering%0A%5Cfbox%7B%5Crule%7B0pt%7D%7B25mm%7D%5Crule%7B35mm%7D%7B0pt%7D%7D%5C%5CDiagram%0A%5Cend%7Bminipage%7D%5Chfill%0A%5Cbegin%7Bminipage%7D%7B.46%5Ctextwidth%7D%5Ccentering%0A%5Cbegin%7Btabular%7D%7Bcc%7DTime+%26+Value%5C%5C1+%26+2%5C%5C2+%26+4%5Cend%7Btabular%7D%5C%5CMeasurements%0A%5Cend%7Bminipage%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span class="article-example__label">
+                            <span data-i18n="blog-example">Просмотреть пример</span>
+                            <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                        </span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -390,8 +389,12 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Cnoindent%0A%5Cbegin%7Bminipage%7D%7B.46%5Ctextwidth%7D%5Ccentering%0A%5Cfbox%7B%5Crule%7B0pt%7D%7B25mm%7D%5Crule%7B35mm%7D%7B0pt%7D%7D%5C%5CDiagram%0A%5Cend%7Bminipage%7D%5Chfill%0A%5Cbegin%7Bminipage%7D%7B.46%5Ctextwidth%7D%5Ccentering%0A%5Cbegin%7Btabular%7D%7Bcc%7DTime+%26+Value%5C%5C1+%26+2%5C%5C2+%26+4%5Cend%7Btabular%7D%5C%5CMeasurements%0A%5Cend%7Bminipage%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span class="article-example__label">
+                        <span data-i18n="blog-example">Просмотреть пример</span>
+                        <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                    </span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -500,6 +503,9 @@
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

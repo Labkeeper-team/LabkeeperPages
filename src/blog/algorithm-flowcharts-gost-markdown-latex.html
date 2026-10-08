@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -260,7 +261,7 @@
 \begin{tikzpicture}[node distance=1.8cm]
     \node (start) [startstop] {Начало};
     \node (in)    [io, below=of start] {Ввод $A, B$};
-    \node (dec)   [decision, below=of in] {$A > B$?};
+    \node (dec)   [decision, below=of in] {$A &gt; B$?};
     \node (p1)    [process, below left=1.5cm and 0.5cm of dec] {$Max = A$};
     \node (p2)    [process, below right=1.5cm and 0.5cm of dec] {$Max = B$};
     \node (out)   [io, below=3.5cm of dec] {Вывод $Max$};
@@ -284,13 +285,13 @@
                             <div class="article-code__header"><span class="article-code__lang">Markdown (Mermaid)</span></div>
                             <pre><code>```mermaid
 flowchart TD
-    Start([Начало]) --> Input[/Ввод массива A/]
-    Input --> Loop{"i < N"}
-    Loop -- Да --> Calc["Сумма = Сумма + A[i]"]
-    Calc --> Step["i = i + 1"]
-    Step --> Loop
-    Loop -- Нет --> Output[/Вывод Суммы/]
-    Output --> Stop([Конец])
+    Start([Начало]) --&gt; Input[/Ввод массива A/]
+    Input --&gt; Loop{"i &lt; N"}
+    Loop -- Да --&gt; Calc["Сумма = Сумма + A[i]"]
+    Calc --&gt; Step["i = i + 1"]
+    Step --&gt; Loop
+    Loop -- Нет --&gt; Output[/Вывод Суммы/]
+    Output --&gt; Stop([Конец])
 ```</code></pre>
                         </div>
                         <p>Синтаксис <code>([текст])</code> создает терминатор, <code>[/текст/]</code> — блок ввода/вывода, а <code>{"условие"}</code> — блок проверки ветвления.</p>
@@ -342,14 +343,12 @@ flowchart TD
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Создавайте чистые блок-схемы прямо в коде отчета без сторонних графических редакторов в Labkeeper.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Btikz%7D%5Cusetikzlibrary%7Bpositioning%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Btikzpicture%7D%5Bnode+distance%3D12mm%5D%0A%5Cnode%5Bdraw%2Crounded+corners%5D+%28start%29+%7BStart%7D%3B%0A%5Cnode%5Bdraw%2Cbelow%3Dof+start%5D+%28calc%29+%7B%24s%3Da%2Bb%24%7D%3B%0A%5Cnode%5Bdraw%2Crounded+corners%2Cbelow%3Dof+calc%5D+%28end%29+%7BEnd%7D%3B%0A%5Cdraw%5B-%3E%5D+%28start%29--%28calc%29%3B%5Cdraw%5B-%3E%5D+%28calc%29--%28end%29%3B%0A%5Cend%7Btikzpicture%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span class="article-example__label">
+                            <span data-i18n="blog-example">Просмотреть пример</span>
+                            <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                        </span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -398,8 +397,12 @@ flowchart TD
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Btikz%7D%5Cusetikzlibrary%7Bpositioning%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Btikzpicture%7D%5Bnode+distance%3D12mm%5D%0A%5Cnode%5Bdraw%2Crounded+corners%5D+%28start%29+%7BStart%7D%3B%0A%5Cnode%5Bdraw%2Cbelow%3Dof+start%5D+%28calc%29+%7B%24s%3Da%2Bb%24%7D%3B%0A%5Cnode%5Bdraw%2Crounded+corners%2Cbelow%3Dof+calc%5D+%28end%29+%7BEnd%7D%3B%0A%5Cdraw%5B-%3E%5D+%28start%29--%28calc%29%3B%5Cdraw%5B-%3E%5D+%28calc%29--%28end%29%3B%0A%5Cend%7Btikzpicture%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span class="article-example__label">
+                        <span data-i18n="blog-example">Просмотреть пример</span>
+                        <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                    </span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -508,6 +511,9 @@ flowchart TD
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

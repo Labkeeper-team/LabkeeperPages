@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -307,14 +308,12 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Настраивайте типографику дипломных записок строго по ГОСТ без ручных подгонок в Labkeeper.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bindentfirst%7D%5Csetlength%7B%5Cparindent%7D%7B1.25cm%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection*%7B%D0%90%D0%B1%D0%B7%D0%B0%D1%86%D0%BD%D1%8B%D0%B9+%D0%BE%D1%82%D1%81%D1%82%D1%83%D0%BF%7D%0A%D0%9F%D0%B5%D1%80%D0%B2%D1%8B%D0%B9+%D0%B0%D0%B1%D0%B7%D0%B0%D1%86+%D0%BD%D0%B0%D1%87%D0%B8%D0%BD%D0%B0%D0%B5%D1%82%D1%81%D1%8F+%D1%81+%D0%BE%D1%82%D1%81%D1%82%D1%83%D0%BF%D0%B0.%0A%0A%D0%92%D1%82%D0%BE%D1%80%D0%BE%D0%B9+%D0%B0%D0%B1%D0%B7%D0%B0%D1%86+%D0%B8%D0%BC%D0%B5%D0%B5%D1%82+%D1%82%D0%BE%D1%82+%D0%B6%D0%B5+%D0%BE%D1%82%D1%81%D1%82%D1%83%D0%BF+1%2C25+%D1%81%D0%BC.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span class="article-example__label">
+                            <span data-i18n="blog-example">Просмотреть пример</span>
+                            <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                        </span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -363,8 +362,12 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bindentfirst%7D%5Csetlength%7B%5Cparindent%7D%7B1.25cm%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection*%7B%D0%90%D0%B1%D0%B7%D0%B0%D1%86%D0%BD%D1%8B%D0%B9+%D0%BE%D1%82%D1%81%D1%82%D1%83%D0%BF%7D%0A%D0%9F%D0%B5%D1%80%D0%B2%D1%8B%D0%B9+%D0%B0%D0%B1%D0%B7%D0%B0%D1%86+%D0%BD%D0%B0%D1%87%D0%B8%D0%BD%D0%B0%D0%B5%D1%82%D1%81%D1%8F+%D1%81+%D0%BE%D1%82%D1%81%D1%82%D1%83%D0%BF%D0%B0.%0A%0A%D0%92%D1%82%D0%BE%D1%80%D0%BE%D0%B9+%D0%B0%D0%B1%D0%B7%D0%B0%D1%86+%D0%B8%D0%BC%D0%B5%D0%B5%D1%82+%D1%82%D0%BE%D1%82+%D0%B6%D0%B5+%D0%BE%D1%82%D1%81%D1%82%D1%83%D0%BF+1%2C25+%D1%81%D0%BC.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span class="article-example__label">
+                        <span data-i18n="blog-example">Просмотреть пример</span>
+                        <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                    </span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -473,6 +476,9 @@
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

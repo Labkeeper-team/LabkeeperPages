@@ -130,6 +130,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -358,14 +359,12 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Соберите стильное англоязычное резюме за 15 минут в онлайн-редакторе Labkeeper с экспортом в чистый PDF.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?open=markdown&amp;markdown=%23+Anna+Petrova%0ABackend+Engineer+%7C+anna%40example.com%0A%0A%23%23+Summary%0APython+developer+building+reliable+APIs.%0A%0A%23%23+Experience%0A-+Cut+API+latency+by+30%25.%0A-+Added+integration+tests+for+billing.%0A%0A%23%23+Skills%0APython%2C+PostgreSQL%2C+Docker.%0A%0A%23%23+Education%0ABSc+Computer+Science%2C+2022." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span class="article-example__label">
+                            <span data-i18n="blog-example">Просмотреть пример</span>
+                            <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                        </span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
@@ -414,8 +413,12 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">
-                    Открыть редактор <span class="button__arrow">→</span>
+                <a href="/project/default?open=markdown&amp;markdown=%23+Anna+Petrova%0ABackend+Engineer+%7C+anna%40example.com%0A%0A%23%23+Summary%0APython+developer+building+reliable+APIs.%0A%0A%23%23+Experience%0A-+Cut+API+latency+by+30%25.%0A-+Added+integration+tests+for+billing.%0A%0A%23%23+Skills%0APython%2C+PostgreSQL%2C+Docker.%0A%0A%23%23+Education%0ABSc+Computer+Science%2C+2022." class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span class="article-example__label">
+                        <span data-i18n="blog-example">Просмотреть пример</span>
+                        <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                    </span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
                 </a>
             </div>
 
@@ -524,6 +527,9 @@
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

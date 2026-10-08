@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!-- Пачка 1 -->
 <html lang="ru">
 
@@ -8,46 +8,129 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Как перенести документ из Word в LaTeX с сохранением формул — Labkeeper</title>
-    <meta name="description"
-        content="Пошаговый гайд: перенос формул из Word в LaTeX онлайн, импорт docx в LaTeX без потери формул, использование Pandoc, встроенного редактора уравнений и Labkeeper." />
-        <!-- SEO Ключи: перенос формул из word в latex онлайн, импорт docx в latex без потери формул -->
+    <meta name="description" content="Пошаговый гайд: перенос формул из Word в LaTeX онлайн, импорт docx в LaTeX без потери формул, использование Pandoc, встроенного редактора уравнений и Labkeeper." />
+    <!-- SEO Ключи: перенос формул из word в latex онлайн, импорт docx в latex без потери формул -->
     <meta name="keywords" content="перенос формул из word в latex онлайн, импорт docx в latex без потери формул" />
-<link rel="canonical" href="https://labkeeper.io/blog/latex-word-to-latex" />
+    <link rel="canonical" href="https://labkeeper.io/blog/latex-word-to-latex" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://labkeeper.io/blog/latex-word-to-latex" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Labkeeper" />
     <meta property="og:title" content="Как перенести документ из Word в LaTeX с сохранением формул — Labkeeper" />
-    <meta property="og:description"
-        content="Перенос формул из Word в LaTeX онлайн: конвертация DOCX в TEX, сохранение таблиц, графиков и перекрестных ссылок без потери данных." />
+    <meta property="og:description" content="Перенос формул из Word в LaTeX онлайн: конвертация DOCX в TEX, сохранение таблиц, графиков и перекрестных ссылок без потери данных." />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:title" content="Как перенести документ из Word в LaTeX с сохранением формул — Labkeeper" />
-    <meta name="twitter:description"
-        content="Импорт docx в LaTeX без потери формул: онлайн-инструменты, Pandoc и умные алгоритмы конвертации." />
-    <script
-        type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Как перенести документ из Word в LaTeX с сохранением формул","description":"Пошаговое руководство по переносу текстовых документов и формул из Microsoft Word (.docx) в LaTeX без ошибок.","author":{"@type":"Organization","name":"Labkeeper","url":"https://labkeeper.io"},"publisher":{"@type":"Organization","name":"Labkeeper","logo":{"@type":"ImageObject","url":"https://labkeeper.io/assets/img/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://labkeeper.io/blog/latex-word-to-latex"},"datePublished":"2026-08-20","dateModified":"2026-08-20","inLanguage":"ru"}</script>
-    <script
-        type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://labkeeper.io/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://labkeeper.io/blog"},{"@type":"ListItem","position":3,"name":"Перенос из Word в LaTeX","item":"https://labkeeper.io/blog/latex-word-to-latex"}]}</script>
+    <meta name="twitter:description" content="Импорт docx в LaTeX без потери формул: онлайн-инструменты, Pandoc и умные алгоритмы конвертации." />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Как перенести документ из Word в LaTeX с сохранением формул",
+        "description": "Пошаговое руководство по переносу текстовых документов и формул из Microsoft Word (.docx) в LaTeX без ошибок.",
+        "author": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "url": "https://labkeeper.io"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Labkeeper",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://labkeeper.io/assets/img/logo.svg"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://labkeeper.io/blog/latex-word-to-latex"
+        },
+        "datePublished": "2026-08-20",
+        "dateModified": "2026-08-20",
+        "inLanguage": "ru",
+        "articleSection": ["Работа с LaTeX"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://labkeeper.io/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Блог",
+                "item": "https://labkeeper.io/blog"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Перенос из Word в LaTeX",
+                "item": "https://labkeeper.io/blog/latex-word-to-latex"
+            }
+        ]
+    }
+    </script>
+
     <script type="text/javascript">
         (function () {
-            function hasAcceptedCookieConsent() { try { return localStorage.getItem('labkeeper_cookie_consent') === 'accepted'; } catch (e) { return false; } }
+            function hasAcceptedCookieConsent() {
+                try {
+                    return localStorage.getItem('labkeeper_cookie_consent') === 'accepted';
+                } catch (e) {
+                    return false;
+                }
+            }
+
             window.initLabkeeperYandexMetrika = function () {
-                if (window.__labkeeperYandexMetrikaInitialized || !hasAcceptedCookieConsent() || typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined') { return; }
-                (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date(); for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } } k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", { webvisor: true, clickmap: true, referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+                if (
+                    window.__labkeeperYandexMetrikaInitialized ||
+                    !hasAcceptedCookieConsent() ||
+                    typeof IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY === 'undefined'
+                ) {
+                    return;
+                }
+
+                (function (m, e, t, r, i, k, a) {
+                    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+                    m[i].l = 1 * new Date();
+                    for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+                    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a);
+                })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+                ym(IO_LABKEEPER_FRONTEND_YANDEX_METRIKA_KEY, "init", {
+                    webvisor: true,
+                    clickmap: true,
+                    referrer: document.referrer,
+                    url: location.href,
+                    accurateTrackBounce: true,
+                    trackLinks: true
+                });
+
                 window.__labkeeperYandexMetrikaInitialized = true;
             };
+
             window.initLabkeeperYandexMetrika();
         })();
     </script>
+
+    <!-- Preconnect & Async Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
 </head>
 
 <body class="page blog__article">
@@ -55,8 +138,9 @@
         <div class="header__container">
             <div class="header__left">
                 <button class="header__burger js-burger-btn" aria-label="Открыть меню">
-                    <span class="header__burger-line"></span><span class="header__burger-line"></span><span
-                        class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
+                    <span class="header__burger-line"></span>
                 </button>
                 <a href="/" class="header__logo">
                     <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="header__logo-icon" width="36"
@@ -68,6 +152,7 @@
                     <button class="header__lang-btn" data-lang="en">En</button>
                 </div>
             </div>
+
             <nav class="header__nav js-nav">
                 <div class="header__mobile-lang js-lang-switcher">
                     <button class="header__lang-btn header__lang-btn--active" data-lang="ru">Ru</button>
@@ -91,6 +176,7 @@
                         class="header__mobile-contact-link">labkeeper.io@gmail.com</a>
                 </div>
             </nav>
+
             <div class="header__right">
                 <a href="/project/default?open=login" class="button button--outline header__login"
                     data-i18n="btn-login"></a>
@@ -102,24 +188,31 @@
     </header>
 
     <main class="main page-article">
+
         <div class="article-breadcrumbs">
             <div class="article-breadcrumbs__container">
                 <nav class="article-breadcrumbs__nav" aria-label="Breadcrumb">
                     <ol class="article-breadcrumbs__list">
-                        <li class="article-breadcrumbs__item"><a href="/" class="article-breadcrumbs__link">Главная</a>
+                        <li class="article-breadcrumbs__item">
+                            <a href="/" class="article-breadcrumbs__link">Главная</a>
                         </li>
-                        <li class="article-breadcrumbs__item"><a href="/blog" class="article-breadcrumbs__link">Блог</a>
+                        <li class="article-breadcrumbs__item">
+                            <a href="/blog" class="article-breadcrumbs__link">Блог</a>
                         </li>
-                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active"><span>Перенос из Word в
-                                LaTeX</span></li>
+                        <li class="article-breadcrumbs__item article-breadcrumbs__item--active">
+                            <span>Перенос из Word в
+                                LaTeX</span>
+                        </li>
                     </ol>
                 </nav>
             </div>
         </div>
 
         <div class="article-layout">
+
             <article class="article-content">
                 <div class="article-content__container">
+
                     <h1 class="article-content__title h1">Как перенести документ из&nbsp;Word в&nbsp;LaTeX
                         с&nbsp;сохранением формул</h1>
 
@@ -205,10 +298,10 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
 \centering
 \begin{tabular}{lcr}
 \toprule
-Параметр & Значение & Ед. изм. \\
+Параметр &amp; Значение &amp; Ед. изм. \\
 \midrule
-Температура & 298.15 & К \\
-Давление & 101.3 & кПа \\
+Температура &amp; 298.15 &amp; К \\
+Давление &amp; 101.3 &amp; кПа \\
 \bottomrule
 \end{tabular}
 \end{table}</code></pre>
@@ -254,28 +347,31 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
                             </div>
                         </div>
                     </section>
+
+
+
                 </div>
             </article>
 
             <aside class="article-sidebar">
                 <div class="article-sidebar__sticky">
                     <div class="article-sidebar__media">
-                        <img src="../assets/img/img-for-firstScreen.webp" alt="Онлайн-редактор LaTeX Labkeeper"
-                            width="220" height="135" loading="lazy" class="article-sidebar__img">
+                        <img src="../assets/img/img-for-firstScreen.webp"
+                            alt="Онлайн-редактор LaTeX Labkeeper" width="220" height="135" loading="lazy"
+                            class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Импортируйте формулы и&nbsp;тексты в&nbsp;онлайн-редактор
                         Labkeeper — удобная среда без&nbsp;необходимости локальной установки.</p>
-                    <a href="/project/default?open=login" class="button button--primary article-sidebar__btn"
-                        id="sidebar-cta-btn">
-                        Перейти в редактор
-                        <svg class="button__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7B%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0+%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%7D%0A%D0%A2%D0%B5%D0%BA%D1%81%D1%82+%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%BE+%D1%80%D1%83%D1%87%D0%BD%D0%BE%D0%B3%D0%BE+%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.%0A%5Csubsection%7B%D0%A4%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D0%B0%7D%5C%5Bs%3Dvt%5C%5D%0A%5Cbegin%7Bitemize%7D%5Citem+%D0%97%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BA%D0%B8%5Citem+%D0%A4%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D1%8B%5Citem+%D0%A1%D0%BF%D0%B8%D1%81%D0%BA%D0%B8%5Cend%7Bitemize%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                        <span class="article-example__label">
+                            <span data-i18n="blog-example">Просмотреть пример</span>
+                            <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                        </span>
+                        <span class="button__arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
             </aside>
+
         </div>
 
         <section class="cta-features" id="cta-features">
@@ -284,6 +380,7 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
                 <h2 class="cta-features__intro-title">Работайте с&nbsp;LaTeX документами в&nbsp;Labkeeper</h2>
                 <p class="cta-features__intro-text">Онлайн-редактор LaTeX для&nbsp;быстрого старта: переносите тексты и&nbsp;формулы, компилируйте в&nbsp;PDF и&nbsp;используйте AI-помощника без&nbsp;установки программ.</p>
             </div>
+
             <div class="feature-block feature-block--img-left feature-block--dark">
                 <div class="feature-block__container">
                     <div class="feature-block__visual">
@@ -317,12 +414,22 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
                     </div>
                 </div>
             </div>
+
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex" class="button button--outline-light cta-features__intro-btn">Открыть
-                    редактор <span class="button__arrow">→</span></a>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7B%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0+%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%7D%0A%D0%A2%D0%B5%D0%BA%D1%81%D1%82+%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%BE+%D1%80%D1%83%D1%87%D0%BD%D0%BE%D0%B3%D0%BE+%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.%0A%5Csubsection%7B%D0%A4%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D0%B0%7D%5C%5Bs%3Dvt%5C%5D%0A%5Cbegin%7Bitemize%7D%5Citem+%D0%97%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BA%D0%B8%5Citem+%D0%A4%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D1%8B%5Citem+%D0%A1%D0%BF%D0%B8%D1%81%D0%BA%D0%B8%5Cend%7Bitemize%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                    <span class="article-example__label">
+                        <span data-i18n="blog-example">Просмотреть пример</span>
+                        <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
+                    </span>
+                    <span class="button__arrow" aria-hidden="true">→</span>
+                </a>
             </div>
-            <div class="feature__bg"><img src="../assets/img/bg.svg" alt="bg" loading="lazy"></div>
+
+            <div class="feature__bg">
+                <img src="../assets/img/bg.svg" alt="bg" loading="lazy">
+            </div>
         </section>
+
     </main>
 
     <section class="audience">
@@ -355,30 +462,35 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
                     <a href="/#advantages" class="footer__link" data-i18n="nav-features"></a>
                     <a href="/tokens" class="footer__link" data-i18n="nav-tokens"></a>
                     <a href="https://github.com/Labkeeper-team/Docs/wiki/ru" target="_blank"
-                        class="footer__link footer__link--external"><span data-i18n="nav-wiki"></span><img
-                            src="../assets/img/target.svg" alt="target icon" class="footer__link-icon"
-                            style="margin-left:4px;vertical-align:middle;" width="16" height="16" loading="lazy"></a>
+                        class="footer__link footer__link--external">
+                        <span data-i18n="nav-wiki"></span>
+                        <img src="../assets/img/target.svg" alt="target icon" class="footer__link-icon"
+                            style="margin-left: 4px; vertical-align: middle;" width="16" height="16" loading="lazy">
+                    </a>
                     <a href="/#examples" class="footer__link" data-i18n="nav-examples"></a>
                     <a href="/blog" class="footer__link" data-i18n="nav-blog"></a>
 
                     <a href="/about" class="footer__link" data-i18n="nav-about"></a>
                 </nav>
-                <a href="/" class="footer__logo-link"><img src="../assets/img/logo.svg" alt="Labkeeper Logo"
-                        class="footer__logo" width="40" height="40" loading="lazy"></a>
+                <a href="/" class="footer__logo-link">
+                    <img src="../assets/img/logo.svg" alt="Labkeeper Logo" class="footer__logo" width="40" height="40"
+                        loading="lazy">
+                </a>
                 <div class="footer__contact">
                     <span class="footer__contact-label" data-i18n="footer-contact"></span>
                     <a href="mailto:labkeeper.io@gmail.com" class="footer__contact-link">labkeeper.io@gmail.com</a>
                 </div>
             </div>
-            <div class="footer__middle"><img src="../assets/img/img-for-footer.svg" alt="Labkeeper"
-                    class="footer__huge-logo" aria-hidden="true" loading="lazy"></div>
+            <div class="footer__middle">
+                <img src="../assets/img/img-for-footer.svg" alt="Labkeeper" class="footer__huge-logo" aria-hidden="true"
+                    loading="lazy">
+            </div>
             <div class="footer__bottom">
                 <div class="footer__copyright">© 2024—2026</div>
                 <a href="/privacy" class="footer__policy" data-i18n="footer-policy"></a>
             </div>
         </div>
     </footer>
-
 
     <!-- Попап -->
     <div class="popup js-popup" id="image-popup" aria-hidden="true">
@@ -390,11 +502,14 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
             <img src="" alt="Enlarged screenshot" class="popup__image js-popup-img" loading="lazy">
         </div>
     </div>
+
     <div id="cookie-banner" class="cookie-banner hidden">
         <div class="cookie-banner__container">
-            <p class="cookie-banner__text">Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта.
-                Подробнее — в <a href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки
-                    персональных данных</a>.</p>
+            <p class="cookie-banner__text">
+                Мы используем cookie и сервис Яндекс.Метрика для улучшения работы сайта. Подробнее — в <a
+                    href="/privacy" class="cookie-banner__link" target="_blank">Политике обработки персональных
+                    данных</a>.
+            </p>
             <div class="cookie-banner__actions">
                 <button id="cookie-accept" class="button button--primary">Принять</button>
                 <button id="cookie-decline" class="button button--outline">Отказаться</button>
@@ -403,6 +518,7 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
     </div>
 
     <button class="scroll-top js-scroll-top" aria-label="Наверх" title="Наверх"></button>
+
     <script>
         window.__LABKEEPER_API_VERSION = "IO_LABKEEPER_FRONTEND_API_VERSION";
         window.__LABKEEPER_OPENPANEL_CLIENT_ID = "IO_LABKEEPER_FRONTEND_OPENPANEL_CLIENT_ID";
@@ -414,6 +530,9 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
     <script src="../assets/js/lang.js" defer></script>
     <script src="../assets/js/slider.js" defer></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/katex/katex.min.js" defer></script>
+    <script src="../assets/vendor/katex/auto-render.min.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </body>
 
 </html>

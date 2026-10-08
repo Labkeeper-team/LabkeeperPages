@@ -82,7 +82,10 @@
         "title": "Сумма ширин менее 1.0\\textwidth",
         "html": "<p>Суммарная ширина двух minipage плюс пробел не должна превышать <code>\\textwidth</code>, иначе возникнет ошибка переполнения <code>Overfull \\hbox</code>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\n\\begin{document}\n\\noindent\n\\begin{minipage}{.46\\textwidth}\\centering\n\\fbox{\\rule{0pt}{25mm}\\rule{35mm}{0pt}}\\\\Diagram\n\\end{minipage}\\hfill\n\\begin{minipage}{.46\\textwidth}\\centering\n\\begin{tabular}{cc}Time & Value\\\\1 & 2\\\\2 & 4\\end{tabular}\\\\Measurements\n\\end{minipage}\n\\end{document}"
+    }
   },
   {
     "slug": "latex-custom-rgb-hex-colors-xcolor",
@@ -167,7 +170,10 @@
         "title": "Интеграция с hyperref",
         "html": "<p>Задайте кастомный цвет для всех веб-ссылок в преамбуле: <code>\\hypersetup{colorlinks=true, urlcolor=BrandBlue, linkcolor=DarkSlate}</code>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage{xcolor}\\definecolor{brand}{HTML}{4469E0}\\definecolor{accent}{RGB}{220,235,255}\n\\begin{document}\n\\textcolor{brand}{Custom HEX color}\n\\par\\colorbox{accent}{Custom RGB background}\n\\end{document}"
+    }
   },
   {
     "slug": "latex-multi-file-document-input-include",
@@ -253,7 +259,10 @@
         "title": "Запрет вложенных include",
         "html": "<p>Внутри файла, подключенного через <code>\\include</code>, нельзя вызывать другой <code>\\include</code>. Для вложенных подфайлов используйте команду <code>\\input</code>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\begin{filecontents*}[overwrite]{blog-section.tex}\nThis paragraph is read from a separate file created by this example.\n\\end{filecontents*}\n\\begin{document}\n\\section{Shared content}\\input{blog-section.tex}\n\\end{document}"
+    }
   },
   {
     "slug": "latex-tcolorbox-theorems-callouts",
@@ -338,7 +347,10 @@
         "title": "Тени и объем",
         "html": "<p>Опция <code>drop shadow</code> или <code>fuzzy shadow</code> добавляет реалистичную мягкую тень под блоком для оформления презентаций.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage{tcolorbox}\n\\begin{document}\n\\begin{tcolorbox}[title=Pythagorean theorem,colback=blue!5,colframe=blue!60!black]\nFor a right triangle, $a^2+b^2=c^2$.\n\\end{tcolorbox}\n\\end{document}"
+    }
   },
   {
     "slug": "overleaf-alternatives-russia-online-latex",
@@ -423,7 +435,10 @@
         "title": "Облачное автосохранение",
         "html": "<p>История правок в Labkeeper сохраняется на лету, защищая от потери текста при случайном закрытии вкладки или отключении электричества.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\n\\begin{document}\n\\title{My first online document}\\author{Labkeeper}\\maketitle\n\\section{A working example}Edit this text and compile again.\n\\[\\int_0^1 x^2\\,dx=\\frac13\\]\n\\end{document}"
+    }
   },
   {
     "slug": "markdown-multiline-formulas-matrices-mathjax",
@@ -508,7 +523,10 @@
         "title": "Кириллические комментарии в cases",
         "html": "<p>Русский текст условий внутри формулы всегда оборачивайте в <code>\\text{...}</code>, иначе буквы слипнутся или вызовут ошибку рендера.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "markdown": "## Матрица и система\n\n$$\nA=\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}\n$$\n\n$$\n\\begin{aligned}2x+y&=5\\\\x-y&=1\\end{aligned}\n$$"
+    }
   },
   {
     "slug": "markdown-image-size-width-height",
@@ -561,7 +579,7 @@
       {
         "id": "problem",
         "title": "Почему базовый синтаксис ![alt](url) не поддерживает размер",
-        "html": "                        <p>Классический синтаксис Джона Грубера <code>![Описание](image.png)</code> намеренно минималистичен: в нем вообще нет параметров ширины или высоты. В результате при вставке скриншота высокого разрешения (Retina или 4K) картинка распахивается на всю ширину экрана или вовсе вылезает за границы печатной страницы PDF.</p>\n                        <p>К счастью, спецификация CommonMark разрешает бесшовную интеграцию HTML-тегов прямо в тело Markdown-документа.</p>"
+        "html": "                        <p><strong>Пример в редакторе:</strong> ширина иллюстрации ограничена HTML-контейнером. Это работает и в просмотрщиках, которые переопределяют атрибут <code>width</code> у самого изображения.</p>\n                        <p>Классический синтаксис Джона Грубера <code>![Описание](image.png)</code> намеренно минималистичен: в нем вообще нет параметров ширины или высоты. В результате при вставке скриншота высокого разрешения (Retina или 4K) картинка распахивается на всю ширину экрана или вовсе вылезает за границы печатной страницы PDF.</p>\n                        <p>К счастью, спецификация CommonMark разрешает бесшовную интеграцию HTML-тегов прямо в тело Markdown-документа.</p>"
       },
       {
         "id": "html-tag",
@@ -593,7 +611,10 @@
         "title": "Пустые строки вокруг HTML",
         "html": "<p>Всегда отделяйте теги <code>&lt;p align=\"center\"&gt;</code> и <code>&lt;img&gt;</code> пустыми строками от предшествующего и последующего Markdown-текста.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "markdown": "## Размер изображения\n\n<div style=\"display:flex;width:96px\"><img src=\"https://labkeeper.io/assets/img/logo.svg\" alt=\"Labkeeper\"></div>\n\nШирина изображения ограничена контейнером 96 px, пропорции сохранены."
+    }
   },
   {
     "slug": "software-screenshots-report-gost-caption",
@@ -678,7 +699,10 @@
         "title": "Стрелки и акценты",
         "html": "<p>Если нужно обратить внимание преподавателя на кнопку, используйте красную стрелку или аккуратную рамку толщиной 2–3 пикселя.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage{caption}\\captionsetup[figure]{labelsep=endash}\n\\begin{document}\n\\begin{figure}[h]\\centering\n\\fbox{\\begin{minipage}{.6\\textwidth}\\ttfamily\nProgram output:\\par Result: 42\\par Status: OK\n\\end{minipage}}\n\\caption{Вывод программы}\\label{fig:output}\\end{figure}\nРезультат приведен на рисунке~\\ref{fig:output}.\n\\end{document}"
+    }
   },
   {
     "slug": "formula-variable-explanation-where-gost",
@@ -764,7 +788,10 @@
         "title": "Единицы измерения по ГОСТ 8.417",
         "html": "<p>Для набора размерностей используйте прямое начертание шрифта: <code>м/с</code> или <code>\\text{кг}</code>, а не математический курсив <em>kg</em>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\n\\begin{document}\n\\begin{equation}v=\\frac{s}{t}\\end{equation}\n\\noindent где $v$ --- скорость, м/с;\\\\\n$s$ --- путь, м;\\\\$t$ --- время, с.\n\\end{document}"
+    }
   },
   {
     "slug": "lab-report-bibliography-gost-2008",
@@ -849,7 +876,10 @@
         "title": "Свежесть источников",
         "html": "<p>Для лабораторных по IT-дисциплинам проверяйте, чтобы документация и книги были не старше 3–5 лет.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\n\\begin{document}\nСм. описание метода~\\cite{method}.\n\\begin{thebibliography}{9}\n\\bibitem{method}Петров П. П. Измерения. Москва, 2024. 80 с.\n\\end{thebibliography}\n\\end{document}"
+    }
   },
   {
     "slug": "master-thesis-title-page-gost",
@@ -934,7 +964,10 @@
         "title": "Цвет печати",
         "html": "<p>Титульный лист печатается строго в монохромном режиме (черным цветом по белой плотной бумаге плотностью не менее 80 г/м²).</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\n\\begin{document}\n\\begin{titlepage}\\centering\nУниверситет\\par\\vfill\n{\\Large Магистерская диссертация\\par}\nМетоды измерений\\par\\vfill\nАвтор: Иванов И. И.\\par\\vfill 2026\n\\end{titlepage}\n\\end{document}"
+    }
   },
   {
     "slug": "legal-regulatory-acts-bibliography-diploma-gost",
@@ -1019,7 +1052,10 @@
         "title": "Сквозная нумерация списка",
         "html": "<p>Даже если список разбит на подразделы (НПА, монографии, сайты), нумерация пунктов [1], [2], [3]... должна оставаться единой сквозной от начала до конца.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\n\\begin{document}\n\\section*{Нормативные источники}\n\\begin{enumerate}\n\\item Конституция Российской Федерации.\n\\item Федеральный закон от 27.07.2006 № 152-ФЗ.\n\\end{enumerate}\n\\end{document}"
+    }
   },
   {
     "slug": "literature-review-structure-diploma-citation",
@@ -1105,7 +1141,10 @@
         "title": "Автоматические ссылки в LaTeX",
         "html": "<p>Используйте <code>\\cite{smirnov2024, vasiliev2025}</code> — при перестановке абзацев номера в квадратных скобках обновятся автоматически.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\n\\begin{document}\n\\section{Literature review}\n\\subsection{Existing methods}The baseline is described in~\\cite{baseline}.\n\\subsection{Research gap}Accuracy on small samples remains uncertain.\n\\begin{thebibliography}{9}\\bibitem{baseline}A. Author. Measurement methods. 2024.\\end{thebibliography}\n\\end{document}"
+    }
   },
   {
     "slug": "figure-double-numbering-chapters-gost",
@@ -1191,7 +1230,10 @@
         "title": "Рисунки в приложениях",
         "html": "<p>В приложении А нумерация рисунков ведется с указанием буквы приложения: <em>Рисунок А.1</em>, <em>Рисунок А.2</em>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{report}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\n\\begin{document}\n\\chapter{Методика}\n\\begin{figure}[h]\\centering\\fbox{\\rule{0pt}{20mm}\\rule{40mm}{0pt}}\n\\caption{Схема опыта}\\end{figure}\n\\end{document}"
+    }
   },
   {
     "slug": "justified-text-spacing-hyphenation-latex-vs-word",
@@ -1276,7 +1318,10 @@
         "title": "Шрифт Times New Roman",
         "html": "<p>Гарнитура <code>\\usepackage{pscyr}</code> или <code>\\usepackage{newtxtext}</code> обладает выверенными пропорциями знаков, оптимизированными под плотную выключку строк.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage{microtype}\n\\begin{document}\n\\noindent\\begin{minipage}{.55\\textwidth}\nLaTeX automatically balances the spacing between words and chooses line breaks for justified paragraphs. Avoid manual spaces and forced line breaks: edit the text and let the typesetting engine reflow it.\n\\end{minipage}\n\\end{document}"
+    }
   },
   {
     "slug": "table-continuation-multipage-gost-diploma",
@@ -1361,7 +1406,10 @@
         "title": "Шрифт внутри таблицы",
         "html": "<p>По ГОСТ допускается уменьшать кегль шрифта внутри таблицы до 10–12 пт при основном тексте 14 пт (добавьте <code>\\small</code> перед tabular).</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage{longtable}\\usepackage[textheight=55mm]{geometry}\n\\begin{document}\n\\begin{longtable}{cc}\n\\caption{Measurements}\\\\Time & Value\\\\\\hline\\endfirsthead\n\\multicolumn{2}{c}{Continuation of table \\thetable}\\\\Time & Value\\\\\\hline\\endhead\n1 & 10\\\\2 & 20\\\\3 & 30\\\\4 & 40\\\\5 & 50\\\\6 & 60\\\\7 & 70\\\\8 & 80\\\\9 & 90\\\\10 & 100\\\\\n\\end{longtable}\n\\end{document}"
+    }
   },
   {
     "slug": "footnotes-bottom-page-law-history-coursework-gost",
@@ -1447,7 +1495,10 @@
         "title": "Неразрывный пробел перед сноской",
         "html": "<p>Никогда не ставьте пробел перед знаком сноски: <code>слово\\footnote{...}</code>, иначе номер сноски может оторваться и перелететь в начало следующей строки.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\n\\begin{document}\nHistorical sources need precise attribution.\\footnote{A. Author. A History of Science. 2024. P. 15.}\nAnother statement uses an explanatory note.\\footnote{This note clarifies the terminology.}\n\\end{document}"
+    }
   },
   {
     "slug": "biblatex-biber-advanced-bibliography-management",
@@ -1494,14 +1545,14 @@
       },
       {
         "id": "compilation-flow",
-        "title": "Цикл сборки: pdflatex -> biber -> pdflatex"
+        "title": "Цикл сборки: pdflatex → biber → pdflatex"
       }
     ],
     "sections": [
       {
         "id": "why-biblatex",
         "title": "Почему связка biblatex + biber заменила классический BibTeX",
-        "html": "                        <p>Хотя классический <a href=\"/blog/latex-gost-bibliography\">BibTeX по ГОСТ для списка литературы</a> до сих пор популярен, оригинальная утилита <code>bibtex</code> была создана еще в 1985 году, когда не существовало стандарта Юникод (UTF-8). Из-за этого классический BibTeX часто ломал сортировку русских фамилий («А» оказывалась после «Я») и требовал сложных кодировочных ухищрений.</p>\n                        <p>Современный тандем пакета <strong>biblatex</strong> и бэкенда <strong>biber</strong> полностью написан с поддержкой UTF-8, понимает правила русской грамматики и поддерживает официальный пакет адаптации <code>biblatex-gost</code>.</p>"
+        "html": "                        <p><strong>Пример в редакторе:</strong> короткая ссылка открывает самостоятельный документ с цитированием и списком через <code>thebibliography</code>, без отдельного файла и запуска Biber. Это иллюстрация связи ссылки с источником, а не демонстрация автоматической сортировки BibLaTeX. Полная настройка <code>.bib</code> и Biber приведена ниже.</p>\n                        <p>Хотя классический <a href=\"/blog/latex-gost-bibliography\">BibTeX по ГОСТ для списка литературы</a> до сих пор популярен, оригинальная утилита <code>bibtex</code> была создана еще в 1985 году, когда не существовало стандарта Юникод (UTF-8). Из-за этого классический BibTeX часто ломал сортировку русских фамилий («А» оказывалась после «Я») и требовал сложных кодировочных ухищрений.</p>\n                        <p>Современный тандем пакета <strong>biblatex</strong> и бэкенда <strong>biber</strong> полностью написан с поддержкой UTF-8, понимает правила русской грамматики и поддерживает официальный пакет адаптации <code>biblatex-gost</code>.</p>"
       },
       {
         "id": "online-setup",
@@ -1520,7 +1571,7 @@
       },
       {
         "id": "compilation-flow",
-        "title": "Цикл сборки: pdflatex -> biber -> pdflatex",
+        "title": "Цикл сборки: pdflatex → biber → pdflatex",
         "html": "                        <p>Для генерации списка запускается цепочка: <code>pdflatex main</code> $\\to$ <code>biber main</code> $\\to$ <code>pdflatex main</code>. В облачном редакторе <strong>Labkeeper</strong> этот цикл выполняется полностью автоматически в фоновом режиме за доли секунды.</p>"
       }
     ],
@@ -1533,6 +1584,9 @@
         "title": "Команда \\parencite",
         "html": "<p>Для стилей гарвардского цитирования (Автор, Год) используйте <code>\\parencite{key}</code> для круглых скобок: <em>(Иванов, 2025)</em>.</p>"
       }
-    ]
+    ],
+    "editorExample": {
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\n\\begin{document}\n\\section*{Citations and bibliography}\nA reproducible method~\\cite{demo}.\n\\begin{thebibliography}{9}\n\\bibitem{demo}Anna Example. \\textit{Measurement Methods}. Example Press, 2024.\n\\end{thebibliography}\n\\end{document}"
+    }
   }
 ]
