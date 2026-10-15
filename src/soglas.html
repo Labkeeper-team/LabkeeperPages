@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Согласие на обработку персональных данных — Labkeeper</title>
     <meta name="description"
         content="Согласие на обработку персональных данных пользователей сервиса Labkeeper." />
@@ -146,16 +146,20 @@
                             data-i18n="policy-nav-consent">Согласие об обработке персональных данных</a>
                     </li>
                     <li class="header__nav-item">
-                        <a href="oferta" class="header__nav-link">Публичная
+                        <a href="oferta" class="header__nav-link" data-i18n="policy-nav-oferta">Публичная
                             оферта</a>
                     </li>
                     <li class="header__nav-item">
-                        <a href="sogl_yam" class="header__nav-link">Согласие на
+                        <a href="sogl_yam" class="header__nav-link" data-i18n="policy-nav-yam">Согласие на
                             использование сервиса ЯМ</a>
                     </li>
                     <li class="header__nav-item">
-                        <a href="sogl_adv" class="header__nav-link">Согласие на получение рекламных
+                        <a href="sogl_adv" class="header__nav-link" data-i18n="policy-nav-adv">Согласие на получение рекламных
                             рассылок</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="sogl_ds" class="header__nav-link" data-i18n="policy-nav-ds">Согласие на
+                            трансграничную передачу</a>
                     </li>
                 </ul>
             </div>
@@ -280,8 +284,8 @@
                                     <li>заключение, исполнение, изменение и прекращение договора публичной оферты
                                         (приобретение и использование внутренних токенов Cloud Tokens), включая:
                                         регистрацию, аутентификацию и администрирование учетной записи; предоставление
-                                        полного функционала Сервиса (редакторы Markdown/LaTeX, вычисления, AIассистент,
-                                        генерация изображений, компиляция PDF, хранение проектов и загруженных файлов);
+                                        полного функционала Сервиса (редакторы Markdown/LaTeX, вычисления, AI-ассистент,
+                                        компиляция PDF, хранение проектов и загруженных файлов);
                                         оформление заказов на токены, прием платежей через платежный шлюз ЮKassa (СБП),
                                         зачисление токенов, формирование и отправку электронных чеков, ведение
                                         бухгалтерского и налогового учета, урегулирование споров;</li>
@@ -393,9 +397,9 @@
 
 
 
-                                    <li>сервисам ООО «Яндекс» (Yandex OAuth, Yandex GPT, Яндекс.Капча, Яндекс 360) – для
-                                        авторизации через аккаунт Яндекса, предоставления функций искусственного
-                                        интеллекта, защиты от ботов, отправки транзакционных уведомлений и чеков;</li>
+                                    <li>сервисам ООО «Яндекс» (Yandex OAuth, Яндекс.Капча, Яндекс 360) – для авторизации
+                                        через аккаунт Яндекса, защиты от ботов, отправки транзакционных уведомлений и
+                                        чеков;</li>
 
 
 
@@ -629,9 +633,12 @@
     <!-- Скрипты -->
     <script>
         window.__LABKEEPER_API_VERSION = "IO_LABKEEPER_FRONTEND_API_VERSION";
+        window.__LABKEEPER_OPENPANEL_CLIENT_ID = "IO_LABKEEPER_FRONTEND_OPENPANEL_CLIENT_ID";
+        window.__LABKEEPER_OPENPANEL_API_URL = "IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL";
     </script>
     <script src="assets/js/auth.js" defer></script>
     <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/openpanel.js" defer></script>
     <script src="assets/js/lang.js" defer></script>
 </body>
 

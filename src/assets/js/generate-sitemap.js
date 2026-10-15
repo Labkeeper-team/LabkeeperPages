@@ -21,6 +21,7 @@ const LEGAL_PAGES = [
     { url: '/soglas', priority: '0.3', changefreq: 'monthly' },
     { url: '/sogl_adv', priority: '0.3', changefreq: 'monthly' },
     { url: '/sogl_yam', priority: '0.3', changefreq: 'monthly' },
+    { url: '/sogl_ds', priority: '0.3', changefreq: 'monthly' },
 ];
 
 function generateSitemap() {
