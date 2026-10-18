@@ -477,4 +477,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  window.addEventListener('scroll', () => {
+    const el = document.querySelector('.hero__image-wrapper');
+    if (!el) return;
+
+    const scrollY = window.scrollY;
+    // коэффициент: чем меньше число, тем слабее движение
+    const move = scrollY * 0.2;
+    el.style.transform = `translateY(-${move}px)`;
+  });
+
 });
+
