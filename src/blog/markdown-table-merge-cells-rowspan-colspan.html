@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/markdown-table-merge-cells-rowspan-colspan"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с Markdown","Лабораторные работы"]
     }
@@ -219,7 +219,7 @@
                         <a href="/blog#labs" class="article-tag">Лабораторные работы</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~6 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~6 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -263,16 +263,37 @@
   &lt;/tr&gt;
   &lt;tr&gt;
     &lt;td&gt;Давление&lt;/td&gt;
-    &lt;td&gt;101.3 кПа&lt;/td&gt;
+    &lt;td&gt;101,3 кПа&lt;/td&gt;
   &lt;/tr&gt;
 &lt;/table&gt;</code></pre>
                         </div>
-                        <p>Парсер <strong>Labkeeper</strong> стилизует такие таблицы с идеальным соблюдением границ, чередованием фона строк и правильной разбивкой при переносе на новый лист в PDF.</p>
+                        <p>Превью <strong>Labkeeper</strong> рисует такую таблицу с границами ячеек, но без чередования фона строк. При печати в PDF длинная таблица переносится на следующий лист, а шапка повторяется на каждой странице, только если она стоит внутри тега <code>&lt;thead&gt;</code>.</p>
                     </section>
 
                     <section class="article-section" id="complex-example">
                         <h2 class="article-section__title">Готовый шаблон сложной таблицы измерений</h2>
-                        <p>Такой гибридный подход позволяет студентам сохранять скорость написания основного текста в Markdown, подключая HTML-таблицы только для комплексных сводных ведомостей (если же вам требуется бескомпромиссная типографика, обратите внимание на руководство по <a href="/blog/table-continuation-multipage-gost-diploma">переносу таблиц по ГОСТ</a>).</p>
+                        <p>Шаблон таблицы измерений с составной шапкой: номер опыта объединяет две строки, а под каждой величиной стоят значение и погрешность. Шапка вынесена в <code>&lt;thead&gt;</code>, чтобы повторяться на каждой странице при печати.</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">HTML</span></div>
+                            <pre><code>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th rowspan="2"&gt;№ опыта&lt;/th&gt;
+      &lt;th colspan="2"&gt;Напряжение U, В&lt;/th&gt;
+      &lt;th colspan="2"&gt;Ток I, мА&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;значение&lt;/th&gt;&lt;th&gt;погрешность&lt;/th&gt;
+      &lt;th&gt;значение&lt;/th&gt;&lt;th&gt;погрешность&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;1,20&lt;/td&gt;&lt;td&gt;0,05&lt;/td&gt;&lt;td&gt;10,0&lt;/td&gt;&lt;td&gt;0,5&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;2,35&lt;/td&gt;&lt;td&gt;0,05&lt;/td&gt;&lt;td&gt;20,0&lt;/td&gt;&lt;td&gt;0,5&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                        </div>
+                        <p>Такой гибридный подход позволяет студентам сохранять скорость написания основного текста в Markdown, подключая HTML-таблицы только для комплексных сводных ведомостей. Учтите, что в LaTeX-проекте HTML-таблица из Markdown-сегмента выбрасывается целиком: там ячейки объединяют командами <code>\multicolumn</code> и <code>\multirow</code> (для второй нужен пакет <code>multirow</code>) в LaTeX-сегменте. Требования к таблицам в дипломе разобраны в руководстве по <a href="/blog/table-continuation-multipage-gost-diploma">переносу таблиц по ГОСТ</a>.</p>
                     </section>
 
                     <section class="article-section" id="tips">
@@ -315,7 +336,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Создавайте сложные научные таблицы в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с поддержкой продвинутых табличных структур, формул и экспорта в чистый PDF без смещения ячеек.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор Markdown и LaTeX: HTML-таблицы с объединенными ячейками в превью, формулы MathJax и сохранение в PDF через печать браузера.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">

@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/footnotes-bottom-page-law-history-coursework-gost"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Дипломные работы","Оформление научных статей"]
     }
@@ -219,7 +219,7 @@
                         <a href="/blog#articles" class="article-tag">Оформление научных статей</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~7 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~7 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -234,7 +234,7 @@
 
                     <section class="article-section" id="humanitarian-specifics">
                         <h2 class="article-section__title">Почему в праве и истории требуют именно постраничные сноски</h2>
-                        <p>В точных и инженерных науках доминируют квадратные скобки со ссылкой на общий список литературы в конце отчета (<code>[14, c. 52]</code>). Однако в юриспруденции, истории, политологии и филологии стандартом являются <strong>подстрочные постраничные сноски</strong> (внизу каждого листа под чертой).</p>
+                        <p>В точных и инженерных науках доминируют квадратные скобки со ссылкой на общий список литературы в конце отчета (<code>[14, с. 52]</code>). Однако в юриспруденции, истории, политологии и филологии стандартом являются <strong>подстрочные постраничные сноски</strong> (внизу каждого листа под чертой).</p>
                         <p>Это связано с тем, что историк или юрист часто комментирует архивный документ, приводит выдержку из судебного решения или цитирует нормативный акт прямо по ходу чтения текста (см. также правила составления <a href="/blog/legal-regulatory-acts-bibliography-diploma-gost">списка нормативно-правовых актов в дипломе</a>), не заставляя читателя листать 80 страниц до конца диплома.</p>
                     </section>
 
@@ -244,7 +244,7 @@
                         <ul>
                             <li><strong>Знак сноски:</strong> арабская цифра верхним индексом без скобки ($^1$, $^2$, $^3$);</li>
                             <li><strong>Место знака:</strong> ставится непосредственно за словом или цитатой <strong>до знака препинания</strong> (например: <em>«по мнению ученых¹.»</em>); исключение составляет вопросительный и восклицательный знаки;</li>
-                            <li><strong>Шрифт сноски:</strong> на 2–3 пункта меньше основного текста (10 пт при основном тексте 14 пт);</li>
+                            <li><strong>Шрифт сноски:</strong> меньше основного текста, обычно 10–12 пт при основном тексте 14 пт — точный кегль задает методичка;</li>
                             <li><strong>Интервал:</strong> одинарный межстрочный внутри сноски при полуторном в основном документе.</li>
                         </ul>
                     </section>
@@ -263,7 +263,7 @@
 
                     <section class="article-section" id="latex-footnote-setup">
                         <h2 class="article-section__title">Команда footnote и сброс нумерации на каждой странице в LaTeX</h2>
-                        <p>В LaTeX вставка подстрочной сноски выполняется командой <code>\footnote{...}</code>. По умолчанию LaTeX ведет сквозную нумерацию сносок по всему документу (от 1 до 200). Для включения постраничной нумерации (на каждой новой странице счетчик начинается с 1) подключите пакет <strong>footmisc</strong>:</p>
+                        <p>В LaTeX вставка подстрочной сноски выполняется командой <code>\footnote{...}</code>. По умолчанию LaTeX ведет сквозную нумерацию сносок по всему документу (от 1 до 200). ГОСТ Р 7.0.5-2008 допускает и сквозную нумерацию, и нумерацию в пределах главы или страницы; постраничная — традиция многих гуманитарных кафедр, поэтому сверьтесь с методичкой. Для постраничной нумерации (на каждой новой странице счетчик начинается с 1) подключите пакет <strong>footmisc</strong>:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>\usepackage[perpage,bottom]{footmisc}
@@ -271,11 +271,12 @@
 % perpage — сбрасывать счетчик сносок на 1 на каждой новой странице
 % bottom  — всегда прижимать сноски к нижнему краю листа</code></pre>
                         </div>
+                        <p>Пакет подключается в преамбуле. В Labkeeper любая команда <code>\usepackage</code> отключает стандартную преамбулу, поэтому начните проект с полной преамбулы: класс документа, кириллица, поля и <code>footmisc</code>, как в примере в редакторе.</p>
                     </section>
 
                     <section class="article-section" id="separator-line">
                         <h2 class="article-section__title">Требования к разделительной горизонтальной черте</h2>
-                        <p>По стандарту сноски отделяются от основного текста тонкой горизонтальной чертой длиной около 40–50 мм (примерно треть ширины полосы набора), прижатой к левому краю. В LaTeX эта черта генерируется автоматически макросом <code>\footnoterule</code>.</p>
+                        <p>ГОСТ 7.32-2017 требует отделять сноску от текста короткой сплошной тонкой горизонтальной линией с левой стороны страницы, но точной длины не задает; методички обычно называют 30–50 мм. В LaTeX эта черта генерируется автоматически макросом <code>\footnoterule</code>.</p>
                     </section>
 
                     <section class="article-section" id="tips">
@@ -309,7 +310,7 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Верстайте курсовые и дипломы по юриспруденции и истории со сносками по ГОСТ в Labkeeper.</p>
-                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0AHistorical+sources+need+precise+attribution.%5Cfootnote%7BA.+Author.+A+History+of+Science.+2024.+P.+15.%7D%0AAnother+statement+uses+an+explanatory+note.%5Cfootnote%7BThis+note+clarifies+the+terminology.%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Brussian%5D%7Bbabel%7D%0A%5Cusepackage%5Bperpage%5D%7Bfootmisc%7D%0A%5Cbegin%7Bdocument%7D%0A%D0%9F%D0%BE%D1%80%D1%8F%D0%B4%D0%BE%D0%BA+%D1%80%D0%B0%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F+%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD+%D0%B2+%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%B8%D0%BA%D0%B5%5Cfootnote%7B%D0%A1%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B2+%D0%90.%7E%D0%92.+%D0%A3%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BD%D1%8B%D0%B9+%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81+%3A+%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%B8%D0%BA.+---+%D0%9C.+%3A+%D0%9A%D0%BD%D0%BE%D1%80%D1%83%D1%81%2C+2024.+---+%D0%A1.%7E142.%7D.+%D0%A1%D1%80%D0%BE%D0%BA%D0%B8+%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D1%8B+%D1%82%D0%B0%D0%BC+%D0%B6%D0%B5%5Cfootnote%7B%D0%A2%D0%B0%D0%BC+%D0%B6%D0%B5.+---+%D0%A1.%7E145.%7D.%0A%5Cnewpage%0A%D0%9D%D0%B0+%D0%BD%D0%BE%D0%B2%D0%BE%D0%B9+%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B5+%D0%BD%D1%83%D0%BC%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D1%8F+%D1%81%D0%BD%D0%BE%D1%81%D0%BE%D0%BA+%D0%BD%D0%B0%D1%87%D0%B8%D0%BD%D0%B0%D0%B5%D1%82%D1%81%D1%8F+%D0%B7%D0%B0%D0%BD%D0%BE%D0%B2%D0%BE%5Cfootnote%7B%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2+%D0%98.%7E%D0%98.+%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F+%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B0+%D0%B8+%D0%BF%D1%80%D0%B0%D0%B2%D0%B0.+---+%D0%9C.%2C+2023.+---+%D0%A1.%7E15.%7D.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -325,7 +326,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Оформляйте гуманитарные исследования в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с поддержкой подстрочных постраничных сносок по ГОСТ Р 7.0.5-2008 и моментальной PDF-генерацией.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX: подстрочные сноски командой footnote, постраничная нумерация через footmisc и PDF после нажатия «Выполнить».</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -363,7 +364,7 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0AHistorical+sources+need+precise+attribution.%5Cfootnote%7BA.+Author.+A+History+of+Science.+2024.+P.+15.%7D%0AAnother+statement+uses+an+explanatory+note.%5Cfootnote%7BThis+note+clarifies+the+terminology.%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Brussian%5D%7Bbabel%7D%0A%5Cusepackage%5Bperpage%5D%7Bfootmisc%7D%0A%5Cbegin%7Bdocument%7D%0A%D0%9F%D0%BE%D1%80%D1%8F%D0%B4%D0%BE%D0%BA+%D1%80%D0%B0%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F+%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD+%D0%B2+%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%B8%D0%BA%D0%B5%5Cfootnote%7B%D0%A1%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B2+%D0%90.%7E%D0%92.+%D0%A3%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BD%D1%8B%D0%B9+%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81+%3A+%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%B8%D0%BA.+---+%D0%9C.+%3A+%D0%9A%D0%BD%D0%BE%D1%80%D1%83%D1%81%2C+2024.+---+%D0%A1.%7E142.%7D.+%D0%A1%D1%80%D0%BE%D0%BA%D0%B8+%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D1%8B+%D1%82%D0%B0%D0%BC+%D0%B6%D0%B5%5Cfootnote%7B%D0%A2%D0%B0%D0%BC+%D0%B6%D0%B5.+---+%D0%A1.%7E145.%7D.%0A%5Cnewpage%0A%D0%9D%D0%B0+%D0%BD%D0%BE%D0%B2%D0%BE%D0%B9+%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B5+%D0%BD%D1%83%D0%BC%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D1%8F+%D1%81%D0%BD%D0%BE%D1%81%D0%BE%D0%BA+%D0%BD%D0%B0%D1%87%D0%B8%D0%BD%D0%B0%D0%B5%D1%82%D1%81%D1%8F+%D0%B7%D0%B0%D0%BD%D0%BE%D0%B2%D0%BE%5Cfootnote%7B%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2+%D0%98.%7E%D0%98.+%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F+%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B0+%D0%B8+%D0%BF%D1%80%D0%B0%D0%B2%D0%B0.+---+%D0%9C.%2C+2023.+---+%D0%A1.%7E15.%7D.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

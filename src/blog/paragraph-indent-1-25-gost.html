@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/paragraph-indent-1-25-gost"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Дипломные работы"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#diploma" class="article-tag">Дипломные работы</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~6 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~6 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -226,17 +226,18 @@
                             <li><a href="#gost-requirement" class="article-toc__link">Что требует ГОСТ 7.32 к абзацному отступу</a></li>
                             <li><a href="#parindent-setup" class="article-toc__link">Абзацный отступ 1.25 вкр онлайн: параметр parindent</a></li>
                             <li><a href="#indentfirst-problem" class="article-toc__link">Красная строка 1.25 см диплом: пакет indentfirst для первого абзаца</a></li>
-                            <li><a href="#parskip-spacing" class="article-toc__link">Межабзацный интервал parskip: почему нельзя оставлять пустые строки</a></li>
+                            <li><a href="#parskip-spacing" class="article-toc__link">Межабзацный интервал parskip: никаких промежутков между абзацами</a></li>
                             <li><a href="#justification" class="article-toc__link">Выравнивание по ширине полосы набора (Justify)</a></li>
                         </ol>
                     </nav>
 
                     <section class="article-section" id="gost-requirement">
                         <h2 class="article-section__title">Что требует ГОСТ 7.32 к абзацному отступу</h2>
-                        <p>В тексте отчетов о НИР, пояснительных записок к дипломным проектам и диссертациям абзацный отступ (красная строка) стандартизирован абсолютно жестко:</p>
+                        <p>В тексте отчетов о НИР и пояснительных записок к дипломным проектам абзацный отступ (красная строка) задан ГОСТ 7.32-2017 жестко:</p>
                         <blockquote>
                             «Абзацный отступ должен быть одинаковым по всему тексту отчета и равен 1,25 см».
                         </blockquote>
+                        <p>У кандидатской диссертации свой стандарт — ГОСТ Р 7.0.11-2011, и отступ там задан иначе: пять знаков.</p>
                         <p>Нормоконтролеры часто измеряют этот параметр буквально линейкой по распечатанному экземпляру. Любые отклонения (отступы табуляцией, пробелами или стандартный англо-американский отступ LaTeX в 15–20 pt) приводят к возврату работы на доработку.</p>
                     </section>
 
@@ -263,8 +264,9 @@
                     </section>
 
                     <section class="article-section" id="parskip-spacing">
-                        <h2 class="article-section__title">Межабзацный интервал parskip: почему нельзя оставлять пустые строки</h2>
-                        <p>В веб-верстке и американских документах принято разделять абзацы вертикальными отступами (блочный стиль). По российскому ГОСТу вертикальный интервал между абзацами внутри одного подраздела <strong>должен быть равен нулю</strong>.</p>
+                        <h2 class="article-section__title">Межабзацный интервал parskip: никаких промежутков между абзацами</h2>
+                        <p>В веб-верстке и американских документах принято разделять абзацы вертикальными отступами (блочный стиль). В русских отчетах и дипломах абзацы отделяют только красной строкой, а вертикальный промежуток между абзацами внутри подраздела не делают.</p>
+                        <p>В коде LaTeX пустая строка и есть разделитель абзацев, поэтому ставить ее нужно. Лишний промежуток появляется не от нее, а от ненулевого параметра <code>\parskip</code> — например, после подключения пакета <code>parskip</code>.</p>
                         <p>Убедитесь, что параметр <code>\parskip</code> обнулен:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
@@ -291,7 +293,7 @@
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
                                     <h3>Отступ в списках по ГОСТ</h3>
-                                    <p>Для выравнивания списков <code>enumerate</code> и <code>itemize</code> вровень с абзацным отступом 1.25 см используйте пакет <code>enumitem</code>: <code>\setlist{leftmargin=1.25cm}</code>.</p>
+                                    <p>Чтобы маркер списков <code>enumerate</code> и <code>itemize</code> стоял на месте красной строки 1,25 см, используйте пакет <code>enumitem</code>: <code>\setlist{labelindent=1.25cm,leftmargin=*}</code>. Параметр <code>leftmargin</code> сам по себе сдвигает текст пункта, а не маркер.</p>
                                 </div>
                             </div>
                         </div>
@@ -324,7 +326,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Соблюдайте стандарты нормоконтроля в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с шаблонами пояснительных записок, точными полями и ГОСТ-отступами из коробки.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX: отступ 1,25 см, поля и выравнивание по ширине задаются парой строк преамбулы, PDF — после нажатия «Выполнить».</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">

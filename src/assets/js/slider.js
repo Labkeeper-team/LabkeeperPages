@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             url: '/blog/rinc-vak-scientific-article-template-fonts-margins',
             title: 'Публикации для базы РИНЦ/ВАК',
-            text: 'Шаблон научной статьи РИНЦ и ВАК: требования к шрифтам, УДК и ГОСТ.'
+            text: 'Шаблон научной статьи РИНЦ и ВАК: требования журналов к шрифтам, УДК и ГОСТ.'
         },
         {
             url: '/blog/modern-it-resume-markdown-cv-as-code',
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             url: '/blog/diploma-assignment-form-calendar-schedule-gost',
             title: 'Бланк задания на ВКР',
-            text: 'Шаблоны задания и календарного графика диплома с правильным оформлением по ГОСТ.'
+            text: 'Задание и календарный график диплома: форма кафедры, этапы и строки подписей.'
         },
         {
             url: '/blog/how-to-write-lab-report-conclusion-examples',
@@ -414,7 +414,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             url: '/blog/a4-frames-eskd-stamp-technical-diploma',
             title: 'Рамки ЕСКД и штампы А4 для ВКР',
-            text: 'Формы 2 и 2а, поля 20-5-5-5 мм, графы штампа и автоматическое заполнение.'
+            text: 'Формы 2 и 2а, поля 20-5-5-5 мм и графы штампа ВКР на TikZ.'
         },
         {
             url: '/blog/paragraph-indent-1-25-gost',
@@ -444,12 +444,12 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             url: '/blog/algorithm-flowcharts-gost-markdown-latex',
             title: 'Блок-схемы по ГОСТ в отчетах',
-            text: 'Стандарт ГОСТ 19.701, отрисовка схем в TikZ и Mermaid, готовые шаблоны.'
+            text: 'Стандарт ГОСТ 19.701, отрисовка схем в TikZ и подписи «Да/Нет» на ветвлениях.'
         },
         {
             url: '/blog/programming-lab-report-code-listings-gost',
             title: 'Листинги кода по ГОСТ в отчетах',
-            text: 'Пакет listings, правила ГОСТ 7.32, моноширинные шрифты и шаблоны отчетов.'
+            text: 'Пакет listings, требования методичек, моноширинные шрифты и подпись «Листинг».'
         },
         {
             url: '/blog/latex-tikz-automata-graphs',
@@ -534,7 +534,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             url: '/blog/markdown-to-pdf-export',
             title: 'Конвертация Markdown в&nbsp;PDF онлайн',
-            text: 'Мгновенный экспорт .md в PDF с формулами, разметкой таблиц и полями А4.'
+            text: 'Экспорт .md в PDF: печать браузера или LaTeX-проект с формулами, таблицами и сносками.'
         },
         {
             url: '/blog/markdown-strikethrough-underline-highlight',

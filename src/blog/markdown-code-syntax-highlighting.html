@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Markdown подсветка кода: синтаксис кода в Markdown — Labkeeper</title>
-    <meta name="description" content="Руководство: Markdown подсветка кода для разных языков, синтаксис кода в Markdown с тройными бэктиками, нумерация строк и экспорт в чистый PDF в Labkeeper." />
+    <meta name="description" content="Руководство: Markdown подсветка кода для разных языков, синтаксис кода в Markdown с тройными бэктиками, идентификаторы языков и сохранение листингов в PDF в Labkeeper." />
     <!-- SEO Ключи: markdown подсветка кода для разных языков, синтаксис кода в markdown -->
     <meta name="keywords" content="markdown подсветка кода для разных языков, синтаксис кода в markdown" />
     <link rel="canonical" href="https://labkeeper.io/blog/markdown-code-syntax-highlighting" />
@@ -17,19 +17,19 @@
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Labkeeper" />
     <meta property="og:title" content="Markdown подсветка кода: синтаксис кода в Markdown — Labkeeper" />
-    <meta property="og:description" content="Руководство: Markdown подсветка кода для разных языков, синтаксис кода в Markdown с тройными бэктиками, нумерация строк и экспорт в чистый PDF в Labkeeper." />
+    <meta property="og:description" content="Руководство: Markdown подсветка кода для разных языков, синтаксис кода в Markdown с тройными бэктиками, идентификаторы языков и сохранение листингов в PDF в Labkeeper." />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:title" content="Markdown подсветка кода: синтаксис кода в Markdown — Labkeeper" />
-    <meta name="twitter:description" content="Руководство: Markdown подсветка кода для разных языков, синтаксис кода в Markdown с тройными бэктиками, нумерация строк и экспорт в чистый PDF в Labkeeper." />
+    <meta name="twitter:description" content="Руководство: Markdown подсветка кода для разных языков, синтаксис кода в Markdown с тройными бэктиками, идентификаторы языков и сохранение листингов в PDF в Labkeeper." />
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Оформление сниппетов кода в Markdown с подсветкой синтаксиса",
-        "description": "Руководство: Markdown подсветка кода для разных языков, синтаксис кода в Markdown с тройными бэктиками, нумерация строк и экспорт в чистый PDF в Labkeeper.",
+        "description": "Руководство: Markdown подсветка кода для разных языков, синтаксис кода в Markdown с тройными бэктиками, идентификаторы языков и сохранение листингов в PDF в Labkeeper.",
         "author": {
             "@type": "Organization",
             "name": "Labkeeper",
@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/markdown-code-syntax-highlighting"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с Markdown"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#markdown" class="article-tag">Работа с Markdown</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~6 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~6 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -226,7 +226,7 @@
                             <li><a href="#inline-vs-block" class="article-toc__link">Инлайн-код против блоков кода (Fenced code blocks)</a></li>
                             <li><a href="#languages" class="article-toc__link">Markdown подсветка кода для разных языков: таблица идентификаторов</a></li>
                             <li><a href="#syntax-rules" class="article-toc__link">Синтаксис кода в Markdown: отступы, экранирование и бэктики</a></li>
-                            <li><a href="#pdf-export" class="article-toc__link">Особенности отображения листингов при компиляции в PDF</a></li>
+                            <li><a href="#pdf-export" class="article-toc__link">Особенности отображения листингов при сохранении в PDF</a></li>
                             <li><a href="#common-mistakes" class="article-toc__link">Типичные ошибки при оформлении кода</a></li>
                         </ol>
                     </nav>
@@ -239,7 +239,7 @@
 
                     <section class="article-section" id="languages">
                         <h2 class="article-section__title">Markdown подсветка кода для разных языков: таблица идентификаторов</h2>
-                        <p>Чтобы активировалась <strong>Markdown подсветка кода для разных языков</strong>, сразу после открывающих трех бэктиков без пробела указывается короткий идентификатор компилятора или лексера (Prism, Highlight.js):</p>
+                        <p>Чтобы активировалась <strong>Markdown подсветка кода для разных языков</strong>, сразу после открывающих трех бэктиков указывается короткий идентификатор языка, который понимают библиотеки подсветки (Prism, Highlight.js):</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">Markdown</span></div>
                             <pre><code>```python
@@ -257,6 +257,7 @@ def calculate_energy(mass, c=299792458):
                             <li><code>latex</code>, <code>tex</code> — код макросов и окружений TeX;</li>
                             <li><code>json</code>, <code>yaml</code>, <code>xml</code> — конфигурационные файлы и форматы данных.</li>
                         </ul>
+                        <p><strong>Как это выглядит в Labkeeper.</strong> Идентификатор языка стоит указывать, но цветной подсветки в Labkeeper нет: превью Markdown показывает блок моноширинным шрифтом без цвета, а в LaTeX-проекте блок кода из Markdown-сегмента становится обычным моноширинным блоком. Цветные ключевые слова, нумерацию строк и подпись «Листинг» в PDF дает пакет <code>listings</code> в LaTeX-сегменте — настройка разобрана в статье об <a href="/blog/programming-lab-report-code-listings-gost">оформлении листингов кода в отчетах по ГОСТ</a>.</p>
                     </section>
 
                     <section class="article-section" id="syntax-rules">
@@ -275,15 +276,16 @@ print("Hello world")
                     </section>
 
                     <section class="article-section" id="pdf-export">
-                        <h2 class="article-section__title">Особенности отображения листингов при компиляции в PDF</h2>
-                        <p>При экспорте отчетов в PDF критически важно, чтобы длинные строки листинга не вылезали за границы печатного листа А4. В онлайн-редакторе <strong>Labkeeper</strong> блок кода снабжается моноширинным шрифтом (JetBrains Mono / Fira Code) и автоматическим мягким переносом длинных инструкций либо аккуратным скроллом, сохраняя эстетику типографики ГОСТ.</p>
+                        <h2 class="article-section__title">Особенности отображения листингов при сохранении в PDF</h2>
+                        <p>В распечатанном отчете длинные строки листинга не должны вылезать за границы листа А4. В превью <strong>Labkeeper</strong> блок кода набирается системным моноширинным шрифтом браузера, а длинная строка не переносится: блок прокручивается по горизонтали. При сохранении в PDF через печать браузера такая строка обрежется по краю листа, поэтому длинные инструкции переносите вручную, например после запятой или оператора.</p>
+                        <p>Если нужен листинг с автоматическим переносом строк, нумерацией и подписью, используйте LaTeX-проект и пакет <code>listings</code> с параметрами <code>breaklines=true</code> и <code>numbers=left</code>.</p>
                     </section>
 
                     <section class="article-section" id="common-mistakes">
                         <h2 class="article-section__title">Типичные ошибки при оформлении кода</h2>
                         <ul>
-                            <li><strong>Пробел перед названием языка:</strong> <code>``` python</code> часто приводит к тому, что парсер не опознает язык и отображает блок серым текстом без подсветки.</li>
-                            <li><strong>Использование обычных одинарных кавычек:</strong> Символы <code>'''</code> не открывают блок кода в Markdown. Требуются только грависы (обратные кавычки <code>```</code>, клавиша Ё в русской раскладке).</li>
+                            <li><strong>Использование обычных одинарных кавычек:</strong> Символы <code>'''</code> не открывают блок кода в Markdown. Требуются только грависы (обратные кавычки <code>```</code>, клавиша Ё в английской раскладке).</li>
+                            <li><strong>Незакрытый блок:</strong> если забыть закрывающие <code>```</code>, весь текст до конца сегмента превратится в код.</li>
                         </ul>
                     </section>
 
@@ -310,8 +312,8 @@ print("Hello world")
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Редактируйте код и научные заметки в Labkeeper с красивой цветной подсветкой и экспортом листингов в PDF.</p>
-                    <a href="/project/default?open=markdown&amp;markdown=%23%23+Python+example%0A%0A%60%60%60python%0Adef+mean%28values%29%3A%0A++++return+sum%28values%29+%2F+len%28values%29%0A%0Aprint%28mean%28%5B2%2C+4%2C+6%5D%29%29%0A%60%60%60" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <p class="article-sidebar__title">Пишите научные заметки с блоками кода в Labkeeper: Markdown для черновика, пакет listings в LaTeX-проекте для цветных листингов в PDF.</p>
+                    <a href="/project/default?open=markdown&amp;markdown=%23%23+%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80+%D0%BD%D0%B0+Python%0A%0A%D0%AF%D0%B7%D1%8B%D0%BA+%D1%83%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD+%D0%BF%D0%BE%D1%81%D0%BB%D0%B5+%D0%B1%D1%8D%D0%BA%D1%82%D0%B8%D0%BA%D0%BE%D0%B2%2C+%D0%BD%D0%BE+%D0%B2+%D0%BF%D1%80%D0%B5%D0%B2%D1%8C%D1%8E+Labkeeper+%D0%B1%D0%BB%D0%BE%D0%BA+%D0%B1%D1%83%D0%B4%D0%B5%D1%82+%D0%BC%D0%BE%D0%BD%D0%BE%D1%88%D0%B8%D1%80%D0%B8%D0%BD%D0%BD%D1%8B%D0%BC+%D0%B8+%D0%B1%D0%B5%D0%B7+%D1%86%D0%B2%D0%B5%D1%82%D0%B0.%0A%0A%60%60%60python%0Adef+mean%28values%29%3A%0A++++return+sum%28values%29+%2F+len%28values%29%0A%0Aprint%28mean%28%5B2%2C+4%2C+6%5D%29%29%0A%60%60%60" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -327,7 +329,7 @@ print("Hello world")
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Оформляйте отчеты с листингами кода в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с поддержкой подсветки синтаксиса более чем 50 языков программирования, формул LaTeX и быстрой компиляцией в PDF.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор Markdown и LaTeX: блоки кода, формулы MathJax и цветные листинги через пакет listings в LaTeX-проекте.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -365,7 +367,7 @@ print("Hello world")
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=markdown&amp;markdown=%23%23+Python+example%0A%0A%60%60%60python%0Adef+mean%28values%29%3A%0A++++return+sum%28values%29+%2F+len%28values%29%0A%0Aprint%28mean%28%5B2%2C+4%2C+6%5D%29%29%0A%60%60%60" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=markdown&amp;markdown=%23%23+%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80+%D0%BD%D0%B0+Python%0A%0A%D0%AF%D0%B7%D1%8B%D0%BA+%D1%83%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD+%D0%BF%D0%BE%D1%81%D0%BB%D0%B5+%D0%B1%D1%8D%D0%BA%D1%82%D0%B8%D0%BA%D0%BE%D0%B2%2C+%D0%BD%D0%BE+%D0%B2+%D0%BF%D1%80%D0%B5%D0%B2%D1%8C%D1%8E+Labkeeper+%D0%B1%D0%BB%D0%BE%D0%BA+%D0%B1%D1%83%D0%B4%D0%B5%D1%82+%D0%BC%D0%BE%D0%BD%D0%BE%D1%88%D0%B8%D1%80%D0%B8%D0%BD%D0%BD%D1%8B%D0%BC+%D0%B8+%D0%B1%D0%B5%D0%B7+%D1%86%D0%B2%D0%B5%D1%82%D0%B0.%0A%0A%60%60%60python%0Adef+mean%28values%29%3A%0A++++return+sum%28values%29+%2F+len%28values%29%0A%0Aprint%28mean%28%5B2%2C+4%2C+6%5D%29%29%0A%60%60%60" class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

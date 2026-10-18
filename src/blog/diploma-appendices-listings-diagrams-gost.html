@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/diploma-appendices-listings-diagrams-gost"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Дипломные работы"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#diploma" class="article-tag">Дипломные работы</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~7 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~7 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -247,9 +247,9 @@
                         <h2 class="article-section__title">Как нумеровать приложения в курсовой: запрещенные буквы алфавита</h2>
                         <p>Главная тонкость нормоконтроля в том, <strong>как нумеровать приложения в курсовой</strong> согласно ГОСТ 7.32-2017:</p>
                         <blockquote>
-                            «Приложения обозначают заглавными буквами русского алфавита, начиная с А, за исключением букв: <strong>Ё, З, Й, О, Ч, Ь, Ы, Ъ</strong>. После слова «Приложение» следует буква, обозначающая его последовательность (например: ПРИЛОЖЕНИЕ А)».
+                            «Приложения обозначают прописными буквами кириллического алфавита, начиная с А, за исключением букв <strong>Ё, З, Й, О, Ч, Ъ, Ы, Ь</strong>. После слова „ПРИЛОЖЕНИЕ“ следует буква, обозначающая его последовательность. Допускается обозначение приложений буквами латинского алфавита, за исключением букв I и O» (ГОСТ 7.32-2017, п. 6.17.4).
                         </blockquote>
-                        <p>Указанные буквы исключены, так как они зрительно похожи на цифры 3, 0, 4 или не употребляются в начале слов. Если русских букв не хватает, допускается использование латиницы (кроме I и O).</p>
+                        <p>Указанные буквы исключены, так как они зрительно похожи на цифры 3, 0, 4 или не употребляются в начале слов. Если в работе одно приложение, оно все равно обозначается «ПРИЛОЖЕНИЕ А».</p>
                     </section>
 
                     <section class="article-section" id="gost-headings">
@@ -267,24 +267,32 @@
 
                     <section class="article-section" id="latex-appendix">
                         <h2 class="article-section__title">Настройка окружения appendix в LaTeX с русской нумерацией</h2>
-                        <p>В LaTeX команда <code>\appendix</code> переключает счетчики разделов. Для генерации правильных русских букв добавьте макрос в преамбулу:</p>
+                        <p>В LaTeX команда <code>\appendix</code> сбрасывает счетчик разделов. Номером приложения должна стать только буква, а слово «ПРИЛОЖЕНИЕ» добавляет оформление заголовка: если вписать слово в сам номер (<code>\renewcommand{\thesection}{Приложение~\Asbuk{section}}</code>), ссылка превратится в «в приложении Приложение А», а содержание собьется. Рабочий вариант для класса <code>article</code> с пакетом <code>titlesec</code> в преамбуле:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
-                            <pre><code>\appendix
-% Переопределение нумерации разделов на русские буквы
-\renewcommand{\thesection}{Приложение~\Asbuk{section}}
+                            <pre><code>% В преамбуле: \usepackage{titlesec}
 
-% Нумерация формул и рисунков внутри приложения А: (А.1), рисунок А.1
-\renewcommand{\theequation}{\Asbuk{section}.\arabic{equation}}
-\renewcommand{\thefigure}{\Asbuk{section}.\arabic{figure}}
-\renewcommand{\thetable}{\Asbuk{section}.\arabic{table}}
+\appendix
+\renewcommand{\thesection}{\Asbuk{section}}   % А, Б, В...
+\counterwithin{figure}{section}               % Рисунок А.1, Б.1
+\counterwithin{table}{section}                % Таблица А.1
+\counterwithin{equation}{section}             % (А.1)
+% «ПРИЛОЖЕНИЕ А» по центру, заголовок приложения строкой ниже
+\titleformat{\section}[display]
+    {\normalfont\bfseries\filcenter}
+    {ПРИЛОЖЕНИЕ~\thesection}
+    {0pt}
+    {}
 
-\section{Исходный код клиентского приложения}
+\clearpage % каждое приложение — с новой страницы
+\section{Исходный код клиентского приложения}\label{app:code}
 ... листинг программы ...
 
+\clearpage
 \section{Акт внедрения результатов исследований}
 ... скан документа ...</code></pre>
                         </div>
+                        <p>Теперь <code>\ref{app:code}</code> дает букву «А», и ссылка читается как «в приложении А», а нумерация рисунков начинается заново в каждом приложении. Команда <code>\Asbuk</code> из babel пропускает буквы Ё, Й, Ъ, Ы, Ь, но не З, О и Ч, поэтому с ГОСТ она совпадает только для первых семи приложений (А–Ж): восьмое получит «З» вместо «И». При большем числе приложений задайте буквы вручную. В стандартной преамбуле Labkeeper разделы не нумеруются, и буквы не будет вовсе — для приложений нужна своя преамбула, как в примере в редакторе.</p>
                     </section>
 
                     <section class="article-section" id="listings-in-appendix">
@@ -322,8 +330,8 @@
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Выносите программные модули и расчетные таблицы в приложения автоматически в онлайн-редакторе Labkeeper.</p>
-                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7BMain+text%7DThe+source+code+is+in+Appendix%7E%5Cref%7Bapp%3Acode%7D.%0A%5Cappendix%5Csection%7BProgram+listing%7D%5Clabel%7Bapp%3Acode%7D%0A%5Cbegin%7Bverbatim%7D%0Adef+square%28x%29%3A%0A++++return+x+*+x%0A%5Cend%7Bverbatim%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <p class="article-sidebar__title">Оформляйте приложения с листингами и расчетными таблицами в онлайн-редакторе Labkeeper: буквы А, Б, В задает одна строка кода.</p>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Brussian%5D%7Bbabel%7D%0A%5Cusepackage%7Btitlesec%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7B%D0%A0%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%7D%0A%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9+%D0%BA%D0%BE%D0%B4+%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD+%D0%B2+%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B8%7E%5Cref%7Bapp%3Acode%7D.%0A%5Cappendix%0A%5Crenewcommand%7B%5Cthesection%7D%7B%5CAsbuk%7Bsection%7D%7D%0A%5Ctitleformat%7B%5Csection%7D%5Bdisplay%5D%7B%5Cnormalfont%5Cbfseries%5Cfilcenter%7D%7B%D0%9F%D0%A0%D0%98%D0%9B%D0%9E%D0%96%D0%95%D0%9D%D0%98%D0%95%7E%5Cthesection%7D%7B0pt%7D%7B%7D%0A%5Cclearpage%0A%5Csection%7B%D0%9B%D0%B8%D1%81%D1%82%D0%B8%D0%BD%D0%B3+%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B%7D%5Clabel%7Bapp%3Acode%7D%0A%5Cbegin%7Bverbatim%7D%0Adef+square%28x%29%3A%0A++++return+x+*+x%0A%5Cend%7Bverbatim%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -377,7 +385,7 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7BMain+text%7DThe+source+code+is+in+Appendix%7E%5Cref%7Bapp%3Acode%7D.%0A%5Cappendix%5Csection%7BProgram+listing%7D%5Clabel%7Bapp%3Acode%7D%0A%5Cbegin%7Bverbatim%7D%0Adef+square%28x%29%3A%0A++++return+x+*+x%0A%5Cend%7Bverbatim%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Brussian%5D%7Bbabel%7D%0A%5Cusepackage%7Btitlesec%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7B%D0%A0%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%7D%0A%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9+%D0%BA%D0%BE%D0%B4+%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD+%D0%B2+%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B8%7E%5Cref%7Bapp%3Acode%7D.%0A%5Cappendix%0A%5Crenewcommand%7B%5Cthesection%7D%7B%5CAsbuk%7Bsection%7D%7D%0A%5Ctitleformat%7B%5Csection%7D%5Bdisplay%5D%7B%5Cnormalfont%5Cbfseries%5Cfilcenter%7D%7B%D0%9F%D0%A0%D0%98%D0%9B%D0%9E%D0%96%D0%95%D0%9D%D0%98%D0%95%7E%5Cthesection%7D%7B0pt%7D%7B%7D%0A%5Cclearpage%0A%5Csection%7B%D0%9B%D0%B8%D1%81%D1%82%D0%B8%D0%BD%D0%B3+%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B%7D%5Clabel%7Bapp%3Acode%7D%0A%5Cbegin%7Bverbatim%7D%0Adef+square%28x%29%3A%0A++++return+x+*+x%0A%5Cend%7Bverbatim%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

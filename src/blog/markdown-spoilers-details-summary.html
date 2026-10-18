@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Скрытый текст details в Markdown: как сделать спойлер — Labkeeper</title>
-    <meta name="description" content="Пошаговый гайд: как сделать скрытый текст details в Markdown, раскрывающиеся спойлеры через details и summary, интерактивные блоки в отчетах в Labkeeper." />
+    <meta name="description" content="Пошаговый гайд: как сделать скрытый текст details в Markdown, раскрывающиеся спойлеры через details и summary, блоки, открытые по умолчанию, и печать в PDF в Labkeeper." />
     <!-- SEO Ключи: скрытый текст details markdown, как сделать спойлер в markdown -->
     <meta name="keywords" content="скрытый текст details markdown, как сделать спойлер в markdown" />
     <link rel="canonical" href="https://labkeeper.io/blog/markdown-spoilers-details-summary" />
@@ -17,19 +17,19 @@
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Labkeeper" />
     <meta property="og:title" content="Скрытый текст details в Markdown: как сделать спойлер — Labkeeper" />
-    <meta property="og:description" content="Пошаговый гайд: как сделать скрытый текст details в Markdown, раскрывающиеся спойлеры через details и summary, интерактивные блоки в отчетах в Labkeeper." />
+    <meta property="og:description" content="Пошаговый гайд: как сделать скрытый текст details в Markdown, раскрывающиеся спойлеры через details и summary, блоки, открытые по умолчанию, и печать в PDF в Labkeeper." />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:title" content="Скрытый текст details в Markdown: как сделать спойлер — Labkeeper" />
-    <meta name="twitter:description" content="Пошаговый гайд: как сделать скрытый текст details в Markdown, раскрывающиеся спойлеры через details и summary, интерактивные блоки в отчетах в Labkeeper." />
+    <meta name="twitter:description" content="Пошаговый гайд: как сделать скрытый текст details в Markdown, раскрывающиеся спойлеры через details и summary, блоки, открытые по умолчанию, и печать в PDF в Labkeeper." />
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Спойлеры и скрываемый текст в Markdown (теги details и summary)",
-        "description": "Пошаговый гайд: как сделать скрытый текст details в Markdown, раскрывающиеся спойлеры через details и summary, интерактивные блоки в отчетах в Labkeeper.",
+        "description": "Пошаговый гайд: как сделать скрытый текст details в Markdown, раскрывающиеся спойлеры через details и summary, блоки, открытые по умолчанию, и печать в PDF в Labkeeper.",
         "author": {
             "@type": "Organization",
             "name": "Labkeeper",
@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/markdown-spoilers-details-summary"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с Markdown"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#markdown" class="article-tag">Работа с Markdown</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~5 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~5 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -248,6 +248,7 @@
 &lt;/details&gt;</code></pre>
                         </div>
                         <p>Заголовок внутри <code>&lt;summary&gt;</code> остается видимым всегда и снабжается кликабельной стрелкой раскрытия, а основной контент прячется до нажатия мыши.</p>
+                        <p>Спойлеры работают в превью Markdown-проекта Labkeeper. В LaTeX-проекте теги <code>&lt;details&gt;</code> и <code>&lt;summary&gt;</code> из Markdown-сегмента выбрасываются вместе с содержимым, поэтому важный текст в спойлер для PDF не прячьте.</p>
                     </section>
 
                     <section class="article-section" id="open-state">
@@ -266,8 +267,8 @@
                             <div class="article-tip">
                                 <div class="article-tip__number">1</div>
                                 <div class="article-tip__content">
-                                    <h3>Поведение при экспорте в PDF</h3>
-                                    <p>При экспорте документа в PDF спойлеры автоматически раскрываются, чтобы ценная информация не была потеряна на бумажном носителе.</p>
+                                    <h3>Поведение при сохранении в PDF</h3>
+                                    <p>Печать браузера выводит страницу как есть: закрытый спойлер попадет в PDF свернутым, и его содержимое пропадет. Перед печатью раскройте нужные блоки или поставьте атрибут <code>open</code>.</p>
                                 </div>
                             </div>
                         </div>
@@ -300,7 +301,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Оформляйте удобные методические материалы в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с поддержкой раскрывающихся спойлеров, интерактивных блоков и экспортом в печатный PDF.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор Markdown с раскрывающимися спойлерами в превью, формулами MathJax и сохранением в PDF через печать браузера.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
