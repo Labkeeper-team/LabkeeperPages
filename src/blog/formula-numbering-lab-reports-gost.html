@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/formula-numbering-lab-reports-gost"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Лабораторные работы"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#labs" class="article-tag">Лабораторные работы</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~6 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~6 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -233,8 +233,9 @@
 
                     <section class="article-section" id="rules">
                         <h2 class="article-section__title">Правила ГОСТ 7.32 к нумерации уравнений</h2>
-                        <p>В академических отчетах и диссертациях номер формулы заключается в круглые скобки и выравнивается строго по правому краю полосы набора. При этом номер присваивается <strong>только тем формулам, на которые есть ссылки в тексте</strong>.</p>
-                        <p>Формулы, вынесенные на отдельную строку для наглядности, но не цитируемые далее по тексту, нумеровать не следует (для них в LaTeX используют окружение со звездочкой: <code>equation*</code> или <code>align*</code>).</p>
+                        <p>По ГОСТ 7.32-2017 (п. 6.8.3) формулы располагают посередине строки, а номер арабскими цифрами в круглых скобках ставят в крайнем правом положении на строке; основной вариант — сквозная нумерация по всему отчету. Нумеровать <strong>только те формулы, на которые есть ссылки в тексте</strong>, — распространенная традиция и требование многих методичек, а не норма самого стандарта.</p>
+                        <p>Если методичка требует такой подход, формулы, вынесенные на отдельную строку для наглядности, но не цитируемые далее по тексту, не нумеруют (для них в LaTeX используют окружение со звездочкой: <code>equation*</code> или <code>align*</code>).</p>
+                        <p>В Labkeeper без своей преамбулы так и происходит: стандартная преамбула ставит номер только формуле, на которую есть ссылка через <code>\eqref</code>, а обычная ссылка <code>\ref</code> номер не включает.</p>
                     </section>
 
                     <section class="article-section" id="single-vs-section">
@@ -242,7 +243,7 @@
                         <p>Стандарт допускает два способа маркировки:</p>
                         <ul>
                             <li><strong>Сквозная нумерация:</strong> арабскими цифрами по всему тексту отчета: (1), (2), (3)... Используется в небольших отчетах по лабораторным работам (до 15–20 страниц).</li>
-                            <li><strong>Нумерация по разделам:</strong> номер раздела и порядковый номер формулы через точку: (1.1), (1.2), (2.1)... Рекомендуется для дипломных работ, ВКР и многоглавных пояснительных записок.</li>
+                            <li><strong>Нумерация по разделам:</strong> номер раздела и порядковый номер формулы через точку: (1.1), (1.2), (2.1)... ГОСТ 7.32 ее допускает, а методички часто выбирают для дипломных работ, ВКР и многоглавных пояснительных записок.</li>
                         </ul>
                     </section>
 
@@ -275,6 +276,7 @@
 \numberwithin{equation}{section}</code></pre>
                         </div>
                         <p>После этого в разделе 2 первая формула автоматически получит номер <code>(2.1)</code>, а при переходе к разделу 3 счетчик формул автоматически сбросится на единицу <code>(3.1)</code>.</p>
+                        <p>В стандартной преамбуле Labkeeper разделы не нумеруются, поэтому <code>\numberwithin{equation}{section}</code> даст номера <code>(0.1)</code>, <code>(0.2)</code>. Для нумерации по разделам начните проект со своей преамбулы, как в примере в редакторе.</p>
                     </section>
 
                     <section class="article-section" id="references">
@@ -318,7 +320,7 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Настраивайте автоматическую нумерацию формул без риска сбить ссылки при правках в Labkeeper.</p>
-                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Bequation%7D%5Clabel%7Beq%3Aohm%7DU%3DIR%5Cend%7Bequation%7D%0A%5Cbegin%7Bequation%7DP%3DUI%3DI%5E2R%5Cend%7Bequation%7D%0AResistance+follows+from+equation%7E%5Ceqref%7Beq%3Aohm%7D.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Brussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%7D%0A%5Cnumberwithin%7Bequation%7D%7Bsection%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7B%D0%97%D0%B0%D0%BA%D0%BE%D0%BD+%D0%9E%D0%BC%D0%B0%7D%0A%5Cbegin%7Bequation%7DU%3DIR%2C%5Clabel%7Beq%3Aohm%7D%5Cend%7Bequation%7D%0A%0A%D0%B3%D0%B4%D0%B5+%24U%24+---+%D0%BD%D0%B0%D0%BF%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%2C+%24I%24+---+%D1%82%D0%BE%D0%BA%2C+%24R%24+---+%D1%81%D0%BE%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5.%0A%5Csection%7B%D0%9C%D0%BE%D1%89%D0%BD%D0%BE%D1%81%D1%82%D1%8C%7D%0A%5Cbegin%7Bequation%7DP%3DUI%3DI%5E2R.%5Clabel%7Beq%3Ap%7D%5Cend%7Bequation%7D%0A%D0%A4%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D0%B0%7E%5Ceqref%7Beq%3Ap%7D+%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D0%B5%D1%82+%D0%B8%D0%B7%7E%5Ceqref%7Beq%3Aohm%7D.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -334,7 +336,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Верстайте математику без ошибок в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с пакетом amsmath, мгновенной генерацией ссылок и проверкой синтаксиса уравнений.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX с пакетом amsmath: нумерация формул, ссылки через eqref и PDF после нажатия «Выполнить».</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -372,7 +374,7 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Bequation%7D%5Clabel%7Beq%3Aohm%7DU%3DIR%5Cend%7Bequation%7D%0A%5Cbegin%7Bequation%7DP%3DUI%3DI%5E2R%5Cend%7Bequation%7D%0AResistance+follows+from+equation%7E%5Ceqref%7Beq%3Aohm%7D.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Brussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%7D%0A%5Cnumberwithin%7Bequation%7D%7Bsection%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7B%D0%97%D0%B0%D0%BA%D0%BE%D0%BD+%D0%9E%D0%BC%D0%B0%7D%0A%5Cbegin%7Bequation%7DU%3DIR%2C%5Clabel%7Beq%3Aohm%7D%5Cend%7Bequation%7D%0A%0A%D0%B3%D0%B4%D0%B5+%24U%24+---+%D0%BD%D0%B0%D0%BF%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%2C+%24I%24+---+%D1%82%D0%BE%D0%BA%2C+%24R%24+---+%D1%81%D0%BE%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5.%0A%5Csection%7B%D0%9C%D0%BE%D1%89%D0%BD%D0%BE%D1%81%D1%82%D1%8C%7D%0A%5Cbegin%7Bequation%7DP%3DUI%3DI%5E2R.%5Clabel%7Beq%3Ap%7D%5Cend%7Bequation%7D%0A%D0%A4%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D0%B0%7E%5Ceqref%7Beq%3Ap%7D+%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D0%B5%D1%82+%D0%B8%D0%B7%7E%5Ceqref%7Beq%3Aohm%7D.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-titlepage"
         },
         "datePublished": "2026-08-20",
-        "dateModified": "2026-08-20",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Дипломные работы","Работа с LaTeX"]
     }
@@ -221,7 +221,7 @@
                         <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 20 августа 2026 · Время чтения: ~7 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~7 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -238,8 +238,9 @@
 
                     <section class="article-section" id="intro">
                         <h2 class="article-section__title">Что должен содержать титульный лист по ГОСТ</h2>
-                        <p>Требования к титульному листу курсовых, дипломных и диссертационных работ определяются ГОСТ
-                            7.32-2017 и методическими указаниями конкретного учебного заведения (комплексный процесс
+                        <p>Требования к титульному листу курсовых и дипломных работ задают методические указания вуза,
+                            которые обычно опираются на ГОСТ 7.32-2017, а титульный лист диссертации регулирует ГОСТ Р
+                            7.0.11-2011 (комплексный процесс
                             подготовки выпускной работы описан в нашем <a href="/blog/latex-diploma-gost">гайде по
                                 оформлению диплома по ГОСТ</a>, а для кандидатских — в <a
                                 href="/blog/latex-dissertation">статье по верстке диссертаций ВАК</a>). Стандартный
@@ -263,7 +264,7 @@
                             выравнивания и вертикальных отступов. Для инженерных и технических проектов вместо
                             стандартного титульного листа часто требуются специализированные рамки и угловые штампы
                             (подробнее об этом читайте в <a href="/blog/latex-eskd">руководстве по оформлению документов
-                                по ЕСКД и СПДС</a>).</p>
+                                по ЕСКД</a>).</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>\begin{titlepage}
@@ -301,11 +302,11 @@
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>% Преамбула
-\documentclass[14pt,a4paper]{report}
+\documentclass[a4paper,14pt]{extreport}
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
-\usepackage[left=30mm,right=10mm,top=20mm,bottom=20mm]{geometry}
+\usepackage[left=30mm,right=15mm,top=20mm,bottom=20mm]{geometry}
 \usepackage{graphicx}
 
 % Переменные для удобного редактирования
@@ -368,8 +369,9 @@
 \end{center}</code></pre>
                         </div>
                         <div class="article-note">
-                            <strong>💡 Совет:</strong> Используйте логотип в формате PDF или SVG для векторного
-                            качества. В Labkeeper поддерживаются форматы PNG, JPG, PDF и EPS.
+                            <strong>💡 Совет:</strong> Загрузите логотип в проект в формате PNG, JPG или PDF; векторный
+                            логотип лучше сохранить в PDF. SVG pdfLaTeX вставить не может, а EPS в Labkeeper загрузить
+                            нельзя — сконвертируйте такие файлы в PDF или PNG.
                         </div>
                     </section>
 

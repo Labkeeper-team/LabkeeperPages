@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-formulas"
         },
         "datePublished": "2026-08-15",
-        "dateModified": "2026-08-20",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с LaTeX","Оформление научных статей"]
     }
@@ -221,7 +221,7 @@
                         <a href="/blog#articles" class="article-tag">Оформление научных статей</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 20 августа 2026 · Время чтения: ~8 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~8 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -298,6 +298,13 @@
                         </div>
                         <p><strong>Результат:</strong> отцентрированная формула <em>a² + b² = c²</em> с номером (1)
                             справа.</p>
+                        <div class="article-note">
+                            <strong>💡 Нумерация в Labkeeper:</strong> если в проекте нет своей преамбулы, Labkeeper
+                            подставляет автоматическую с пакетом <code>mathtools</code> в режиме
+                            <code>showonlyrefs</code>. Тогда номер появляется только у формулы, на которую есть ссылка
+                            через <code>\eqref</code>. Чтобы нумеровались все формулы, соберите документ со своей
+                            преамбулой — от <code>\documentclass</code> до <code>\begin{document}</code>.
+                        </div>
 
                         <p>Если нумерация строки не требуется, используйте звёздочную версию <code>equation*</code>:</p>
                         <div class="article-code">

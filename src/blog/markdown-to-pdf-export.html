@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Конвертировать Markdown в PDF онлайн: экспорт md в PDF — Labkeeper</title>
-    <meta name="description" content="Как быстро конвертировать Markdown в PDF онлайн: экспорт md в PDF с формулами LaTeX, таблицами, правильными полями листа А4 и оглавлением в Labkeeper." />
+    <meta name="description" content="Как конвертировать Markdown в PDF онлайн: экспорт md в PDF через печать браузера или LaTeX-проект Labkeeper с формулами, таблицами, сносками и оглавлением." />
     <!-- SEO Ключи: конвертировать markdown в pdf онлайн, экспорт md в pdf -->
     <meta name="keywords" content="конвертировать markdown в pdf онлайн, экспорт md в pdf" />
     <link rel="canonical" href="https://labkeeper.io/blog/markdown-to-pdf-export" />
@@ -17,19 +17,19 @@
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Labkeeper" />
     <meta property="og:title" content="Конвертировать Markdown в PDF онлайн: экспорт md в PDF — Labkeeper" />
-    <meta property="og:description" content="Как быстро конвертировать Markdown в PDF онлайн: экспорт md в PDF с формулами LaTeX, таблицами, правильными полями листа А4 и оглавлением в Labkeeper." />
+    <meta property="og:description" content="Как конвертировать Markdown в PDF онлайн: экспорт md в PDF через печать браузера или LaTeX-проект Labkeeper с формулами, таблицами, сносками и оглавлением." />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:title" content="Конвертировать Markdown в PDF онлайн: экспорт md в PDF — Labkeeper" />
-    <meta name="twitter:description" content="Как быстро конвертировать Markdown в PDF онлайн: экспорт md в PDF с формулами LaTeX, таблицами, правильными полями листа А4 и оглавлением в Labkeeper." />
+    <meta name="twitter:description" content="Как конвертировать Markdown в PDF онлайн: экспорт md в PDF через печать браузера или LaTeX-проект Labkeeper с формулами, таблицами, сносками и оглавлением." />
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Быстрый экспорт Markdown-заметок в формат PDF",
-        "description": "Как быстро конвертировать Markdown в PDF онлайн: экспорт md в PDF с формулами LaTeX, таблицами, правильными полями листа А4 и оглавлением в Labkeeper.",
+        "description": "Как конвертировать Markdown в PDF онлайн: экспорт md в PDF через печать браузера или LaTeX-проект Labkeeper с формулами, таблицами, сносками и оглавлением.",
         "author": {
             "@type": "Organization",
             "name": "Labkeeper",
@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/markdown-to-pdf-export"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с Markdown","Лабораторные работы"]
     }
@@ -219,7 +219,7 @@
                         <a href="/blog#labs" class="article-tag">Лабораторные работы</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~5 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~6 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -233,28 +233,46 @@
 
                     <section class="article-section" id="why-pdf">
                         <h2 class="article-section__title">Зачем конвертировать Markdown в PDF</h2>
-                        <p>Формат Markdown идеален для быстрого написания текстов, конспектов и черновиков, но не подходит для итоговой сдачи преподавателю или публикации: у него нет фиксированного формата страниц, полей и колонтитулов. Именно поэтому задача <strong>конвертировать markdown в pdf онлайн</strong> возникает у каждого студента и инженера, особенно когда требуется распечатать конспект с аккуратной <a href="/blog/markdown-code-syntax-highlighting">подсветкой синтаксиса кода в Markdown</a>.</p>
+                        <p>Формат Markdown идеален для быстрого написания текстов, конспектов и черновиков, но не подходит для итоговой сдачи преподавателю или публикации: у него нет фиксированного формата страниц, полей и колонтитулов. Именно поэтому задача <strong>конвертировать markdown в pdf онлайн</strong> возникает у каждого студента и инженера, особенно когда требуется распечатать конспект с формулами, таблицами и <a href="/blog/markdown-code-syntax-highlighting">блоками кода в Markdown</a>.</p>
                     </section>
 
                     <section class="article-section" id="tools-overview">
                         <h2 class="article-section__title">Способы экспорта: CLI (Pandoc) против онлайн-редакторов</h2>
-                        <p>Традиционный путь требует локальной установки утилиты Pandoc и громоздкого дистрибутива TeX Live весом более 5 ГБ. Это сложно настроить на рабочем или мобильном устройстве.</p>
-                        <p>В веб-редакторе <strong>Labkeeper</strong> полноценный <strong>экспорт md в pdf</strong> выполняется в один клик: облачный сервер автоматически обрабатывает документ, формируя векторный файл стандартного формата А4 с корректными шрифтами и отступами.</p>
+                        <p>Традиционный путь требует локальной установки утилиты Pandoc и дистрибутива TeX Live весом в несколько гигабайт. Это сложно настроить на рабочем или мобильном устройстве.</p>
+                        <p>В веб-редакторе <strong>Labkeeper</strong> <strong>экспорт md в pdf</strong> возможен двумя способами:</p>
+                        <ul>
+                            <li><strong>Markdown-проект и печать браузера.</strong> Кнопка «Сохранить в PDF» открывает диалог печати браузера. Выберите «Сохранить как PDF», выключите колонтитулы, чтобы на листе не было адреса страницы и даты, а для заливок и выделений включите «Фоновую графику». Лист повторяет превью: полей по методичке, сносок внизу страницы и оглавления здесь не будет.</li>
+                            <li><strong>LaTeX-проект с Markdown-сегментами.</strong> Текст пишется в Markdown-сегментах, а после нажатия «Выполнить» сервер переводит их в LaTeX через Pandoc и собирает pdfLaTeX в файл <code>result.pdf</code>. Сноски встают внизу страницы, формулы и таблицы набирает LaTeX, оглавление добавляет команда <code>\tableofcontents</code> в LaTeX-сегменте. Сырой HTML из Markdown при этом выбрасывается.</li>
+                        </ul>
+                        <p>Стандартная преамбула LaTeX-проекта оставляет поля всего 3–5 мм. Если нужны поля по методичке, начните проект с LaTeX-сегмента со своей преамбулой и командой <code>\begin{document}</code>: тогда стандартная преамбула отключится, а закрывающую команду <code>\end{document}</code> сервер добавит сам. Пакеты, которые нужны тексту из Markdown, подключите в той же преамбуле:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
+                            <pre><code>\documentclass[a4paper,12pt]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath,graphicx,longtable,booktabs,hyperref}
+\usepackage[left=30mm,right=15mm,top=20mm,bottom=20mm]{geometry}
+\begin{document}</code></pre>
+                        </div>
+                        <p><strong>Пример в редакторе</strong> открывает LaTeX-проект: LaTeX-сегмент с оглавлением и разрывом страницы, затем Markdown-сегмент с формулой, таблицей и сноской. Нажмите «Выполнить», чтобы получить PDF.</p>
                     </section>
 
                     <section class="article-section" id="page-breaks">
                         <h2 class="article-section__title">Управление разрывами страниц в PDF</h2>
-                        <p>Чтобы принудительно начать новый раздел со следующего листа PDF, вставьте в Markdown-текст стандартный разделитель страниц:</p>
+                        <p>Чтобы при печати Markdown-проекта начать новый раздел со следующего листа, вставьте между абзацами HTML-разделитель:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">HTML / Markdown</span></div>
                             <pre><code>&lt;div style="page-break-after: always;"&gt;&lt;/div&gt;</code></pre>
                         </div>
-                        <p>Движок компилятора воспримет эту директиву и аккуратно перенесет последующий текст на новую страницу.</p>
+                        <p>Это правило CSS для печати: в превью разрыва не видно, а браузер учитывает его в диалоге печати. Поддержка зависит от браузера, поэтому проверьте результат в окне предпросмотра печати.</p>
+                        <p>В LaTeX-проекте HTML из Markdown-сегментов выбрасывается, поэтому разрыв делают отдельным LaTeX-сегментом с командой <code>\newpage</code> между Markdown-сегментами.</p>
                     </section>
 
                     <section class="article-section" id="math-tables">
                         <h2 class="article-section__title">Рендеринг формул LaTeX и таблиц при экспорте</h2>
-                        <p>Главная сложность простых онлайн-конвертеров — потеря сложных математических конструкций. В Labkeeper математические выражения, оформленные по правилам <a href="/blog/markdown-mathjax-katex-latex-math">формул в Markdown с MathJax и KaTeX</a>, компилируются векторным шрифтом Computer Modern, гарантируя четкость при печати любого разрешения.</p>
+                        <p>Главная сложность простых онлайн-конвертеров — потеря сложных математических конструкций. В Markdown-проекте Labkeeper формулы, оформленные по правилам <a href="/blog/markdown-mathjax-katex-latex-math">формул в Markdown с MathJax</a>, набирает MathJax прямо в превью, и при печати они попадают в PDF такими же, как на экране.</p>
+                        <p>В LaTeX-проекте формулы из Markdown-сегментов набирает pdfLaTeX, а таблицы становятся таблицами <code>longtable</code>, которые переносятся на следующую страницу.</p>
                     </section>
 
                     <section class="article-section" id="tips">
@@ -263,8 +281,8 @@
                             <div class="article-tip">
                                 <div class="article-tip__number">1</div>
                                 <div class="article-tip__content">
-                                    <h3>Печать через браузер против нативного PDF</h3>
-                                    <p>Не используйте диалог «Печать в PDF» (Ctrl+P) в обычном браузере — он добавляет колонтитулы с URL и датой. Пользуйтесь кнопкой «Скачать PDF» в Labkeeper для получения чистого файла.</p>
+                                    <h3>Настройки печати для чистого PDF</h3>
+                                    <p>В Markdown-проекте кнопка «Сохранить в PDF» и есть печать браузера. В диалоге выберите «Сохранить как PDF», выключите колонтитулы, чтобы на листе не было адреса страницы и даты, и включите «Фоновую графику», если в тексте есть заливки или выделение маркером.</p>
                                 </div>
                             </div>
                         </div>
@@ -280,8 +298,8 @@
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Конвертируйте Markdown в чистые полиграфические PDF-документы прямо в браузере без установки Pandoc.</p>
-                    <a href="/project/default?open=markdown&amp;markdown=%23+Research+notes%0A%0A%23%23+Goal%0AMeasure+average+speed.%0A%0A%24%24v%3D%5Cfrac%7Bs%7D%7Bt%7D%3D%5Cfrac%7B100%7D%7B20%7D%3D5%5C+%5Ctext%7Bm%2Fs%7D%24%24%0A%0A%23%23+Results%0A%7C+Distance%2C+m+%7C+Time%2C+s+%7C%0A%7C---%3A%7C---%3A%7C%0A%7C+100+%7C+20+%7C%0A%0AUse+the+editor%27s+PDF+export+to+save+this+document." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <p class="article-sidebar__title">Собирайте PDF из Markdown-сегментов в LaTeX-проекте Labkeeper прямо в браузере, без установки Pandoc и TeX Live.</p>
+                    <a href="/project/default?open=latex&amp;latex=%5Ctableofcontents%0A%5Cnewpage&amp;markdown=%23+%D0%A1%D1%80%D0%B5%D0%B4%D0%BD%D1%8F%D1%8F+%D1%81%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D1%8C%0A%0A%23%23+%D0%A6%D0%B5%D0%BB%D1%8C%0A%0A%D0%98%D0%B7%D0%BC%D0%B5%D1%80%D0%B8%D1%82%D1%8C+%D1%81%D1%80%D0%B5%D0%B4%D0%BD%D1%8E%D1%8E+%D1%81%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D1%8C+%D1%82%D0%B5%D0%BB%D0%B5%D0%B6%D0%BA%D0%B8%5B%5E1%5D.%0A%0A%24%24v%3D%5Cfrac%7Bs%7D%7Bt%7D%3D%5Cfrac%7B100%7D%7B20%7D%3D5%5C+%5Ctext%7B%D0%BC%2F%D1%81%7D%24%24%0A%0A%23%23+%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D1%8B%0A%0A%7C+%D0%9F%D1%83%D1%82%D1%8C%2C+%D0%BC+%7C+%D0%92%D1%80%D0%B5%D0%BC%D1%8F%2C+%D1%81+%7C%0A%7C---%3A%7C---%3A%7C%0A%7C+100+%7C+20+%7C%0A%0A%5B%5E1%5D%3A+%D0%A1%D0%BD%D0%BE%D1%81%D0%BA%D0%B0+%D0%B2%D1%81%D1%82%D0%B0%D0%BD%D0%B5%D1%82+%D0%B2%D0%BD%D0%B8%D0%B7%D1%83+%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B+PDF." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -296,8 +314,8 @@
         <section class="cta-features" id="cta-features">
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
-                <h2 class="cta-features__intro-title">Генерируйте безупречные PDF из Markdown в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-платформа со встроенным типографическим движком: компиляция формул LaTeX, поддержка ГОСТ и моментальное скачивание готового PDF.</p>
+                <h2 class="cta-features__intro-title">Собирайте PDF из Markdown в&nbsp;Labkeeper</h2>
+                <p class="cta-features__intro-text">Онлайн-редактор Markdown и LaTeX: печать Markdown-проекта в PDF через браузер или PDF из Markdown-сегментов в LaTeX-проекте с формулами, таблицами и сносками.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -335,7 +353,7 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=markdown&amp;markdown=%23+Research+notes%0A%0A%23%23+Goal%0AMeasure+average+speed.%0A%0A%24%24v%3D%5Cfrac%7Bs%7D%7Bt%7D%3D%5Cfrac%7B100%7D%7B20%7D%3D5%5C+%5Ctext%7Bm%2Fs%7D%24%24%0A%0A%23%23+Results%0A%7C+Distance%2C+m+%7C+Time%2C+s+%7C%0A%7C---%3A%7C---%3A%7C%0A%7C+100+%7C+20+%7C%0A%0AUse+the+editor%27s+PDF+export+to+save+this+document." class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;latex=%5Ctableofcontents%0A%5Cnewpage&amp;markdown=%23+%D0%A1%D1%80%D0%B5%D0%B4%D0%BD%D1%8F%D1%8F+%D1%81%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D1%8C%0A%0A%23%23+%D0%A6%D0%B5%D0%BB%D1%8C%0A%0A%D0%98%D0%B7%D0%BC%D0%B5%D1%80%D0%B8%D1%82%D1%8C+%D1%81%D1%80%D0%B5%D0%B4%D0%BD%D1%8E%D1%8E+%D1%81%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D1%8C+%D1%82%D0%B5%D0%BB%D0%B5%D0%B6%D0%BA%D0%B8%5B%5E1%5D.%0A%0A%24%24v%3D%5Cfrac%7Bs%7D%7Bt%7D%3D%5Cfrac%7B100%7D%7B20%7D%3D5%5C+%5Ctext%7B%D0%BC%2F%D1%81%7D%24%24%0A%0A%23%23+%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D1%8B%0A%0A%7C+%D0%9F%D1%83%D1%82%D1%8C%2C+%D0%BC+%7C+%D0%92%D1%80%D0%B5%D0%BC%D1%8F%2C+%D1%81+%7C%0A%7C---%3A%7C---%3A%7C%0A%7C+100+%7C+20+%7C%0A%0A%5B%5E1%5D%3A+%D0%A1%D0%BD%D0%BE%D1%81%D0%BA%D0%B0+%D0%B2%D1%81%D1%82%D0%B0%D0%BD%D0%B5%D1%82+%D0%B2%D0%BD%D0%B8%D0%B7%D1%83+%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B+PDF." class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

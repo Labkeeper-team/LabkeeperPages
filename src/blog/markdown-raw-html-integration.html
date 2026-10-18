@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/markdown-raw-html-integration"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с Markdown"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#markdown" class="article-tag">Работа с Markdown</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~6 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~6 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -232,7 +232,12 @@
 
                     <section class="article-section" id="can-we-use-html">
                         <h2 class="article-section__title">Можно ли писать HTML в Markdown: официальная спецификация</h2>
-                        <p>Один из самых частых вопросов у новичков — <strong>можно ли писать html в markdown</strong> напрямую? Ответ: однозначно да. Создатель Markdown Джон Грубер изначально спроектировал формат как надстройку над HTML. Любой валидный HTML-тег может присутствовать в <code>.md</code> файле и будет обработан браузером без ошибок.</p>
+                        <p>Один из самых частых вопросов у новичков — <strong>можно ли писать html в markdown</strong> напрямую? Ответ: однозначно да. Создатель Markdown Джон Грубер изначально спроектировал формат как надстройку над HTML. HTML-теги могут присутствовать в <code>.md</code> файле, но что из них останется, решает конкретная платформа.</p>
+                        <ul>
+                            <li><strong>GitHub</strong> очищает HTML: атрибуты <code>style</code>, теги <code>&lt;iframe&gt;</code> и скрипты вырезаются.</li>
+                            <li><strong>Markdown-проект Labkeeper</strong> показывает HTML-теги в превью, а при сохранении в PDF через печать браузера они попадают на лист такими же.</li>
+                            <li><strong>LaTeX-проект Labkeeper</strong> переводит Markdown-сегменты в LaTeX, и сырой HTML при этом выбрасывается: строчные теги теряют оформление, а блочные элементы исчезают вместе с содержимым.</li>
+                        </ul>
                     </section>
 
                     <section class="article-section" id="common-use-cases">
@@ -242,7 +247,7 @@
                             <li>Вставка видео и аудио: теги <code>&lt;video&gt;</code>, <code>&lt;iframe&gt;</code>;</li>
                             <li>Подстрочные и надстрочные индексы химических элементов: <code>H&lt;sub&gt;2&lt;/sub&gt;O</code> &rarr; H<sub>2</sub>O;</li>
                             <li>Центрирование подписей к рисункам и таблицам: <code>&lt;p align="center"&gt;Рисунок 1&lt;/p&gt;</code>;</li>
-                            <li>Управление шириной и высотой изображений: <code>&lt;img src="img.png" width="300" /&gt;</code> (подробнее см. руководство по <a href="/blog/markdown-image-size-width-height">настройке размеров картинок в Markdown</a>).</li>
+                            <li>Управление шириной и высотой изображений: <code>&lt;img src="img.png" width="300" /&gt;</code> — так работает GitHub, а превью Labkeeper всегда выводит картинку шириной 500 px (подробнее см. руководство по <a href="/blog/markdown-image-size-width-height">настройке размеров картинок в Markdown</a>).</li>
                         </ul>
                     </section>
 
@@ -255,11 +260,13 @@
   &lt;strong style="color: #0066cc;"&gt;Внимание!&lt;/strong&gt; Результаты действительны только при стандартном давлении.
 &lt;/div&gt;</code></pre>
                         </div>
+                        <p>Браузер по умолчанию не печатает фон: чтобы цветная рамка сохранилась в PDF, включите в диалоге печати параметр «Фоновая графика».</p>
                     </section>
 
                     <section class="article-section" id="security-markdown-rules">
                         <h2 class="article-section__title">Правила вложенности Markdown внутри блочных HTML-тегов</h2>
-                        <p>Важное правило: если вы открыли блочный тег (например, <code>&lt;div&gt;</code>), многие парсеры перестают обрабатывать Markdown-синтаксис внутри него. Чтобы внутри HTML-блока продолжали работать звездочки или решетки, отделяйте содержимое пустой строкой либо добавляйте атрибут <code>markdown="1"</code>.</p>
+                        <p>Важное правило: если вы открыли блочный тег (например, <code>&lt;div&gt;</code>), многие парсеры перестают обрабатывать Markdown-синтаксис внутри него. Чтобы внутри HTML-блока продолжали работать звездочки или решетки, отделяйте содержимое пустой строкой от открывающего и закрывающего тегов.</p>
+                        <p>Атрибут <code>markdown="1"</code> встречается в инструкциях, но это синтаксис Markdown Extra и kramdown: в GitHub Flavored Markdown и в Labkeeper он не работает.</p>
                     </section>
 
                     <section class="article-section" id="tips">
@@ -285,7 +292,7 @@
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Объединяйте лаконичность Markdown с гибкостью HTML-верстки в интерактивном онлайн-редакторе Labkeeper.</p>
+                    <p class="article-sidebar__title">Объединяйте лаконичность Markdown с гибкостью HTML-верстки в онлайн-редакторе Labkeeper: теги видны в превью при наборе.</p>
                     <a href="/project/default?open=markdown&amp;markdown=%23+Markdown+%2B+HTML%0A%0AA+normal+**Markdown**+paragraph.%0A%0A%3Ctable%3E%0A%3Ctr%3E%3Cth%3ESensor%3C%2Fth%3E%3Cth%3EValue%3C%2Fth%3E%3C%2Ftr%3E%0A%3Ctr%3E%3Ctd%3EA%3C%2Ftd%3E%3Ctd%3E10.2%3C%2Ftd%3E%3C%2Ftr%3E%0A%3C%2Ftable%3E%0A%0A%3Cdetails%3E%3Csummary%3ENotes%3C%2Fsummary%3ECalibrated+before+measurement.%3C%2Fdetails%3E" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
@@ -302,7 +309,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Верстайте без ограничений в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с поддержкой нативного HTML5, математических выражений LaTeX и компиляцией в презентабельный PDF.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор Markdown с HTML-тегами в превью, формулами MathJax и сохранением в PDF через печать браузера.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">

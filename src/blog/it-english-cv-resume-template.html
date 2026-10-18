@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/it-english-cv-resume-template"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Оформление резюме / CV"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#cv" class="article-tag">Оформление резюме / CV</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~7 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~7 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -234,7 +234,7 @@
                     <section class="article-section" id="ats-standards">
                         <h2 class="article-section__title">Требования зарубежных IT-компаний и прохождение ATS-роботов</h2>
                         <p>В международных технологических компаниях (FAANG, европейские стартапы) первое сито отбора осуществляют алгоритмы <strong>ATS (Applicant Tracking System)</strong>. Сложные многоколоночные дизайнерские макеты из Canva с плашками и нестандартными шрифтами часто распознаются парсерами как бессвязный набор символов (поэтому в академической и технической среде стандартом остается <a href="/blog/latex-cv-resume">верстка CV и резюме в LaTeX</a>).</p>
-                        <p>Скомпилированный в LaTeX чистый одностраничный одноколоночный PDF парсится алгоритмами со 100% точностью: контакты, ключевые слова технологий, даты работы и образование моментально раскладываются по полям профиля кандидата.</p>
+                        <p>Одностраничный одноколоночный PDF из LaTeX ATS-системы обычно читают хорошо: контакты, ключевые слова технологий, даты работы и образование попадают в нужные поля профиля кандидата. Чтобы текст из PDF копировался без искажений, в шаблоне ниже включено соответствие глифов Unicode (<code>\input{glyphtounicode}</code> и <code>\pdfgentounicode=1</code>).</p>
                     </section>
 
                     <section class="article-section" id="structure">
@@ -264,6 +264,10 @@
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
+
+% Текст PDF читается ATS-парсерами без искажений
+\input{glyphtounicode}
+\pdfgentounicode=1
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -322,9 +326,9 @@
                         <h2 class="article-section__title">Ключевые ошибки: фото, семейное положение и контактные данные</h2>
                         <p>Для резюме в США, Великобританию и Канаду строго соблюдайте правила антидискриминационного законодательства (EEO):</p>
                         <ul>
-                            <li><strong>Категорически не вставляйте фотографию:</strong> наличие фото приводит к автоматическому удалению резюме из HR-систем, чтобы исключить предвзятость.</li>
+                            <li><strong>Не вставляйте фотографию:</strong> в этих странах фото в резюме не принято, и многие компании отклоняют такие резюме, чтобы исключить предвзятость.</li>
                             <li><strong>Не указывайте:</strong> точный домашний адрес (достаточно города и страны), возраст, дату рождения, пол и семейное положение.</li>
-                            <li><strong>Объем:</strong> ровно одна страница А4 / Letter. Резюме на 1.2 страницы выглядит неаккуратно и свидетельствует о неумении лаконично выделять главное.</li>
+                            <li><strong>Объем:</strong> для Junior и Middle обычно одна страница А4 / Letter. Резюме на 1.2 страницы выглядит неаккуратно: лучше сократить текст, чем оставить на втором листе пару строк.</li>
                         </ul>
                     </section>
 
@@ -341,8 +345,8 @@
                             <div class="article-tip">
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
-                                    <h3>Экспорт без метаданных</h3>
-                                    <p>При экспорте убедитесь, что имя файла лаконично: <code>Name_Surname_Backend_CV.pdf</code>.</p>
+                                    <h3>Имя файла и метаданные PDF</h3>
+                                    <p>Labkeeper скачивает собранный документ как <code>result.pdf</code>: перед отправкой переименуйте файл, например в <code>Name_Surname_Backend_CV.pdf</code>. Автора и заголовок в свойствах PDF задает команда <code>\hypersetup{pdfauthor={Alexey Smirnov}, pdftitle={Backend Engineer CV}}</code>.</p>
                                 </div>
                             </div>
                         </div>
@@ -358,8 +362,8 @@
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Соберите стильное англоязычное резюме за 15 минут в онлайн-редакторе Labkeeper с экспортом в чистый PDF.</p>
-                    <a href="/project/default?open=markdown&amp;markdown=%23+Anna+Petrova%0ABackend+Engineer+%7C+anna%40example.com%0A%0A%23%23+Summary%0APython+developer+building+reliable+APIs.%0A%0A%23%23+Experience%0A-+Cut+API+latency+by+30%25.%0A-+Added+integration+tests+for+billing.%0A%0A%23%23+Skills%0APython%2C+PostgreSQL%2C+Docker.%0A%0A%23%23+Education%0ABSc+Computer+Science%2C+2022." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <p class="article-sidebar__title">Соберите англоязычное резюме в LaTeX-проекте Labkeeper: код из статьи, кликабельные ссылки и PDF после сборки.</p>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Bletterpaper%2C11pt%5D%7Barticle%7D%0A%5Cusepackage%5Bempty%5D%7Bfullpage%7D%0A%5Cusepackage%7Btitlesec%2Cenumitem%7D%0A%5Cusepackage%5Bhidelinks%5D%7Bhyperref%7D%0A%5Cinput%7Bglyphtounicode%7D%0A%5Cpdfgentounicode%3D1%0A%5Ctitleformat%7B%5Csection%7D%7B%5Cscshape%5Clarge%7D%7B%7D%7B0em%7D%7B%7D%5B%5Ctitlerule%5D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Bcenter%7D%0A%7B%5CHuge%5Cscshape+Anna+Petrova%7D%5C%5C%0A%5Csmall%5Chref%7Bmailto%3Aanna%40example.com%7D%7Banna%40example.com%7D+%24%7C%24+%5Chref%7Bhttps%3A%2F%2Fgithub.com%2Fanna%7D%7Bgithub.com%2Fanna%7D%0A%5Cend%7Bcenter%7D%0A%5Csection*%7BTechnical+Skills%7D%0A%5Ctextbf%7BLanguages%7D%3A+Python%2C+Go%2C+SQL%5C%5C%0A%5Ctextbf%7BTools%7D%3A+Docker%2C+PostgreSQL%2C+Git%0A%5Csection*%7BExperience%7D%0A%5Ctextbf%7BBackend+Engineer%7D+%24%7C%24+%5Cemph%7BFintech+Solutions%7D+%5Chfill+Jun+2024+--+Present%0A%5Cbegin%7Bitemize%7D%5Bleftmargin%3D0.15in%2Citemsep%3D0pt%5D%0A%5Citem+Cut+API+latency+by+30%5C%25+with+Redis+caching.%0A%5Citem+Added+integration+tests+for+the+billing+service.%0A%5Cend%7Bitemize%7D%0A%5Csection*%7BEducation%7D%0A%5Ctextbf%7BBSc+Computer+Science%7D%2C+ITMO+University+%5Chfill+2022%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -375,7 +379,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Создайте пробивное резюме в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор резюме с готовыми шаблонами, мгновенным PDF-рендерингом и поддержкой кликабельных ссылок на GitHub и LinkedIn.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX: резюме по коду из статьи, кликабельные ссылки на GitHub и LinkedIn и PDF после нажатия «Выполнить».</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -413,7 +417,7 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=markdown&amp;markdown=%23+Anna+Petrova%0ABackend+Engineer+%7C+anna%40example.com%0A%0A%23%23+Summary%0APython+developer+building+reliable+APIs.%0A%0A%23%23+Experience%0A-+Cut+API+latency+by+30%25.%0A-+Added+integration+tests+for+billing.%0A%0A%23%23+Skills%0APython%2C+PostgreSQL%2C+Docker.%0A%0A%23%23+Education%0ABSc+Computer+Science%2C+2022." class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Bletterpaper%2C11pt%5D%7Barticle%7D%0A%5Cusepackage%5Bempty%5D%7Bfullpage%7D%0A%5Cusepackage%7Btitlesec%2Cenumitem%7D%0A%5Cusepackage%5Bhidelinks%5D%7Bhyperref%7D%0A%5Cinput%7Bglyphtounicode%7D%0A%5Cpdfgentounicode%3D1%0A%5Ctitleformat%7B%5Csection%7D%7B%5Cscshape%5Clarge%7D%7B%7D%7B0em%7D%7B%7D%5B%5Ctitlerule%5D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Bcenter%7D%0A%7B%5CHuge%5Cscshape+Anna+Petrova%7D%5C%5C%0A%5Csmall%5Chref%7Bmailto%3Aanna%40example.com%7D%7Banna%40example.com%7D+%24%7C%24+%5Chref%7Bhttps%3A%2F%2Fgithub.com%2Fanna%7D%7Bgithub.com%2Fanna%7D%0A%5Cend%7Bcenter%7D%0A%5Csection*%7BTechnical+Skills%7D%0A%5Ctextbf%7BLanguages%7D%3A+Python%2C+Go%2C+SQL%5C%5C%0A%5Ctextbf%7BTools%7D%3A+Docker%2C+PostgreSQL%2C+Git%0A%5Csection*%7BExperience%7D%0A%5Ctextbf%7BBackend+Engineer%7D+%24%7C%24+%5Cemph%7BFintech+Solutions%7D+%5Chfill+Jun+2024+--+Present%0A%5Cbegin%7Bitemize%7D%5Bleftmargin%3D0.15in%2Citemsep%3D0pt%5D%0A%5Citem+Cut+API+latency+by+30%5C%25+with+Redis+caching.%0A%5Citem+Added+integration+tests+for+the+billing+service.%0A%5Cend%7Bitemize%7D%0A%5Csection*%7BEducation%7D%0A%5Ctextbf%7BBSc+Computer+Science%7D%2C+ITMO+University+%5Chfill+2022%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

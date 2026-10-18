@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-pgfplotstable-import-excel-csv-tables"
         },
         "datePublished": "2026-09-06",
-        "dateModified": "2026-09-06",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с LaTeX"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 6 сентября 2026 · Время чтения: ~8 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~8 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -256,6 +256,7 @@
                             <div class="article-code__header"><span class="article-code__lang">LaTeX Вставка</span></div>
                             <pre><code>\pgfplotstabletypeset[col sep=semicolon]{measurements.csv}</code></pre>
                         </div>
+                        <p>Если числа в файле записаны с десятичной запятой, добавьте опцию <code>read comma as period</code> — подробнее в следующем разделе.</p>
                         <p>Если импортируемый массив данных слишком широк для книжной страницы, оберните его в окружение для <a href="/blog/latex-rotating-package-sidewaystable-rotate-90">вращения широких таблиц sidewaystable</a>.</p>
                     </section>
 
@@ -285,9 +286,17 @@
         precision=2,
         fixed,
         dec sep align,
+        /pgf/number format/use comma, % десятичная запятая при выводе
         set thousands separator={\,}
     }
 ]{experiment.csv}</code></pre>
+                        </div>
+                        <p>Без опции <code>use comma</code> pgfplotstable выводит десятичную точку: <code>1.23</code> вместо <code>1,23</code>.</p>
+                        <p>Главная ловушка русского Excel — числа в самом файле записаны с запятой («2,5»), а pgfplotstable ждёт точку. При <code>col sep=semicolon</code> такой файл останавливает сборку с ошибкой <code>Could not parse input '2,5' as a floating point number</code>. Опция <code>read comma as period</code> читает запятую как десятичный разделитель, а <code>use comma</code> возвращает её при выводе:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX CSV из русского Excel</span></div>
+                            <pre><code>\pgfplotstabletypeset[col sep=semicolon, read comma as period,
+  /pgf/number format/use comma]{data.csv}</code></pre>
                         </div>
                     </section>
 
@@ -319,7 +328,7 @@
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
                                     <h3>Интеграция в Labkeeper</h3>
-                                    <p>В онлайн-редакторе Labkeeper вы можете загрузить CSV в файловый менеджер проекта и на лету видеть отрендренную таблицу с автоматическим расчетом промежуточных сумм.</p>
+                                    <p>В онлайн-редакторе Labkeeper загрузите CSV в файловый менеджер проекта (файлы доступны после входа) и нажмите «Выполнить»: таблица появится в PDF после сборки. Промежуточные суммы pgfplotstable сам не считает — их нужно описать в коде или подготовить заранее. Для расчётов удобен вычислительный сегмент Labkeeper: функция <code>load_csv</code> читает колонки файла в массивы, а <code>table</code> выводит результат таблицей.</p>
                                 </div>
                             </div>
                         </div>
@@ -335,8 +344,8 @@
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">В Labkeeper вы можете загружать файлы CSV и автоматически генерировать из них чистые LaTeX-таблицы с оформлением по ГОСТ.</p>
-                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bpgfplotstable%7D%5Cpgfplotsset%7Bcompat%3D1.18%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cpgfplotstabletypeset%5Bcol+sep%3Dcomma%2Ccolumns%2FTime%2F.style%3D%7Bcolumn+type%3Dr%7D%2Ccolumns%2FValue%2F.style%3D%7Bcolumn+type%3Dr%7D%5D%7B%0ATime%2CValue%0A1%2C2.5%0A2%2C4.0%0A3%2C5.5%0A%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <p class="article-sidebar__title">В Labkeeper вы можете загрузить CSV в проект и вывести его таблицей через pgfplotstable.</p>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bpgfplotstable%7D%5Cpgfplotsset%7Bcompat%3D1.18%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cpgfplotstabletypeset%5Bcol+sep%3Dsemicolon%2Cread+comma+as+period%2C%2Fpgf%2Fnumber+format%2Fuse+comma%2Ccolumns%2Ft%2F.style%3D%7Bcolumn+name%3D%7B%24t%24%2C+%D1%81%7D%7D%2Ccolumns%2FU%2F.style%3D%7Bcolumn+name%3D%7B%24U%24%2C+%D0%92%7D%7D%5D%7B%0At%3BU%0A1%3B2%2C5%0A2%3B4%2C75%0A3%3B5%2C5%0A%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -352,7 +361,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Автоматизируйте таблицы в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-платформа с поддержкой pgfplotstable: загрузка CSV из Excel, моментальная компиляция и экспорт в PDF.</p>
+                <p class="cta-features__intro-text">Онлайн-платформа с поддержкой pgfplotstable: загрузка CSV из Excel и сборка таблиц в PDF.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -390,7 +399,7 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bpgfplotstable%7D%5Cpgfplotsset%7Bcompat%3D1.18%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cpgfplotstabletypeset%5Bcol+sep%3Dcomma%2Ccolumns%2FTime%2F.style%3D%7Bcolumn+type%3Dr%7D%2Ccolumns%2FValue%2F.style%3D%7Bcolumn+type%3Dr%7D%5D%7B%0ATime%2CValue%0A1%2C2.5%0A2%2C4.0%0A3%2C5.5%0A%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bpgfplotstable%7D%5Cpgfplotsset%7Bcompat%3D1.18%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cpgfplotstabletypeset%5Bcol+sep%3Dsemicolon%2Cread+comma+as+period%2C%2Fpgf%2Fnumber+format%2Fuse+comma%2Ccolumns%2Ft%2F.style%3D%7Bcolumn+name%3D%7B%24t%24%2C+%D1%81%7D%7D%2Ccolumns%2FU%2F.style%3D%7Bcolumn+name%3D%7B%24U%24%2C+%D0%92%7D%7D%5D%7B%0At%3BU%0A1%3B2%2C5%0A2%3B4%2C75%0A3%3B5%2C5%0A%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

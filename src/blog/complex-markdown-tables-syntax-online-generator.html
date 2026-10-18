@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Генератор таблиц Markdown онлайн: как сделать таблицу в Markdown — Labkeeper</title>
-    <meta name="description" content="Полный справочник: как сделать таблицу в Markdown и использовать онлайн генератор таблиц. Выравнивание, многострочный текст, HTML-теги и экспорт в Labkeeper." />
+    <meta name="description" content="Полный справочник: как сделать таблицу в Markdown и использовать онлайн генератор таблиц. Выравнивание, многострочный текст, HTML-теги и таблицы из CSV в Labkeeper." />
     <!-- SEO Ключи: генератор таблиц markdown онлайн, как сделать таблицу в markdown -->
     <meta name="keywords" content="генератор таблиц markdown онлайн, как сделать таблицу в markdown" />
     <link rel="canonical" href="https://labkeeper.io/blog/complex-markdown-tables-syntax-online-generator" />
@@ -17,19 +17,19 @@
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Labkeeper" />
     <meta property="og:title" content="Генератор таблиц Markdown онлайн: как сделать таблицу в Markdown — Labkeeper" />
-    <meta property="og:description" content="Полный справочник: как сделать таблицу в Markdown и использовать онлайн генератор таблиц. Выравнивание, многострочный текст, HTML-теги и экспорт в Labkeeper." />
+    <meta property="og:description" content="Полный справочник: как сделать таблицу в Markdown и использовать онлайн генератор таблиц. Выравнивание, многострочный текст, HTML-теги и таблицы из CSV в Labkeeper." />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:title" content="Генератор таблиц Markdown онлайн: как сделать таблицу в Markdown — Labkeeper" />
-    <meta name="twitter:description" content="Полный справочник: как сделать таблицу в Markdown и использовать онлайн генератор таблиц. Выравнивание, многострочный текст, HTML-теги и экспорт в Labkeeper." />
+    <meta name="twitter:description" content="Полный справочник: как сделать таблицу в Markdown и использовать онлайн генератор таблиц. Выравнивание, многострочный текст, HTML-теги и таблицы из CSV в Labkeeper." />
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Создание и оформление сложных таблиц в Markdown: синтаксис и онлайн-редактор",
-        "description": "Полный справочник: как сделать таблицу в Markdown и использовать онлайн генератор таблиц. Выравнивание, многострочный текст, HTML-теги и экспорт в Labkeeper.",
+        "description": "Полный справочник: как сделать таблицу в Markdown и использовать онлайн генератор таблиц. Выравнивание, многострочный текст, HTML-теги и таблицы из CSV в Labkeeper.",
         "author": {
             "@type": "Organization",
             "name": "Labkeeper",
@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/complex-markdown-tables-syntax-online-generator"
         },
         "datePublished": "2026-09-06",
-        "dateModified": "2026-09-06",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с Markdown"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#markdown" class="article-tag">Работа с Markdown</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 6 сентября 2026 · Время чтения: ~7 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~7 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -239,8 +239,8 @@
                             <pre><code>| Параметр | Значение | Единица измерения |
 | --- | --- | --- |
 | Напряжение | 220 | В |
-| Сила тока | 4.5 | А |
-| Сопротивление | 48.9 | Ом |</code></pre>
+| Сила тока | 4,5 | А |
+| Сопротивление | 48,9 | Ом |</code></pre>
                         </div>
                         <p><em>Совет:</em> крайние вертикальные черты ставить не обязательно, но их наличие делает исходный код заметно аккуратнее и облегчает чтение в текстовом редакторе. Если ячейки содержат степени или химические формулы, применяйте <a href="/blog/markdown-superscript-subscript-indices">надстрочные и подстрочные индексы</a>.</p>
                     </section>
@@ -269,6 +269,7 @@
 | Сервис авторизации | 1. Проверка JWT токена&lt;br&gt;2. Валидация прав доступа&lt;br&gt;3. Сессионный кэш в Redis | $T_{auth} &lt; 15\text{ мс}$ |
 | Расчет тарифа | Базовая ставка с учетом&lt;br&gt;коэффициента загрузки | $Cost = B \times (1 + k)$ |</code></pre>
                         </div>
+                        <p>В превью Markdown-проекта Labkeeper тег <code>&lt;br&gt;</code> работает. В LaTeX-проекте HTML-теги из Markdown-сегментов выбрасываются, и строки ячейки сольются в одну; для PDF с многострочными ячейками используйте таблицу в LaTeX-сегменте.</p>
                     </section>
 
                     <section class="article-section" id="complex-html">
@@ -292,13 +293,20 @@
   &lt;/tr&gt;
 &lt;/table&gt;</code></pre>
                         </div>
-                        <p>Такой подход избавляет от типичных проблем со съезжающей сеткой при <a href="/blog/word-formatting-issues-diploma-lightweight-markup-alternative">переходе с Word на легковесную разметку</a> в дипломных проектах.</p>
+                        <p>Такой подход избавляет от типичных проблем со съезжающей сеткой при <a href="/blog/word-formatting-issues-diploma-lightweight-markup-alternative">переходе с Word на легковесную разметку</a> в дипломных проектах. Учтите, что HTML-таблица видна только в превью Markdown-проекта: в LaTeX-проекте она выбрасывается целиком, и объединенные ячейки там делают командами <code>\multicolumn</code> и <code>\multirow</code>.</p>
                     </section>
 
                     <section class="article-section" id="generator-tools">
                         <h2 class="article-section__title">Генератор таблиц Markdown онлайн: автоматизация рутины</h2>
-                        <p>Набивать таблицу из 10 столбцов и 30 строк вручную расстановкой палочек крайне утомительно. Для этого используется специализированный <strong>генератор таблиц markdown онлайн</strong>, который позволяет вставить скопированные ячейки прямо из Excel или Google Таблиц и в один клик получить готовый синтаксис Markdown.</p>
-                        <p>В веб-редакторе Labkeeper этот процесс автоматизирован: вы можете вставить сырые данные из буфера обмена, и редактор моментально трансформирует их в валидную таблицу с авто-форматированием ширины столбцов.</p>
+                        <p>Набивать таблицу из 10 столбцов и 30 строк вручную расстановкой палочек крайне утомительно. Для этого есть внешние сервисы — <strong>генератор таблиц markdown онлайн</strong> (например, Tables Generator): вставляете ячейки из Excel или Google Таблиц и копируете готовый синтаксис Markdown в документ. Визуального редактора таблиц в Labkeeper нет — таблица остается текстом сегмента.</p>
+                        <p>Для таблиц измерений в Labkeeper есть путь удобнее: сохраните данные из Excel в CSV, загрузите файл в файлы проекта (загрузка доступна после входа) и выведите его вычислительным сегментом. Функция <code>load_csv</code> создает массивы с именами колонок файла, а <code>table</code> рисует из них таблицу:</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">Вычислительный сегмент</span></div>
+                            <pre><code>// В файле data.csv первая строка: U,I
+load_csv("data.csv")
+table(U, I, name_1="U, В", name_2="I, мА")</code></pre>
+                        </div>
+                        <p>Таблица пересчитывается при каждом нажатии «Выполнить», поэтому после замены CSV ее не нужно переписывать.</p>
                     </section>
 
                     <section class="article-section" id="tips">
@@ -314,8 +322,8 @@
                             <div class="article-tip">
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
-                                    <h3>Экспорт в PDF в Labkeeper</h3>
-                                    <p>Таблицы в Labkeeper автоматически адаптируются под ширину страницы документа без обрезания границ при выводе в итоговый PDF.</p>
+                                    <h3>Таблицы в LaTeX-проекте</h3>
+                                    <p>В LaTeX-проекте Markdown-таблица из сегмента превращается в таблицу longtable и переносится на следующую страницу. HTML-таблицы и теги <code>&lt;br&gt;</code> при этом выбрасываются, поэтому сложные таблицы для PDF набирайте в LaTeX-сегменте.</p>
                                 </div>
                             </div>
                         </div>
@@ -331,8 +339,8 @@
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">В Labkeeper встроен визуальный редактор таблиц Markdown: добавляйте строки и столбцы кликом мыши с мгновенным PDF-превью.</p>
-                    <a href="/project/default?open=markdown&amp;markdown=%23%23+Measurement+table%0A%0A%7C+Sensor+%7C+Value+%7C+Error+%7C%0A%7C%3A-------%7C------%3A%7C------%3A%7C%0A%7C+A+%7C+10.2+%7C+0.2+%7C%0A%7C+B+%7C+10.4+%7C+0.3+%7C%0A%0AThe+first+column+is+left-aligned%3B+numbers+are+right-aligned." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <p class="article-sidebar__title">В Labkeeper таблица — это текст сегмента в синтаксисе Markdown, а данные из CSV выводит функция table() в вычислительном сегменте.</p>
+                    <a href="/project/default?open=markdown&amp;markdown=%23%23+%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0+%D0%B8%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D0%B9%0A%0A%7C+%D0%94%D0%B0%D1%82%D1%87%D0%B8%D0%BA+%7C+%D0%97%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5+%7C+%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%87%D0%B0%D0%BD%D0%B8%D0%B5+%7C%0A%7C%3A-------%7C------%3A%7C%3A---%7C%0A%7C+A+%7C+10%2C2+%7C+%D0%9A%D0%B0%D0%BB%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%3Cbr%3E+%D0%B4%D0%BE+%D0%BE%D0%BF%D1%8B%D1%82%D0%B0+%7C%0A%7C+B+%7C+%2410%7B%2C%7D4+%5Cpm+0%7B%2C%7D3%24+%7C+%D0%91%D0%B5%D0%B7+%D0%BA%D0%B0%D0%BB%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%BA%D0%B8+%7C%0A%0A%D0%A7%D0%B8%D1%81%D0%BB%D0%B0+%D0%B2%D1%8B%D1%80%D0%BE%D0%B2%D0%BD%D0%B5%D0%BD%D1%8B+%D0%BF%D0%BE+%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D0%BC%D1%83+%D0%BA%D1%80%D0%B0%D1%8E%2C+%D1%82%D0%B5%D0%BA%D1%81%D1%82+%E2%80%94+%D0%BF%D0%BE+%D0%BB%D0%B5%D0%B2%D0%BE%D0%BC%D1%83." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -348,7 +356,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Верстайте аккуратные таблицы в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор Markdown с поддержкой HTML-таблиц, формул в ячейках, объединения colspan/rowspan и чистого экспорта.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор Markdown: HTML-таблицы с colspan/rowspan, формулы в ячейках и таблицы из CSV через вычислительный сегмент.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -386,7 +394,7 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=markdown&amp;markdown=%23%23+Measurement+table%0A%0A%7C+Sensor+%7C+Value+%7C+Error+%7C%0A%7C%3A-------%7C------%3A%7C------%3A%7C%0A%7C+A+%7C+10.2+%7C+0.2+%7C%0A%7C+B+%7C+10.4+%7C+0.3+%7C%0A%0AThe+first+column+is+left-aligned%3B+numbers+are+right-aligned." class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=markdown&amp;markdown=%23%23+%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0+%D0%B8%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D0%B9%0A%0A%7C+%D0%94%D0%B0%D1%82%D1%87%D0%B8%D0%BA+%7C+%D0%97%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5+%7C+%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%87%D0%B0%D0%BD%D0%B8%D0%B5+%7C%0A%7C%3A-------%7C------%3A%7C%3A---%7C%0A%7C+A+%7C+10%2C2+%7C+%D0%9A%D0%B0%D0%BB%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%3Cbr%3E+%D0%B4%D0%BE+%D0%BE%D0%BF%D1%8B%D1%82%D0%B0+%7C%0A%7C+B+%7C+%2410%7B%2C%7D4+%5Cpm+0%7B%2C%7D3%24+%7C+%D0%91%D0%B5%D0%B7+%D0%BA%D0%B0%D0%BB%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%BA%D0%B8+%7C%0A%0A%D0%A7%D0%B8%D1%81%D0%BB%D0%B0+%D0%B2%D1%8B%D1%80%D0%BE%D0%B2%D0%BD%D0%B5%D0%BD%D1%8B+%D0%BF%D0%BE+%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D0%BC%D1%83+%D0%BA%D1%80%D0%B0%D1%8E%2C+%D1%82%D0%B5%D0%BA%D1%81%D1%82+%E2%80%94+%D0%BF%D0%BE+%D0%BB%D0%B5%D0%B2%D0%BE%D0%BC%D1%83." class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

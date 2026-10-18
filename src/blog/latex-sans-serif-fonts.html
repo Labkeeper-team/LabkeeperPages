@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Как поменять шрифт на весь документ LaTeX: шрифт без засечек онлайн — Labkeeper</title>
-    <meta name="description" content="Как поменять шрифт на весь документ в LaTeX: включение шрифта без засечек (Sans Serif) онлайн, пакеты helvet, cmbright, соответствие ГОСТ в Labkeeper." />
+    <meta name="description" content="Как поменять шрифт на весь документ в LaTeX: шрифт без засечек (Sans Serif) онлайн, PT Sans и DejaVu Sans с кириллицей, helvet для латиницы и формулы." />
     <!-- SEO Ключи: как поменять шрифт на весь документ latex, шрифт без засечек latex онлайн -->
     <meta name="keywords" content="как поменять шрифт на весь документ latex, шрифт без засечек latex онлайн" />
     <link rel="canonical" href="https://labkeeper.io/blog/latex-sans-serif-fonts" />
@@ -17,19 +17,19 @@
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Labkeeper" />
     <meta property="og:title" content="Как поменять шрифт на весь документ LaTeX: шрифт без засечек онлайн — Labkeeper" />
-    <meta property="og:description" content="Как поменять шрифт на весь документ в LaTeX: включение шрифта без засечек (Sans Serif) онлайн, пакеты helvet, cmbright, соответствие ГОСТ в Labkeeper." />
+    <meta property="og:description" content="Как поменять шрифт на весь документ в LaTeX: шрифт без засечек (Sans Serif) онлайн, PT Sans и DejaVu Sans с кириллицей, helvet для латиницы и формулы." />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:title" content="Как поменять шрифт на весь документ LaTeX: шрифт без засечек онлайн — Labkeeper" />
-    <meta name="twitter:description" content="Как поменять шрифт на весь документ в LaTeX: включение шрифта без засечек (Sans Serif) онлайн, пакеты helvet, cmbright, соответствие ГОСТ в Labkeeper." />
+    <meta name="twitter:description" content="Как поменять шрифт на весь документ в LaTeX: шрифт без засечек (Sans Serif) онлайн, PT Sans и DejaVu Sans с кириллицей, helvet для латиницы и формулы." />
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Использование шрифтов без засечек (Sans Serif) во всем документе LaTeX",
-        "description": "Как поменять шрифт на весь документ в LaTeX: включение шрифта без засечек (Sans Serif) онлайн, пакеты helvet, cmbright, соответствие ГОСТ в Labkeeper.",
+        "description": "Как поменять шрифт на весь документ в LaTeX: шрифт без засечек (Sans Serif) онлайн, PT Sans и DejaVu Sans с кириллицей, helvet для латиницы и формулы.",
         "author": {
             "@type": "Organization",
             "name": "Labkeeper",
@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-sans-serif-fonts"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с LaTeX"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~6 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~6 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -255,20 +255,21 @@
 
                     <section class="article-section" id="sans-packages">
                         <h2 class="article-section__title">Шрифт без засечек latex онлайн: пакеты Helvetica, DejaVu и PT Sans</h2>
-                        <p>Стандартный <code>\sfdefault</code> в TeX выглядит как Computer Modern Sans. Если вам нужен более современный <strong>шрифт без засечек latex онлайн</strong>, используйте проверенные кириллические пакеты:</p>
+                        <p>Стандартный <code>\sfdefault</code> в TeX выглядит как Computer Modern Sans. Если вам нужен более современный <strong>шрифт без засечек latex онлайн</strong>, подключите пакет шрифтов. Для русского текста проверьте кириллицу: она есть не во всех пакетах.</p>
                         <ul>
-                            <li><strong>Helvetica (аналог Arial):</strong>
-                                <pre><code>\usepackage[scaled=0.92]{helvet}
-\renewcommand{\familydefault}{\sfdefault}</code></pre>
-                                Опция <code>scaled=0.92</code> выравнивает оптический размер с большинством стандартных гарнитур.
-                            </li>
-                            <li><strong>PT Sans (современный российский ГОСТ-шрифт):</strong>
+                            <li><strong>PT Sans — свободный шрифт ParaType с полной кириллицей:</strong>
                                 <pre><code>\usepackage{paratype}
 \renewcommand{\familydefault}{\sfdefault}</code></pre>
+                                Пакет <code>paratype</code> подключает всё семейство PT (Serif, Sans и Mono). Если нужен только гротеск, используйте <code>\usepackage{PTSans}</code>.
                             </li>
-                            <li><strong>DejaVu Sans (отличная поддержка символов и формул):</strong>
-                                <pre><code>\usepackage{dejavu-sans}
+                            <li><strong>DejaVu Sans (кириллица и широкий набор символов):</strong>
+                                <pre><code>\usepackage{DejaVuSans}
 \renewcommand{\familydefault}{\sfdefault}</code></pre>
+                            </li>
+                            <li><strong>Helvetica (аналог Arial, только латиница):</strong>
+                                <pre><code>\usepackage[scaled=0.92]{helvet}
+\renewcommand{\familydefault}{\sfdefault}</code></pre>
+                                Опция <code>scaled=0.92</code> выравнивает оптический размер с большинством стандартных гарнитур. Кириллицы в <code>helvet</code> нет: с <code>T2A</code> русский текст наберётся другим шрифтом, а в логе появится предупреждение <code>Font shape T2A/phv/m/n undefined</code>. Используйте Helvetica для англоязычных документов.
                             </li>
                         </ul>
                     </section>
@@ -323,8 +324,8 @@
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Переключайте шрифты документов в один клик в онлайн-редакторе Labkeeper с моментальной компиляцией в PDF.</p>
-                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Crenewcommand%7B%5Cfamilydefault%7D%7B%5Csfdefault%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7BSans+serif+document%7D%0ABody+text+uses+the+same+sans+serif+family+as+the+headings.%0A%5Ctextbf%7BBold%7D+and+%5Ctextit%7Bitalic%7D+remain+available.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <p class="article-sidebar__title">Меняйте шрифт всего документа одной строкой преамбулы в онлайн-редакторе Labkeeper.</p>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7BPTSans%7D%0A%5Crenewcommand%7B%5Cfamilydefault%7D%7B%5Csfdefault%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7B%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82+%D0%B1%D0%B5%D0%B7+%D0%B7%D0%B0%D1%81%D0%B5%D1%87%D0%B5%D0%BA%7D%0A%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9+%D1%82%D0%B5%D0%BA%D1%81%D1%82+%D0%B8+%D0%B7%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BA%D0%B8+%D0%BD%D0%B0%D0%B1%D1%80%D0%B0%D0%BD%D1%8B+%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%BC+PT+Sans.%0A%5Ctextbf%7B%D0%9F%D0%BE%D0%BB%D1%83%D0%B6%D0%B8%D1%80%D0%BD%D1%8B%D0%B9%7D+%D0%B8+%5Ctextit%7B%D0%BA%D1%83%D1%80%D1%81%D0%B8%D0%B2%7D+%D1%82%D0%BE%D0%B6%D0%B5+%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%BD%D1%8B.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -378,7 +379,7 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Crenewcommand%7B%5Cfamilydefault%7D%7B%5Csfdefault%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7BSans+serif+document%7D%0ABody+text+uses+the+same+sans+serif+family+as+the+headings.%0A%5Ctextbf%7BBold%7D+and+%5Ctextit%7Bitalic%7D+remain+available.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7BPTSans%7D%0A%5Crenewcommand%7B%5Cfamilydefault%7D%7B%5Csfdefault%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7B%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82+%D0%B1%D0%B5%D0%B7+%D0%B7%D0%B0%D1%81%D0%B5%D1%87%D0%B5%D0%BA%7D%0A%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9+%D1%82%D0%B5%D0%BA%D1%81%D1%82+%D0%B8+%D0%B7%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BA%D0%B8+%D0%BD%D0%B0%D0%B1%D1%80%D0%B0%D0%BD%D1%8B+%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%BC+PT+Sans.%0A%5Ctextbf%7B%D0%9F%D0%BE%D0%BB%D1%83%D0%B6%D0%B8%D1%80%D0%BD%D1%8B%D0%B9%7D+%D0%B8+%5Ctextit%7B%D0%BA%D1%83%D1%80%D1%81%D0%B8%D0%B2%7D+%D1%82%D0%BE%D0%B6%D0%B5+%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%BD%D1%8B.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

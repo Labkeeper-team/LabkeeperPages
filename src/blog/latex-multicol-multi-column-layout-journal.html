@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-multicol-multi-column-layout-journal"
         },
         "datePublished": "2026-09-06",
-        "dateModified": "2026-09-06",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с LaTeX"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 6 сентября 2026 · Время чтения: ~7 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~7 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -233,7 +233,7 @@
 
                     <section class="article-section" id="why-multicol">
                         <h2 class="article-section__title">Преимущества multicol над стандартной опцией twocolumn</h2>
-                        <p>В стандартном LaTeX есть базовый режим <code>\documentclass[twocolumn]{article}</code>. Однако он крайне негибок: принудительно делит весь документ ровно на две колонки от начала до конца, не позволяет делать одноколоночную шапку (заголовок и аннотация на всю ширину листа) и не поддерживает верстку в 3 и более колонок.</p>
+                        <p>В стандартном LaTeX есть базовый режим <code>\documentclass[twocolumn]{article}</code>. Однако он негибок: делит весь документ ровно на две колонки от начала до конца и не поддерживает верстку в 3 и более колонок. Шапку на всю ширину в нем сделать можно — <code>\maketitle</code> в режиме twocolumn занимает всю ширину, а команда <code>\twocolumn[…]</code> выводит над колонками любой текст, например аннотацию. Но переключиться с одной колонки на две посреди страницы нельзя: <code>\onecolumn</code> и <code>\twocolumn</code> начинают новую страницу.</p>
                         <p>Пакет <strong>multicol</strong> решает эту задачу идеально: вы можете переключаться между любым количеством колонок прямо посреди страницы без принудительного разрыва листа. Это особенно ценно при <a href="/blog/rinc-vak-scientific-article-template-fonts-margins">оформлении научных статей для РИНЦ и ВАК</a>, где шапка статьи традиционно набирается в одну колонку, а текст исследования — в две.</p>
                     </section>
 
@@ -313,7 +313,7 @@
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
                                     <h3>Верстка журналов в Labkeeper</h3>
-                                    <p>В Labkeeper шаблоны научных журналов IEEE и ACM уже преднастроены с правильными отступами multicol и переносами по словарю русского языка.</p>
+                                    <p>Классы журналов IEEEtran и acmart есть в TeX Live Labkeeper: подключите нужный класс в своей преамбуле, и колонки задаст сам класс журнала.</p>
                                 </div>
                             </div>
                         </div>
@@ -329,7 +329,7 @@
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">В Labkeeper вы можете верстать статьи в журнальном двухколоночном и трехколоночном формате с мгновенным предпросмотром.</p>
+                    <p class="article-sidebar__title">В Labkeeper вы можете верстать статьи в журнальном двухколоночном и трехколоночном формате с предпросмотром PDF.</p>
                     <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bmulticol%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Bmulticols%7D%7B2%7D%0A%5Csection*%7BFirst+column%7DA+short+newspaper-style+article.+The+package+balances+the+text+across+columns.%0A%5Ccolumnbreak%5Csection*%7BSecond+column%7DAn+explicit+column+break+starts+this+section+in+the+next+column.%0A%5Cend%7Bmulticols%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>

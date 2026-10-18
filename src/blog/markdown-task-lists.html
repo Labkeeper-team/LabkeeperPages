@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Markdown чек лист синтаксис: список задач с галочками — Labkeeper</title>
-    <meta name="description" content="Изучаем Markdown чек лист синтаксис: как оформить список задач Markdown с галочками [x], вложенные подзадачи для отчетов и экспортировать в читаемый PDF в Labkeeper." />
+    <meta name="description" content="Изучаем Markdown чек лист синтаксис: как оформить список задач Markdown с галочками [x], вложенные подзадачи для отчетов и сохранить отчет в PDF в Labkeeper." />
     <!-- SEO Ключи: markdown чек лист синтаксис, список задач markdown галочки -->
     <meta name="keywords" content="markdown чек лист синтаксис, список задач markdown галочки" />
     <link rel="canonical" href="https://labkeeper.io/blog/markdown-task-lists" />
@@ -17,19 +17,19 @@
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Labkeeper" />
     <meta property="og:title" content="Markdown чек лист синтаксис: список задач с галочками — Labkeeper" />
-    <meta property="og:description" content="Изучаем Markdown чек лист синтаксис: как оформить список задач Markdown с галочками [x], вложенные подзадачи для отчетов и экспортировать в читаемый PDF в Labkeeper." />
+    <meta property="og:description" content="Изучаем Markdown чек лист синтаксис: как оформить список задач Markdown с галочками [x], вложенные подзадачи для отчетов и сохранить отчет в PDF в Labkeeper." />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:title" content="Markdown чек лист синтаксис: список задач с галочками — Labkeeper" />
-    <meta name="twitter:description" content="Изучаем Markdown чек лист синтаксис: как оформить список задач Markdown с галочками [x], вложенные подзадачи для отчетов и экспортировать в читаемый PDF в Labkeeper." />
+    <meta name="twitter:description" content="Изучаем Markdown чек лист синтаксис: как оформить список задач Markdown с галочками [x], вложенные подзадачи для отчетов и сохранить отчет в PDF в Labkeeper." />
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Создание списков задач (Task lists) и чек-листов в Markdown",
-        "description": "Изучаем Markdown чек лист синтаксис: как оформить список задач Markdown с галочками [x], вложенные подзадачи для отчетов и экспортировать в читаемый PDF в Labkeeper.",
+        "description": "Изучаем Markdown чек лист синтаксис: как оформить список задач Markdown с галочками [x], вложенные подзадачи для отчетов и сохранить отчет в PDF в Labkeeper.",
         "author": {
             "@type": "Organization",
             "name": "Labkeeper",
@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/markdown-task-lists"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с Markdown","Лабораторные работы"]
     }
@@ -219,7 +219,7 @@
                         <a href="/blog#labs" class="article-tag">Лабораторные работы</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~5 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~5 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -235,7 +235,7 @@
 
                     <section class="article-section" id="intro">
                         <h2 class="article-section__title">Что такое Task lists в Markdown</h2>
-                        <p>Списки задач (<strong>Task lists</strong> или чек-листы) — это интерактивное расширение базового формата Markdown, утвержденное стандартом <strong>GitHub Flavored Markdown (GFM)</strong>. Они позволяют превращать стандартные маркеры списков в кликабельные чек-боксы. Такие списки особенно популярны в open-source разработке (рекомендуем наш готовый <a href="/blog/github-readme-template-badges-spoilers">шаблон README.md для GitHub</a>).</p>
+                        <p>Списки задач (<strong>Task lists</strong> или чек-листы) — это расширение базового формата Markdown из спецификации <strong>GitHub Flavored Markdown (GFM)</strong>. Оно превращает обычные маркеры списков в чек-боксы с отметками. Такие списки особенно популярны в open-source разработке (рекомендуем наш готовый <a href="/blog/github-readme-template-badges-spoilers">шаблон README.md для GitHub</a>).</p>
                         <p>В академической и исследовательской практике такие списки применяются повсеместно:</p>
                         <ul>
                             <li>Для пошагового контроля хода физического или химического эксперимента;</li>
@@ -262,7 +262,7 @@
 - [ ] Выполнить серию из 10 контрольных измерений
 - [ ] Зафиксировать результаты в электронном журнале</code></pre>
                         </div>
-                        <p>В большинстве современных редакторов, включая <strong>Labkeeper</strong> и веб-интерфейс GitHub, такие чек-листы интерактивны: вы можете отмечать пункты кликом мыши прямо в режиме чтения документа.</p>
+                        <p>В превью <strong>Labkeeper</strong> галочки отображаются, но кликом не переключаются: чтобы отметить пункт, замените в тексте <code>[ ]</code> на <code>[x]</code>. Отмечать пункты кликом позволяет, например, GitHub — в описаниях issues и pull requests.</p>
                     </section>
 
                     <section class="article-section" id="nested">
@@ -274,7 +274,7 @@
                             </div>
                             <pre><code>- [ ] Этап 1: Подготовка исследуемых образцов
   - [x] Взвешивание навесок на аналитических весах
-  - [ ] Растворение в буферном растворе pH 7.4
+  - [ ] Растворение в буферном растворе pH 7,4
 - [ ] Этап 2: Спектрофотометрия
   - [ ] Прогрев спектрофотометра в течение 15 минут
   - [ ] Измерение оптической плотности контрольной кюветы</code></pre>
@@ -289,8 +289,8 @@
                                 <span class="article-code__lang">Markdown</span>
                             </div>
                             <pre><code>- [x] Установить библиотеку `scipy` версии не ниже **1.10**
-- [x] Проверить критерий сходимости $R^2 \ge 0.98$
-- [ ] Скачать методические указания по [ссылке на кафедральный портал](https://labkeeper.io)</code></pre>
+- [x] Проверить критерий сходимости $R^2 \ge 0{,}98$
+- [ ] Скачать методические указания по [ссылке на кафедральный портал](https://example.com/metodichka.pdf)</code></pre>
                         </div>
                     </section>
 
@@ -309,7 +309,7 @@
 - [ ] Стартовое напряжение источника питания выставлено на $U = 12\text{ В}$
 - [ ] Показания амперметра внесены в чистовой протокол</code></pre>
                         </div>
-                        <p>При экспорте отчета в PDF в редакторе <strong>Labkeeper</strong> все чек-боксы преобразуются в аккуратные типографические рамки с четкими векторными галочками, которые идеально смотрятся на распечатанном бланке отчета.</p>
+                        <p>В Markdown-проекте <strong>Labkeeper</strong> кнопка «Сохранить в PDF» открывает печать браузера, и чек-боксы попадают на лист такими же, как в превью. Чек-листы — возможность Markdown-проекта: в LaTeX-проекте сервер переводит пункты Markdown-сегмента в символы из пакета <code>amssymb</code>, которого нет в стандартной преамбуле, поэтому такой сегмент не соберется.</p>
                     </section>
 
                     <section class="article-section" id="pitfalls">
@@ -335,7 +335,7 @@
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
                                     <h3>Автоматический трекинг выполнения на GitHub</h3>
-                                    <p>Если файл сохраняется на GitHub или GitLab, чек-листы автоматически формируют процентный индикатор готовности задачи (например, <code>4 of 6 tasks</code>) в превью репозитория.</p>
+                                    <p>Если чек-лист стоит в описании issue или pull request на GitHub, сайт показывает индикатор готовности (например, <code>4 of 6 tasks</code>) в списке задач. В обычных файлах репозитория, например в README.md, чек-лист отображается без такого счетчика.</p>
                                 </div>
                             </div>
                         </div>
@@ -351,8 +351,8 @@
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Оформляйте протоколы лабораторных работ и планы исследований в онлайн-редакторе Labkeeper с поддержкой интерактивных чек-листов.</p>
-                    <a href="/project/default?open=markdown&amp;markdown=%23+%D0%9F%D0%BB%D0%B0%D0%BD+%D1%8D%D0%BA%D1%81%D0%BF%D0%B5%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%0A%0A-+%5Bx%5D+%D0%9F%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%B8%D1%82%D1%8C+%D0%BF%D1%80%D0%B8%D0%B1%D0%BE%D1%80%D1%8B%0A-+%5Bx%5D+%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%B8%D1%82%D1%8C+%D0%BA%D0%B0%D0%BB%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%BA%D1%83%0A-+%5B+%5D+%D0%92%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D1%8C+%D0%B8%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D1%8F%0A-+%5B+%5D+%D0%9E%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%82%D1%8C+%D0%BE%D1%82%D1%87%D0%B5%D1%82" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <p class="article-sidebar__title">Оформляйте протоколы лабораторных работ и планы исследований в онлайн-редакторе Labkeeper: чек-листы с галочками видны в превью Markdown при наборе.</p>
+                    <a href="/project/default?open=markdown&amp;markdown=%23+%D0%9F%D0%BB%D0%B0%D0%BD+%D1%8D%D0%BA%D1%81%D0%BF%D0%B5%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%0A%0A-+%5Bx%5D+%D0%9F%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%B8%D1%82%D1%8C+%D0%BF%D1%80%D0%B8%D0%B1%D0%BE%D1%80%D1%8B%0A++-+%5Bx%5D+%D0%92%D0%BE%D0%BB%D1%8C%D1%82%D0%BC%D0%B5%D1%82%D1%80%0A++-+%5B+%5D+%D0%90%D0%BC%D0%BF%D0%B5%D1%80%D0%BC%D0%B5%D1%82%D1%80%0A-+%5B+%5D+%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%B8%D1%82%D1%8C%2C+%D1%87%D1%82%D0%BE+%24R%5E2+%5Cge+0%7B%2C%7D98%24%0A-+%5B+%5D+%D0%9E%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%82%D1%8C+%D0%BE%D1%82%D1%87%D0%B5%D1%82" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -368,7 +368,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Контролируйте ход исследований в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с поддержкой списков задач Task lists, вложенных подпунктов, формул и экспорта в чистый PDF для отчетов.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор с поддержкой списков задач Task lists, вложенных подпунктов, формул MathJax и сохранения отчета в PDF.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -406,7 +406,7 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=markdown&amp;markdown=%23+%D0%9F%D0%BB%D0%B0%D0%BD+%D1%8D%D0%BA%D1%81%D0%BF%D0%B5%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%0A%0A-+%5Bx%5D+%D0%9F%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%B8%D1%82%D1%8C+%D0%BF%D1%80%D0%B8%D0%B1%D0%BE%D1%80%D1%8B%0A-+%5Bx%5D+%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%B8%D1%82%D1%8C+%D0%BA%D0%B0%D0%BB%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%BA%D1%83%0A-+%5B+%5D+%D0%92%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D1%8C+%D0%B8%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D1%8F%0A-+%5B+%5D+%D0%9E%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%82%D1%8C+%D0%BE%D1%82%D1%87%D0%B5%D1%82" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=markdown&amp;markdown=%23+%D0%9F%D0%BB%D0%B0%D0%BD+%D1%8D%D0%BA%D1%81%D0%BF%D0%B5%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%0A%0A-+%5Bx%5D+%D0%9F%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%B8%D1%82%D1%8C+%D0%BF%D1%80%D0%B8%D0%B1%D0%BE%D1%80%D1%8B%0A++-+%5Bx%5D+%D0%92%D0%BE%D0%BB%D1%8C%D1%82%D0%BC%D0%B5%D1%82%D1%80%0A++-+%5B+%5D+%D0%90%D0%BC%D0%BF%D0%B5%D1%80%D0%BC%D0%B5%D1%82%D1%80%0A-+%5B+%5D+%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%B8%D1%82%D1%8C%2C+%D1%87%D1%82%D0%BE+%24R%5E2+%5Cge+0%7B%2C%7D98%24%0A-+%5B+%5D+%D0%9E%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%82%D1%8C+%D0%BE%D1%82%D1%87%D0%B5%D1%82" class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

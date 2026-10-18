@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-draftwatermark"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с LaTeX"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~6 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~6 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -279,12 +279,12 @@
 
                     <section class="article-section" id="single-page">
                         <h2 class="article-section__title">Как показать знак только на первой странице</h2>
-                        <p>Если водяной знак требуется отобразить исключительно на титульном листе или первой странице препринта, используется специальная команда:</p>
+                        <p>Если водяной знак требуется отобразить исключительно на титульном листе или первой странице препринта, передайте пакету опцию <code>firstpageonly</code>. Это опция самого пакета, а не ключ <code>\DraftwatermarkOptions</code>: внутри команды она вызовет ошибку keyval.</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
-                            <pre><code>\DraftwatermarkOptions{firstpageonly=true}</code></pre>
+                            <pre><code>\usepackage[firstpageonly]{draftwatermark}</code></pre>
                         </div>
-                        <p>А при финальной компиляции чистовика достаточно добавить одну команду <code>\DraftwatermarkOptions{show=false}</code>, чтобы мгновенно скрыть водяной знак во всем документе без удаления преамбулы.</p>
+                        <p>А при финальной компиляции чистовика достаточно добавить команду <code>\DraftwatermarkOptions{stamp=false}</code> или подключить пакет с опцией <code>final</code>, чтобы скрыть водяной знак во всем документе без удаления преамбулы.</p>
                     </section>
 
                     <section class="article-section" id="tips">
@@ -318,7 +318,7 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Добавляйте водяные знаки для рецензирования и проверки черновиков прямо в браузере с Labkeeper.</p>
-                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bdraftwatermark%7D%5CSetWatermarkText%7BDRAFT%7D%5CSetWatermarkScale%7B.8%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7BDraft+report%7DThis+page+carries+a+background+watermark.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bdraftwatermark%7D%5CDraftwatermarkOptions%7Btext%3D%7B%D0%A7%D0%95%D0%A0%D0%9D%D0%9E%D0%92%D0%98%D0%9A%7D%2Cscale%3D0.8%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7B%D0%A7%D0%B5%D1%80%D0%BD%D0%BE%D0%B2%D0%B8%D0%BA+%D0%BE%D1%82%D1%87%D1%91%D1%82%D0%B0%7D%D0%9D%D0%B0+%D1%84%D0%BE%D0%BD%D0%B5+%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B+%E2%80%94+%D0%B2%D0%BE%D0%B4%D1%8F%D0%BD%D0%BE%D0%B9+%D0%B7%D0%BD%D0%B0%D0%BA.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -334,7 +334,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Готовьте чистые черновики в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор LaTeX с возможностью быстрой сборки промежуточных версий документов с водяными знаками и защитой авторства.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX с возможностью быстрой сборки промежуточных версий документов с водяными знаками.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -372,7 +372,7 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bdraftwatermark%7D%5CSetWatermarkText%7BDRAFT%7D%5CSetWatermarkScale%7B.8%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7BDraft+report%7DThis+page+carries+a+background+watermark.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bdraftwatermark%7D%5CDraftwatermarkOptions%7Btext%3D%7B%D0%A7%D0%95%D0%A0%D0%9D%D0%9E%D0%92%D0%98%D0%9A%7D%2Cscale%3D0.8%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7B%D0%A7%D0%B5%D1%80%D0%BD%D0%BE%D0%B2%D0%B8%D0%BA+%D0%BE%D1%82%D1%87%D1%91%D1%82%D0%B0%7D%D0%9D%D0%B0+%D1%84%D0%BE%D0%BD%D0%B5+%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B+%E2%80%94+%D0%B2%D0%BE%D0%B4%D1%8F%D0%BD%D0%BE%D0%B9+%D0%B7%D0%BD%D0%B0%D0%BA.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

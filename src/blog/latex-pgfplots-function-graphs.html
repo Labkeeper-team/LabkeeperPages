@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-pgfplots-function-graphs"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с LaTeX"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~8 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~8 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -292,7 +292,7 @@
 
                     <section class="article-section" id="points">
                         <h2 class="article-section__title">График по точкам latex онлайн: импорт координат и таблиц</h2>
-                        <p>Для экспериментальных исследований и лабораторных измерений требуется построить <strong>график по точкам latex онлайн</strong> с погрешностями или маркерами измерений. Координаты можно передать непосредственно в коде или считать из файла <code>.csv</code>/<code>.dat</code>.</p>
+                        <p>Для экспериментальных исследований и лабораторных измерений требуется построить <strong>график по точкам latex онлайн</strong> с погрешностями или маркерами измерений. Координаты можно передать непосредственно в коде или считать из файла <code>.csv</code> или <code>.txt</code> (файлы <code>.dat</code> в проект Labkeeper загрузить нельзя).</p>
                         <p>Пример построения точек вручную с помощью команды <code>coordinates</code>:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
@@ -332,9 +332,9 @@
                         <h2 class="article-section__title">Типичные проблемы и оптимизация компиляции</h2>
                         <p>Сложные графики с тысячами точек могут замедлять компиляцию документа. Чтобы ускорить сборку:</p>
                         <ul>
-                            <li>Используйте пакет <code>\usepgfplotslibrary{external}</code> и команду <code>\tikzexternalize</code> для кэширования отрисованных фигур в отдельные PDF-файлы.</li>
                             <li>Не завышайте <code>samples</code> без необходимости: 100–150 точек визуально неотличимы от 1000 для большинства аналитических функций.</li>
-                            <li>В веб-редакторе <strong>Labkeeper</strong> компиляция происходит на оптимизированном бэкенде, что обеспечивает быстрый рендеринг даже насыщенных графиков.</li>
+                            <li>Тяжёлые зависимости посчитайте заранее и загрузите готовые точки в CSV: <code>\addplot table</code> рисует координаты быстрее, чем pgfplots вычисляет функцию при каждой сборке.</li>
+                            <li>Учитывайте лимит времени: в веб-редакторе <strong>Labkeeper</strong> одна сборка длится до 30 секунд у гостя и до 60 секунд после входа.</li>
                         </ul>
                     </section>
 
@@ -368,7 +368,7 @@
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Создавайте чистые векторные графики pgfplots в онлайн-редакторе Labkeeper с мгновенной PDF-компиляцией без установки TeX Live.</p>
+                    <p class="article-sidebar__title">Создавайте чистые векторные графики pgfplots в онлайн-редакторе Labkeeper со сборкой PDF без установки TeX Live.</p>
                     <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bpgfplots%7D%5Cpgfplotsset%7Bcompat%3D1.18%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Btikzpicture%7D%5Cbegin%7Baxis%7D%5Bwidth%3D9cm%2Cxlabel%3D%24x%24%2Cylabel%3D%24y%24%2Cgrid%3Dmajor%5D%0A%5Caddplot%5Bblue%2Cdomain%3D-2%3A2%2Csamples%3D40%5D%7Bx%5E2%7D%3B%0A%5Cend%7Baxis%7D%5Cend%7Btikzpicture%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
@@ -385,7 +385,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Стройте точные графики в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор LaTeX с поддержкой пакета pgfplots, моментальным предпросмотром графиков и автоматическим экспортом в PDF.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX с поддержкой пакета pgfplots, предпросмотром PDF после сборки и скачиванием готового файла.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">

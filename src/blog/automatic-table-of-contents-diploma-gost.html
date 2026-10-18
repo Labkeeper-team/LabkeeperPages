@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/automatic-table-of-contents-diploma-gost"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Дипломные работы"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#diploma" class="article-tag">Дипломные работы</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~7 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~7 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -250,7 +250,8 @@
                             <pre><code>\tableofcontents
 \clearpage</code></pre>
                         </div>
-                        <p>При первой компиляции TeX собирает названия разделов во вспомогательный файл <code>.toc</code>, а при втором проходе формирует идеально выровненную верстку со всеми номерами листов.</p>
+                        <p>При первой компиляции TeX собирает названия разделов во вспомогательный файл <code>.toc</code>, а при втором проходе формирует выровненную верстку со всеми номерами листов. В Labkeeper оба прохода выполняются при одном нажатии «Выполнить».</p>
+                        <p>В стандартной преамбуле Labkeeper разделы не нумеруются, поэтому в содержании они выйдут без номеров. Для нумерованных разделов и настройки tocloft начните проект со своей преамбулы, как в примере в редакторе.</p>
                     </section>
 
                     <section class="article-section" id="tocdepth">
@@ -274,11 +275,16 @@
 
 % Включаем отточия для глав и крупных разделов
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
-\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % только в классах report и book
 
-% Переименовываем стандартное «Оглавление» в «СОДЕРЖАНИЕ»
-\renewcommand{\contentsname}{\hfill СОДЕРЖАНИЕ \hfill}</code></pre>
+% Заголовок по центру
+\renewcommand{\cfttoctitlefont}{\hfill\normalsize\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill}
+
+% «Оглавление» -&gt; «СОДЕРЖАНИЕ»
+\addto\captionsrussian{\renewcommand{\contentsname}{СОДЕРЖАНИЕ}}</code></pre>
                         </div>
+                        <p>Простое <code>\renewcommand{\contentsname}{...}</code> в преамбуле не сработает: в начале документа babel вернет свое название «Оглавление». Поэтому новое название передают через <code>\addto\captionsrussian</code>, а центрируют заголовок командами tocloft, а не <code>\hfill</code> внутри названия.</p>
                     </section>
 
                     <section class="article-section" id="unnumbered-sections">
@@ -306,8 +312,8 @@
                             <div class="article-tip">
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
-                                    <h3>Запрет переноса заголовка на новую страницу</h3>
-                                    <p>Пакет <code>tocloft</code> гарантирует, что номера страниц никогда не оторвутся от отточия.</p>
+                                    <h3>Длинные заголовки в содержании</h3>
+                                    <p>Если заголовок не помещается в строку, LaTeX перенесет его, а отточие и номер страницы поставит в конце последней строки. Продолжение заголовка начинается от уровня начала его текста, как и требует ГОСТ 7.32.</p>
                                 </div>
                             </div>
                         </div>
@@ -323,8 +329,8 @@
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Собирайте автооглавление ВКР в один клик без ручного пересчета страниц в Labkeeper.</p>
-                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Ctableofcontents%5Cnewpage%0A%5Csection%7BIntroduction%7DResearch+goal.%0A%5Csection%7BMethods%7D%5Csubsection%7BEquipment%7DMeasurement+setup.%0A%5Csection%7BResults%7DSummary+of+observations.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <p class="article-sidebar__title">Собирайте содержание ВКР без ручного пересчета страниц: LaTeX в Labkeeper обновляет номера при каждой сборке.</p>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Brussian%5D%7Bbabel%7D%0A%5Cusepackage%7Btocloft%7D%0A%5Crenewcommand%7B%5Ccftsecleader%7D%7B%5Ccftdotfill%7B%5Ccftdotsep%7D%7D%0A%5Crenewcommand%7B%5Ccfttoctitlefont%7D%7B%5Chfill%5Cnormalsize%5Cbfseries%7D%0A%5Crenewcommand%7B%5Ccftaftertoctitle%7D%7B%5Chfill%7D%0A%5Caddto%5Ccaptionsrussian%7B%5Crenewcommand%7B%5Ccontentsname%7D%7B%D0%A1%D0%9E%D0%94%D0%95%D0%A0%D0%96%D0%90%D0%9D%D0%98%D0%95%7D%7D%0A%5Cbegin%7Bdocument%7D%0A%5Ctableofcontents%0A%5Cnewpage%0A%5Csection*%7B%D0%92%D0%92%D0%95%D0%94%D0%95%D0%9D%D0%98%D0%95%7D%0A%5Caddcontentsline%7Btoc%7D%7Bsection%7D%7B%D0%92%D0%92%D0%95%D0%94%D0%95%D0%9D%D0%98%D0%95%7D%0A%D0%A6%D0%B5%D0%BB%D1%8C+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B.%0A%5Csection%7B%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BA%D0%B0%7D%0A%5Csubsection%7B%D0%9E%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%7D%0A%D0%98%D0%B7%D0%BC%D0%B5%D1%80%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F+%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0.%0A%5Csection%7B%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D1%8B%7D%0A%D0%98%D1%82%D0%BE%D0%B3%D0%B8+%D0%B8%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D0%B9.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -340,7 +346,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Забудьте о ручных правках содержания в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с мгновенной перекомпиляцией оглавления при любых изменениях структуры работы.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX: содержание собирается командой tableofcontents и обновляется при каждой сборке PDF.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -378,7 +384,7 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Ctableofcontents%5Cnewpage%0A%5Csection%7BIntroduction%7DResearch+goal.%0A%5Csection%7BMethods%7D%5Csubsection%7BEquipment%7DMeasurement+setup.%0A%5Csection%7BResults%7DSummary+of+observations.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Brussian%5D%7Bbabel%7D%0A%5Cusepackage%7Btocloft%7D%0A%5Crenewcommand%7B%5Ccftsecleader%7D%7B%5Ccftdotfill%7B%5Ccftdotsep%7D%7D%0A%5Crenewcommand%7B%5Ccfttoctitlefont%7D%7B%5Chfill%5Cnormalsize%5Cbfseries%7D%0A%5Crenewcommand%7B%5Ccftaftertoctitle%7D%7B%5Chfill%7D%0A%5Caddto%5Ccaptionsrussian%7B%5Crenewcommand%7B%5Ccontentsname%7D%7B%D0%A1%D0%9E%D0%94%D0%95%D0%A0%D0%96%D0%90%D0%9D%D0%98%D0%95%7D%7D%0A%5Cbegin%7Bdocument%7D%0A%5Ctableofcontents%0A%5Cnewpage%0A%5Csection*%7B%D0%92%D0%92%D0%95%D0%94%D0%95%D0%9D%D0%98%D0%95%7D%0A%5Caddcontentsline%7Btoc%7D%7Bsection%7D%7B%D0%92%D0%92%D0%95%D0%94%D0%95%D0%9D%D0%98%D0%95%7D%0A%D0%A6%D0%B5%D0%BB%D1%8C+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B.%0A%5Csection%7B%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BA%D0%B0%7D%0A%5Csubsection%7B%D0%9E%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%7D%0A%D0%98%D0%B7%D0%BC%D0%B5%D1%80%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F+%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0.%0A%5Csection%7B%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D1%8B%7D%0A%D0%98%D1%82%D0%BE%D0%B3%D0%B8+%D0%B8%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D0%B9.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

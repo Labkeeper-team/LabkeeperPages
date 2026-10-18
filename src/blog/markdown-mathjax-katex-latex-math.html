@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/markdown-mathjax-katex-latex-math"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с Markdown"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#markdown" class="article-tag">Работа с Markdown</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~7 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~7 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -234,7 +234,7 @@
                     <section class="article-section" id="intro">
                         <h2 class="article-section__title">Связка простоты Markdown и математической мощи TeX</h2>
                         <p>Markdown идеален для быстрого ведения конспектов, технической документации и блогов. Однако когда требуется записать дифференциальное уравнение или закон Ома, стандартных текстовых маркеров недостаточно (подробнее о правилах разметки уравнений читайте в нашем <a href="/blog/latex-formulas">руководстве по формулам в LaTeX</a>).</p>
-                        <p>Современные веб-платформы (GitHub, Obsidian, Notion) и онлайн-редактор <strong>Labkeeper</strong> поддерживают математический диалект LaTeX через библиотеки KaTeX и MathJax, позволяя вставлять полиграфические формулы без перегрузки документа сложной TeX-разметкой.</p>
+                        <p>Современные веб-платформы поддерживают математический диалект LaTeX: GitHub, Obsidian и онлайн-редактор <strong>Labkeeper</strong> набирают формулы через MathJax, Notion — через KaTeX. Синтаксис у них почти одинаковый, поэтому полиграфические формулы вставляются без перегрузки документа сложной TeX-разметкой.</p>
                     </section>
 
                     <section class="article-section" id="syntax">
@@ -253,6 +253,7 @@ $$
 \int_{0}^{\pi} \sin^2(x)\,dx = \frac{\pi}{2}
 $$</code></pre>
                         </div>
+                        <p>В Markdown-проекте Labkeeper формулы распознаются только между знаками доллара. Скобочные разделители <code>\(...\)</code> и <code>\[...\]</code> из LaTeX здесь не работают и выводятся как обычный текст.</p>
                     </section>
 
                     <section class="article-section" id="mathjax-online">
@@ -287,8 +288,8 @@ $$</code></pre>
                         <h2 class="article-section__title">Отличия движков KaTeX и MathJax: скорость и поддержка команд</h2>
                         <p>Два ведущих математических движка веба имеют свои особенности:</p>
                         <ul>
-                            <li><strong>KaTeX (от Khan Academy):</strong> работает в сотни раз быстрее MathJax, отрисовывает формулы синхронно без мигания страницы. Поддерживает 98% повседневных математических символов. Используется по умолчанию в Labkeeper.</li>
-                            <li><strong>MathJax:</strong> поддерживает редкие макросы и специфические пакеты, но работает медленнее на страницах с сотнями уравнений.</li>
+                            <li><strong>KaTeX (от Khan Academy):</strong> заметно быстрее отрисовывает формулы и не вызывает мигания страницы, но поддерживает меньше команд и расширений.</li>
+                            <li><strong>MathJax:</strong> поддерживает больше макросов и расширений, но работает медленнее на страницах с сотнями уравнений. Именно MathJax набирает формулы в превью Markdown-проекта Labkeeper.</li>
                         </ul>
                     </section>
 
@@ -322,7 +323,7 @@ $$</code></pre>
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Набирайте формулы LaTeX прямо внутри заметок Markdown в Labkeeper с мгновенным рендерингом.</p>
+                    <p class="article-sidebar__title">Набирайте формулы LaTeX прямо внутри заметок Markdown в Labkeeper: MathJax показывает их в превью при наборе.</p>
                     <a href="/project/default?open=markdown&amp;markdown=%23%23+%D0%A4%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D1%8B%0A%0A%D0%92+%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B5%3A+%24E%3Dmc%5E2%24.%0A%0A%24%24%0A%5Cint_0%5E1+x%5E2%5C%2Cdx%3D%5Cfrac13%0A%24%24%0A%0A%24%24%0Ax%3D%5Cfrac%7B-b%5Cpm%5Csqrt%7Bb%5E2-4ac%7D%7D%7B2a%7D%0A%24%24" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
@@ -339,7 +340,7 @@ $$</code></pre>
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Пишите научные заметки в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор Markdown со сверхбыстрым движком KaTeX, формулами LaTeX и экспортом в PDF в один клик.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор Markdown: формулы LaTeX через MathJax в превью при наборе и сохранение конспекта в PDF через печать браузера.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">

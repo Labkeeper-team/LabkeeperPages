@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-arraystretch-table-row-height-spacing"
         },
         "datePublished": "2026-09-06",
-        "dateModified": "2026-09-06",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с LaTeX"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 6 сентября 2026 · Время чтения: ~6 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~6 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -300,15 +300,15 @@
                             <div class="article-tip">
                                 <div class="article-tip__number">1</div>
                                 <div class="article-tip__content">
-                                    <h3>Идеальный коэффициент 1.3 для ГОСТ</h3>
-                                    <p>Для отчетов и дипломных работ по ГОСТу значение <code>\renewcommand{\arraystretch}{1.25-1.3}</code> является оптимальным балансом между компактностью и читаемостью.</p>
+                                    <h3>Коэффициент 1.25–1.3 для отчетов</h3>
+                                    <p>Для отчетов и дипломных работ коэффициент от 1.25 до 1.3, например <code>\renewcommand{\arraystretch}{1.3}</code>, — оптимальный баланс между компактностью и читаемостью.</p>
                                 </div>
                             </div>
                             <div class="article-tip">
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
-                                    <h3>Табличный редактор в Labkeeper</h3>
-                                    <p>В Labkeeper вы можете комбинировать стили оформления таблиц с моментальным визуальным контролем высоты строк перед финальной сборкой в PDF.</p>
+                                    <h3>booktabs в автоматической преамбуле Labkeeper</h3>
+                                    <p>Если в проекте Labkeeper нет своей преамбулы, пакеты <code>booktabs</code> и <code>longtable</code> уже подключены в автоматической: команды <code>\toprule</code>, <code>\midrule</code> и <code>\bottomrule</code> работают сразу.</p>
                                 </div>
                             </div>
                         </div>
@@ -324,7 +324,7 @@
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">В Labkeeper таблицы компилируются с профессиональными типографическими отступами без слипания строк.</p>
+                    <p class="article-sidebar__title">Настраивайте высоту строк таблиц в онлайн-редакторе Labkeeper и проверяйте результат в PDF после сборки.</p>
                     <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Crenewcommand%7B%5Carraystretch%7D%7B1.6%7D%0A%5Cbegin%7Btabular%7D%7B%7Cl%7Cr%7C%7D%5Chline+Item+%26+Value%5C%5C%5Chline%0AVoltage+%26+12%5C%5CCurrent+%26+2%5C%5CPower+%26+24%5C%5C%5Chline%5Cend%7Btabular%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
@@ -341,7 +341,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Верстайте красивые таблицы в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с поддержкой пакетов booktabs, array и автоматическим выравниванием строк по ГОСТ.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX с поддержкой пакетов booktabs и array и сборкой таблиц в PDF.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">

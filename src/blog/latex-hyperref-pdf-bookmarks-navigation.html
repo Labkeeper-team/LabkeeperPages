@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-hyperref-pdf-bookmarks-navigation"
         },
         "datePublished": "2026-09-06",
-        "dateModified": "2026-09-06",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с LaTeX"]
     }
@@ -218,14 +218,14 @@
                         <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 6 сентября 2026 · Время чтения: ~7 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~7 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
                         <ol class="article-toc__list">
                             <li><a href="#why-navigation" class="article-toc__link">Зачем нужны интерактивные закладки в научных документах</a></li>
                             <li><a href="#hyperref-setup" class="article-toc__link">Закладки в PDF LaTeX hyperref: эталонная конфигурация</a></li>
-                            <li><a href="#cyrillic-encoding" class="article-toc__link">Решение проблемы с кракозябрами в русских закладках</a></li>
+                            <li><a href="#cyrillic-encoding" class="article-toc__link">Формулы в заголовках и закладки PDF</a></li>
                             <li><a href="#toc-navigation" class="article-toc__link">Навигация по оглавлению PDF LaTeX: ссылки на формулы и рисунки</a></li>
                             <li><a href="#print-vs-screen" class="article-toc__link">Черно-белые ссылки для печати против цветных для экрана</a></li>
                         </ol>
@@ -262,15 +262,18 @@
                             <li><code>bookmarksopen=true</code> — дерево закладок сразу открыто в развернутом виде при первом открытии файла;</li>
                             <li><code>colorlinks=true</code> — ссылки выделяются цветом вместо некрасивых рамок вокруг текста.</li>
                         </ul>
+                        <div class="article-note">
+                            <strong>⚠️ В Labkeeper:</strong> если в проекте нет своей преамбулы, Labkeeper подставляет автоматическую, где <code>hyperref</code> уже подключён. Второй <code>\usepackage[…]{hyperref}</code> в такой преамбуле даёт ошибку <code>Option clash for package hyperref</code>. Настраивайте ссылки командой <code>\hypersetup{…}</code> с теми же параметрами или допишите их в уже существующую строку <code>\usepackage{hyperref}</code> — второй <code>\usepackage{hyperref}</code> не нужен.
+                        </div>
                     </section>
 
                     <section class="article-section" id="cyrillic-encoding">
-                        <h2 class="article-section__title">Решение проблемы с кракозябрами в русских закладках</h2>
+                        <h2 class="article-section__title">Формулы в заголовках и закладки PDF</h2>
                         <p>Если в заголовках глав содержатся математические формулы (например, <code>\section{Анализ функции $f(x) = x^2$}</code>), в боковых закладках PDF может появиться предупреждение <code>Token not allowed in a PDF string</code>.</p>
                         <p>Для таких случаев в hyperref предусмотрена команда <code>\texorpdfstring</code>, которая выводит формулу в тексте, а в закладку отправляет чистый текст:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX Заголовок с формулой</span></div>
-                            <pre><code>\section{Исследование уравнения \texorpdfstring{$E = mc^2$}{E = mc	extasciicircum 2}}</code></pre>
+                            <pre><code>\section{Исследование уравнения \texorpdfstring{$E = mc^2$}{E = mc\textasciicircum 2}}</code></pre>
                         </div>
                         <p>Также рекомендуется дополнительно подключить современный пакет <code>\usepackage{bookmark}</code> сразу после <code>hyperref</code> — он обновляет закладки за один проход компилятора вместо двух.</p>
                     </section>
@@ -283,7 +286,7 @@
                             <pre><code>Как показано на рисунке~\ref{fig:schema}, выходной сигнал...
 В соответствии с формулой~\eqref{eq:motion}, скорость нарастает линейно.</code></pre>
                         </div>
-                        <p>Клик по номеру рисунка или формулы в PDF мгновенно переместит пользователя к соответствующему объекту. Те же правила перекрестных ссылок действуют и при <a href="/blog/latex-russian-cyrillic-code-listings-minted">оформлении листингов кода в LaTeX без ошибок</a>.</p>
+                        <p>Клик по номеру рисунка или формулы в PDF переместит читателя к соответствующему объекту. Те же правила перекрестных ссылок действуют и при <a href="/blog/latex-russian-cyrillic-code-listings-minted">оформлении листингов кода в LaTeX без ошибок</a>.</p>
                     </section>
 
                     <section class="article-section" id="print-vs-screen">
@@ -314,7 +317,7 @@
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
                                     <h3>Готовая навигация в Labkeeper</h3>
-                                    <p>В Labkeeper все шаблоны ВКР и статей уже включают преднастроенный hyperref с корректной поддержкой кириллицы и кликабельных закладок.</p>
+                                    <p>В автоматической преамбуле Labkeeper пакет hyperref уже подключён: внутренние ссылки в просмотрщике PDF прокручивают документ к нужному месту, а внешние открываются в новой вкладке. В собственной преамбуле подключите hyperref сами.</p>
                                 </div>
                             </div>
                         </div>
@@ -330,7 +333,7 @@
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">В Labkeeper сгенерированные PDF автоматически содержат встроенные закладки и кликабельные ссылки для удобной навигации.</p>
+                    <p class="article-sidebar__title">Если в проекте Labkeeper нет своей преамбулы, PDF уже содержит закладки и кликабельные ссылки: hyperref подключается автоматически.</p>
                     <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%5Bunicode%2Ccolorlinks%3Dtrue%2Clinkcolor%3Dblue%2Curlcolor%3Dblue%5D%7Bhyperref%7D%0A%5Cbegin%7Bdocument%7D%0A%5Ctableofcontents%0A%5Csection%7BIntroduction%7D%5Clabel%7Bintro%7D%0AVisit+%5Chref%7Bhttps%3A%2F%2Flabkeeper.io%7D%7BLabkeeper%7D.%0A%5Cnewpage%5Csection%7BResults%7DBack+to+Section%7E%5Cref%7Bintro%7D.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
@@ -347,7 +350,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Создавайте интерактивные PDF в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с идеальной настройкой пакета hyperref: авто-ссылки на формулы, рисунки и оглавление без сбоев.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX с поддержкой hyperref: кликабельные ссылки на формулы, рисунки и оглавление в PDF.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">

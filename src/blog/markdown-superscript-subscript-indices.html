@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/markdown-superscript-subscript-indices"
         },
         "datePublished": "2026-09-06",
-        "dateModified": "2026-09-06",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с Markdown"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#markdown" class="article-tag">Работа с Markdown</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 6 сентября 2026 · Время чтения: ~6 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~6 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -234,7 +234,7 @@
 
                     <section class="article-section" id="intro">
                         <h2 class="article-section__title">Зачем нужны индексы в текстовых документах</h2>
-                        <p>При подготовке научно-технических заметок, отчетов по лабораторным работам и технической документации регулярно возникает необходимость вставить степень величины ($x^2$, $10^5$), обозначить химический элемент ($H_2O$, $CO_2$) или указать номер итерации в алгоритме ($a_{i+1}$). В чистой спецификации CommonMark нет встроенного символа для таких операций, однако существует несколько надёжных подходов.</p>
+                        <p>При подготовке научно-технических заметок, отчетов по лабораторным работам и технической документации регулярно возникает необходимость вставить степень величины ($x^2$, $10^5$), записать химическую формулу ($\mathrm{H_2O}$, $\mathrm{CO_2}$) или указать номер итерации в алгоритме ($a_{i+1}$). В чистой спецификации CommonMark нет встроенного символа для таких операций, однако существует несколько надёжных подходов.</p>
                         <p>В этой статье мы подробно разберем, как органично внедрить <strong>индексы в markdown sub sup</strong> с помощью стандартных HTML-тегов, математических вставок KaTeX/MathJax и специальных расширений синтаксиса. А если вы готовите структурированные данные, рекомендуем также посмотреть наше руководство по созданию <a href="/blog/complex-markdown-tables-syntax-online-generator">сложных таблиц в Markdown</a>.</p>
                     </section>
 
@@ -281,14 +281,14 @@ $$</code></pre>
                             <li>Тильды для нижнего индекса: <code>H~2~O</code> превращается в H<sub>2</sub>O;</li>
                             <li>Крышки для верхнего индекса: <code>x^2^</code> превращается в x<sup>2</sup>.</li>
                         </ul>
-                        <p>Однако помните, что на чистом GitHub или базовых парсерах CommonMark такой синтаксис не всегда активен по умолчанию. Поэтому связка <code>&lt;sup&gt;</code> / <code>&lt;sub&gt;</code> либо формульный блок <code>$...$</code> остаются наиболее надежным выбором. Подобная аккуратность особенно важна при <a href="/blog/modern-it-resume-markdown-cv-as-code">верстке резюме в Markdown</a>, где символы должны парситься корректно любыми сканерами.</p>
+                        <p>Однако в GitHub Flavored Markdown и в превью Markdown-проекта Labkeeper этот синтаксис не работает: одиночные тильды GFM понимает как зачеркивание, и <code>H~2~O</code> превратится в H<del>2</del>O, а <code>x^2^</code> останется обычным текстом. В LaTeX-проекте Labkeeper Markdown-сегменты переводит Pandoc, и там оба варианта работают. Поэтому связка <code>&lt;sup&gt;</code> / <code>&lt;sub&gt;</code> либо формульный блок <code>$...$</code> остаются наиболее надежным выбором для превью. Подобная аккуратность особенно важна при <a href="/blog/modern-it-resume-markdown-cv-as-code">верстке резюме в Markdown</a>, где символы должны парситься корректно любыми сканерами.</p>
                     </section>
 
                     <section class="article-section" id="examples">
                         <h2 class="article-section__title">Практические примеры: химия, физика и сноски</h2>
                         <p>Сравним типовые сценарии оформления в таблице:</p>
-                        <div class="article-table-wrap">
-                            <div class="article-table-wrapper" tabindex="0"><table class="article-table">
+                        <div class="article-table-wrapper">
+                            <table class="article-table">
                                 <thead>
                                     <tr>
                                         <th>Сфера</th>
@@ -318,7 +318,7 @@ $$</code></pre>
                                         <td>E<sub>0</sub> = m<sub>0</sub>c<sup>2</sup></td>
                                     </tr>
                                 </tbody>
-                            </table></div>
+                            </table>
                         </div>
                     </section>
 
@@ -327,7 +327,8 @@ $$</code></pre>
                         <p>Чтобы верстка выглядела аккуратно и не разрывала межстрочный интервал абзаца, обратите внимание на следующие нюансы:</p>
                         <ul>
                             <li><strong>Лишние пробелы внутри тегов:</strong> конструкция <code>&lt;sub&gt; 2 &lt;/sub&gt;</code> может вызвать нежелательные отступы вокруг цифры. Пишите слитно: <code>&lt;sub&gt;2&lt;/sub&gt;</code>.</li>
-                            <li><strong>Смещение высоты строки в браузере:</strong> в старых CSS-фреймворках теги <code>sup</code> и <code>sub</code> могут слегка увеличивать <code>line-height</code> строки. В редакторе Labkeeper стили нормализованы с помощью <code>vertical-align: baseline</code> и относительного позиционирования.</li>
+                            <li><strong>Смещение высоты строки в браузере:</strong> теги <code>sup</code> и <code>sub</code> могут слегка увеличивать <code>line-height</code> строки. Если индексов в абзаце много, формульный блок <code>$...$</code> обычно выглядит ровнее.</li>
+                            <li><strong>HTML в LaTeX-проекте:</strong> при сборке PDF из Markdown-сегментов теги <code>sub</code> и <code>sup</code> выбрасываются, и индекс станет обычной цифрой. Для PDF используйте формулы или синтаксис Pandoc <code>H~2~O</code>.</li>
                             <li><strong>Кириллица в формулах:</strong> если вам нужен поясняющий русский индекс в формуле LaTeX, оборачивайте его в <code>\text{...}</code>: <code>$F_{\text{тр}} = \mu N$</code>.</li>
                         </ul>
                     </section>
@@ -339,14 +340,14 @@ $$</code></pre>
                                 <div class="article-tip__number">1</div>
                                 <div class="article-tip__content">
                                     <h3>Используйте LaTeX-блок для математики</h3>
-                                    <p>Для простых химических формул удобнее теги <code>&lt;sub&gt;</code>, а для математических уравнений со степенями и дробями всегда выбирайте KaTeX/LaTeX: так соблюдаются типографические правила набора символов курсивом.</p>
+                                    <p>Для простых химических формул удобнее теги <code>&lt;sub&gt;</code>, а для математических уравнений со степенями и дробями выбирайте формулы LaTeX между знаками доллара: так соблюдаются типографические правила набора символов курсивом.</p>
                                 </div>
                             </div>
                             <div class="article-tip">
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
-                                    <h3>Мгновенный экспорт в Labkeeper</h3>
-                                    <p>В Labkeeper вы можете комбинировать Markdown-текст, HTML-теги и математические формулы, сразу видя итоговую страницу в PDF без необходимости настраивать локальные компиляторы.</p>
+                                    <h3>Индексы в Labkeeper</h3>
+                                    <p>В Markdown-проекте Labkeeper можно комбинировать текст, HTML-теги и формулы MathJax и сразу видеть результат в превью. Для PDF с полями и сносками используйте LaTeX-проект: там индексы набирайте формулами, потому что HTML-теги из Markdown-сегментов при сборке выбрасываются.</p>
                                 </div>
                             </div>
                         </div>
@@ -362,8 +363,8 @@ $$</code></pre>
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Пишите научные заметки и отчеты в Labkeeper: мгновенный рендеринг формул KaTeX, таблиц и тегов разметки прямо в браузере.</p>
-                    <a href="/project/default?open=markdown&amp;markdown=%23%23+%D0%98%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D1%8B%0A%0A%D0%9C%D0%BE%D0%BB%D0%B5%D0%BA%D1%83%D0%BB%D0%B0+%D0%B2%D0%BE%D0%B4%D1%8B%3A+%24H_2O%24.%0A%0A%D0%AD%D0%BD%D0%B5%D1%80%D0%B3%D0%B8%D1%8F%3A+%24E_0%3Dmc%5E2%24.%0A%0A%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C%3A+%24a_1%2Ca_2%2C%5Cldots%2Ca_n%24.%0A%0AHTML%3A+H%3Csub%3E2%3C%2Fsub%3EO+%D0%B8+x%3Csup%3E2%3C%2Fsup%3E." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <p class="article-sidebar__title">Пишите научные заметки и отчеты в Labkeeper: формулы MathJax, таблицы и HTML-теги видны в превью при наборе.</p>
+                    <a href="/project/default?open=markdown&amp;markdown=%23%23+%D0%98%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D1%8B%0A%0A%D0%92%D0%BE%D0%B4%D0%B0%3A+H%3Csub%3E2%3C%2Fsub%3EO+%D0%B8%D0%BB%D0%B8+%24%5Cmathrm%7BH_2O%7D%24.%0A%0A%D0%AD%D0%BD%D0%B5%D1%80%D0%B3%D0%B8%D1%8F%3A+%24E_0%3Dmc%5E2%24%2C+%D1%81%D1%82%D0%B5%D0%BF%D0%B5%D0%BD%D1%8C%3A+x%3Csup%3E2%3C%2Fsup%3E.%0A%0A%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C%3A+%24a_1%2Ca_2%2C%5Cldots%2Ca_n%24.%0A%0A%D0%9B%D0%BE%D0%B2%D1%83%D1%88%D0%BA%D0%B0%3A+H%7E2%7EO+%D0%B2+%D0%BF%D1%80%D0%B5%D0%B2%D1%8C%D1%8E+%D0%B4%D0%B0%D0%B5%D1%82+%D0%B7%D0%B0%D1%87%D0%B5%D1%80%D0%BA%D0%BD%D1%83%D1%82%D1%83%D1%8E+%D0%B4%D0%B2%D0%BE%D0%B9%D0%BA%D1%83." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -379,7 +380,7 @@ $$</code></pre>
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Форматируйте формулы и&nbsp;индексы в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Современный гибридный редактор с поддержкой тегов sub/sup, математического синтаксиса LaTeX и мгновенным экспортом в чистый PDF.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор Markdown и LaTeX: теги sub/sup, формулы MathJax и сохранение заметок в PDF через печать браузера.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -417,7 +418,7 @@ $$</code></pre>
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=markdown&amp;markdown=%23%23+%D0%98%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D1%8B%0A%0A%D0%9C%D0%BE%D0%BB%D0%B5%D0%BA%D1%83%D0%BB%D0%B0+%D0%B2%D0%BE%D0%B4%D1%8B%3A+%24H_2O%24.%0A%0A%D0%AD%D0%BD%D0%B5%D1%80%D0%B3%D0%B8%D1%8F%3A+%24E_0%3Dmc%5E2%24.%0A%0A%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C%3A+%24a_1%2Ca_2%2C%5Cldots%2Ca_n%24.%0A%0AHTML%3A+H%3Csub%3E2%3C%2Fsub%3EO+%D0%B8+x%3Csup%3E2%3C%2Fsup%3E." class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=markdown&amp;markdown=%23%23+%D0%98%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D1%8B%0A%0A%D0%92%D0%BE%D0%B4%D0%B0%3A+H%3Csub%3E2%3C%2Fsub%3EO+%D0%B8%D0%BB%D0%B8+%24%5Cmathrm%7BH_2O%7D%24.%0A%0A%D0%AD%D0%BD%D0%B5%D1%80%D0%B3%D0%B8%D1%8F%3A+%24E_0%3Dmc%5E2%24%2C+%D1%81%D1%82%D0%B5%D0%BF%D0%B5%D0%BD%D1%8C%3A+x%3Csup%3E2%3C%2Fsup%3E.%0A%0A%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C%3A+%24a_1%2Ca_2%2C%5Cldots%2Ca_n%24.%0A%0A%D0%9B%D0%BE%D0%B2%D1%83%D1%88%D0%BA%D0%B0%3A+H%7E2%7EO+%D0%B2+%D0%BF%D1%80%D0%B5%D0%B2%D1%8C%D1%8E+%D0%B4%D0%B0%D0%B5%D1%82+%D0%B7%D0%B0%D1%87%D0%B5%D1%80%D0%BA%D0%BD%D1%83%D1%82%D1%83%D1%8E+%D0%B4%D0%B2%D0%BE%D0%B9%D0%BA%D1%83." class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

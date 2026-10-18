@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/markdown-strikethrough-underline-highlight"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с Markdown"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#markdown" class="article-tag">Работа с Markdown</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~5 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~5 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -238,7 +238,8 @@
                             <pre><code>Первоначальная гипотеза ~~не подтвердилась~~ была скорректирована в ходе эксперимента.
 Цена лицензии: ~~5000 руб.~~ Бесплатно для студентов.</code></pre>
                         </div>
-                        <p>В браузере такой фрагмент компилируется в семантический HTML-тег <code>&lt;del&gt;</code> или <code>&lt;s&gt;</code>, отображаясь с аккуратной горизонтальной чертой по центру букв (такой же стиль вычеркивания выполненных пунктов применяется в <a href="/blog/markdown-task-lists">интерактивных списках задач в Markdown</a>).</p>
+                        <p>В браузере такой фрагмент компилируется в семантический HTML-тег <code>&lt;del&gt;</code> или <code>&lt;s&gt;</code>, отображаясь с аккуратной горизонтальной чертой по центру букв. Зачеркиванием удобно помечать и отмененные пункты в <a href="/blog/markdown-task-lists">списках задач в Markdown</a>.</p>
+                        <p>Зачеркивание — возможность Markdown-проекта Labkeeper. В LaTeX-проекте сервер переводит <code>~~текст~~</code> в команду пакета <code>soul</code>, которого нет в стандартной преамбуле, и такой сегмент не соберется.</p>
                     </section>
 
                     <section class="article-section" id="underline">
@@ -250,7 +251,7 @@
                             <pre><code>Студент &lt;u&gt;Иванов Алексей Петрович&lt;/u&gt; допущен к защите работы.
 Обратите &lt;u&gt;особое внимание&lt;/u&gt; на единицы измерения в СИ.</code></pre>
                         </div>
-                        <p>Тег <code>&lt;u&gt;</code> поддерживается парсером <strong>Labkeeper</strong> и корректно передается в итоговый PDF-документ.</p>
+                        <p>Тег <code>&lt;u&gt;</code> работает в превью Markdown-проекта <strong>Labkeeper</strong> и сохраняется при печати в PDF. В LaTeX-проекте HTML-теги из Markdown-сегментов выбрасываются, поэтому там подчеркивают командой <code>\underline{...}</code> в LaTeX-сегменте.</p>
                     </section>
 
                     <section class="article-section" id="highlight-marker">
@@ -261,11 +262,12 @@
                             <li>Универсальный HTML-способ: тег <code>&lt;mark&gt;ключевой факт&lt;/mark&gt;</code>.</li>
                         </ul>
                         <p>Это помогает акцентировать внимание научного руководителя или рецензента на ключевых тезисах статьи.</p>
+                        <p>В Labkeeper синтаксис <code>==текст==</code> не работает и выводится как есть, поэтому используйте тег <code>&lt;mark&gt;</code>. Учтите, что браузер по умолчанию не печатает фон: чтобы выделение не пропало в PDF, включите в диалоге печати параметр «Фоновая графика».</p>
                     </section>
 
                     <section class="article-section" id="academic-style">
                         <h2 class="article-section__title">Употребление в научных работах и рецензиях</h2>
-                        <p>В итоговых версиях дипломов и диссертаций по ГОСТ зачеркивание не допускается, но на этапе согласования черновиков и переписки с научным руководителем зачеркивание и хайлайтер незаменимы для наглядной демонстрации внесенных правок.</p>
+                        <p>В чистовых версиях дипломов и диссертаций зачеркивание и выделение маркером не используют, но на этапе согласования черновиков и переписки с научным руководителем зачеркивание и хайлайтер незаменимы для наглядной демонстрации внесенных правок.</p>
                     </section>
 
                     <section class="article-section" id="tips">
@@ -291,7 +293,7 @@
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Форматируйте исследовательские заметки и тезисы в веб-редакторе Labkeeper с поддержкой всех расширений типографики.</p>
+                    <p class="article-sidebar__title">Форматируйте исследовательские заметки и тезисы в веб-редакторе Labkeeper: синтаксис GFM и HTML-теги видны в превью Markdown при наборе.</p>
                     <a href="/project/default?open=markdown&amp;markdown=%23%23+%D0%A0%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%0A%0A%7E%7E%D0%A3%D1%81%D1%82%D0%B0%D1%80%D0%B5%D0%B2%D1%88%D0%B5%D0%B5+%D1%83%D1%82%D0%B2%D0%B5%D1%80%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%7E%7E%0A%0A**%D0%92%D0%B0%D0%B6%D0%BD%D1%8B%D0%B9+%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82**+%D0%B8+*%D0%BF%D0%BE%D1%8F%D1%81%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5*.%0A%0A%3Cu%3E%D0%9F%D0%BE%D0%B4%D1%87%D0%B5%D1%80%D0%BA%D0%BD%D1%83%D1%82%D1%8B%D0%B9+%D1%82%D0%B5%D0%BA%D1%81%D1%82%3C%2Fu%3E+%D0%B8+%3Cmark%3E%D0%B2%D1%8B%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%3C%2Fmark%3E." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
@@ -308,7 +310,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Используйте выразительную типографику в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с поддержкой расширенного синтаксиса GFM, математических формул и чистового экспорта в PDF.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор с поддержкой синтаксиса GFM, математических формул MathJax и сохранения заметок в PDF через печать браузера.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">

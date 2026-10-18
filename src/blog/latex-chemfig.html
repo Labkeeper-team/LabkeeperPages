@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-chemfig"
         },
         "datePublished": "2026-08-20",
-        "dateModified": "2026-08-20",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Лабораторные работы","Работа с LaTeX"]
     }
@@ -221,7 +221,7 @@
                         <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 20 августа 2026 · Время чтения: ~9 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~9 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -247,7 +247,7 @@
                             веществ прямо в коде документа.</p>
                         <p>Используя <strong>редактор химических формул latex онлайн</strong> в Labkeeper, вам не нужно
                             вручную экспортировать растровые изображения из внешних программ вроде ChemDraw — векторная
-                            графика компилируется мгновенно с идеальным качеством печати.</p>
+                            графика собирается вместе с документом и сохраняет качество при печати.</p>
                         <p>Для подключения пакета добавьте в преамбулу:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
@@ -292,9 +292,19 @@
                                         <td>Стереохимическая связь над плоскостью</td>
                                     </tr>
                                     <tr>
-                                        <td>Штриховая (назад)</td>
+                                        <td>Клиновидная (обратная)</td>
                                         <td><code>&lt;</code></td>
+                                        <td>Тот же клин, направленный в обратную сторону</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Штриховая</td>
+                                        <td><code>&gt;:</code> или <code>&lt;:</code></td>
                                         <td>Стереохимическая связь за плоскостью</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Полый клин</td>
+                                        <td><code>&gt;|</code></td>
+                                        <td>Клин без заливки</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -372,17 +382,16 @@
                     <section class="article-section" id="electrons">
                         <h2 class="article-section__title">Электронные пары и механизмы реакций</h2>
                         <p>Для органической химии критически важно отображение неподеленных электронных пар и
-                            перемещения электронов. Команда <code>\lewis</code> и модуль <code>\chemmove</code>
-                            позволяют рисовать изогнутые стрелки атаки нуклеофила:</p>
+                            перемещения электронов. Команда <code>\charge</code> и модуль <code>\chemmove</code>
+                            позволяют рисовать электронные пары и изогнутые стрелки атаки нуклеофила. Узлы, к которым
+                            ведёт стрелка, получают имена через <code>@{имя}</code>:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
-                            <pre><code>% Обозначение свободных электронных пар:
-\chemfig{@{N}\lewis{2:,N}H_3}
+                            <pre><code>% Неподелённая пара у азота, узлы N и H получают имена:
+\chemfig{@{N}\charge{90=\:}{N}(-[:210]@{H}H)(-[:330]H)-H}
 
-% Смещение электронной плотности:
-\chemmove{
-    \draw[-&gt;,red,shorten &lt;=2pt,shorten &gt;=2pt] (N) to[bend left=30] (H);
-}</code></pre>
+% Смещение электронной плотности от N к H:
+\chemmove{\draw[-&gt;,red,shorten &lt;=2pt,shorten &gt;=2pt] (N) to[bend left=30] (H);}</code></pre>
                         </div>
                     </section>
 
