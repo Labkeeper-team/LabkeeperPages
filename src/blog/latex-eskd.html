@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
-    <title>Оформление рамок и штампов по ЕСКД в LaTeX онлайн (пакет eskdx) — Labkeeper</title>
-    <meta name="description" content="Рамка со штампом ЕСКД LaTeX онлайн: основная надпись ГОСТ LaTeX онлайн редактор, пакет eskdx, настройка форм 1, 2 и 2а, расчетно-пояснительные записки (РПЗ)." />
+    <title>Оформление рамок и штампов по ЕСКД в LaTeX онлайн (TikZ) — Labkeeper</title>
+    <meta name="description" content="Рамка со штампом ЕСКД в LaTeX онлайн: основная надпись по ГОСТ 2.104 на TikZ, формы 2 и 2а, заполнение граф. Почему eskdx не собирается в TeX Live 2025." />
     <!-- SEO Ключи: рамка со штампом ескд latex онлайн, основная надпись гост latex онлайн редактор -->
     <meta name="keywords" content="рамка со штампом ескд latex онлайн, основная надпись гост latex онлайн редактор" />
     <link rel="canonical" href="https://labkeeper.io/blog/latex-eskd" />
@@ -16,8 +16,8 @@
     <meta property="og:url" content="https://labkeeper.io/blog/latex-eskd" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Labkeeper" />
-    <meta property="og:title" content="Оформление рамок и штампов основной надписи по ЕСКД/СПДС в LaTeX онлайн — Labkeeper" />
-    <meta property="og:description" content="Рамка со штампом ЕСКД LaTeX онлайн: настройка пакета eskdx, основная надпись ГОСТ 2.104, спецификации и листы РПЗ в онлайн-редакторе Labkeeper." />
+    <meta property="og:title" content="Оформление рамок и штампов основной надписи по ЕСКД в LaTeX онлайн — Labkeeper" />
+    <meta property="og:description" content="Рамка со штампом ЕСКД в LaTeX онлайн: основная надпись по ГОСТ 2.104 на TikZ, формы 2 и 2а и листы РПЗ в онлайн-редакторе Labkeeper." />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
@@ -28,8 +28,8 @@
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Оформление рамок и штампов основной надписи по ЕСКД/СПДС в LaTeX онлайн",
-        "description": "Полный гайд по оформлению расчетно-пояснительных записок, рамок и штампов по ЕСКД/СПДС в LaTeX с пакетом eskdx.",
+        "headline": "Оформление рамок и штампов основной надписи по ЕСКД в LaTeX онлайн",
+        "description": "Гайд по оформлению расчетно-пояснительных записок, рамок и штампов основной надписи по ЕСКД в LaTeX: рамка и формы 2 и 2а на TikZ.",
         "author": {
             "@type": "Organization",
             "name": "Labkeeper",
@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-eskd"
         },
         "datePublished": "2026-08-20",
-        "dateModified": "2026-08-20",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Дипломные работы","Лабораторные работы","Работа с LaTeX"]
     }
@@ -212,7 +212,7 @@
             <article class="article-content">
                 <div class="article-content__container">
 
-                    <h1 class="article-content__title h1">Оформление рамок и&nbsp;штампов основной надписи по&nbsp;ЕСКД/СПДС в&nbsp;LaTeX онлайн</h1>
+                    <h1 class="article-content__title h1">Оформление рамок и&nbsp;штампов основной надписи по&nbsp;ЕСКД в&nbsp;LaTeX онлайн</h1>
 
                     <div class="article-content__tags">
                         <a href="/blog#diploma" class="article-tag">Дипломные работы</a>
@@ -220,110 +220,149 @@
                         <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 20 августа 2026 · Время чтения: ~10 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~10 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
                         <ol class="article-toc__list">
                             <li><a href="#intro" class="article-toc__link">Стандарты ЕСКД и ГОСТ 2.104-2006</a></li>
-                            <li><a href="#eskdx" class="article-toc__link">Класс eskdx: установка и подключение</a></li>
+                            <li><a href="#eskdx" class="article-toc__link">Класс eskdx и TeX Live 2025</a></li>
                             <li><a href="#stamps" class="article-toc__link">Формы основной надписи (Форма 2 и 2а)</a></li>
                             <li><a href="#fields" class="article-toc__link">Заполнение граф штампа (разработчик, проверил, шифр)</a></li>
-                            <li><a href="#template" class="article-toc__link">Готовый шаблон расчетно-пояснительной записки (РПЗ)</a></li>
+                            <li><a href="#template" class="article-toc__link">Шаблон РПЗ с рамкой и штампом на TikZ</a></li>
                             <li><a href="#tips" class="article-toc__link">Советы по настройке полей и шрифтов</a></li>
                         </ol>
                     </nav>
 
                     <section class="article-section" id="intro">
                         <h2 class="article-section__title">Стандарты ЕСКД и ГОСТ 2.104-2006</h2>
-                        <p><strong>Пример в редакторе:</strong> кнопка открывает небольшой документ с рамкой на TikZ и упрощенной подписью. Он показывает размещение рамки без зависимости от версии <code>eskdx</code> и не заменяет полный нормативный бланк.</p>
-                        <p>В инженерных, строительных и технических вузах курсовые и <a href="/blog/latex-diploma-gost">дипломные проекты по ГОСТ</a> требуют строгого соблюдения Единой системы конструкторской документации (ЕСКД) и СПДС. Каждая страница должна содержать рамку с отступами (20 мм слева, по 5 мм сверху, справа и снизу) и штамп основной надписи по ГОСТ 2.104-2006.</p>
-                        <p>Настроить <strong>рамку со штампом ескд latex онлайн</strong> вручную сложно, однако специализированный пакет <code>eskdx</code> полностью автоматизирует этот процесс, превращая Labkeeper в удобный <strong>онлайн редактор основной надписи ГОСТ LaTeX</strong>.</p>
+                        <p><strong>Пример в редакторе:</strong> кнопка открывает небольшой документ с рамкой на TikZ и упрощенной подписью. Он показывает размещение рамки и не заменяет полный нормативный бланк: код рамки с основной надписью приведён ниже.</p>
+                        <p>Во многих инженерных, строительных и технических вузах курсовые и <a href="/blog/latex-diploma-gost">дипломные проекты</a> оформляют по правилам Единой системы конструкторской документации (ЕСКД); нужна ли рамка, решает методичка направления. По ГОСТ 2.104-2006 лист окружает рамка с отступами 20 мм слева и по 5 мм сверху, справа и снизу, а в правом нижнем углу стоит основная надпись (штамп).</p>
+                        <p>Специализированный класс <code>eskdx</code> когда-то автоматизировал эту работу, но в TeX Live 2025 без правок не собирается. Поэтому в статье <strong>рамка со штампом ЕСКД в LaTeX онлайн</strong> рисуется пакетом TikZ: так Labkeeper становится удобным <strong>онлайн-редактором основной надписи ГОСТ в LaTeX</strong> без сторонних классов.</p>
                     </section>
 
                     <section class="article-section" id="eskdx">
-                        <h2 class="article-section__title">Класс eskdx: установка и подключение</h2>
-                        <p>Пакет <code>eskdx</code> предоставляет собственный класс документа <code>eskdtext</code>, специально оптимизированный для текстовых расчетно-пояснительных записок (РПЗ):</p>
-                        <div class="article-code">
-                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
-                            <pre><code>\documentclass[russian,utf8,simple,12pt]{eskdtext}
-
-\usepackage{amsmath,amsfonts,amssymb}
-\usepackage{graphicx}
-\usepackage{tabularx}</code></pre>
-                        </div>
+                        <h2 class="article-section__title">Класс eskdx и TeX Live 2025</h2>
+                        <p>Пакет <code>eskdx</code> предоставляет класс документа <code>eskdtext</code> для текстовых расчетно-пояснительных записок (РПЗ). Его последняя версия 0.98 вышла в 2010 году и с TeX Live 2025 не совместима: сборка останавливается на <code>\begin{document}</code>, потому что класс использует команды <code>\cyr</code> и <code>\No</code>, которых в современных пакетах кириллицы нет. Заглушки <code>\providecommand\cyr{}</code> и <code>\providecommand\No{\textnumero}</code> позволяют получить PDF, но вёрстка страниц всё равно ломается с ошибкой <code>Output routine didn't use all of \box255</code>.</p>
+                        <p>Если кафедра выдаёт исправленную версию класса, её можно загрузить в проект как файл <code>.cls</code>. В остальных случаях надёжнее нарисовать рамку и штамп самостоятельно — так, как показано ниже.</p>
                     </section>
 
                     <section class="article-section" id="stamps">
                         <h2 class="article-section__title">Формы основной надписи (Форма 2 и 2а)</h2>
-                        <p>По ГОСТ 2.104 текстовые документы оформляются следующими типами штампов:</p>
+                        <p>По ГОСТ 2.104-2006 для текстовых документов применяют две формы основной надписи:</p>
                         <ul>
-                            <li><strong>Форма 2 (большой штамп, 40 мм):</strong> размещается на первом листе содержания или введения.</li>
-                            <li><strong>Форма 2а (малый штамп, 15 мм):</strong> размещается на всех последующих листах документа.</li>
-                            <li><strong>Форма без штампа (только рамка):</strong> для титульного листа или приложений.</li>
+                            <li><strong>Форма 2 (185 × 40 мм):</strong> на первом (заглавном) листе пояснительной записки — обычно это лист содержания.</li>
+                            <li><strong>Форма 2а (185 × 15 мм):</strong> на всех последующих листах. Графы шириной 7, 10, 23, 15 и 10 мм отведены под изменения и подписи (три строки по 5 мм), графа 110 мм — под обозначение документа, последняя графа 10 мм — под номер листа.</li>
+                            <li><strong>Титульный лист и задание</strong> оформляют по требованиям методички.</li>
                         </ul>
-                        <p>Класс <code>eskdtext</code> автоматически ставит большой штамп на первом листе и малый штамп на последующих.</p>
+                        <p>Сама рамка на листе А4 занимает 185 × 287 мм: 210 − 20 − 5 мм по ширине и 297 − 5 − 5 мм по высоте. В шаблоне ниже первый лист получает форму 2, остальные — форму 2а.</p>
                     </section>
 
                     <section class="article-section" id="fields">
                         <h2 class="article-section__title">Заполнение граф штампа (разработчик, проверил, шифр)</h2>
-                        <p>Все поля основной надписи заполняются специальными макросами в преамбуле:</p>
+                        <p>Данные штампа удобно вынести в макросы преамбулы: шифр, название и фамилии меняются в одном месте, а TikZ подставляет их в графы на каждом листе:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
-                            <pre><code>% Обозначение (децимальный номер/шифр)
-\ESKDsignature{КП 09.03.01 026 ПЗ}
+                            <pre><code>% Обозначение документа (шифр)
+\newcommand{\docnum}{КП 09.03.01.026 ПЗ}
 
 % Наименование документа
-\ESKDtitle{Проектирование микропроцессорной системы управления}
+\newcommand{\doctitle}{Проектирование микропроцессорной\\системы управления}
 
-% Организация / ВУЗ / Кафедра
-\ESKDcompany{МГТУ им. Н.Э. Баумана \\ Кафедра ИУ-6}
+% Организация: вуз и кафедра
+\newcommand{\docorg}{МГТУ им. Н.~Э.~Баумана\\каф. ИУ-6}
 
-% Фамилии исполнителей и проверяющих
-\ESKDauthor{Иванов И.И.}      % Разработал
-\ESKDchecker{Петров П.П.}     % Проверил
-\ESKDnormContr{Сидоров С.С.}  % Нормоконтроль
-\ESKDapprovedBy{Смирнов А.В.} % Утвердил</code></pre>
+% Исполнители и число листов
+\newcommand{\docauthor}{Иванов}   % Разраб.
+\newcommand{\docchecker}{Петров}  % Пров.
+\newcommand{\docsheets}{24}       % Листов</code></pre>
                         </div>
+                        <p>Литера «У» в графе «Лит.» обозначает учебный документ. Подписи и даты на распечатанном листе ставят от руки.</p>
                     </section>
 
                     <section class="article-section" id="template">
                         <h2 class="article-section__title">Готовый шаблон расчетно-пояснительной записки (РПЗ)</h2>
-                        <p>Полный код документа с рамками и автоматической нумерацией листов (для генерации нестандартных обложек смотрите также наш <a href="/blog/latex-titlepage">гайд по титульным листам</a>):</p>
+                        <p>Полный код документа: рамка рисуется на каждом листе через хук <code>shipout/background</code>, первый лист получает основную надпись по форме 2, остальные — по форме 2а. Размеры граф соответствуют ГОСТ 2.104-2006, но перед сдачей сверьте их с методичкой (для титульного листа смотрите также наш <a href="/blog/latex-titlepage">гайд по титульным листам</a>):</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
-                            <pre><code>\documentclass[russian,utf8,12pt]{eskdtext}
-
+                            <pre><code>\documentclass[a4paper,12pt]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
 \usepackage{amsmath}
-\usepackage{graphicx}
+\usepackage[left=25mm,right=10mm,top=15mm,bottom=25mm]{geometry}
+\usepackage{tikz}
 
-% Заполнение данных штампа
-\ESKDsignature{ВКР 15.03.01 2026 ПЗ}
-\ESKDtitle{Расчет привода технологического оборудования}
-\ESKDdocName{Пояснительная записка}
-\ESKDcompany{СПбПУ, каф. Машиностроения}
-\ESKDauthor{Иванов И.И.}
-\ESKDchecker{Васильев В.В.}
+% Данные штампа
+\newcommand{\docnum}{ВКР 15.03.01.026 ПЗ}
+\newcommand{\doctitle}{Расчёт привода\\технологического оборудования}
+\newcommand{\docorg}{СПбПУ\\каф. машиностроения}
+\newcommand{\docauthor}{Иванов}
+\newcommand{\docchecker}{Васильев}
+\newcommand{\docsheets}{12}
+
+% Координаты — в миллиметрах от левого нижнего угла листа
+% Рамка: 20 мм слева, по 5 мм с остальных сторон
+\newcommand{\eskdframe}{\draw[line width=0.5mm] (20,5) rectangle (205,292);}
+
+% Форма 2а (последующие листы): 185 x 15 мм
+\newcommand{\eskdsmall}{%
+  \draw[line width=0.5mm] (20,20) -- (205,20);
+  \foreach \x in {27,37,60,75,85,195} \draw[line width=0.5mm] (\x,5) -- (\x,20);
+  \draw (20,10) -- (85,10) (20,15) -- (85,15) (195,13) -- (205,13);
+  \foreach \x/\lbl in {23.5/Изм., 32/Лист, 48.5/№ докум., 67.5/Подп., 80/Дата}
+    \node[font=\tiny] at (\x,7.5) {\lbl};
+  \node at (140,12.5) {\docnum};
+  \node[font=\tiny] at (200,16.5) {Лист};
+  \node[font=\small] at (200,9) {\thepage};
+}
+
+% Форма 2 (первый лист): 185 x 40 мм
+\newcommand{\eskdbig}{%
+  \draw[line width=0.5mm] (20,45) -- (205,45) (85,5) -- (85,45)
+    (20,30) -- (205,30) (155,5) -- (155,30) (155,20) -- (205,20)
+    (155,25) -- (205,25) (170,20) -- (170,30) (185,20) -- (185,30);
+  \foreach \x in {27,37,60,75} \draw[line width=0.5mm] (\x,30) -- (\x,45);
+  \foreach \x in {37,60,75} \draw[line width=0.5mm] (\x,5) -- (\x,30);
+  \foreach \y in {10,15,20,25,35,40} \draw (20,\y) -- (85,\y);
+  \draw (160,20) -- (160,25) (165,20) -- (165,25);
+  \foreach \x/\lbl in {23.5/Изм., 32/Лист, 48.5/№ докум., 67.5/Подп., 80/Дата}
+    \node[font=\tiny] at (\x,32.5) {\lbl};
+  \foreach \y/\lbl in {27.5/Разраб., 22.5/Пров., 12.5/Н. контр., 7.5/Утв.}
+    \node[font=\tiny,anchor=west] at (20.5,\y) {\lbl};
+  \node[font=\tiny,anchor=west] at (37.5,27.5) {\docauthor};
+  \node[font=\tiny,anchor=west] at (37.5,22.5) {\docchecker};
+  \node[font=\large] at (145,37.5) {\docnum};
+  \node[align=center,font=\small] at (120,17.5) {\doctitle};
+  \foreach \x/\lbl in {162.5/Лит., 177.5/Лист, 195/Листов}
+    \node[font=\tiny] at (\x,27.5) {\lbl};
+  \node[font=\small] at (157.5,22.5) {У};
+  \node[font=\small] at (177.5,22.5) {\thepage};
+  \node[font=\small] at (195,22.5) {\docsheets};
+  \node[align=center,font=\small] at (180,12.5) {\docorg};
+}
+
+\AddToHook{shipout/background}{%
+  \begin{tikzpicture}[remember picture,overlay,x=1mm,y=1mm,line width=0.25mm]
+    \begin{scope}[shift={(current page.south west)}]
+      \eskdframe
+      \ifnum\value{page}=1 \eskdbig \else \eskdsmall \fi
+    \end{scope}
+  \end{tikzpicture}}
 
 \begin{document}
-\maketitle % Титульный лист ЕСКД
-
-\ESKDstyle{formII} % Первый лист с большим штампом
-\tableofcontents
-\newpage
-
-\ESKDstyle{formIIabig} % Последующие листы с малым штампом
+\enlargethispage{-25mm} % на первом листе штамп выше: 40 мм вместо 15
 \section{Введение}
-В данном курсовом проекте выполнен кинематический и прочностной расчет привода...
+В данном курсовом проекте выполнен кинематический и прочностной расчёт привода.
 
-\section{Кинематический расчет}
+\section{Кинематический расчёт}
 Мощность на выходном валу определяется по формуле:
 \begin{equation}
     P = \frac{T \cdot \omega}{1000 \cdot \eta}
 \end{equation}
-
 \end{document}</code></pre>
                         </div>
+                        <p>Нижнее поле 25 мм оставляет место под штамп формы 2а, а команда <code>\enlargethispage{-25mm}</code> на первом листе освобождает место под более высокий штамп формы 2. Графы «Подп.» и «Дата» остаются пустыми: их заполняют от руки.</p>
                     </section>
 
                     <section class="article-section" id="tips">
@@ -332,8 +371,8 @@
                             <div class="article-tip">
                                 <div class="article-tip__number">1</div>
                                 <div class="article-tip__content">
-                                    <h3>Чертежный шрифт ГОСТ</h3>
-                                    <p>Пакет <code>eskdx</code> автоматически использует пропорциональные шрифты ЕСКД типа А и Б. В онлайн-редакторе Labkeeper все необходимые шрифты уже скомпилированы.</p>
+                                    <h3>Шрифт в штампе</h3>
+                                    <p>В шаблоне выше штамп набран основным шрифтом документа. Если методичка требует чертёжный шрифт по ГОСТ 2.304, уточните у нормоконтролёра, допускается ли замена.</p>
                                 </div>
                             </div>
                             <div class="article-tip">
@@ -375,7 +414,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Оформляйте пояснительные записки по&nbsp;ЕСКД в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор LaTeX с&nbsp;поддержкой пакета eskdx: штампы, рамки и&nbsp;расчетно-пояснительные записки по&nbsp;ГОСТ прямо в&nbsp;браузере.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX: рамки и&nbsp;основные надписи на&nbsp;TikZ для&nbsp;расчетно-пояснительных записок по&nbsp;ГОСТ прямо в&nbsp;браузере.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">

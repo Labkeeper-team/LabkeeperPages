@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-systems-equations"
         },
         "datePublished": "2026-08-20",
-        "dateModified": "2026-08-20",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с LaTeX"]
     }
@@ -220,7 +220,7 @@
                         <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 20 августа 2026 · Время чтения: ~7 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~7 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -318,24 +318,33 @@ f(x) = \begin{dcases}
                     <section class="article-section" id="subequations">
                         <h2 class="article-section__title">Нумерация отдельных уравнений системы (subequations)</h2>
                         <p>Если каждому уравнению системы нужен свой буквенный индекс (например, (1a), (1b)), оберните
-                            код в <code>subequations</code> и окружение <code>align</code> (при формулировке условий
-                            теорем используйте также <a href="/blog/latex-amsthm">пакет amsthm для определений и
-                                лемм</a>):</p>
+                            код в <code>subequations</code>, а фигурную скобку добавьте окружением <code>empheq</code>
+                            (при формулировке условий теорем используйте также <a href="/blog/latex-amsthm">пакет amsthm
+                                для определений и лемм</a>). Обычный <code>align</code> внутри <code>\left\{ … \right.</code>
+                            не компилируется: LaTeX выдаёт ошибки <code>Missing $ inserted</code> и
+                            <code>\begin{align} allowed only in paragraph mode</code>.</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
-                            <pre><code>\begin{subequations} \label{eq:maxwell}
-\left\{
-\begin{align}
+                            <pre><code>\usepackage{empheq} % в преамбуле; пакет сам загружает mathtools
+
+\begin{subequations}\label{eq:maxwell}
+\begin{empheq}[left=\empheqlbrace]{align}
     \nabla \cdot \mathbf{E} &amp;= \frac{\rho}{\varepsilon_0} \label{eq:maxwell_gauss} \\
     \nabla \cdot \mathbf{B} &amp;= 0 \label{eq:maxwell_mag} \\
     \nabla \times \mathbf{E} &amp;= -\frac{\partial \mathbf{B}}{\partial t} \label{eq:maxwell_faraday} \\
     \nabla \times \mathbf{B} &amp;= \mu_0 \mathbf{J} + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t} \label{eq:maxwell_ampere}
-\end{align}
-\right.
+\end{empheq}
 \end{subequations}</code></pre>
                         </div>
                         <p>Теперь на уравнение Фарадея можно сослаться через <code>\eqref{eq:maxwell_faraday}</code>, а
                             на всю систему — через <code>\eqref{eq:maxwell}</code>.</p>
+                        <div class="article-note">
+                            <strong>💡 Нумерация в Labkeeper:</strong> если в проекте нет своей преамбулы, Labkeeper
+                            подставляет автоматическую с пакетом <code>mathtools</code> в режиме
+                            <code>showonlyrefs</code>. В этом режиме номер получает только формула, на которую есть
+                            ссылка через <code>\eqref</code>. Чтобы нумеровались все формулы, соберите документ со своей
+                            преамбулой — от <code>\documentclass</code> до <code>\begin{document}</code>.
+                        </div>
                     </section>
 
                     <section class="article-section" id="tips">
@@ -393,7 +402,7 @@ f(x) = \begin{dcases}
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Набирайте математические формулы в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор LaTeX с&nbsp;полной поддержкой amsmath и&nbsp;mathtools: удобный набор систем уравнений, матриц и&nbsp;мгновенный просмотр PDF.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX с&nbsp;полной поддержкой amsmath и&nbsp;mathtools: удобный набор систем уравнений, матриц и&nbsp;просмотр PDF после сборки.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">

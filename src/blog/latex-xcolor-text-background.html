@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-xcolor-text-background"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с LaTeX"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~7 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~7 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -293,19 +293,7 @@
 
                     <section class="article-section" id="custom-colors">
                         <h2 class="article-section__title">Создание собственных оттенков: RGB, CMYK и HTML-HEX</h2>
-                        <p>Если корпоративный стиль или требования журнала предписывают конкретные оттенки, их легко объявить в преамбуле через <code>\definecolor</code> (подробнее об этом читайте в материале о <a href="/blog/latex-custom-rgb-hex-colors-xcolor">пользовательских цветах RGB и HEX в LaTeX</a>):</p>
-                        <div class="article-code">
-                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
-                            <pre><code>% По HTML-коду HEX
-\definecolor{BrandBlue}{HTML}{1A73E8}
-
-% По модели RGB (значения от 0 до 1)
-\definecolor{ForestDark}{rgb}{0.08, 0.38, 0.15}
-
-% По модели CMYK для профессиональной типографии
-\definecolor{PrintNavy}{cmyk}{0.9, 0.7, 0.1, 0.2}</code></pre>
-                        </div>
-                        <p>После объявления созданный цвет используется наравне со стандартными: <code>\textcolor{BrandBlue}{Фирменный текст}</code>.</p>
+                        <p>Если корпоративный стиль или требования журнала предписывают конкретные оттенки, объявите их в преамбуле командой <code>\definecolor</code>, например <code>\definecolor{BrandBlue}{HTML}{1A73E8}</code>, и используйте наравне со стандартными: <code>\textcolor{BrandBlue}{Фирменный текст}</code>. Модели HTML-HEX, RGB и CMYK подробно разобраны в материале о <a href="/blog/latex-custom-rgb-hex-colors-xcolor">пользовательских цветах RGB и HEX в LaTeX</a>.</p>
                     </section>
 
                     <section class="article-section" id="faq">
@@ -365,7 +353,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Оформляйте стильные документы в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор LaTeX с поддержкой пакета xcolor, подсветкой синтаксиса и точной передачей цветов в финальном PDF.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX с поддержкой пакета xcolor и подсветкой синтаксиса: цветной текст, фон и таблицы в финальном PDF.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">

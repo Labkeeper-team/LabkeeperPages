@@ -101,7 +101,7 @@
     "batch": 2,
     "title": "Русский язык в листингах кода (minted/listings) без ошибок компиляции",
     "pageTitle": "Русский язык в листингах кода LaTeX: ошибка кириллицы listings — Labkeeper",
-    "metaDescription": "Как победить ошибку кириллицы в listings LaTeX и настроить русский язык в листингах кода minted. Готовые сниппеты преамбулы и кодировок UTF-8 в Labkeeper.",
+    "metaDescription": "Как победить ошибку кириллицы в listings LaTeX и включить русский язык в листингах кода: рабочая преамбула для pdfLaTeX и Labkeeper, minted — для локальной сборки.",
     "breadcrumbTitle": "Русский язык в листингах LaTeX",
     "h1": "Русский язык в&nbsp;листингах кода (minted/listings) без&nbsp;ошибок компиляции",
     "categories": [
@@ -112,15 +112,15 @@
       "ошибка кириллицы в listings latex"
     ],
     "datePublished": "2026-09-06",
-    "dateModified": "2026-09-06",
+    "dateModified": "2026-10-18",
     "readingTime": "8 мин",
     "cardTitle": "Кириллица в листингах кода LaTeX: решение проблем в listings и minted",
-    "cardDescription": "Как вставлять комментарии и строки на русском языке в блоки кода без падений компилятора pdfLaTeX, XeLaTeX и пакета minted.",
+    "cardDescription": "Как вставлять комментарии и строки на русском языке в блоки кода без падений pdfLaTeX: таблица literate для listings, а minted и XeLaTeX — при локальной сборке.",
     "sliderTitle": "Русский язык в коде LaTeX",
-    "sliderText": "Настройка пакетов listings и minted для поддержки русских комментариев без ошибок.",
-    "sidebarText": "В Labkeeper листинги кода компилируются с поддержкой UTF-8 и подсветкой синтаксиса без ручной установки Python Pygments.",
+    "sliderText": "Настройка listings для русских комментариев в pdfLaTeX и minted для локальной сборки.",
+    "sidebarText": "В Labkeeper листинги с русскими комментариями собираются через listings — без установки LaTeX и Python.",
     "ctaTitle": "Компилируйте чистые листинги в&nbsp;Labkeeper",
-    "ctaText": "Онлайн-редактор с мгновенной подсветкой кода по ГОСТу, поддержкой кириллицы и экспортом в идеальный PDF.",
+    "ctaText": "Онлайн-редактор LaTeX: листинги кода с кириллицей через listings и сборка PDF в браузере.",
     "toc": [
       {
         "id": "problem",
@@ -136,11 +136,11 @@
       },
       {
         "id": "minted-setup",
-        "title": "Подключение современного пакета minted с поддержкой UTF-8"
+        "title": "Пакет minted с поддержкой UTF-8: только локальная сборка"
       },
       {
         "id": "xelatex-lualatex",
-        "title": "Решение проблемы через современные движки XeLaTeX и LuaLaTeX"
+        "title": "Движки XeLaTeX и LuaLaTeX при локальной сборке"
       },
       {
         "id": "faq",
@@ -165,28 +165,28 @@
       },
       {
         "id": "minted-setup",
-        "title": "Подключение современного пакета minted с поддержкой UTF-8",
-        "html": "                        <p>Более современная альтернатива <code>listings</code> — пакет <code>minted</code>. Он использует мощный лексер <strong>Pygments</strong>, нативно поддерживает Unicode и оформляет код так же красиво, как современные IDE:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Minted</span></div>\n                            <pre><code>\\usepackage{minted}\n\\usemintedstyle{friendly}\n\n\\begin{minted}[\n    frame=lines,\n    framesep=2mm,\n    linenos,\n    fontsize=\\small\n]{python}\n# Функция расчета факториала на русском языке\ndef factorial(n: int) -> int:\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(\"Результат вычисления:\", factorial(5))\n\\end{minted}</code></pre>\n                        </div>\n                        <p><em>Обратите внимание:</em> для локального запуска <code>minted</code> требуется установленный Python с библиотекой Pygments и флаг компиляции <code>-shell-escape</code>. В облачном редакторе Labkeeper всё настроено «из коробки» без необходимости конфигурировать окружение.</p>"
+        "title": "Пакет minted с поддержкой UTF-8: только локальная сборка",
+        "html": "                        <p>Более современная альтернатива <code>listings</code> — пакет <code>minted</code>. Он использует мощный лексер <strong>Pygments</strong>, нативно поддерживает Unicode и оформляет код так же красиво, как современные IDE:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Minted (только локально)</span></div>\n                            <pre><code>\\usepackage{minted}\n\\usemintedstyle{friendly}\n\n\\begin{minted}[\n    frame=lines,\n    framesep=2mm,\n    linenos,\n    fontsize=\\small\n]{python}\n# Функция расчета факториала на русском языке\ndef factorial(n: int) -> int:\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(\"Результат вычисления:\", factorial(5))\n\\end{minted}</code></pre>\n                        </div>\n                        <p><em>Обратите внимание:</em> <code>minted</code> запускает внешнюю программу — Python с библиотекой Pygments, поэтому для локальной сборки нужен флаг компиляции <code>-shell-escape</code>. В Labkeeper minted не работает: серверная сборка запрещает запуск внешних программ, и пакет останавливается с ошибкой <code>minted executable is unavailable or disabled</code>. Используйте <code>listings</code> с таблицей <code>literate</code> из раздела выше.</p>"
       },
       {
         "id": "xelatex-lualatex",
-        "title": "Решение проблемы через современные движки XeLaTeX и LuaLaTeX",
-        "html": "                        <p>Если у вас есть возможность переключить компилятор с <code>pdfLaTeX</code> на <code>XeLaTeX</code> или <code>LuaLaTeX</code>, проблема с кодировками исчезает полностью. Благодаря пакету <code>fontspec</code> движок нативно работает с кодировкой UTF-8 и системными шрифтами OpenType/TrueType:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">XeLaTeX Преамбула</span></div>\n                            <pre><code>\\usepackage{fontspec}\n\\setmainfont{Times New Roman}\n\\setmonofont{Courier New} % или Fira Code\n\\usepackage{listings}\n\n\\lstset{\n    basicstyle=\\ttfamily\\small,\n    breaklines=true\n}</code></pre>\n                        </div>\n                        <p>Для интерактивного перехода к нужным листингам из текста работы не забудьте ознакомиться с <a href=\"/blog/latex-hyperref-pdf-bookmarks-navigation\">настройкой кликабельных ссылок hyperref</a>.</p>"
+        "title": "Движки XeLaTeX и LuaLaTeX при локальной сборке",
+        "html": "                        <p>Если у вас есть возможность переключить компилятор с <code>pdfLaTeX</code> на <code>XeLaTeX</code> или <code>LuaLaTeX</code>, проблема с кодировками исчезает полностью. Благодаря пакету <code>fontspec</code> движок нативно работает с кодировкой UTF-8 и системными шрифтами OpenType/TrueType. Этот способ подходит только для локальной сборки: в Labkeeper работает pdfLaTeX, и блок с <code>fontspec</code> остановит компиляцию с ошибкой <code>fontspec requires XeTeX or LuaTeX</code>.</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">XeLaTeX Преамбула (только локально)</span></div>\n                            <pre><code>\\usepackage{fontspec}\n\\setmainfont{Times New Roman}\n\\setmonofont{Courier New} % или Fira Code\n\\usepackage{listings}\n\n\\lstset{\n    basicstyle=\\ttfamily\\small,\n    breaklines=true\n}</code></pre>\n                        </div>\n                        <p>Для интерактивного перехода к нужным листингам из текста работы не забудьте ознакомиться с <a href=\"/blog/latex-hyperref-pdf-bookmarks-navigation\">настройкой кликабельных ссылок hyperref</a>.</p>"
       },
       {
         "id": "faq",
         "title": "Частые вопросы и рекомендации по ГОСТ",
-        "html": "                        <p>Согласно ГОСТ 7.0.100 и рекомендациям к ВКР, листинги кода в дипломе должны соответствовать следующим правилам:</p>\n                        <ul>\n                            <li><strong>Шрифт моноширинный:</strong> используйте Courier New или PT Mono кеглем 10–12 pt;</li>\n                            <li><strong>Подпись к листингу:</strong> размещается снизу или сверху с единообразным выравниванием («Листинг 3.1 — Метод авторизации пользователя»);</li>\n                            <li><strong>Перенос строк:</strong> обязательно включите <code>breaklines=true</code>, чтобы длинные строки кода не вылезали за границы правого поля.</li>\n                        </ul>"
+        "html": "                        <p>Требования к листингам задают методические указания вуза; для программной документации ориентиром служит ГОСТ 19.401-78 «Текст программы». Обычно листинги кода в дипломе оформляют так:</p>\n                        <ul>\n                            <li><strong>Шрифт моноширинный:</strong> используйте Courier New или PT Mono кеглем 10–12 pt;</li>\n                            <li><strong>Подпись к листингу:</strong> размещается снизу или сверху с единообразным выравниванием («Листинг 3.1 — Метод авторизации пользователя»);</li>\n                            <li><strong>Перенос строк:</strong> обязательно включите <code>breaklines=true</code>, чтобы длинные строки кода не вылезали за границы правого поля.</li>\n                        </ul>"
       }
     ],
     "tips": [
       {
         "title": "Компактные листинги в приложении",
-        "html": "<p>Длинные портянки кода объемом более 1 страницы по ГОСТу выносят в «Приложения», оставляя в основном тексте только фрагменты ключевых алгоритмов на 15–30 строк.</p>"
+        "html": "<p>Длинные портянки кода объемом более 1 страницы по требованиям большинства методичек выносят в «Приложения», оставляя в основном тексте только фрагменты ключевых алгоритмов на 15–30 строк.</p>"
       },
       {
-        "title": "Готовые стили в Labkeeper",
-        "html": "<p>В шаблонах Labkeeper уже встроены настроенные стили для листингов с автоматической нумерацией строк и поддержкой кириллицы в комментариях.</p>"
+        "title": "Листинги в автоматической преамбуле Labkeeper",
+        "html": "<p>Если в проекте нет своей преамбулы, Labkeeper подставляет автоматическую, в которой уже есть <code>listings</code> и кодировка <code>T2A</code>. Достаточно добавить в LaTeX-сегмент команду <code>\\lstset</code> с таблицей <code>literate</code>: строка <code>\\usepackage</code> в обычном сегменте отключила бы автоматическую преамбулу целиком.</p>"
       }
     ],
     "editorExample": {
@@ -1528,7 +1528,7 @@
     "slug": "latex-algorithm2e-pseudocode-algorithms",
     "batch": 2,
     "title": "Написание алгоритмов и псевдокода в LaTeX (пакет algorithm2e)",
-    "pageTitle": "Псевдокод в LaTeX algorithm2e: алгоритм блок схема LaTeX — Labkeeper",
+    "pageTitle": "Псевдокод в LaTeX algorithm2e: оформление алгоритма — Labkeeper",
     "metaDescription": "Полное руководство по пакету algorithm2e в LaTeX: написание псевдокода, русификация команд, нумерация строк, верстка условий и циклов в Labkeeper.",
     "breadcrumbTitle": "Алгоритмы algorithm2e в LaTeX",
     "h1": "Написание алгоритмов и&nbsp;псевдокода в&nbsp;LaTeX (пакет algorithm2e)",
@@ -1537,18 +1537,18 @@
     ],
     "keywords": [
       "псевдокод в latex algorithm2e",
-      "оформление алгоритма блок схема latex"
+      "оформление алгоритма в latex"
     ],
     "datePublished": "2026-09-06",
-    "dateModified": "2026-09-06",
+    "dateModified": "2026-10-18",
     "readingTime": "8 мин",
     "cardTitle": "Псевдокод и алгоритмы в LaTeX: пакет algorithm2e от А до Я",
     "cardDescription": "Как оформлять математические алгоритмы, циклы, условия и структуры данных с красивыми вертикальными линиями и русской локализацией.",
     "sliderTitle": "Алгоритмы algorithm2e в LaTeX",
     "sliderText": "Красивый псевдокод с нумерацией строк, условиями и циклами в LaTeX.",
-    "sidebarText": "В Labkeeper пакет algorithm2e работает «из коробки»: создавайте профессиональные описания алгоритмов для статей и дипломов.",
+    "sidebarText": "В Labkeeper пакет algorithm2e уже есть в TeX Live: создавайте профессиональные описания алгоритмов для статей и дипломов.",
     "ctaTitle": "Верстайте алгоритмы в&nbsp;Labkeeper",
-    "ctaText": "Онлайн-редактор LaTeX с поддержкой algorithm2e, формул amsmath и автоматическим предпросмотром страниц в реальном времени.",
+    "ctaText": "Онлайн-редактор LaTeX с поддержкой algorithm2e, формул amsmath и предпросмотром PDF.",
     "toc": [
       {
         "id": "why-algorithm2e",
@@ -1568,7 +1568,7 @@
       },
       {
         "id": "complete-example",
-        "title": "Оформление алгоритма блок схема LaTeX: законченный пример"
+        "title": "Оформление алгоритма в LaTeX: законченный пример"
       }
     ],
     "sections": [
@@ -1580,7 +1580,7 @@
       {
         "id": "setup",
         "title": "Подключение и базовые опции: linesnumbered, ruled, vlined",
-        "html": "                        <p>Для подключения пакета добавьте в преамбулу строку с полезными опциями:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Преамбула</span></div>\n                            <pre><code>\\usepackage[linesnumbered,ruled,vlined,algo2e]{algorithm2e}</code></pre>\n                        </div>\n                        <p>Значение параметров:</p>\n                        <ul>\n                            <li><code>linesnumbered</code> — автоматическая нумерация строк псевдокода слева;</li>\n                            <li><code>ruled</code> — оформление заголовка алгоритма элегантными горизонтальными разделительными линиями сверху и снизу;</li>\n                            <li><code>vlined</code> — отрисовка аккуратных вертикальных линий, наглядно показывающих границы вложенности условий и циклов;</li>\n                            <li><code>algo2e</code> — предотвращение конфликтов имен окружений с другими пакетами.</li>\n                        </ul>"
+        "html": "                        <p>Для подключения пакета добавьте в преамбулу строку с полезными опциями:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Преамбула</span></div>\n                            <pre><code>\\usepackage[linesnumbered,ruled,vlined]{algorithm2e}</code></pre>\n                        </div>\n                        <p>Значение параметров:</p>\n                        <ul>\n                            <li><code>linesnumbered</code> — автоматическая нумерация строк псевдокода слева;</li>\n                            <li><code>ruled</code> — оформление заголовка алгоритма элегантными горизонтальными разделительными линиями сверху и снизу;</li>\n                            <li><code>vlined</code> — отрисовка аккуратных вертикальных линий, наглядно показывающих границы вложенности условий и циклов.</li>\n                        </ul>\n                        <p>Опция <code>algo2e</code> переименовывает окружение в <code>algorithm2e</code>. Она нужна, только если в документе есть другой пакет с окружением <code>algorithm</code>, например <code>algorithmicx</code>. Тогда и алгоритмы пишите внутри <code>\\begin{algorithm2e}</code>: с обычным <code>\\begin{algorithm}</code> сборка остановится с ошибкой <code>Environment algorithm undefined</code>.</p>"
       },
       {
         "id": "control-structures",
@@ -1590,12 +1590,12 @@
       {
         "id": "russian-localization",
         "title": "Русификация ключевых слов (Вход, Выход, Если, Иначе)",
-        "html": "                        <p>По умолчанию ключевые слова выводятся на английском языке. Чтобы локализовать их по ГОСТу для русскоязычной работы, задайте переопределения в преамбуле:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Русификация</span></div>\n                            <pre><code>\\SetKwInOut{Input}{Вход}\n\\SetKwInOut{Output}{Выход}\n\\SetKw{KwTo}{до}\n\\SetKw{KwDownTo}{вниз до}\n\\SetKwIF{If}{ElseIf}{Else}{если}{то}{иначе если}{иначе}{конец если}\n\\SetKwFor{While}{пока}{выполнять}{конец цикла}\n\\SetKwFor{For}{для}{выполнять}{конец цикла}\n\\SetKwFor{ForEach}{для каждого}{выполнять}{конец цикла}\n\\SetKw{Return}{вернуть}</code></pre>\n                        </div>"
+        "html": "                        <p>По умолчанию ключевые слова выводятся на английском языке. Чтобы перевести их на русский для русскоязычной работы, задайте переопределения в преамбуле:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Русификация</span></div>\n                            <pre><code>\\SetKwInOut{Input}{Вход}\n\\SetKwInOut{Output}{Выход}\n\\SetKw{KwTo}{до}\n\\SetKw{KwDownTo}{вниз до}\n\\SetKwIF{If}{ElseIf}{Else}{если}{то}{иначе если}{иначе}{конец если}\n\\SetKwFor{While}{пока}{выполнять}{конец цикла}\n\\SetKwFor{For}{для}{выполнять}{конец цикла}\n\\SetKwFor{ForEach}{для каждого}{выполнять}{конец цикла}\n\\SetKw{Return}{вернуть}</code></pre>\n                        </div>"
       },
       {
         "id": "complete-example",
-        "title": "Оформление алгоритма блок схема LaTeX: законченный пример",
-        "html": "                        <p>Полный код алгоритма поиска кратчайшего пути Дейкстры. Качественное <strong>оформление алгоритма блок схема latex</strong> в виде псевдокода выглядит строго и профессионально:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Пример алгоритма</span></div>\n                            <pre><code>\\begin{algorithm}[htbp]\n\\caption{Алгоритм Дейкстры для поиска кратчайшего пути}\n\\label{algo:dijkstra}\n\\Input{Взвешенный граф $G = (V, E)$, стартовая вершина $s \\in V$}\n\\Output{Массив кратчайших расстояний $dist[u]$ для всех $u \\in V$}\n\n\\ForEach{$u \\in V$}{\n    $dist[u] \\leftarrow \\infty$;\n    $visited[u] \\leftarrow \\text{false}$;\n}\n$dist[s] \\leftarrow 0$;\nИнициализировать очередь с приоритетами $Q$ парой $(0, s)$;\n\n\\While{$Q$ не пуста}{\n    Извлечь вершину $u$ с минимальным $dist[u]$ из $Q$;\n    \\If{$visited[u]$}{\n        \\textbf{continue};\n    }\n    $visited[u] \\leftarrow \\text{true}$;\n    \n    \\ForEach{соседней вершины $v$ для $u$ со стоимостью ребра $w$}{\n        \\If{$dist[u] + w < dist[v]$}{\n            $dist[v] \\leftarrow dist[u] + w$;\n            Добавить $(dist[v], v)$ в очередь $Q$;\n        }\n    }\n}\n\\Return $dist$;\n\\end{algorithm}</code></pre>\n                        </div>\n                        <p>Чтобы читатель мог перейти к описанию алгоритма из текста работы по клику на его номер, настройте систему <a href=\"/blog/latex-hyperref-pdf-bookmarks-navigation\">кликабельных перекрестных ссылок в PDF</a>.</p>"
+        "title": "Оформление алгоритма в LaTeX: законченный пример",
+        "html": "                        <p>Полный код алгоритма поиска кратчайшего пути Дейкстры. Качественное <strong>оформление алгоритма в LaTeX</strong> в виде псевдокода выглядит строго и профессионально (если нужна именно блок-схема, смотрите статью о <a href=\"/blog/algorithm-flowcharts-gost-markdown-latex\">блок-схемах алгоритмов по ГОСТ</a>). Команды <code>\\Input</code> и <code>\\Output</code> объявлены в разделе о русификации — добавьте те строки в преамбулу. Каждая строка псевдокода заканчивается командой <code>\\;</code>:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Пример алгоритма</span></div>\n                            <pre><code>\\begin{algorithm}[htbp]\n\\caption{Алгоритм Дейкстры для поиска кратчайшего пути}\n\\label{algo:dijkstra}\n\\Input{Взвешенный граф $G = (V, E)$, стартовая вершина $s \\in V$}\n\\Output{Массив кратчайших расстояний $dist[u]$ для всех $u \\in V$}\n\n\\ForEach{$u \\in V$}{\n    $dist[u] \\leftarrow \\infty$\\;\n    $visited[u] \\leftarrow \\text{false}$\\;\n}\n$dist[s] \\leftarrow 0$\\;\nИнициализировать очередь с приоритетами $Q$ парой $(0, s)$\\;\n\n\\While{$Q$ не пуста}{\n    Извлечь вершину $u$ с минимальным $dist[u]$ из $Q$\\;\n    \\If{$visited[u]$}{\n        \\textbf{continue}\\;\n    }\n    $visited[u] \\leftarrow \\text{true}$\\;\n    \n    \\ForEach{соседней вершины $v$ для $u$ со стоимостью ребра $w$}{\n        \\If{$dist[u] + w < dist[v]$}{\n            $dist[v] \\leftarrow dist[u] + w$\\;\n            Добавить $(dist[v], v)$ в очередь $Q$\\;\n        }\n    }\n}\n\\Return $dist$\\;\n\\end{algorithm}</code></pre>\n                        </div>\n                        <p>Чтобы читатель мог перейти к описанию алгоритма из текста работы по клику на его номер, настройте систему <a href=\"/blog/latex-hyperref-pdf-bookmarks-navigation\">кликабельных перекрестных ссылок в PDF</a>.</p>"
       }
     ],
     "tips": [
@@ -1605,7 +1605,7 @@
       },
       {
         "title": "Компиляция в Labkeeper",
-        "html": "<p>В онлайн-редакторе Labkeeper вы можете мгновенно отлаживать сложные многостраничные алгоритмы без конфликтов стилевых файлов.</p>"
+        "html": "<p>В онлайн-редакторе Labkeeper сложные многостраничные алгоритмы удобно отлаживать: ошибки компиляции показываются списком с привязкой к строке кода, а уже собранный PDF при этом не пропадает.</p>"
       }
     ],
     "editorExample": {
@@ -1628,15 +1628,15 @@
       "навигация по оглавлению pdf latex"
     ],
     "datePublished": "2026-09-06",
-    "dateModified": "2026-09-06",
+    "dateModified": "2026-10-18",
     "readingTime": "7 мин",
     "cardTitle": "Пакет hyperref: закладки, ссылки и интерактивная навигация в PDF",
     "cardDescription": "Как сделать оглавление кликабельным, включить боковое дерево закладок в PDF-ридере и избавиться от кракозябр в русскоязычных названиях глав.",
     "sliderTitle": "Закладки в PDF (hyperref)",
     "sliderText": "Интерактивная навигация по документу, дерево закладок и цветные ссылки.",
-    "sidebarText": "В Labkeeper сгенерированные PDF автоматически содержат встроенные закладки и кликабельные ссылки для удобной навигации.",
+    "sidebarText": "Если в проекте Labkeeper нет своей преамбулы, PDF уже содержит закладки и кликабельные ссылки: hyperref подключается автоматически.",
     "ctaTitle": "Создавайте интерактивные PDF в&nbsp;Labkeeper",
-    "ctaText": "Онлайн-редактор с идеальной настройкой пакета hyperref: авто-ссылки на формулы, рисунки и оглавление без сбоев.",
+    "ctaText": "Онлайн-редактор LaTeX с поддержкой hyperref: кликабельные ссылки на формулы, рисунки и оглавление в PDF.",
     "toc": [
       {
         "id": "why-navigation",
@@ -1648,7 +1648,7 @@
       },
       {
         "id": "cyrillic-encoding",
-        "title": "Решение проблемы с кракозябрами в русских закладках"
+        "title": "Формулы в заголовках и закладки PDF"
       },
       {
         "id": "toc-navigation",
@@ -1668,17 +1668,17 @@
       {
         "id": "hyperref-setup",
         "title": "Закладки в PDF LaTeX hyperref: эталонная конфигурация",
-        "html": "                        <p>Чтобы правильно сгенерировать <strong>закладки в pdf latex hyperref</strong>, подключите пакет <em>в самом конце преамбулы</em> (за редким исключением пакетов вроде <code>cleveref</code> или <code>bookmark</code>):</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Конфигурация hyperref</span></div>\n                            <pre><code>\\usepackage{xcolor}\n\\usepackage[\n    unicode=true,\n    pdfstartview={FitH},\n    bookmarks=true,\n    bookmarksnumbered=true,\n    bookmarksopen=true,\n    colorlinks=true,\n    linkcolor=blue,\n    citecolor=teal,\n    urlcolor=magenta\n]{hyperref}</code></pre>\n                        </div>\n                        <p>Параметры:</p>\n                        <ul>\n                            <li><code>unicode=true</code> — корректная обработка кириллических заголовков в метаданных PDF;</li>\n                            <li><code>bookmarksnumbered=true</code> — отображение номеров глав (1, 1.1, 1.2) в боковом меню закладок;</li>\n                            <li><code>bookmarksopen=true</code> — дерево закладок сразу открыто в развернутом виде при первом открытии файла;</li>\n                            <li><code>colorlinks=true</code> — ссылки выделяются цветом вместо некрасивых рамок вокруг текста.</li>\n                        </ul>"
+        "html": "                        <p>Чтобы правильно сгенерировать <strong>закладки в pdf latex hyperref</strong>, подключите пакет <em>в самом конце преамбулы</em> (за редким исключением пакетов вроде <code>cleveref</code> или <code>bookmark</code>):</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Конфигурация hyperref</span></div>\n                            <pre><code>\\usepackage{xcolor}\n\\usepackage[\n    unicode=true,\n    pdfstartview={FitH},\n    bookmarks=true,\n    bookmarksnumbered=true,\n    bookmarksopen=true,\n    colorlinks=true,\n    linkcolor=blue,\n    citecolor=teal,\n    urlcolor=magenta\n]{hyperref}</code></pre>\n                        </div>\n                        <p>Параметры:</p>\n                        <ul>\n                            <li><code>unicode=true</code> — корректная обработка кириллических заголовков в метаданных PDF;</li>\n                            <li><code>bookmarksnumbered=true</code> — отображение номеров глав (1, 1.1, 1.2) в боковом меню закладок;</li>\n                            <li><code>bookmarksopen=true</code> — дерево закладок сразу открыто в развернутом виде при первом открытии файла;</li>\n                            <li><code>colorlinks=true</code> — ссылки выделяются цветом вместо некрасивых рамок вокруг текста.</li>\n                        </ul>\n                        <div class=\"article-note\">\n                            <strong>⚠️ В Labkeeper:</strong> если в проекте нет своей преамбулы, Labkeeper подставляет автоматическую, где <code>hyperref</code> уже подключён. Второй <code>\\usepackage[…]{hyperref}</code> в такой преамбуле даёт ошибку <code>Option clash for package hyperref</code>. Настраивайте ссылки командой <code>\\hypersetup{…}</code> с теми же параметрами или допишите их в уже существующую строку <code>\\usepackage{hyperref}</code> — второй <code>\\usepackage{hyperref}</code> не нужен.\n                        </div>"
       },
       {
         "id": "cyrillic-encoding",
-        "title": "Решение проблемы с кракозябрами в русских закладках",
-        "html": "                        <p>Если в заголовках глав содержатся математические формулы (например, <code>\\section{Анализ функции $f(x) = x^2$}</code>), в боковых закладках PDF может появиться предупреждение <code>Token not allowed in a PDF string</code>.</p>\n                        <p>Для таких случаев в hyperref предусмотрена команда <code>\\texorpdfstring</code>, которая выводит формулу в тексте, а в закладку отправляет чистый текст:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Заголовок с формулой</span></div>\n                            <pre><code>\\section{Исследование уравнения \\texorpdfstring{$E = mc^2$}{E = mc\textasciicircum 2}}</code></pre>\n                        </div>\n                        <p>Также рекомендуется дополнительно подключить современный пакет <code>\\usepackage{bookmark}</code> сразу после <code>hyperref</code> — он обновляет закладки за один проход компилятора вместо двух.</p>"
+        "title": "Формулы в заголовках и закладки PDF",
+        "html": "                        <p>Если в заголовках глав содержатся математические формулы (например, <code>\\section{Анализ функции $f(x) = x^2$}</code>), в боковых закладках PDF может появиться предупреждение <code>Token not allowed in a PDF string</code>.</p>\n                        <p>Для таких случаев в hyperref предусмотрена команда <code>\\texorpdfstring</code>, которая выводит формулу в тексте, а в закладку отправляет чистый текст:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Заголовок с формулой</span></div>\n                            <pre><code>\\section{Исследование уравнения \\texorpdfstring{$E = mc^2$}{E = mc\\textasciicircum 2}}</code></pre>\n                        </div>\n                        <p>Также рекомендуется дополнительно подключить современный пакет <code>\\usepackage{bookmark}</code> сразу после <code>hyperref</code> — он обновляет закладки за один проход компилятора вместо двух.</p>"
       },
       {
         "id": "toc-navigation",
         "title": "Навигация по оглавлению PDF LaTeX: ссылки на формулы и рисунки",
-        "html": "                        <p>Полноценная <strong>навигация по оглавлению pdf latex</strong> охватывает не только содержание, но и перекрестные ссылки в тексте. Используйте связку <code>\\label{...}</code> и <code>\\ref{...}</code> / <code>\\eqref{...}</code>:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Ссылки</span></div>\n                            <pre><code>Как показано на рисунке~\\ref{fig:schema}, выходной сигнал...\nВ соответствии с формулой~\\eqref{eq:motion}, скорость нарастает линейно.</code></pre>\n                        </div>\n                        <p>Клик по номеру рисунка или формулы в PDF мгновенно переместит пользователя к соответствующему объекту. Те же правила перекрестных ссылок действуют и при <a href=\"/blog/latex-russian-cyrillic-code-listings-minted\">оформлении листингов кода в LaTeX без ошибок</a>.</p>"
+        "html": "                        <p>Полноценная <strong>навигация по оглавлению pdf latex</strong> охватывает не только содержание, но и перекрестные ссылки в тексте. Используйте связку <code>\\label{...}</code> и <code>\\ref{...}</code> / <code>\\eqref{...}</code>:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Ссылки</span></div>\n                            <pre><code>Как показано на рисунке~\\ref{fig:schema}, выходной сигнал...\nВ соответствии с формулой~\\eqref{eq:motion}, скорость нарастает линейно.</code></pre>\n                        </div>\n                        <p>Клик по номеру рисунка или формулы в PDF переместит читателя к соответствующему объекту. Те же правила перекрестных ссылок действуют и при <a href=\"/blog/latex-russian-cyrillic-code-listings-minted\">оформлении листингов кода в LaTeX без ошибок</a>.</p>"
       },
       {
         "id": "print-vs-screen",
@@ -1693,7 +1693,7 @@
       },
       {
         "title": "Готовая навигация в Labkeeper",
-        "html": "<p>В Labkeeper все шаблоны ВКР и статей уже включают преднастроенный hyperref с корректной поддержкой кириллицы и кликабельных закладок.</p>"
+        "html": "<p>В автоматической преамбуле Labkeeper пакет hyperref уже подключён: внутренние ссылки в просмотрщике PDF прокручивают документ к нужному месту, а внешние открываются в новой вкладке. В собственной преамбуле подключите hyperref сами.</p>"
       }
     ],
     "editorExample": {
@@ -1716,15 +1716,15 @@
       "arraystretch настройка интервала"
     ],
     "datePublished": "2026-09-06",
-    "dateModified": "2026-09-06",
+    "dateModified": "2026-10-18",
     "readingTime": "6 мин",
     "cardTitle": "Высота строк в таблицах LaTeX: команда arraystretch и вертикальные отступы",
     "cardDescription": "Как избавиться от тесных ячеек, в которых дроби и символы касаются горизонтальных линий, с помощью локальной настройки arraystretch.",
     "sliderTitle": "Высота строк в таблицах (arraystretch)",
     "sliderText": "Как сделать таблицы просторными и читаемыми с помощью переопределения arraystretch.",
-    "sidebarText": "В Labkeeper таблицы компилируются с профессиональными типографическими отступами без слипания строк.",
+    "sidebarText": "Настраивайте высоту строк таблиц в онлайн-редакторе Labkeeper и проверяйте результат в PDF после сборки.",
     "ctaTitle": "Верстайте красивые таблицы в&nbsp;Labkeeper",
-    "ctaText": "Онлайн-редактор с поддержкой пакетов booktabs, array и автоматическим выравниванием строк по ГОСТ.",
+    "ctaText": "Онлайн-редактор LaTeX с поддержкой пакетов booktabs и array и сборкой таблиц в PDF.",
     "toc": [
       {
         "id": "cramped-problem",
@@ -1776,12 +1776,12 @@
     ],
     "tips": [
       {
-        "title": "Идеальный коэффициент 1.3 для ГОСТ",
-        "html": "<p>Для отчетов и дипломных работ по ГОСТу значение <code>\\renewcommand{\\arraystretch}{1.25-1.3}</code> является оптимальным балансом между компактностью и читаемостью.</p>"
+        "title": "Коэффициент 1.25–1.3 для отчетов",
+        "html": "<p>Для отчетов и дипломных работ коэффициент от 1.25 до 1.3, например <code>\\renewcommand{\\arraystretch}{1.3}</code>, — оптимальный баланс между компактностью и читаемостью.</p>"
       },
       {
-        "title": "Табличный редактор в Labkeeper",
-        "html": "<p>В Labkeeper вы можете комбинировать стили оформления таблиц с моментальным визуальным контролем высоты строк перед финальной сборкой в PDF.</p>"
+        "title": "booktabs в автоматической преамбуле Labkeeper",
+        "html": "<p>Если в проекте Labkeeper нет своей преамбулы, пакеты <code>booktabs</code> и <code>longtable</code> уже подключены в автоматической: команды <code>\\toprule</code>, <code>\\midrule</code> и <code>\\bottomrule</code> работают сразу.</p>"
       }
     ],
     "editorExample": {
@@ -1804,7 +1804,7 @@
       "пакет rotating sidewaystable"
     ],
     "datePublished": "2026-09-06",
-    "dateModified": "2026-09-06",
+    "dateModified": "2026-10-18",
     "readingTime": "7 мин",
     "cardTitle": "Вращение таблиц на 90 градусов в LaTeX: пакет rotating и sidewaystable",
     "cardDescription": "Как разместить широкую таблицу на альбомном развороте внутри книжного документа без сбоя нумерации страниц по ГОСТ 7.32.",
@@ -1839,7 +1839,7 @@
       {
         "id": "problem",
         "title": "Проблема широких таблиц в книжной ориентации А4",
-        "html": "                        <p>В дипломных проектах, диссертациях и экономических отчетах часто встречаются таблицы из 8–15 колонок с подробными числовыми данными. В стандартный книжный лист формата А4 (ширина 210 мм за вычетом полей 30 мм и 15 мм оставляет всего 165 мм полезного пространства) такая таблица физически не помещается: текст начинает безобразно сжиматься, слова переносятся по буквам, либо таблица вылезает за пределы правого поля.</p>\n                        <p>Единственное правильное типографическое решение по ГОСТ 7.32 и ГОСТ 2.105 — повернуть таблицу на 90 градусов против часовой стрелки, расположив ее на альбомном развороте, но сохранив при этом стандартное положение колонтитулов и номера страницы. Дополнительно улучшить читаемость повернотой таблицы можно с помощью настройки <a href=\"/blog/latex-arraystretch-table-row-height-spacing\">межстрочного интервала в ячейках через arraystretch</a>.</p>"
+        "html": "                        <p>В дипломных проектах, диссертациях и экономических отчетах часто встречаются таблицы из 8–15 колонок с подробными числовыми данными. В стандартный книжный лист формата А4 (ширина 210 мм за вычетом полей 30 мм и 15 мм оставляет всего 165 мм полезного пространства) такая таблица физически не помещается: текст начинает безобразно сжиматься, слова переносятся по буквам, либо таблица вылезает за пределы правого поля.</p>\n                        <p>Удобное решение, которое допускают ГОСТ 7.32 и ГОСТ 2.105, — повернуть таблицу на 90 градусов, расположив ее на альбомном развороте, но сохранив при этом стандартное положение колонтитулов и номера страницы. Дополнительно улучшить читаемость повернутой таблицы можно с помощью настройки <a href=\"/blog/latex-arraystretch-table-row-height-spacing\">межстрочного интервала в ячейках через arraystretch</a>.</p>"
       },
       {
         "id": "rotating-package",
@@ -1892,13 +1892,13 @@
       "верстка газеты в latex онлайн"
     ],
     "datePublished": "2026-09-06",
-    "dateModified": "2026-09-06",
+    "dateModified": "2026-10-18",
     "readingTime": "7 мин",
     "cardTitle": "Многоколоночная верстка в LaTeX: пакет multicol для журналов и газет",
     "cardDescription": "Как разбить текст на 2, 3 или 4 колонки, добавить вертикальные разделительные линии и динамически переключаться между колонками без разрыва страницы.",
     "sliderTitle": "Многоколоночный текст (multicol)",
     "sliderText": "Как верстать текст в 2 и 3 колонки с балансировкой высоты в LaTeX.",
-    "sidebarText": "В Labkeeper вы можете верстать статьи в журнальном двухколоночном и трехколоночном формате с мгновенным предпросмотром.",
+    "sidebarText": "В Labkeeper вы можете верстать статьи в журнальном двухколоночном и трехколоночном формате с предпросмотром PDF.",
     "ctaTitle": "Верстайте журнальные статьи в&nbsp;Labkeeper",
     "ctaText": "Онлайн-редактор с поддержкой многоколоночной разметки multicol, автоматической расстановкой переносов и экспортом в PDF.",
     "toc": [
@@ -1927,7 +1927,7 @@
       {
         "id": "why-multicol",
         "title": "Преимущества multicol над стандартной опцией twocolumn",
-        "html": "                        <p>В стандартном LaTeX есть базовый режим <code>\\documentclass[twocolumn]{article}</code>. Однако он крайне негибок: принудительно делит весь документ ровно на две колонки от начала до конца, не позволяет делать одноколоночную шапку (заголовок и аннотация на всю ширину листа) и не поддерживает верстку в 3 и более колонок.</p>\n                        <p>Пакет <strong>multicol</strong> решает эту задачу идеально: вы можете переключаться между любым количеством колонок прямо посреди страницы без принудительного разрыва листа. Это особенно ценно при <a href=\"/blog/rinc-vak-scientific-article-template-fonts-margins\">оформлении научных статей для РИНЦ и ВАК</a>, где шапка статьи традиционно набирается в одну колонку, а текст исследования — в две.</p>"
+        "html": "                        <p>В стандартном LaTeX есть базовый режим <code>\\documentclass[twocolumn]{article}</code>. Однако он негибок: делит весь документ ровно на две колонки от начала до конца и не поддерживает верстку в 3 и более колонок. Шапку на всю ширину в нем сделать можно — <code>\\maketitle</code> в режиме twocolumn занимает всю ширину, а команда <code>\\twocolumn[…]</code> выводит над колонками любой текст, например аннотацию. Но переключиться с одной колонки на две посреди страницы нельзя: <code>\\onecolumn</code> и <code>\\twocolumn</code> начинают новую страницу.</p>\n                        <p>Пакет <strong>multicol</strong> решает эту задачу идеально: вы можете переключаться между любым количеством колонок прямо посреди страницы без принудительного разрыва листа. Это особенно ценно при <a href=\"/blog/rinc-vak-scientific-article-template-fonts-margins\">оформлении научных статей для РИНЦ и ВАК</a>, где шапка статьи традиционно набирается в одну колонку, а текст исследования — в две.</p>"
       },
       {
         "id": "three-columns",
@@ -1957,7 +1957,7 @@
       },
       {
         "title": "Верстка журналов в Labkeeper",
-        "html": "<p>В Labkeeper шаблоны научных журналов IEEE и ACM уже преднастроены с правильными отступами multicol и переносами по словарю русского языка.</p>"
+        "html": "<p>Классы журналов IEEEtran и acmart есть в TeX Live Labkeeper: подключите нужный класс в своей преамбуле, и колонки задаст сам класс журнала.</p>"
       }
     ],
     "editorExample": {
@@ -1980,15 +1980,15 @@
       "pgfplotstable чтение csv"
     ],
     "datePublished": "2026-09-06",
-    "dateModified": "2026-09-06",
+    "dateModified": "2026-10-18",
     "readingTime": "8 мин",
     "cardTitle": "Автоматический импорт таблиц из Excel и CSV в LaTeX: пакет pgfplotstable",
     "cardDescription": "Как забыть о ручном наборе таблиц: загрузка внешних CSV-файлов, округление знаков, форматирование заголовков и русская запятая в числах.",
     "sliderTitle": "Импорт Excel/CSV в LaTeX",
     "sliderText": "Прямое чтение CSV-таблиц из Excel с пакетом pgfplotstable в LaTeX.",
-    "sidebarText": "В Labkeeper вы можете загружать файлы CSV и автоматически генерировать из них чистые LaTeX-таблицы с оформлением по ГОСТ.",
+    "sidebarText": "В Labkeeper вы можете загрузить CSV в проект и вывести его таблицей через pgfplotstable.",
     "ctaTitle": "Автоматизируйте таблицы в&nbsp;Labkeeper",
-    "ctaText": "Онлайн-платформа с поддержкой pgfplotstable: загрузка CSV из Excel, моментальная компиляция и экспорт в PDF.",
+    "ctaText": "Онлайн-платформа с поддержкой pgfplotstable: загрузка CSV из Excel и сборка таблиц в PDF.",
     "toc": [
       {
         "id": "why-automate",
@@ -2025,12 +2025,12 @@
       {
         "id": "pgfplotstable-setup",
         "title": "Конвертировать Excel в таблицу LaTeX: базовый вызов pgfplotstable",
-        "html": "                        <p>Для чтения данных подключите пакет <strong>pgfplotstable</strong> (он входит в состав TeX Live и надстраивается над pgfplots):</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Преамбула</span></div>\n                            <pre><code>\\usepackage{pgfplotstable}\n\\usepackage{booktabs}\n\\pgfplotsset{compat=1.18}</code></pre>\n                        </div>\n                        <p>Теперь, чтобы <strong>конвертировать excel в таблицу latex</strong>, достаточно одной строки:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Вставка</span></div>\n                            <pre><code>\\pgfplotstabletypeset[col sep=semicolon]{measurements.csv}</code></pre>\n                        </div>\n                        <p>Если импортируемый массив данных слишком широк для книжной страницы, оберните его в окружение для <a href=\"/blog/latex-rotating-package-sidewaystable-rotate-90\">вращения широких таблиц sidewaystable</a>.</p>"
+        "html": "                        <p>Для чтения данных подключите пакет <strong>pgfplotstable</strong> (он входит в состав TeX Live и надстраивается над pgfplots):</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Преамбула</span></div>\n                            <pre><code>\\usepackage{pgfplotstable}\n\\usepackage{booktabs}\n\\pgfplotsset{compat=1.18}</code></pre>\n                        </div>\n                        <p>Теперь, чтобы <strong>конвертировать excel в таблицу latex</strong>, достаточно одной строки:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Вставка</span></div>\n                            <pre><code>\\pgfplotstabletypeset[col sep=semicolon]{measurements.csv}</code></pre>\n                        </div>\n                        <p>Если числа в файле записаны с десятичной запятой, добавьте опцию <code>read comma as period</code> — подробнее в следующем разделе.</p>\n                        <p>Если импортируемый массив данных слишком широк для книжной страницы, оберните его в окружение для <a href=\"/blog/latex-rotating-package-sidewaystable-rotate-90\">вращения широких таблиц sidewaystable</a>.</p>"
       },
       {
         "id": "reading-csv",
         "title": "Pgfplotstable чтение CSV: разделители, кодировка и русская запятая",
-        "html": "                        <p>При использовании <strong>pgfplotstable чтение csv</strong> можно настроить с ювелирной точностью под российские стандарты:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Тонкая настройка</span></div>\n                            <pre><code>\\pgfplotstabletypeset[\n    col sep=semicolon,               % Разделитель колонок (точка с запятой из Excel)\n    string type,                     % Если в колонках есть текст\n    every head row/.style={\n        before row=\\toprule,\n        after row=\\midrule\n    },\n    every last row/.style={\n        after row=\\bottomrule\n    }\n]{data.csv}</code></pre>\n                        </div>\n                        <p>Если в CSV содержатся вещественные числа, которые нужно автоматически округлить до 2 знаков после запятой и заменить десятичную точку на русскую запятую по ГОСТу:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Округление и ГОСТ запятая</span></div>\n                            <pre><code>\\pgfplotstabletypeset[\n    col sep=comma,\n    every numeric column/.style={\n        precision=2,\n        fixed,\n        dec sep align,\n        set thousands separator={\\,}\n    }\n]{experiment.csv}</code></pre>\n                        </div>"
+        "html": "                        <p>При использовании <strong>pgfplotstable чтение csv</strong> можно настроить с ювелирной точностью под российские стандарты:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Тонкая настройка</span></div>\n                            <pre><code>\\pgfplotstabletypeset[\n    col sep=semicolon,               % Разделитель колонок (точка с запятой из Excel)\n    string type,                     % Если в колонках есть текст\n    every head row/.style={\n        before row=\\toprule,\n        after row=\\midrule\n    },\n    every last row/.style={\n        after row=\\bottomrule\n    }\n]{data.csv}</code></pre>\n                        </div>\n                        <p>Если в CSV содержатся вещественные числа, которые нужно автоматически округлить до 2 знаков после запятой и заменить десятичную точку на русскую запятую по ГОСТу:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX Округление и ГОСТ запятая</span></div>\n                            <pre><code>\\pgfplotstabletypeset[\n    col sep=comma,\n    every numeric column/.style={\n        precision=2,\n        fixed,\n        dec sep align,\n        /pgf/number format/use comma, % десятичная запятая при выводе\n        set thousands separator={\\,}\n    }\n]{experiment.csv}</code></pre>\n                        </div>\n                        <p>Без опции <code>use comma</code> pgfplotstable выводит десятичную точку: <code>1.23</code> вместо <code>1,23</code>.</p>\n                        <p>Главная ловушка русского Excel — числа в самом файле записаны с запятой («2,5»), а pgfplotstable ждёт точку. При <code>col sep=semicolon</code> такой файл останавливает сборку с ошибкой <code>Could not parse input '2,5' as a floating point number</code>. Опция <code>read comma as period</code> читает запятую как десятичный разделитель, а <code>use comma</code> возвращает её при выводе:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX CSV из русского Excel</span></div>\n                            <pre><code>\\pgfplotstabletypeset[col sep=semicolon, read comma as period,\n  /pgf/number format/use comma]{data.csv}</code></pre>\n                        </div>"
       },
       {
         "id": "styling-booktabs",
@@ -2045,11 +2045,11 @@
       },
       {
         "title": "Интеграция в Labkeeper",
-        "html": "<p>В онлайн-редакторе Labkeeper вы можете загрузить CSV в файловый менеджер проекта и на лету видеть отрендренную таблицу с автоматическим расчетом промежуточных сумм.</p>"
+        "html": "<p>В онлайн-редакторе Labkeeper загрузите CSV в файловый менеджер проекта (файлы доступны после входа) и нажмите «Выполнить»: таблица появится в PDF после сборки. Промежуточные суммы pgfplotstable сам не считает — их нужно описать в коде или подготовить заранее. Для расчётов удобен вычислительный сегмент Labkeeper: функция <code>load_csv</code> читает колонки файла в массивы, а <code>table</code> выводит результат таблицей.</p>"
       }
     ],
     "editorExample": {
-      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage{pgfplotstable}\\pgfplotsset{compat=1.18}\n\\begin{document}\n\\pgfplotstabletypeset[col sep=comma,columns/Time/.style={column type=r},columns/Value/.style={column type=r}]{\nTime,Value\n1,2.5\n2,4.0\n3,5.5\n}\n\\end{document}"
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage{pgfplotstable}\\pgfplotsset{compat=1.18}\n\\begin{document}\n\\pgfplotstabletypeset[col sep=semicolon,read comma as period,/pgf/number format/use comma,columns/t/.style={column name={$t$, с}},columns/U/.style={column name={$U$, В}}]{\nt;U\n1;2,5\n2;4,75\n3;5,5\n}\n\\end{document}"
     }
   },
   {

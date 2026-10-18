@@ -7,21 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
-    <title>Псевдокод в LaTeX algorithm2e: алгоритм блок схема LaTeX — Labkeeper</title>
+    <title>Псевдокод в LaTeX algorithm2e: оформление алгоритма — Labkeeper</title>
     <meta name="description" content="Полное руководство по пакету algorithm2e в LaTeX: написание псевдокода, русификация команд, нумерация строк, верстка условий и циклов в Labkeeper." />
-    <!-- SEO Ключи: псевдокод в latex algorithm2e, оформление алгоритма блок схема latex -->
-    <meta name="keywords" content="псевдокод в latex algorithm2e, оформление алгоритма блок схема latex" />
+    <!-- SEO Ключи: псевдокод в latex algorithm2e, оформление алгоритма в latex -->
+    <meta name="keywords" content="псевдокод в latex algorithm2e, оформление алгоритма в latex" />
     <link rel="canonical" href="https://labkeeper.io/blog/latex-algorithm2e-pseudocode-algorithms" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://labkeeper.io/blog/latex-algorithm2e-pseudocode-algorithms" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Labkeeper" />
-    <meta property="og:title" content="Псевдокод в LaTeX algorithm2e: алгоритм блок схема LaTeX — Labkeeper" />
+    <meta property="og:title" content="Псевдокод в LaTeX algorithm2e: оформление алгоритма — Labkeeper" />
     <meta property="og:description" content="Полное руководство по пакету algorithm2e в LaTeX: написание псевдокода, русификация команд, нумерация строк, верстка условий и циклов в Labkeeper." />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
-    <meta name="twitter:title" content="Псевдокод в LaTeX algorithm2e: алгоритм блок схема LaTeX — Labkeeper" />
+    <meta name="twitter:title" content="Псевдокод в LaTeX algorithm2e: оформление алгоритма — Labkeeper" />
     <meta name="twitter:description" content="Полное руководство по пакету algorithm2e в LaTeX: написание псевдокода, русификация команд, нумерация строк, верстка условий и циклов в Labkeeper." />
 
     <script type="application/ld+json">
@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-algorithm2e-pseudocode-algorithms"
         },
         "datePublished": "2026-09-06",
-        "dateModified": "2026-09-06",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с LaTeX"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 6 сентября 2026 · Время чтения: ~8 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~8 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -227,7 +227,7 @@
                             <li><a href="#setup" class="article-toc__link">Подключение и базовые опции: linesnumbered, ruled, vlined</a></li>
                             <li><a href="#control-structures" class="article-toc__link">Псевдокод в LaTeX algorithm2e: условия If-Else, циклы While и For</a></li>
                             <li><a href="#russian-localization" class="article-toc__link">Русификация ключевых слов (Вход, Выход, Если, Иначе)</a></li>
-                            <li><a href="#complete-example" class="article-toc__link">Оформление алгоритма блок схема LaTeX: законченный пример</a></li>
+                            <li><a href="#complete-example" class="article-toc__link">Оформление алгоритма в LaTeX: законченный пример</a></li>
                         </ol>
                     </nav>
 
@@ -242,15 +242,15 @@
                         <p>Для подключения пакета добавьте в преамбулу строку с полезными опциями:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX Преамбула</span></div>
-                            <pre><code>\usepackage[linesnumbered,ruled,vlined,algo2e]{algorithm2e}</code></pre>
+                            <pre><code>\usepackage[linesnumbered,ruled,vlined]{algorithm2e}</code></pre>
                         </div>
                         <p>Значение параметров:</p>
                         <ul>
                             <li><code>linesnumbered</code> — автоматическая нумерация строк псевдокода слева;</li>
                             <li><code>ruled</code> — оформление заголовка алгоритма элегантными горизонтальными разделительными линиями сверху и снизу;</li>
-                            <li><code>vlined</code> — отрисовка аккуратных вертикальных линий, наглядно показывающих границы вложенности условий и циклов;</li>
-                            <li><code>algo2e</code> — предотвращение конфликтов имен окружений с другими пакетами.</li>
+                            <li><code>vlined</code> — отрисовка аккуратных вертикальных линий, наглядно показывающих границы вложенности условий и циклов.</li>
                         </ul>
+                        <p>Опция <code>algo2e</code> переименовывает окружение в <code>algorithm2e</code>. Она нужна, только если в документе есть другой пакет с окружением <code>algorithm</code>, например <code>algorithmicx</code>. Тогда и алгоритмы пишите внутри <code>\begin{algorithm2e}</code>: с обычным <code>\begin{algorithm}</code> сборка остановится с ошибкой <code>Environment algorithm undefined</code>.</p>
                     </section>
 
                     <section class="article-section" id="control-structures">
@@ -267,7 +267,7 @@
 
                     <section class="article-section" id="russian-localization">
                         <h2 class="article-section__title">Русификация ключевых слов (Вход, Выход, Если, Иначе)</h2>
-                        <p>По умолчанию ключевые слова выводятся на английском языке. Чтобы локализовать их по ГОСТу для русскоязычной работы, задайте переопределения в преамбуле:</p>
+                        <p>По умолчанию ключевые слова выводятся на английском языке. Чтобы перевести их на русский для русскоязычной работы, задайте переопределения в преамбуле:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX Русификация</span></div>
                             <pre><code>\SetKwInOut{Input}{Вход}
@@ -283,8 +283,8 @@
                     </section>
 
                     <section class="article-section" id="complete-example">
-                        <h2 class="article-section__title">Оформление алгоритма блок схема LaTeX: законченный пример</h2>
-                        <p>Полный код алгоритма поиска кратчайшего пути Дейкстры. Качественное <strong>оформление алгоритма блок схема latex</strong> в виде псевдокода выглядит строго и профессионально:</p>
+                        <h2 class="article-section__title">Оформление алгоритма в LaTeX: законченный пример</h2>
+                        <p>Полный код алгоритма поиска кратчайшего пути Дейкстры. Качественное <strong>оформление алгоритма в LaTeX</strong> в виде псевдокода выглядит строго и профессионально (если нужна именно блок-схема, смотрите статью о <a href="/blog/algorithm-flowcharts-gost-markdown-latex">блок-схемах алгоритмов по ГОСТ</a>). Команды <code>\Input</code> и <code>\Output</code> объявлены в разделе о русификации — добавьте те строки в преамбулу. Каждая строка псевдокода заканчивается командой <code>\;</code>:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX Пример алгоритма</span></div>
                             <pre><code>\begin{algorithm}[htbp]
@@ -294,27 +294,27 @@
 \Output{Массив кратчайших расстояний $dist[u]$ для всех $u \in V$}
 
 \ForEach{$u \in V$}{
-    $dist[u] \leftarrow \infty$;
-    $visited[u] \leftarrow \text{false}$;
+    $dist[u] \leftarrow \infty$\;
+    $visited[u] \leftarrow \text{false}$\;
 }
-$dist[s] \leftarrow 0$;
-Инициализировать очередь с приоритетами $Q$ парой $(0, s)$;
+$dist[s] \leftarrow 0$\;
+Инициализировать очередь с приоритетами $Q$ парой $(0, s)$\;
 
 \While{$Q$ не пуста}{
-    Извлечь вершину $u$ с минимальным $dist[u]$ из $Q$;
+    Извлечь вершину $u$ с минимальным $dist[u]$ из $Q$\;
     \If{$visited[u]$}{
-        \textbf{continue};
+        \textbf{continue}\;
     }
-    $visited[u] \leftarrow \text{true}$;
+    $visited[u] \leftarrow \text{true}$\;
     
     \ForEach{соседней вершины $v$ для $u$ со стоимостью ребра $w$}{
         \If{$dist[u] + w &lt; dist[v]$}{
-            $dist[v] \leftarrow dist[u] + w$;
-            Добавить $(dist[v], v)$ в очередь $Q$;
+            $dist[v] \leftarrow dist[u] + w$\;
+            Добавить $(dist[v], v)$ в очередь $Q$\;
         }
     }
 }
-\Return $dist$;
+\Return $dist$\;
 \end{algorithm}</code></pre>
                         </div>
                         <p>Чтобы читатель мог перейти к описанию алгоритма из текста работы по клику на его номер, настройте систему <a href="/blog/latex-hyperref-pdf-bookmarks-navigation">кликабельных перекрестных ссылок в PDF</a>.</p>
@@ -334,7 +334,7 @@ $dist[s] \leftarrow 0$;
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
                                     <h3>Компиляция в Labkeeper</h3>
-                                    <p>В онлайн-редакторе Labkeeper вы можете мгновенно отлаживать сложные многостраничные алгоритмы без конфликтов стилевых файлов.</p>
+                                    <p>В онлайн-редакторе Labkeeper сложные многостраничные алгоритмы удобно отлаживать: ошибки компиляции показываются списком с привязкой к строке кода, а уже собранный PDF при этом не пропадает.</p>
                                 </div>
                             </div>
                         </div>
@@ -350,7 +350,7 @@ $dist[s] \leftarrow 0$;
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">В Labkeeper пакет algorithm2e работает «из коробки»: создавайте профессиональные описания алгоритмов для статей и дипломов.</p>
+                    <p class="article-sidebar__title">В Labkeeper пакет algorithm2e уже есть в TeX Live: создавайте профессиональные описания алгоритмов для статей и дипломов.</p>
                     <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%5Bruled%5D%7Balgorithm2e%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Balgorithm%7D%5BH%5D%0A%5CKwIn%7BArray+%24a%24+of+length+%24n%24%7D%5CKwOut%7BSum+%24s%24%7D%0A%24s%5Cgets0%24%5C%3B%0A%5CFor%7B%24i%5Cgets1%24+%5CKwTo+%24n%24%7D%7B%24s%5Cgets+s%2Ba_i%24%5C%3B%7D%0A%5Ccaption%7BArray+sum%7D%5Cend%7Balgorithm%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
@@ -367,7 +367,7 @@ $dist[s] \leftarrow 0$;
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Верстайте алгоритмы в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор LaTeX с поддержкой algorithm2e, формул amsmath и автоматическим предпросмотром страниц в реальном времени.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX с поддержкой algorithm2e, формул amsmath и предпросмотром PDF.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">

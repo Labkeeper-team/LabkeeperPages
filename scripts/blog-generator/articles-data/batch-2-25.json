@@ -15,15 +15,15 @@
       "график по точкам latex онлайн"
     ],
     "datePublished": "2026-09-05",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-18",
     "readingTime": "8 мин",
     "cardTitle": "Построение графиков функций в LaTeX: руководство по пакету pgfplots",
     "cardDescription": "Как строить векторные графики математических функций, строить кривые по точкам из таблиц данных, кастомизировать оси, сетку и легенду.",
     "sliderTitle": "Точные графики с pgfplots в LaTeX",
     "sliderText": "Векторные математические функции, графики по точкам и полная кастомизация осей.",
-    "sidebarText": "Создавайте чистые векторные графики pgfplots в онлайн-редакторе Labkeeper с мгновенной PDF-компиляцией без установки TeX Live.",
+    "sidebarText": "Создавайте чистые векторные графики pgfplots в онлайн-редакторе Labkeeper со сборкой PDF без установки TeX Live.",
     "ctaTitle": "Стройте точные графики в&nbsp;Labkeeper",
-    "ctaText": "Онлайн-редактор LaTeX с поддержкой пакета pgfplots, моментальным предпросмотром графиков и автоматическим экспортом в PDF.",
+    "ctaText": "Онлайн-редактор LaTeX с поддержкой пакета pgfplots, предпросмотром PDF после сборки и скачиванием готового файла.",
     "toc": [
       {
         "id": "intro",
@@ -69,7 +69,7 @@
       {
         "id": "points",
         "title": "График по точкам latex онлайн: импорт координат и таблиц",
-        "html": "                        <p>Для экспериментальных исследований и лабораторных измерений требуется построить <strong>график по точкам latex онлайн</strong> с погрешностями или маркерами измерений. Координаты можно передать непосредственно в коде или считать из файла <code>.csv</code>/<code>.dat</code>.</p>\n                        <p>Пример построения точек вручную с помощью команды <code>coordinates</code>:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\begin{axis}[\n    xlabel={Температура $T$, $^\\circ\\text{C}$},\n    ylabel={Давление $P$, кПа},\n    scatter,\n    only marks,\n    mark=square*,\n    mark size=2.5pt\n]\n    \\addplot coordinates {\n        (20, 101.3)\n        (30, 104.2)\n        (40, 108.1)\n        (50, 112.5)\n        (60, 117.8)\n    };\n    \\addlegendentry{Эксперимент}\n\\end{axis}</code></pre>\n                        </div>\n                        <p>Если данные хранятся во внешнем файле (например, <code>measurements.csv</code>), используется директива <code>\\addplot table[x=T, y=P, col sep=comma] {measurements.csv};</code>, что избавляет от ручного набора сотен строк.</p>"
+        "html": "                        <p>Для экспериментальных исследований и лабораторных измерений требуется построить <strong>график по точкам latex онлайн</strong> с погрешностями или маркерами измерений. Координаты можно передать непосредственно в коде или считать из файла <code>.csv</code> или <code>.txt</code> (файлы <code>.dat</code> в проект Labkeeper загрузить нельзя).</p>\n                        <p>Пример построения точек вручную с помощью команды <code>coordinates</code>:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\begin{axis}[\n    xlabel={Температура $T$, $^\\circ\\text{C}$},\n    ylabel={Давление $P$, кПа},\n    scatter,\n    only marks,\n    mark=square*,\n    mark size=2.5pt\n]\n    \\addplot coordinates {\n        (20, 101.3)\n        (30, 104.2)\n        (40, 108.1)\n        (50, 112.5)\n        (60, 117.8)\n    };\n    \\addlegendentry{Эксперимент}\n\\end{axis}</code></pre>\n                        </div>\n                        <p>Если данные хранятся во внешнем файле (например, <code>measurements.csv</code>), используется директива <code>\\addplot table[x=T, y=P, col sep=comma] {measurements.csv};</code>, что избавляет от ручного набора сотен строк.</p>"
       },
       {
         "id": "styling",
@@ -79,7 +79,7 @@
       {
         "id": "faq",
         "title": "Типичные проблемы и оптимизация компиляции",
-        "html": "                        <p>Сложные графики с тысячами точек могут замедлять компиляцию документа. Чтобы ускорить сборку:</p>\n                        <ul>\n                            <li>Используйте пакет <code>\\usepgfplotslibrary{external}</code> и команду <code>\\tikzexternalize</code> для кэширования отрисованных фигур в отдельные PDF-файлы.</li>\n                            <li>Не завышайте <code>samples</code> без необходимости: 100–150 точек визуально неотличимы от 1000 для большинства аналитических функций.</li>\n                            <li>В веб-редакторе <strong>Labkeeper</strong> компиляция происходит на оптимизированном бэкенде, что обеспечивает быстрый рендеринг даже насыщенных графиков.</li>\n                        </ul>"
+        "html": "                        <p>Сложные графики с тысячами точек могут замедлять компиляцию документа. Чтобы ускорить сборку:</p>\n                        <ul>\n                            <li>Не завышайте <code>samples</code> без необходимости: 100–150 точек визуально неотличимы от 1000 для большинства аналитических функций.</li>\n                            <li>Тяжёлые зависимости посчитайте заранее и загрузите готовые точки в CSV: <code>\\addplot table</code> рисует координаты быстрее, чем pgfplots вычисляет функцию при каждой сборке.</li>\n                            <li>Учитывайте лимит времени: в веб-редакторе <strong>Labkeeper</strong> одна сборка длится до 30 секунд у гостя и до 60 секунд после входа.</li>\n                        </ul>"
       }
     ],
     "tips": [
@@ -112,15 +112,15 @@
       "цветная таблица latex онлайн"
     ],
     "datePublished": "2026-09-05",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-18",
     "readingTime": "7 мин",
     "cardTitle": "Работа с цветом в LaTeX: текст, фон и ячейки таблиц через xcolor",
     "cardDescription": "Подробное руководство по пакету xcolor: как изменить цвет текста, подсветить строки и ячейки таблиц, задать RGB/HEX оттенки и избежать ошибок печати.",
     "sliderTitle": "Цвет текста и таблиц в LaTeX",
-    "sliderText": "Пакет xcolor, цветные таблицы, фон ячеек и градиенты в академических документах.",
+    "sliderText": "Пакет xcolor, цветные таблицы и фон ячеек в академических документах.",
     "sidebarText": "Поддерживайте единый цветовой стиль научных документов и презентаций в веб-редакторе Labkeeper.",
     "ctaTitle": "Оформляйте стильные документы в&nbsp;Labkeeper",
-    "ctaText": "Онлайн-редактор LaTeX с поддержкой пакета xcolor, подсветкой синтаксиса и точной передачей цветов в финальном PDF.",
+    "ctaText": "Онлайн-редактор LaTeX с поддержкой пакета xcolor и подсветкой синтаксиса: цветной текст, фон и таблицы в финальном PDF.",
     "toc": [
       {
         "id": "intro",
@@ -171,7 +171,7 @@
       {
         "id": "custom-colors",
         "title": "Создание собственных оттенков: RGB, CMYK и HTML-HEX",
-        "html": "                        <p>Если корпоративный стиль или требования журнала предписывают конкретные оттенки, их легко объявить в преамбуле через <code>\\definecolor</code> (подробнее об этом читайте в материале о <a href=\"/blog/latex-custom-rgb-hex-colors-xcolor\">пользовательских цветах RGB и HEX в LaTeX</a>):</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>% По HTML-коду HEX\n\\definecolor{BrandBlue}{HTML}{1A73E8}\n\n% По модели RGB (значения от 0 до 1)\n\\definecolor{ForestDark}{rgb}{0.08, 0.38, 0.15}\n\n% По модели CMYK для профессиональной типографии\n\\definecolor{PrintNavy}{cmyk}{0.9, 0.7, 0.1, 0.2}</code></pre>\n                        </div>\n                        <p>После объявления созданный цвет используется наравне со стандартными: <code>\\textcolor{BrandBlue}{Фирменный текст}</code>.</p>"
+        "html": "                        <p>Если корпоративный стиль или требования журнала предписывают конкретные оттенки, объявите их в преамбуле командой <code>\\definecolor</code>, например <code>\\definecolor{BrandBlue}{HTML}{1A73E8}</code>, и используйте наравне со стандартными: <code>\\textcolor{BrandBlue}{Фирменный текст}</code>. Модели HTML-HEX, RGB и CMYK подробно разобраны в материале о <a href=\"/blog/latex-custom-rgb-hex-colors-xcolor\">пользовательских цветах RGB и HEX в LaTeX</a>.</p>"
       },
       {
         "id": "faq",
@@ -209,15 +209,15 @@
       "картинка сбоку от текста latex wrapfig"
     ],
     "datePublished": "2026-09-05",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-18",
     "readingTime": "6 мин",
     "cardTitle": "Обтекание картинок текстом в LaTeX: руководство по пакету wrapfig",
     "cardDescription": "Как расположить компактную иллюстрацию справа или слева от текста, настроить точную ширину врезки и избежать смещения абзацев в LaTeX.",
     "sliderTitle": "Обтекание текста картинкой в LaTeX",
     "sliderText": "Пакет wrapfig, позиционирование картинок справа и слева от абзаца.",
-    "sidebarText": "Вставляйте иллюстрации с аккуратным обтеканием текста прямо в онлайн-редакторе Labkeeper с мгновенным PDF-рендерингом.",
+    "sidebarText": "Вставляйте иллюстрации с аккуратным обтеканием текста прямо в онлайн-редакторе Labkeeper и собирайте PDF в браузере.",
     "ctaTitle": "Вставляйте графику в&nbsp;Labkeeper без сбоев",
-    "ctaText": "Онлайн-редактор LaTeX с визуальным предпросмотром страниц и поддержкой всех пакетов для типографики.",
+    "ctaText": "Онлайн-редактор LaTeX с предпросмотром PDF и полным TeX Live для типографики.",
     "toc": [
       {
         "id": "intro",
@@ -297,7 +297,7 @@
       "пакет draftwatermark онлайн"
     ],
     "datePublished": "2026-09-05",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-18",
     "readingTime": "6 мин",
     "cardTitle": "Водяной знак «Черновик» в LaTeX: настройка пакета draftwatermark",
     "cardDescription": "Как наложить полупрозрачную фоновую надпись «Черновик», DRAFT или логотип на страницы документа LaTeX, настроить масштаб, цвет и угол поворота.",
@@ -305,7 +305,7 @@
     "sliderText": "Фоновые надписи «Черновик», конфиденциальные метки и настройка прозрачности.",
     "sidebarText": "Добавляйте водяные знаки для рецензирования и проверки черновиков прямо в браузере с Labkeeper.",
     "ctaTitle": "Готовьте чистые черновики в&nbsp;Labkeeper",
-    "ctaText": "Онлайн-редактор LaTeX с возможностью быстрой сборки промежуточных версий документов с водяными знаками и защитой авторства.",
+    "ctaText": "Онлайн-редактор LaTeX с возможностью быстрой сборки промежуточных версий документов с водяными знаками.",
     "toc": [
       {
         "id": "intro",
@@ -352,7 +352,7 @@
       {
         "id": "single-page",
         "title": "Как показать знак только на первой странице",
-        "html": "                        <p>Если водяной знак требуется отобразить исключительно на титульном листе или первой странице препринта, используется специальная команда:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\DraftwatermarkOptions{firstpageonly=true}</code></pre>\n                        </div>\n                        <p>А при финальной компиляции чистовика достаточно добавить одну команду <code>\\DraftwatermarkOptions{show=false}</code>, чтобы мгновенно скрыть водяной знак во всем документе без удаления преамбулы.</p>"
+        "html": "                        <p>Если водяной знак требуется отобразить исключительно на титульном листе или первой странице препринта, передайте пакету опцию <code>firstpageonly</code>. Это опция самого пакета, а не ключ <code>\\DraftwatermarkOptions</code>: внутри команды она вызовет ошибку keyval.</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\usepackage[firstpageonly]{draftwatermark}</code></pre>\n                        </div>\n                        <p>А при финальной компиляции чистовика достаточно добавить команду <code>\\DraftwatermarkOptions{stamp=false}</code> или подключить пакет с опцией <code>final</code>, чтобы скрыть водяной знак во всем документе без удаления преамбулы.</p>"
       }
     ],
     "tips": [
@@ -366,7 +366,7 @@
       }
     ],
     "editorExample": {
-      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage{draftwatermark}\\SetWatermarkText{DRAFT}\\SetWatermarkScale{.8}\n\\begin{document}\n\\section{Draft report}This page carries a background watermark.\n\\end{document}"
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage{draftwatermark}\\DraftwatermarkOptions{text={ЧЕРНОВИК},scale=0.8}\n\\begin{document}\n\\section{Черновик отчёта}На фоне страницы — водяной знак.\n\\end{document}"
     }
   },
   {
@@ -385,13 +385,13 @@
       "синтаксическое дерево latex онлайн"
     ],
     "datePublished": "2026-09-05",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-18",
     "readingTime": "7 мин",
     "cardTitle": "Построение деревьев в LaTeX: синтаксис и возможности пакета forest",
     "cardDescription": "Как рисовать синтаксические деревья разбора, родословные древа и графы решений в LaTeX с автоматическим расчетом узлов через пакет forest.",
     "sliderTitle": "Деревья и графы в LaTeX (forest)",
     "sliderText": "Скобочная нотация, автоматическая упаковка узлов и синтаксические деревья.",
-    "sidebarText": "Верстайте синтаксические и структурные деревья в веб-редакторе Labkeeper с мгновенным предпросмотром.",
+    "sidebarText": "Верстайте синтаксические и структурные деревья в веб-редакторе Labkeeper с предпросмотром PDF.",
     "ctaTitle": "Визуализируйте структуры в&nbsp;Labkeeper",
     "ctaText": "Онлайн-редактор LaTeX с поддержкой TikZ и пакета forest для автоматического построения векторных схем и графов.",
     "toc": [
@@ -430,7 +430,7 @@
       {
         "id": "linguistics",
         "title": "Синтаксическое дерево latex онлайн: лингвистический разбор",
-        "html": "                        <p>В лингвистике и компьютерной филологии постоянно строится <strong>синтаксическое дерево latex онлайн</strong> (дерево составляющих или зависимостей):</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\begin{forest}\n[S\n    [NP [Студент, roof]]\n    [VP\n        [V [пишет]]\n        [NP\n            [Adj [отличный]]\n            [N [отчет]]\n        ]\n    ]\n]\n\\end{forest}</code></pre>\n                        </div>\n                        <p>Опция <code>roof</code> превращает ветвь в аккуратный треугольник над группой слов, что является общепринятым стандартом лингвистических публикаций.</p>"
+        "html": "                        <p>В лингвистике и компьютерной филологии постоянно строится <strong>синтаксическое дерево latex онлайн</strong> (дерево составляющих или зависимостей):</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>% В преамбуле: \\usepackage[linguistics]{forest}\n\\begin{forest}\n[S\n    [NP [Студент, roof]]\n    [VP\n        [V [пишет]]\n        [NP\n            [Adj [отличный]]\n            [N [отчет]]\n        ]\n    ]\n]\n\\end{forest}</code></pre>\n                        </div>\n                        <p>Опция <code>roof</code> превращает ветвь в аккуратный треугольник над группой слов, что является общепринятым стандартом лингвистических публикаций. Она входит в библиотеку <code>linguistics</code>: подключите пакет как <code>\\usepackage[linguistics]{forest}</code> или добавьте <code>\\useforestlibrary{linguistics}</code>. Без библиотеки сборка остановится с ошибкой <code>I do not know the key '/tikz/roof'</code>.</p>"
       },
       {
         "id": "genealogy",
@@ -462,7 +462,7 @@
     "batch": 2,
     "title": "Использование шрифтов без засечек (Sans Serif) во всем документе LaTeX",
     "pageTitle": "Как поменять шрифт на весь документ LaTeX: шрифт без засечек онлайн — Labkeeper",
-    "metaDescription": "Как поменять шрифт на весь документ в LaTeX: включение шрифта без засечек (Sans Serif) онлайн, пакеты helvet, cmbright, соответствие ГОСТ в Labkeeper.",
+    "metaDescription": "Как поменять шрифт на весь документ в LaTeX: шрифт без засечек (Sans Serif) онлайн, PT Sans и DejaVu Sans с кириллицей, helvet для латиницы и формулы.",
     "breadcrumbTitle": "Шрифты без засечек (Sans Serif)",
     "h1": "Использование шрифтов без засечек (Sans Serif) во&nbsp;всем документе LaTeX",
     "categories": [
@@ -473,13 +473,13 @@
       "шрифт без засечек latex онлайн"
     ],
     "datePublished": "2026-09-05",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-18",
     "readingTime": "6 мин",
     "cardTitle": "Шрифты без засечек в LaTeX: как сменить семейство шрифта для всего документа",
-    "cardDescription": "Пошаговый гайд по переключению стандартного Computer Modern на гротески (Helvetica, Arial, DejaVu Sans), настройке масштабирования и математических символов.",
+    "cardDescription": "Пошаговый гайд по переключению стандартного Computer Modern на гротески с кириллицей (PT Sans, DejaVu Sans) и латинскую Helvetica, настройке масштабирования и математических символов.",
     "sliderTitle": "Шрифты без засечек (Sans Serif) в LaTeX",
-    "sliderText": "Глобальная смена шрифта на гротеск, пакеты helvet, cmbright и математика.",
-    "sidebarText": "Переключайте шрифты документов в один клик в онлайн-редакторе Labkeeper с моментальной компиляцией в PDF.",
+    "sliderText": "Глобальная смена шрифта на гротеск, пакеты PT Sans, DejaVu Sans, cmbright и математика.",
+    "sidebarText": "Меняйте шрифт всего документа одной строкой преамбулы в онлайн-редакторе Labkeeper.",
     "ctaTitle": "Настраивайте типографику в&nbsp;Labkeeper",
     "ctaText": "Онлайн-редактор с поддержкой кириллических гротесков, математических шрифтов и чистого экспорта в PDF.",
     "toc": [
@@ -518,7 +518,7 @@
       {
         "id": "sans-packages",
         "title": "Шрифт без засечек latex онлайн: пакеты Helvetica, DejaVu и PT Sans",
-        "html": "                        <p>Стандартный <code>\\sfdefault</code> в TeX выглядит как Computer Modern Sans. Если вам нужен более современный <strong>шрифт без засечек latex онлайн</strong>, используйте проверенные кириллические пакеты:</p>\n                        <ul>\n                            <li><strong>Helvetica (аналог Arial):</strong>\n                                <pre><code>\\usepackage[scaled=0.92]{helvet}\n\\renewcommand{\\familydefault}{\\sfdefault}</code></pre>\n                                Опция <code>scaled=0.92</code> выравнивает оптический размер с большинством стандартных гарнитур.\n                            </li>\n                            <li><strong>PT Sans (современный российский ГОСТ-шрифт):</strong>\n                                <pre><code>\\usepackage{paratype}\n\\renewcommand{\\familydefault}{\\sfdefault}</code></pre>\n                            </li>\n                            <li><strong>DejaVu Sans (отличная поддержка символов и формул):</strong>\n                                <pre><code>\\usepackage{dejavu-sans}\n\\renewcommand{\\familydefault}{\\sfdefault}</code></pre>\n                            </li>\n                        </ul>"
+        "html": "                        <p>Стандартный <code>\\sfdefault</code> в TeX выглядит как Computer Modern Sans. Если вам нужен более современный <strong>шрифт без засечек latex онлайн</strong>, подключите пакет шрифтов. Для русского текста проверьте кириллицу: она есть не во всех пакетах.</p>\n                        <ul>\n                            <li><strong>PT Sans — свободный шрифт ParaType с полной кириллицей:</strong>\n                                <pre><code>\\usepackage{paratype}\n\\renewcommand{\\familydefault}{\\sfdefault}</code></pre>\n                                Пакет <code>paratype</code> подключает всё семейство PT (Serif, Sans и Mono). Если нужен только гротеск, используйте <code>\\usepackage{PTSans}</code>.\n                            </li>\n                            <li><strong>DejaVu Sans (кириллица и широкий набор символов):</strong>\n                                <pre><code>\\usepackage{DejaVuSans}\n\\renewcommand{\\familydefault}{\\sfdefault}</code></pre>\n                            </li>\n                            <li><strong>Helvetica (аналог Arial, только латиница):</strong>\n                                <pre><code>\\usepackage[scaled=0.92]{helvet}\n\\renewcommand{\\familydefault}{\\sfdefault}</code></pre>\n                                Опция <code>scaled=0.92</code> выравнивает оптический размер с большинством стандартных гарнитур. Кириллицы в <code>helvet</code> нет: с <code>T2A</code> русский текст наберётся другим шрифтом, а в логе появится предупреждение <code>Font shape T2A/phv/m/n undefined</code>. Используйте Helvetica для англоязычных документов.\n                            </li>\n                        </ul>"
       },
       {
         "id": "math-fonts",
@@ -542,7 +542,7 @@
       }
     ],
     "editorExample": {
-      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\renewcommand{\\familydefault}{\\sfdefault}\n\\begin{document}\n\\section{Sans serif document}\nBody text uses the same sans serif family as the headings.\n\\textbf{Bold} and \\textit{italic} remain available.\n\\end{document}"
+      "latex": "\\documentclass[a4paper,12pt]{article}\n\\usepackage[T2A]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage[english,russian]{babel}\n\\usepackage{amsmath,graphicx}\n\\usepackage{PTSans}\n\\renewcommand{\\familydefault}{\\sfdefault}\n\\begin{document}\n\\section{Документ без засечек}\nОсновной текст и заголовки набраны шрифтом PT Sans.\n\\textbf{Полужирный} и \\textit{курсив} тоже доступны.\n\\end{document}"
     }
   },
   {
@@ -561,7 +561,7 @@
       "перенос таблицы на следующий лист latex"
     ],
     "datePublished": "2026-09-05",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-18",
     "readingTime": "8 мин",
     "cardTitle": "Многостраничные таблицы в LaTeX: пошаговая настройка пакета longtable",
     "cardDescription": "Как переносить длинные таблицы через разрывы страниц, автоматически повторять шапку таблицы, настраивать подписи «Продолжение таблицы» по ГОСТ.",
@@ -569,7 +569,7 @@
     "sliderText": "Автоматический перенос строк, повтор шапки таблицы и правила оформления ГОСТ.",
     "sidebarText": "Верстайте большие массивы данных и спецификации в LaTeX без ручных разрывов страниц в Labkeeper.",
     "ctaTitle": "Работайте со сложными таблицами в&nbsp;Labkeeper",
-    "ctaText": "Онлайн-редактор LaTeX с готовыми сниппетами для таблиц longtable и автоматической компиляцией в PDF.",
+    "ctaText": "Онлайн-редактор LaTeX с поддержкой longtable и сборкой многостраничных таблиц в PDF.",
     "toc": [
       {
         "id": "problem",
@@ -601,7 +601,7 @@
       {
         "id": "setup",
         "title": "Таблица на несколько страниц latex longtable: базовый шаблон",
-        "html": "                        <p>Подключите пакет: <code>\\usepackage{longtable}</code>. Полноценная <strong>таблица на несколько страниц latex longtable</strong> разделяется на четыре служебные зоны заголовков и подвалов:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\begin{longtable}{|c|p{8cm}|r|}\n    % 1. Шапка на САМОЙ ПЕРВОЙ странице\n    \\caption{Экспериментальные данные измерений}\\label{tab:measurements} \\\\\n    \\hline\n    \\textbf{№} & \\textbf{Наименование образца} & \\textbf{Масса, г} \\\\\n    \\hline\n    \\endfirsthead\n\n    % 2. Шапка на ВСЕХ ПОСЛЕДУЮЩИХ страницах (по ГОСТ)\n    \\multicolumn{3}{r}{\\textit{Продолжение таблицы \\ref{tab:measurements}}} \\\\\n    \\hline\n    \\textbf{№} & \\textbf{Наименование образца} & \\textbf{Масса, г} \\\\\n    \\hline\n    \\endhead\n\n    % 3. Подвал на промежуточных страницах\n    \\hline\n    \\multicolumn{3}{|r|}{\\small Продолжение на следующей странице...} \\\\\n    \\hline\n    \\endfoot\n\n    % 4. Завершающий подвал на последней странице\n    \\hline\n    \\endlastfoot\n\n    % ТЕЛО ТАБЛИЦЫ\n    1 & Образец кремниевой пластины марки А-1 & 14.52 \\\\ \\hline\n    2 & Образец кремниевой пластины марки А-2 & 14.88 \\\\ \\hline\n    % ... сотни строк данных ...\n\\end{longtable}</code></pre>\n                        </div>"
+        "html": "                        <p>Подключите пакет: <code>\\usepackage{longtable}</code>. Полноценная <strong>таблица на несколько страниц latex longtable</strong> разделяется на четыре служебные зоны заголовков и подвалов:</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>\\begin{longtable}{|c|p{8cm}|r|}\n    % 1. Шапка на САМОЙ ПЕРВОЙ странице\n    \\caption{Экспериментальные данные измерений}\\label{tab:measurements} \\\\\n    \\hline\n    \\textbf{№} & \\textbf{Наименование образца} & \\textbf{Масса, г} \\\\\n    \\hline\n    \\endfirsthead\n\n    % 2. Шапка на ВСЕХ ПОСЛЕДУЮЩИХ страницах (по ГОСТ)\n    \\multicolumn{3}{l}{\\textit{Продолжение таблицы \\ref{tab:measurements}}} \\\\\n    \\hline\n    \\textbf{№} & \\textbf{Наименование образца} & \\textbf{Масса, г} \\\\\n    \\hline\n    \\endhead\n\n    % 3. Подвал на промежуточных страницах (необязательно: ГОСТ его не требует)\n    \\hline\n    \\multicolumn{3}{|r|}{\\small Продолжение на следующей странице...} \\\\\n    \\hline\n    \\endfoot\n\n    % 4. Завершающий подвал на последней странице\n    \\hline\n    \\endlastfoot\n\n    % ТЕЛО ТАБЛИЦЫ\n    1 & Образец кремниевой пластины марки А-1 & 14.52 \\\\ \\hline\n    2 & Образец кремниевой пластины марки А-2 & 14.88 \\\\ \\hline\n    % ... сотни строк данных ...\n\\end{longtable}</code></pre>\n                        </div>"
       },
       {
         "id": "headers-footers",
@@ -611,7 +611,7 @@
       {
         "id": "gost-pagination",
         "title": "Перенос таблицы на следующий лист latex: подписи по ГОСТ",
-        "html": "                        <p>Российский ГОСТ 7.32-2017 строго регламентирует, как должен выглядеть <strong>перенос таблицы на следующий лист latex</strong> (подробный разбор правил смотрите в статье о <a href=\"/blog/table-continuation-multipage-gost-diploma\">переносе таблицы на следующий лист в дипломе</a>):</p>\n                        <ul>\n                            <li>На первом листе над таблицей пишется полное название: «Таблица 1 — Название».</li>\n                            <li>На всех следующих листах перед повторной шапкой выравнивается по правому краю надпись <em>«Продолжение таблицы 1»</em>.</li>\n                            <li>Использование связки <code>\\multicolumn{N}{r}{\\textit{Продолжение таблицы \\ref{...}}}</code> в блоке <code>\\endhead</code> полностью закрывает это требование нормоконтроля в автоматическом режиме.</li>\n                        </ul>"
+        "html": "                        <p>Российский ГОСТ 7.32-2017 строго регламентирует, как должен выглядеть <strong>перенос таблицы на следующий лист latex</strong> (подробный разбор правил смотрите в статье о <a href=\"/blog/table-continuation-multipage-gost-diploma\">переносе таблицы на следующий лист в дипломе</a>):</p>\n                        <ul>\n                            <li>На первом листе над таблицей пишется полное название: «Таблица 1 — Название».</li>\n                            <li>На всех следующих листах перед повторной шапкой слева пишется надпись <em>«Продолжение таблицы 1»</em>.</li>\n                            <li>Использование связки <code>\\multicolumn{N}{l}{\\textit{Продолжение таблицы \\ref{...}}}</code> в блоке <code>\\endhead</code> полностью закрывает это требование нормоконтроля в автоматическом режиме.</li>\n                            <li>Подвал «Продолжение на следующей странице…» ГОСТ не требует: добавляйте его, только если об этом просит методичка.</li>\n                        </ul>"
       },
       {
         "id": "alignment",
@@ -649,7 +649,7 @@
       "неразрывный пробел в latex тильда"
     ],
     "datePublished": "2026-09-05",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-18",
     "readingTime": "6 мин",
     "cardTitle": "Управление переносами и неразрывными пробелами в LaTeX",
     "cardDescription": "Как убрать нежелательные переносы терминов, склеить предлоги с именами через неразрывный пробел ~, запретить разбиение формул через mbox.",
@@ -657,7 +657,7 @@
     "sliderText": "Неразрывные пробелы, запрет дефисных переносов и связывание формул.",
     "sidebarText": "Контролируйте академическую типографику и оформление списков в веб-редакторе Labkeeper.",
     "ctaTitle": "Вёрстка по ГОСТ без висячих строк в&nbsp;Labkeeper",
-    "ctaText": "Онлайн-редактор документов LaTeX с автоматической проверкой переносов и быстрым рендерингом страниц.",
+    "ctaText": "Онлайн-редактор документов LaTeX: сборка PDF в браузере и полный контроль переносов прямо в коде.",
     "toc": [
       {
         "id": "intro",
@@ -689,7 +689,7 @@
       {
         "id": "tilde-space",
         "title": "Неразрывный пробел в latex тильда: защита от висячих предлогов",
-        "html": "                        <p>Главный инструмент типографа — <strong>неразрывный пробел в latex тильда</strong> (символ <code>~</code>). Он заменяет стандартный пробел и сообщает компилятору: <em>эти два элемента должны остаться на одной строке ни при каких обстоятельствах</em> (это особенно важно соблюдать вместе с правильным <a href=\"/blog/paragraph-indent-1-25-gost\">абзацным отступом 1.25 см по ГОСТ</a>).</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>В~соответствии с~требованиями ГОСТ~7.32-2017, приведенными в~разделе~4...\nПрофессор Иванов~И.~И. провел измерения на~стенде.\nДлина волны составила 532~нм при температуре 20~$^\\circ$C.</code></pre>\n                        </div>\n                        <p>Обязательно ставьте тильду:</p>\n                        <ul>\n                            <li>Между числом и единицей измерения: <code>10~кг</code>, <code>250~В</code>, <code>5~мин</code>.</li>\n                            <li>Между инициалами и фамилией: <code>А.~С.~Пушкин</code>.</li>\n                            <li>Перед ссылками на формулы, рисунки и литературу: <code>рисунок~\\ref{fig:1}</code>, <code>[~\\cite{lit1}]</code>.</li>\n                        </ul>"
+        "html": "                        <p>Главный инструмент типографа — <strong>неразрывный пробел в latex тильда</strong> (символ <code>~</code>). Он заменяет стандартный пробел и сообщает компилятору: <em>эти два элемента должны остаться на одной строке ни при каких обстоятельствах</em> (это особенно важно соблюдать вместе с правильным <a href=\"/blog/paragraph-indent-1-25-gost\">абзацным отступом 1.25 см по ГОСТ</a>).</p>\n                        <div class=\"article-code\">\n                            <div class=\"article-code__header\"><span class=\"article-code__lang\">LaTeX</span></div>\n                            <pre><code>В~соответствии с~требованиями ГОСТ~7.32-2017, приведенными в~разделе~4...\nПрофессор Иванов~И.~И. провел измерения на~стенде.\nДлина волны составила 532~нм при температуре 20~$^\\circ$C.</code></pre>\n                        </div>\n                        <p>Обязательно ставьте тильду:</p>\n                        <ul>\n                            <li>Между числом и единицей измерения: <code>10~кг</code>, <code>250~В</code>, <code>5~мин</code>.</li>\n                            <li>Между инициалами и фамилией: <code>А.~С.~Пушкин</code>.</li>\n                            <li>Перед ссылками на формулы, рисунки и литературу: <code>рисунок~\\ref{fig:1}</code>, <code>в работе~\\cite{lit1}</code>.</li>\n                        </ul>"
       },
       {
         "id": "mbox-block",
@@ -710,7 +710,7 @@
     "tips": [
       {
         "title": "Пакет microtype",
-        "html": "<p>Подключение <code>\\usepackage{microtype}</code> включает оптическое выравнивание полей и микромасштабирование глифов, сокращая число переносов на 80% естественным путем.</p>"
+        "html": "<p>Подключение <code>\\usepackage{microtype}</code> включает оптическое выравнивание полей и микромасштабирование глифов, заметно сокращая число переносов естественным путем.</p>"
       },
       {
         "title": "Перенос слов с уже имеющимся дефисом",
@@ -737,7 +737,7 @@
       "конечный автомат latex онлайн"
     ],
     "datePublished": "2026-09-05",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-18",
     "readingTime": "8 мин",
     "cardTitle": "Конечные автоматы и графы в LaTeX: руководство по библиотеке TikZ automata",
     "cardDescription": "Как строить ориентированные графы, диаграммы состояний (DFA/NFA), настраивать петли, радиусы узлов и переходы в академических работах.",
@@ -745,7 +745,7 @@
     "sliderText": "Библиотека automata, узлы состояний, дуги переходов и стильные петли.",
     "sidebarText": "Рисуйте сложные математические графы и конечные автоматы прямо в браузере с Labkeeper.",
     "ctaTitle": "Создавайте векторные схемы в&nbsp;Labkeeper",
-    "ctaText": "Онлайн-редактор LaTeX с полной поддержкой TikZ, моментальной компиляцией в PDF и экспортом графики.",
+    "ctaText": "Онлайн-редактор LaTeX с полной поддержкой TikZ и сборкой векторных схем в PDF.",
     "toc": [
       {
         "id": "intro",
@@ -792,7 +792,7 @@
       {
         "id": "styling-tips",
         "title": "Позиционирование узлов относительно друг друга",
-        "html": "                        <p>Советы для создания чистых схем:</p>\n                        <ul>\n                            <li>Используйте <code>node distance=2.5cm and 3cm</code>, чтобы раздельно управлять горизонтальным и вертикальным шагом сетки.</li>\n                            <li>Для русскоязычных надписей на стрелках используйте стандартные текстовые ноды: <code>node[midway, above] {сигнал}</code>.</li>\n                            <li>Цветные заливки состояний (<code>fill=green!20</code>) помогают визуализировать текущее состояние алгоритма при пошаговом объяснении в презентациях.</li>\n                        </ul>"
+        "html": "                        <p>Советы для создания чистых схем:</p>\n                        <ul>\n                            <li>Используйте <code>node distance=2.5cm and 3cm</code>, чтобы раздельно управлять шагом сетки: первое число задаёт расстояние по вертикали, второе — по горизонтали.</li>\n                            <li>Для русскоязычных надписей на стрелках используйте стандартные текстовые ноды: <code>node[midway, above] {сигнал}</code>.</li>\n                            <li>Цветные заливки состояний (<code>fill=green!20</code>) помогают визуализировать текущее состояние алгоритма при пошаговом объяснении в презентациях.</li>\n                        </ul>"
       }
     ],
     "tips": [

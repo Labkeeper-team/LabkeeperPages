@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-geometry-margins-gost"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с LaTeX","Дипломные работы"]
     }
@@ -219,7 +219,7 @@
                         <a href="/blog#diploma" class="article-tag">Дипломные работы</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~6 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~6 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -233,13 +233,14 @@
 
                     <section class="article-section" id="gost-standards">
                         <h2 class="article-section__title">Размер полей ГОСТ в LaTeX: требования стандарта 7.32</h2>
-                        <p>Стандартный <strong>размер полей гост в latex</strong> для отчетов о НИР, выпускных квалификационных работ и диссертаций строго регламентирован ГОСТ 7.32-2017 (наряду со строгой нормой на <a href="/blog/paragraph-indent-1-25-gost">абзацный отступ 1.25 см по ГОСТ</a>):</p>
+                        <p>Стандартный <strong>размер полей гост в latex</strong> для отчетов о НИР задаёт ГОСТ 7.32-2017 (наряду с нормой на <a href="/blog/paragraph-indent-1-25-gost">абзацный отступ 1.25 см по ГОСТ</a>), и на него обычно опираются методички по выпускным квалификационным работам:</p>
                         <ul>
-                            <li>Левое поле — не менее <strong>30 мм</strong> (для последующего переплета и подшивки документа);</li>
-                            <li>Правое поле — не менее <strong>15 мм</strong> (в некоторых вузах требуют 10 мм);</li>
-                            <li>Верхнее поле — не менее <strong>20 мм</strong>;</li>
-                            <li>Нижнее поле — не менее <strong>20 мм</strong>.</li>
+                            <li>Левое поле — <strong>30 мм</strong> (для последующего переплета и подшивки документа);</li>
+                            <li>Правое поле — <strong>15 мм</strong> (в некоторых вузах требуют 10 мм);</li>
+                            <li>Верхнее поле — <strong>20 мм</strong>;</li>
+                            <li>Нижнее поле — <strong>20 мм</strong>.</li>
                         </ul>
+                        <p>У диссертаций поля другие: ГОСТ Р 7.0.11-2011 задаёт левое поле 25 мм, правое 10 мм, верхнее и нижнее по 20 мм.</p>
                     </section>
 
                     <section class="article-section" id="setup-geometry">
@@ -291,7 +292,7 @@
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Используйте готовые преднастроенные шаблоны по ГОСТ с пакетом geometry в онлайн-редакторе Labkeeper.</p>
+                    <p class="article-sidebar__title">Настраивайте поля по ГОСТ пакетом geometry в онлайн-редакторе Labkeeper и проверяйте их рамкой showframe в PDF.</p>
                     <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%5Bleft%3D30mm%2Cright%3D15mm%2Ctop%3D20mm%2Cbottom%3D20mm%2Cshowframe%5D%7Bgeometry%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection*%7BPage+margins%7D%0ALeft%3A+30+mm.+Right%3A+15+mm.+Top+and+bottom%3A+20+mm.%0A%5Cpar+The+frame+shows+the+text+area.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
@@ -307,8 +308,8 @@
         <section class="cta-features" id="cta-features">
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
-                <h2 class="cta-features__intro-title">Пройдите нормоконтроль с первого раза в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с поддержкой всех ГОСТ-пакетов, точной геометрией страниц и мгновенной сборкой PDF.</p>
+                <h2 class="cta-features__intro-title">Готовьте работу к&nbsp;нормоконтролю в&nbsp;Labkeeper</h2>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX с точной настройкой полей через geometry и сборкой PDF в браузере.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
