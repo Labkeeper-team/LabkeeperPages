@@ -236,7 +236,7 @@
                         <ul>
                             <li><strong>GitHub</strong> очищает HTML: атрибуты <code>style</code>, теги <code>&lt;iframe&gt;</code> и скрипты вырезаются.</li>
                             <li><strong>Markdown-проект Labkeeper</strong> показывает HTML-теги в превью, а при сохранении в PDF через печать браузера они попадают на лист такими же.</li>
-                            <li><strong>LaTeX-проект Labkeeper</strong> переводит Markdown-сегменты в LaTeX, и сырой HTML при этом выбрасывается: строчные теги теряют оформление, а блочные элементы исчезают вместе с содержимым.</li>
+                            <li><strong>LaTeX-проект Labkeeper</strong> переводит Markdown-сегменты в LaTeX, и сырой HTML при этом теряет оформление. Блок без пустой строки внутри Pandoc выбрасывает целиком. С пустой строкой, о которой сказано ниже, тело остаётся обычным текстом, а обёртка тега пропадает.</li>
                         </ul>
                     </section>
 
@@ -247,7 +247,7 @@
                             <li>Вставка видео и аудио: теги <code>&lt;video&gt;</code>, <code>&lt;iframe&gt;</code>;</li>
                             <li>Подстрочные и надстрочные индексы химических элементов: <code>H&lt;sub&gt;2&lt;/sub&gt;O</code> &rarr; H<sub>2</sub>O;</li>
                             <li>Центрирование подписей к рисункам и таблицам: <code>&lt;p align="center"&gt;Рисунок 1&lt;/p&gt;</code>;</li>
-                            <li>Управление шириной и высотой изображений: <code>&lt;img src="img.png" width="300" /&gt;</code> — так работает GitHub, а превью Labkeeper всегда выводит картинку шириной 500 px (подробнее см. руководство по <a href="/blog/markdown-image-size-width-height">настройке размеров картинок в Markdown</a>).</li>
+                            <li>Управление шириной и высотой изображений: <code>&lt;img src="img.png" width="300" /&gt;</code> — так работает GitHub, а превью Labkeeper оставляет картинке её размер и учитывает атрибут width, пока она не упрётся в ширину колонки (подробнее см. руководство по <a href="/blog/markdown-image-size-width-height">настройке размеров картинок в Markdown</a>).</li>
                         </ul>
                     </section>
 

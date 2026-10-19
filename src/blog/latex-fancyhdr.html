@@ -272,8 +272,8 @@
 \fancyhead[LE]{\thepage}
 \fancyhead[RE]{\itshape Научный журнал, Том 12}
 
-% Нечетные страницы (Odd): название текущего раздела слева, номер справа
-\fancyhead[LO]{\itshape\leftmark}
+% Нечетные страницы (Odd). В book/report \leftmark — глава, \rightmark — раздел
+\fancyhead[LO]{\itshape\rightmark}
 \fancyhead[RO]{\thepage}</code></pre>
                         </div>
                         <p>Здесь <code>L, C, R</code> — выравнивание (Left, Center, Right), а <code>E, O</code> — четность страниц (Even, Odd).</p>

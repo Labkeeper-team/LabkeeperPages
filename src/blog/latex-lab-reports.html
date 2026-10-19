@@ -377,7 +377,7 @@ $g = \SI{9.81 +- 0.04}{\meter\per\second\squared}$</code></pre>
             only marks,
             error bars/.cd,
             y dir=both, y explicit
-        ] table [x=U, y=I, y error=dI, col sep=comma] {data.csv};
+        ] table [x=U, y=I, y error=dI, col sep=comma] {data.csv}; % положите data.csv в проект
         \addplot[thick, domain=0:10] {2.5*x};
         \end{axis}
     \end{tikzpicture}
@@ -413,7 +413,7 @@ $g = \SI{9.81 +- 0.04}{\meter\per\second\squared}$</code></pre>
                                     <h3>Данные из CSV через pgfplotstable</h3>
                                     <p>Пакет <code>pgfplotstable</code> позволяет загружать экспериментальные данные из
                                         .csv или .txt файлов напрямую в таблицы и графики LaTeX. Файлы с расширением
-                                        .dat в проект Labkeeper загрузить нельзя — сохраните данные в CSV.</p>
+                                        .dat загрузить можно: проверка имени файла расширение не запрещает. Для pgfplots удобнее CSV.</p>
                                 </div>
                             </div>
                         </div>
@@ -432,7 +432,7 @@ $g = \SI{9.81 +- 0.04}{\meter\per\second\squared}$</code></pre>
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Оформляйте лабораторные работы в&nbsp;онлайн-редакторе Labkeeper.</p>
-                    <a href="/project/default?open=latex&amp;compute=%2F%2F+%D0%94%D0%BB%D0%B8%D0%BD%D0%B0+%D0%BD%D0%B8%D1%82%D0%B8%2C+%D0%BC%2C+%D0%B8+%D0%BF%D0%B5%D1%80%D0%B8%D0%BE%D0%B4+%D0%BA%D0%BE%D0%BB%D0%B5%D0%B1%D0%B0%D0%BD%D0%B8%D0%B9%2C+%D1%81%0Al+%3D+1.000+%23+0.002%0AT+%3D+2.006+%23+0.004%0Ag+%3D+4+*+3.141592653589793%5E2+*+l+%2F+T%5E2%0Adg+%3D+err%28g%29&amp;latex=%5Csection*%7B%D0%A3%D1%81%D0%BA%D0%BE%D1%80%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%BD%D0%BE%D0%B3%D0%BE+%D0%BF%D0%B0%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F%7D%0A%5C%5Bg%3D%5Cfrac%7B4%5Cpi%5E2+l%7D%7BT%5E2%7D%5C%5D%0A%24l%3D%281%7B%2C%7D000%5Cpm0%7B%2C%7D002%29%24%7E%D0%BC%2C+%24T%3D%282%7B%2C%7D006%5Cpm0%7B%2C%7D004%29%24%7E%D1%81.%0A%5Cpar+%24g%24+%3D+%24%7Bg%7D+%D0%BC%2F%D1%81%24%5E2%24%2C+%D0%BF%D0%BE%D0%B3%D1%80%D0%B5%D1%88%D0%BD%D0%BE%D1%81%D1%82%D1%8C+%24%7Bdg%7D+%D0%BC%2F%D1%81%24%5E2%24." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <a href="/project/default?open=latex&amp;compute=%2F%2F+%D0%94%D0%BB%D0%B8%D0%BD%D0%B0+%D0%BD%D0%B8%D1%82%D0%B8%2C+%D0%BC%2C+%D0%B8+%D0%BF%D0%B5%D1%80%D0%B8%D0%BE%D0%B4+%D0%BA%D0%BE%D0%BB%D0%B5%D0%B1%D0%B0%D0%BD%D0%B8%D0%B9%2C+%D1%81%0Al+%3D+1.000+%23+0.002%0AT+%3D+2.006+%23+0.004%0Ag+%3D+4+*+3.141592653589793%5E2+*+l+%2F+T%5E2%0Adg+%3D+err%28g%29&amp;latex=%5Csection*%7B%D0%A3%D1%81%D0%BA%D0%BE%D1%80%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%BD%D0%BE%D0%B3%D0%BE+%D0%BF%D0%B0%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F%7D%0A%5C%5Bg%3D%5Cfrac%7B4%5Cpi%5E2+l%7D%7BT%5E2%7D%5C%5D%0A%24l%3D%281%7B%2C%7D000%5Cpm0%7B%2C%7D002%29%24%7E%D0%BC%2C+%24T%3D%282%7B%2C%7D006%5Cpm0%7B%2C%7D004%29%24%7E%D1%81.%0A%5Cpar+%24g%24+%3D+%24%7Bg%7D%7E%D0%BC%2F%D1%81%5Ctextsuperscript%7B2%7D%2C+%D0%BF%D0%BE%D0%B3%D1%80%D0%B5%D1%88%D0%BD%D0%BE%D1%81%D1%82%D1%8C+%24%7Bdg%7D%7E%D0%BC%2F%D1%81%5Ctextsuperscript%7B2%7D." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -486,7 +486,7 @@ $g = \SI{9.81 +- 0.04}{\meter\per\second\squared}$</code></pre>
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex&amp;compute=%2F%2F+%D0%94%D0%BB%D0%B8%D0%BD%D0%B0+%D0%BD%D0%B8%D1%82%D0%B8%2C+%D0%BC%2C+%D0%B8+%D0%BF%D0%B5%D1%80%D0%B8%D0%BE%D0%B4+%D0%BA%D0%BE%D0%BB%D0%B5%D0%B1%D0%B0%D0%BD%D0%B8%D0%B9%2C+%D1%81%0Al+%3D+1.000+%23+0.002%0AT+%3D+2.006+%23+0.004%0Ag+%3D+4+*+3.141592653589793%5E2+*+l+%2F+T%5E2%0Adg+%3D+err%28g%29&amp;latex=%5Csection*%7B%D0%A3%D1%81%D0%BA%D0%BE%D1%80%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%BD%D0%BE%D0%B3%D0%BE+%D0%BF%D0%B0%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F%7D%0A%5C%5Bg%3D%5Cfrac%7B4%5Cpi%5E2+l%7D%7BT%5E2%7D%5C%5D%0A%24l%3D%281%7B%2C%7D000%5Cpm0%7B%2C%7D002%29%24%7E%D0%BC%2C+%24T%3D%282%7B%2C%7D006%5Cpm0%7B%2C%7D004%29%24%7E%D1%81.%0A%5Cpar+%24g%24+%3D+%24%7Bg%7D+%D0%BC%2F%D1%81%24%5E2%24%2C+%D0%BF%D0%BE%D0%B3%D1%80%D0%B5%D1%88%D0%BD%D0%BE%D1%81%D1%82%D1%8C+%24%7Bdg%7D+%D0%BC%2F%D1%81%24%5E2%24." class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;compute=%2F%2F+%D0%94%D0%BB%D0%B8%D0%BD%D0%B0+%D0%BD%D0%B8%D1%82%D0%B8%2C+%D0%BC%2C+%D0%B8+%D0%BF%D0%B5%D1%80%D0%B8%D0%BE%D0%B4+%D0%BA%D0%BE%D0%BB%D0%B5%D0%B1%D0%B0%D0%BD%D0%B8%D0%B9%2C+%D1%81%0Al+%3D+1.000+%23+0.002%0AT+%3D+2.006+%23+0.004%0Ag+%3D+4+*+3.141592653589793%5E2+*+l+%2F+T%5E2%0Adg+%3D+err%28g%29&amp;latex=%5Csection*%7B%D0%A3%D1%81%D0%BA%D0%BE%D1%80%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%BD%D0%BE%D0%B3%D0%BE+%D0%BF%D0%B0%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F%7D%0A%5C%5Bg%3D%5Cfrac%7B4%5Cpi%5E2+l%7D%7BT%5E2%7D%5C%5D%0A%24l%3D%281%7B%2C%7D000%5Cpm0%7B%2C%7D002%29%24%7E%D0%BC%2C+%24T%3D%282%7B%2C%7D006%5Cpm0%7B%2C%7D004%29%24%7E%D1%81.%0A%5Cpar+%24g%24+%3D+%24%7Bg%7D%7E%D0%BC%2F%D1%81%5Ctextsuperscript%7B2%7D%2C+%D0%BF%D0%BE%D0%B3%D1%80%D0%B5%D1%88%D0%BD%D0%BE%D1%81%D1%82%D1%8C+%24%7Bdg%7D%7E%D0%BC%2F%D1%81%5Ctextsuperscript%7B2%7D." class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

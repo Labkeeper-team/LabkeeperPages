@@ -237,7 +237,7 @@
                         <p>Отчет по лабораторной работе — это официальный научно-технический документ, подтверждающий выполнение учебного плана студентом. Базовые требования к оформлению регламентируются <strong>ГОСТ 7.32-2017</strong> (Отчет о научно-исследовательской работе) и ГОСТ 2.105-2019:</p>
                         <ul>
                             <li><strong>Поля страницы:</strong> левое — 30 мм (для подшивки), правое — 15 мм, верхнее и нижнее — по 20 мм;</li>
-                            <li><strong>Шрифт:</strong> гарнитура Times New Roman, размер 12 или 14 pt, цвет строго черный;</li>
+                            <li><strong>Шрифт:</strong> Times New Roman, размер 12 или 14 pt, цвет строго черный. В pdfLaTeX сам Times New Roman недоступен: в шаблоне ниже подключён пакет <code>tempora</code>, близкий к Times и с кириллицей;</li>
                             <li><strong>Межстрочный интервал:</strong> полуторный (1.5), абзацный отступ («красная строка») — ровно 1.25 см;</li>
                             <li><strong>Выравнивание текста:</strong> строго по ширине листа с включенным автоматическим переносом слов.</li>
                         </ul>
@@ -269,6 +269,7 @@
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
+\usepackage{tempora}
 \usepackage[left=30mm,right=15mm,top=20mm,bottom=20mm]{geometry}
 \usepackage{setspace}
 \onehalfspacing

@@ -271,6 +271,7 @@
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX Газетная полоса</span></div>
                             <pre><code>\documentclass[a4paper,10pt]{article}
+\usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
 \usepackage{multicol}
@@ -296,7 +297,7 @@
 
                     <section class="article-section" id="wide-elements">
                         <h2 class="article-section__title">Широкие рисунки и формулы на всю ширину страницы</h2>
-                        <p>Если внутри многоколоночного текста требуется разместить широкую формулу или схему, используют окружения со звездочкой (<code>\begin{figure*}</code>, <code>\begin{table*}</code>), которые растягиваются на всю ширину полосы набора.</p>
+                        <p>Если внутри многоколоночного текста требуется разместить широкую формулу или схему, в режиме <code>twocolumn</code> используют окружения со звездочкой (<code>\begin{figure*}</code>, <code>\begin{table*}</code>). Внутри <code>multicols</code> пакет флоаты не поддерживает, и звёздные окружения ширину его колонок не занимают.</p>
                     </section>
 
                     <section class="article-section" id="tips">

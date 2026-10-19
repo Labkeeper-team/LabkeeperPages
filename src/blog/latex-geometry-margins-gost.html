@@ -266,7 +266,7 @@
 
                     <section class="article-section" id="two-sided">
                         <h2 class="article-section__title">Двусторонняя печать для диссертаций (twoside)</h2>
-                        <p>При двусторонней печати документа поля чередуются на четных и нечетных листах. В таком случае вместо <code>left</code> и <code>right</code> задаются параметры <code>inner=30mm</code> (внутреннее поле корешка) и <code>outer=15mm</code> (внешнее поле страницы).</p>
+                        <p>При двусторонней печати документа поля чередуются на четных и нечетных листах. В таком случае у <code>\documentclass</code> нужна опция <code>twoside</code>, а вместо <code>left</code> и <code>right</code> задаются <code>inner=30mm</code> (внутреннее поле корешка) и <code>outer=15mm</code> (внешнее поле). Без <code>twoside</code> эти ключи не чередуются.</p>
                     </section>
 
                     <section class="article-section" id="tips">

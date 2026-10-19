@@ -240,7 +240,7 @@
 
                     <section class="article-section" id="listings-fix">
                         <h2 class="article-section__title">Русский язык в листингах кода LaTeX: правильная настройка listings</h2>
-                        <p>Чтобы корректно включить <strong>русский язык в листингах кода latex</strong> при использовании стандартного пакета <code>listings</code>, необходимо задать правильные параметры в преамбуле документа:</p>
+                        <p>Параметры <code>inputencoding</code> и <code>extendedchars</code> часто ставят первыми, но в pdfLaTeX их недостаточно для кириллицы внутри <code>lstlisting</code>. Рабочий способ — таблица <code>literate</code> ниже. Для полноты преамбула может выглядеть так:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX Преамбула</span></div>
                             <pre><code>\usepackage{listings}
@@ -286,7 +286,7 @@ def calculate_sum(a, b):
         {р}{{\cyrr}}1 {с}{{\cyrs}}1 {т}{{\cyrt}}1 {у}{{\cyru}}1
         {ф}{{\cyrf}}1 {х}{{\cyrh}}1 {ц}{{\cyrc}}1 {ч}{{\cyrch}}1
         {ш}{{\cyrsh}}1 {щ}{{\cyrshch}}1 {ъ}{{\cyrhrdsn}}1 {ы}{{\cyrery}}1
-        {ь}{{\cyrsftsn}}1 {э}{{\cyrerev}}1 {ю}{{\cyryu}}1 {я}{{\cyrya}}1
+        {ь}{{\cyrsftsn}}1 {э}{{\cyrerev}}1 {ю}{{\cyryu}}1 {я}{{\cyrya}}1 {ё}{{\cyryo}}1
         {А}{{\CYRA}}1 {Б}{{\CYRB}}1 {В}{{\CYRV}}1 {Г}{{\CYRG}}1
         {Д}{{\CYRD}}1 {Е}{{\CYRE}}1 {Ж}{{\CYRZH}}1 {З}{{\CYRZ}}1
         {И}{{\CYRI}}1 {Й}{{\CYRISHRT}}1 {К}{{\CYRK}}1 {Л}{{\CYRL}}1
@@ -294,10 +294,10 @@ def calculate_sum(a, b):
         {Р}{{\CYRR}}1 {С}{{\CYRS}}1 {Т}{{\CYRT}}1 {У}{{\CYRU}}1
         {Ф}{{\CYRF}}1 {Х}{{\CYRH}}1 {Ц}{{\CYRC}}1 {Ч}{{\CYRCH}}1
         {Ш}{{\CYRSH}}1 {Щ}{{\CYRSHCH}}1 {Ъ}{{\CYRHRDSN}}1 {Ы}{{\CYRERY}}1
-        {Ь}{{\CYRSFTSN}}1 {Э}{{\CYREREV}}1 {Ю}{{\CYRYU}}1 {Я}{{\CYRYA}}1
+        {Ь}{{\CYRSFTSN}}1 {Э}{{\CYREREV}}1 {Ю}{{\CYRYU}}1 {Я}{{\CYRYA}}1 {Ё}{{\CYRYO}}1
 }</code></pre>
                         </div>
-                        <p>После включения этой таблицы вы сможете свободно писать русские комментарии в любых языках программирования без малейших ошибок.</p>
+                        <p>После включения этой таблицы можно писать русские комментарии, включая букву «ё»: без неё в таблице literate эта буква по-прежнему ломает сборку.</p>
                     </section>
 
                     <section class="article-section" id="minted-setup">

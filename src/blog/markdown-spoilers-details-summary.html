@@ -248,7 +248,7 @@
 &lt;/details&gt;</code></pre>
                         </div>
                         <p>Заголовок внутри <code>&lt;summary&gt;</code> остается видимым всегда и снабжается кликабельной стрелкой раскрытия, а основной контент прячется до нажатия мыши.</p>
-                        <p>Спойлеры работают в превью Markdown-проекта Labkeeper. В LaTeX-проекте теги <code>&lt;details&gt;</code> и <code>&lt;summary&gt;</code> из Markdown-сегмента выбрасываются вместе с содержимым, поэтому важный текст в спойлер для PDF не прячьте.</p>
+                        <p>Спойлеры работают в превью Markdown-проекта Labkeeper. В LaTeX-проекте обёртка <code>&lt;details&gt;</code> и заголовок <code>&lt;summary&gt;</code> пропадают. Если после <code>&lt;/summary&gt;</code> есть пустая строка, тело спойлера остаётся обычным текстом. Без пустой строки Pandoc выбрасывает блок целиком, поэтому важный текст в спойлер для PDF не прячьте.</p>
                     </section>
 
                     <section class="article-section" id="open-state">

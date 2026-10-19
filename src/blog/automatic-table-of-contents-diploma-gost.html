@@ -259,8 +259,8 @@
                         <p>Чтобы <strong>содержание курсовой по госту онлайн</strong> не было перегружено мелкими пунктами, глубину отображения ограничивают счетчиком <code>tocdepth</code>:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
-                            <pre><code>% 1 = только разделы (section / chapter)
-% 2 = разделы и подразделы (subsection) — СТАНДАРТ ДЛЯ ВКР
+                            <pre><code>% article: 1 = только section; report/book: 0 = главы, 1 = главы и section
+% 2 = ещё и subsection — обычная глубина для ВКР
 % 3 = включать пункты subsubsection
 \setcounter{tocdepth}{2}</code></pre>
                         </div>

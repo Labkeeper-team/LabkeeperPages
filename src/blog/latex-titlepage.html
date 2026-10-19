@@ -370,8 +370,8 @@
                         </div>
                         <div class="article-note">
                             <strong>💡 Совет:</strong> Загрузите логотип в проект в формате PNG, JPG или PDF; векторный
-                            логотип лучше сохранить в PDF. SVG pdfLaTeX вставить не может, а EPS в Labkeeper загрузить
-                            нельзя — сконвертируйте такие файлы в PDF или PNG.
+                            логотип лучше сохранить в PDF. SVG pdfLaTeX вставить не может. EPS загрузить можно, но pdfLaTeX без
+                            shell-escape его не вставит — сконвертируйте в PDF или PNG.
                         </div>
                     </section>
 
@@ -425,7 +425,7 @@
                                 <div class="article-tip__number">4</div>
                                 <div class="article-tip__content">
                                     <h3>Нумерация последующих страниц</h3>
-                                    <p>Титульный лист считается первой страницей, но номер на нём не отображается. Для
+                                    <p>Титульный лист входит в нумерацию, но номер на нём не печатают. Окружение <code>titlepage</code> в одностороннем <code>report</code> в конце снова ставит счётчик в 1, поэтому после <code>\end{titlepage}</code> нужна <code>\setcounter{page}{2}</code>. Для
                                         настройки колонтитулов следующих разделов ознакомьтесь с <a
                                             href="/blog/latex-fancyhdr">инструкцией по нумерации страниц в fancyhdr</a>.
                                     </p>

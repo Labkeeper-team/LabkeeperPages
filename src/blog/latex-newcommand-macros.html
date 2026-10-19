@@ -242,10 +242,11 @@
                         <p>Узнаем, <strong>как создать свою команду макрос в latex</strong> для простого сокращения. Команда объявляется в преамбуле документа:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
-                            <pre><code>\newcommand{\R}{\mathbb{R}}
+                            <pre><code>\usepackage{amssymb} % \mathbb нет в amsmath и в автоматической преамбуле
+\newcommand{\R}{\mathbb{R}}
 \newcommand{\eps}{\varepsilon}</code></pre>
                         </div>
-                        <p>Теперь в тексте достаточно написать <code>$\R^3$</code> вместо длинного <code>$\mathbb{R}^3$</code>, и компилятор автоматически подставит нужное начертание шрифта (а для работы с физическими величинами советуем подключать <a href="/blog/latex-siunitx">пакет siunitx для единиц измерения</a>).</p>
+                        <p>Теперь в тексте достаточно написать <code>$\R^3$</code> вместо длинного <code>$\mathbb{R}^3$</code>, и компилятор подставит начертание. Команда <code>\mathbb</code> требует <code>amssymb</code> или <code>amsfonts</code>: без пакета сборка остановится (а для работы с физическими величинами советуем подключать <a href="/blog/latex-siunitx">пакет siunitx для единиц измерения</a>).</p>
                     </section>
 
                     <section class="article-section" id="with-arguments">

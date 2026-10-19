@@ -373,7 +373,8 @@
                             <pre><code>\usepackage{setspace}
 \onehalfspacing   % полуторный интервал
 
-% Или задать вручную:
+% Не замена onehalfspacing: множитель 1.5 заметно реже.
+% Без \selectfont команда не включается сразу.
 \renewcommand{\baselinestretch}{1.5}</code></pre>
                         </div>
                     </section>
@@ -433,15 +434,13 @@
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 
+% Глубина читается в момент \tableofcontents, поэтому счётчики стоят раньше
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
 % Оглавление
 \tableofcontents
-\newpage
-
-% Глубина включения в оглавление
-\setcounter{tocdepth}{3}
-
-% Нумерация разделов до 3-го уровня
-\setcounter{secnumdepth}{3}</code></pre>
+\newpage</code></pre>
                         </div>
                         <p>По ГОСТ 7.32-2017 номер не ставят только на титульном листе: он входит в общую нумерацию,
                             но цифру на нём не печатают. Добавьте <code>\thispagestyle{empty}</code> на странице
