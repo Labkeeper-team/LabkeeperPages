@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/imrad-structure-scientific-article-scopus-template"
         },
         "datePublished": "2026-09-06",
-        "dateModified": "2026-09-06",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Оформление научных статей"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#articles" class="article-tag">Оформление научных статей</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 6 сентября 2026 · Время чтения: ~9 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~9 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -234,7 +234,7 @@
                     <section class="article-section" id="what-is-imrad">
                         <h2 class="article-section__title">Что такое формат IMRAD и почему он обязателен</h2>
                         <p><strong>IMRAD</strong> — это общепринятый международный академический стандарт структурирования оригинальных исследовательских статей (Original Research Papers). Аббревиатура расшифровывается по первым буквам ключевых разделов: <strong>I</strong>ntroduction (Введение), <strong>M</strong>ethods (Материалы и методы), <strong>R</strong>esults (Результаты), <strong>a</strong>nd <strong>D</strong>iscussion (Обсуждение).</p>
-                        <p>Практически все рейтинговые издания первого и второго квартилей (Q1/Q2), индексируемые в <strong>Scopus</strong> и <strong>Web of Science</strong> (Elsevier, Springer Nature, IEEE, Wiley, MDPI), требуют строгого соблюдения этой структуры. Отклонение от IMRAD — самая частая причина мгновенного отклонения (Desk Reject) еще до передачи статьи независимым рецензентам. При этом принципы IMRAD активно перенимаются и при <a href="/blog/rinc-vak-scientific-article-template-fonts-margins">подготовке статей для базы РИНЦ и журналов ВАК</a>.</p>
+                        <p>Практически все рейтинговые издания первого и второго квартилей (Q1/Q2), индексируемые в <strong>Scopus</strong> и <strong>Web of Science</strong> (Elsevier, Springer Nature, IEEE, Wiley, MDPI), требуют соблюдения этой структуры. Отклонение от IMRAD — одна из частых причин отказа еще до передачи статьи рецензентам (Desk Reject). При этом принципы IMRAD активно перенимаются и при <a href="/blog/rinc-vak-scientific-article-template-fonts-margins">подготовке статей для базы РИНЦ и журналов ВАК</a>.</p>
                     </section>
 
                     <section class="article-section" id="sections-breakdown">
@@ -290,17 +290,20 @@ Concise summary of context, proposed method, quantitative results, and significa
 \section{Conclusion}
 % Concluding remarks and future directions.
 
-\bibliographystyle{IEEEtran}
-\bibliography{references}
+\begin{thebibliography}{9}
+\bibitem{ref1} A.~Author, ``Title of the cited paper,'' \emph{Journal Name},
+  vol.~1, no.~2, pp.~10--20, 2025.
+\end{thebibliography}
 \end{document}</code></pre>
                         </div>
+                        <p>Список литературы в шаблоне собран окружением <code>thebibliography</code>: в Labkeeper сервер не запускает BibTeX, поэтому команды <code>\bibliographystyle</code> и <code>\bibliography</code> работают только при локальной сборке. Записи оформляйте вручную по стилю журнала, а ссылки ставьте командой <code>\cite</code>.</p>
                     </section>
 
                     <section class="article-section" id="results-vs-discussion">
                         <h2 class="article-section__title">Главная ошибка: как не перепутать Results и Discussion</h2>
                         <p>Самое частое замечание зарубежных рецензентов — смешивание результатов и обсуждения:</p>
-                        <div class="article-table-wrap">
-                            <div class="article-table-wrapper" tabindex="0"><table class="article-table">
+                        <div class="article-table-wrapper">
+                            <table class="article-table">
                                 <thead>
                                     <tr>
                                         <th>Раздел</th>
@@ -320,14 +323,14 @@ Concise summary of context, proposed method, quantitative results, and significa
                                         <td>Первичное введение новых таблиц или графиков, которых не было в Results</td>
                                     </tr>
                                 </tbody>
-                            </table></div>
+                            </table>
                         </div>
                     </section>
 
                     <section class="article-section" id="reviewer-checklist">
                         <h2 class="article-section__title">Чек-лист перед отправкой рукописи в редакцию</h2>
                         <ul>
-                            <li>Введение содержит не менее 15–20 актуальных ссылок на международные источники (Scopus/WoS) за последние 3 года;</li>
+                            <li>Введение опирается на актуальные международные источники (Scopus/WoS) последних лет; минимальное число ссылок часто указано в правилах журнала;</li>
                             <li>В методах четко указаны версии использованного ПО и параметры воспроизводимости;</li>
                             <li>Все рисунки и таблицы упомянуты в основном тексте до их появления;</li>
                             <li>В разделе Discussion честно описаны ограничения исследования (Study Limitations).</li>
@@ -340,15 +343,15 @@ Concise summary of context, proposed method, quantitative results, and significa
                             <div class="article-tip">
                                 <div class="article-tip__number">1</div>
                                 <div class="article-tip__content">
-                                    <h3>Оформление списка литературы через BibTeX</h3>
-                                    <p>Для статей Scopus всегда используйте BibTeX: он автоматически форматирует ссылки по требованиям журнала (IEEE, APA, Harvard, Springer) без ручного переписывания запятых.</p>
+                                    <h3>Список литературы: BibTeX локально, thebibliography онлайн</h3>
+                                    <p>BibTeX автоматически форматирует ссылки по стилю журнала (IEEE, APA, Harvard, Springer), но требует отдельного запуска программы bibtex — это работает при локальной сборке. В Labkeeper список собирается окружением <code>thebibliography</code>, а если журнал просит .bib-файл, приложите его к рукописи отдельно.</p>
                                 </div>
                             </div>
                             <div class="article-tip">
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
                                     <h3>Подготовка рукописей в Labkeeper</h3>
-                                    <p>В Labkeeper доступны официальные LaTeX-шаблоны ведущих издательств с предустановленными стилевыми файлами и мгновенным предпросмотром.</p>
+                                    <p>Классы издательств <code>elsarticle</code> (Elsevier), <code>IEEEtran</code> и <code>acmart</code> входят в TeX Live, поэтому их можно указать в <code>\documentclass</code> прямо в Labkeeper. Шаблон конкретного журнала со своими файлами .cls загрузите в файлы проекта.</p>
                                 </div>
                             </div>
                         </div>
@@ -364,8 +367,8 @@ Concise summary of context, proposed method, quantitative results, and significa
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">В Labkeeper встроены проверенные академические шаблоны для журналов Elsevier, Springer и IEEE в формате LaTeX.</p>
-                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7BIntroduction%7DCan+calibration+reduce+sensor+bias%3F%0A%5Csection%7BMethods%7DWe+compared+two+sensors+over+20+trials.%0A%5Csection%7BResults%7DMean+error+decreased+from+4%5C%25+to+1%5C%25.%0A%5Csection%7BDiscussion%7DCalibration+improved+accuracy%3B+a+larger+sample+is+needed.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <p class="article-sidebar__title">В LaTeX-проекте Labkeeper доступны классы журналов из TeX Live — elsarticle, IEEEtran, acmart: пишите статью по структуре IMRAD и собирайте PDF.</p>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C11pt%5D%7Barticle%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Babstract%7D%0ACalibration+reduced+the+mean+sensor+error+from+4%5C%25+to+1%5C%25+in+20+trials.%0A%5Cend%7Babstract%7D%0A%5Csection%7BIntroduction%7DCan+calibration+reduce+sensor+bias%7E%5Ccite%7Bsmith%7D%3F%0A%5Csection%7BMethods%7DWe+compared+two+sensors+over+20+trials.%0A%5Csection%7BResults%7DMean+error+decreased+from+4%5C%25+to+1%5C%25.%0A%5Csection%7BDiscussion%7DCalibration+improved+accuracy%3B+a+larger+sample+is+needed.%0A%5Cbegin%7Bthebibliography%7D%7B9%7D%0A%5Cbibitem%7Bsmith%7D+J.%7ESmith%2C+%60%60Sensor+calibration%2C%27%27+%5Cemph%7BMeas.+Sci.%7D%2C+vol.%7E5%2C+pp.%7E1--9%2C+2024.%0A%5Cend%7Bthebibliography%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -381,7 +384,7 @@ Concise summary of context, proposed method, quantitative results, and significa
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Пишите публикации Scopus в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с поддержкой BibTeX, формульного аппарата amsmath, векторных графиков и мгновенным экспортом в PDF.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX: формулы amsmath, векторные графики, список литературы в thebibliography и PDF после нажатия «Выполнить».</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -419,7 +422,7 @@ Concise summary of context, proposed method, quantitative results, and significa
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7BIntroduction%7DCan+calibration+reduce+sensor+bias%3F%0A%5Csection%7BMethods%7DWe+compared+two+sensors+over+20+trials.%0A%5Csection%7BResults%7DMean+error+decreased+from+4%5C%25+to+1%5C%25.%0A%5Csection%7BDiscussion%7DCalibration+improved+accuracy%3B+a+larger+sample+is+needed.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C11pt%5D%7Barticle%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Babstract%7D%0ACalibration+reduced+the+mean+sensor+error+from+4%5C%25+to+1%5C%25+in+20+trials.%0A%5Cend%7Babstract%7D%0A%5Csection%7BIntroduction%7DCan+calibration+reduce+sensor+bias%7E%5Ccite%7Bsmith%7D%3F%0A%5Csection%7BMethods%7DWe+compared+two+sensors+over+20+trials.%0A%5Csection%7BResults%7DMean+error+decreased+from+4%5C%25+to+1%5C%25.%0A%5Csection%7BDiscussion%7DCalibration+improved+accuracy%3B+a+larger+sample+is+needed.%0A%5Cbegin%7Bthebibliography%7D%7B9%7D%0A%5Cbibitem%7Bsmith%7D+J.%7ESmith%2C+%60%60Sensor+calibration%2C%27%27+%5Cemph%7BMeas.+Sci.%7D%2C+vol.%7E5%2C+pp.%7E1--9%2C+2024.%0A%5Cend%7Bthebibliography%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

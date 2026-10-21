@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/indirect-measurement-error-calculation-lab-report"
         },
         "datePublished": "2026-09-06",
-        "dateModified": "2026-09-06",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Лабораторные работы"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#labs" class="article-tag">Лабораторные работы</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 6 сентября 2026 · Время чтения: ~8 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~8 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -252,7 +252,7 @@
                         <p>Если расчетная формула состоит только из произведений, дробей и степеней (например, $y = \frac{a^2 \cdot b}{\sqrt{c}}$), расчет через производные громоздок. Гораздо проще сначала найти <strong>относительную погрешность $\varepsilon_y$ через натуральный логарифм</strong>:</p>
                         <ol>
                             <li>Прологарифмировать выражение: $\ln y = 2\ln a + \ln b - \frac{1}{2}\ln c$;</li>
-                            <li>Взять дифференциал и заменить знаки минуса на плюсы: $\varepsilon_y = \frac{\Delta y}{y} = \sqrt{ (2\varepsilon_a)^2 + \varepsilon_b^2 + \left(\frac{1}{2}\varepsilon_c\right)^2 }$;</li>
+                            <li>Для предельной погрешности заменить минусы на плюсы: $\varepsilon_y = 2\varepsilon_a + \varepsilon_b + \frac{1}{2}\varepsilon_c$. Для случайных независимых погрешностей знаки и так пропадают под квадратами: $\varepsilon_y = \sqrt{(2\varepsilon_a)^2 + \varepsilon_b^2 + \left(\frac{1}{2}\varepsilon_c\right)^2}$;</li>
                             <li>Найти абсолютную погрешность умножением: $\Delta y = y \cdot \varepsilon_y$.</li>
                         </ol>
                     </section>
@@ -262,23 +262,23 @@
                         <p>Рассмотрим эталонный образец, демонстрирующий <strong>косвенные измерения погрешности шаблон</strong> на примере вычисления плотности твердого тела:</p>
                         <div class="article-quote">
                             <p><strong>Пример расчета:</strong><br>
-                            Формула плотности цилиндра: $\rho = \frac{m}{V} = \frac{4m}{\pi d^2 h}$, где масса $m = (124.50 \pm 0.05)\text{ г}$, диаметр $d = (20.12 \pm 0.02)\text{ мм}$, высота $h = (50.34 \pm 0.05)\text{ мм}$.<br><br>
-                            1. Среднее значение плотности: $\rho = \frac{4 \cdot 0.1245}{\pi \cdot (0.02012)^2 \cdot 0.05034} \approx 7778.8\text{ кг/м}^3$.<br>
+                            Формула плотности цилиндра: $\rho = \frac{m}{V} = \frac{4m}{\pi d^2 h}$, где масса $m = (124{,}50 \pm 0{,}05)\text{ г}$, диаметр $d = (20{,}12 \pm 0{,}02)\text{ мм}$, высота $h = (50{,}34 \pm 0{,}05)\text{ мм}$.<br><br>
+                            1. Среднее значение плотности: $\rho = \frac{4 \cdot 0{,}1245}{\pi \cdot (0{,}02012)^2 \cdot 0{,}05034} \approx 7778{,}8\text{ кг/м}^3$.<br>
                             2. Относительная погрешность:<br>
-                            $$\varepsilon_\rho = \sqrt{\left(\frac{\Delta m}{m}\right)^2 + \left(2\frac{\Delta d}{d}\right)^2 + \left(\frac{\Delta h}{h}\right)^2} = \sqrt{(0.000402)^2 + (0.001988)^2 + (0.000993)^2} \approx 0.00226$$ ($0.23\%$).<br>
-                            3. Абсолютная погрешность: $\Delta \rho = \rho \cdot \varepsilon_\rho \approx 7778.8 \cdot 0.00226 \approx 17.6\text{ кг/м}^3$.</p>
+                            $$\varepsilon_\rho = \sqrt{\left(\frac{\Delta m}{m}\right)^2 + \left(2\frac{\Delta d}{d}\right)^2 + \left(\frac{\Delta h}{h}\right)^2} = \sqrt{(0{,}000402)^2 + (0{,}001988)^2 + (0{,}000993)^2} \approx 0{,}00226$$ ($0{,}23\%$).<br>
+                            3. Абсолютная погрешность: $\Delta \rho = \rho \cdot \varepsilon_\rho \approx 7778{,}8 \cdot 0{,}00226 \approx 17{,}6\text{ кг/м}^3$.</p>
                         </div>
                         <p>Итоговую расчетную запись переносят в соответствующий раздел в нашем <a href="/blog/ideal-lab-report-template-gost-online">шаблоне отчета по лабораторной работе</a>.</p>
-                        <p>В примере для редактора эти данные переведены в СИ и вынесены в вычислительный сегмент. Оператор <code>#</code> задает стандартную неопределенность исходных величин, а погрешность плотности вычисляется автоматически для независимых измерений. Измените исходные данные и запустите расчет: значения в LaTeX-документе обновятся через подстановки. Подробнее о синтаксисе: <a href="/wiki/language/syntax.html">вики вычислительного языка</a>.</p>
+                        <p>В примере для редактора эти данные переведены в СИ и вынесены в вычислительный сегмент. Оператор <code>#</code> задает стандартную неопределенность исходных величин, а погрешность плотности вычисляется автоматически для независимых измерений. Измените исходные данные и запустите расчет: значения в LaTeX-документе обновятся через подстановки. Новый проект округляет значение и погрешность до трех значащих цифр, поэтому редактор покажет результат вида <code>7780 ± 17.6</code>. Режим округления по первой значащей цифре погрешности даст <code>7780 ± 20</code>, а запись с двумя значащими цифрами погрешности по правилу из следующего раздела оформите вручную. Подробнее о синтаксисе: <a href="/wiki/language/syntax.html">вики вычислительного языка</a>.</p>
                     </section>
 
                     <section class="article-section" id="report-formatting">
                         <h2 class="article-section__title">Как оформлять расчет погрешностей в отчете: правила округления по ГОСТ</h2>
-                        <p>Изучая, <strong>как оформлять расчет погрешностей в отчете</strong>, соблюдайте золотое правило округления ГОСТ 8.207-76:</p>
+                        <p>Изучая, <strong>как оформлять расчет погрешностей в отчете</strong>, соблюдайте правило округления, которое методички приводят со ссылкой на рекомендацию МИ 1317 и учебную традицию. ГОСТ 8.207-76 отменен: обработку прямых многократных измерений сейчас описывает ГОСТ Р 8.736-2011.</p>
                         <ul>
-                            <li>Погрешность $\Delta y$ округляется до <strong>одной значащей цифры</strong> (если первая цифра от 3 до 9) или до <strong>двух значащих цифр</strong> (если первая цифра 1 или 2). В нашем примере: $\Delta \rho \approx 17.6 \approx 18\text{ кг/м}^3$;</li>
+                            <li>Погрешность $\Delta y$ округляется до <strong>одной значащей цифры</strong> (если первая цифра от 3 до 9) или до <strong>двух значащих цифр</strong> (если первая цифра 1 или 2). В нашем примере: $\Delta \rho \approx 17{,}6 \approx 18\text{ кг/м}^3$;</li>
                             <li>Сам результат округляется до того же десятичного разряда, что и погрешность: $\rho = (7779 \pm 18)\text{ кг/м}^3$;</li>
-                            <li>Обязательно приводится относительная погрешность в процентах: $\varepsilon = 0.23\%$.</li>
+                            <li>Обязательно приводится относительная погрешность в процентах: $\varepsilon = 0{,}23\%$.</li>
                         </ul>
                     </section>
 
@@ -289,7 +289,7 @@
                                 <div class="article-tip__number">1</div>
                                 <div class="article-tip__content">
                                     <h3>Сначала вычисляйте формулу в общем виде</h3>
-                                    <p>Преподаватели требуют сначала вывести символьную формулу погрешности через производные, и только затем подставлять численные значения измерений.</p>
+                                    <p>Преподаватели требуют сначала вывести символьную формулу погрешности через производные, и только затем подставлять численные значения измерений. В Labkeeper это умеет сам вычислительный сегмент: в его настройках включите показ общей формулы погрешности и формулы погрешности с подставленными числами.</p>
                                 </div>
                             </div>
                             <div class="article-tip">
@@ -312,8 +312,8 @@
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">В Labkeeper формулы дифференцирования и доверительных интервалов верстаются в аккуратные уравнения LaTeX с мгновенным PDF-рендером.</p>
-                    <a href="/project/default?open=latex&amp;compute=%2F%2F+Mass+in+kg%2C+diameter+and+height+in+m%0Am+%3D+0.12450+%23+0.00005%0Ad+%3D+0.02012+%23+0.00002%0Ah+%3D+0.05034+%23+0.00005%0Arho+%3D+4+*+m+%2F+%283.141592653589793+*+d%5E2+*+h%29%0Adr+%3D+err%28rho%29&amp;latex=%5Csection*%7BCylinder+density%7D%0A%5C%5B%5Crho%3D%5Cfrac%7B4m%7D%7B%5Cpi+d%5E2h%7D%5C%5D%0A%24m%3D%280.12450%5Cpm0.00005%29%24+kg%2C%0A%24d%3D%280.02012%5Cpm0.00002%29%24+m%2C%0A%24h%3D%280.05034%5Cpm0.00005%29%24+m.%0A%5Cpar+Density%3A+%24%7Brho%7D+kg%2Fm%24%5E3%24.%0A%5Cpar+Absolute+uncertainty%3A+%24%7Bdr%7D+kg%2Fm%24%5E3%24." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <p class="article-sidebar__title">В Labkeeper погрешности косвенных измерений считает вычислительный сегмент: знак # задает стандартную неопределенность исходных величин, а результат подставляется в LaTeX-отчет.</p>
+                    <a href="/project/default?open=latex&amp;compute=%2F%2F+%D0%9C%D0%B0%D1%81%D1%81%D0%B0%2C+%D0%BA%D0%B3%3B+%D0%B4%D0%B8%D0%B0%D0%BC%D0%B5%D1%82%D1%80+%D0%B8+%D0%B2%D1%8B%D1%81%D0%BE%D1%82%D0%B0%2C+%D0%BC%0Am+%3D+0.12450+%23+0.00005%0Ad+%3D+0.02012+%23+0.00002%0Ah+%3D+0.05034+%23+0.00005%0Arho+%3D+4+*+m+%2F+%28pi+*+d%5E2+*+h%29&amp;latex=%5Csection*%7B%D0%9F%D0%BB%D0%BE%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C+%D1%86%D0%B8%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%B0%7D%0A%5C%5B%5Crho%3D%5Cfrac%7B4m%7D%7B%5Cpi+d%5E2h%7D%5C%5D%0A%24%5Crho+%3D+%24%7Brho%7D%24%7E%D0%BA%D0%B3%2F%D0%BC%5Ctextsuperscript%7B3%7D." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -329,7 +329,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Оформляйте физические расчеты в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор для студентов технических вузов: формулы amsmath, таблицы измерений и шаблоны оформления по ГОСТ.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор для студентов технических вузов: формулы amsmath, таблицы измерений и расчет погрешностей в вычислительном сегменте.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -367,7 +367,7 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex&amp;compute=%2F%2F+Mass+in+kg%2C+diameter+and+height+in+m%0Am+%3D+0.12450+%23+0.00005%0Ad+%3D+0.02012+%23+0.00002%0Ah+%3D+0.05034+%23+0.00005%0Arho+%3D+4+*+m+%2F+%283.141592653589793+*+d%5E2+*+h%29%0Adr+%3D+err%28rho%29&amp;latex=%5Csection*%7BCylinder+density%7D%0A%5C%5B%5Crho%3D%5Cfrac%7B4m%7D%7B%5Cpi+d%5E2h%7D%5C%5D%0A%24m%3D%280.12450%5Cpm0.00005%29%24+kg%2C%0A%24d%3D%280.02012%5Cpm0.00002%29%24+m%2C%0A%24h%3D%280.05034%5Cpm0.00005%29%24+m.%0A%5Cpar+Density%3A+%24%7Brho%7D+kg%2Fm%24%5E3%24.%0A%5Cpar+Absolute+uncertainty%3A+%24%7Bdr%7D+kg%2Fm%24%5E3%24." class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;compute=%2F%2F+%D0%9C%D0%B0%D1%81%D1%81%D0%B0%2C+%D0%BA%D0%B3%3B+%D0%B4%D0%B8%D0%B0%D0%BC%D0%B5%D1%82%D1%80+%D0%B8+%D0%B2%D1%8B%D1%81%D0%BE%D1%82%D0%B0%2C+%D0%BC%0Am+%3D+0.12450+%23+0.00005%0Ad+%3D+0.02012+%23+0.00002%0Ah+%3D+0.05034+%23+0.00005%0Arho+%3D+4+*+m+%2F+%28pi+*+d%5E2+*+h%29&amp;latex=%5Csection*%7B%D0%9F%D0%BB%D0%BE%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C+%D1%86%D0%B8%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%B0%7D%0A%5C%5B%5Crho%3D%5Cfrac%7B4m%7D%7B%5Cpi+d%5E2h%7D%5C%5D%0A%24%5Crho+%3D+%24%7Brho%7D%24%7E%D0%BA%D0%B3%2F%D0%BC%5Ctextsuperscript%7B3%7D." class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

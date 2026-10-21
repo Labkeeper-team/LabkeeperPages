@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/literature-review-structure-diploma-citation"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Дипломные работы","Оформление научных статей"]
     }
@@ -219,7 +219,7 @@
                         <a href="/blog#articles" class="article-tag">Оформление научных статей</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~8 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~8 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -253,14 +253,28 @@
                         <p>Грамотное <strong>оформление ссылок в обзоре литературы</strong> использует группировку ученых по научным направлениям:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">Академический стиль цитирования</span></div>
-                            <pre><code>Вопросам оптимизации трафика в сенсорных сетях посвящены работы отечественных и зарубежных авторов. В частности, в исследованиях Смирнова А. В. [12] и Васильева К. М. [15] показано, что применение динамической кластеризации позволяет сократить энергопотребление на 20%. Однако алгоритмы [12, 15] обладают высокой вычислительной сложностью и неприменимы на маломощных микроконтроллерах STM32...</code></pre>
+                            <pre><code>Вопросам оптимизации трафика в сенсорных сетях посвящены работы отечественных и зарубежных авторов. В частности, в исследованиях Смирнова А. В. [12] и Васильева К. М. [15] показано, что применение динамической кластеризации позволяет сократить энергопотребление на 20%. Однако алгоритм [15] обладает высокой вычислительной сложностью и неприменим на маломощных микроконтроллерах STM32, тогда как решение [12] остаётся достаточно простым...</code></pre>
                         </div>
-                        <p>Такой синтаксис демонстрирует глубокое владение материалом и подчеркивает ценность предлагаемой вами разработки, а автоматизировать подобные перекрестные отсылки помогает <a href="/blog/biblatex-biber-advanced-bibliography-management">пакет biblatex и biber для управления библиографией</a>.</p>
+                        <p>Такой синтаксис демонстрирует глубокое владение материалом и подчеркивает ценность предлагаемой вами разработки. Номера в квадратных скобках LaTeX подставит сам: запишите источники в окружении <code>thebibliography</code> и ставьте отсылки командой <code>\cite{smirnov2024, vasiliev2025}</code>, которая выведет номера вида «[12, 15]». При локальной сборке ту же работу делает <a href="/blog/biblatex-biber-advanced-bibliography-management">пакет biblatex и biber для управления библиографией</a>.</p>
                     </section>
 
                     <section class="article-section" id="comparison-matrices">
                         <h2 class="article-section__title">Сравнительные аналитические таблицы существующих решений</h2>
-                        <p>Кульминация литературного обзора — сравнительная сводная таблица аналогов по ключевым критериям (производительность, стоимость, точность, поддержка ГОСТ). Наличие такой таблицы в первой главе гарантирует высокую оценку рецензента на защите.</p>
+                        <p>Кульминация литературного обзора — сравнительная сводная таблица аналогов по ключевым критериям (производительность, стоимость, точность, поддержка ГОСТ). Такая таблица в первой главе наглядно показывает пробел, который закрывает ваша работа, и повышает шансы на высокую оценку рецензента.</p>
+                        <div class="article-code">
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
+                            <pre><code>\noindent Таблица 1.1 --- Сравнение существующих решений\\[2mm]
+\begin{tabular}{|l|c|c|c|}
+\hline
+Критерий &amp; Решение~\cite{smirnov2024} &amp; Решение~\cite{vasiliev2025} &amp; Решение~\cite{petrov2023} \\
+\hline
+Работа в реальном времени &amp; $-$ &amp; $+$ &amp; $-$ \\
+Низкая вычислительная сложность &amp; $+$ &amp; $-$ &amp; $-$ \\
+Открытый исходный код &amp; $+$ &amp; $-$ &amp; $+$ \\
+\hline
+\end{tabular}</code></pre>
+                        </div>
+                        <p>Последняя строка выводов к таблице формулирует требование к вашей разработке: ни одно из решений не сочетает работу в реальном времени с низкой сложностью.</p>
                     </section>
 
                     <section class="article-section" id="conclusion-gap">
@@ -278,14 +292,14 @@
                                 <div class="article-tip__number">1</div>
                                 <div class="article-tip__content">
                                     <h3>Баланс свежести источников</h3>
-                                    <p>Не менее 40–50% цитируемых научных статей должны быть опубликованы за последние 3–5 лет (Scopus, ВАК, РИНЦ).</p>
+                                    <p>Многие вузы рекомендуют, чтобы 40–50% цитируемых научных статей были опубликованы за последние 3–5 лет (Scopus, ВАК, РИНЦ). Точное требование указано в методичке кафедры.</p>
                                 </div>
                             </div>
                             <div class="article-tip">
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
                                     <h3>Автоматические ссылки в LaTeX</h3>
-                                    <p>Используйте <code>\cite{smirnov2024, vasiliev2025}</code> — при перестановке абзацев номера в квадратных скобках обновятся автоматически.</p>
+                                    <p>Используйте <code>\cite{smirnov2024, vasiliev2025}</code>: номера в квадратных скобках подставит LaTeX. В окружении <code>thebibliography</code> номер задает порядок записей <code>\bibitem</code>, поэтому после перестановки абзацев проверьте, что записи по-прежнему идут в порядке первого упоминания.</p>
                                 </div>
                             </div>
                         </div>
@@ -301,8 +315,8 @@
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Пишите глубокие аналитические обзоры литературы без плагиата в редакторе Labkeeper.</p>
-                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7BLiterature+review%7D%0A%5Csubsection%7BExisting+methods%7DThe+baseline+is+described+in%7E%5Ccite%7Bbaseline%7D.%0A%5Csubsection%7BResearch+gap%7DAccuracy+on+small+samples+remains+uncertain.%0A%5Cbegin%7Bthebibliography%7D%7B9%7D%5Cbibitem%7Bbaseline%7DA.+Author.+Measurement+methods.+2024.%5Cend%7Bthebibliography%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <p class="article-sidebar__title">Пишите аналитические обзоры литературы в редакторе Labkeeper: отсылки [1, 2] и список источников в одном LaTeX-проекте.</p>
+                    <a href="/project/default?open=latex&amp;latex=%5Csection*%7B1.2+%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7+%D1%81%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D1%83%D1%8E%D1%89%D0%B8%D1%85+%D0%BF%D0%BE%D0%B4%D1%85%D0%BE%D0%B4%D0%BE%D0%B2%7D%0A%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9+%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8+%D0%BF%D0%BE%D1%81%D0%B2%D1%8F%D1%89%D0%B5%D0%BD%D1%8B+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%7E%5Ccite%7Bsmirnov%2Cvasiliev%7D%3A+%D1%83+%D0%A1%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B2%D0%B0+%D0%BE%D0%BD%D0%B0+%D0%BF%D1%80%D0%BE%D1%89%D0%B5%2C+%D1%83+%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B0+%D1%82%D1%8F%D0%B6%D0%B5%D0%BB%D0%B5%D0%B5.%0A%0A%5Cbegin%7Btabular%7D%7B%7Cl%7Cc%7Cc%7C%7D%5Chline%0A%D0%9A%D1%80%D0%B8%D1%82%D0%B5%D1%80%D0%B8%D0%B9+%26+%5Ccite%7Bsmirnov%7D+%26+%5Ccite%7Bvasiliev%7D%5C%5C%5Chline%0A%D0%A0%D0%B5%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5+%D0%B2%D1%80%D0%B5%D0%BC%D1%8F+%26+%24-%24+%26+%24%2B%24%5C%5C%0A%D0%9C%D0%B0%D0%BB%D0%B0%D1%8F+%D1%81%D0%BB%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C+%26+%24%2B%24+%26+%24-%24%5C%5C%5Chline%0A%5Cend%7Btabular%7D%0A%5Cbegin%7Bthebibliography%7D%7B9%7D%0A%5Cbibitem%7Bsmirnov%7D+%D0%A1%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B2%2C+%D0%90.%7E%D0%92.+%D0%9A%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F+%D1%81%D0%B5%D0%BD%D1%81%D0%BE%D1%80%D0%BD%D1%8B%D1%85+%D1%81%D0%B5%D1%82%D0%B5%D0%B9.+---+%D0%9C.%2C+2024.%0A%5Cbibitem%7Bvasiliev%7D+%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%2C+%D0%9A.%7E%D0%9C.+%D0%AD%D0%BD%D0%B5%D1%80%D0%B3%D0%BE%D1%81%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5+%D0%B2%7E%D1%81%D0%B5%D1%82%D1%8F%D1%85.+---+%D0%A1%D0%9F%D0%B1.%2C+2025.%0A%5Cend%7Bthebibliography%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -318,7 +332,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Создавайте сильные научные главы в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с поддержкой BibTeX, автогенерацией перекрестных ссылок и проверкой академической стилистики.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX: список источников в thebibliography, отсылки командой cite и сравнительные таблицы аналогов в одном проекте.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -356,7 +370,7 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7BLiterature+review%7D%0A%5Csubsection%7BExisting+methods%7DThe+baseline+is+described+in%7E%5Ccite%7Bbaseline%7D.%0A%5Csubsection%7BResearch+gap%7DAccuracy+on+small+samples+remains+uncertain.%0A%5Cbegin%7Bthebibliography%7D%7B9%7D%5Cbibitem%7Bbaseline%7DA.+Author.+Measurement+methods.+2024.%5Cend%7Bthebibliography%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;latex=%5Csection*%7B1.2+%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7+%D1%81%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D1%83%D1%8E%D1%89%D0%B8%D1%85+%D0%BF%D0%BE%D0%B4%D1%85%D0%BE%D0%B4%D0%BE%D0%B2%7D%0A%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9+%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8+%D0%BF%D0%BE%D1%81%D0%B2%D1%8F%D1%89%D0%B5%D0%BD%D1%8B+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%7E%5Ccite%7Bsmirnov%2Cvasiliev%7D%3A+%D1%83+%D0%A1%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B2%D0%B0+%D0%BE%D0%BD%D0%B0+%D0%BF%D1%80%D0%BE%D1%89%D0%B5%2C+%D1%83+%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B0+%D1%82%D1%8F%D0%B6%D0%B5%D0%BB%D0%B5%D0%B5.%0A%0A%5Cbegin%7Btabular%7D%7B%7Cl%7Cc%7Cc%7C%7D%5Chline%0A%D0%9A%D1%80%D0%B8%D1%82%D0%B5%D1%80%D0%B8%D0%B9+%26+%5Ccite%7Bsmirnov%7D+%26+%5Ccite%7Bvasiliev%7D%5C%5C%5Chline%0A%D0%A0%D0%B5%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5+%D0%B2%D1%80%D0%B5%D0%BC%D1%8F+%26+%24-%24+%26+%24%2B%24%5C%5C%0A%D0%9C%D0%B0%D0%BB%D0%B0%D1%8F+%D1%81%D0%BB%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C+%26+%24%2B%24+%26+%24-%24%5C%5C%5Chline%0A%5Cend%7Btabular%7D%0A%5Cbegin%7Bthebibliography%7D%7B9%7D%0A%5Cbibitem%7Bsmirnov%7D+%D0%A1%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B2%2C+%D0%90.%7E%D0%92.+%D0%9A%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F+%D1%81%D0%B5%D0%BD%D1%81%D0%BE%D1%80%D0%BD%D1%8B%D1%85+%D1%81%D0%B5%D1%82%D0%B5%D0%B9.+---+%D0%9C.%2C+2024.%0A%5Cbibitem%7Bvasiliev%7D+%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%2C+%D0%9A.%7E%D0%9C.+%D0%AD%D0%BD%D0%B5%D1%80%D0%B3%D0%BE%D1%81%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5+%D0%B2%7E%D1%81%D0%B5%D1%82%D1%8F%D1%85.+---+%D0%A1%D0%9F%D0%B1.%2C+2025.%0A%5Cend%7Bthebibliography%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

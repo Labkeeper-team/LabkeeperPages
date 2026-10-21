@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-cv-resume"
         },
         "datePublished": "2026-08-20",
-        "dateModified": "2026-08-20",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Оформление резюме / CV","Работа с LaTeX"]
     }
@@ -219,7 +219,7 @@
                         <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 20 августа 2026 · Время чтения: ~8 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~8 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -228,7 +228,7 @@
                             <li><a href="#moderncv" class="article-toc__link">Класс moderncv: стили и цветовые темы</a></li>
                             <li><a href="#template" class="article-toc__link">Готовый шаблон академического резюме</a></li>
                             <li><a href="#sections" class="article-toc__link">Структура разделов: публикации, гранты, награды</a></li>
-                            <li><a href="#publications" class="article-toc__link">Интеграция списка статей через BibTeX</a></li>
+                            <li><a href="#publications" class="article-toc__link">Список публикаций без BibTeX</a></li>
                             <li><a href="#tips" class="article-toc__link">Советы для подачи в зарубежные университеты</a></li>
                         </ol>
                     </nav>
@@ -251,6 +251,7 @@
 \moderncvcolor{blue}
 
 \usepackage[scale=0.8]{geometry}
+\usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian,english]{babel}</code></pre>
                         </div>
@@ -264,6 +265,9 @@
                             <pre><code>\documentclass[11pt,a4paper,sans]{moderncv}
 \moderncvstyle{banking}
 \moderncvcolor{blue}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
 \usepackage[scale=0.82]{geometry}
 
 % Персональные данные
@@ -313,18 +317,17 @@
                     </section>
 
                     <section class="article-section" id="publications">
-                        <h2 class="article-section__title">Интеграция списка статей через BibTeX</h2>
-                        <p>Для автоматического вывода публикаций в CV используйте пакет <code>bibentry</code> или <code>multibib</code>, разделяя статьи в журналах и доклады на конференциях (для корректной русификации записей по ГОСТ обратитесь к <a href="/blog/latex-gost-bibliography">нашей статье по biblatex-gost</a>):</p>
+                        <h2 class="article-section__title">Список публикаций без BibTeX</h2>
+                        <p>Пакеты <code>bibentry</code> и <code>multibib</code> берут записи из .bib-файла через BibTeX, а в Labkeeper BibTeX пока не запускается: вместо записей получатся пустые места и «[?]». Оформите публикации вручную командами <code>\cvitem</code> или нумерованным списком: по ГОСТ для российских грантов и диссоветов, по APA — для зарубежных университетов (как оформить запись по ГОСТ, смотрите в <a href="/blog/latex-gost-bibliography">статье о списке литературы по ГОСТ</a>):</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
-                            <pre><code>\usepackage{bibentry}
-\nobibliography*
-
-\section{Публикации}
-\begin{enumerate}
-    \item \bibentry{ivanov2025journal}
-    \item \bibentry{ivanov2024conference}
-\end{enumerate}</code></pre>
+                            <pre><code>\section{Публикации}
+\cvitem{2025}{Иванов,~И.~И. Алгоритмы оптимизации графовых нейросетей
+  / И.~И.~Иванов // Информатика и её применения. --- 2025. --- Т.~19, №~2.
+  --- С.~45--53.}
+\cvitem{2024}{Ivanov, I., \&amp; Petrov, P. (2024). Scalable telemetry pipelines.
+  In \emph{Proceedings of the International Conference on Data Science}
+  (pp.~112--118).}</code></pre>
                         </div>
                     </section>
 
@@ -342,7 +345,7 @@
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
                                     <h3>Колонтитулы и оформление приложений</h3>
-                                    <p>Если к резюме прикладывается расширенное портфолио работ или научный отчет, оформите его в едином стиле с помощью <a href="/blog/latex-diploma-gost">ГОСТ-шаблона</a> и настройте красивые <a href="/blog/latex-fancyhdr">колонтитулы fancyhdr</a>.</p>
+                                    <p>Если к резюме прикладывается расширенное портфолио работ или научный отчет, оформите его в едином стиле с помощью <a href="/blog/latex-diploma-gost">преамбулы по ГОСТ из гайда по диплому</a> и настройте красивые <a href="/blog/latex-fancyhdr">колонтитулы fancyhdr</a>.</p>
                                 </div>
                             </div>
                         </div>
@@ -360,8 +363,8 @@
                             alt="Онлайн-редактор LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Создавайте стильное CV в&nbsp;Labkeeper — готовые шаблоны moderncv с&nbsp;экспортом в&nbsp;PDF за секунды.</p>
-                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cpagestyle%7Bempty%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection*%7BAnna+Petrova%7D%0ASoftware+developer+%5Chfill+anna%40example.com%0A%5Csection*%7BExperience%7D%0A%5Ctextbf%7BBackend+developer%7D%2C+2023--2026%0A%5Cbegin%7Bitemize%7D%5Citem+Built+a+reporting+API.%5Citem+Reduced+response+time+by+30%5C%25.%5Cend%7Bitemize%7D%0A%5Csection*%7BSkills%7DPython%2C+PostgreSQL%2C+Docker.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <p class="article-sidebar__title">Верстайте академическое CV на&nbsp;moderncv в&nbsp;онлайн-редакторе Labkeeper и&nbsp;сразу получайте PDF.</p>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5B11pt%2Ca4paper%2Csans%5D%7Bmoderncv%7D%0A%5Cmoderncvstyle%7Bclassic%7D%0A%5Cmoderncvcolor%7Bblue%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Brussian%5D%7Bbabel%7D%0A%5Cusepackage%5Bscale%3D0.8%5D%7Bgeometry%7D%0A%5Cname%7B%D0%90%D0%BD%D0%BD%D0%B0%7D%7B%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B0%7D%0A%5Ctitle%7B%D0%90%D1%81%D0%BF%D0%B8%D1%80%D0%B0%D0%BD%D1%82%2C+%D1%84%D0%B8%D0%B7%D0%B8%D0%BA%D0%B0%7D%0A%5Cemail%7Banna%40example.com%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cmakecvtitle%0A%5Csection%7B%D0%9E%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%7D%0A%5Ccventry%7B2022--2024%7D%7B%D0%9C%D0%B0%D0%B3%D0%B8%D1%81%D1%82%D1%80+%D1%84%D0%B8%D0%B7%D0%B8%D0%BA%D0%B8%7D%7B%D0%9C%D0%A4%D0%A2%D0%98%7D%7B%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%7D%7B%7D%7B%7D%0A%5Csection%7B%D0%9F%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8%7D%0A%5Ccvitem%7B2025%7D%7B%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B0%2C%7E%D0%90.%7E%D0%90.+%D0%9C%D0%B5%D1%82%D0%BE%D0%B4+%D0%B8%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D0%B9+%2F+%D0%90.%7E%D0%90.%7E%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B0+%2F%2F+%D0%9F%D0%B8%D1%81%D1%8C%D0%BC%D0%B0+%D0%B2%7E%D0%96%D0%A2%D0%A4.+---+2025.+---+%E2%84%96%7E3.+---+%D0%A1.%7E5--9.%7D%0A%5Csection%7B%D0%93%D1%80%D0%B0%D0%BD%D1%82%D1%8B%7D%0A%5Ccvitem%7B2024%7D%7B%D0%93%D1%80%D0%B0%D0%BD%D1%82+%D0%A0%D0%9D%D0%A4+%D0%B4%D0%BB%D1%8F+%D0%BC%D0%BE%D0%BB%D0%BE%D0%B4%D1%8B%D1%85+%D1%83%D1%87%D1%91%D0%BD%D1%8B%D1%85%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -415,7 +418,7 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cpagestyle%7Bempty%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection*%7BAnna+Petrova%7D%0ASoftware+developer+%5Chfill+anna%40example.com%0A%5Csection*%7BExperience%7D%0A%5Ctextbf%7BBackend+developer%7D%2C+2023--2026%0A%5Cbegin%7Bitemize%7D%5Citem+Built+a+reporting+API.%5Citem+Reduced+response+time+by+30%5C%25.%5Cend%7Bitemize%7D%0A%5Csection*%7BSkills%7DPython%2C+PostgreSQL%2C+Docker.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5B11pt%2Ca4paper%2Csans%5D%7Bmoderncv%7D%0A%5Cmoderncvstyle%7Bclassic%7D%0A%5Cmoderncvcolor%7Bblue%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Brussian%5D%7Bbabel%7D%0A%5Cusepackage%5Bscale%3D0.8%5D%7Bgeometry%7D%0A%5Cname%7B%D0%90%D0%BD%D0%BD%D0%B0%7D%7B%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B0%7D%0A%5Ctitle%7B%D0%90%D1%81%D0%BF%D0%B8%D1%80%D0%B0%D0%BD%D1%82%2C+%D1%84%D0%B8%D0%B7%D0%B8%D0%BA%D0%B0%7D%0A%5Cemail%7Banna%40example.com%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cmakecvtitle%0A%5Csection%7B%D0%9E%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%7D%0A%5Ccventry%7B2022--2024%7D%7B%D0%9C%D0%B0%D0%B3%D0%B8%D1%81%D1%82%D1%80+%D1%84%D0%B8%D0%B7%D0%B8%D0%BA%D0%B8%7D%7B%D0%9C%D0%A4%D0%A2%D0%98%7D%7B%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%7D%7B%7D%7B%7D%0A%5Csection%7B%D0%9F%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8%7D%0A%5Ccvitem%7B2025%7D%7B%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B0%2C%7E%D0%90.%7E%D0%90.+%D0%9C%D0%B5%D1%82%D0%BE%D0%B4+%D0%B8%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D0%B9+%2F+%D0%90.%7E%D0%90.%7E%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B0+%2F%2F+%D0%9F%D0%B8%D1%81%D1%8C%D0%BC%D0%B0+%D0%B2%7E%D0%96%D0%A2%D0%A4.+---+2025.+---+%E2%84%96%7E3.+---+%D0%A1.%7E5--9.%7D%0A%5Csection%7B%D0%93%D1%80%D0%B0%D0%BD%D1%82%D1%8B%7D%0A%5Ccvitem%7B2024%7D%7B%D0%93%D1%80%D0%B0%D0%BD%D1%82+%D0%A0%D0%9D%D0%A4+%D0%B4%D0%BB%D1%8F+%D0%BC%D0%BE%D0%BB%D0%BE%D0%B4%D1%8B%D1%85+%D1%83%D1%87%D1%91%D0%BD%D1%8B%D1%85%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

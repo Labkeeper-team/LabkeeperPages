@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/formula-variable-explanation-where-gost"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Лабораторные работы","Дипломные работы"]
     }
@@ -219,7 +219,7 @@
                         <a href="/blog#diploma" class="article-tag">Дипломные работы</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~6 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~6 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -236,8 +236,9 @@
                         <h2 class="article-section__title">Что требует ГОСТ 7.32-2017 к блоку пояснений</h2>
                         <p>В научно-технических отчетах и дипломных работах каждая введенная формула должна сопровождаться расшифровкой входящих в нее буквенных обозначений, если они не были пояснены ранее в тексте.</p>
                         <blockquote>
-                            «Пояснение значений символов и числовых коэффициентов следует приводить непосредственно под формулой в той же последовательности, в которой они даны в формуле. Первая строка пояснения должна начинаться со слова «где» <strong>без двоеточия</strong> после него».
+                            «Пояснение значений символов и числовых коэффициентов следует приводить непосредственно под формулой в той же последовательности, в которой они представлены в формуле. Значение каждого символа и числового коэффициента необходимо приводить с новой строки. Первую строку пояснения начинают со слова „где“ <strong>без двоеточия</strong> с абзаца» (ГОСТ 7.32-2017, п. 6.8.2).
                         </blockquote>
+                        <p>Похожее требование есть и в ГОСТ 2.105 для текстовых конструкторских документов, поэтому правило одинаково для отчетов, курсовых и пояснительных записок.</p>
                     </section>
 
                     <section class="article-section" id="how-to-write">
@@ -249,7 +250,7 @@
 P = (n * R * T) / V,                                                     (2.1)
 где P — абсолютное давление газа, Па;
     n — количество вещества, моль;
-    R — универсальная газовая постоянная, равная 8.314 Дж/(моль·К);
+    R — универсальная газовая постоянная, равная 8,314 Дж/(моль·К);
     T — термодинамическая температура, К;
     V — объем сосуда, м³.</code></pre>
                         </div>
@@ -276,14 +277,15 @@ P = (n * R * T) / V,                                                     (2.1)
     F = G \frac{m_1 m_2}{r^2},
     \label{eq:gravity}
 \end{equation}
-\noindent где~\begin{tabular}[t]{@{}l@{ — }p{0.8\textwidth}@{}}
+
+где~\begin{tabular}[t]{@{}l@{ — }p{0.8\textwidth}@{}}
 $F$   &amp; сила гравитационного взаимодействия, Н;\\
 $G$   &amp; гравитационная постоянная, $G \approx 6{,}674 \cdot 10^{-11}$~м$^3$/(кг$\cdot$с$^2$);\\
 $m_1, m_2$ &amp; массы взаимодействующих тел, кг;\\
 $r$   &amp; расстояние между центрами масс тел, м.
 \end{tabular}</code></pre>
                         </div>
-                        <p>Конструкция <code>@{}l@{ — }p{...}</code> автоматически ставит длинное тире между колонками и обеспечивает аккуратный перенос длинного текста расшифровки.</p>
+                        <p>Конструкция <code>@{}l@{ — }p{...}</code> автоматически ставит длинное тире между колонками и обеспечивает аккуратный перенос длинного текста расшифровки. Пустая строка после формулы начинает новый абзац, поэтому слово «где» получает абзацный отступ, как требует ГОСТ; команда <code>\noindent</code> здесь не нужна.</p>
                     </section>
 
                     <section class="article-section" id="frequent-errors">
@@ -292,7 +294,7 @@ $r$   &amp; расстояние между центрами масс тел, м
                         <ol>
                             <li>Двоеточие после слова «где» (<em>«где:»</em> — грубая ошибка!);</li>
                             <li>Слово «Где» с заглавной буквы (должно быть со строчной: «где»);</li>
-                            <li>Отсутствие запятой перед формулой (сама формула является частью предложения!);</li>
+                            <li>Отсутствие запятой после формулы (формула вместе с пояснением «где» — часть одного предложения!);</li>
                             <li>Перечисление переменных в случайном алфавитном порядке вместо порядка появления в уравнении;</li>
                             <li>Пропуск размерностей (единиц измерения СИ).</li>
                         </ol>
@@ -304,8 +306,8 @@ $r$   &amp; расстояние между центрами масс тел, м
                             <div class="article-tip">
                                 <div class="article-tip__number">1</div>
                                 <div class="article-tip__content">
-                                    <h3>Неразрывный пробел перед тильдой</h3>
-                                    <p>Всегда пишите <code>где~\begin{tabular}...</code>, чтобы слово «где» не оторвалось от таблицы на другую страницу.</p>
+                                    <h3>Неразрывный пробел после «где»</h3>
+                                    <p>Пишите <code>где~\begin{tabular}...</code>: тильда — неразрывный пробел, и строка не разорвется между словом «где» и таблицей пояснений.</p>
                                 </div>
                             </div>
                             <div class="article-tip">
@@ -329,7 +331,7 @@ $r$   &amp; расстояние между центрами масс тел, м
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Оформляйте математические выкладки по строгому академическому стандарту в Labkeeper.</p>
-                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Bequation%7Dv%3D%5Cfrac%7Bs%7D%7Bt%7D%5Cend%7Bequation%7D%0A%5Cnoindent+%D0%B3%D0%B4%D0%B5+%24v%24+---+%D1%81%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D1%8C%2C+%D0%BC%2F%D1%81%3B%5C%5C%0A%24s%24+---+%D0%BF%D1%83%D1%82%D1%8C%2C+%D0%BC%3B%5C%5C%24t%24+---+%D0%B2%D1%80%D0%B5%D0%BC%D1%8F%2C+%D1%81.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <a href="/project/default?open=latex&amp;latex=%D0%A1%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D1%8C+%D0%BD%D0%B0%D1%85%D0%BE%D0%B4%D1%8F%D1%82+%D0%BF%D0%BE+%D1%84%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D0%B5%0A%5Cbegin%7Bequation%7D%0Av%3D%5Cfrac%7Bs%7D%7Bt%7D%2C%0A%5Clabel%7Beq%3Av%7D%0A%5Cend%7Bequation%7D%0A%0A%D0%B3%D0%B4%D0%B5%7E%5Cbegin%7Btabular%7D%5Bt%5D%7B%40%7B%7Dl%40%7B+---+%7Dl%40%7B%7D%7D%0A%24v%24+%26+%D1%81%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D1%8C%2C+%D0%BC%2F%D1%81%3B%5C%5C%0A%24s%24+%26+%D0%BF%D1%83%D1%82%D1%8C%2C+%D0%BC%3B%5C%5C%0A%24t%24+%26+%D0%B2%D1%80%D0%B5%D0%BC%D1%8F%2C+%D1%81.%0A%5Cend%7Btabular%7D%0A%0A%D0%9F%D0%BE+%D1%84%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D0%B5%7E%5Ceqref%7Beq%3Av%7D+%D0%BF%D1%80%D0%B8+%24s%3D100%24%7E%D0%BC+%D0%B8+%24t%3D20%24%7E%D1%81+%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B0%D0%B5%D0%BC+%24v%3D5%24%7E%D0%BC%2F%D1%81." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -345,7 +347,7 @@ $r$   &amp; расстояние между центрами масс тел, м
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Вёрстка строгих отчетов в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с шаблонами пояснений к формулам по ГОСТ и проверкой математической типографики.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX: формулы с нумерацией, блок пояснений «где» из статьи и PDF после нажатия «Выполнить».</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -383,7 +385,7 @@ $r$   &amp; расстояние между центрами масс тел, м
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Bequation%7Dv%3D%5Cfrac%7Bs%7D%7Bt%7D%5Cend%7Bequation%7D%0A%5Cnoindent+%D0%B3%D0%B4%D0%B5+%24v%24+---+%D1%81%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D1%8C%2C+%D0%BC%2F%D1%81%3B%5C%5C%0A%24s%24+---+%D0%BF%D1%83%D1%82%D1%8C%2C+%D0%BC%3B%5C%5C%24t%24+---+%D0%B2%D1%80%D0%B5%D0%BC%D1%8F%2C+%D1%81.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;latex=%D0%A1%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D1%8C+%D0%BD%D0%B0%D1%85%D0%BE%D0%B4%D1%8F%D1%82+%D0%BF%D0%BE+%D1%84%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D0%B5%0A%5Cbegin%7Bequation%7D%0Av%3D%5Cfrac%7Bs%7D%7Bt%7D%2C%0A%5Clabel%7Beq%3Av%7D%0A%5Cend%7Bequation%7D%0A%0A%D0%B3%D0%B4%D0%B5%7E%5Cbegin%7Btabular%7D%5Bt%5D%7B%40%7B%7Dl%40%7B+---+%7Dl%40%7B%7D%7D%0A%24v%24+%26+%D1%81%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D1%8C%2C+%D0%BC%2F%D1%81%3B%5C%5C%0A%24s%24+%26+%D0%BF%D1%83%D1%82%D1%8C%2C+%D0%BC%3B%5C%5C%0A%24t%24+%26+%D0%B2%D1%80%D0%B5%D0%BC%D1%8F%2C+%D1%81.%0A%5Cend%7Btabular%7D%0A%0A%D0%9F%D0%BE+%D1%84%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D0%B5%7E%5Ceqref%7Beq%3Av%7D+%D0%BF%D1%80%D0%B8+%24s%3D100%24%7E%D0%BC+%D0%B8+%24t%3D20%24%7E%D1%81+%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B0%D0%B5%D0%BC+%24v%3D5%24%7E%D0%BC%2F%D1%81." class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

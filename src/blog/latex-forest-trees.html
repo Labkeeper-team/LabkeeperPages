@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-forest-trees"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с LaTeX"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~7 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~7 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -262,7 +262,8 @@
                         <p>В лингвистике и компьютерной филологии постоянно строится <strong>синтаксическое дерево latex онлайн</strong> (дерево составляющих или зависимостей):</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
-                            <pre><code>\begin{forest}
+                            <pre><code>% В преамбуле: \usepackage[linguistics]{forest}
+\begin{forest}
 [S
     [NP [Студент, roof]]
     [VP
@@ -275,7 +276,7 @@
 ]
 \end{forest}</code></pre>
                         </div>
-                        <p>Опция <code>roof</code> превращает ветвь в аккуратный треугольник над группой слов, что является общепринятым стандартом лингвистических публикаций.</p>
+                        <p>Опция <code>roof</code> превращает ветвь в аккуратный треугольник над группой слов, что является общепринятым стандартом лингвистических публикаций. Она входит в библиотеку <code>linguistics</code>: подключите пакет как <code>\usepackage[linguistics]{forest}</code> или добавьте <code>\useforestlibrary{linguistics}</code>. Без библиотеки сборка остановится с ошибкой <code>I do not know the key '/tikz/roof'</code>.</p>
                     </section>
 
                     <section class="article-section" id="genealogy">
@@ -343,7 +344,7 @@ for tree={
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Верстайте синтаксические и структурные деревья в веб-редакторе Labkeeper с мгновенным предпросмотром.</p>
+                    <p class="article-sidebar__title">Верстайте синтаксические и структурные деревья в веб-редакторе Labkeeper с предпросмотром PDF.</p>
                     <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bforest%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Bforest%7Dfor+tree%3D%7Bdraw%2Crounded+corners%7D%0A%5BDocument+%5BIntroduction%5D+%5BMethods+%5BModel%5D+%5BExperiment%5D%5D+%5BResults%5D%5D%0A%5Cend%7Bforest%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>

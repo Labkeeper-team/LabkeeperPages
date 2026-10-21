@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/diploma-page-numbering-second-page"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Дипломные работы"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#diploma" class="article-tag">Дипломные работы</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~6 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~6 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -233,9 +233,9 @@
 
                     <section class="article-section" id="gost-rules">
                         <h2 class="article-section__title">Требования ГОСТ к нумерации страниц ВКР</h2>
-                        <p>Правило нумерации дипломных работ и магистерских диссертаций по <strong>ГОСТ 7.32-2017</strong> сформулировано однозначно:</p>
+                        <p>Дипломные работы и магистерские диссертации нумеруют по методичке вуза, а она обычно повторяет правило <strong>ГОСТ 7.32-2017</strong>:</p>
                         <blockquote>
-                            «Страницы отчета следует нумеровать арабскими цифрами, соблюдая сквозную нумерацию по всему тексту. Титульный лист включают в общую нумерацию страниц, но номер страницы на титульном листе не проставляют».
+                            «Страницы отчета следует нумеровать арабскими цифрами, соблюдая сквозную нумерацию по всему тексту отчета, включая приложения. Номер страницы проставляется в центре нижней части страницы без точки» (п. 6.3.1). «Титульный лист включают в общую нумерацию страниц отчета. Номер страницы на титульном листе не проставляют» (п. 6.3.2).
                         </blockquote>
                         <p>Это означает, что титульный лист считается страницей 1, но физическая цифра на нем отсутствует. Первая видимая цифра <strong>«2»</strong> (или «3», если вторым листом идет задание) появляется на следующем листе — обычно в содержании работы.</p>
                     </section>
@@ -253,9 +253,10 @@
         % ...
     \end{center}
 \end{titlepage}
-\clearpage</code></pre>
+\setcounter{page}{2} % titlepage сбросил счетчик на 1</code></pre>
                         </div>
                         <p>Команда <code>\thispagestyle{empty}</code> действует локально строго на текущую страницу, поэтому следующая страница автоматически унаследует стандартный стиль с номером.</p>
+                        <p><strong>Главная ловушка:</strong> окружение <code>titlepage</code> в одностороннем документе классов <code>article</code> и <code>report</code> после себя сбрасывает счетчик страниц на 1, и содержание получит номер 1, а не 2. Поэтому сразу после <code>\end{titlepage}</code> стоит <code>\setcounter{page}{2}</code>. Другой путь — сверстать титульник обычной страницей с <code>\thispagestyle{empty}</code> и <code>\newpage</code>, как в примере в редакторе: тогда счетчик не сбрасывается.</p>
                     </section>
 
                     <section class="article-section" id="second-page">
@@ -263,12 +264,16 @@
                         <p>Чтобы работала правильная <strong>нумерация диплома со второй страницы онлайн</strong>, важно правильно перейти к содержанию (для генерации структуры рекомендуем статью об <a href="/blog/automatic-table-of-contents-diploma-gost">автоматическом оглавлении диплома по ГОСТ</a>):</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
-                            <pre><code>\documentclass[14pt,a4paper]{article}
+                            <pre><code>\documentclass[14pt,a4paper]{extarticle} % класс article не знает кегль 14pt
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
 
 \begin{document}
 
-% СТРАНИЦА 1: Титульный лист (номер 1 скрыт)
-\include{titlepage}
+% СТРАНИЦА 1: Титульный лист без номера
+% (файл titlepage.tex заканчивается командой \end{titlepage})
+\input{titlepage}
+\setcounter{page}{2}
 
 % СТРАНИЦА 2: Содержание (здесь отобразится цифра 2)
 \tableofcontents
@@ -337,7 +342,7 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Подготовьте выпускную квалификационную работу по строгим стандартам нормоконтроля в Labkeeper.</p>
-                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Cthispagestyle%7Bempty%7D%5Cbegin%7Bcenter%7D%5CLarge+Title+page%5Cend%7Bcenter%7D%0A%5Cnewpage%5Csection%7BIntroduction%7DThe+title+counts+as+page+1+but+has+no+printed+number.%0A%5Cnewpage%5Csection%7BMethods%7DNumbering+continues.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Brussian%5D%7Bbabel%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cthispagestyle%7Bempty%7D%0A%5Cbegin%7Bcenter%7D%5CLarge+%D0%A2%D0%B8%D1%82%D1%83%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9+%D0%BB%D0%B8%D1%81%D1%82%5Cend%7Bcenter%7D%0A%5Cnewpage%0A%5Ctableofcontents%0A%5Cnewpage%0A%5Csection%7B%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%7D%0A%D0%A2%D0%B8%D1%82%D1%83%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9+%D0%BB%D0%B8%D1%81%D1%82+%D1%81%D1%87%D0%B8%D1%82%D0%B0%D0%B5%D1%82%D1%81%D1%8F+%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B5%D0%B9+1%2C+%D0%BD%D0%BE+%D0%BD%D0%BE%D0%BC%D0%B5%D1%80+%D0%BD%D0%B0+%D0%BD%D0%B5%D0%BC+%D0%BD%D0%B5+%D0%BF%D0%B5%D1%87%D0%B0%D1%82%D0%B0%D0%B5%D1%82%D1%81%D1%8F%2C+%D0%B0+%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B5+%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B0%D0%B5%D1%82+%D0%BD%D0%BE%D0%BC%D0%B5%D1%80+2.%0A%5Csection%7B%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BA%D0%B0%7D%0A%D0%9D%D1%83%D0%BC%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D1%8F+%D0%BF%D1%80%D0%BE%D0%B4%D0%BE%D0%BB%D0%B6%D0%B0%D0%B5%D1%82%D1%81%D1%8F.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -353,7 +358,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Сдайте диплом без замечаний с&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор ВКР и диссертаций с встроенным контролем нумерации страниц и полей по ГОСТ.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX для ВКР: нумерация страниц, колонтитулы fancyhdr и поля geometry задаются кодом, PDF — после нажатия «Выполнить».</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -391,7 +396,7 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Cthispagestyle%7Bempty%7D%5Cbegin%7Bcenter%7D%5CLarge+Title+page%5Cend%7Bcenter%7D%0A%5Cnewpage%5Csection%7BIntroduction%7DThe+title+counts+as+page+1+but+has+no+printed+number.%0A%5Cnewpage%5Csection%7BMethods%7DNumbering+continues.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Brussian%5D%7Bbabel%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cthispagestyle%7Bempty%7D%0A%5Cbegin%7Bcenter%7D%5CLarge+%D0%A2%D0%B8%D1%82%D1%83%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9+%D0%BB%D0%B8%D1%81%D1%82%5Cend%7Bcenter%7D%0A%5Cnewpage%0A%5Ctableofcontents%0A%5Cnewpage%0A%5Csection%7B%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%7D%0A%D0%A2%D0%B8%D1%82%D1%83%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9+%D0%BB%D0%B8%D1%81%D1%82+%D1%81%D1%87%D0%B8%D1%82%D0%B0%D0%B5%D1%82%D1%81%D1%8F+%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B5%D0%B9+1%2C+%D0%BD%D0%BE+%D0%BD%D0%BE%D0%BC%D0%B5%D1%80+%D0%BD%D0%B0+%D0%BD%D0%B5%D0%BC+%D0%BD%D0%B5+%D0%BF%D0%B5%D1%87%D0%B0%D1%82%D0%B0%D0%B5%D1%82%D1%81%D1%8F%2C+%D0%B0+%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B5+%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B0%D0%B5%D1%82+%D0%BD%D0%BE%D0%BC%D0%B5%D1%80+2.%0A%5Csection%7B%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BA%D0%B0%7D%0A%D0%9D%D1%83%D0%BC%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D1%8F+%D0%BF%D1%80%D0%BE%D0%B4%D0%BE%D0%BB%D0%B6%D0%B0%D0%B5%D1%82%D1%81%D1%8F.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

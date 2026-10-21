@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/software-screenshots-report-gost-caption"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Лабораторные работы"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#labs" class="article-tag">Лабораторные работы</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~7 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~7 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -234,15 +234,15 @@
                     <section class="article-section" id="gost-status">
                         <h2 class="article-section__title">Статус скриншота в ГОСТ 7.32-2017: это всегда «Рисунок»</h2>
                         <p>В академических и инженерных стандартах РФ не существует терминов «скриншот», «снимок экрана» или «иллюстрация интерфейса». Любое графическое изображение — будь то фото осциллографа, окно веб-браузера или консоль Linux — именуется строго словом <strong>«Рисунок»</strong>.</p>
-                        <p>Нельзя писать <em>«Скриншот 1»</em> или <em>«Снимок экрана программы»</em>. Использование слова «Скриншот» в заголовке — грубейшая ошибка, приводящая к возврату диплома нормоконтролем.</p>
+                        <p>Нельзя писать <em>«Скриншот 1»</em> или <em>«Снимок экрана программы»</em>. Слово «Скриншот» в подписи — типичная ошибка, из-за которой нормоконтроль возвращает работу на исправление.</p>
                     </section>
 
                     <section class="article-section" id="numbering-rules">
                         <h2 class="article-section__title">Нумерация скриншотов в отчете гост: сквозная и по разделам</h2>
                         <p>Каноническая <strong>нумерация скриншотов в отчете гост</strong> подчиняется общим правилам <a href="/blog/figure-double-numbering-chapters-gost">двойной нумерации рисунков по главам по ГОСТ</a>:</p>
                         <ul>
-                            <li><strong>В лабораторных отчетах:</strong> сквозная арабскими цифрами — <em>Рисунок 1</em>, <em>Рисунок 2</em>, <em>Рисунок 3</em>.</li>
-                            <li><strong>В дипломных записках и ВКР:</strong> по разделам — <em>Рисунок 2.1</em> (первый рисунок второй главы), <em>Рисунок 2.2</em>, <em>Рисунок 3.1</em>.</li>
+                            <li><strong>Основной вариант по ГОСТ 7.32-2017</strong> (п. 6.5.4) — сквозная нумерация арабскими цифрами: <em>Рисунок 1</em>, <em>Рисунок 2</em>, <em>Рисунок 3</em>.</li>
+                            <li><strong>Нумерация в пределах раздела допускается</strong> (п. 6.5.6): <em>Рисунок 2.1</em> (первый рисунок второго раздела), <em>Рисунок 2.2</em>, <em>Рисунок 3.1</em>. Такой вариант часто требуют методички к дипломам и ВКР.</li>
                             <li>На каждый скриншот в предшествующем тексте обязана присутствовать ссылка: <em>«Внешний вид окна аутентификации приведен на рисунке 2.3»</em>.</li>
                         </ul>
                     </section>
@@ -257,7 +257,7 @@
                         <p>Обратите внимание на детали:</p>
                         <ul>
                             <li>Слово «Рисунок» пишется полностью (не «Рис.»);</li>
-                            <li>После номера ставится длинное тире с пробелами <code> — </code>;</li>
+                            <li>После номера ставится тире с пробелами <code> — </code>;</li>
                             <li>Название пишется с заглавной буквы;</li>
                             <li><strong>В конце подписи точка НЕ ставится</strong>.</li>
                         </ul>
@@ -275,10 +275,17 @@
 
                     <section class="article-section" id="latex-figure-snippet">
                         <h2 class="article-section__title">Шаблон вставки скриншота в LaTeX с рамкой</h2>
-                        <p>Если фон скриншота белый, он может визуально сливаться с белым листом бумаги. Оберните его в тонкую рамку через команду <code>\fbox</code>:</p>
+                        <p>Если фон скриншота белый, он может визуально сливаться с белым листом бумаги. Оберните его в тонкую рамку через команду <code>\fbox</code>. С пакетом babel подпись по умолчанию выходит в виде «Рис. 1:», поэтому в преамбуле слово «Рисунок» и тире задают явно:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
-                            <pre><code>\begin{figure}[htbp]
+                            <pre><code>% Преамбула
+\usepackage{caption}
+\DeclareCaptionLabelSeparator{emdash}{\ --- }
+\captionsetup[figure]{labelsep=emdash}
+\addto\captionsrussian{\renewcommand{\figurename}{Рисунок}}
+
+% Текст
+\begin{figure}[htbp]
     \centering
     \setlength{\fboxsep}{1pt}
     \setlength{\fboxrule}{0.5pt}
@@ -287,6 +294,7 @@
     \label{fig:gui-telemetry}
 \end{figure}</code></pre>
                         </div>
+                        <p>Получится подпись «Рисунок 1 — Интерфейс модуля визуализации телеметрии» по центру под рисунком. Файл скриншота загрузите в файлы проекта Labkeeper: загрузка доступна после входа. В LaTeX-сегменте размер задает <code>\includegraphics</code>, а в Markdown-сегменте превью оставит картинке её размер и ужмёт только то, что шире колонки.</p>
                     </section>
 
                     <section class="article-section" id="tips">
@@ -320,7 +328,7 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Верстайте отчеты по IT-лабораторным с аккуратными иллюстрациями в онлайн-редакторе Labkeeper.</p>
-                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bcaption%7D%5Ccaptionsetup%5Bfigure%5D%7Blabelsep%3Dendash%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Bfigure%7D%5Bh%5D%5Ccentering%0A%5Cfbox%7B%5Cbegin%7Bminipage%7D%7B.6%5Ctextwidth%7D%5Cttfamily%0AProgram+output%3A%5Cpar+Result%3A+42%5Cpar+Status%3A+OK%0A%5Cend%7Bminipage%7D%7D%0A%5Ccaption%7B%D0%92%D1%8B%D0%B2%D0%BE%D0%B4+%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B%7D%5Clabel%7Bfig%3Aoutput%7D%5Cend%7Bfigure%7D%0A%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82+%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD+%D0%BD%D0%B0+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BA%D0%B5%7E%5Cref%7Bfig%3Aoutput%7D.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bcaption%7D%5CDeclareCaptionLabelSeparator%7Bemdash%7D%7B%5C+---+%7D%0A%5Ccaptionsetup%5Bfigure%5D%7Blabelsep%3Demdash%7D%0A%5Caddto%5Ccaptionsrussian%7B%5Crenewcommand%7B%5Cfigurename%7D%7B%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA%7D%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Bfigure%7D%5Bh%5D%5Ccentering%0A%5Cfbox%7B%5Cbegin%7Bminipage%7D%7B.6%5Ctextwidth%7D%5Cttfamily%0A%D0%92%D1%8B%D0%B2%D0%BE%D0%B4+%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B%3A%5Cpar+%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%3A+42%5Cpar+%D0%A1%D1%82%D0%B0%D1%82%D1%83%D1%81%3A+OK%0A%5Cend%7Bminipage%7D%7D%0A%5Ccaption%7B%D0%9E%D0%BA%D0%BD%D0%BE+%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8+%D1%81+%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D0%BE%D0%BC+%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B%7D%5Clabel%7Bfig%3Aoutput%7D%5Cend%7Bfigure%7D%0A%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82+%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD+%D0%BD%D0%B0+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BA%D0%B5%7E%5Cref%7Bfig%3Aoutput%7D.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -336,7 +344,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Сдавайте отчеты по программированию в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с шаблонами отчетов по ГОСТ, автоматической нумерацией рисунков и быстрым рендерингом PDF.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX и Markdown: автоматическая нумерация рисунков, ссылки на них в тексте и PDF после нажатия «Выполнить».</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -374,7 +382,7 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bcaption%7D%5Ccaptionsetup%5Bfigure%5D%7Blabelsep%3Dendash%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Bfigure%7D%5Bh%5D%5Ccentering%0A%5Cfbox%7B%5Cbegin%7Bminipage%7D%7B.6%5Ctextwidth%7D%5Cttfamily%0AProgram+output%3A%5Cpar+Result%3A+42%5Cpar+Status%3A+OK%0A%5Cend%7Bminipage%7D%7D%0A%5Ccaption%7B%D0%92%D1%8B%D0%B2%D0%BE%D0%B4+%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B%7D%5Clabel%7Bfig%3Aoutput%7D%5Cend%7Bfigure%7D%0A%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82+%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD+%D0%BD%D0%B0+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BA%D0%B5%7E%5Cref%7Bfig%3Aoutput%7D.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bcaption%7D%5CDeclareCaptionLabelSeparator%7Bemdash%7D%7B%5C+---+%7D%0A%5Ccaptionsetup%5Bfigure%5D%7Blabelsep%3Demdash%7D%0A%5Caddto%5Ccaptionsrussian%7B%5Crenewcommand%7B%5Cfigurename%7D%7B%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA%7D%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Bfigure%7D%5Bh%5D%5Ccentering%0A%5Cfbox%7B%5Cbegin%7Bminipage%7D%7B.6%5Ctextwidth%7D%5Cttfamily%0A%D0%92%D1%8B%D0%B2%D0%BE%D0%B4+%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B%3A%5Cpar+%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%3A+42%5Cpar+%D0%A1%D1%82%D0%B0%D1%82%D1%83%D1%81%3A+OK%0A%5Cend%7Bminipage%7D%7D%0A%5Ccaption%7B%D0%9E%D0%BA%D0%BD%D0%BE+%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8+%D1%81+%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D0%BE%D0%BC+%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B%7D%5Clabel%7Bfig%3Aoutput%7D%5Cend%7Bfigure%7D%0A%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82+%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD+%D0%BD%D0%B0+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BA%D0%B5%7E%5Cref%7Bfig%3Aoutput%7D.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

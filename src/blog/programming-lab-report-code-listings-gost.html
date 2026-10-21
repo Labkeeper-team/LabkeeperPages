@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Отчет по лабораторной программирование: оформление листингов кода — Labkeeper</title>
-    <meta name="description" content="Шаблон отчета по лабораторной по программированию: оформление листингов в отчете по ГОСТ 7.32, подсветка синтаксиса, нумерация строк в Labkeeper." />
+    <meta name="description" content="Шаблон отчета по лабораторной по программированию: оформление листингов в отчете по методичкам и ГОСТ 19.401, подсветка синтаксиса, нумерация строк в Labkeeper." />
     <!-- SEO Ключи: отчет по лабораторной программирование шаблон, оформление листингов в отчете -->
     <meta name="keywords" content="отчет по лабораторной программирование шаблон, оформление листингов в отчете" />
     <link rel="canonical" href="https://labkeeper.io/blog/programming-lab-report-code-listings-gost" />
@@ -17,19 +17,19 @@
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Labkeeper" />
     <meta property="og:title" content="Отчет по лабораторной программирование: оформление листингов кода — Labkeeper" />
-    <meta property="og:description" content="Шаблон отчета по лабораторной по программированию: оформление листингов в отчете по ГОСТ 7.32, подсветка синтаксиса, нумерация строк в Labkeeper." />
+    <meta property="og:description" content="Шаблон отчета по лабораторной по программированию: оформление листингов в отчете по методичкам и ГОСТ 19.401, подсветка синтаксиса, нумерация строк в Labkeeper." />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:title" content="Отчет по лабораторной программирование: оформление листингов кода — Labkeeper" />
-    <meta name="twitter:description" content="Шаблон отчета по лабораторной по программированию: оформление листингов в отчете по ГОСТ 7.32, подсветка синтаксиса, нумерация строк в Labkeeper." />
+    <meta name="twitter:description" content="Шаблон отчета по лабораторной по программированию: оформление листингов в отчете по методичкам и ГОСТ 19.401, подсветка синтаксиса, нумерация строк в Labkeeper." />
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Идеальный отчет по программированию: листинги кода по ГОСТ",
-        "description": "Шаблон отчета по лабораторной по программированию: оформление листингов в отчете по ГОСТ 7.32, подсветка синтаксиса, нумерация строк в Labkeeper.",
+        "description": "Шаблон отчета по лабораторной по программированию: оформление листингов в отчете по методичкам и ГОСТ 19.401, подсветка синтаксиса, нумерация строк в Labkeeper.",
         "author": {
             "@type": "Organization",
             "name": "Labkeeper",
@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/programming-lab-report-code-listings-gost"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Лабораторные работы"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#labs" class="article-tag">Лабораторные работы</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~7 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~7 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -233,7 +233,7 @@
 
                     <section class="article-section" id="requirements">
                         <h2 class="article-section__title">Требования нормоконтроля к исходному коду</h2>
-                        <p>В отчетах по программированию, вычислительной математике и системному администрированию листинг программы является главным доказательством работоспособности выполненного задания. Согласно ГОСТ 7.32-2017 и методическим указаниям вузов:</p>
+                        <p>В отчетах по программированию, вычислительной математике и системному администрированию листинг программы является главным доказательством работоспособности выполненного задания. ГОСТ 7.32-2017 листинги отдельно не регулирует, поэтому правила задает методичка кафедры, а для программной документации — ГОСТ 19.401-78 «Текст программы». Типичные требования методичек:</p>
                         <ul>
                             <li>Код оформляется моноширинным шрифтом (Courier New, Consolas) меньшего кегля (10–12 пт при основном тексте 14 пт).</li>
                             <li>Каждый листинг должен иметь порядковый номер и содержательное название: например, <em>«Листинг 1.1 — Функция быстрой сортировки массива»</em>.</li>
@@ -261,6 +261,7 @@
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>\usepackage{listings}
 \usepackage{xcolor}
+\usepackage{caption}
 
 \lstset{
     basicstyle=\ttfamily\small,       % Моноширинный шрифт меньшего кегля
@@ -272,41 +273,46 @@
     tabsize=4,
     breaklines=true,                  % Автоматический перенос длинных строк
     keywordstyle=\color{blue}\bfseries,
-    commentstyle=\color{teal}\textit,
+    commentstyle=\color{teal}\itshape,
     stringstyle=\color{red},
-    captionpos=t                      % Подпись НАД листингом по ГОСТ
-}</code></pre>
+    escapeinside={(*@}{@*)},          % Русский текст внутри кода
+    captionpos=t                      % Подпись над листингом, как в методичках
+}
+\renewcommand{\lstlistingname}{Листинг}
+\captionsetup[lstlisting]{labelsep=endash,singlelinecheck=false}</code></pre>
                         </div>
                         <p>В тексте программы фрагмент вставляется через окружение <code>lstlisting</code>:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>\begin{lstlisting}[language=Python, caption={Функция вычисления факториала}]
 def factorial(n: int) -&gt; int:
-    """Вычисление факториала числа n"""
+    # (*@\textit{Вычисление факториала числа n}@*)
     if n &lt;= 1:
         return 1
     return n * factorial(n - 1)
 \end{lstlisting}</code></pre>
                         </div>
+                        <p>В pdfLaTeX пакет listings не понимает кириллицу внутри кода: русская строка или docstring без настройки ломает сборку. Поэтому русский комментарий выше обернут в разделители <code>(*@ … @*)</code> из параметра <code>escapeinside</code> — такой текст набирает уже LaTeX. Если русского текста в коде много, подключите таблицу <code>literate</code> из статьи о <a href="/blog/latex-russian-cyrillic-code-listings-minted">русском языке в листингах кода</a>.</p>
                     </section>
 
                     <section class="article-section" id="external-files">
                         <h2 class="article-section__title">Импорт кода напрямую из файлов программ</h2>
-                        <p>Вместо копирования кода вручную через буфер обмена гораздо надежнее подключать файлы проекта напрямую через команду <code>\lstinputlisting</code>:</p>
+                        <p>Вместо копирования кода вручную через буфер обмена гораздо надежнее подключать файлы проекта напрямую через команду <code>\lstinputlisting</code>. Файлы <code>.cpp</code> и <code>.py</code> загрузить можно. Если удобнее один формат для листинга, сохраните код как <code>.txt</code> и загрузите в файлы проекта:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
-                            <pre><code>% Вставка всего файла с кодом
-\lstinputlisting[language=C++, caption={Главный модуль main.cpp}]{src/main.cpp}
+                            <pre><code>% Вставка всего файла с кодом (main.cpp сохранен как main.txt)
+\lstinputlisting[language=C++, caption={Главный модуль main.cpp}]{src/main.txt}
 
 % Вставка только диапазона строк с 15 по 45
-\lstinputlisting[language=C++, firstline=15, lastline=45, caption={Алгоритм Дейкстры}]{src/graph.cpp}</code></pre>
+\lstinputlisting[language=C++, firstline=15, lastline=45, caption={Алгоритм Дейкстры}]{src/graph.txt}</code></pre>
                         </div>
-                        <p>При таком подходе любые изменения в вашем коде моментально отражаются в отчете при очередной компиляции.</p>
+                        <p>При таком подходе изменения в коде попадают в отчет при очередной сборке — достаточно заменить файл.</p>
                     </section>
 
                     <section class="article-section" id="minted-alternative">
                         <h2 class="article-section__title">Современная альтернатива: пакет minted</h2>
-                        <p>Если требуется подсветка синтаксиса полиграфического уровня, используют пакет <code>minted</code> на базе библиотек Pygments. Он обеспечивает безупречное выделение языковых конструкций для сотен языков (Rust, Go, Kotlin, Swift, SQL) с идеальной передачей русских комментариев.</p>
+                        <p>Если требуется подсветка синтаксиса полиграфического уровня, используют пакет <code>minted</code> на базе библиотеки Pygments. Он подсвечивает сотни языков (Rust, Go, Kotlin, Swift, SQL) и нормально работает с русскими комментариями.</p>
+                        <p>Но minted запускает внешнюю программу (Python с Pygments) и требует флага <code>-shell-escape</code>, поэтому работает только при локальной сборке. В Labkeeper серверная сборка запрещает внешние программы, и minted не собирается: онлайн используйте listings с настройками выше.</p>
                     </section>
 
                     <section class="article-section" id="tips">
@@ -316,7 +322,7 @@ def factorial(n: int) -&gt; int:
                                 <div class="article-tip__number">1</div>
                                 <div class="article-tip__content">
                                     <h3>Русские комментарии в listings</h3>
-                                    <p>Чтобы кириллица в комментариях отображалась без артефактов, добавьте параметр: <code>keepspaces=true, extendedchars=true</code>.</p>
+                                    <p>Параметр <code>extendedchars=true</code> сам по себе кириллицу в коде не чинит. Русские комментарии оформляйте через <code>escapeinside</code>, как в примере выше, или подключите таблицу <code>literate</code> из статьи о <a href="/blog/latex-russian-cyrillic-code-listings-minted">русском языке в листингах кода</a>.</p>
                                 </div>
                             </div>
                             <div class="article-tip">
@@ -340,7 +346,7 @@ def factorial(n: int) -&gt; int:
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Создавайте безупречные отчеты по IT-дисциплинам в Labkeeper с автоматической нумерацией и подсветкой кода.</p>
-                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Blistings%7D%5Clstset%7Bbasicstyle%3D%5Cttfamily%5Csmall%2Cnumbers%3Dleft%2Cframe%3Dsingle%2Cbreaklines%3Dtrue%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7BImplementation%7D%0A%5Cbegin%7Blstlisting%7D%5Blanguage%3DPython%2Ccaption%3D%7BMean+value%7D%5D%0Avalues+%3D+%5B2%2C+4%2C+6%5D%0Aprint%28sum%28values%29+%2F+len%28values%29%29%0A%5Cend%7Blstlisting%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Brussian%5D%7Bbabel%7D%0A%5Cusepackage%7Blistings%2Cxcolor%2Ccaption%7D%0A%5Clstset%7Bbasicstyle%3D%5Cttfamily%5Csmall%2Cnumbers%3Dleft%2Cframe%3Dsingle%2Ckeywordstyle%3D%5Ccolor%7Bblue%7D%5Cbfseries%2Cescapeinside%3D%7B%28*%40%7D%7B%40*%29%7D%7D%0A%5Crenewcommand%7B%5Clstlistingname%7D%7B%D0%9B%D0%B8%D1%81%D1%82%D0%B8%D0%BD%D0%B3%7D%0A%5Ccaptionsetup%5Blstlisting%5D%7Blabelsep%3Dendash%2Csinglelinecheck%3Dfalse%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Blstlisting%7D%5Blanguage%3DPython%2Ccaption%3D%7B%D0%A1%D1%80%D0%B5%D0%B4%D0%BD%D0%B5%D0%B5+%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%7D%5D%0Avalues+%3D+%5B2%2C+4%2C+6%5D++%23+%28*%40%5Ctextit%7B%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5+%D0%BE%D0%BF%D1%8B%D1%82%D0%B0%7D%40*%29%0Aprint%28sum%28values%29+%2F+len%28values%29%29%0A%5Cend%7Blstlisting%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -356,7 +362,7 @@ def factorial(n: int) -&gt; int:
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Сдавайте лабораторные с первого раза в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с готовыми шаблонами отчетов по ГОСТ, поддержкой листингов кода и быстрой компиляцией в PDF.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX: листинги кода через пакет listings с нумерацией строк, подписью «Листинг» и PDF после нажатия «Выполнить».</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -394,7 +400,7 @@ def factorial(n: int) -&gt; int:
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Blistings%7D%5Clstset%7Bbasicstyle%3D%5Cttfamily%5Csmall%2Cnumbers%3Dleft%2Cframe%3Dsingle%2Cbreaklines%3Dtrue%7D%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7BImplementation%7D%0A%5Cbegin%7Blstlisting%7D%5Blanguage%3DPython%2Ccaption%3D%7BMean+value%7D%5D%0Avalues+%3D+%5B2%2C+4%2C+6%5D%0Aprint%28sum%28values%29+%2F+len%28values%29%29%0A%5Cend%7Blstlisting%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Brussian%5D%7Bbabel%7D%0A%5Cusepackage%7Blistings%2Cxcolor%2Ccaption%7D%0A%5Clstset%7Bbasicstyle%3D%5Cttfamily%5Csmall%2Cnumbers%3Dleft%2Cframe%3Dsingle%2Ckeywordstyle%3D%5Ccolor%7Bblue%7D%5Cbfseries%2Cescapeinside%3D%7B%28*%40%7D%7B%40*%29%7D%7D%0A%5Crenewcommand%7B%5Clstlistingname%7D%7B%D0%9B%D0%B8%D1%81%D1%82%D0%B8%D0%BD%D0%B3%7D%0A%5Ccaptionsetup%5Blstlisting%5D%7Blabelsep%3Dendash%2Csinglelinecheck%3Dfalse%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Blstlisting%7D%5Blanguage%3DPython%2Ccaption%3D%7B%D0%A1%D1%80%D0%B5%D0%B4%D0%BD%D0%B5%D0%B5+%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%7D%5D%0Avalues+%3D+%5B2%2C+4%2C+6%5D++%23+%28*%40%5Ctextit%7B%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5+%D0%BE%D0%BF%D1%8B%D1%82%D0%B0%7D%40*%29%0Aprint%28sum%28values%29+%2F+len%28values%29%29%0A%5Cend%7Blstlisting%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

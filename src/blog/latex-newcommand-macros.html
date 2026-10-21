@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-newcommand-macros"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с LaTeX","Дипломные работы"]
     }
@@ -219,7 +219,7 @@
                         <a href="/blog#diploma" class="article-tag">Дипломные работы</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~7 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~7 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -242,10 +242,11 @@
                         <p>Узнаем, <strong>как создать свою команду макрос в latex</strong> для простого сокращения. Команда объявляется в преамбуле документа:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
-                            <pre><code>\newcommand{\R}{\mathbb{R}}
+                            <pre><code>\usepackage{amssymb} % \mathbb нет в amsmath и в автоматической преамбуле
+\newcommand{\R}{\mathbb{R}}
 \newcommand{\eps}{\varepsilon}</code></pre>
                         </div>
-                        <p>Теперь в тексте достаточно написать <code>$\R^3$</code> вместо длинного <code>$\mathbb{R}^3$</code>, и компилятор автоматически подставит нужное начертание шрифта (а для работы с физическими величинами советуем подключать <a href="/blog/latex-siunitx">пакет siunitx для единиц измерения</a>).</p>
+                        <p>Теперь в тексте достаточно написать <code>$\R^3$</code> вместо длинного <code>$\mathbb{R}^3$</code>, и компилятор подставит начертание. Команда <code>\mathbb</code> требует <code>amssymb</code> или <code>amsfonts</code>: без пакета сборка остановится (а для работы с физическими величинами советуем подключать <a href="/blog/latex-siunitx">пакет siunitx для единиц измерения</a>).</p>
                     </section>
 
                     <section class="article-section" id="with-arguments">
@@ -312,7 +313,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Оптимизируйте научную верстку в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор LaTeX с быстрой компиляцией, удобным менеджером преамбул и встроенным AI-помощником для написания макросов.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX с быстрой компиляцией и встроенным AI-помощником для написания макросов.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">

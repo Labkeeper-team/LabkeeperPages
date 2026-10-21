@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             url: '/blog/rinc-vak-scientific-article-template-fonts-margins',
             title: 'Публикации для базы РИНЦ/ВАК',
-            text: 'Шаблон научной статьи РИНЦ и ВАК: требования к шрифтам, УДК и ГОСТ.'
+            text: 'Шаблон научной статьи РИНЦ и ВАК: требования журналов к шрифтам, УДК и ГОСТ.'
         },
         {
             url: '/blog/modern-it-resume-markdown-cv-as-code',
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             url: '/blog/diploma-assignment-form-calendar-schedule-gost',
             title: 'Бланк задания на ВКР',
-            text: 'Шаблоны задания и календарного графика диплома с правильным оформлением по ГОСТ.'
+            text: 'Задание и календарный график диплома: форма кафедры, этапы и строки подписей.'
         },
         {
             url: '/blog/how-to-write-lab-report-conclusion-examples',
@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             url: '/blog/latex-russian-cyrillic-code-listings-minted',
             title: 'Русский язык в коде LaTeX',
-            text: 'Настройка пакетов listings и minted для поддержки русских комментариев без ошибок.'
+            text: 'Настройка listings для русских комментариев в pdfLaTeX и minted для локальной сборки.'
         },
         {
             url: '/blog/markdown-superscript-subscript-indices',
@@ -349,7 +349,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             url: '/blog/overleaf-alternatives-russia-online-latex',
             title: 'Альтернативы Overleaf в России',
-            text: 'Онлайн-редакторы LaTeX без блокировок, поддержка ГОСТ и компиляция в РФ.'
+            text: 'Онлайн-редакторы LaTeX без блокировок, примеры по ГОСТ и оплата в рублях.'
         },
         {
             url: '/blog/latex-tcolorbox-theorems-callouts',
@@ -414,7 +414,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             url: '/blog/a4-frames-eskd-stamp-technical-diploma',
             title: 'Рамки ЕСКД и штампы А4 для ВКР',
-            text: 'Формы 2 и 2а, поля 20-5-5-5 мм, графы штампа и автоматическое заполнение.'
+            text: 'Формы 2 и 2а, поля 20-5-5-5 мм и графы штампа ВКР на TikZ.'
         },
         {
             url: '/blog/paragraph-indent-1-25-gost',
@@ -444,12 +444,12 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             url: '/blog/algorithm-flowcharts-gost-markdown-latex',
             title: 'Блок-схемы по ГОСТ в отчетах',
-            text: 'Стандарт ГОСТ 19.701, отрисовка схем в TikZ и Mermaid, готовые шаблоны.'
+            text: 'Стандарт ГОСТ 19.701, отрисовка схем в TikZ и подписи «Да/Нет» на ветвлениях.'
         },
         {
             url: '/blog/programming-lab-report-code-listings-gost',
             title: 'Листинги кода по ГОСТ в отчетах',
-            text: 'Пакет listings, правила ГОСТ 7.32, моноширинные шрифты и шаблоны отчетов.'
+            text: 'Пакет listings, требования методичек, моноширинные шрифты и подпись «Листинг».'
         },
         {
             url: '/blog/latex-tikz-automata-graphs',
@@ -469,7 +469,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             url: '/blog/latex-sans-serif-fonts',
             title: 'Шрифты без засечек (Sans Serif) в LaTeX',
-            text: 'Глобальная смена шрифта на гротеск, пакеты helvet, cmbright и математика.'
+            text: 'Глобальная смена шрифта на гротеск, пакеты PT Sans, DejaVu Sans, cmbright и математика.'
         },
         {
             url: '/blog/latex-forest-trees',
@@ -489,7 +489,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             url: '/blog/latex-xcolor-text-background',
             title: 'Цвет текста и таблиц в LaTeX',
-            text: 'Пакет xcolor, цветные таблицы, фон ячеек и градиенты в академических документах.'
+            text: 'Пакет xcolor, цветные таблицы и фон ячеек в академических документах.'
         },
         {
             url: '/blog/latex-pgfplots-function-graphs',
@@ -534,7 +534,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             url: '/blog/markdown-to-pdf-export',
             title: 'Конвертация Markdown в&nbsp;PDF онлайн',
-            text: 'Мгновенный экспорт .md в PDF с формулами, разметкой таблиц и полями А4.'
+            text: 'Экспорт .md в PDF: печать браузера или LaTeX-проект с формулами, таблицами и сносками.'
         },
         {
             url: '/blog/markdown-strikethrough-underline-highlight',
@@ -559,7 +559,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             url: '/blog/latex-gost-bibliography',
             title: 'Список литературы по&nbsp;ГОСТ 7.0.5',
-            text: 'Оформление списка источников и цитирований по ГОСТ 7.0.5 с пакетом biblatex-gost.'
+            text: 'Записи по ГОСТ в thebibliography, ссылки на страницы и biblatex-gost для локальной сборки.'
         },
         {
             url: '/blog/latex-diploma-gost',
@@ -609,7 +609,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             url: '/blog/latex-list-of-figures-tables',
             title: 'Список иллюстраций и&nbsp;таблиц по&nbsp;ГОСТ',
-            text: 'Автоматическая генерация перечня рисунков и таблиц (LoF / LoT) по ГОСТ 7.32.'
+            text: 'Автоматическая генерация перечня рисунков и таблиц (LoF / LoT) в LaTeX.'
         },
         {
             url: '/blog/latex-systems-equations',
@@ -628,7 +628,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             url: '/blog/latex-eskd',
-            title: 'Рамки и&nbsp;штампы по&nbsp;ЕСКД/СПДС (eskdx)',
+            title: 'Рамки и&nbsp;штампы по&nbsp;ЕСКД в&nbsp;LaTeX',
             text: 'Верстка расчетно-пояснительных записок, рамки 20-5-5-5 мм и штампы по ГОСТ 2.104.'
         },
         {

@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/table-continuation-multipage-gost-diploma"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Дипломные работы"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#diploma" class="article-tag">Дипломные работы</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~7 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~7 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -234,16 +234,16 @@
                     <section class="article-section" id="standard">
                         <h2 class="article-section__title">Что требует ГОСТ 7.32-2017 к переносу таблиц</h2>
                         <p>В дипломных проектах по экономике, логистике, IT и машиностроению таблицы с результатами тестирования, спецификациями оборудования или сметами часто не помещаются на одну страницу формата А4 (подробнее см. руководство по <a href="/blog/latex-list-of-figures-tables">списку иллюстраций и таблиц в LaTeX</a>).</p>
-                        <p>Согласно <strong>ГОСТ 7.32-2017</strong> (пункт 6.5), при переносе таблицы на следующий лист нельзя просто обрывать сетку горизонтальной линией: требуется повторить шапку и разместить специальную указательную подпись.</p>
+                        <p>Согласно <strong>ГОСТ 7.32-2017</strong> (пункт 6.6.3), таблицу с большим количеством строк допускается переносить на другую страницу. Наименование таблицы пишут один раз слева над первой частью, а над следующими частями также слева пишут «Продолжение таблицы» с ее номером. Шапку на продолжении повторяют или заменяют строкой с номерами граф.</p>
                     </section>
 
                     <section class="article-section" id="gost-continuation">
                         <h2 class="article-section__title">Продолжение таблицы на следующем листе гост: формулировка подписи</h2>
                         <p>Каноническое <strong>продолжение таблицы на следующем листе гост</strong> оформляется следующим образом:</p>
                         <ul>
-                            <li>На первом листе над таблицей пишется полное название: <em>Таблица 2.3 — Паспортные данные электродвигателей серии АИР</em>.</li>
-                            <li>На втором и последующих листах над правым верхним углом таблицы курсивом или прямым шрифтом пишется: <em>Продолжение таблицы 2.3</em>.</li>
-                            <li>Если таблица переходит на третий и последующий листы, на самом последнем листе некоторые вузы требуют писать <em>Окончание таблицы 2.3</em> (хотя стандарт 7.32 допускает везде писать «Продолжение»).</li>
+                            <li>На первом листе над таблицей слева пишется полное название: <em>Таблица 2.3 — Паспортные данные электродвигателей серии АИР</em>.</li>
+                            <li>На втором и последующих листах над таблицей слева, без абзацного отступа, пишется: <em>Продолжение таблицы 2.3</em>.</li>
+                            <li>На последнем листе некоторые вузы требуют писать <em>Окончание таблицы 2.3</em>; в ГОСТ 7.32 такой надписи нет, он везде использует «Продолжение таблицы».</li>
                         </ul>
                     </section>
 
@@ -252,17 +252,19 @@
                         <p>Грамотный <strong>перенос шапки таблицы диплом</strong> допускает два варианта:</p>
                         <ol>
                             <li><strong>Полный повтор текста шапки:</strong> дублируются названия столбцов («Наименование», «Количество», «Цена»). Удобно для читателя, но отнимает полезную высоту страницы.</li>
-                            <li><strong>Нумерация граф (рекомендуется ГОСТ для больших таблиц):</strong> под основной шапкой на первом листе вводится дополнительная строка с номерами столбцов (1, 2, 3, 4). На всех последующих листах печатается <strong>только строка с цифрами 1, 2, 3, 4</strong>, что экономит место и выглядит максимально профессионально.</li>
+                            <li><strong>Нумерация граф (допускается ГОСТ 7.32 при делении таблицы на части):</strong> под основной шапкой на первом листе вводится дополнительная строка с номерами столбцов (1, 2, 3, 4). На всех последующих листах печатается <strong>только строка с цифрами 1, 2, 3, 4</strong>, что экономит место и выглядит максимально профессионально.</li>
                         </ol>
                     </section>
 
                     <section class="article-section" id="longtable-code">
                         <h2 class="article-section__title">Готовый рабочий код шаблона таблицы в LaTeX</h2>
+                        <p>Команда <code>\caption</code> внутри longtable по умолчанию дает подпись «Таблица 1: …» по центру. Проще всего написать наименование первой строкой шапки через <code>\multicolumn{4}{l}</code> — так же, как надпись «Продолжение таблицы»: обе строки встанут слева над таблицей. Номер таблицы задает команда <code>\refstepcounter{table}</code>, а метка <code>\label</code> позволяет сослаться на таблицу в тексте.</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
-                            <pre><code>\begin{longtable}{|c|p{7cm}|c|r|}
+                            <pre><code>\refstepcounter{table}\label{tab:modules}
+\begin{longtable}{|c|p{7cm}|c|r|}
     % 1. ШАПКА ПЕРВОЙ СТРАНИЦЫ
-    \caption{Сравнительные характеристики модулей}\label{tab:modules} \\
+    \multicolumn{4}{l}{Таблица \thetable{} --- Сравнительные характеристики модулей} \\
     \hline
     \textbf{№} &amp; \textbf{Наименование компонента} &amp; \textbf{Тип} &amp; \textbf{Цена, руб.} \\
     \hline
@@ -271,18 +273,15 @@
     \endfirsthead
 
     % 2. ШАПКА ВСЕХ СЛЕДУЮЩИХ СТРАНИЦ (ПО ГОСТ)
-    \multicolumn{4}{r}{\textit{Продолжение таблицы \ref{tab:modules}}} \\[1mm]
+    \multicolumn{4}{l}{Продолжение таблицы \thetable} \\
     \hline
-    \small 1 &amp; \small 2 &amp; \small 3 &amp; \small 4 \\ % Только номера столбцов!
+    \small 1 &amp; \small 2 &amp; \small 3 &amp; \small 4 \\ % Только номера граф
     \hline
     \endhead
 
-    % 3. ПОДВАЛ ПРОМЕЖУТОЧНЫХ СТРАНИЦ
-    \hline
+    % 3. ПОДВАЛЫ ПУСТЫЕ: каждая строка уже закрыта \hline,
+    % иначе на разрыве получится двойная линия
     \endfoot
-
-    % 4. ФИНАЛЬНЫЙ ПОДВАЛ
-    \hline
     \endlastfoot
 
     % СТРОКИ ДАННЫХ
@@ -295,7 +294,7 @@
 
                     <section class="article-section" id="common-pitfalls">
                         <h2 class="article-section__title">Типичные ошибки при ручной верстке в Word</h2>
-                        <p>В текстовых процессорах студенты часто создают разрыв страницы вручную и копируют кусок таблицы как отдельный объект. При малейшей правке текста выше по документу таблица съезжает, оставляя надпись «Продолжение таблицы» посередине листа. В LaTeX с пакетом <code>longtable</code> перенос управляется динамически и никогда не ломается (ознакомьтесь с подробным руководством по <a href="/blog/latex-longtable-multipage">многостраничным таблицам longtable в LaTeX</a>).</p>
+                        <p>В текстовых процессорах студенты часто создают разрыв страницы вручную и копируют кусок таблицы как отдельный объект. При малейшей правке текста выше по документу таблица съезжает, оставляя надпись «Продолжение таблицы» посередине листа. В LaTeX с пакетом <code>longtable</code> перенос пересчитывается при каждой сборке и не ломается от правок текста (ознакомьтесь с подробным руководством по <a href="/blog/latex-longtable-multipage">многостраничным таблицам longtable в LaTeX</a>).</p>
                     </section>
 
                     <section class="article-section" id="tips">
@@ -312,7 +311,7 @@
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
                                     <h3>Шрифт внутри таблицы</h3>
-                                    <p>По ГОСТ допускается уменьшать кегль шрифта внутри таблицы до 10–12 пт при основном тексте 14 пт (добавьте <code>\small</code> перед tabular).</p>
+                                    <p>Меньший кегль в таблице, чем в основном тексте, допускается: многие методички разрешают, например, 12 пт при основном тексте 14 пт. В LaTeX уменьшите шрифт командой <code>\small</code> перед таблицей.</p>
                                 </div>
                             </div>
                         </div>
@@ -328,8 +327,8 @@
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Верстайте спецификации и базы данных с автоматическим ГОСТ-переносом в Labkeeper.</p>
-                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Blongtable%7D%5Cusepackage%5Btextheight%3D55mm%5D%7Bgeometry%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Blongtable%7D%7Bcc%7D%0A%5Ccaption%7BMeasurements%7D%5C%5CTime+%26+Value%5C%5C%5Chline%5Cendfirsthead%0A%5Cmulticolumn%7B2%7D%7Bc%7D%7BContinuation+of+table+%5Cthetable%7D%5C%5CTime+%26+Value%5C%5C%5Chline%5Cendhead%0A1+%26+10%5C%5C2+%26+20%5C%5C3+%26+30%5C%5C4+%26+40%5C%5C5+%26+50%5C%5C6+%26+60%5C%5C7+%26+70%5C%5C8+%26+80%5C%5C9+%26+90%5C%5C10+%26+100%5C%5C%0A%5Cend%7Blongtable%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <p class="article-sidebar__title">Верстайте многостраничные спецификации и сводные таблицы в Labkeeper: пакет longtable сам переносит таблицу на следующий лист.</p>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5B12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Brussian%5D%7Bbabel%7D%0A%5Cusepackage%7Blongtable%7D%0A%5Cusepackage%5Ba4paper%2Ctextheight%3D55mm%5D%7Bgeometry%7D%0A%5Cbegin%7Bdocument%7D%0A%5Crefstepcounter%7Btable%7D%0A%5Cbegin%7Blongtable%7D%7B%7Cc%7Cc%7C%7D%0A%5Cmulticolumn%7B2%7D%7Bl%7D%7B%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0+%5Cthetable%7B%7D+---+%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D1%8B+%D0%B8%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D0%B9%7D%5C%5C%5Chline%0A%D0%92%D1%80%D0%B5%D0%BC%D1%8F%2C+%D1%81+%26+%D0%9F%D1%83%D1%82%D1%8C%2C+%D0%BC%5C%5C%5Chline%0A1+%26+2%5C%5C%5Chline%5Cendfirsthead%0A%5Cmulticolumn%7B2%7D%7Bl%7D%7B%D0%9F%D1%80%D0%BE%D0%B4%D0%BE%D0%BB%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5+%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%8B+%5Cthetable%7D%5C%5C%5Chline%0A1+%26+2%5C%5C%5Chline%5Cendhead%0A0%2C5+%26+1%2C2%5C%5C%5Chline+1%2C0+%26+4%2C9%5C%5C%5Chline+1%2C5+%26+11%2C0%5C%5C%5Chline+2%2C0+%26+19%2C6%5C%5C%5Chline+2%2C5+%26+30%2C6%5C%5C%5Chline%0A3%2C0+%26+44%2C1%5C%5C%5Chline+3%2C5+%26+60%2C0%5C%5C%5Chline+4%2C0+%26+78%2C4%5C%5C%5Chline+4%2C5+%26+99%2C2%5C%5C%5Chline+5%2C0+%26+122%2C5%5C%5C%5Chline%0A%5Cend%7Blongtable%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -345,7 +344,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Оформляйте большие таблицы в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с шаблонами пакета longtable, соблюдением нормоконтроля ГОСТ 7.32 и мгновенной компиляцией в PDF.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX: многостраничные таблицы longtable с надписью «Продолжение таблицы» и PDF после нажатия «Выполнить».</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -383,7 +382,7 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Blongtable%7D%5Cusepackage%5Btextheight%3D55mm%5D%7Bgeometry%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Blongtable%7D%7Bcc%7D%0A%5Ccaption%7BMeasurements%7D%5C%5CTime+%26+Value%5C%5C%5Chline%5Cendfirsthead%0A%5Cmulticolumn%7B2%7D%7Bc%7D%7BContinuation+of+table+%5Cthetable%7D%5C%5CTime+%26+Value%5C%5C%5Chline%5Cendhead%0A1+%26+10%5C%5C2+%26+20%5C%5C3+%26+30%5C%5C4+%26+40%5C%5C5+%26+50%5C%5C6+%26+60%5C%5C7+%26+70%5C%5C8+%26+80%5C%5C9+%26+90%5C%5C10+%26+100%5C%5C%0A%5Cend%7Blongtable%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5B12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Brussian%5D%7Bbabel%7D%0A%5Cusepackage%7Blongtable%7D%0A%5Cusepackage%5Ba4paper%2Ctextheight%3D55mm%5D%7Bgeometry%7D%0A%5Cbegin%7Bdocument%7D%0A%5Crefstepcounter%7Btable%7D%0A%5Cbegin%7Blongtable%7D%7B%7Cc%7Cc%7C%7D%0A%5Cmulticolumn%7B2%7D%7Bl%7D%7B%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0+%5Cthetable%7B%7D+---+%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D1%8B+%D0%B8%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D0%B9%7D%5C%5C%5Chline%0A%D0%92%D1%80%D0%B5%D0%BC%D1%8F%2C+%D1%81+%26+%D0%9F%D1%83%D1%82%D1%8C%2C+%D0%BC%5C%5C%5Chline%0A1+%26+2%5C%5C%5Chline%5Cendfirsthead%0A%5Cmulticolumn%7B2%7D%7Bl%7D%7B%D0%9F%D1%80%D0%BE%D0%B4%D0%BE%D0%BB%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5+%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%8B+%5Cthetable%7D%5C%5C%5Chline%0A1+%26+2%5C%5C%5Chline%5Cendhead%0A0%2C5+%26+1%2C2%5C%5C%5Chline+1%2C0+%26+4%2C9%5C%5C%5Chline+1%2C5+%26+11%2C0%5C%5C%5Chline+2%2C0+%26+19%2C6%5C%5C%5Chline+2%2C5+%26+30%2C6%5C%5C%5Chline%0A3%2C0+%26+44%2C1%5C%5C%5Chline+3%2C5+%26+60%2C0%5C%5C%5Chline+4%2C0+%26+78%2C4%5C%5C%5Chline+4%2C5+%26+99%2C2%5C%5C%5Chline+5%2C0+%26+122%2C5%5C%5C%5Chline%0A%5Cend%7Blongtable%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

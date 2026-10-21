@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Русский язык в листингах кода LaTeX: ошибка кириллицы listings — Labkeeper</title>
-    <meta name="description" content="Как победить ошибку кириллицы в listings LaTeX и настроить русский язык в листингах кода minted. Готовые сниппеты преамбулы и кодировок UTF-8 в Labkeeper." />
+    <meta name="description" content="Как победить ошибку кириллицы в listings LaTeX и включить русский язык в листингах кода: рабочая преамбула для pdfLaTeX и Labkeeper, minted — для локальной сборки." />
     <!-- SEO Ключи: русский язык в листингах кода latex, ошибка кириллицы в listings latex -->
     <meta name="keywords" content="русский язык в листингах кода latex, ошибка кириллицы в listings latex" />
     <link rel="canonical" href="https://labkeeper.io/blog/latex-russian-cyrillic-code-listings-minted" />
@@ -17,19 +17,19 @@
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Labkeeper" />
     <meta property="og:title" content="Русский язык в листингах кода LaTeX: ошибка кириллицы listings — Labkeeper" />
-    <meta property="og:description" content="Как победить ошибку кириллицы в listings LaTeX и настроить русский язык в листингах кода minted. Готовые сниппеты преамбулы и кодировок UTF-8 в Labkeeper." />
+    <meta property="og:description" content="Как победить ошибку кириллицы в listings LaTeX и включить русский язык в листингах кода: рабочая преамбула для pdfLaTeX и Labkeeper, minted — для локальной сборки." />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:title" content="Русский язык в листингах кода LaTeX: ошибка кириллицы listings — Labkeeper" />
-    <meta name="twitter:description" content="Как победить ошибку кириллицы в listings LaTeX и настроить русский язык в листингах кода minted. Готовые сниппеты преамбулы и кодировок UTF-8 в Labkeeper." />
+    <meta name="twitter:description" content="Как победить ошибку кириллицы в listings LaTeX и включить русский язык в листингах кода: рабочая преамбула для pdfLaTeX и Labkeeper, minted — для локальной сборки." />
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Русский язык в листингах кода (minted/listings) без ошибок компиляции",
-        "description": "Как победить ошибку кириллицы в listings LaTeX и настроить русский язык в листингах кода minted. Готовые сниппеты преамбулы и кодировок UTF-8 в Labkeeper.",
+        "description": "Как победить ошибку кириллицы в listings LaTeX и включить русский язык в листингах кода: рабочая преамбула для pdfLaTeX и Labkeeper, minted — для локальной сборки.",
         "author": {
             "@type": "Organization",
             "name": "Labkeeper",
@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-russian-cyrillic-code-listings-minted"
         },
         "datePublished": "2026-09-06",
-        "dateModified": "2026-09-06",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с LaTeX"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 6 сентября 2026 · Время чтения: ~8 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~8 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -226,8 +226,8 @@
                             <li><a href="#problem" class="article-toc__link">Почему возникает ошибка кириллицы в listings LaTeX</a></li>
                             <li><a href="#listings-fix" class="article-toc__link">Русский язык в листингах кода LaTeX: правильная настройка listings</a></li>
                             <li><a href="#extendedchars" class="article-toc__link">Символьная таблица literate для полного охвата русского алфавита</a></li>
-                            <li><a href="#minted-setup" class="article-toc__link">Подключение современного пакета minted с поддержкой UTF-8</a></li>
-                            <li><a href="#xelatex-lualatex" class="article-toc__link">Решение проблемы через современные движки XeLaTeX и LuaLaTeX</a></li>
+                            <li><a href="#minted-setup" class="article-toc__link">Пакет minted с поддержкой UTF-8: только локальная сборка</a></li>
+                            <li><a href="#xelatex-lualatex" class="article-toc__link">Движки XeLaTeX и LuaLaTeX при локальной сборке</a></li>
                             <li><a href="#faq" class="article-toc__link">Частые вопросы и рекомендации по ГОСТ</a></li>
                         </ol>
                     </nav>
@@ -240,7 +240,7 @@
 
                     <section class="article-section" id="listings-fix">
                         <h2 class="article-section__title">Русский язык в листингах кода LaTeX: правильная настройка listings</h2>
-                        <p>Чтобы корректно включить <strong>русский язык в листингах кода latex</strong> при использовании стандартного пакета <code>listings</code>, необходимо задать правильные параметры в преамбуле документа:</p>
+                        <p>Параметры <code>inputencoding</code> и <code>extendedchars</code> часто ставят первыми, но в pdfLaTeX их недостаточно для кириллицы внутри <code>lstlisting</code>. Рабочий способ — таблица <code>literate</code> ниже. Для полноты преамбула может выглядеть так:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX Преамбула</span></div>
                             <pre><code>\usepackage{listings}
@@ -286,7 +286,7 @@ def calculate_sum(a, b):
         {р}{{\cyrr}}1 {с}{{\cyrs}}1 {т}{{\cyrt}}1 {у}{{\cyru}}1
         {ф}{{\cyrf}}1 {х}{{\cyrh}}1 {ц}{{\cyrc}}1 {ч}{{\cyrch}}1
         {ш}{{\cyrsh}}1 {щ}{{\cyrshch}}1 {ъ}{{\cyrhrdsn}}1 {ы}{{\cyrery}}1
-        {ь}{{\cyrsftsn}}1 {э}{{\cyrerev}}1 {ю}{{\cyryu}}1 {я}{{\cyrya}}1
+        {ь}{{\cyrsftsn}}1 {э}{{\cyrerev}}1 {ю}{{\cyryu}}1 {я}{{\cyrya}}1 {ё}{{\cyryo}}1
         {А}{{\CYRA}}1 {Б}{{\CYRB}}1 {В}{{\CYRV}}1 {Г}{{\CYRG}}1
         {Д}{{\CYRD}}1 {Е}{{\CYRE}}1 {Ж}{{\CYRZH}}1 {З}{{\CYRZ}}1
         {И}{{\CYRI}}1 {Й}{{\CYRISHRT}}1 {К}{{\CYRK}}1 {Л}{{\CYRL}}1
@@ -294,17 +294,17 @@ def calculate_sum(a, b):
         {Р}{{\CYRR}}1 {С}{{\CYRS}}1 {Т}{{\CYRT}}1 {У}{{\CYRU}}1
         {Ф}{{\CYRF}}1 {Х}{{\CYRH}}1 {Ц}{{\CYRC}}1 {Ч}{{\CYRCH}}1
         {Ш}{{\CYRSH}}1 {Щ}{{\CYRSHCH}}1 {Ъ}{{\CYRHRDSN}}1 {Ы}{{\CYRERY}}1
-        {Ь}{{\CYRSFTSN}}1 {Э}{{\CYREREV}}1 {Ю}{{\CYRYU}}1 {Я}{{\CYRYA}}1
+        {Ь}{{\CYRSFTSN}}1 {Э}{{\CYREREV}}1 {Ю}{{\CYRYU}}1 {Я}{{\CYRYA}}1 {Ё}{{\CYRYO}}1
 }</code></pre>
                         </div>
-                        <p>После включения этой таблицы вы сможете свободно писать русские комментарии в любых языках программирования без малейших ошибок.</p>
+                        <p>После включения этой таблицы можно писать русские комментарии, включая букву «ё»: без неё в таблице literate эта буква по-прежнему ломает сборку.</p>
                     </section>
 
                     <section class="article-section" id="minted-setup">
-                        <h2 class="article-section__title">Подключение современного пакета minted с поддержкой UTF-8</h2>
+                        <h2 class="article-section__title">Пакет minted с поддержкой UTF-8: только локальная сборка</h2>
                         <p>Более современная альтернатива <code>listings</code> — пакет <code>minted</code>. Он использует мощный лексер <strong>Pygments</strong>, нативно поддерживает Unicode и оформляет код так же красиво, как современные IDE:</p>
                         <div class="article-code">
-                            <div class="article-code__header"><span class="article-code__lang">LaTeX Minted</span></div>
+                            <div class="article-code__header"><span class="article-code__lang">LaTeX Minted (только локально)</span></div>
                             <pre><code>\usepackage{minted}
 \usemintedstyle{friendly}
 
@@ -323,14 +323,14 @@ def factorial(n: int) -&gt; int:
 print("Результат вычисления:", factorial(5))
 \end{minted}</code></pre>
                         </div>
-                        <p><em>Обратите внимание:</em> для локального запуска <code>minted</code> требуется установленный Python с библиотекой Pygments и флаг компиляции <code>-shell-escape</code>. В облачном редакторе Labkeeper всё настроено «из коробки» без необходимости конфигурировать окружение.</p>
+                        <p><em>Обратите внимание:</em> <code>minted</code> запускает внешнюю программу — Python с библиотекой Pygments, поэтому для локальной сборки нужен флаг компиляции <code>-shell-escape</code>. В Labkeeper minted не работает: серверная сборка запрещает запуск внешних программ, и пакет останавливается с ошибкой <code>minted executable is unavailable or disabled</code>. Используйте <code>listings</code> с таблицей <code>literate</code> из раздела выше.</p>
                     </section>
 
                     <section class="article-section" id="xelatex-lualatex">
-                        <h2 class="article-section__title">Решение проблемы через современные движки XeLaTeX и LuaLaTeX</h2>
-                        <p>Если у вас есть возможность переключить компилятор с <code>pdfLaTeX</code> на <code>XeLaTeX</code> или <code>LuaLaTeX</code>, проблема с кодировками исчезает полностью. Благодаря пакету <code>fontspec</code> движок нативно работает с кодировкой UTF-8 и системными шрифтами OpenType/TrueType:</p>
+                        <h2 class="article-section__title">Движки XeLaTeX и LuaLaTeX при локальной сборке</h2>
+                        <p>Если у вас есть возможность переключить компилятор с <code>pdfLaTeX</code> на <code>XeLaTeX</code> или <code>LuaLaTeX</code>, проблема с кодировками исчезает полностью. Благодаря пакету <code>fontspec</code> движок нативно работает с кодировкой UTF-8 и системными шрифтами OpenType/TrueType. Этот способ подходит только для локальной сборки: в Labkeeper работает pdfLaTeX, и блок с <code>fontspec</code> остановит компиляцию с ошибкой <code>fontspec requires XeTeX or LuaTeX</code>.</p>
                         <div class="article-code">
-                            <div class="article-code__header"><span class="article-code__lang">XeLaTeX Преамбула</span></div>
+                            <div class="article-code__header"><span class="article-code__lang">XeLaTeX Преамбула (только локально)</span></div>
                             <pre><code>\usepackage{fontspec}
 \setmainfont{Times New Roman}
 \setmonofont{Courier New} % или Fira Code
@@ -346,7 +346,7 @@ print("Результат вычисления:", factorial(5))
 
                     <section class="article-section" id="faq">
                         <h2 class="article-section__title">Частые вопросы и рекомендации по ГОСТ</h2>
-                        <p>Согласно ГОСТ 7.0.100 и рекомендациям к ВКР, листинги кода в дипломе должны соответствовать следующим правилам:</p>
+                        <p>Требования к листингам задают методические указания вуза; для программной документации ориентиром служит ГОСТ 19.401-78 «Текст программы». Обычно листинги кода в дипломе оформляют так:</p>
                         <ul>
                             <li><strong>Шрифт моноширинный:</strong> используйте Courier New или PT Mono кеглем 10–12 pt;</li>
                             <li><strong>Подпись к листингу:</strong> размещается снизу или сверху с единообразным выравниванием («Листинг 3.1 — Метод авторизации пользователя»);</li>
@@ -361,14 +361,14 @@ print("Результат вычисления:", factorial(5))
                                 <div class="article-tip__number">1</div>
                                 <div class="article-tip__content">
                                     <h3>Компактные листинги в приложении</h3>
-                                    <p>Длинные портянки кода объемом более 1 страницы по ГОСТу выносят в «Приложения», оставляя в основном тексте только фрагменты ключевых алгоритмов на 15–30 строк.</p>
+                                    <p>Длинные портянки кода объемом более 1 страницы по требованиям большинства методичек выносят в «Приложения», оставляя в основном тексте только фрагменты ключевых алгоритмов на 15–30 строк.</p>
                                 </div>
                             </div>
                             <div class="article-tip">
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
-                                    <h3>Готовые стили в Labkeeper</h3>
-                                    <p>В шаблонах Labkeeper уже встроены настроенные стили для листингов с автоматической нумерацией строк и поддержкой кириллицы в комментариях.</p>
+                                    <h3>Листинги в автоматической преамбуле Labkeeper</h3>
+                                    <p>Если в проекте нет своей преамбулы, Labkeeper подставляет автоматическую, в которой уже есть <code>listings</code> и кодировка <code>T2A</code>. Достаточно добавить в LaTeX-сегмент команду <code>\lstset</code> с таблицей <code>literate</code>: строка <code>\usepackage</code> в обычном сегменте отключила бы автоматическую преамбулу целиком.</p>
                                 </div>
                             </div>
                         </div>
@@ -384,7 +384,7 @@ print("Результат вычисления:", factorial(5))
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">В Labkeeper листинги кода компилируются с поддержкой UTF-8 и подсветкой синтаксиса без ручной установки Python Pygments.</p>
+                    <p class="article-sidebar__title">В Labkeeper листинги с русскими комментариями собираются через listings — без установки LaTeX и Python.</p>
                     <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Blistings%7D%5Clstset%7Bbasicstyle%3D%5Cttfamily%2Cextendedchars%3Dtrue%2Cliterate%3D%7B%D0%9F%7D%7B%7B%5CCYRP%7D%7D1+%7B%D1%80%7D%7B%7B%5Ccyrr%7D%7D1+%7B%D0%B8%7D%7B%7B%5Ccyri%7D%7D1+%7B%D0%B2%7D%7B%7B%5Ccyrv%7D%7D1+%7B%D0%B5%7D%7B%7B%5Ccyre%7D%7D1+%7B%D1%82%7D%7B%7B%5Ccyrt%7D%7D1%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cbegin%7Blstlisting%7D%5Blanguage%3DPython%5D%0Aprint%28%22%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%22%29%0A%5Cend%7Blstlisting%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
@@ -401,7 +401,7 @@ print("Результат вычисления:", factorial(5))
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Компилируйте чистые листинги в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с мгновенной подсветкой кода по ГОСТу, поддержкой кириллицы и экспортом в идеальный PDF.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX: листинги кода с кириллицей через listings и сборка PDF в браузере.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">

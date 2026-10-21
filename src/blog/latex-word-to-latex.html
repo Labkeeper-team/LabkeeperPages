@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Как перенести документ из Word в LaTeX с сохранением формул — Labkeeper</title>
-    <meta name="description" content="Пошаговый гайд: перенос формул из Word в LaTeX онлайн, импорт docx в LaTeX без потери формул, использование Pandoc, встроенного редактора уравнений и Labkeeper." />
+    <meta name="description" content="Перенос формул из Word в LaTeX онлайн и импорт docx в LaTeX без потери формул: Pandoc на компьютере, редактор уравнений Word и загрузка .tex в Labkeeper." />
     <!-- SEO Ключи: перенос формул из word в latex онлайн, импорт docx в latex без потери формул -->
     <meta name="keywords" content="перенос формул из word в latex онлайн, импорт docx в latex без потери формул" />
     <link rel="canonical" href="https://labkeeper.io/blog/latex-word-to-latex" />
@@ -22,7 +22,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:title" content="Как перенести документ из Word в LaTeX с сохранением формул — Labkeeper" />
-    <meta name="twitter:description" content="Импорт docx в LaTeX без потери формул: онлайн-инструменты, Pandoc и умные алгоритмы конвертации." />
+    <meta name="twitter:description" content="Импорт docx в LaTeX без потери формул: редактор уравнений Word, Pandoc и очистка TeX-кода." />
 
     <script type="application/ld+json">
     {
@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-word-to-latex"
         },
         "datePublished": "2026-08-20",
-        "dateModified": "2026-08-20",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с LaTeX"]
     }
@@ -220,7 +220,7 @@
                         <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 20 августа 2026 · Время чтения: ~10 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~10 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -280,6 +280,9 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
                         </div>
                         <p>Ключ <code>--extract-media</code> автоматически сохраняет все графики и схемы в векторном или
                             растровом формате с генерацией команд <code>\includegraphics{}</code>.</p>
+                        <p>Pandoc запускается на компьютере: Labkeeper не импортирует файлы .docx. Полученный
+                            <code>document.tex</code> и картинки из папки <code>images</code> загрузите в проект
+                            Labkeeper и соберите PDF уже там.</p>
                     </section>
 
                     <section class="article-section" id="tables-images">
@@ -339,10 +342,11 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
                                     <h3>Перенос библиографии по ГОСТ</h3>
-                                    <p>Если в Word использовались ссылки через Mendeley или Zotero, экспортируйте
-                                        библиотеку в <code>.bib</code>-файл и настройте вывод по стандарту ГОСТ 7.0.5
-                                        (пошаговая инструкция в <a href="/blog/latex-gost-bibliography">статье по
-                                            biblatex-gost</a>).</p>
+                                    <p>Если в Word использовались ссылки через Mendeley или Zotero, перенесите список в
+                                        окружение <code>thebibliography</code>: BibTeX и Biber в Labkeeper пока не
+                                        запускаются, поэтому <code>.bib</code>-файл сам в список не превратится. Как
+                                        оформить записи по ГОСТ, смотрите в <a href="/blog/latex-gost-bibliography">статье
+                                            о списке литературы по ГОСТ</a>.</p>
                                 </div>
                             </div>
                         </div>
@@ -360,7 +364,7 @@ pandoc document.docx -f docx -t latex --extract-media=./images -s -o document.te
                             alt="Онлайн-редактор LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Импортируйте формулы и&nbsp;тексты в&nbsp;онлайн-редактор
+                    <p class="article-sidebar__title">Переносите формулы и&nbsp;тексты в&nbsp;онлайн-редактор
                         Labkeeper — удобная среда без&nbsp;необходимости локальной установки.</p>
                     <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Csection%7B%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0+%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%7D%0A%D0%A2%D0%B5%D0%BA%D1%81%D1%82+%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%BE+%D1%80%D1%83%D1%87%D0%BD%D0%BE%D0%B3%D0%BE+%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.%0A%5Csubsection%7B%D0%A4%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D0%B0%7D%5C%5Bs%3Dvt%5C%5D%0A%5Cbegin%7Bitemize%7D%5Citem+%D0%97%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BA%D0%B8%5Citem+%D0%A4%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D1%8B%5Citem+%D0%A1%D0%BF%D0%B8%D1%81%D0%BA%D0%B8%5Cend%7Bitemize%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">

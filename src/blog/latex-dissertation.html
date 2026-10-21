@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-dissertation"
         },
         "datePublished": "2026-08-20",
-        "dateModified": "2026-08-20",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Оформление научных статей","Дипломные работы","Работа с LaTeX"]
     }
@@ -220,7 +220,7 @@
                         <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 20 августа 2026 · Время чтения: ~11 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~11 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -236,16 +236,18 @@
 
                     <section class="article-section" id="intro">
                         <h2 class="article-section__title">Требования ВАК к диссертации</h2>
-                        <p>Высшая аттестационная комиссия (ВАК) устанавливает единые требования для кандидатских и докторских диссертаций, а также авторефератов. Ключевые параметры оформления кандидатской диссертации согласно «Положению о порядке присуждения учёных степеней» (Постановление Правительства РФ № 842):</p>
+                        <p>Структуру и правила оформления кандидатских и докторских диссертаций и авторефератов задаёт ГОСТ Р 7.0.11-2011 «Диссертация и автореферат диссертации. Структура и правила оформления». «Положение о присуждении учёных степеней» (Постановление Правительства РФ № 842) регулирует порядок защиты и ограничивает объём автореферата, но параметров вёрстки не содержит. Ключевые параметры:</p>
                         <div class="article-table-wrapper">
                             <table class="article-table">
                                 <thead><tr><th>Параметр</th><th>Диссертация</th><th>Автореферат</th></tr></thead>
                                 <tbody>
-                                    <tr><td>Объём</td><td>130–200 с. (технические науки)</td><td>24 с. (кандидатская)</td></tr>
-                                    <tr><td>Формат</td><td>A4</td><td>A5 (148×210 мм)</td></tr>
-                                    <tr><td>Шрифт</td><td>Times New Roman 14 пт</td><td>Times New Roman 10–12 пт</td></tr>
+                                    <tr><td>Объём</td><td>Стандартом не ограничен (обычно 100–200 с.)</td><td>Для кандидатской в большинстве отраслей — до 1 авторского листа (около 40 000 знаков)</td></tr>
+                                    <tr><td>Формат</td><td>A4</td><td>Обычно A5 (148×210 мм)</td></tr>
+                                    <tr><td>Шрифт</td><td>12–14 пт, обычно Times New Roman</td><td>Times New Roman 10–12 пт</td></tr>
                                     <tr><td>Межстрочный интервал</td><td>1.5</td><td>1.0–1.2</td></tr>
-                                    <tr><td>Поля</td><td>Лев. 30, пр. 10, вер./ниж. 20 мм</td><td>Все по 15–20 мм</td></tr>
+                                    <tr><td>Поля</td><td>Лев. 25, пр. 10, вер./ниж. 20 мм</td><td>Задаёт совет или типография</td></tr>
+                                    <tr><td>Абзацный отступ</td><td>Пять знаков</td><td>—</td></tr>
+                                    <tr><td>Номер страницы</td><td>Посередине верхнего поля, на титульном листе не ставится</td><td>—</td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -256,20 +258,19 @@
 
                     <section class="article-section" id="structure">
                         <h2 class="article-section__title">Структура диссертации в LaTeX</h2>
-                        <p>Рекомендуемая структура проекта диссертации — несколько .tex-файлов, собранных в главный файл. Оформление списка литературы по стандарту ВАК требует строгого соответствия ГОСТ 7.0.5 (полный разбор настройки biblatex-gost читайте в <a href="/blog/latex-gost-bibliography">нашем руководстве по библиографии по ГОСТ</a>):</p>
+                        <p>Рекомендуемая структура проекта диссертации — несколько .tex-файлов, собранных в главный файл. Список литературы оформляют по ГОСТ Р 7.0.100-2018 и ГОСТ Р 7.0.5-2008, а ГОСТ Р 7.0.11-2011 добавляет к ним правила для диссертаций (как набрать записи через <code>thebibliography</code>, читайте в <a href="/blog/latex-gost-bibliography">нашем руководстве по библиографии по ГОСТ</a>):</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>% main.tex — главный файл
-\documentclass[14pt,a4paper]{report}
+\documentclass[a4paper,14pt]{extreport}
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
-\usepackage[left=30mm,right=10mm,top=20mm,bottom=20mm]{geometry}
+\usepackage[left=25mm,right=10mm,top=20mm,bottom=20mm]{geometry}
 \usepackage{setspace}
 \onehalfspacing
 \usepackage[hidelinks]{hyperref}
-\usepackage[backend=biber,style=gost-numeric]{biblatex}
-\addbibresource{references.bib}
+\addto\captionsrussian{\renewcommand{\bibname}{Список литературы}}
 
 \begin{document}
     \include{titlepage}      % Титульный лист
@@ -280,16 +281,17 @@
     \include{chapter2}       % Глава 2
     \include{chapter3}       % Глава 3
     \include{conclusion}     % Заключение
-    \printbibliography[title={Список использованных источников}]
+    \input{biblio}           % Список литературы: окружение thebibliography
     \appendix
     \include{appendix-a}     % Приложение А
 \end{document}</code></pre>
                         </div>
+                        <p>Класс <code>extreport</code> из комплекта extsizes поддерживает кегль 14 пт: стандартный <code>report</code> принимает только 10, 11 и 12 пт и молча игнорирует опцию <code>14pt</code>. Файл <code>biblio.tex</code> содержит окружение <code>thebibliography</code>: Biber в Labkeeper пока не запускается, поэтому записи набираются вручную.</p>
                     </section>
 
                     <section class="article-section" id="autoreferat">
                         <h2 class="article-section__title">Шаблон автореферата ВАК</h2>
-                        <p>Автореферат кандидатской диссертации печатается на листах формата A5 (148×210 мм), объёмом 24 страницы. Преамбула для автореферата:</p>
+                        <p>Автореферат обычно печатают на листах формата A5 (148×210 мм). Его объём ограничивает «Положение о присуждении учёных степеней»: для кандидатской диссертации в большинстве отраслей — до одного авторского листа (около 40 000 знаков). Поля автореферата ГОСТ Р 7.0.11-2011 не задаёт, их определяет совет или типография. Преамбула для автореферата:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>\documentclass[12pt,a5paper]{article}
@@ -315,39 +317,44 @@
 % 3. Основные результаты и выводы
 % 4. Список публикаций по теме диссертации</code></pre>
                         </div>
-                        <p>Обязательный раздел «Публикации по теме диссертации» должен содержать ссылки на статьи из перечня ВАК и индексируемых баз (структуру и требования международных журналов мы описали в <a href="/blog/latex-scopus-wos">шаблоне статьи для Scopus и WoS</a>). Для нумерации таких источников используйте отдельную категорию в biblatex:</p>
+                        <p>Обязательный раздел «Публикации по теме диссертации» должен содержать ссылки на статьи из перечня ВАК и индексируемых баз (структуру и требования международных журналов мы описали в <a href="/blog/latex-scopus-wos">шаблоне статьи для Scopus и WoS</a>). Оформите его нумерованным списком: записи по ГОСТ набираются вручную, как и основной список литературы.</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
-                            <pre><code>% Публикации автора в перечне ВАК:
-\printbibliography[
-    keyword=vak,
-    title={Публикации по теме диссертации}
-]</code></pre>
+                            <pre><code>\section*{Публикации по теме диссертации}
+\subsection*{Статьи в изданиях из перечня ВАК}
+\begin{enumerate}
+    \item Иванов,~И.~И. Метод анализа графовых структур / И.~И.~Иванов
+      // Вестник МГТУ им.~Н.~Э.~Баумана. --- 2025. --- №~2. --- С.~15--24.
+    \item Иванов,~И.~И. Оптимизация обхода графов / И.~И.~Иванов, П.~П.~Петров
+      // Информационные технологии. --- 2026. --- Т.~32, №~1. --- С.~3--11.
+\end{enumerate}</code></pre>
                         </div>
                     </section>
 
                     <section class="article-section" id="frames">
                         <h2 class="article-section__title">Рамки и поля по ГОСТ</h2>
-                        <p>Некоторые вузы и советы требуют рамки на страницах диссертации по ГОСТ 2.104. Для создания рамок используется пакет <code>fancyhdr</code> в сочетании с <code>tikz</code>, либо специализированный пакет для чертежно-графической документации (подробнее в <a href="/blog/latex-eskd">статье о рамках по ЕСКД и СПДС</a>):</p>
+                        <p>Номер страницы по ГОСТ Р 7.0.11-2011 (п. 5.3.8) ставят посередине верхнего поля, на титульном листе его не печатают. Рамок стандарт не требует, но некоторые вузы и советы просят рамки по ГОСТ 2.104. Рамку можно нарисовать через <code>tikz</code> в колонтитуле <code>fancyhdr</code> (подробнее о рамках и штампах — в <a href="/blog/latex-eskd">статье о рамках по ЕСКД</a>). Стиль <code>plain</code> переопределён целиком, потому что первые страницы глав LaTeX оформляет именно им:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>\usepackage{fancyhdr}
 \usepackage{tikz}
 
-\pagestyle{fancy}
-\fancyhf{}
-
-% Рамка через tikz в колонтитуле
-\fancyhead[C]{%
-    \begin{tikzpicture}[remember picture, overlay]
-        \draw[line width=0.5pt]
-            ([xshift=20mm, yshift=-20mm]current page.north west)
-            rectangle
-            ([xshift=-10mm, yshift=20mm]current page.south east);
-    \end{tikzpicture}%
+\fancypagestyle{plain}{%
+    \fancyhf{}
+    % Номер страницы — посередине верхнего поля
+    \fancyhead[C]{\thepage}
+    % Рамка через tikz: 20 мм слева, по 5 мм с остальных сторон
+    \fancyfoot[C]{%
+        \begin{tikzpicture}[remember picture, overlay]
+            \draw[line width=0.5pt]
+                ([xshift=20mm, yshift=-5mm]current page.north west)
+                rectangle
+                ([xshift=-5mm, yshift=5mm]current page.south east);
+        \end{tikzpicture}%
+    }%
+    \renewcommand{\headrulewidth}{0pt}%
 }
-\fancyfoot[C]{\thepage}
-\renewcommand{\headrulewidth}{0pt}</code></pre>
+\pagestyle{plain}</code></pre>
                         </div>
                     </section>
 
@@ -378,12 +385,12 @@
 % Ссылка на раздел:
 Подробнее в разделе~\ref{sec:method}.</code></pre>
                         </div>
-                        <p>Пакет <code>cleveref</code> позволяет автоматически добавлять слова «рис.», «табл.», «формула» перед номером:</p>
+                        <p>Пакет <code>cleveref</code> позволяет автоматически добавлять перед номером сокращения «рис.», «табл.», «ф-ла»; с опцией <code>noabbrev</code> он пишет слова полностью: «рисунок», «таблица», «формула»:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
-                            <pre><code>\usepackage[russian]{cleveref}
+                            <pre><code>\usepackage[russian]{cleveref} % подключайте после hyperref
 % Теперь \cref{fig:result} даёт «рис. 1»
-% \cref{eq:einstein} даёт «выражение (1)»</code></pre>
+% \cref{eq:einstein} даёт «ф-ла (1)»</code></pre>
                         </div>
                     </section>
 
@@ -408,7 +415,7 @@
                                 <div class="article-tip__number">3</div>
                                 <div class="article-tip__content">
                                     <h3>Используйте \includeonly при работе</h3>
-                                    <p>Команда <code>\includeonly{chapter2}</code> в преамбуле ускоряет компиляцию: LaTeX будет обрабатывать только указанные главы, сохраняя при этом корректную нумерацию всего документа.</p>
+                                    <p>Команда <code>\includeonly{chapter2}</code> в преамбуле ускоряет компиляцию: LaTeX обрабатывает только указанные главы, а номера страниц и ссылки на остальные главы берёт из .aux-файлов прошлой полной сборки. В Labkeeper служебные файлы между сборками сохраняются не всегда, поэтому перед финальной сборкой уберите <code>\includeonly</code> и соберите документ целиком. Время одной сборки ограничено (до 60 секунд после входа), так что большие главы удобнее держать в отдельных файлах.</p>
                                 </div>
                             </div>
                             <div class="article-tip">
@@ -434,7 +441,7 @@
                             class="article-sidebar__img">
                     </div>
                     <p class="article-sidebar__title">Верстайте диссертацию ВАК в&nbsp;онлайн-редакторе Labkeeper — без установки LaTeX и&nbsp;настройки окружения.</p>
-                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Breport%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Ctableofcontents%0A%5Cchapter%7B%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%7D%D0%A6%D0%B5%D0%BB%D1%8C+%D0%B8%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.%0A%5Cchapter%7B%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D1%8B%7D%5Csection%7B%D0%9C%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%7D%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5+%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8.%0A%5Cchapter%7B%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D1%8B%7D%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5+%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D1%8B.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Breport%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%5Bleft%3D25mm%2Cright%3D10mm%2Ctop%3D20mm%2Cbottom%3D20mm%5D%7Bgeometry%7D%0A%5Cusepackage%7Bfancyhdr%7D%0A%5Cfancypagestyle%7Bplain%7D%7B%5Cfancyhf%7B%7D%5Cfancyhead%5BC%5D%7B%5Cthepage%7D%5Crenewcommand%7B%5Cheadrulewidth%7D%7B0pt%7D%7D%0A%5Cpagestyle%7Bplain%7D%0A%5Cbegin%7Bdocument%7D%0A%5Ctableofcontents%0A%5Cchapter%7B%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%7D%D0%A6%D0%B5%D0%BB%D1%8C+%D0%B8%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.%0A%5Cchapter%7B%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D1%8B%7D%5Csection%7B%D0%9C%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%7D%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5+%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8.%0A%5Cchapter%7B%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D1%8B%7D%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5+%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D1%8B.%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -450,7 +457,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Верстайте диссертации и&nbsp;авторефераты в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор LaTeX для&nbsp;объемных научных трудов: лимит компиляции до&nbsp;60&nbsp;секунд, поддержка сложных формул и&nbsp;мгновенный экспорт в&nbsp;PDF.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX для&nbsp;объемных научных трудов: многофайловые проекты, поддержка сложных формул и&nbsp;экспорт в&nbsp;PDF.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -488,7 +495,7 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Breport%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Ctableofcontents%0A%5Cchapter%7B%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%7D%D0%A6%D0%B5%D0%BB%D1%8C+%D0%B8%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.%0A%5Cchapter%7B%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D1%8B%7D%5Csection%7B%D0%9C%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%7D%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5+%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8.%0A%5Cchapter%7B%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D1%8B%7D%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5+%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D1%8B.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Breport%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%5Bleft%3D25mm%2Cright%3D10mm%2Ctop%3D20mm%2Cbottom%3D20mm%5D%7Bgeometry%7D%0A%5Cusepackage%7Bfancyhdr%7D%0A%5Cfancypagestyle%7Bplain%7D%7B%5Cfancyhf%7B%7D%5Cfancyhead%5BC%5D%7B%5Cthepage%7D%5Crenewcommand%7B%5Cheadrulewidth%7D%7B0pt%7D%7D%0A%5Cpagestyle%7Bplain%7D%0A%5Cbegin%7Bdocument%7D%0A%5Ctableofcontents%0A%5Cchapter%7B%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%7D%D0%A6%D0%B5%D0%BB%D1%8C+%D0%B8%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.%0A%5Cchapter%7B%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D1%8B%7D%5Csection%7B%D0%9C%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%7D%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5+%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8.%0A%5Cchapter%7B%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D1%8B%7D%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5+%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D1%8B.%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

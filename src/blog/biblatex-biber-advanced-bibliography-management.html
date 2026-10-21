@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Настройка biblatex biber онлайн: сортировка списка литературы — Labkeeper</title>
-    <meta name="description" content="Продвинутая настройка biblatex и biber онлайн: сортировка списка литературы, русский ГОСТ стиль biblatex-gost, файлы .bib и команды cite в Labkeeper." />
+    <meta name="description" content="Настройка biblatex и biber: сортировка списка литературы, стиль biblatex-gost, .bib-файлы и cite при локальной сборке, а онлайн в Labkeeper — thebibliography." />
     <!-- SEO Ключи: настройка biblatex biber онлайн, сортировка списка литературы biblatex -->
     <meta name="keywords" content="настройка biblatex biber онлайн, сортировка списка литературы biblatex" />
     <link rel="canonical" href="https://labkeeper.io/blog/biblatex-biber-advanced-bibliography-management" />
@@ -17,19 +17,19 @@
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Labkeeper" />
     <meta property="og:title" content="Настройка biblatex biber онлайн: сортировка списка литературы — Labkeeper" />
-    <meta property="og:description" content="Продвинутая настройка biblatex и biber онлайн: сортировка списка литературы, русский ГОСТ стиль biblatex-gost, файлы .bib и команды cite в Labkeeper." />
+    <meta property="og:description" content="Настройка biblatex и biber: сортировка списка литературы, стиль biblatex-gost, .bib-файлы и cite при локальной сборке, а онлайн в Labkeeper — thebibliography." />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:title" content="Настройка biblatex biber онлайн: сортировка списка литературы — Labkeeper" />
-    <meta name="twitter:description" content="Продвинутая настройка biblatex и biber онлайн: сортировка списка литературы, русский ГОСТ стиль biblatex-gost, файлы .bib и команды cite в Labkeeper." />
+    <meta name="twitter:description" content="Настройка biblatex и biber: сортировка списка литературы, стиль biblatex-gost, .bib-файлы и cite при локальной сборке, а онлайн в Labkeeper — thebibliography." />
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Пакет biblatex и biber: продвинутое управление библиографией",
-        "description": "Продвинутая настройка biblatex и biber онлайн: сортировка списка литературы, русский ГОСТ стиль biblatex-gost, файлы .bib и команды cite в Labkeeper.",
+        "description": "Настройка biblatex и biber: сортировка списка литературы, стиль biblatex-gost, .bib-файлы и cite при локальной сборке, а онлайн в Labkeeper — thebibliography.",
         "author": {
             "@type": "Organization",
             "name": "Labkeeper",
@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/biblatex-biber-advanced-bibliography-management"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с LaTeX","Оформление научных статей"]
     }
@@ -219,7 +219,7 @@
                         <a href="/blog#articles" class="article-tag">Оформление научных статей</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~8 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~8 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -234,14 +234,17 @@
 
                     <section class="article-section" id="why-biblatex">
                         <h2 class="article-section__title">Почему связка biblatex + biber заменила классический BibTeX</h2>
-                        <p><strong>Пример в редакторе:</strong> короткая ссылка открывает самостоятельный документ с цитированием и списком через <code>thebibliography</code>, без отдельного файла и запуска Biber. Это иллюстрация связи ссылки с источником, а не демонстрация автоматической сортировки BibLaTeX. Полная настройка <code>.bib</code> и Biber приведена ниже.</p>
-                        <p>Хотя классический <a href="/blog/latex-gost-bibliography">BibTeX по ГОСТ для списка литературы</a> до сих пор популярен, оригинальная утилита <code>bibtex</code> была создана еще в 1985 году, когда не существовало стандарта Юникод (UTF-8). Из-за этого классический BibTeX часто ломал сортировку русских фамилий («А» оказывалась после «Я») и требовал сложных кодировочных ухищрений.</p>
+                        <div class="article-note">
+                            <strong>⚠️ В Labkeeper Biber пока не запускается.</strong> Настройка ниже — для локальной установки TeX Live или MiKTeX. В Labkeeper список литературы оформляется через <code>thebibliography</code>: как это сделать по ГОСТ, читайте в <a href="/blog/latex-gost-bibliography">руководстве по списку литературы по ГОСТ</a>.
+                        </div>
+                        <p><strong>Пример в редакторе:</strong> короткая ссылка открывает самостоятельный документ с цитированием и списком через <code>thebibliography</code>, без отдельного файла и запуска Biber. Это иллюстрация связи ссылки с источником, а не демонстрация автоматической сортировки BibLaTeX. Полная настройка <code>.bib</code> и Biber для локальной сборки приведена ниже.</p>
+                        <p>Хотя классический BibTeX до сих пор популярен, оригинальная утилита <code>bibtex</code> была создана еще в 1985 году, когда не существовало стандарта Юникод (UTF-8). Из-за этого классический BibTeX часто ломал сортировку русских фамилий («А» оказывалась после «Я») и требовал сложных кодировочных ухищрений.</p>
                         <p>Современный тандем пакета <strong>biblatex</strong> и бэкенда <strong>biber</strong> полностью написан с поддержкой UTF-8, понимает правила русской грамматики и поддерживает официальный пакет адаптации <code>biblatex-gost</code>.</p>
                     </section>
 
                     <section class="article-section" id="online-setup">
                         <h2 class="article-section__title">Настройка biblatex biber онлайн: преамбула с поддержкой ГОСТ</h2>
-                        <p>Идеальная <strong>настройка biblatex biber онлайн</strong> для российской диссертации или статьи:</p>
+                        <p>Если вы ищете <strong>настройку biblatex biber онлайн</strong>, учтите: она работает только там, где сервис запускает Biber. В Labkeeper Biber пока выключен, поэтому преамбулу для российской диссертации или статьи используйте при локальной сборке:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>\usepackage[
@@ -264,7 +267,7 @@
                         <ul>
                             <li><code>sorting=none</code> — источники нумеруются строго в порядке первого упоминания в тексте (стандарт для естественнонаучных отчетов);</li>
                             <li><code>sorting=nty</code> — алфавитный порядок: Name (автор) $\to$ Title (название) $\to$ Year (год);</li>
-                            <li><strong>Сортировка сначала русские, затем иностранные:</strong> пакет <code>biblatex-gost</code> автоматически группирует записи по полю <code>langid = {russian}</code> и помещает кириллические источники в начало алфавитного перечня.</li>
+                            <li><strong>Сортировка сначала русские, затем иностранные:</strong> поле <code>langid = {russian}</code> переключает язык оформления записи, а не порядок в списке. Русские источники раньше иностранных получают только отдельной схемой сортировки. Такой порядок требуют некоторые вузы, ГОСТ его не предписывает.</li>
                         </ul>
                     </section>
 
@@ -296,7 +299,8 @@
 
                     <section class="article-section" id="compilation-flow">
                         <h2 class="article-section__title">Цикл сборки: pdflatex → biber → pdflatex</h2>
-                        <p>Для генерации списка запускается цепочка: <code>pdflatex main</code> $\to$ <code>biber main</code> $\to$ <code>pdflatex main</code>. В облачном редакторе <strong>Labkeeper</strong> этот цикл выполняется полностью автоматически в фоновом режиме за доли секунды.</p>
+                        <p>Для генерации списка запускается цепочка: <code>pdflatex main</code> $\to$ <code>biber main</code> $\to$ <code>pdflatex main</code>. Так выглядит локальная сборка: latexmk и редакторы вроде TeXstudio запускают эту цепочку сами.</p>
+                        <p>В <strong>Labkeeper</strong> Biber пока не запускается, поэтому список из .bib-файла останется пустым, а ссылки превратятся в «[?]». Для онлайн-сборки оформите список через <code>thebibliography</code>, как в примере для редактора.</p>
                     </section>
 
                     <section class="article-section" id="tips">
@@ -305,8 +309,8 @@
                             <div class="article-tip">
                                 <div class="article-tip__number">1</div>
                                 <div class="article-tip__content">
-                                    <h3>Удаление вспомогательных файлов при ошибках</h3>
-                                    <p>Если вы кардинально изменили ключи в .bib файле, очистите кэш сборки (файлы <code>.bbl</code> и <code>.bcf</code>), чтобы Biber пересобрал индекс начисто.</p>
+                                    <h3>Удаление вспомогательных файлов при локальной сборке</h3>
+                                    <p>Если при локальной сборке вы кардинально изменили ключи в .bib-файле, удалите файлы <code>.bbl</code> и <code>.bcf</code>, чтобы Biber пересобрал индекс начисто.</p>
                                 </div>
                             </div>
                             <div class="article-tip">
@@ -329,7 +333,7 @@
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Управляйте научной библиографией мирового уровня без головной боли в Labkeeper.</p>
+                    <p class="article-sidebar__title">Пишите статьи со списком литературы в онлайн-редакторе Labkeeper: ссылки через thebibliography собираются в PDF без установки LaTeX.</p>
                     <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Csection*%7BCitations+and+bibliography%7D%0AA+reproducible+method%7E%5Ccite%7Bdemo%7D.%0A%5Cbegin%7Bthebibliography%7D%7B9%7D%0A%5Cbibitem%7Bdemo%7DAnna+Example.+%5Ctextit%7BMeasurement+Methods%7D.+Example+Press%2C+2024.%0A%5Cend%7Bthebibliography%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
@@ -345,8 +349,8 @@
         <section class="cta-features" id="cta-features">
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
-                <h2 class="cta-features__intro-title">Автоматизируйте библиографию в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с поддержкой Biber, кириллических стилей biblatex-gost и мгновенной генерацией списков литературы.</p>
+                <h2 class="cta-features__intro-title">Пишите статьи с&nbsp;библиографией в&nbsp;Labkeeper</h2>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX: ссылки и&nbsp;список литературы через thebibliography, сборка PDF в&nbsp;браузере.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">

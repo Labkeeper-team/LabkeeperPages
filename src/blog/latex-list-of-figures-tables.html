@@ -17,7 +17,7 @@
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Labkeeper" />
     <meta property="og:title" content="Автоматическая генерация списка иллюстраций и таблиц (List of Figures / Tables) по ГОСТ — Labkeeper" />
-    <meta property="og:description" content="Список таблиц и рисунков в LaTeX онлайн: автоматическая генерация, перечень иллюстраций по ГОСТ 7.32 и настройка tocloft." />
+    <meta property="og:description" content="Список таблиц и рисунков в LaTeX онлайн: автоматическая генерация, перечень иллюстраций в стиле ГОСТ и настройка tocloft." />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-list-of-figures-tables"
         },
         "datePublished": "2026-08-20",
-        "dateModified": "2026-08-20",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Дипломные работы","Работа с LaTeX"]
     }
@@ -219,14 +219,14 @@
                         <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 20 августа 2026 · Время чтения: ~8 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~8 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
                         <ol class="article-toc__list">
                             <li><a href="#intro" class="article-toc__link">Зачем нужен перечень иллюстраций и таблиц</a></li>
                             <li><a href="#builtin" class="article-toc__link">Стандартные команды \listoffigures и \listoftables</a></li>
-                            <li><a href="#tocloft" class="article-toc__link">Кастомизация по ГОСТ 7.32 через пакет tocloft</a></li>
+                            <li><a href="#tocloft" class="article-toc__link">Оформление в стиле ГОСТ через пакет tocloft</a></li>
                             <li><a href="#dots" class="article-toc__link">Отточия (лидеры) и выравнивание номеров страниц</a></li>
                             <li><a href="#tocbibind" class="article-toc__link">Включение списков в общее оглавление (tocbibind)</a></li>
                             <li><a href="#short-captions" class="article-toc__link">Краткие подписи для списков в caption</a></li>
@@ -236,7 +236,7 @@
 
                     <section class="article-section" id="intro">
                         <h2 class="article-section__title">Зачем нужен перечень иллюстраций и таблиц</h2>
-                        <p>В объемных <a href="/blog/latex-diploma-gost">дипломных проектах</a>, <a href="/blog/latex-dissertation">диссертациях ВАК</a> и научно-технических отчетах (ГОСТ 7.32-2017) требуется наличие перечня графического материала: «Список иллюстраций» (List of Figures, LoF) и «Список таблиц» (List of Tables, LoT). При ручном составлении любые изменения нумерации приводят к ошибкам.</p>
+                        <p>В объемных <a href="/blog/latex-diploma-gost">дипломных проектах</a>, <a href="/blog/latex-dissertation">диссертациях ВАК</a> и научно-технических отчетах многие вузы требуют перечень графического материала: «Список иллюстраций» (List of Figures, LoF) и «Список таблиц» (List of Tables, LoT). Среди структурных элементов ГОСТ 7.32-2017 такого перечня нет, поэтому нужен ли он, решает методичка. При ручном составлении любые изменения нумерации приводят к ошибкам.</p>
                         <p>В LaTeX <strong>список таблиц и рисунков в latex онлайн</strong> создается автоматически на основе подписей <code>\caption{}</code>, а <strong>оформление перечня иллюстраций latex гост</strong> легко настраивается пакетом <code>tocloft</code>.</p>
                     </section>
 
@@ -257,8 +257,8 @@
                     </section>
 
                     <section class="article-section" id="tocloft">
-                        <h2 class="article-section__title">Кастомизация по ГОСТ 7.32 через пакет tocloft</h2>
-                        <p>По ГОСТ перед номером рисунка или таблицы должно стоять слово «Рисунок 1 — » или «Таблица 2 — », а заголовки должны быть переименованы на русский язык:</p>
+                        <h2 class="article-section__title">Оформление в стиле ГОСТ через пакет tocloft</h2>
+                        <p>ГОСТ 7.32-2017 задаёт форму подписи — «Рисунок 1 — Название» и «Таблица 2 — Название», — а оформление перечней не регулирует. Многие методички просят повторить эту форму в списках и назвать их по-русски; префиксы добавляет пакет <code>tocloft</code>:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>\usepackage[titles]{tocloft}
@@ -279,7 +279,7 @@
 
                     <section class="article-section" id="dots">
                         <h2 class="article-section__title">Отточия (лидеры) и выравнивание номеров страниц</h2>
-                        <p>В ГОСТ обязательно наличие точечных отточий от названия к номеру страницы. Пакет <code>tocloft</code> включает их командой <code>\cftfigdotsep</code>:</p>
+                        <p>Для содержания ГОСТ 7.32-2017 требует отточие до номера страницы. Для перечней рисунков и таблиц отдельного правила нет, но методички часто просят те же точки. В перечнях LaTeX ставит их по умолчанию, а частоту точек в пакете <code>tocloft</code> задают команды <code>\cftfigdotsep</code> и <code>\cfttabdotsep</code>:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>% Частота точек в отточиях
@@ -327,7 +327,7 @@
                                 <div class="article-tip__number">2</div>
                                 <div class="article-tip__content">
                                     <h3>Оформление по ЕСКД</h3>
-                                    <p>Для инженерных расчетно-пояснительных записок, требующих сквозных рамок и штампов, ознакомьтесь с <a href="/blog/latex-eskd">руководством по ЕСКД и СПДС</a>.</p>
+                                    <p>Для инженерных расчетно-пояснительных записок, требующих сквозных рамок и штампов, ознакомьтесь с <a href="/blog/latex-eskd">руководством по ЕСКД</a>.</p>
                                 </div>
                             </div>
                         </div>

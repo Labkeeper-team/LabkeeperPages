@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru IO_LABKEEPER_FRONTEND_OPENPANEL_API_URL; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Как сделать сноски footnote в Markdown внизу страницы — Labkeeper</title>
-    <meta name="description" content="Пошаговый гайд: как сделать сноски footnote в Markdown внизу страницы. Синтаксис [^1], многострочные примечания, кликабельные ссылки и экспорт в PDF в Labkeeper." />
+    <meta name="description" content="Пошаговый гайд: как сделать сноски footnote в Markdown внизу страницы. Синтаксис [^1], многострочные примечания, кликабельные ссылки и сноски внизу листа PDF в LaTeX-проекте Labkeeper." />
     <!-- SEO Ключи: как сделать сноски footnote в markdown, сноски внизу страницы markdown -->
     <meta name="keywords" content="как сделать сноски footnote в markdown, сноски внизу страницы markdown" />
     <link rel="canonical" href="https://labkeeper.io/blog/markdown-footnotes" />
@@ -17,19 +17,19 @@
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Labkeeper" />
     <meta property="og:title" content="Как сделать сноски footnote в Markdown внизу страницы — Labkeeper" />
-    <meta property="og:description" content="Пошаговый гайд: как сделать сноски footnote в Markdown внизу страницы. Синтаксис [^1], многострочные примечания, кликабельные ссылки и экспорт в PDF в Labkeeper." />
+    <meta property="og:description" content="Пошаговый гайд: как сделать сноски footnote в Markdown внизу страницы. Синтаксис [^1], многострочные примечания, кликабельные ссылки и сноски внизу листа PDF в LaTeX-проекте Labkeeper." />
     <meta property="og:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://labkeeper.io/assets/img/og-image.svg" />
     <meta name="twitter:title" content="Как сделать сноски footnote в Markdown внизу страницы — Labkeeper" />
-    <meta name="twitter:description" content="Пошаговый гайд: как сделать сноски footnote в Markdown внизу страницы. Синтаксис [^1], многострочные примечания, кликабельные ссылки и экспорт в PDF в Labkeeper." />
+    <meta name="twitter:description" content="Пошаговый гайд: как сделать сноски footnote в Markdown внизу страницы. Синтаксис [^1], многострочные примечания, кликабельные ссылки и сноски внизу листа PDF в LaTeX-проекте Labkeeper." />
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Как сделать кликабельные сноски в Markdown документе",
-        "description": "Пошаговый гайд: как сделать сноски footnote в Markdown внизу страницы. Синтаксис [^1], многострочные примечания, кликабельные ссылки и экспорт в PDF в Labkeeper.",
+        "description": "Пошаговый гайд: как сделать сноски footnote в Markdown внизу страницы. Синтаксис [^1], многострочные примечания, кликабельные ссылки и сноски внизу листа PDF в LaTeX-проекте Labkeeper.",
         "author": {
             "@type": "Organization",
             "name": "Labkeeper",
@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/markdown-footnotes"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Работа с Markdown"]
     }
@@ -218,7 +218,7 @@
                         <a href="/blog#markdown" class="article-tag">Работа с Markdown</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~6 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~6 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -235,7 +235,8 @@
                     <section class="article-section" id="intro">
                         <h2 class="article-section__title">Зачем нужны сноски в Markdown</h2>
                         <p>В академических отчетах, статьях и технической документации часто требуется дать уточнение, ссылку на источник или комментарий автора, не перегружая основной текст. В классической типографике для этого используются <strong>сноски внизу страницы Markdown</strong> (footnotes). Если же вы готовите курсовую или дипломную работу по праву или истории, ознакомьтесь также с правилами <a href="/blog/footnotes-bottom-page-law-history-coursework-gost">оформления постраничных сносок по ГОСТ</a>.</p>
-                        <p>Оригинальная спецификация Markdown Джона Грубера не содержала встроенного механизма для примечаний, но большинство современных диалектов — включая <strong>Markdown Extra</strong>, <strong>GitHub Flavored Markdown (GFM)</strong> и онлайн-редактор <strong>Labkeeper</strong> — полностью поддерживают стандартный механизм сносок с автоматической сквозной нумерацией и двусторонней навигацией (клик ведет к примечанию, а стрелка возврата — обратно в текст).</p>
+                        <p>Оригинальная спецификация Markdown Джона Грубера не содержала встроенного механизма для примечаний, но большинство современных диалектов — включая <strong>Markdown Extra</strong>, <strong>GitHub Flavored Markdown (GFM)</strong> и онлайн-редактор <strong>Labkeeper</strong> — поддерживают стандартный механизм сносок с автоматической нумерацией и двусторонней навигацией (клик ведет к примечанию, а стрелка возврата — обратно в текст).</p>
+                        <p>В Labkeeper текст делится на сегменты, и каждый Markdown-сегмент обрабатывается отдельно: маркер и определение сноски должны стоять в одном сегменте, а нумерация в превью начинается заново в каждом сегменте.</p>
                     </section>
 
                     <section class="article-section" id="basic-syntax">
@@ -253,7 +254,7 @@
                         <p><strong>Что происходит при рендеринге:</strong></p>
                         <ul>
                             <li>В месте маркера <code>[^1]</code> браузер отобразит аккуратную верхнюю цифру-ссылку <sup>1</sup>.</li>
-                            <li>Текст примечания автоматически переместится в нижний блок страницы.</li>
+                            <li>Текст примечания автоматически переместится в блок сносок в конце текста (в Labkeeper — в конце того же сегмента).</li>
                             <li>В конце текста сноски автоматически генерируется ссылка возврата <code>&#8617;</code>, возвращающая читателя точно к прочитанному абзацу.</li>
                         </ul>
                     </section>
@@ -295,8 +296,8 @@
 
                     <section class="article-section" id="bottom-page">
                         <h2 class="article-section__title">Сноски внизу страницы Markdown: правила переноса и рендеринг в PDF</h2>
-                        <p>В браузере все примечания собираются единым блоком в конце статьи. Однако если вам нужны настоящие <strong>сноски внизу страницы Markdown</strong> при экспорте в PDF для сдачи курсовой, диплома или отчета (подробнее об этом читайте в нашей инструкции по <a href="/blog/markdown-to-pdf-export">экспорту Markdown-заметок в PDF</a>), обычные HTML-конвертеры не справляются с постраничным разбиением.</p>
-                        <p>В редакторе <strong>Labkeeper</strong> встроен специализированный движок PDF-экспорта: он анализирует границы печатных листов A4 и размещает сноски строго на том листе, где встретился маркер, отделяя их стандартной типографической полосой по ГОСТ.</p>
+                        <p>В браузере все примечания собираются единым блоком в конце текста. В Markdown-проекте Labkeeper так же: сноски стоят в конце сегмента, а при сохранении в PDF через печать браузера этот блок остаётся в конце, а не переносится вниз каждого листа (подробнее о печати читайте в инструкции по <a href="/blog/markdown-to-pdf-export">сохранению Markdown в PDF</a>).</p>
+                        <p>Если для курсовой, диплома или отчета нужны настоящие <strong>сноски внизу страницы Markdown</strong>, создайте в Labkeeper LaTeX-проект и пишите текст в Markdown-сегменте. При сборке сервер переводит Markdown в LaTeX: каждая сноска <code>[^1]</code> становится командой <code>\footnote</code>, и pdfLaTeX ставит примечание внизу того листа, где стоит маркер, под короткой разделительной линией. Нумерация в PDF идёт сквозная по всему документу. Требования к сноскам в курсовых по праву и истории разобраны в статье о <a href="/blog/footnotes-bottom-page-law-history-coursework-gost">постраничных сносках по ГОСТ</a>.</p>
                     </section>
 
                     <section class="article-section" id="faq">
@@ -315,7 +316,7 @@
                                 <div class="article-tip__number">1</div>
                                 <div class="article-tip__content">
                                     <h3>Правильное размещение знака препинания</h3>
-                                    <p>В русскоязычных научных текстах знак сноски ставится непосредственно перед точкой или запятой (например: <code>формула[^1],</code>), либо сразу после финальной точки предложения.</p>
+                                    <p>В русской типографике знак сноски ставят перед точкой или запятой: <code>формула[^1],</code> или <code>формула[^1].</code> Знак после точки — норма английских текстов, в русском отчете он выглядит ошибкой.</p>
                                 </div>
                             </div>
                             <div class="article-tip">
@@ -338,8 +339,8 @@
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Онлайн-редактор Markdown и LaTeX с поддержкой сносок, моментальным превью и компиляцией в PDF без лишних настроек.</p>
-                    <a href="/project/default?open=markdown&amp;markdown=%23+Measurement+notes%0A%0AThe+value+was+corrected+after+calibration.%5B%5Ecalibration%5D%0A%0A%5B%5Ecalibration%5D%3A+Calibration+was+performed+at+room+temperature+before+the+experiment." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <p class="article-sidebar__title">Онлайн-редактор Markdown и LaTeX: сноски видны в превью при наборе, а в LaTeX-проекте становятся сносками внизу страницы PDF.</p>
+                    <a href="/project/default?open=markdown&amp;markdown=%23+%D0%9F%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB+%D0%B8%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D0%B9%0A%0A%D0%97%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5+%D0%B8%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%BE+%D0%BF%D0%BE%D1%81%D0%BB%D0%B5+%D0%BA%D0%B0%D0%BB%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%BA%D0%B8%5B%5Ekalibrovka%5D.+%D0%9F%D0%BE%D0%B3%D1%80%D0%B5%D1%88%D0%BD%D0%BE%D1%81%D1%82%D1%8C+%D0%B2%D0%B7%D1%8F%D1%82%D0%B0+%D0%B8%D0%B7+%D0%BF%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B0+%D0%BF%D1%80%D0%B8%D0%B1%D0%BE%D1%80%D0%B0%5B%5E1%5D.%0A%0A%5B%5Ekalibrovka%5D%3A+%D0%9A%D0%B0%D0%BB%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%BA%D1%83+%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D0%BB%D0%B8+%D0%BF%D1%80%D0%B8+%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%BD%D0%BE%D0%B9+%D1%82%D0%B5%D0%BC%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B5.%0A%0A++++%D0%92%D1%82%D0%BE%D1%80%D0%BE%D0%B9+%D0%B0%D0%B1%D0%B7%D0%B0%D1%86+%D1%81%D0%BD%D0%BE%D1%81%D0%BA%D0%B8+%D0%BD%D0%B0%D1%87%D0%B8%D0%BD%D0%B0%D0%B5%D1%82%D1%81%D1%8F+%D1%81+%D0%BE%D1%82%D1%81%D1%82%D1%83%D0%BF%D0%B0+%D0%B2+4+%D0%BF%D1%80%D0%BE%D0%B1%D0%B5%D0%BB%D0%B0.%0A%0A%5B%5E1%5D%3A+%D0%9F%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82+%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BC%D0%B5%D1%82%D1%80%D0%B0%2C+%D0%BA%D0%BB%D0%B0%D1%81%D1%81+%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D0%B8+0%2C5." class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -355,7 +356,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Оформляйте статьи и отчеты в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор Markdown с поддержкой сносок, математических формул LaTeX и быстрой компиляцией в аккуратный PDF.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор Markdown со сносками и формулами MathJax: сохраняйте заметки в PDF через печать браузера или собирайте PDF со сносками внизу страницы в LaTeX-проекте.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -393,7 +394,7 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=markdown&amp;markdown=%23+Measurement+notes%0A%0AThe+value+was+corrected+after+calibration.%5B%5Ecalibration%5D%0A%0A%5B%5Ecalibration%5D%3A+Calibration+was+performed+at+room+temperature+before+the+experiment." class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=markdown&amp;markdown=%23+%D0%9F%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB+%D0%B8%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D0%B9%0A%0A%D0%97%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5+%D0%B8%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%BE+%D0%BF%D0%BE%D1%81%D0%BB%D0%B5+%D0%BA%D0%B0%D0%BB%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%BA%D0%B8%5B%5Ekalibrovka%5D.+%D0%9F%D0%BE%D0%B3%D1%80%D0%B5%D1%88%D0%BD%D0%BE%D1%81%D1%82%D1%8C+%D0%B2%D0%B7%D1%8F%D1%82%D0%B0+%D0%B8%D0%B7+%D0%BF%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B0+%D0%BF%D1%80%D0%B8%D0%B1%D0%BE%D1%80%D0%B0%5B%5E1%5D.%0A%0A%5B%5Ekalibrovka%5D%3A+%D0%9A%D0%B0%D0%BB%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%BA%D1%83+%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D0%BB%D0%B8+%D0%BF%D1%80%D0%B8+%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%BD%D0%BE%D0%B9+%D1%82%D0%B5%D0%BC%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B5.%0A%0A++++%D0%92%D1%82%D0%BE%D1%80%D0%BE%D0%B9+%D0%B0%D0%B1%D0%B7%D0%B0%D1%86+%D1%81%D0%BD%D0%BE%D1%81%D0%BA%D0%B8+%D0%BD%D0%B0%D1%87%D0%B8%D0%BD%D0%B0%D0%B5%D1%82%D1%81%D1%8F+%D1%81+%D0%BE%D1%82%D1%81%D1%82%D1%83%D0%BF%D0%B0+%D0%B2+4+%D0%BF%D1%80%D0%BE%D0%B1%D0%B5%D0%BB%D0%B0.%0A%0A%5B%5E1%5D%3A+%D0%9F%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82+%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%BC%D0%B5%D1%82%D1%80%D0%B0%2C+%D0%BA%D0%BB%D0%B0%D1%81%D1%81+%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D0%B8+0%2C5." class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

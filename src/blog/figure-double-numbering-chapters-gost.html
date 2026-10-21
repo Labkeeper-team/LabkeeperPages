@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/figure-double-numbering-chapters-gost"
         },
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Дипломные работы","Лабораторные работы"]
     }
@@ -219,7 +219,7 @@
                         <a href="/blog#labs" class="article-tag">Лабораторные работы</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 5 сентября 2026 · Время чтения: ~6 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~6 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -235,7 +235,7 @@
                     <section class="article-section" id="gost-rules">
                         <h2 class="article-section__title">Требования стандарта ГОСТ 7.32 к нумерации иллюстраций</h2>
                         <p>В академических документах большого объема (дипломные проекты, магистерские и докторские диссертации, объемные отчеты о НИР) сквозная нумерация иллюстраций от 1 до 80 становится неудобной: при добавлении рисунка в начало приходится перенумеровывать все последующие ссылки.</p>
-                        <p>Стандарт ГОСТ 7.32-2017 прямо рекомендует использовать нумерацию в пределах раздела (главы): номер рисунка состоит из номера главы и порядкового номера иллюстрации внутри этой главы, разделенных точкой.</p>
+                        <p>ГОСТ 7.32-2017 основным вариантом называет сквозную нумерацию, а нумерацию в пределах раздела (главы) <strong>допускает</strong> (п. 6.5.6): номер рисунка состоит из номера главы и порядкового номера иллюстрации внутри этой главы, разделенных точкой. Многие методички к дипломам требуют именно такой вариант.</p>
                     </section>
 
                     <section class="article-section" id="double-numbering">
@@ -256,17 +256,18 @@
                         <p>Чтобы активировалась <strong>нумерация по главам дипломная работа</strong> в документе класса <code>report</code> или <code>book</code>, достаточно стандартного механизма TeX:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
-                            <pre><code>% В классах report и book нумерация по главам включена по умолчанию!
-% Но если вы используете класс article, добавьте в преамбулу:
-\usepackage{chngcntr}
+                            <pre><code>% В классах report и book нумерация по главам включена по умолчанию.
+% В классе article добавьте в преамбулу (команда есть в ядре LaTeX
+% с 2018 года, пакет chngcntr не нужен):
 \counterwithin{figure}{section} % Привязка рисунков к разделам section</code></pre>
                         </div>
                         <p>Команда <code>\counterwithin{figure}{section}</code> принудительно переключает формат счетчика на двухуровневый и сбрасывает его при каждом вызове <code>\section</code> (точно такой же принцип применяется для <a href="/blog/formula-numbering-lab-reports-gost">нумерации формул по разделам</a>).</p>
+                        <p>В стандартной преамбуле Labkeeper разделы не нумеруются, поэтому счетчик раздела остается нулевым и рисунки получат номера «Рисунок 0.1». Для двойной нумерации начните проект со своей преамбулы, как в примере в редакторе.</p>
                     </section>
 
                     <section class="article-section" id="caption-pkg">
                         <h2 class="article-section__title">Кастомизация разделителя тире через пакет caption</h2>
-                        <p>По умолчанию LaTeX ставит двоеточие: <em>Figure 1.1: Caption</em>. По российскому ГОСТу требуется длинное тире без двоеточия. Настройка через пакет <code>caption</code>:</p>
+                        <p>С пакетом babel и русским языком LaTeX по умолчанию пишет <em>«Рис. 1.1: Подпись»</em> — сокращение и двоеточие. По ГОСТу нужны полное слово «Рисунок» и тире без двоеточия. Настройка через пакет <code>caption</code>:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>\usepackage{caption}
@@ -320,8 +321,8 @@
                             alt="Интерфейс онлайн-редактора LaTeX Labkeeper" width="220" height="135" loading="lazy"
                             class="article-sidebar__img">
                     </div>
-                    <p class="article-sidebar__title">Контролируйте стандарты ГОСТ в оформлении графики диплома в онлайн-редакторе Labkeeper.</p>
-                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Breport%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Cchapter%7B%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BA%D0%B0%7D%0A%5Cbegin%7Bfigure%7D%5Bh%5D%5Ccentering%5Cfbox%7B%5Crule%7B0pt%7D%7B20mm%7D%5Crule%7B40mm%7D%7B0pt%7D%7D%0A%5Ccaption%7B%D0%A1%D1%85%D0%B5%D0%BC%D0%B0+%D0%BE%D0%BF%D1%8B%D1%82%D0%B0%7D%5Cend%7Bfigure%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <p class="article-sidebar__title">Настраивайте нумерацию рисунков по главам и подписи «Рисунок 1.1 — …» в онлайн-редакторе Labkeeper.</p>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Breport%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Brussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bcaption%7D%0A%5CDeclareCaptionLabelSeparator%7Bemdash%7D%7B%5C+---+%7D%0A%5Ccaptionsetup%5Bfigure%5D%7Bname%3D%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA%2Clabelsep%3Demdash%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cchapter%7B%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BA%D0%B0%7D%0A%D0%A1%D1%85%D0%B5%D0%BC%D0%B0+%D0%BE%D0%BF%D1%8B%D1%82%D0%B0+%D0%BF%D0%BE%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B0+%D0%BD%D0%B0+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BA%D0%B5%7E%5Cref%7Bfig%3Aa%7D.%0A%5Cbegin%7Bfigure%7D%5Bh%5D%5Ccentering%5Cfbox%7B%5Crule%7B0pt%7D%7B15mm%7D%5Crule%7B40mm%7D%7B0pt%7D%7D%0A%5Ccaption%7B%D0%A1%D1%85%D0%B5%D0%BC%D0%B0+%D0%BE%D0%BF%D1%8B%D1%82%D0%B0%7D%5Clabel%7Bfig%3Aa%7D%5Cend%7Bfigure%7D%0A%5Cchapter%7B%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D1%8B%7D%0A%D0%93%D1%80%D0%B0%D1%84%D0%B8%D0%BA+%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD+%D0%BD%D0%B0+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BA%D0%B5%7E%5Cref%7Bfig%3Ab%7D.%0A%5Cbegin%7Bfigure%7D%5Bh%5D%5Ccentering%5Cfbox%7B%5Crule%7B0pt%7D%7B15mm%7D%5Crule%7B40mm%7D%7B0pt%7D%7D%0A%5Ccaption%7B%D0%93%D1%80%D0%B0%D1%84%D0%B8%D0%BA+%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8%7D%5Clabel%7Bfig%3Ab%7D%5Cend%7Bfigure%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -337,7 +338,7 @@
             <div class="cta-features__intro">
                 <p class="cta-features__intro-label">Попробуйте прямо сейчас</p>
                 <h2 class="cta-features__intro-title">Верстайте диплом по ГОСТ в&nbsp;Labkeeper</h2>
-                <p class="cta-features__intro-text">Онлайн-редактор с шаблонами дипломных работ и автоматической привязкой рисунков к номерам глав.</p>
+                <p class="cta-features__intro-text">Онлайн-редактор LaTeX: нумерация рисунков по главам, подписи по ГОСТ через пакет caption и ссылки на рисунки в тексте.</p>
             </div>
 
             <div class="feature-block feature-block--img-left feature-block--dark">
@@ -375,7 +376,7 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Breport%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%0A%5Cbegin%7Bdocument%7D%0A%5Cchapter%7B%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BA%D0%B0%7D%0A%5Cbegin%7Bfigure%7D%5Bh%5D%5Ccentering%5Cfbox%7B%5Crule%7B0pt%7D%7B20mm%7D%5Crule%7B40mm%7D%7B0pt%7D%7D%0A%5Ccaption%7B%D0%A1%D1%85%D0%B5%D0%BC%D0%B0+%D0%BE%D0%BF%D1%8B%D1%82%D0%B0%7D%5Cend%7Bfigure%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Breport%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Brussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bcaption%7D%0A%5CDeclareCaptionLabelSeparator%7Bemdash%7D%7B%5C+---+%7D%0A%5Ccaptionsetup%5Bfigure%5D%7Bname%3D%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA%2Clabelsep%3Demdash%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cchapter%7B%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BA%D0%B0%7D%0A%D0%A1%D1%85%D0%B5%D0%BC%D0%B0+%D0%BE%D0%BF%D1%8B%D1%82%D0%B0+%D0%BF%D0%BE%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B0+%D0%BD%D0%B0+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BA%D0%B5%7E%5Cref%7Bfig%3Aa%7D.%0A%5Cbegin%7Bfigure%7D%5Bh%5D%5Ccentering%5Cfbox%7B%5Crule%7B0pt%7D%7B15mm%7D%5Crule%7B40mm%7D%7B0pt%7D%7D%0A%5Ccaption%7B%D0%A1%D1%85%D0%B5%D0%BC%D0%B0+%D0%BE%D0%BF%D1%8B%D1%82%D0%B0%7D%5Clabel%7Bfig%3Aa%7D%5Cend%7Bfigure%7D%0A%5Cchapter%7B%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D1%8B%7D%0A%D0%93%D1%80%D0%B0%D1%84%D0%B8%D0%BA+%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD+%D0%BD%D0%B0+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BA%D0%B5%7E%5Cref%7Bfig%3Ab%7D.%0A%5Cbegin%7Bfigure%7D%5Bh%5D%5Ccentering%5Cfbox%7B%5Crule%7B0pt%7D%7B15mm%7D%5Crule%7B40mm%7D%7B0pt%7D%7D%0A%5Ccaption%7B%D0%93%D1%80%D0%B0%D1%84%D0%B8%D0%BA+%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8%7D%5Clabel%7Bfig%3Ab%7D%5Cend%7Bfigure%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>

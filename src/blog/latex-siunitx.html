@@ -48,7 +48,7 @@
             "@id": "https://labkeeper.io/blog/latex-siunitx"
         },
         "datePublished": "2026-08-20",
-        "dateModified": "2026-08-20",
+        "dateModified": "2026-10-18",
         "inLanguage": "ru",
         "articleSection": ["Лабораторные работы","Работа с LaTeX"]
     }
@@ -221,7 +221,7 @@
                         <a href="/blog#latex" class="article-tag">Работа с LaTeX</a>
                     </div>
 
-                    <p class="article-content__meta">Обновлено: 20 августа 2026 · Время чтения: ~8 мин</p>
+                    <p class="article-content__meta">Обновлено: 18 октября 2026 · Время чтения: ~8 мин</p>
 
                     <nav class="article-toc" aria-label="Содержание статьи">
                         <h3 class="article-toc__title">Содержание</h3>
@@ -284,12 +284,12 @@
                                     <tr>
                                         <td><code>\qty{число}{единица}</code></td>
                                         <td><code>\qty{9.81}{\meter\per\second\squared}</code></td>
-                                        <td>9,81 м/с² (число с размерностью)</td>
+                                        <td>9,81 m·s⁻² (число с размерностью)</td>
                                     </tr>
                                     <tr>
                                         <td><code>\unit{единица}</code></td>
                                         <td><code>\unit{\kilo\gram\per\cubic\meter}</code></td>
-                                        <td>кг/м³ (только единица)</td>
+                                        <td>kg·m⁻³ (только единица)</td>
                                     </tr>
                                     <tr>
                                         <td><code>\num{число}</code></td>
@@ -310,6 +310,14 @@
 Напряжение в сети: \qty{220}{\volt}, частота: \qty{50}{\hertz}.
 Плотность воды: \qty{1000}{\kilo\gram\per\cubic\meter}.</code></pre>
                         </div>
+                        <div class="article-note">
+                            <strong>💡 Обозначения единиц:</strong> siunitx печатает международные обозначения (m, s,
+                            kg), а единицу в знаменателе по умолчанию записывает отрицательной степенью: m·s⁻². Косую черту
+                            включает опция <code>per-mode=symbol</code>. ГОСТ 8.417-2002 допускает международные
+                            обозначения наравне с русскими, но не вперемешку в одном документе. Если методичка требует
+                            русские обозначения, объявите их командой <code>\DeclareSIUnit</code>, например
+                            <code>\DeclareSIUnit{\meter}{м}</code>.
+                        </div>
                         <p>Для интеграции размерностей в сложные аналитические выкладки и дроби обратитесь к нашему <a
                                 href="/blog/latex-formulas">руководству по математическим формулам amsmath</a>.</p>
                     </section>
@@ -320,7 +328,7 @@
                             абсолютную погрешность:</p>
                         <div class="article-code">
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
-                            <pre><code>% Значение с абсолютной погрешностью: (12,45 ± 0,05) м/с
+                            <pre><code>% Значение с абсолютной погрешностью: (12,45 ± 0,05) m·s⁻¹
 \qty{12.45 +- 0.05}{\meter\per\second}
 
 % Диапазон величин: от 10 до 50 °C
@@ -340,7 +348,7 @@
                             <div class="article-code__header"><span class="article-code__lang">LaTeX</span></div>
                             <pre><code>\begin{table}[ht]
 \centering
-\begin{tabular}{l S[table-format=2.3] S[table-format=3.2]}
+\begin{tabular}{l S[table-format=2.3] S[table-format=4.2]}
 \hline
 Образец &amp; {Плотность, \unit{\gram\per\cubic\centi\meter}} &amp; {Температура, \unit{\celsius}} \\
 \hline
@@ -370,7 +378,8 @@
                                     <h3>Единицы в знаменателе</h3>
                                     <p>Используйте опцию <code>per-mode = fraction</code> для дроби или
                                         <code>per-mode = symbol</code> для косой черты (например,
-                                        <code>\siunitx[per-mode=symbol]{\meter\per\second}</code>).</p>
+                                        <code>\unit[per-mode=symbol]{\meter\per\second}</code> или
+                                        <code>\qty[per-mode=symbol]{10}{\meter\per\second}</code>).</p>
                                 </div>
                             </div>
                             <div class="article-tip">
@@ -398,7 +407,7 @@
                     </div>
                     <p class="article-sidebar__title">Набирайте расчеты и&nbsp;физические величины в&nbsp;Labkeeper
                         с&nbsp;полной поддержкой siunitx и&nbsp;ГОСТ 8.417.</p>
-                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bsiunitx%7D%0A%5Cbegin%7Bdocument%7D%0A%5CSI%7B9.81%7D%7B%5Cmetre%5Cper%5Csecond%5Csquared%7D%0A%5Cquad%5Cnum%7B12345.6789%7D%0A%5Cbegin%7Btabular%7D%7BS%5Btable-format%3D2.2%5D%7D1.25%5C%5C12.30%5C%5C3.40%5Cend%7Btabular%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
+                    <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bsiunitx%7D%0A%5Csisetup%7Boutput-decimal-marker%3D%7B%2C%7D%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cqty%7B9.81%7D%7B%5Cmetre%5Cper%5Csecond%5Csquared%7D%0A%5Cquad%5Cnum%7B12345.6789%7D%0A%5Cbegin%7Btabular%7D%7BS%5Btable-format%3D2.2%5D%7D1.25%5C%5C12.30%5C%5C3.40%5Cend%7Btabular%7D%0A%5Cend%7Bdocument%7D" class="button button--primary article-sidebar__btn" id="sidebar-cta-btn" data-blog-example>
                         <span class="article-example__label">
                             <span data-i18n="blog-example">Просмотреть пример</span>
                             <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
@@ -452,7 +461,7 @@
             </div>
 
             <div class="cta-features__footer">
-                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bsiunitx%7D%0A%5Cbegin%7Bdocument%7D%0A%5CSI%7B9.81%7D%7B%5Cmetre%5Cper%5Csecond%5Csquared%7D%0A%5Cquad%5Cnum%7B12345.6789%7D%0A%5Cbegin%7Btabular%7D%7BS%5Btable-format%3D2.2%5D%7D1.25%5C%5C12.30%5C%5C3.40%5Cend%7Btabular%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
+                <a href="/project/default?open=latex&amp;latex=%5Cdocumentclass%5Ba4paper%2C12pt%5D%7Barticle%7D%0A%5Cusepackage%5BT2A%5D%7Bfontenc%7D%0A%5Cusepackage%5Butf8%5D%7Binputenc%7D%0A%5Cusepackage%5Benglish%2Crussian%5D%7Bbabel%7D%0A%5Cusepackage%7Bamsmath%2Cgraphicx%7D%0A%5Cusepackage%7Bsiunitx%7D%0A%5Csisetup%7Boutput-decimal-marker%3D%7B%2C%7D%7D%0A%5Cbegin%7Bdocument%7D%0A%5Cqty%7B9.81%7D%7B%5Cmetre%5Cper%5Csecond%5Csquared%7D%0A%5Cquad%5Cnum%7B12345.6789%7D%0A%5Cbegin%7Btabular%7D%7BS%5Btable-format%3D2.2%5D%7D1.25%5C%5C12.30%5C%5C3.40%5Cend%7Btabular%7D%0A%5Cend%7Bdocument%7D" class="button button--outline-light cta-features__intro-btn" data-blog-example>
                     <span class="article-example__label">
                         <span data-i18n="blog-example">Просмотреть пример</span>
                         <span class="article-example__hint" data-i18n="blog-example-context">в редакторе</span>
