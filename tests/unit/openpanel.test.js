@@ -223,3 +223,19 @@ test('a storage that refuses writes does not break the page', () => {
     assert.match(page.identify[0].profileId, /^[0-9A-Za-z]+$/);
     assert.equal(page.starts.length, 1);
 });
+
+// контракт с редактором: id и имя проверяются одинаково с обеих сторон
+test('a broken guest id or name is replaced, not sent', () => {
+    const storage = deviceWithGuest(MINUTE, {
+        [PROFILE_KEY]: 'bad id!',
+        [FIRST_NAME_KEY]: 'Anonymous'
+    });
+
+    const page = openPage({ storage });
+
+    const profileId = storage.getItem(PROFILE_KEY);
+    assert.notEqual(profileId, 'bad id!');
+    assert.match(profileId, /^[0-9A-Za-z]+$/);
+    assert.match(page.identify[0].firstName, /^anonymous\d{6}$/);
+});
+
